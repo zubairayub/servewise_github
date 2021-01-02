@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Yantramanav-Black;
+    src: url(Yantramanav/Yantramanav-Black.ttf);
+  }
+
+  @font-face {
+    font-family: Yantramanav-Bold;
+    src: url(Yantramanav/Yantramanav-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: Yantramanav-Light;
+    src: url(Yantramanav/Yantramanav-Light.ttf);
+  }
+
+  @font-face {
+    font-family: Yantramanav-Medium;
+    src: url(Yantramanav/Yantramanav-Medium.ttf);
+  }
+
+  @font-face {
+    font-family: Yantramanav-Regular;
+    src: url(Yantramanav/Yantramanav-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: Poppins-Regular;
+    src: url(poppins/Poppins-Regular.ttf); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url(poppins/Poppins-Medium.ttf); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url(poppins/Poppins-Bold.ttf); 
+  }

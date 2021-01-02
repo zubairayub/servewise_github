@@ -1,0 +1,48 @@
+<!-- Datatables CSS & JS-->
+	
+    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+<div class="wrapper">
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+            <h1>Catagory</h1>
+              <label>Category name :</label>
+                <form action="<?php echo $controller ?>" method="post" >
+                <?php 
+                    
+                      $id = $_GET["id"];
+                      $name = $_GET["name"];
+                    
+                    ?>
+                    <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
+                    <input name="category"  type="text" value="<?php echo $name; ?>">
+                <input type="submit" name="addbtn" value="Update Category"  >
+        </form>
+                    </div>
+            
+</div>
+</div>
+<!-- Datatables enable script / Server side datatable-->
+  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
+  
+    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			        window.location.replace("?page=category_dashboard");
+		}else{
+			alert('not added');
+		}
+    });
+}
+</script>

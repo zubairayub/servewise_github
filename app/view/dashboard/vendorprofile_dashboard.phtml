@@ -1,0 +1,39 @@
+  <?php require $footer;?>	
+	<!-- main content -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="container-content">
+                    <div class="user-profile-upper">
+                        <a href="?page=vendoredit_dashboard">Edit</a>
+                    </div>
+                    <div class="user-profile-dis">
+                       
+                        <div class="user-detail1">
+                            <label>Name.</label>
+                            <p class="first-name"> <?php if(isset($olddetails)){echo $olddetails[0]['name']; } ?></p>
+                            
+                            <label>Email ID.</label>
+                            <p class="last-name">  <?php if(isset($olddetails)){echo $olddetails[0]['email_id']; } ?></p>
+                            
+                            <label>contact No.</label>
+                            <p class="Contact-no"><?php if(isset($olddetails)){echo $olddetails[0]['contact_no']; } ?></p>
+                        </div>
+                        <div class="user-detail2">
+                            <label>Address.</label>
+                            <p class="address-1"><?php if(isset($olddetails)){echo $olddetails[0]['address']; } ?></p>
+                            <label>Address2.</label>
+                            <p class="address-2"><?php if(isset($olddetails)){echo $olddetails[0]['address_2']; } ?></p>
+                            <label>City.</label>
+                            <p class="city"><?php if(isset($olddetails)){echo $olddetails[0]['city']; } ?></p>
+                            <label>State.</label>
+                            <p class="state"><?php if(isset($olddetails)){echo $olddetails[0]['state']; } ?></p>
+                            <label>Country.</label>
+                            <p class="Country"><?php if(isset($olddetails)){echo $olddetails[0]['country']; } ?></p>
+                        </div>
+                    </div>
+                </div>
+			</div>		
+		</div>
+	</div>
+	<!-- end main content -->

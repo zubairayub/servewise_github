@@ -1,0 +1,76 @@
+<!-- Datatables CSS & JS-->
+	
+    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+<div class="wrapper">
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+            <h1>Categories List</h1>
+              
+                    </div>
+            <div>
+            
+					  <fieldset>
+					  <table class="table table-bordered" id="clientstable">
+					
+						<thead class="bg-info">
+							<th>Category ID</th>
+							<th>Category name</th>
+							<th>2nd Level</th>
+							<th>3rd Level</th>
+                        </thead>
+                   
+					   <tbody>
+						 <?php
+						   		if (!empty($getcategory)){
+								foreach($getcategory as $categorylist){
+                           ?>
+                        
+						 
+											
+								
+								<tr>
+									
+								<td><?php echo $categorylist["category_id"]; ?></td>
+								<td><?php echo $categorylist["name"]; ?></td>								
+                                <td><?php echo $categorylist["sub_category"]; ?></td>
+								<td><?php echo $categorylist["ss_category"]; ?></td>								
+                                
+							   </tr>
+								<?php }
+								} else {
+									echo "No record Found";
+								}
+						   ?>
+					   </tbody>	
+							
+					</table>
+					  </fieldset>
+            </div>
+            
+</div>
+</div>
+<!-- Datatables enable script / Server side datatable-->
+  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
+  
+    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			        alert('added');
+		}else{
+			alert('not added');
+		}
+    });
+}
+</script>

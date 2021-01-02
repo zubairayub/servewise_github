@@ -1,0 +1,32 @@
+    <div class="container">
+    <div class="img"></div>
+    <div class="login-content">
+       	
+       <?php 
+		
+		
+		
+	echo "Menu :";
+		print_r($menus);
+	echo "Sub Menu :";
+		print_r($submenu);
+		?>
+    </div>
+    </div>
+    
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			alert('success');
+		}else{
+			alert('error');
+		}
+    });
+}
+</script>
+

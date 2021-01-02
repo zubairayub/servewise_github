@@ -1,0 +1,85 @@
+<!-- Datatables CSS & JS-->
+	
+    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+<div class="wrapper">
+		<div class="row">
+
+			<div class="brand-dashboard">
+				<h1 data-aos="fade-right">Brand</h1>
+				<div class="brand-content" data-aos="zoom-in-right">
+					<label>Brand Name :</label>
+					<form action="<?php echo $controller ?>" method="post" id="form">
+						<input class="brand-name" name="name" value="" type="text">
+						<input class="add-brand" type="button" name="addbtn" value="Add brand" onclick="submitForm()" >
+					</form>
+				</div>
+			</div>
+            <div class="brand-table" data-aos="fade-up">
+
+		
+        </form>
+                    
+            <div>
+
+            
+					  <fieldset>
+					  <table class="table table-bordered" id="clientstable">
+					
+						<thead class="bg-info">
+							<th>Brand ID</th>
+							<th>Brand Name</th>
+                        
+							<th></th>
+							<th></th>
+                        </thead>
+                   
+					   <tbody>
+						 <?php
+	
+								foreach($getbrand as $brandlist){
+                           ?>
+                        
+						 
+											
+								
+								<tr>
+								<td><?php echo $brandlist["brand_id"]; ?></td>
+								<td><?php echo $brandlist["name"]; ?></td>
+								 <td><a href="?page=editbrand_dashboard&id=<?php echo $brandlist["brand_id"];  ?>&name=<?php echo $brandlist["name"]; ?>  ">Edit</a></td>
+								<td><a href="<?php echo $controller  ?>?id=<?php  echo $brandlist["brand_id"];   ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+							   </tr>
+								<?php } ?>
+					   </tbody>	
+							
+					</table>
+				
+					  </fieldset>
+            </div>
+            
+</div>
+</div>
+<!-- Datatables enable script / Server side datatable-->
+  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
+  
+    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			        alert('added');
+		}else{
+			alert('not added');
+		}
+    });
+}
+</script>

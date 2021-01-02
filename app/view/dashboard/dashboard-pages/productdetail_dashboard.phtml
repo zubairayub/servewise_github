@@ -1,0 +1,84 @@
+<?php
+	//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);	
+session_start();
+//require ('../model/product/productClass.php');
+//require ('../model/classDatabaseManager.php');
+require APPLICATION_PATH . DS . 'model' . DS  . 'product' . DS . 'productClass.php';
+require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
+
+//if(!isset($_SESSION["email"])){
+				//echo "<script>window.location.href='login.php';</script>";
+
+//}
+	$product = new Product();
+if(isset($_SESSION["logIn"])){
+$emailid= $_SESSION["logIn"];
+$userid = $_SESSION['logInId'];
+$productid = $_GET["id"];
+}else{
+
+    $emailid= NULL;
+$userid = NULL;
+$productid = 1;
+}
+$productdetails = $product->getspecificproductdata($productid);
+
+?>
+<?php require $footer;?>
+<div class="wrapper">
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">	
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-content">
+                <div class="detail-left-side">
+                    <img src="p1.jpg" width="100%" id="ProductImgGrid">
+                    <div class="small-img-grid">
+                        <div class="small-img">
+                            <img src="p1.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p3.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p2.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p2.jpg" width="100%" class="small-grid">
+                        </div>
+                    </div>
+                </div>
+				<form action="../Controller/addtocart.php" method="post">
+                <div class="detail-right-side">
+                    <p>Home / Hoodie</p>
+					<input type="text" name="productid" value="<?php if(isset($productdetails)){echo $productdetails[0]['product_id']; } ?>" >
+					<input type="text" name="productprice" value="<?php if(isset($productdetails)){echo $productdetails[0]['price']; } ?>" >
+					<input type="text" name="userid" value="<?php echo $userid  ?>"  >
+                    <h1><?php if(isset($productdetails)){echo $productdetails[0]['name']; } ?></h1>
+					<h4><span>$</span> <?php if(isset($productdetails)){echo $productdetails[0]['price']; } ?></h4>
+                    <select name="size">
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="XXL">XXL</option>
+                        <option value="XL">XL</option>
+                        <option value="Large">Large</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Small">Small</option>
+                    </select>
+                    <div class="product-cart-btn">
+                    <input type="number" name="quantity" value="1">
+                  	<input type="submit" name="addtocartbtn" value="add to cart">
+                    </div>
+                    <div class="product-detail-cart">
+                    <h3>Product Detail <i class="fa fa-indent"></i></h3>
+                    <p><?php if(isset($productdetails)){echo $productdetails[0]['description']; } ?></p>
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+</div>

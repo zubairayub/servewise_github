@@ -1,0 +1,76 @@
+<?php
+	//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);	
+//session_start();
+//require ('../model/user/userClass.php');
+//require ('../model/classDatabaseManager.php');
+//if(!isset($_SESSION["email"])){
+				//echo "<script>window.location.href='login.php';</script>";
+
+//}
+// require APPLICATION_PATH . DS . 'model' . DS  . 'user' . DS . 'userClass.php';
+// require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
+
+	$login=new User();
+if(isset($_SESSION["logIn"])){
+$emailid= $_SESSION["logIn"];
+}else{
+	$emailid = NULL;
+}
+$olddetails = $login->getuserdetails($emailid);
+
+?>
+
+	<!-- end navbar -->
+	<!-- main content -->
+	<?php require $footer;?>		
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="user-content">
+                    <div class="user-content-upper"></div>
+                    <div class="user-content-dis">
+                        <div class="container-content">
+                            <form action="../Controller/userupdate.php" method="POST">
+                            <div class="user-profile-upper">
+                                 <input type="submit" class="editbtn1" name="updatebtn" value="Update" />
+                                <a class="editbtn2" href="../View/userprofile.php">Cancel</a>
+                            </div>
+                            <div class="user-profile-dis">
+                                <div class="user-image">
+                                    <input type="file">
+                                </div>
+                                <div class="user-detail1">
+                                    <label>First Name.</label>
+                                    <input type="text" name="fname" value="<?php if(isset($olddetails)){echo $olddetails[0]['first_name']; } ?>">
+                                    
+                                    <label>last Name.</label>
+                                    <input type="text" name="lname" value="<?php if(isset($olddetails)){echo $olddetails[0]['last_name']; } ?>">
+                                    
+                                    <label>contact No.</label>
+                                    <input type="text" name="contactno" value="<?php if(isset($olddetails)){echo $olddetails[0]['contact_no']; } ?>">
+                                </div>
+                                <div class="edit-detail">
+                                    <label>Address.</label>
+                                    <input type="text" name="address" value="<?php if(isset($olddetails)){echo $olddetails[0]['address']; } ?>">
+                                    <label>Address2.</label>
+                                    <input type="text" name="address2" value="<?php if(isset($olddetails)){echo $olddetails[0]['address_2']; } ?>">
+                                    <label>City.</label>
+                                   <input type="text" name="city" value="<?php if(isset($olddetails)){echo $olddetails[0]['city']; } ?>">
+                                    <label>State.</label>
+                                   <input type="text" name="state" value="<?php if(isset($olddetails)){echo $olddetails[0]['state']; } ?>">
+                                    <label>Zip Code.</label>
+                                   <input type="text" name="zip" value="<?php if(isset($olddetails)){echo $olddetails[0]['zip']; } ?>">
+                                    <label>Country.</label>
+                                    <input type="text" name="country" value="<?php if(isset($olddetails)){echo $olddetails[0]['country']; } ?>">
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+			</div>		
+		</div>
+	</div>
+	<!-- end main content -->

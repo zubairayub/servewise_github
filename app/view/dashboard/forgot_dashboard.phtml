@@ -1,0 +1,38 @@
+
+    <div class="container-varification">
+    <div class="login-content">
+    <form action="<?php echo $controller ;?>" method="POST" id="form">
+            <h2 class="title">Forgot Your Password?</h2>
+            <div class="input-div one">
+              <div class="i">
+                <i class="fa fa-user"></i>
+              </div>
+              <div class="div">
+                <h5>Enter Your E-mail</h5>
+                <input type="text" class="input" name="email" required />
+              </div>
+            </div>
+            
+            <input type="button" class="btn" name="sendbtn" value="Send" onclick="submitForm()"/>
+            
+          </form>
+          
+                   
+    </div>
+    </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('Password is sent to your Email ID.');
+            window.location.replace("?page=login_dashboard");
+    }else if (data == 0){
+      alert('No user found against this Email ID.');
+    }
+    });
+}
+</script>

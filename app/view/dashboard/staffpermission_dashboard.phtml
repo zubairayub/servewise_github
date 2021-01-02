@@ -1,0 +1,128 @@
+<?php 
+$menus  =  getmenu(); 
+if(isset($_POST['usertype']))
+{
+
+$type = $_POST['usertype']; 
+
+
+}else{
+
+
+$type = 1; 
+
+} 
+
+if(isset($_GET['error']))
+{
+
+echo 'error';
+
+}
+
+
+$usertypes = getusertypes();
+
+?>
+<div class="wrapper">
+		<div class="row">
+			<div class="staff-permission-main">
+            <form class="premission-assign" action="#"  method="POST" data-aos="fade-right">
+                  <p>Premission Assign</p>
+            <select onchange="this.form.submit()" name='usertype'>
+            	<?php
+
+
+            		foreach ($usertypes as $key => $value) {
+                                    if($type == $value['id']){
+
+                                          $selected = 'selected';
+
+                                    }else{
+
+                                           $selected = NULL;
+                                    }
+
+            			?>
+            				
+            					<option value="<?php echo $value['id'];?>" <?php echo $selected;?>  ><?php echo $value['title'];?></option>
+
+            				
+            			<?php
+            		} 
+            		?>
+                        </select>
+                        
+
+                        </form>
+                        
+
+                        <form class="permission-check" action="<?php echo $controller?>" method="post">   
+            		<?php
+
+
+
+            	foreach ($menus as $key => $value) {
+                        ECHO '<div class="permission-divs" data-aos="fade-up-right"> ';
+                              $from = 'menu_id ='.$value['menu_id'] ;
+                        $check = ispermissionallowed($type,$from);
+
+                        if(empty($check)){
+
+                              $check = NULL;
+                        }else{
+                              $check = 'CHECKED';
+
+                        }
+            		echo "<div class='main-pre'>  <input class='per-main' type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><div class=pre-main-title>". $value['title'] . "</div></input></div>";
+
+            		$submenu = getsubmenu($value['menu_id']);
+            		if(!empty($submenu)){
+                              
+
+
+            			
+
+
+            			foreach ($submenu as $key => $value) {
+                                    $from = 'submenu_id ='.$value['sm_id'] ;
+                                            $check = ispermissionallowed($type,$from);
+
+                        if(empty($check)){
+
+                              $check = NULL;
+                        }else{
+                              $check = 'CHECKED';
+
+                        }
+
+
+
+
+
+
+
+            			echo "<div class='sub-per'><input type='checkbox' name='submenu[".$value['sm_id']."]' ".$check.">". $value['sm_title'] . "</input></div>";
+            			}
+
+
+                             
+
+
+
+
+            		}
+
+                        ECHO '</div>';
+            	}
+
+            	 ?>
+                   <BR>
+                  <div class="permission-btn">
+                        <input type="hidden" name="type" value="<?php echo $type?>" />
+                        <input type="submit" name="submit" value="submit" />
+                  </div>
+                   </form>
+        </div>
+</div>
+</div>

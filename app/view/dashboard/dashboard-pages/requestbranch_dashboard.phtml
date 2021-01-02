@@ -1,0 +1,76 @@
+
+	  <?php require $footer;?>	
+	<!-- main content -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="container-content">
+					<form action="<?php echo $controller ?>" method="post" >
+                    <div class="user-profile-dis">
+                        <div class="user-image">
+                          
+                        </div>
+						
+						<?php  foreach($getvendors as $vendorlist){
+						?>
+						<div>
+							<label for="vendor">Choose a vendor:</label>
+
+							<select name="vendor" id="vendor">
+  							<option value="<?php echo $vendorlist["vendor_id"];?>"><?php echo $vendorlist["name"];  ?></option>
+  							
+							</select>
+						</div>
+						<?php } ?>
+                    
+						<div class="user-detail1">
+                            <label>Name.</label>
+                            <input name="name" type="text" >
+                           
+                            <label>contact No.</label>
+                            <input name="contactno" type="number" >
+							 <label>email id.</label>
+                            <input name="email" type="text" >
+                        </div>
+                        <div class="user-detail1">
+                            <label>Address.</label>
+                            <input name="address" type="text" >
+                            <label>Address2.</label>
+                            <input name="address2" type="text" >
+                            <label>City.</label>
+                           <input name="city" type="text" >
+                            <label>State.</label>
+                           <input name="state" type="text" >
+                            <label>Country.</label>
+                           <input name="country" type="text" >
+							
+                        </div >
+						
+						<div class="user-detail1">
+							<input type="submit" name="signupbtn" value="Request" >
+						</div>
+						
+                    </div>
+							</form>
+                </div>
+				
+			</div>		
+				
+		</div>
+	</div>
+	<!-- end main content -->
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script> 

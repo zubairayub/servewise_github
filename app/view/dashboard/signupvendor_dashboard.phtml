@@ -1,0 +1,90 @@
+
+	  <?php require $footer;?>	
+	<!-- main content -->
+	<div class="wrapper">
+    <h1 data-aos="fade-right"
+     data-aos-duration="1500">Signup Vendor</h1>
+		<div class="row">
+			<div class="signup-dashboard">
+				<div class="container-content">
+					
+                    <div class="signup-profile-dis">
+                        
+                    <form class="signup-vendor-form" action="<?php echo $controller ?>" method="post" id="form">
+						<div class="user-detail1 sign-vendor-name" data-aos="fade-right" data-aos-duration="1000">
+                            <label>Name.</label>
+                            <input name="name" type="text" >
+                           
+                            <label>contact No.</label>
+                            <input name="contactno" type="number" >
+							 <label>email id.</label>
+                            <input name="email" type="text" >
+                        </div>
+                        <div class="user-detail1"  data-aos="fade-left" data-aos-duration="1000">
+                            <div class="signup-address">
+                                <label>Address.</label>
+                                <input name="address" type="text" >
+                                <label>Address2.</label>
+                                <input name="address2" type="text" >
+                            </div>
+                            
+					<div class="frmDronpDown">
+        <div class="row">
+            <label>Country:</label><br /> <select name="country"
+                id="country-list" 
+                onChange="getState(this.value);">
+                <option value disabled selected>Select Country</option>
+<?php
+foreach ($getcountries as $country) {
+    ?>
+<option value="<?php echo $country["id"]; ?>" ><?php echo $country["name"]; ?></option>
+<?php
+}
+?>
+</select>
+        </div>
+        <div class="row">
+            <label>State:</label><br /> <select name="state"
+                id="state-list" 
+                onChange="getCity(this.value);">
+                <option value="">Select State</option>
+          
+            </select>
+        </div>
+        <div class="row">
+            <label>City:</label><br /> <select name="city"
+                id="city-list" >
+                <option>Select City</option>
+            </select>
+        </div>
+    </div>		
+                        </div >
+						
+						<div class="user-detail1" data-aos="fade-up-left" data-aos-duration="1000">
+                            <div class="signup-vendor-btn">
+							    <input type="button" name="signupbtn" value="Request" onclick="submitForm()">
+                            </div>
+                        </div>
+						</form>
+                    </div>
+                </div>
+			</div>		
+		</div>
+	</div>
+	<!-- end main content -->
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('added');
+    }else{
+      alert('error');
+    }
+    });
+}
+
+</script> 

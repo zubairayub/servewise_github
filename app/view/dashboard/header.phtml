@@ -1,0 +1,102 @@
+<body class="overlay-scrollbar light">
+
+<div class="navbar">
+		<!-- nav left -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link">
+					<i class="fa fa-bars" onclick="collapseSidebar()">
+					</i>
+				</a>
+			</li>
+			<li class="nav-item">
+			<a href="?page=home">	<img src="<?php echo $image;?>logo.png" alt="Admin logo" class="logo logo-light"></a>
+			<a href="?page=home">   <i class="fa fa-globe" aria-hidden="true"></i> </a>
+			</li>
+		</ul>
+		<!-- end nav left -->
+		<!-- form -->
+		<form class="navbar-search">
+		<a href="#">	<input type="text" name="Search" class="navbar-search-input" placeholder="What you looking for...">
+			<i class="fa fa-search"></i>
+		</form>
+		<!-- end form -->
+		<!-- nav right -->
+		<ul class="navbar-nav nav-right">
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link">
+          <i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
+					<span class="navbar-badge">2</span>
+				</a>
+				<ul id="notification-menu" class="dropdown-menu notification-menu">
+					<div class="dropdown-menu-header">
+						<span>
+							Notifications
+						</span>
+					</div>
+					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+									Nazreen Consulting Demo.
+									<br>
+									<span>
+										23/10/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-tasks" aria-hidden="true"></i>
+								</div>
+								<span>
+									Nazreen Consulting Demo.
+									<br>
+									<span>
+										23/10/2020
+									</span>
+								</span>
+							</a>
+						</li>
+					</div>
+					<div class="dropdown-menu-footer">
+						<span>
+							View all notifications
+						</span>
+					</div>
+				</ul>
+			</li>
+			<li class="nav-item avt-wrapper">
+				<div class="avt dropdown">
+					<img src="<?php echo $image;?>logo.png" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+					<ul id="user-menu" class="dropdown-menu">
+						<li  class="dropdown-menu-item">
+							<a href="?page=userprofile_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-user-tie"></i>
+								</div>
+								<span>Profile</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="?page=login_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-sign-out-alt"></i>
+								</div>
+								<span>Logout</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!-- end nav right -->
+  </div>
+  
+  </body>

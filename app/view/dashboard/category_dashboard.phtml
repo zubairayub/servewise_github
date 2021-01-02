@@ -1,0 +1,91 @@
+<!-- Datatables CSS & JS-->
+	
+    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+<div class="wrapper">
+		<div class="row">
+			<div class="category-dashboard-main">
+			<form action="<?php echo $controller ?>" method="post" id="form">
+            <h1>Category</h1> 
+              	<label>Category name :</label>
+				<input name="category" value="" type="text">
+				<label>Category ID :</label>
+				<input name="category" value="" type="text">
+				<label>Category 2nd Level :</label>
+				<input name="category" value="" type="text">
+				
+                <input type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
+        </form>
+                    </div>
+            <div>
+            
+					  <fieldset>
+					  <table class="table table-bordered" id="clientstable">
+					
+						<thead class="bg-info">
+							<th>Category ID</th>
+							<th>Category</th>
+                            <th>2nd Level Category</th>
+							<th></th>
+							<th></th>
+                        </thead>
+                   
+					   <tbody>
+						   
+						 <?php
+								if (isset($_SESSION['vendorid'])){
+									if (!empty($getcategory)){
+								foreach($getcategory as $categorylist){
+                           ?>
+                        
+						 
+											
+								
+								<tr>
+								<td><?php echo $categorylist["category_id"]; ?></td>
+								<td><?php echo $categorylist["name"]; ?></td>
+								<td><a href="?page=subcategorytwo_dashboard&id=<?php echo $categorylist["category_id"]; ?>" >Add</a></td>								
+                                <td><a href="?page=editcategory_dashboard&id=<?php echo $categorylist["category_id"]; ?>&name=<?php echo $categorylist["name"]?>">Edit</a></td>
+								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+								
+							   </tr>
+								<?php }
+									} else {
+										echo "No Record Found";
+									}
+								} else {
+									echo "first become a vendor";
+								}
+						   ?>
+					   </tbody>	
+							
+					</table>
+					  </fieldset>
+            </div>
+            
+</div>
+</div>
+<!-- Datatables enable script / Server side datatable-->
+  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
+  
+    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+			        alert('category added');
+		}else{
+			alert('category not added');
+		}
+    });
+}
+</script>

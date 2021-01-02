@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Antic Slab', serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.container{
+    max-width: 1280px;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+/* header */
+header{
+    width: 100%;
+    background: rgb(226,236,255);
+background: radial-gradient(circle, rgba(226,236,255,1) 0%, rgba(255,255,255,1) 100%);  
+height: 100vh;
+}
+
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+header .nav .nav-logo{
+    width: 100px;
+    overflow: hidden;
+}
+
+header .nav .nav-logo img{
+    width: 100px;
+}
+
+header .nav .nav-navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .nav .nav-navigation a{
+    padding: 0px 40px;
+    font-size: 24px;
+    transition: .5s ease all;
+}
+
+header .nav .nav-navigation a:hover{
+    background-color: black;
+    color: white;
+    letter-spacing: 5px;
+}
+
+header .hero-main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+header .hero-main .hero-left{
+    flex-basis: 50%;
+    overflow: hidden;
+}
+
+header .hero-main .hero-left img{
+    width: 500px;
+}
+header .hero-main .hero-right{
+    flex-basis: 50%;
+}
+
+header .hero-main .hero-right .hero-heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+header .hero-main .hero-right .hero-dis{
+    width: 500px;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+header .hero-main .hero-right .hero-btn a{
+    font-size: 24px;
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 10px 25px;
+    color: blue;
+    transition: .5s ease all;
+}
+
+header .hero-main .hero-right .hero-btn a:hover{
+    background-color: blue;
+    color: white;
+}
+
+header .hero-main .hero-right .hero-btn a span{
+    transition: .5s ease all;
+}
+
+header .hero-main .hero-right .hero-btn a:hover span{
+    padding-left: 50px;
+    color: white;
+}
+
+/*  product1 */
+
+.product{
+    width: 100%;
+    padding-top: 50px;
+}
+.product .product-heading{
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.homopatic{
+    width: 100%;
+}
+
+.container1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 4px 16px;
+  }
+  
+  #cards-container {
+    overflow: hidden;
+    margin: 20px;
+  }
+  
+  .cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 99999px;
+  }
+  
+  .card {
+    /* Add shadows to create the "card" effect */
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #fff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    width: 235px;
+    margin: 15px 7.5px;
+  }
+  
+  .card:hover {
+    -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .container .product-btn{
+    font-size: 20px;
+    color: blue;
+    transition: .5s ease all;
+  }
+
+  .container .product-btn:hover{
+      letter-spacing: 2px;
+  }
+  
+  .card .img {
+    max-width: 220px;
+    height: 220px;
+    display: inline-block;
+  }
+  
+  #slide-left-container,
+  #slide-right-container {
+    display: none;
+  }
+  
+  
+  #slide-left-container.active,
+  #slide-right-container.active {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .slide-left,
+  .slide-right {
+    border-color: black;
+    border-style: solid;
+    height: 20px;
+    width: 20px;
+    margin-top: 30%;
+  }
+  
+  .slide-left {
+    border-width: 4px 0 0 4px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-left: 40%;
+  }
+  
+  .slide-right {
+    border-width: 4px 4px 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: 22%;
+  }
+
+  /* product 1 end */
+
+  /* brand */
+
+  .brand{
+      width: 100%;
+      padding-top: 100px;
+  }
+
+  .brand .brand-content .brand-heading{
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .brand .brand-content-logo{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .brand .brand-content-logo .brand-logo{
+      width: calc(100%/4);
+      transition: .5s ease all;
+  }
+  .brand .brand-content-logo .brand-logo:hover{
+      transform:scale(1.1) ;
+  }
+  
+
+  .brand .brand-content-logo .brand-logo img{
+      width: 200px;
+      height: 200px;
+  }
+
+  /* brand-end */
+  
+  /* ad */
+
+  .ad{
+      width: 100%;
+      padding-top: 100px;
+  }
+
+  .ad .ad-content{
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: 10px 10px 23px -10px rgb(0, 0, 0,0.3);
+    transition: .5s ease all;
+}
+  
+
+  .ad .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  .ad .ad-content:hover{
+      transform: scale(1.1) ;
+      box-shadow: 10px 10px 23px -10px rgb(0, 0, 0,0.9);
+    }
+
+  .ad .ad-content a{
+      width: 1000px;
+      height: 200px;
+      overflow: hidden;
+  }
+
+  .ad .ad-content a img{
+    height: 200px;
+    width: 1000px;
+  }
+  /* ad end */
+
+/* homo */
+
+.homopatic{
+    width: 100%;
+    padding-top: 100px;
+}
+
+.homopatic .homo-heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+.homopatic .homo-content{
+    width: 100%;
+
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.homo-content .homo-product-card{
+    width: 220px;
+    margin: 0px 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: .5s ease all;
+}
+
+.homo-content .homo-product-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transform:scale(1.1) ;
+}
+
+.homopatic .homo-card-content{
+    padding: 10px;
+}
+
+.homopatic .homo-card-content b{
+    font-size: 20px;
+}
+
+.homopatic .homo-card-content span{
+    font-size: 14px;
+}
+
+.homopatic .homo-content .homo-product-card .homo-card-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.homopatic .homo-content .homo-product-card .homo-btn{
+    font-size: 20px;
+    color: blue;
+    margin-top: 10px;
+    transition: .5s ease all;
+}
+
+.homopatic .homo-content .homo-product-card .homo-btn:hover{
+    letter-spacing: 4px;
+}
+
+/* about */
+
+.about{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.about .about-content{
+    text-align: center;
+}
+
+.about .about-content .about-heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about .about-content .about-dis{
+    font-size: 20px;
+    color: rgb(92, 92, 92);
+    padding-bottom: 40px;
+}
+
+/* about us end */
+
+/* contact us */
+
+.contactus{
+    width: 100%;
+    padding-top: 50px;
+}
+.contactus .contact-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contactus .contact-content .contact-left-side{
+    flex-basis: 50%;
+}
+
+.contactus .contact-content .contact-right-side{
+    flex-basis: 50%;
+}
+
+.contactus .contact-content .contact-right-side .contact-heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.contactus .contact-content .contact-right-side form input{
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(209, 209, 209);
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.contactus .contact-content .contact-right-side form textarea{
+    height: 70px;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    background-color: rgb(209, 209, 209);
+    padding: 10px;
+}
+
+.contactus .contact-content .contact-right-side form button{
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(209, 209, 209);
+    font-size: 20px;
+    transition: .5s ease all;
+    
+}
+
+.contactus .contact-content .contact-right-side form button:hover{
+    background-color: rgb(128, 255, 0);
+    color: white;
+    letter-spacing: 4px;
+}
+
+
+
+

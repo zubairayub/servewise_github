@@ -1,0 +1,38 @@
+
+    <div class="container-varification">
+    <div class="login-content">
+        <form action="<?php echo $controller ;?>" method="POST">
+            <h2 class="title">Varification</h2>
+            <div class="input-div one">
+              <div class="i">
+                <i class="fa fa-user"></i>
+              </div>
+              <div class="div">
+                <h5>Code</h5>
+                <input type="text" name="securitytxt" class="input" required />
+              </div>
+            </div>
+            <a href="#">Resend Code.</a>
+            
+            <input type="button" class="btn" name="confirmbtn" value="Verify" onclick="submitForm()" />
+            
+          </form>
+          
+                   
+    </div>
+    </div>
+ <script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>
