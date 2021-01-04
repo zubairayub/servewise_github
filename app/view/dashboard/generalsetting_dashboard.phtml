@@ -1,7 +1,44 @@
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>General Setting</h1>
+      <div class="row">
+            <div class="general-dashboard-main">
+                  <h1 data-aos="fade-right"data-aos-duration="1500">General Setting</h1>
+            </div>  
+            <div class="general-main" data-aos="zoom-in-up" data-aos-duration="600">
+                  <form action="">
+                        <div class="general-input1">
+                              <div class="g-input-label">System Name</div>
+                              <div class="g-input-input">
+                                    <input type="text">
+                              </div>
+                        </div>
+                        <div class="general-input2">
+                              <div class="g-input-label">System Logo</div>
+                              <div class="g-input-input">
+                                    <input type='file' onchange="readURL(this);" />
+                                    <img id="blah" src="http://placehold.it/100" alt="your image" style="width:100px" />
+                              </div>
+                        </div>
+                        <div class="general-input4">
+                              <div class="g-input-label">System timezone</div>
+                              <div class="g-input-input">
+                                    <select name="" id="">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                    </select>
+                              </div>
+                        </div>
+                        <div class="general-input5">
+                              <div class="g-input-label">Admin Login Page Background</div>
+                              <div class="g-input-input">
+                                    <input type='file' onchange="readURL(this);" />
+                                    <img id="blah" src="http://placehold.it/150" alt="your image" style="width:150px" />
+                              </div>
+                        </div>
+                        <div class="g-btn">
+                              <input type="button" value="Update">
+                        </div>
+                  </form>
+            </div>    
       </div>
-</div>
 </div>
