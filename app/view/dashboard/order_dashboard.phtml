@@ -1,13 +1,13 @@
 <div class="wrapper">
     <div class="row">
         <div class="order-dashboard-main">
-        <h1>All Order</h1>
-        <form>
+        <h1 data-aos="fade-right"data-aos-duration="1500">All Order</h1>
+        <form data-aos="fade-left"data-aos-duration="1500">
             <input type="text">
-            <input type="button" value="Search">
+            <input class="s-btn" type="button" value="Search">
         </form>
     </div>
-    <div class="order-table-main">
+    <div class="order-table-main" data-aos="zoom-in-up" data-aos-duration="600">
         <form action="">
             <table>
                 <tr>
@@ -28,10 +28,13 @@
                     <td>20$</td>
                     <td>Pending</td>
                     <td>Unpaid</td>
-                    <td>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
+                    <td class="option">
+                        <a href="#">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                        </a>
                     </td>
                 </tr>
             </table>
