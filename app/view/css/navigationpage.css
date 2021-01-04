@@ -2455,10 +2455,25 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 .general-main form .g-btn{display: flex;justify-content: flex-end;align-items: center;padding: 10px;}
 .general-main form .g-btn input{font-size: 20px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); background: white;border: 1px solid black;border-radius: 4px;padding: 5px;font-weight: 600;transition: .3s ease;}
 .general-main form .g-btn input:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);background-color: springgreen;color: white;border: 1px solid springgreen;}
-
-
-
 /* General-Setting-dashboard-end */
+
+/* Featured-activation */
+
+.feature-dashboard-main{width: 100%;margin: 20px 0px;}
+.feature-main{width: 100%;}
+.feature-main .feature-hhtps .feature-hhtps-heading,.feature-maintenance-heading,.feature-classified-heading,.feature-business-heading,.feature-Payment-heading,.feature-Login-heading{width: 100%;font-size: 24px;font-weight: 600;text-align: center;margin: 20px 0px;}
+.feature-main .feature-hhtps .feature-hhtps-box{display: flex;justify-content: center;align-items: center;margin: 10px 0px;}
+.feature-main .f-box-content {background: white;border-radius: 4px;padding: 15px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);display: flex;justify-content: center;align-items: center;flex-direction: column;}
+.feature-main .f-box-content .f-box-head{margin-bottom: 10px;font-size: 18px;font-weight: 600;}
+.feature-main .feature-maintenance .feature-maintenance-box{display: flex;justify-content: center;align-items: center;}
+.feature-main .feature-classified .feature-classified-box{display: flex;justify-content: center;}
+.feature-main .feature-business .feature-business-box{display: flex;justify-content: center;align-items: center;flex-wrap: wrap;}
+.feature-main .feature-business .f-box-content{margin: 15px;}
+.feature-main .feature-Payment-box{display: flex;justify-content: center;align-items: center;flex-wrap: wrap;}
+.feature-main .feature-Payment-box .f-box-content{margin: 10px;}
+.feature-main .feature-login-main{display: flex;justify-content: center;align-items: center;}
+.feature-main .feature-login-main .feature-Login-box{margin: 10px;}
+/* Featured-activation-end */
 
 /* dashboard-pages-end */
 
