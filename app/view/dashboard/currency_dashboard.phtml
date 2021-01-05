@@ -1,9 +1,97 @@
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>Currency</h1>
+    <div class="row">
+        <div class="currency-dashboard-main">
+            <h1 data-aos="fade-right"data-aos-duration="1500">Currency</h1>
         </div>
-</div>
+        <div class="currency-main">
+            <div class="sys-currency-dash">
+                <div class="sys-box" data-aos="fade-right"data-aos-duration="900">
+                    <div class="sys-box-head">System Default Currency</div>
+                    <div class="sys-box-dis">
+                        <div class="sys-dis-sub-head">System Default Currency</div>
+                        <div class="sys-dis-sub-input">
+                            <select name="" id="">
+                                <option value="1">Pakistani</option>
+                                <option value="2">Pakistani</option>
+                                <option value="3">Pakistani</option>
+                            </select>
+                            <input type="button" value="SAVE">
+                        </div>
+                    </div>
+                </div>
+                <div class="sys-box" data-aos="fade-left"data-aos-duration="900">
+                    <div class="sys-box-head">Set Currency Formats</div>
+                    <div class="sys-box-dis">
+                        <div class="sys-section1">
+                            <div class="sys-dis-sub-head">Symbol Format</div>
+                            <div class="sys-dis-sub-input">
+                                <select name="" id="">
+                                    <option value="1">[Symbol] [Amount]</option>
+                                    <option value="2">[Amount] [Symbol]</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sys-section1">
+                            <div class="sys-dis-sub-head">No of decimals</div>
+                            <div class="sys-dis-sub-input">
+                                <select name="" id="">
+                                    <option value="1">1234</option>
+                                    <option value="2">123.4</option>
+                                    <option value="3">12.34</option>
+                                    <option value="4">1.234</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sys-dis-sub-btn">
+                            <input type="button" value="SAVE">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sys-dashboard-btn" data-aos="fade-left"data-aos-duration="700">
+                <input type="button" value="Add New Currency">
+            </div>
+            <div class="currency-table" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="table-heading">
+                    <input type="text" value="Search">
+                </div>
+                <form action="">
+                    <table>
+                        <tr>
+                            <th>Serial.No</th>
+                            <th>Currency Name</th>
+                            <th>Currency Symbol</th>
+                            <th>Currency Code</th>
+                            <th>Exchange Rate (1 USD=?)</th>
+                            <th>Status</th>
+                            <th>Option</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pakistani Rupees</td>
+                            <td>RS</td>
+                            <td>PKR</td>
+                            <td>157.00</td>
+                            <td>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td class="option">
+                                <a href="#">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 

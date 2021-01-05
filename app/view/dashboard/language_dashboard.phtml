@@ -1,8 +1,65 @@
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>language</h1>
+    <div class="row">
+        <div class="language-dashboard-main">
+            <h1 data-aos="fade-right" data-aos-duration="1500">language</h1>
         </div>
-</div>
+        <div class="language-main">
+            <div class="language-selector" data-aos="flip-left" data-aos-duration="900">
+                <div class="lang-d-box">
+                    <div class="lang-box-upper">
+                        Default Language
+                    </div>
+                    <div class="lang-box-dis">
+                        <div class="head">Default Language</div>
+                        <div class="lang-box-input">
+                            <form action="">
+                                <select name="" id="">
+                                    <option value="1">English</option>
+                                    <option value="2">Urdu</option>
+                                    <option value="3">Arabic</option>
+                                </select>
+                                <input type="button" value="SAVE">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-btn-add" data-aos="fade-left" data-aos-duration="1000">
+                <input type="button" value="Add New Language">
+            </div>
+            <div class="lang-dashborad-table" data-aos="fade-up" data-aos-duration="900">
+                <form action="">
+                    <table>
+                        <tr>
+                            <th>Serial.No</th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>RTL</th>
+                            <th>Options</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>English</td>
+                            <td>en</td>
+                            <td>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td class="option">
+                                <a href="#">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
