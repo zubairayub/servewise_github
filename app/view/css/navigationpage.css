@@ -2533,8 +2533,39 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 .pay-me-dashboard .pay-me-box .pay-me-box-dis .pay-me-dis-input input{border: 1px dashed black;border-radius: 4px;padding: 5px;}
 .pay-me-dashboard .pay-me-box .pay-me-box-btn{display: flex;justify-content: flex-end;align-items: center;margin: 10px 0px;}
 .pay-me-dashboard .pay-me-box .pay-me-box-btn input{background: white;font-size: 20px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);transition: .3s ease;}
-.pay-me-dashboard .pay-me-box .pay-me-box-btn input:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);  background-color: springgreen;color: white;border: 1px solid springgreen;}
+.pay-me-dashboard .pay-me-box .pay-me-box-btn input:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);background-color: springgreen;color: white;border: 1px solid springgreen;}
 /* payment-method-dashboard-end */
+
+/* SMTP-dashboard */
+
+.smtp-dashboard-main{width: 100%;margin: 20px 0px;}
+.smtp-dashboard{width: 100%;}
+.smtp-dashboard .smtp-d-box{width: 70%;margin: auto;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px;}
+.smtp-dashboard .smtp-d-box .smtp-head{font-size: 20px;font-weight: 600;padding-bottom: 20px;}
+.smtp-dashboard .smtp-d-box .smtp-content .smtp-content1{padding-bottom: 15px; display: flex;justify-content: flex-start;align-items: center;width: 100%;}
+.smtp-dashboard .smtp-d-box .smtp-content .smtp-content1 .smtp-head-c{flex-basis: 30%;}
+.smtp-dashboard .smtp-d-box .smtp-content .smtp-content1 .smtp-head-input{flex-basis: 70%;}
+.smtp-dashboard .smtp-d-box .smtp-content .smtp-content1 .smtp-head-input select{width: 100%;font-size: 18px;border-radius: 4px;border: 1px dashed black;padding: 0px 10px;}
+.smtp-dashboard .smtp-d-box .smtp-content .smtp-content1 .smtp-head-input input{border: 1px dashed black;width: 100%;font-size: 20px;border-radius: 4px;}
+.smtp-dashboard .smtp-d-box .smtp-btn{display: flex;justify-content: flex-end;align-items: center;padding: 10px 0px;}
+.smtp-dashboard .smtp-d-box .smtp-btn input{font-size: 20px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 6px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);transition: .3s ease;}
+.smtp-dashboard .smtp-d-box .smtp-btn input:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);background-color: springgreen;color: white;border: 1px solid springgreen;}
+.smtp-dashboard-note{text-align: center;width: 50%;margin: 30px auto;background: white;border-radius: 4px;padding: 10px 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+/* SMTP-dashboard-end */
+
+/* social-media-dashboard */
+
+.social-media-dashboard-main{width: 100%;margin: 20px 0px;}
+.social-media-dashboard{width: 100%;display: flex;justify-content: center;align-items: center;flex-wrap: wrap;}
+.social-media-dashboard .social-media-dashboard-box{flex-basis: 40%; background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);margin: 20px;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-head{font-size: 20px;font-weight: 600;margin-bottom: 20px;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-dis{width: 100%;display: flex;align-items: center; flex-wrap: wrap;margin-bottom: 20px;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-dis .social-media-dashboard-box-dis-head{width: 100%;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-dis .social-media-dashboard-box-dis-dis{width: 100%;border: 1px dashed black;border-radius: 4px;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-btn{display: flex;width: 100%;justify-content: flex-end;align-items: center;padding: 10px;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-btn input{background: white;font-size: 20px;font-weight: 600;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);transition: .3s ease;}
+.social-media-dashboard .social-media-dashboard-box .social-media-dashboard-box-btn input:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);background-color: springgreen;color: white;border: 1px solid springgreen;}
+/* social-media-dashboard-end */
 
 /* dashboard-pages-end */
 
