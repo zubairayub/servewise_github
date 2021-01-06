@@ -20,14 +20,14 @@ require $config_service['BRANCH_CLASS'];
 
 	if(isset($_POST["vendor"])){
 	
-	$vendorid = $_POST["vendor"];
-		$name = $_POST["name"];
-     $contactno = $_POST["contactno"];
-	$emailid = $_POST["email"];
-		$address = $_POST["address"];
-        $address2 = $_POST["address2"];
+	       $vendorid = $_POST["vendor"];
+	       $name = $_POST["name"];
+         $contactno = $_POST["contactno"];
+	       $emailid = $_POST["email"];
+		     $address = $_POST["address"];
+         $address2 = $_POST["address2"];
       
-		$userid = $_SESSION['logInId'];
+		     $userid = $_SESSION['logInId'];
 	
 	
 	

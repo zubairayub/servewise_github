@@ -110,7 +110,7 @@ function getmenu()
 
 
 
-function getvendors()
+function getvendors($user_id = NULL)
 {
 
 				 $query;
@@ -118,8 +118,14 @@ function getvendors()
 		
 		
 				$varr = new databaseManager();
-		
+					if(!empty($user_id)){
+$varr->query="SELECT * FROM `vendor`  where user_id = $user_id";
+		}else{
+
 			$varr->query="SELECT * FROM `vendor` ";
+		}
+		
+			
 			$result=$varr->executeQuery($varr->query,array(),"sread");
 			return  $result;
 	 
@@ -128,21 +134,47 @@ function getvendors()
 
 
 
-function getbranches()
+function getbranches($user_id =  NULL)
 {
 
 				 $query;
 		 		$db;	
 		
-		
+		 
 				$varr = new databaseManager();
-		
+		if(!empty($user_id)){
+$varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_id";
+		}else{
+
 			$varr->query="SELECT * FROM `branch` ";
+		}
+			
 			$result=$varr->executeQuery($varr->query,array(),"sread");
 			return  $result;
 	 
 
 }
+
+
+
+function getstatus($status_id)
+{
+
+				$query;
+		 		$db;	
+		
+		 
+				$varr = new databaseManager();
+		
+			$varr->query="SELECT title FROM `user_type`  where id=$status_id";
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result[0]['title'];
+	 
+
+}
+
+
+
 
 
 function getsubmenu($menuid)
@@ -291,6 +323,11 @@ function get_user_logo($user_id)
 
 
 
+
+
+
+
+
 function switcher($action,$type,$dbclass)
 {
 
@@ -350,4 +387,120 @@ function search_array($id, $array) {
    }
    return null;
 }
+
+
+
+
+function isLogin(){
+
+if(empty($_SESSION['logInId'])){
+
+
+return false;
+
+
+}else{
+
+  return true;
+}
+
+
+
+
+}
+
+
+
+
+function approve_vendor($userid,$vendor_id,$action,$dbclass){
+include_once($dbclass);
+	 $query;
+	 $db;	
+
+		
+		
+		$varr = new databaseManager();
+if($action == 'approve'){
+
+$status = 1;
+
+}else{
+
+$status = 0;
+
+}
+
+		$varr->query="UPDATE  `vendor` SET status=? where vendor_id = $vendor_id ";
+					$result=$varr->executeQuery($varr->query,array($status),"update");
+					if($result){
+
+						$varr->query="select user_id from `vendor`  where vendor_id = $vendor_id and status=1 ";
+						$result=$varr->executeQuery($varr->query,array(),"sread");
+						if(!empty($result)){
+					$varr->query="UPDATE  `user` SET type=? where user_id = $userid ";
+					$result=$varr->executeQuery($varr->query,array(3),"update");
+
+
+						}else{
+
+					$varr->query="UPDATE  `vendor` SET type=? where user_id = $userid ";
+					$result=$varr->executeQuery($varr->query,array(2),"update");
+
+						}
+
+
+
+					}
+
+
+}
+
+
+
+
+
+
+function approve_branch($userid,$vendor_id,$branch_id,$action,$dbclass){
+include_once($dbclass);
+	 $query;
+	 $db;	
+
+		
+		
+		$varr = new databaseManager();
+if($action == 'approve'){
+
+$status = 1;
+
+}else{
+
+$status = 0;
+
+}
+
+		$varr->query="UPDATE  `branch` SET status=? where branch_id = $branch_id ";
+					$result=$varr->executeQuery($varr->query,array($status),"update");
+					if($result){
+
+						$varr->query="select user_id from `branch`  where branch_id = $branch_id and status=1 ";
+						$result=$varr->executeQuery($varr->query,array(),"sread");
+						if(!empty($result[0]['user_id'])){
+					$varr->query="UPDATE  `user` SET type=? where user_id = $userid ";
+					$result=$varr->executeQuery($varr->query,array(4),"update");
+
+
+						}else{
+
+					$varr->query="UPDATE  `vendor` SET type=? where user_id = $userid ";
+					$result=$varr->executeQuery($varr->query,array(2),"update");
+
+						}
+
+
+
+					}
+
+
+}
+
 ?>

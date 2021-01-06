@@ -15,6 +15,8 @@
 				$this->query="select * from user where email_id=? and password=? and status = 'active' ";
 				$result=$this->db->executeQuery($this->query,array($email, $password),"cread");
 				if($result){
+
+					
 					$_SESSION["logIn"]=$email;
 					$_SESSION['logInId']=$result[0]['user_id'];
 					$_SESSION['type']=$result[0]['type'];
