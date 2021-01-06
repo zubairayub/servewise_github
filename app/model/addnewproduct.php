@@ -20,7 +20,7 @@ require_once $config_service['DB_CLASS'];
 	
 	//print_r($olddetails);
 	//$vbid = "1";
-	$vbid = $_SESSION['vbid'];
+	$vbid = $_SESSION['vendor_id'];
 		$getcategories = $product->getallcategories($vbid);
         
 if (isset($_POST["sc_id"])){
