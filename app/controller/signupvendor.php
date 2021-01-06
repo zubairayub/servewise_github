@@ -14,6 +14,11 @@ require $config_service['VENDOR_CLASS'];
 	$vendor=new Vendor();
 	$message=null;
 
+	
+
+
+	
+
 	if(isset($_POST["name"])){
 	
 	$name = $_POST["name"];

@@ -1,4 +1,12 @@
+
 AOS.init();
+
+    
+    $(".nav-link").click(function(){
+        $(this).toggleClass("nav-link2");
+    });
+
+
 
     function searchToggle(obj, evt){
         var container = $(obj).closest('.search-wrapper');
@@ -90,3 +98,4 @@ $(".sub-menu a").click(function () {
 	$(this).parent(".sub-menu").children("ul").slideToggle("100");
 	$(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
 });
+

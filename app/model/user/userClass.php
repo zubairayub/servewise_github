@@ -15,6 +15,8 @@
 				$this->query="select * from user where email_id=? and password=? and status = 'active' ";
 				$result=$this->db->executeQuery($this->query,array($email, $password),"cread");
 				if($result){
+
+					
 					$_SESSION["logIn"]=$email;
 					$_SESSION['logInId']=$result[0]['user_id'];
 					$_SESSION['type']=$result[0]['type'];
@@ -78,9 +80,27 @@
 					return true;
 				}
 				else{
+
+
+				$this->query="select * from branch where user_id=? ";
+				$result=$this->db->executeQuery($this->query,array($userid),"cread");
+
+
+
+				if($result){
+					$_SESSION["vendorid"]=$result[0]["vendor_id"];
+					return true;
+				}
+				else{
 					return false;
 				}
+				}
 			}
+
+
+
+
+
 		
 			
 			function updateuserdetails($fname,$lname,$contactno,$address,$address2,$city,$state,$zip,$country,$emailid){

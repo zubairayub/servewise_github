@@ -13,7 +13,17 @@ if (strpos($page, 'dashboard') !== false) {
 	$page = DS . 'dashboard' . DS . $page;
 	$dashboard = DS . 'dashboard' . DS;
 
+if((!isLogin()) && ($page!='\dashboard\login_dashboard' && $page!= '\dashboard\signup_dashboard')){
 
+
+	$page ='login_dashboard';
+	$path = str_replace("_dashboard","",$page);
+	$page = DS . 'dashboard' . DS . $page;
+	$dashboard = DS . 'dashboard' . DS;
+
+
+
+}
 
 
 	
@@ -23,6 +33,10 @@ if (strpos($page, 'dashboard') !== false) {
 	$path = $page;
 	$dashboard = NULL;
 }
+
+
+
+
 
 
 //store session
@@ -104,6 +118,7 @@ $fonts = $config['FONTS_PATH'];
 $fontawsome = $config['FONTAWSOME'];
 $jscript = $config['JS_PATH'];
 $editorjs = $config['EDITOR_PATH'];
+$editorsubjs = $config ['EDITOR_SUB_PATH'];
 $jscript_dashboard = $config['JS_PATH_DASHBOARD'];
 $ajax_handler = $config['AJAX_HANDLER_DASHBOARD'];
 $dashboardcss = $config['DASHBOARD_PATH'];
