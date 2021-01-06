@@ -1,3 +1,4 @@
+
 const inputs = document.querySelectorAll(".input");
 
 function addClass() {
@@ -17,6 +18,9 @@ inputs.forEach((input) => {
   input.addEventListener("blur", removeClass);
 });                      
         
+
+
+
 
 $('#password, #confirmPassword').on('keyup', function () {
 	if ($('#password').val() == $('#confirmPassword').val()) {
@@ -168,6 +172,7 @@ function readURL(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 }
+
 
 
 
