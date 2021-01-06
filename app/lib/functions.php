@@ -1,6 +1,6 @@
 <?php
 
-if(!empty($dbclass)){
+if(!empty($dbcalss)){
 include_once($dbcalss);
 }
 function get($name, $def= '')
