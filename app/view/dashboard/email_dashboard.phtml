@@ -4,23 +4,40 @@
             <h1 data-aos="fade-right"data-aos-duration="1500">E-mail</h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
-            <form>
+            <form action="<?= $controller; ?>" id="form">
                 <div class="bluk-sms-form4">
                     <label >E-mail</label>
-                    <input type="email">
+                    <input type="email" name="email">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text">
+                    <input type="text" name="title">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Massage</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="SEND">
+                    <input type="button" value="SEND" onclick="submitForm()">
                 </div>
             </form>
         </div>
 </div>
 </div>
+
+
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>

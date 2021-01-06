@@ -3,68 +3,70 @@
         <div class="smtp-dashboard-main">
             <h1 data-aos="fade-right"data-aos-duration="1500">SMTP Setting</h1>
         </div>
-        <div class="smtp-dashboard" data-aos="fade-left"data-aos-duration="900">
-            <div class="smtp-d-box">
-                <div class="smtp-head">SMTP Settings</div>
-                <div class="smtp-content">
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">Type</div>
-                        <div class="smtp-head-input">
-                            <select name="" id="">
-                                <option value="1">Send Mail</option>
-                                <option value="2">SMTP</option>
-                                <option value="3">Mailgun</option>
-                            </select>
+        <form action="<?= $controller; ?>" id="form">
+            <div class="smtp-dashboard" data-aos="fade-left"data-aos-duration="900">
+                <div class="smtp-d-box">
+                    <div class="smtp-head">SMTP Settings</div>
+                    <div class="smtp-content">
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">Type</div>
+                            <div class="smtp-head-input">
+                                <select name="smtp_type" id="">
+                                    <option value="1">Send Mail</option>
+                                    <option value="2">SMTP</option>
+                                    <option value="3">Mailgun</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL HOST</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_host">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL PORT</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_port">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL USERNAME</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_user">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL PASSWORD</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_pass">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL ENCRYPTION</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_enc">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL FROM ADDRESS</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_frm_add">
+                            </div>
+                        </div>
+                        <div class="smtp-content1">
+                            <div class="smtp-head-c">MAIL FROM NAME</div>
+                            <div class="smtp-head-input">
+                                <input type="text" name="smtp_frm_name">
+                            </div>
                         </div>
                     </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL HOST</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
+                    <div class="smtp-btn">
+                        <input type="button" value="SAVE" onclick="submitForm()">
                     </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL PORT</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL USERNAME</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL PASSWORD</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL ENCRYPTION</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL FROM ADDRESS</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="smtp-content1">
-                        <div class="smtp-head-c">MAIL FROM NAME</div>
-                        <div class="smtp-head-input">
-                            <input type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="smtp-btn">
-                    <input type="button" value="SAVE">
                 </div>
             </div>
-        </div>
+        </form>
         <div class="smtp-dashboard-note" data-aos="fade-right"data-aos-duration="900">
             <div class="smtp-dashboard-note-box">
                 <div class="smtp-dashboard-note-box-head">Instruction</div>
@@ -93,3 +95,20 @@
         </div>
     </div>
 </div>
+
+<script>
+
+  function submitForm(form){
+    
+        url = $('#form').attr("action");
+        formData = $('#form').serializeArray();
+
+        $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+</script>

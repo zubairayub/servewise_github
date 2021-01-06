@@ -4,24 +4,24 @@
                   <h1 data-aos="fade-right"data-aos-duration="1500">Knowledgebase & Blog</h1>
             </div>  
             <div class="general-main" data-aos="zoom-in-up" data-aos-duration="600">
-                  <form action="">
+                  <form action="<?= $controller ?>" id="form">
                         <div class="general-input1">
                               <div class="g-input-label">Title</div>
                               <div class="g-input-input">
-                                    <input type="text">
+                                    <input type="text" name="title">
                               </div>
                         </div>
                         <div class="general-input2">
                               <div class="g-input-label">Artical Img</div>
                               <div class="g-input-input">
-                                    <input type='file' onchange="readURL(this);" />
+                                    <input type='file' name="art_img" onchange="readURL(this);" />
                                     <img id="blah" src="http://placehold.it/100" alt="your image" style="width:100px" />
                               </div>
                         </div>
                         <div class="general-input4">
                               <div class="g-input-label">Artical Type</div>
                               <div class="g-input-input">
-                                    <select name="" id="">
+                                    <select name="art_type" id="">
                                           <option value="1">1</option>
                                           <option value="2">2</option>
                                           <option value="3">3</option>
@@ -31,14 +31,29 @@
                         <div class="general-input5">
                               <div class="g-input-label">Artical Video</div>
                               <div class="g-input-input">
-                                    <input type='file' onchange="readURL(this);" />
+                                    <input type='file' name="art_video" onchange="readURL(this);" />
                                     <img id="blah" src="http://placehold.it/150" alt="your image" style="width:150px" />
                               </div>
                         </div>
                         <div class="g-btn">
-                              <input type="button" value="Update">
+                              <input type="button" value="Update" onclick="submitForm()">
                         </div>
                   </form>
             </div>    
       </div>
 </div>
+<script>
+  function submitForm(form){
+    
+        url = $('#form').attr("action");
+        formData = $('#form').serializeArray();
+
+        $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+  </script>

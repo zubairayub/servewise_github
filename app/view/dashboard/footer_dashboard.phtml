@@ -4,13 +4,13 @@
         <h1 data-aos="fade-right" data-aos-duration="2000" >Footer</h1>
     </div>
     <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
-        <form action="" class="d-footer-logo-about">
+        <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
             <div class="dashboard-footer-logo">
                 <div class="footer-logo-upload-label">
                     <label for="">Footer Logo :</label>
                 </div>
                 <div class="footer-logo-upload-content">
-                    <input type='file' onchange="readURL(this);" />
+                    <input type='file' name="footer_logo" onchange="readURL(this);" />
                     <img id="blah" src="http://placehold.it/180" alt="your image" />
                 </div>
             </div>
@@ -19,24 +19,24 @@
                     <label for="">About Discribtion :</label>
                 </div>
                 <div class="footer-about-upload-content">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="about_desc" id="" cols="30" rows="10"></textarea>
                 </div>
             </div>
             <div class="dashboard-footer-about-btn">
-                <input type="button" value="Upadate">
+                <input type="button" value="Upadate" onclick="submitForm()">
             </div>
         </form>
     </div>
 <div class="dashboard-footer-section-2">
     <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
         <h1>Contact info</h1>
-        <form action="" class="d-footer-logo-contact">
+        <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
             <div class="dashboard-footer-contact-add">
                 <div class="footer-contact-add-head">
                     <label for="">Contact Address</label>
                 </div>
                 <div class="footer-contact-add-input">
-                    <input type='text'/>
+                    <input type='text' name="contact_add" />
                 </div>
             </div>
             <div class="dashboard-footer-contact-phone">
@@ -44,7 +44,7 @@
                     <label for="">Contact Phone</label>
                 </div>
                 <div class="footer-contact-phone-input">
-                    <input type='text'/>
+                    <input type='text' name="contact_ph" />
                 </div>
             </div>
             <div class="dashboard-footer-contact-email">
@@ -52,22 +52,22 @@
                     <label for="">Contact E-mail</label>
                 </div>
                 <div class="footer-contact-email-input">
-                    <input type='text'/>
+                    <input type='text' name="contact_email" />
                 </div>
             </div>
             <div class="dashboard-footer-contact-btn">
-                <input type="button" value="Upadate">
+                <input type="button" value="Upadate" onclick="submitFormCnt()">
             </div>
         </form>
     </div>
     <div class="dashboard-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
-        <form class="dashboard-footer-bottom-content">
+        <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="cpyForm">
             <div class="d-footer-copyright">
                 <div class="d-footer-copyright-head">
                     <label>Copyright Text</label>
                 </div>
                 <div class="d-footer-copyright-input">
-                    <input type="text">
+                    <input type="text" name="cpy_text">
                 </div>
             </div>
             <div class="d-footer-social-media">
@@ -75,7 +75,7 @@
                     <label>Show Social Media Links.</label>
                     <div class="d-footer-social-switch">
                         <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" name="social_links">
                         <span class="slider round"></span>
                         </label>
                     </div>
@@ -88,7 +88,7 @@
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text">
+                                <input type="text" name="facebook">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -96,7 +96,7 @@
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text">
+                                <input type="text" name="twitter">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -104,7 +104,7 @@
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text">
+                                <input type="text" name="instagram">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -112,12 +112,12 @@
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text">
+                                <input type="text" name="linkedin">
                             </div>
                         </div>
                     </div>
                     <div class="footer-social-link-icon">
-                        <input type="button" value="Update">
+                        <input type="button" value="Update" onclick="submitFormCpy()">
                     </div>
                 </div>
             </div>
@@ -126,3 +126,43 @@
 </div>
 </div>
 </div>
+
+<script>
+  function submitForm(form){
+    
+        url = $('#form').attr("action");
+        formData = $('#form').serializeArray();
+        $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+  function submitFormCnt(form){
+    
+    url = $('#cntForm').attr("action");
+    formData = $('#cntForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+        
+  function submitFormCpy(form){
+    
+    url = $('#cpyForm').attr("action");
+    formData = $('#cpyForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+</script>
