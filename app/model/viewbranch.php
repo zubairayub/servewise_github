@@ -1,4 +1,6 @@
 <?php
+$owner = NULL;
+$action = NULL;
 if(getstatus($type) == 'Admin'){
 
 $branch = getbranches();	
