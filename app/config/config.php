@@ -14,6 +14,7 @@ $config = [
 'FONTAWSOME' => '../app/view/font-awesome-4.7.0/css/font-awesome.min.css',
 'JQUREY_PATH' => '../app/view/js/jqurey.js',
 'JS_PATH' => '../app/view/js/core.js',
+'EDITOR_PATH' => '../app/view/js/ckeditor.js',
 'JS_PATH_DASHBOARD' => '../app/view/dashboard/js/core.js',
 'AJAX_HANDLER_DASHBOARD' => '../app/view/dashboard/js/ajax-handler.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2021 at 01:53 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.28
+-- Generation Time: Jan 06, 2021 at 10:48 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,8 +41,8 @@ CREATE TABLE `sub_menu` (
 --
 
 INSERT INTO `sub_menu` (`sm_id`, `sm_title`, `sm_url`, `sm_icon`, `sm_status`, `menu_id`) VALUES
-(2, 'Orders', '#', 'angle-double-right', 1, 3),
-(6, 'Abandoned Carts', '#', 'angle-double-right', 1, 3),
+(2, 'Orders', 'order_dashboard', 'angle-double-right', 1, 3),
+(6, 'Abandoned Carts', 'abandoncart_dashboard', 'angle-double-right', 1, 3),
 (7, 'Customers', 'customerlist_dashboard', 'angle-double-right', 1, 3),
 (8, 'Products', 'addnewproduct_dashboard', 'angle-double-right', 1, 4),
 (9, 'Categories', 'category_dashboard', 'angle-double-right', 1, 4),
