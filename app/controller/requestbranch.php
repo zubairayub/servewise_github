@@ -18,7 +18,7 @@ require $config_service['BRANCH_CLASS'];
 	
 
 
-	if(isset($_POST["signupbtn"])){
+	if(isset($_POST["vendor"])){
 	
 	$vendorid = $_POST["vendor"];
 		$name = $_POST["name"];
@@ -38,65 +38,67 @@ require $config_service['BRANCH_CLASS'];
 			$getbranch=$branch->getspecificbranchbyemail($emailid);
 			$branchid = $getbranch[0]["branch_id"];
             $_SESSION['branchid'] = $branchid;
-            echo $_SESSION['branchid'];
-        echo "record added";
+         //   echo $_SESSION['branchid'];
+      //  echo "record added";
 		}  
             if (!empty($getbranch)){
-				echo "got the branch id";	 
+				$status = TRUE; 
 				$country = $_POST["country"];
                // $branchid = $_SESSION['branchid'];
 					$addcountry = $branch->addcountrytosubbranch($branchid,$country);
 			 }  else {
-                echo "not got the branch id";
+                $status = FALSE;
             }
                 if (!empty($addcountry)){
                   //  $branchid = $_SESSION['branchid'];
 						$getsubbranchcountry = $branch->getspecificsubbranchcountry($branchid);
 						$sbc = $getsubbranchcountry[0]["sbc_id"];
-                echo "country added";
+               $status = TRUE;
 				} else {
-                echo "country not added";
+                $status = FALSE;
             }
                 if (!empty($getsubbranchcountry)){
 						$state = $_POST["state"];	
                 //    $branchid = $_SESSION['branchid'];
 						$addstate = $branch->addstatetosubbranch($state,$branchid,$sbc);
-				    echo "got state id"	;
+				    $status = TRUE;
                 }else {
-                echo "stateid not";
+                $status = FALSE;
             } 
                 if (!empty($addstate)){
                   //  $branchid = $_SESSION['branchid'];
 							$getsubbranchstate = $branch->getspecificsubbranchstate($branchid);
 							$sbs = $getsubbranchstate[0]["sbs_id"];
-						echo "state added";
+						$status = TRUE;
                         }	else {
-                echo "not addded state";
+                $status = FALSE;
             }
                             if (!empty($getsubbranchstate)){
 							 $city = $_POST["city"];
                       //          $branchid = $_SESSION['branchid'];
 							$addcity = $branch->addcitytosubbranch($city,$branchid,$sbs);
-							echo "city added";
+						//	echo "city added";
                                
 						}else {
-                echo "not added city";
+               // echo "not added city";
             }
 	
 					$vbadd = $branch->addvendorandbranch($vendorid,$branchid);	
                 if (!empty($vbadd)){
                     $getvbid = $branch->getbranchevendorid($vendorid);
-                echo "vb added";
+              $status = TRUE;
+              echo  "1";
                 } else {
-                    echo "vb not added";
+                    $status = FALSE;
+                    echo  "0";
                 }
                     if (!empty($getvbid)){
                     $_SESSION['vbid'] = $getvbid[0]["vb_id"];
-echo $_SESSION['vbid'];
-                        echo "got vb id ";
+                       //  echo $_SESSION['vbid'];
+                      //  echo "got vb id ";
                     }
         else {
-            echo "not get vb id";
+                           // echo "not get vb id";
         }
        
 

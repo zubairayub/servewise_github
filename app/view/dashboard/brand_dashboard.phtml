@@ -76,9 +76,13 @@
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-			        alert('added');
+			        alert('Added');
+			        location.reload(); 
+		}elseif(data == 3){
+			 alert('Deleted');
+			        location.reload(); 
 		}else{
-			alert('not added');
+			alert('Something Went Wrong');
 		}
     });
 }

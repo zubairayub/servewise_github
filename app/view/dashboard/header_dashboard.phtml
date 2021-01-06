@@ -3,14 +3,14 @@
 			<div class="dashboard-header">
             <h1  data-aos="fade-right" data-aos-duration="500">Header</h1>
 
-            <form class="dashboard-header-form" action="" data-aos="fade-right">
+            <form class="dashboard-header-form" method="post" action="<?php echo $controller;?>" data-aos="fade-right" id="form" enctype='multipart/form-data'>
                 <div class="header-logo-upload" data-aos="fade-right" data-aos-duration="800">
                     <div class="header-logo-upload-label">
                         <label for="">Header Logo :</label>
                     </div>
                     <div class="header-logo-upload-content">
-                        <input type='file' onchange="readURL(this);" />
-                        <img id="blah" src="http://placehold.it/180" alt="your image" />
+                        <input type='file' name="logo" onchange="readURL(this);" />
+                        <img id="blah" src="<?php echo $logo_directory.$user_logo;?>" alt="your image" />
                     </div>
                 </div>
                 
@@ -20,7 +20,7 @@
                     </div>
                     <div class="header-language-content">
                         <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" name="language_switcher" value="on" <?php echo $lang_status; ?> >
                         <span class="slider round"></span>
                         </label>
                     </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="header-currency-content">
                         <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" name="currency_switcher" value="on" <?php echo $curr_status; ?> >
                         <span class="slider round"></span>
                         </label>
                     </div>
@@ -40,9 +40,26 @@
                 
 
                 <div class="dashboard-header-btn">
-                    <input type="button" value="Update">
+                    <input type="submit" value="Update" onclick="submitForm()">
                 </div>
             </form>
         </div>
 </div>
 </div>
+
+
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>

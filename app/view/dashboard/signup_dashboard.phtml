@@ -1,4 +1,5 @@
-<?php require $footer;?>	
+<?php //require $footer;
+?>	
     <div class="container-varification">
     <div class="login-content">
         <form action="<?php echo $controller ;?>" method="POST" id="form">
@@ -29,6 +30,7 @@
                 <div class="div">
                   <h5>Confirm Password</h5>
                   <input type="password" name="confirm_Password" class="input" id="confirmPassword" required />
+                  <input type="hidden" name="type" class="input" id="confirmPassword" value="2" />
                 </div>
             </div>
             <span id="message"></span>

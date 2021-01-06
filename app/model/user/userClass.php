@@ -9,17 +9,7 @@
 			function __construct(){
 				$this->db=new databaseManager();
 			}
-			//signup method of user..
-			function newSignUp($email,$password,$security_code,$status){
-					$this->query="insert into user(email_id,password,security_code,status,created_date) values(?,?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($email,$password,$security_code,$status),"create");
-					if($result){
-						return true;
-						}    
-				    else{
-						return false;
-						}
-				}
+			
 			
 			function newSignIn($email, $password){
 				$this->query="select * from user where email_id=? and password=? and status = 'active' ";
@@ -27,6 +17,17 @@
 				if($result){
 					$_SESSION["logIn"]=$email;
 					$_SESSION['logInId']=$result[0]['user_id'];
+					$_SESSION['type']=$result[0]['type'];
+					$_SESSION['first_name']=$result[0]['first_name'];
+					$_SESSION['last_name']=$result[0]['last_name'];
+					$_SESSION['address']=$result[0]['address'];
+					$_SESSION['address_2']=$result[0]['address_2'];
+					$_SESSION['country']=$result[0]['country'];
+					$_SESSION['city']=$result[0]['city'];
+					$_SESSION['state']=$result[0]['state'];
+					$_SESSION['zip']=$result[0]['zip'];
+					$_SESSION['status']=$result[0]['status'];
+					
 				
 					return true;
 				}
@@ -34,6 +35,41 @@
 					return false;
 				}
 			}
+
+
+			//signup method of user..
+			function newSignUp($email,$password,$security_code,$status,$type){
+					$this->query="insert into user(email_id,password,security_code,status,type,created_date) values(?,?,?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($email,$password,$security_code,$status,$type),"create");
+					if($result){
+						$this->query="select * from user where email_id=? and password=? ";
+				$result=$this->db->executeQuery($this->query,array($email, $password),"cread");
+				if($result){
+					$_SESSION["logIn"]=$email;
+					$_SESSION['logInId']=$result[0]['user_id'];
+					$_SESSION['type']=$result[0]['type'];
+					$_SESSION['first_name']=$result[0]['first_name'];
+					$_SESSION['last_name']=$result[0]['last_name'];
+					$_SESSION['address']=$result[0]['address'];
+					$_SESSION['address_2']=$result[0]['address_2'];
+					$_SESSION['country']=$result[0]['country'];
+					$_SESSION['city']=$result[0]['city'];
+					$_SESSION['state']=$result[0]['state'];
+					$_SESSION['zip']=$result[0]['zip'];
+					$_SESSION['status']=$result[0]['status'];
+					
+				
+					return true;
+				}
+
+						}    
+				    else{
+						return false;
+						}
+				}
+
+
+
 			function getvendoridbyuserid($userid){
 				$this->query="select * from vendor where user_id=? ";
 				$result=$this->db->executeQuery($this->query,array($userid),"cread");
@@ -137,6 +173,7 @@
 				return $result;	
 			}
 			function updateUserStatus($status,$email){
+				$_SESSION['status'] = 'active';
 				$this->query="update user set status=? where email_id=? ";
 				$result=$this->db->executeQuery($this->query,array($status,$email),"update");
 					if($result){return true;}    

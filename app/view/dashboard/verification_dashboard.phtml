@@ -1,4 +1,5 @@
-<?php require $footer;?>
+<?php //require $footer;
+?>
     <div class="container-varification">
     <div class="login-content">
         <form action="<?php echo $controller ;?>" method="POST" id="form">
@@ -29,7 +30,7 @@
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-      window.location.replace("?page=login_dashboard");
+      window.location.replace("?page=dashboard");
     }else if (data == 0){
       alert('sign up failed');
     }else if (data == 2){

@@ -18,10 +18,12 @@ $user=new User();
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$cpassword = $_POST["confirm_Password"];
+	$type = $_POST["type"];
+	
 	$security_code = mt_rand(1000,9999);
 	$_SESSION["email"]=$email;
-        	$status = "block";
-        $_SESSION["securitycode"] = $security_code;
+    $status = "block";
+    $_SESSION["securitycode"] = $security_code;
    
 	
     
@@ -52,7 +54,7 @@ mail($to,$subject,$txt,$headers);
 		
 		if (empty($checkuser)){
 		   
-		$signup = $user->newSignUp($email,$password,$security_code,$status);        
+		$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
 		   
 		if (!empty($signup)){
 			echo "1";

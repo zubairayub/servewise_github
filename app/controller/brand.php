@@ -23,9 +23,9 @@ if (isset($_GET["id"])){
 	$deleted = $brand->deletebrand($brandid);
 if (!empty($deleted)){
 	
-	echo "deleted";	
+	header('Location: ' . $_SERVER['HTTP_REFERER']);	
 } else {
-	echo "not deleted";
+	echo "4";
 }
 	//deleting.....
 }
@@ -35,7 +35,7 @@ if (!empty($deleted)){
 	
 	$name = $_POST["name"];
     $vendorid = $_SESSION['vendorid'];    
-	echo $vendorid;
+	//echo $vendorid;
 	
 	
 		$addedbrand = $brand->addnewbrand($name,$vendorid);

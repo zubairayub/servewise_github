@@ -1,0 +1,27 @@
+<div class="wrapper">
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+            <h1>View Vendors</h1>
+
+            <table>
+            	<tr>
+            		<td>Username</td>
+            		<td>Name</td>
+            		<td>Contact No</td>
+            		<td>Email</td>
+            		<td>Address</td>
+            		<td>Action</td>
+            	</tr>
+
+<?php
+foreach ($branch as $key => $value) {
+	echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>Edit | Delete</td>'.'</tr>';
+}
+
+
+?>
+
+            </table>
+</div>
+</div>
+</div>

@@ -18,6 +18,9 @@ $config = [
 'AJAX_HANDLER_DASHBOARD' => '../app/view/dashboard/js/ajax-handler.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',
 'IMAGE_PATH'=> '../app/view/img/',
+'LOGO_DIRECTORY' =>   '../app/upload/logos/' ,
+'CATEGORY_DIRECTORY' =>   '../app/upload/categories/',
+'PRODUCT_DIRECTORY' => '../app/upload/products/'  ,
 'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',
 'FONTAWESOMEMIN_PATH' => '../app/view/css/font-awesome/css/font-awesome.min.css',
 

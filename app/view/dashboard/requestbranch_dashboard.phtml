@@ -1,5 +1,6 @@
 
-	  <?php require $footer;?>	
+	  <?php //require $footer;
+      ?>	
 	<!-- main content -->
 	<div class="wrapper">
         <h1 data-aos="fade-right"
@@ -7,20 +8,21 @@
 		<div class="row">
 			<div class="reqbranch-main" >
 				<div class="container-content">
-					<form class="req-form" action="<?php echo $controller ?>" method="post"  >
-                    <div class="reqbranch-content" >						
+					<form class="req-form" action="<?php echo $controller ?>" method="post"  id="form" >
+                    <div class="reqbranch-content" >	
+                    <div class="req-choose-vendor" data-aos="fade-right" data-aos-duration="1000">
+                            <label for="vendor">Choose a vendor:</label>
+
+                            <select name="vendor" id="vendor">					
 						<?php  foreach($getvendors as $vendorlist){
 						?>
-						<div class="req-choose-vendor" data-aos="fade-right" data-aos-duration="1000">
-							<label for="vendor">Choose a vendor:</label>
-
-							<select name="vendor" id="vendor">
+						
   							<option value="<?php echo $vendorlist["vendor_id"];?>"><?php echo $vendorlist["name"];  ?></option>
   							
-							</select>
-						</div>
+						
 						<?php } ?>
-                    
+                        </select>
+                        </div>
 						<div class="user-detail1 req-n-c-e" data-aos="fade-left" data-aos-duration="1000">
                             <label>Name.</label>
                             <input name="name" type="text" >
@@ -75,7 +77,7 @@ foreach ($getcountries as $country) {
                         </div >
 						
 						<div class="user-detail1 req-btn"  data-aos="zoom-in" data-aos-duration="1000">
-							<input type="submit" name="signupbtn" value="Request"  >
+							<input type="button" name="signupbtn" value="Request" onclick="submitForm()" >
 						</div>
 						
                     </div>

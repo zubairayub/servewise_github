@@ -18,8 +18,10 @@
 <section id='main'>
 	
 <?php 
-if($dashboard != NULL){
+if(($dashboard != NULL) && !empty($_SESSION['status'])){
+	if($_SESSION['status'] != 'block'){
  require($footer);
+}
  }
 include $main_content; 
 
