@@ -109,13 +109,16 @@
 	color: var(--second-color);
 	position: relative;
 }
+.nav-link2{
+	transform: rotate(180deg);
+}
 
 .nav-link:hover {
 	cursor: pointer;
 }
 
 .navbar-nav i {
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 }
 
 .nav-right {
@@ -357,7 +360,7 @@
     padding: 20px 0px;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 	background-color: #f1f1f1;
-    background: linear-gradient(to right, #888 50%, white 50%);
+    background: linear-gradient(to right, #f1f1f1 50%, white 50%);
     background-size: 200% 100%;
     background-position: right bottom;
 	color: black;
@@ -365,7 +368,6 @@
 }
 .sidebar .sidebar-nav-item .sub li a:hover{
 	background-position: left bottom;
-	
 }
 .sidebar .sidebar-nav-item .sub li a .sub-menu-inner-title{
 	transition: .3s ease;
@@ -374,7 +376,8 @@
 .sidebar .sidebar-nav-item .sub li a:hover .sub-menu-inner-title{
 	padding-left: 10px;
 	letter-spacing: 1px;
-	color: white;
+	color: black;
+	font-weight: 600;
 }
 
 .sidebar .sidebar-nav-item .sub li a .sub-menu-inner-icon{
@@ -442,6 +445,11 @@
 
 .sidebar-expand .wrapper {
 	margin-left: 70px;
+
+}
+
+.angle{
+	font-size: 20px;
 }
 
 .row {

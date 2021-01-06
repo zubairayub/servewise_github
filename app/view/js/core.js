@@ -1,6 +1,10 @@
 
 AOS.init();
 
+    
+    $(".nav-link").click(function(){
+        $(this).toggleClass("nav-link2");
+    });
 
 
 
