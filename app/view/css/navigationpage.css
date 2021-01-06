@@ -2137,9 +2137,9 @@ form {
 .add-details .add-d-coulum input{border-bottom: 1px solid #c5c0c0;font-size: 24px;padding: 0px 10px;margin: 0px 20px;}
 .add-details .add-d-coulum .dis{width: 70%;}
 .add-details .add-d-coulum .count{width: 20%; border: 1px solid #c5c0c0;border-radius: 5px;font-size: 24px;border-style: dashed;}
-.add-details .add-btn{display: flex;justify-content: flex-end;padding: 20px;}
+.add-details .add-btn{margin-bottom: 70px; display: flex;justify-content: flex-end;padding: 20px;}
 .add-details .add-btn input{font-size: 14px; font-weight: 600; padding: 10px;border-radius: 5px;border: 1px solid black;background: white; transition: .3s ease;}
-.add-details .add-btn input:hover{background: rgb(51, 219, 51);border: 1px solid rgb(51, 219, 51);color: white; }
+.add-details .add-btn input:hover{transform: scale(1.1); background: rgb(51, 219, 51);border: 1px solid rgb(51, 219, 51);color: white; }
 .add-msg .warning{background: #fb5959;border-radius: 5px;padding: 20px; display: none;}
 .add-msg .success{background: #3aff3a;border-radius: 5px;padding: 20px; display: none;}
 .add-msg .fail{background: #fbff21;border-radius: 5px;padding: 20px; display: none;}
