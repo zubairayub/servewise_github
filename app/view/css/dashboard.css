@@ -306,11 +306,17 @@
 }
 
 .wrapper {
+	overflow: hidden;
 	padding: 10px;
 	margin-left: 250px;
+	height: 100%;
 	padding-top: 75px;
 	background: var(--second-bg-color);
 	transition: margin-left .5s;
+}
+
+.wrapper-close{
+	margin-left: 70px;
 }
 
 .sidebar {
@@ -323,6 +329,10 @@
 	overflow: hidden;
 	z-index: 100;
 	transition: width .5s;
+}
+
+.sidebar-close{
+	width: 70px;
 }
 
 
@@ -345,8 +355,25 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px 0px;
-	border-bottom: 1px solid;
-	background-color: #888;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	background-color: #f1f1f1;
+    background: linear-gradient(to right, #888 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+	color: black;
+	transition: .5s ease;
+}
+.sidebar .sidebar-nav-item .sub li a:hover{
+	background-position: left bottom;
+	
+}
+.sidebar .sidebar-nav-item .sub li a .sub-menu-inner-title{
+	transition: .3s ease;
+}
+
+.sidebar .sidebar-nav-item .sub li a:hover .sub-menu-inner-title{
+	padding-left: 10px;
+	letter-spacing: 1px;
 	color: white;
 }
 
@@ -369,6 +396,7 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+	transition: .3s ease;
 }
 
 .sidebar-nav-link div {
@@ -377,14 +405,22 @@
 	position: relative;
 }
 
-.sidebar-nav-link:hover {
-	background: var(--second-bg-color);
+.sidebar-nav-link:hover { 
+	background-position: left bottom;
+	color: white;
+}
+.sidebar-nav-link:hover i { 
+	color: white;
 }
 
-.sidebar-nav-link {
-	background: var(--second-bg-color);
-    color: #888;
-    border: none;
+.sidebar-nav-link {  
+	background-color: white;
+    background: linear-gradient(to right, #313037 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    color: black;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .row .counter p{
@@ -392,20 +428,20 @@
 }
 
 .sidebar-nav-link div {
-	border-left: 5px solid #888;
+	border-left: 5px solid #313037;
 }
 
 .sidebar-nav-link i {
-	color: #888;
+	color: #313037;
 	margin-left: -5px;
 }
 
 .sidebar-expand .sidebar {
-	width: 250px;
+	width: 70px;
 }
 
 .sidebar-expand .wrapper {
-	margin-left: 250px;
+	margin-left: 70px;
 }
 
 .row {
