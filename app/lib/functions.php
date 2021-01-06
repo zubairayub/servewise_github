@@ -1,7 +1,8 @@
 <?php
 
+if(!empty($dbcalss)){
 include_once($dbcalss);
-
+}
 function get($name, $def= '')
 {
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
