@@ -4,10 +4,10 @@
             <h1 data-aos="fade-right"data-aos-duration="1500">Send Bluk SMS</h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
-            <form>
+            <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form1">
                     <label >Mobile Users</label>
-                    <select name="" id="">
+                    <select name="mob_user" id="">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -15,16 +15,32 @@
                 </div>
                 <div class="bluk-sms-form2">
                     <label>SMS Subject</label>
-                    <input type="text">
+                    <input type="text" name="sms_sub">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>SMS Content</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="sms_content" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="SEND">
+                    <input type="button" value="SEND" onclick="">
                 </div>
             </form>
         </div>
 </div>
 </div>
+
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>

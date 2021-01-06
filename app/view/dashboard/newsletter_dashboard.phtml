@@ -5,11 +5,11 @@
         </div>
         <div class="newsletter-main" data-aos="zoom-in-up" data-aos-duration="600">
             <div class="newsletter-head"></div>
-            <form action="">
+            <form action="<?php echo $controller;?>" id='form'>
                 <div class="newsletter-form-1-1">
                     <div class="newsletter-form-1">
                         <label>Email (User)</label>
-                        <select name="" id="">
+                        <select name="email_user" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="newsletter-form-2">
                         <label>Email (Subcribers)</label>
-                        <select name="" id="">
+                        <select name="email_sub" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -26,17 +26,33 @@
                 </div>
                 <div class="newsletter-form-3">
                     <label>Newsletter Subject :</label>
-                    <input type="text">
+                    <input type="text" name="subject">
                 </div>
                 <div class="newsletter-form-4">
                     <label>Newsletter Content :</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="content" id="" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="newsletter-btn">
-                    <input type="button" value="SEND">
+                    <input type="button" value="SEND" onclick="submitForm()">
                 </div>
             </form>
         </div>
 </div>
 </div>
+
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>
