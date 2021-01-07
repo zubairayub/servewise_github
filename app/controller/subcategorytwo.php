@@ -11,20 +11,23 @@ $PATH =  constant("APPLICATION_INNERPATH");
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
 require_once $config_service['DB_CLASS'];
 require $config_service['CATEGORY_CLASS'];
+require $config_service['FUNCTIONS'];
 
 
 	$category=new Category();
 	$message=null;
 
 //deleting category...
+	if(isset($_GET["id"])){
 	$categoryid = $_GET["id"];
 
 	$deleted = $category->deletecategorytwo($categoryid);
 if (!empty($deleted)){
 	
-	echo "deleted";	
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 } else {
-	echo "not deleted";
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 }
 	//deleting.....
 
@@ -33,10 +36,29 @@ if (!empty($deleted)){
 	
 	$categoryid = $_POST["categoryid"];
 		$categoryname = $_POST["category"];
-    $vendorid = $_SESSION['vendorid'];    
+    $type =  $_SESSION['type'];
+    $createdby = $_SESSION['logInId'];
+$type = getstatus($type);
+if($type == 'Branch')
+{
+
+	$data =  getbranches($createdby);
+	$vbid =  $data[0]['vendor_id'];
+}elseif($type == 'Admin'){
+
+$vbid =  0;
+
+}elseif($type == 'Vendor'){
+	$data =  getvendors($createdby);
+	$vbid =  $data[0]['vendor_id'];
+
+}else{
+
+	header('Location ?page=logout');
+}  
 	
 	
-		$addedcategory = $category->addnewsubcategory($categoryid,$categoryname,$vendorid);
+		$addedcategory = $category->addnewsubcategory($categoryid,$categoryname,$vbid);
 		if (!empty($addedcategory)){
 			//$message[0] = true;
 			//$message[1] = "Updated Successfully";	

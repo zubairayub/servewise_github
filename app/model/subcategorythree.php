@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
@@ -16,7 +16,26 @@ require $config_service['CATEGORY_CLASS'];
 	
 	//print_r($olddetails);
 	$categoryid = $_GET["id"];
-	
+	   $type =  $_SESSION['type'];
+    $createdby = $_SESSION['logInId'];
+$type = getstatus($type);
+if($type == 'Branch')
+{
+
+	$data =  getbranches($createdby);
+	$vbid =  $data[0]['vendor_id'];
+}elseif($type == 'Admin'){
+
+$vbid =  0;
+
+}elseif($type == 'Vendor'){
+	$data =  getvendors($createdby);
+	$vbid =  $data[0]['vendor_id'];
+
+}else{
+
+	header('Location ?page=logout');
+}  
 		$getcategory = $category->getcategorythreebyid($categoryid);
 	
 	

@@ -13,16 +13,18 @@ require $config_service['CATEGORY_CLASS'];
 	$message=null;
 	$categoryid = $_POST["categoryid"];
 	$categoryname = $_POST["category"];
+	$cat_id = $_POST["cat_id"];
+	
 	
 		if(isset($_POST["category"])){
 			
 			
 						$uploadInfo=$category->updatesubcategory2byid($categoryname,$categoryid);	
 							if($uploadInfo){
-								echo "1";
+									header('Location: ../../public/?page=subcategorytwo_dashboard&id='.$cat_id);
 							}
 							else{
-								echo "0"	;	
+									header('Location: ../../public/?page=subcategorytwo_dashboard&id='.$cat_id);
                             }
 			
 		}

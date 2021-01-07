@@ -12,7 +12,7 @@
 			
 			function addnewcategory($categoryname,$createdby,$vbid)
 {
-					$this->query="insert into category(name,created_by,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
+					$this->query="insert into category(name,created_by,vb_id,created_date) values(?,?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($categoryname,$createdby,$vbid),"create");
 					if($result){
 						return $result;
@@ -24,7 +24,7 @@
 		
 		function addnewsubcategory($categoryid,$categoryname,$vendorid)
 {
-					$this->query="insert into subcategory_2_level(category_id,sub_category,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
+					$this->query="insert into subcategory_2_level(category_id,sub_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($categoryid,$categoryname,$vendorid),"create");
 					if($result){
 						return $result;
@@ -36,7 +36,7 @@
 		
 		function addnewsubcategorythree($scid,$categoryname,$vendorid)
 {
-					$this->query="insert into subcategory_3_level(sc_id,ss_category,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
+					$this->query="insert into subcategory_3_level(sc_id,ss_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($scid,$categoryname,$vendorid),"create");
 					if($result){
 						return $result;
@@ -68,7 +68,7 @@
 		
 		
 				function getcategorybyvbid($vbid){
-					$this->query="select * from category where vendor_id=? ";
+					$this->query="select * from category where vb_id=? ";
 				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
 				return $result;
 				}

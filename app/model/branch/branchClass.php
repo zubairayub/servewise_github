@@ -188,7 +188,7 @@
 			}
 		
 			function getvendorsforbranch(){
-				$this->query="select * from vendor";
+				$this->query="select * from vendor where status=1";
 				$result=$this->db->executeQuery($this->query,array(),"sread");
 				if($result){
 					return $result;

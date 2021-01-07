@@ -1,10 +1,4 @@
-<!-- Datatables CSS & JS-->
-	
-    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+
 <div class="wrapper">
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
@@ -14,6 +8,8 @@
                 <?php 
                     
                       $id = $_GET["id"];
+
+
                       
                     
                     ?>
@@ -48,7 +44,7 @@
 								<td><?php echo $categorylist["sc_id"]; ?></td>
 								<td><?php echo $categorylist["sub_category"]; ?></td>
 								<td><a href="?page=subcategorythree_dashboard&id=<?php echo $categorylist["sc_id"]; ?>">Add</a></td>								
-                                <td><a href="?page=editcategorytwo_dashboard&id=<?php echo $categorylist["sc_id"]; ?>&name=<?php echo $categorylist["sub_category"]?>">Edit</a></td>
+                                <td><a href="?page=editcategorytwo_dashboard&cat_id=<?php echo $id ?>&id=<?php echo $categorylist["sc_id"]; ?>&name=<?php echo $categorylist["sub_category"]?>">Edit</a></td>
 								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["sc_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
 								
 							   </tr>
@@ -61,11 +57,7 @@
             
 </div>
 </div>
-<!-- Datatables enable script / Server side datatable-->
-  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
-  
-    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
-    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
 
 <script>
 	function submitForm(form){
@@ -74,8 +66,9 @@
 		
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
-      if(data == 0){
+      if(data == 1){
 			        alert('sub category added');
+			        location.reload(); 
 		}else{
 			alert('sub category not added');
 		}

@@ -157,6 +157,12 @@ $varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_i
 
 
 
+
+
+
+
+
+
 function getstatus($status_id)
 {
 

@@ -14,15 +14,16 @@ require $config_service['CATEGORY_CLASS'];
 	$categoryid = $_POST["categoryid"];
 	$categoryname = $_POST["category"];
 	
-		if(isset($_POST["name"])){
+		if(isset($_POST["category"])){
 			
 			
-						$uploadInfo=$category->updatecategorybyid($categoryname,$categoryid);	
+						    $uploadInfo=$category->updatecategorybyid($categoryname,$categoryid);	
 							if($uploadInfo){
-								echo "1";
+								header('Location: ../../public/?page=category_dashboard');
+								//editcategorytwo_dashboard
 							}
 							else{
-								echo "0"	;	
+								header('Location: ../../public/?page=category_dashboard');
                             }
 			
 		}

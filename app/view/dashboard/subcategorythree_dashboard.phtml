@@ -1,24 +1,18 @@
-<!-- Datatables CSS & JS-->
-	
-    <link href="../vendors/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="../vendors/datatables-responsive/dataTables.responsive.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
 <div class="wrapper">
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
             <h1>3rd level Category</h1>
               <label>Category name :</label>
-                <form action="<?php echo $controller ?>" method="post" >
+                <form action="<?php echo $controller ?>" method="post" id="form">
                 <?php 
-                    
+                    if(isset($_GET["id"])){
                       $id = $_GET["id"];
+                    }
                     
                     ?>
                     <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden >
 					<input name="category" value="" type="text">
-                <input type="submit" name="addbtn" value="Add Category"  >
+                <input type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
         </form>
                     </div>
             <div>
@@ -45,7 +39,7 @@
 									
 								<td><?php echo $categorylist["ssc_id"]; ?></td>
 								<td><?php echo $categorylist["ss_category"]; ?></td>								
-                                <td><a href="?page=editcategorythree_dashboard&id=<?php echo $categorylist["ssc_id"]; ?>&name=<?php echo $categorylist["ss_category"]?>">Edit</a></td>
+                                <td><a href="?page=editcategorythree_dashboard&cat_id=<?php echo $id ?>&id=<?php echo $categorylist["ssc_id"]; ?>&name=<?php echo $categorylist["ss_category"]?>">Edit</a></td>
 								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["ssc_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
 								
 							   </tr>
@@ -58,11 +52,7 @@
             
 </div>
 </div>
-<!-- Datatables enable script / Server side datatable-->
-  <script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>
-  
-    <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
-    <script src="../vendors/datatables-responsive/dataTables.responsive.js"></script>
+
 
 <script>
 	function submitForm(form){
@@ -71,8 +61,9 @@
 		
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
-       if(data == 0){
+       if(data == 1){
 			        alert('sub category added');
+			            location.reload(); 
 		}else{
 			alert('sub category not added');
 		}

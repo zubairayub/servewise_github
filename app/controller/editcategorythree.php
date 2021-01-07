@@ -11,18 +11,21 @@ require $config_service['CATEGORY_CLASS'];
 	
     $category=new Category();
 	$message=null;
+	$cat_id = $_POST["cat_id"];
 	$categoryid = $_POST["categoryid"];
 	$categoryname = $_POST["category"];
+
+
 	
 		if(isset($_POST["category"])){
 			
 			
 						$uploadInfo=$category->updatesubcategory3byid($categoryname,$categoryid);	
 							if($uploadInfo){
-								echo "1";
+									header('Location: ../../public/?page=subcategorythree_dashboard&id='.$cat_id);
 							}
 							else{
-								echo "0"	;	
+									header('Location: ../../public/?page=subcategorythree_dashboard&id='.$cat_id);
                             }
 			
 		}
