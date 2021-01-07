@@ -2,27 +2,27 @@
 <div class="wrapper">
 	<div class="row">
 		<div class="sub-cat-two-dashboard-main">
-			<h1>2nd level Category</h1>
+			<h1 data-aos="fade-right" data-aos-duration="1500">2nd level Category</h1>
 		</div>
-		<div class="sub-cat-two-dashboard">
+		<div class="sub-cat-two-dashboard" data-aos="zoom-in-right" data-aos-duration="1000">
 			<label>Category name :</label>
 			<form action="<?php echo $controller ?>" method="post" id="form">
                 <?php 
 					$id = $_GET["id"];
 				?>
 				<input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
-				<input name="category" value="" type="text">
-				<input type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
+				<input class="sub-cat-two-input" name="category" value="" type="text">
+				<input class="sub-cat-two-btn" type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
 			</form>
 		</div>
-		<div class="sub-cat-two-table-main">
+		<div class="sub-cat-two-table-main" data-aos="zoom-out-up" data-aos-duration="1000">
 			<fieldset>
 				<table class="table table-bordered" id="clientstable">	
 				<thead class="bg-info">
 					<th>Category ID</th>
 					<th>Category</th>
 					<th>3rd Level Category</th>
-					<th></th>
+					<th>Option</th>
 					<th></th>
 				</thead>
 				<tbody>

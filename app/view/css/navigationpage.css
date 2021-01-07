@@ -2365,14 +2365,33 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 .edit-cat-dashboard label{flex-basis: 30%; font-size: 20px;font-weight: 600;margin-right: 10px;}
 .edit-cat-dashboard form{flex-basis: 70%;}
 .edit-cat-dashboard form .edit_input{font-size: 20px;border: 1px dashed black;border-radius: 4px;padding: 4px;}
-.edit-cat-dashboard form .edit_input-btn{background: white;font-size: 20px;border: 1px solid rgba(0,0,0,0.2);padding: 7px;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.edit-cat-dashboard form .edit_input-btn{background: white;font-size: 20px;border: 1px solid rgba(0,0,0,0.2);padding: 7px;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);transition: .3s ease;}
+.edit-cat-dashboard form .edit_input-btn:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
 /* Edit-Category-Dashboard-End */
 
 
 /* sub-category-two */
 
 .sub-cat-two-dashboard-main{width: 100%;margin: 20px 0px;}
-
+.sub-cat-two-dashboard{width: 65%;margin: 20px auto;display: flex;align-items: center;background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.sub-cat-two-dashboard label{flex-basis: 35%; font-size: 20px;font-weight: 600;}
+.sub-cat-two-dashboard form{width: 70%;}
+.sub-cat-two-dashboard form .sub-cat-two-input{border: 1px dashed black;font-size: 20px;border-radius: 4px;margin-left: 10px;}
+.sub-cat-two-dashboard form .sub-cat-two-btn{background: white;border: 1px solid rgba(0,0,0,0.2);font-size: 20px;padding: 5px;margin-left: 10px;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); transition: .3s ease;}
+.sub-cat-two-dashboard form .sub-cat-two-btn:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
+.sub-cat-two-table-main{width: 75%;margin: auto;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.sub-cat-two-table-main fieldset{border: none;}
+/* sub-category-two-end */
+/* sub-category-three */
+.sub-cat-three-dashboard-main{width: 100%;margin: 20px 0px;}
+.sub-cat-three-dashboard{width: 65%;margin: 20px auto;display: flex;align-items: center;background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.sub-cat-three-dashboard label{flex-basis: 35%; font-size: 20px;font-weight: 600;}
+.sub-cat-three-dashboard form{width: 70%;}
+.sub-cat-three-dashboard form .sub-cat-three-input{border: 1px dashed black;font-size: 20px;border-radius: 4px;margin-left: 10px;}
+.sub-cat-three-dashboard form .sub-cat-three-btn{background: white;border: 1px solid rgba(0,0,0,0.2);font-size: 20px;padding: 5px;margin-left: 10px;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); transition: .3s ease;}
+.sub-cat-three-dashboard form .sub-cat-three-btn:hover{transform: scale(1.1);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
+.sub-cat-three-table{width: 75%;margin: auto;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.sub-cat-three-table fieldset{border: none;}
 /* sub-category-two-end */
 
 /* pickup-dashboard */
