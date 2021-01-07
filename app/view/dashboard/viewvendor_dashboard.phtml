@@ -1,54 +1,42 @@
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>View Vendors</h1>
-
+	<div class="row row-2">
+		<div class="view-vendor-dashboard-main">
+			<h1 data-aos="fade-right" data-aos-duration="1500">View Vendors</h1>
+		</div>
+		<div class="view-vendor-dashboard-table" data-aos="fade-up" data-aos-duration="900">
             <table>
             	<tr>
-            		<td>Username</td>
-            		<td>Name</td>
-            		<td>Contact No</td>
-            		<td>Email</td>
-            		<td>Address</td>
-            		<td>Country</td>
-            		<td>City</td>
-            		<td>State</td>
-            		<td>Zip</td>
-                        <td>Status</td>
-            		<td>Action</td>
+            		<th>Username</th>
+            		<th>Name</th>
+            		<th>Contact No</th>
+            		<th>Email</th>
+            		<th>Address</th>
+            		<th>Country</th>
+            		<th>City</th>
+            		<th>State</th>
+            		<th>Zip</th>
+					<th>Status</th>
+            		<th>Action</th>
             	</tr>
-
-<?php
-$action =  NULL;
-
-foreach ($vendors as $key => $value) {
-
-       $status = $value['status'];
-
-      if($status == 0){
-
-            $approval = 'NOT APPROVED';
-            if($admin == TRUE){
-$action = '<a href="../app/xhr/approve.php?vendor_id='.$value['vendor_id'].'&user_id='.$value['user_id'].'&action=approve&type=vendor">Approve</a>';
-            }
-      }else{
-              if($admin == TRUE){
-$action = '<a href="../app/xhr/approve.php?vendor_id='.$value['vendor_id'].'&user_id='.$value['user_id'].'&action=block&type=vendor">Block</a>';
-            }
-            $approval = 'APPROVED';
-      }
-
-
-
-
-
-	echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$value['country'].'</td>'.'<td>'.$value['city'].'</td>'.'<td>'.$value['state'].'</td>'.'<td>'.$value['zip'].'</td>'.'<td>'.$approval.'</td>'.'<td>Edit | Delete | '.$action .'</td></tr>';
-}
-
-
-?>
-
+				<?php
+				$action =  NULL;
+				foreach ($vendors as $key => $value) {
+					$status = $value['status'];
+					if($status == 0){
+							$approval = 'NOT APPROVED';
+							if($admin == TRUE){
+				$action = '<a href="../app/xhr/approve.php?vendor_id='.$value['vendor_id'].'&user_id='.$value['user_id'].'&action=approve&type=vendor">Approve</a>';
+							}
+					}else{
+							if($admin == TRUE){
+				$action = '<a href="../app/xhr/approve.php?vendor_id='.$value['vendor_id'].'&user_id='.$value['user_id'].'&action=block&type=vendor">Block</a>';
+							}
+							$approval = 'APPROVED';
+					}
+					echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$value['country'].'</td>'.'<td>'.$value['city'].'</td>'.'<td>'.$value['state'].'</td>'.'<td>'.$value['zip'].'</td>'.'<td>'.$approval.'</td>'.'<td><a href="#">Remove</a>'.$action .'</td></tr>';
+				}
+				?>
             </table>
-</div>
-</div>
+		</div>
+	</div>
 </div>

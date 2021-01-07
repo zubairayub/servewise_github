@@ -318,6 +318,8 @@
 	transition: margin-left .5s;
 }
 
+.wrapper2 {overflow: scroll;}
+
 .wrapper-close{
 	margin-left: 70px;
 }
@@ -456,6 +458,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+}
+.row-2{
+	overflow: scroll;
 }
 
 .row:after, .row:before {

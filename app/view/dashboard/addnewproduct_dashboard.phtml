@@ -10,10 +10,14 @@
         <tr class="product-table-row">
             <td class="product-table-data">
                 <div class="add-image">
-                    <input type="file" name="files[]" multiple/>
+                    <input type="file" name="files[]" onchange="readURL(this);"  multiple/>
                     <span>Upload .jpeg, .jpg, .png, .gif </span>
                 </div>
-                <div class="add-image-box"></div>
+                <div class="add-image-box">
+                <img id="blah" src="http://placehold.it/150" alt="your image" style="width:150px;height:200px" />
+                </div>
+                
+                    
             </td>
         </tr>
         

@@ -2183,6 +2183,12 @@ form {
 .reqbranch-content .req-n-c-e input{border-bottom: 1px solid black;margin-right: 40px;margin-left: 5px;width: 170px;}
 .reqbranch-content .req-n-c-e label{font-weight: 600;}
 /* Request Branch END */
+/* view-branch-dashboard */
+
+.viewbranch-dashboard-main{width: 100%; margin: 20px 0px;}
+.view-branch-main{width: 100%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 5px;}
+.view-branch-main tr td{font-size: 14px;}
+/* view-branch-dashboard-end */
 
 /* sigupvendor-dashboard */
 .signup-dashboard{width: 100%;}
@@ -2201,6 +2207,18 @@ form {
 .signup-profile-dis .user-detail1 .signup-vendor-btn input{background-color: white;padding: 10px;border-radius: 10px;border: 1px solid black;font-weight: 600;font-size: 16px;transition: .3s ease;}
 .signup-profile-dis .user-detail1 .signup-vendor-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
 /* sigupvendor-dashboard-end */
+
+/* view-vendor-dashboard */
+.view-vendor-dashboard-main{width: 100%; margin: 20px 0px;}
+.view-vendor-dashboard-table{background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 2px;}
+/* view-vendor-dashboard-end */
+
+/* customer-list-dashboard */
+
+.customer-list-dashboard-main{width: 100%;margin: 20px 0px;}
+.customer-list-dashboard{width: 100%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.customer-list-dashboard fieldset{border: none;}
+/* customer-list-dashboard-end */
 
 /*staff-permission */
 .staff-permission-main{width: 100%;}
