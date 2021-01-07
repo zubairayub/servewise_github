@@ -2358,6 +2358,23 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 
 /* Category-add-new-dashboard-end */
 
+/* Edit-Category-Dashboard */
+
+.edit-cat-dashboard-main{width: 100%;margin: 20px 0px;}
+.edit-cat-dashboard{display: flex;align-items: center; width: 60%; margin:auto;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px;}
+.edit-cat-dashboard label{flex-basis: 30%; font-size: 20px;font-weight: 600;margin-right: 10px;}
+.edit-cat-dashboard form{flex-basis: 70%;}
+.edit-cat-dashboard form .edit_input{font-size: 20px;border: 1px dashed black;border-radius: 4px;padding: 4px;}
+.edit-cat-dashboard form .edit_input-btn{background: white;font-size: 20px;border: 1px solid rgba(0,0,0,0.2);padding: 7px;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+/* Edit-Category-Dashboard-End */
+
+
+/* sub-category-two */
+
+.sub-cat-two-dashboard-main{width: 100%;margin: 20px 0px;}
+
+/* sub-category-two-end */
+
 /* pickup-dashboard */
 .pickup-dashboard-main{width: 100%;margin: 30px 0px; display: flex;justify-content: space-between;align-items: center;}
 .pickup-dashboard-main form{display: flex;justify-content: center;align-items: center;}

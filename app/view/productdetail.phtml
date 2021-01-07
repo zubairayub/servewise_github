@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container{
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .product-detail-content{
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .product-detail-content .detail-left-side{
+            flex-basis: 50%;
+            border-radius: 20px 0px 0px 20px;
+        }
+        .product-detail-content .detail-left-side .small-img-grid{
+            display: flex;
+            justify-content: space-between;
+        }
+        .product-detail-content .detail-left-side .small-img-grid .small-img {
+            flex-basis: 24%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid rgb(109, 109, 109);
+        }
+        .product-detail-content .detail-left-side .small-img-grid .small-img img{
+            width: 100px;
+            height: 100px;
+        }
+        
+        .product-detail-content .detail-right-side{
+            flex-basis: 50%;
+            padding-left: 20px;
+        }
+        .product-detail-content .detail-right-side p{
+            font-size: 20px;
+            padding-bottom: 20px;
+        }
+        .product-detail-content .detail-right-side h1{
+            font-size: 40px;
+            padding-bottom: 20px;
+        }
+        .product-detail-content .detail-right-side h4{
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        .product-detail-content .detail-right-side h4 span{
+            font-size: 25px;
+            color: green;
+        }
+        .product-detail-content .detail-right-side select{
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            padding: 10px;
+            border: 1px solid rgb(131, 131, 131);
+            color: black;
+        }
+        .product-detail-content .detail-right-side input{
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            padding: 10px;
+            border: 1px solid rgb(131, 131, 131);
+            color: black;
+            width: 70px;
+            margin-right: 10px;
+        }
+        .product-detail-content .detail-right-side .product-cart-btn{
+            padding-top: 20px;
+        }
+        .product-detail-content .detail-right-side a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            border: 1px solid #ff523b;
+            color: #ff523b;
+            border-radius: 25px;
+            padding: 10px;
+            font-weight: 700;
+            transition: .2s ease all;
+        }
+        .product-detail-content .detail-right-side a i{
+            transition: .5s ease all;
+        }
+        .product-detail-content .detail-right-side a:hover{
+            background-color: #ff523b;
+            color: white;
+        }
+        .product-detail-content .detail-right-side a:hover i{
+            transform: rotate(-360deg);
+            padding-left: 30px;
+        }
+        .product-detail-content .detail-right-side .product-detail-cart h3{
+            font-size: 18px;
+            padding-top: 40px;
+            padding-bottom: 15px;
+        }
+        .product-detail-content .detail-right-side .product-detail-cart{
+            width: 500px;
+        }
+        .product-detail-content .detail-right-side .product-detail-cart p{
+            font-size: 15px;
+            color: rgb(104, 104, 104);
+            font-weight: 600;
+        }
+        .product-detail-content .detail-right-side .product-detail-cart h3 i{
+            color: #ff523b;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-content">
+                <div class="detail-left-side">
+                    <img src="p1.jpg" width="100%" id="ProductImgGrid">
+                    <div class="small-img-grid">
+                        <div class="small-img">
+                            <img src="p1.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p3.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p2.jpg" width="100%" class="small-grid">
+                        </div>
+                        <div class="small-img">
+                            <img src="p2.jpg" width="100%" class="small-grid">
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-right-side">
+                    <p>Home / Hoodie</p>
+                    <h1>Product Name</h1>
+                    <h4><span>$</span> 99.00</h4>
+                    <select>
+                        <option>Select Size</option>
+                        <option>XXL</option>
+                        <option>XL</option>
+                        <option>Large</option>
+                        <option>Medium</option>
+                        <option>Small</option>
+                    </select>
+                    <div class="product-cart-btn">
+                    <input type="number" value="1">
+                    <a href="#">Add to Cart<i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="product-detail-cart">
+                    <h3>Product Detail <i class="fas fa-indent"></i></h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eaque eius perspiciatis quos voluptatibus! Atque temporibus ipsum blanditiis sunt doloribus laboriosam dolore ea. Assumenda odio ipsum, ratione reiciendis omnis sunt?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var ProductImgGrid = document.getElementById("ProductImgGrid");
+        var SmallImgGrid = document.getElementsByClassName("small-grid")
+        
+        SmallImgGrid[0].onclick = function(){
+            ProductImgGrid.src = SmallImgGrid[0].src;
+        }
+        SmallImgGrid[1].onclick = function(){
+            ProductImgGrid.src = SmallImgGrid[1].src;
+        }
+        SmallImgGrid[2].onclick = function(){
+            ProductImgGrid.src = SmallImgGrid[2].src;
+        }
+        SmallImgGrid[3].onclick = function(){
+            ProductImgGrid.src = SmallImgGrid[3].src;
+        }
+    
+    </script>
+</body>
+</html>

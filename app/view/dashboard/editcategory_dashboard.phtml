@@ -1,25 +1,24 @@
 
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>Catagory</h1>
-              <label>Category name :</label>
-                <form action="<?php echo $controller ?>" method="post" >
-                <?php 
-                if(isset($_GET['id'])){
-$id = $_GET['id'];
-$name = $_GET['name'];
-
-
-                }
-                ?>
-                    <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
-                    <input name="category"  type="text" value="<?php echo $name; ?>">
-                <input type="submit" name="addbtn" value="Update Category">
-        </form>
-                    </div>
-            
-</div>
+  <div class="row">
+    <div class="edit-cat-dashboard-main">
+      <h1>Edit Catagory</h1>
+    </div>
+    <div class="edit-cat-dashboard">
+      <label>Category name :</label>
+      <form action="<?php echo $controller ?>" method="post" >
+      <?php 
+        if(isset($_GET['id'])){
+          $id = $_GET['id'];
+          $name = $_GET['name'];
+        }
+      ?>
+        <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
+        <input class="edit_input" name="category"  type="text" value="<?php echo $name; ?>">
+        <input class="edit_input-btn" type="submit" name="addbtn" value="Update Category">
+      </form>
+    </div>          
+  </div>
 </div>
 
 
