@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkout Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    <br />
+    <section class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Products
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <!-- BEGIN PRODUCTS -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="sc-product-item thumbnail">
+                                    <img data-name="product_image" src="http://placehold.it/250x150/2aabd2/ffffff?text=Product+1" alt="...">
+                                    <div class="caption">
+                                        <h4 data-name="product_name">Product 1</h4>
+                                        <p data-name="product_desc">Product details</p>
+                                        <hr class="line">
+                                        
+                                        <div>
+                                            <div class="form-group2">
+                                                <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                            </div>
+                                            <strong class="price pull-left">$2,990</strong>
+                                            
+                                            <input name="product_price" value="2990" type="hidden" />
+                                            <input name="product_id" value="12" type="hidden" />
+                                            <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PRODUCTS -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <aside class="col-md-4">
+                
+                <!-- Cart submit form -->
+                <form action="viewcart.php" method="POST"> 
+                    <!-- SmartCart element -->
+                    <div id="smartcart"></div>
+                </form>
+                
+            </aside>
+        </div>
+    </section>
+    
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+    <!-- Include SmartCart -->
+    <script src="assets/js/jquery.smartCart.min.js" type="text/javascript"></script>
+    <!-- Initialize -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Initialize Smart Cart    	
+            $('#smartcart').smartCart();
+		});
+    </script>
