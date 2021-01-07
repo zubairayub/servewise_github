@@ -12,13 +12,13 @@
                     <div class="lang-box-dis">
                         <div class="head">Default Language</div>
                         <div class="lang-box-input">
-                            <form action="">
-                                <select name="" id="">
+                            <form action="<?= $controller; ?>" id="form">
+                                <select name="def_lang" id="">
                                     <option value="1">English</option>
                                     <option value="2">Urdu</option>
                                     <option value="3">Arabic</option>
                                 </select>
-                                <input type="button" value="SAVE">
+                                <input type="button" value="SAVE" onclick="submitForm()">
                             </form>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                 </a>
             </div>
             <div class="lang-dashborad-table" data-aos="fade-up" data-aos-duration="900">
-                <form action="">
+                <form action="<?= $controller; ?>">
                     <table>
                         <tr>
                             <th>Serial.No</th>
@@ -45,7 +45,7 @@
                             <td>en</td>
                             <td>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="rtl">
                                     <span class="slider round"></span>
                                 </label>
                             </td>
@@ -65,3 +65,18 @@
     </div>
 </div>
 
+<script>
+  function submitForm(form){
+    
+        url = $('#form').attr("action");
+        formData = $('#form').serializeArray();
+
+        $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+  </script>

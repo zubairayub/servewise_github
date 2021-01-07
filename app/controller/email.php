@@ -10,9 +10,9 @@ require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_
 $DB_CLASS =  $config_service['DB_CLASS'];
 require_once $config_service['FUNCTIONS'];
 
-$mob_user   = $_POST['mob_user'];
-$sms_sub    = $_POST['sms_sub'];
-$sms_content= $_POST['sms_content'];
+$email      = $_POST['email'];
+$title      = $_POST['title'];
+$message    = $_POST['message'];
 
 echo '1';
 ?>

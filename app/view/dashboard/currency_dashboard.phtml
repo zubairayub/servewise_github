@@ -10,7 +10,7 @@
                     <div class="sys-box-dis">
                         <div class="sys-dis-sub-head">System Default Currency</div>
                         <div class="sys-dis-sub-input">
-                            <select name="" id="">
+                            <select name="def_currency" id="">
                                 <option value="1">Pakistani</option>
                                 <option value="2">Pakistani</option>
                                 <option value="3">Pakistani</option>
@@ -25,7 +25,7 @@
                         <div class="sys-section1">
                             <div class="sys-dis-sub-head">Symbol Format</div>
                             <div class="sys-dis-sub-input">
-                                <select name="" id="">
+                                <select name="symbol_format" id="">
                                     <option value="1">[Symbol] [Amount]</option>
                                     <option value="2">[Amount] [Symbol]</option>
                                 </select>
@@ -57,7 +57,7 @@
                 <div class="table-heading">
                     <input type="text" value="Search">
                 </div>
-                <form action="">
+                <form action="<?= $controller; ?>">
                     <table>
                         <tr>
                             <th>Serial.No</th>
@@ -76,7 +76,7 @@
                             <td>157.00</td>
                             <td>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="switch_stat">
                                     <span class="slider round"></span>
                                 </label>
                             </td>
@@ -97,3 +97,18 @@
 </div>
 
 
+<script>
+  function submitForm(form){
+    
+        url = $('#form').attr("action");
+        formData = $('#form').serializeArray();
+
+        $.post(url, formData).done(function (data) {
+        if(data == 1){
+            alert('success');
+        }else{
+            alert('error');
+        }
+    });
+  }
+  </script>
