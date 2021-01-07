@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2021 at 10:47 AM
+-- Generation Time: Jan 07, 2021 at 05:28 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -49,7 +49,8 @@ INSERT INTO `menu` (`menu_id`, `title`, `url`, `icon`, `status`) VALUES
 (9, 'Support', '#', 'question-circle', 1),
 (10, 'Staff', '#', 'users', 1),
 (11, 'Website Setup', '#', 'desktop', 1),
-(12, 'Setting', '#', 'cogs', 1);
+(12, 'Setting', '#', 'cogs', 1),
+(13, 'Vendor', '#', 'fa fa-user-circle-o', 1);
 
 --
 -- Indexes for dumped tables
@@ -69,7 +70,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menu_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `menu_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

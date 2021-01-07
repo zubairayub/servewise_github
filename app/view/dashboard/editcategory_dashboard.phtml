@@ -5,10 +5,17 @@
             <h1>Catagory</h1>
               <label>Category name :</label>
                 <form action="<?php echo $controller ?>" method="post" >
-                
+                <?php 
+                if(isset($_GET['id'])){
+$id = $_GET['id'];
+$name = $_GET['name'];
+
+
+                }
+                ?>
                     <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
                     <input name="category"  type="text" value="<?php echo $name; ?>">
-                <input type="submit" name="addbtn" value="Update Category"  >
+                <input type="submit" name="addbtn" value="Update Category">
         </form>
                     </div>
             
