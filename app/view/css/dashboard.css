@@ -445,6 +445,10 @@
 	width: 70px;
 }
 
+.sidebar-expand .sidebar:hover{
+	width: 250px;
+}
+
 .sidebar-expand .wrapper {
 	margin-left: 70px;
 
