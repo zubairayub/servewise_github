@@ -7,7 +7,20 @@ require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
 
 //index.php?page=
-$page = get ('page','home');
+if(isset($_REQUEST['page'])){
+ $page = get ('page','home');
+}elseif (isset($_REQUEST['domain'])) {
+	$page = get ('domain','home');
+	
+		echo 'doamin';
+		exit();
+
+	
+}else{
+	$page = get ('page','home');
+}
+
+
 if (strpos($page, 'dashboard') !== false) {
 	$path = str_replace("_dashboard","",$page);
 	$page = DS . 'dashboard' . DS . $page;
