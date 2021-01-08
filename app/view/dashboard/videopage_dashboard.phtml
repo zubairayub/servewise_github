@@ -1,0 +1,49 @@
+<div class="wrapper">
+		<div class="row">
+			<div class="bluk-sms-dashboard">
+            <h1 data-aos="fade-right"data-aos-duration="1500">Video</h1>
+        </div>
+        <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
+            <form action="<?= $controller; ?>" id="form"> 
+                <div class="bluk-sms-form2">
+                    <label>Title</label>
+                    <input type="text" name="sms_sub">
+                </div>
+                <div class="bluk-sms-form2">
+                    <label>Short Discribtion</label>
+                    <input type="text" name="sms_sub">
+                </div>
+                <div class="bluk-sms-form2">
+                    <label>Video</label>
+                    <input type="file">
+                </div>
+                <div class="bluk-sms-btn">
+                    <input type="button" value="Update" onclick="submitForm()">
+                </div>
+            </form>
+        </div>
+        <div class="help-center-dashboard-main">
+            <form >
+                <table>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Question</th>
+                        <th>Option</th>                
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>whats???</td>
+                        <td>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                            </a>
+                        </td>
+                    </tr>                
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
