@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2021 at 10:45 AM
+-- Generation Time: Jan 07, 2021 at 05:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -76,16 +76,7 @@ INSERT INTO `sub_menu` (`sm_id`, `sm_title`, `sm_url`, `sm_icon`, `sm_status`, `
 (37, 'Social links', 'socialmedia_dashboard', 'fa fa-link', 1, 12),
 (38, 'View Branch', 'viewbranch_dashboard', 'fa fa-eye', 1, 6),
 (39, 'View Vendor', 'viewvendor_dashboard', 'fa fa-eye', 1, 13),
-(40, 'Request Vendor', 'signupvendor_dashboard', 'fa fa-handshake-o', 1, 13),
-(42, 'About us', 'about_dashboard', 'fa fa-info-circle', 1, 14),
-(43, 'Term of Service', 'termofserve_dashboard', 'fa fa-sticky-note', 1, 14),
-(44, 'Privacy Policy', 'privacypolicy_dashboard', 'fa fa-user-secret', 1, 14),
-(45, 'Help Center', 'helpcenter_dashboard', 'fa fa-question-circle', 1, 14),
-(46, 'Guide', 'guide_dashboard', 'fa fa-compass', 1, 14),
-(47, 'Video ', 'videopage_dashboard', 'fa fa-video-camera', 1, 14),
-(48, 'Partners', 'partners_dashboard', 'fa fa-thumbs-up', 1, 14),
-(49, 'Theme Product', 'themeproduct_dashboard', 'fa fa-product-hunt', 1, 15),
-(50, 'Theme About', 'themeaboutus_dashboard', 'fa fa-question-circle', 1, 15);
+(40, 'Request Vendor', 'signupvendor_dashboard', 'fa fa-handshake-o', 1, 13);
 
 --
 -- Indexes for dumped tables
@@ -106,7 +97,7 @@ ALTER TABLE `sub_menu`
 -- AUTO_INCREMENT for table `sub_menu`
 --
 ALTER TABLE `sub_menu`
-  MODIFY `sm_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `sm_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
