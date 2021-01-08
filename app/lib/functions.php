@@ -103,6 +103,30 @@ if(!empty($dbclass)){
 
 }
 
+function getproductsimages($pid,$dbclass =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(empty($id)){
+						$varr->query="SELECT * FROM `images`   where product_id=$pid ";
+
+				}
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
 
 
 function getusertypes($id = NULL)

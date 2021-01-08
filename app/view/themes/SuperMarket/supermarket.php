@@ -1,7 +1,7 @@
 <?php
 include 'include/header.php';
 ?>
-<body>
+<body> 
     <header>
         <section class="nav">
             <div class="container">
@@ -15,7 +15,17 @@ include 'include/header.php';
                         <a href="#">Contact</a>
                     </div>
                 </nav>
+              <?php   include '../assets/cart/minicart.php'; ?>
             </div>
+             <aside class="col-md-4">
+                
+                <!-- Cart submit form -->
+                <form action="viewcart.php" method="POST"> 
+                    <!-- SmartCart element -->
+                    <div id="smartcart"></div>
+                </form>
+                
+            </aside>
         </section>
 
         <section class="hero-main">
@@ -46,12 +56,14 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
 if($value['is_featured'] == '1'){
+     $image = getproductsimages($value['product_id'],$DB_CLASS);
+$image_path =   $image[0]['image_path'];
               ?>
 
 
             <div class="product-card">
                     <div class="product-card-upper">
-                        <img src="..." alt="Product-img">
+                        <img src="<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>" alt="Product-img">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><?php echo $value['name'] ; ?></div>
@@ -59,10 +71,15 @@ if($value['is_featured'] == '1'){
                        <div class="product-content-price"><span>$</span><?php echo $value['price'] ; ?></div>
                        
                     </div>
-                    <div class="product-card-button">
-                       <a href="#">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <div class="form-group2">
+                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                    </div>
+                    <div class="product-card-button ">
+                       <a href="#" class='sc-add-to-cart'>Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
+                  <input name="product_price" value="<?php echo $value['price'] ; ?>" type="hidden" />
+                  <input name="product_id" value="<?php echo $value['product_id'] ; ?>" type="hidden" />
 
 
 <?php
@@ -79,13 +96,19 @@ if($value['is_featured'] == '1'){
     <section class="product-cat">
         <div class="container">
             <div class="product-cat-card" data-aos="fade-up">
+
+
                  <?php 
             foreach ($result as $key => $value) {
 
+                 $image = getproductsimages($value['product_id'],$DB_CLASS);
+                $image_path =   $image[0]['image_path'];
+                
+                
               ?>
                 <div class="product-card">
                     <div class="product-card-upper">
-                        <img src="..." alt="Product-img">
+                        <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><?php echo $value['name'] ; ?></div>
@@ -94,7 +117,7 @@ if($value['is_featured'] == '1'){
                        
                     </div>
                     <div class="product-card-button">
-                       <a href="#">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                       <button class="sc-add-to-cart"><a href="#">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
                     </div>
                 </div>
                <?php
@@ -156,34 +179,8 @@ if($value['is_featured'] == '1'){
         </div>
     </section>
 
-    <!-- contact us -->
-
-    <section class="contactus">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-left-side" data-aos="zoom-in-right">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d-74.25987584510595!3d40.69767006338158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1603793955455!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="contact-right-side" data-aos="zoom-in-left">
-                    <div class="contact-heading">Contact Form</div>
-                    <form action="sumit">
-                        <input type="text" placeholder="First Name">
-                        <br>
-                        <input type="text" placeholder="Last Name">
-                        <br>
-                        <input type="email" placeholder="Your Email">
-                        <br>
-                        <input type="text" placeholder="Your Contact Number">
-                        <br>
-                        <textarea name="Messege" id="#" cols="30" rows="10" placeholder="Your Messege here"></textarea>
-                        <br>
-                        <button type="submit">SUBMIT<i class="fa fa-dropbox" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
+<?php  include 'include/footer.php'; ?>
 
     <!-- js lib -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

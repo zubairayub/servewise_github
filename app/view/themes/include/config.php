@@ -2,6 +2,7 @@
 session_start();
 require  '../../../lib/functions.php';
 $DB_CLASS = '../../../model/classDatabaseManager.php';
+$PRODUCT_DIRECTORY = '../../../upload/products/';
 if(!empty($_SESSION['vb_id'])){
 
 $vb_id = $_SESSION['vb_id'];
