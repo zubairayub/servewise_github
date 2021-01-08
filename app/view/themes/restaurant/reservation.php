@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>res</title>
+    <title>resarvation</title>
     <!-- Favicons -->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Responsive Tag -->

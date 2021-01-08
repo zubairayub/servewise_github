@@ -10,11 +10,23 @@ require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 if(isset($_REQUEST['page'])){
  $page = get ('page','home');
 }elseif (isset($_REQUEST['domain'])) {
-	$page = get ('domain','home');
+	$page = gettheme ($_REQUEST['domain']);
 	
-		echo 'doamin';
-		exit();
+	// ECHO $page['theme_url'];
+	// exit(); 
 
+	if(!empty($page)){
+		$live = getproducts($page['vb_id']);
+		
+		if(!empty($live)){
+		$url = $page['theme_url'];
+		}else{
+		$url = $page['theme_url_dummy'];
+		}
+		header('Location:  '.$url);
+
+
+	}
 	
 }else{
 	$page = get ('page','home');

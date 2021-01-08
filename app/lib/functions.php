@@ -1,14 +1,53 @@
 <?php
 
 if(!empty($dbcalss)){
-include_once($dbcalss);
+include_once($dbcalss); 
 }
 function get($name, $def= '')
 {
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
+function gettheme($url){
+ 				
 
+
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+
+				$varr->query="SELECT * FROM `vb_themesetting`  where `domain_url` = '$url'";
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+					if(!empty($result)){
+						$data =  array();
+
+						$data['vb_id'] = $_SESSION['vb_id'] = $result[0]['vb_id'];
+						$data['type'] =  $_SESSION['type'] = $result[0]['type'];
+						$data['domain_url'] =  $_SESSION['domain_url'] = $result[0]['domain_url'];
+						$data['theme_id'] =  $_SESSION['theme_id'] = $result[0]['theme_id'];
+
+				$varr = new databaseManager();
+				$varr->query="SELECT * FROM `themes`   where `id` = ".$data['theme_id']."";
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+						
+					$data['theme_title'] = $_SESSION['theme_title'] = $result[0]['title'];
+					$data['theme_url'] =  $_SESSION['theme_url'] = $result[0]['theme_url'];
+					$data['theme_url_dummy'] =  $_SESSION['theme_url_dummy'] = $result[0]['theme_url_dummy'];
+					return $data;
+					
+
+					}
+
+
+
+
+
+
+
+}
 
 function logout(){
 
@@ -34,6 +73,33 @@ ini_set('session.gc_divisor', 1);
 session_destroy();
 
 header('Location: ?page=home');
+
+}
+
+
+
+
+function getproducts($vbid,$dbclass =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(empty($id)){
+						$varr->query="SELECT * FROM `product`  where vb_id=$vbid ";
+
+				}
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
 
 }
 

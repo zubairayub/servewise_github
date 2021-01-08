@@ -11,6 +11,12 @@ $PATH =  constant("APPLICATION_INNERPATH");
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
 require_once $config_service['DB_CLASS'];
 require $config_service['PRODUCT_CLASS'];
+require $config_service['FUNCTIONS'];
+
+
+
+
+$PRODUCT_DIRECTORY  = $config_service['PRODUCT_DIRECTORY'];
 
 extract($_POST);
 $error=array();
@@ -22,7 +28,7 @@ $randomstring = generateRandomString();
 
 	if(isset($_POST["add"])){
 	
-	$name = $_POST["name"];
+	    $name = $_POST["name"];
         $description = $_POST["description"];
         $quantity = $_POST["quantity"];
         $price = $_POST["price"];
@@ -30,35 +36,62 @@ $randomstring = generateRandomString();
         $category = $_POST["category"];
         $secondlevel = $_POST["secondlevel"];
         $thirdlevel = $_POST["thirdlevel"];
-       if (isset ($_SESSION['vbid'])){
-		$vbid = $_SESSION['vbid'];
-	  
-	//echo $vbid;
+        $createdby = $_SESSION['logInId'];  
+        $type =  $_SESSION['type'];
+        $type = getstatus($type);
+        if($type == 'Branch')
+        {
+
+        $data =  getbranches($createdby);
+        $vbid =  $data[0]['vendor_id'];
+        }elseif($type == 'Admin'){
+
+        $vbid =  0;
+
+        }elseif($type == 'Vendor'){
+        $data =  getvendors($createdby);
+        $vbid =  $data[0]['vendor_id'];
+
+        }else{
+
+          header('Location ?page=logout');
+        }
+       if (!empty($vbid)){
+        
 	
 		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid);
 		if (!empty($addedproduct)){
 			$getproductid = $product->getproductidbycode($code);
                 $productid = $getproductid[0]["product_id"];
-		//echo $productid;
-            foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
-    $file_name=$_FILES["files"]["name"][$key];
-    $file_tmp=$_FILES["files"]["tmp_name"][$key];
-    $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+		
+              
+// get details of the uploaded file
+$fileTmpPath = $_FILES['files']['tmp_name'];
+$fileName = $_FILES['files']['name'];
+$fileSize = $_FILES['files']['size'];
+$fileType = $_FILES['files']['type'];
+$fileNameCmps = explode(".", $fileName);
+$fileExtension = strtolower(end($fileNameCmps));
+
+
+
+$url = upload_file($fileName,$fileExtension,$fileTmpPath,$fileSize,$fileType,$fileNameCmps,$PRODUCT_DIRECTORY);
     
 
-    if(in_array($ext,$extension)) {
+ $addimages = $product->insertimagesbyproductid($productid,$url);
+
+    // if(in_array($ext,$extension)) {
         
-            $filename=basename($file_name,$ext);
-            $newFileName=$randomstring.$filename.time().".".$ext;
-            move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"../photo_gallery/".$newFileName);
-            echo $newFileName;
-            $addimages = $product->insertimagesbyproductid($productid,$newFileName);
+    //         $filename=basename($file_name,$ext);
+    //         $newFileName=$randomstring.$filename.time().".".$ext;
+    //         move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"../upload/products/".$newFileName);
+    //         echo $newFileName;
+    //         $addimages = $product->insertimagesbyproductid($productid,$newFileName);
           
-    }
-    else {
-        array_push($error,"$file_name, ");
-    }
-}
+    // }
+    // else {
+    //     array_push($error,"$file_name, ");
+    // }
 
             echo "0";
         } else {

@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+include '../include/config.php';
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacy</title>
+    <title><?php echo $theme_title;?></title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/pharmacy.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +19,7 @@
                     <img src="assets/logo.jpg" alt="LOGO">
                 </div>
                 <div class="nav-navigation">
-                    <a href="#">Product</a>
+                    <a href="#">Products</a>
                     <a href="#">Contact us</a>
                     <a href="#">About</a>
                 </div>
@@ -26,6 +28,7 @@
                 <div class="hero-left" data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
+    
                     <img src="assets/Hero.png" alt="hero">
                 </div>
                 <div class="hero-right" data-aos="flip-right">
