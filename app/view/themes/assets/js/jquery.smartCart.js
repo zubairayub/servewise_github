@@ -33,7 +33,7 @@
         },
         lang: { // Language variables
             cartTitle: "Shopping Cart",
-            checkout: 'Checkout',
+            checkout: 'View Cart',
             clear: 'Clear',
             subtotal: 'Subtotal:',
             cartRemove: '×',
