@@ -46,8 +46,7 @@ $product_list_array = json_decode($product_list);
 	<input type="hidden" name="cart-discount" id="discount" value="">
 	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
-   
-	</form>
+  
   </div>
 </div><!-- container -->
 <?php } ?>
@@ -82,6 +81,8 @@ $product_list_array = json_decode($product_list);
     <option value="flutter">flutter</option>
     </select> 
       <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="submit">
+       
+  </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script>
 $(document).ready(function() {
