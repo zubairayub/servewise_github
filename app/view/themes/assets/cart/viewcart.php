@@ -6,7 +6,12 @@ $product_list_array = json_decode($product_list);
 //var_dump($product_list_array);
  ?>
 
-<?php foreach($product_list_array as $results){ ?>
+<?php 
+$final_price = 0;
+foreach($product_list_array as $results){ 
+  $total =   $results->product_quantity * $results->product_price;
+  $final_price += $total;
+  ?>
 <div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-xl-7 col-lg-8 col-md-7">
@@ -42,7 +47,7 @@ $product_list_array = json_decode($product_list);
 	 
     </div>
 	<form method="post" action="checkout.php">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $results->product_quantity * $results->product_price; ?>">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $final_price ?>">
 	<input type="hidden" name="cart-discount" id="discount" value="">
 	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
@@ -60,7 +65,7 @@ $product_list_array = json_decode($product_list);
         </div>
         <div class="totals-item d-flex align-items-center justify-content-between mt-3">
           <p class="text-uppercase">Subtotal</p>
-          <p class="totals-value" name="cart-subtotal" id="cart-subtotal"><?= $results->product_quantity * $results->product_price; ?></p>
+          <p class="totals-value" name="cart-subtotal" id="cart-subtotal"><?= $final_price; ?></p>
         </div>
         <div class="totals-item d-flex align-items-center justify-content-between">
           <p class="text-uppercase">Coupon discount</p>
@@ -68,7 +73,7 @@ $product_list_array = json_decode($product_list);
         </div>
         <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro">
           <p class="text-uppercase"><strong>Total</strong></p>
-          <p class="totals-value font-weight-bold cart-total" name="total"><?= $results->product_quantity * $results->product_price; ?></p>
+          <p class="totals-value font-weight-bold cart-total" name="total"><?=  $final_price; ?></p>
         </div>
       </div>
    
@@ -81,7 +86,7 @@ $product_list_array = json_decode($product_list);
     <option value="flutter">flutter</option>
     </select> 
       <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="submit">
-       
+
   </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script>
