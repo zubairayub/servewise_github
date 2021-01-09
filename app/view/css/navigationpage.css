@@ -2381,6 +2381,15 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
 .cat-dashboard-table{width: 100%;background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
 .cat-dashboard-table fieldset{border: none;}
 /* Catagory-dashboard-end */
+/* Catagory-edit-2-dashboard */
+
+.edit-cat-2-dashboard-main{width: 100%;margin: 20px 0px;}
+.edit-cat-2-dashboard{display: flex;justify-content: center;align-items: center;width: 60%;margin: 20px auto;background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.edit-cat-2-dashboard label{flex-basis: 35%;padding: 10px;font-size: 20px;font-weight: 600;}
+.edit-cat-2-dashboard form{flex: 65%;display: flex;justify-content: space-around;}
+.edit-cat-2-dashboard form .edit2text{border: 1px dashed black;border-radius: 4px;padding: 5px;font-size: 20px;}
+.edit-cat-2-dashboard form .edit2btn{background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);font-size: 18px;padding: 4px;}
+/* Catagory-edit-2-dashboard-end */
 
 /* Category-add-new-dashboard */
 
