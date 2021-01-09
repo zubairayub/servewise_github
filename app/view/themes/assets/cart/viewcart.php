@@ -39,16 +39,22 @@ $product_list_array = json_decode($product_list);
           </button>
         </div>
       </div>
-	  <label for="coupon" class="coupon_label">Coupon</label>
-	  <div class="coupon"><input type="number" name="coupon" id="coupon" /></div>
-	  <button class='redeem'>Redeem</button>
+	 
     </div>
 	<form method="post" action="checkout.php">
 	<input type="hidden" name="subtotal" id="subtotal" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="cart-discount" id="discount" value="">
 	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
-    <div class="col-xl-3 col-lg-4 col-md-5 totals">
+   
+	</form>
+  </div>
+</div><!-- container -->
+<?php } ?>
+ <label for="coupon" class="coupon_label">Coupon</label>
+    <div class="coupon"><input type="number" name="coupon" id="coupon" /></div>
+    <button class='redeem'>Redeem</button>
+     <div class="col-xl-3 col-lg-4 col-md-5 totals">
       <div class="border border-gainsboro px-3">
         <div class="border-bottom border-gainsboro">
           <p class="text-uppercase mb-0 py-3"><strong>Order Summary</strong></p>
@@ -66,19 +72,16 @@ $product_list_array = json_decode($product_list);
           <p class="totals-value font-weight-bold cart-total" name="total"><?= $results->product_quantity * $results->product_price; ?></p>
         </div>
       </div>
-	  <label>Payment Method</label>
-	  <select name="payment-method">
-		<option value="pespal">pespal</option>
-		<option value="mpesa">mpesa</option>
-		<option value="paystack">paystack</option>
-		<option value="flutter">flutter</option>
-	  </select>	
-      <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="submit">
+   
     </div>
-	</form>
-  </div>
-</div><!-- container -->
-<?php } ?>
+     <label>Payment Method</label>
+    <select name="payment-method">
+    <option value="pespal">pespal</option>
+    <option value="mpesa">mpesa</option>
+    <option value="paystack">paystack</option>
+    <option value="flutter">flutter</option>
+    </select> 
+      <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="submit">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script>
 $(document).ready(function() {
