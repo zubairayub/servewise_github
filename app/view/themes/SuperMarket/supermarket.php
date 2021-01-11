@@ -1,6 +1,143 @@
 <?php
 include 'include/header.php';
 ?>
+<style>
+    .img-responsive{width: 140px; flex-basis:20%}
+    .panel-heading{width: 100%;margin: 20px 0px;font-size: 20px;font-weight: 600;}
+    .list-group-item{margin-bottom:10px; display: flex;justify-content: center;align-items: center;}
+    .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item-heading{flex-basis: 20%;font-size: 10px;display: flex;justify-content: center;align-items: center;}
+    .sc-cart-summary-subtotal{display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
+    .sc-cart-checkout{font-size: 18px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 18px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    #menuToggle
+    {   
+        font-size: 25px;
+        display: block!important;
+        position: absolute;
+        top: 35px;
+        right: 340px;
+        z-index: 1;
+        display: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 1336px;
+  margin: -100px 0 0 -985px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  transition: .3s ease;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+
+
+
+
+</style>
 <body> 
     <header>
         <section class="nav">
@@ -13,16 +150,24 @@ include 'include/header.php';
                         <a href="#">Product</a>
                         <a href="#">About</a>
                         <a href="#">Contact</a>
+                        <div id="menuToggle">
+                        <input type="checkbox" />
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <ul id="menu">
+                            <!-- Cart submit form -->
+                            <form action="../assets/cart/viewcart.php" method="POST"> 
+                            <!-- SmartCart element -->
+                                <div id="smartcart"></div>
+                            </form>  
+                        </ul>
+        </div>
+
                     </div>
                 </nav>
             </div>
              <aside class="col-md-4">
                 
-                <!-- Cart submit form -->
-                <form action="../assets/cart/viewcart.php" method="POST"> 
-                    <!-- SmartCart element -->
-                    <div id="smartcart"></div>
-                </form>
+             
                 
             </aside>
         </section>
