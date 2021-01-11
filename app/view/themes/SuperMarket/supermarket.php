@@ -3,13 +3,21 @@ include 'include/header.php';
 ?>
 <style>
     .img-responsive{width: 140px; flex-basis:20%}
-    .panel-heading{width: 100%;margin: 20px 0px;font-size: 20px;font-weight: 600;}
-    .list-group-item{margin-bottom:10px; display: flex;justify-content: center;align-items: center;}
+    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
+    .sc-cart-item-list{font-size:14px;}
+    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
     .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
-    .list-group-item-heading{flex-basis: 20%;font-size: 10px;display: flex;justify-content: center;align-items: center;}
-    .sc-cart-summary-subtotal{display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
-    .sc-cart-checkout{font-size: 18px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .sc-cart-clear{font-size: 18px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
+    .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
+    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .section1{flex-basis:10%;}
+    .section2{flex-basis:80%;}
+    .section3{flex-basis:100%;}
+    .section4{flex-basis:100%;}
+    .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
+    
+    
     #menuToggle
     {   
         font-size: 25px;
@@ -37,7 +45,9 @@ include 'include/header.php';
 }
 
 
-#menuToggle input
+
+
+#menuToggle .checkbox
 {
   display: block;
   width: 40px;
@@ -74,7 +84,7 @@ include 'include/header.php';
 }
 
 #menuToggle:hover .fa-shopping-cart{
-    transform: rotate(360deg);
+    transform: scale(1.1);
 }
 
 
@@ -87,8 +97,8 @@ include 'include/header.php';
 #menu
 {
   position: absolute;
-  width: 1351px;
-  margin: -100px 0 0 -1270px;
+  width: 351px;
+  margin: -100px 0 0 -310px;
   padding: 50px;
   padding-top: 125px;
   
@@ -96,7 +106,7 @@ include 'include/header.php';
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  transform: translate(0, -100%);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
@@ -134,7 +144,7 @@ include 'include/header.php';
                         <a href="#">About</a>
                         <a href="#">Contact</a>
                         <div id="menuToggle">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <ul id="menu">
                             <!-- Cart submit form -->

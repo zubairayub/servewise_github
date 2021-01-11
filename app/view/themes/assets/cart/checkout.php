@@ -100,6 +100,8 @@ $payment_method	=	$_POST['payment-method'];
 </div>
 <?php
 	if($payment_method == 'flutter'){?>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+ 
   <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script src="../js/flutter.js"></script>
 	<?php }elseif($payment_method == 'paystack'){?>

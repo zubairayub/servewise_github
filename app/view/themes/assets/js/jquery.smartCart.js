@@ -20,7 +20,7 @@
         theme: 'default', // theme for the cart, related css need to include for other than default theme
         combineProducts: true, // combine similar products on cart
         highlightEffect: true, // highlight effect on adding/updating product in cart
-        cartItemTemplate: '<img class="img-responsive pull-left" src="{product_image}" /><h4 class="list-group-item-heading">{product_name}</h4><p class="list-group-item-text">{product_desc}</p>',
+        cartItemTemplate: '<div class="section2"><img class="img-responsive pull-left" src="{product_image}" /></div><div class="section3"><h4 class="list-group-item-heading">{product_name}</h4><p class="list-group-item-text">{product_desc}</p></div>',
         cartItemQtyTemplate: '{display_price} × {display_quantity} = {display_amount}',
         productContainerSelector: '.sc-product-item',
         productElementSelector: '*', // input, textarea, select, div, p
@@ -332,14 +332,14 @@
                 elmMain.find(".sc-cart-item-amount").text(this._getMoneyFormatted(productAmount));
             } else {
                 elmMain = $('<div></div>').addClass('sc-cart-item list-group-item');
-                elmMain.append('<button type="button" class="sc-cart-remove">' + this.options.lang.cartRemove + '</button>');
+                elmMain.append('<div class=section1><button type="button" class="sc-cart-remove">' + this.options.lang.cartRemove + '</button></div>');
                 elmMain.attr('data-unique-key', p.unique_key);
 
                 elmMain.append(this._formatTemplate(this.options.cartItemTemplate, p));
 
-                var itemSummary = '<div class="sc-cart-item-summary"><span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>';
+                var itemSummary = '<div class="section4"><div class="sc-cart-item-summary"><span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>';
                 itemSummary += ' × <input type="number" min="1" max="1000" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
-                itemSummary += ' = <span class="sc-cart-item-amount">' + this._getMoneyFormatted(productAmount) + '</span></div>';
+                itemSummary += ' <span class="sc-cart-item-amount">' + this._getMoneyFormatted(productAmount) + '</span></div></div>';
 
                 elmMain.append(itemSummary);
                 cartList.append(elmMain);
