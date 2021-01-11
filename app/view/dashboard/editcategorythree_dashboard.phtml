@@ -1,26 +1,26 @@
 
 <div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-            <h1>edit Sub Category 2 level</h1>
-              <label>Category name :</label>
-                <form action="<?php echo $controller ?>" method="post" >
-                <?php 
-                    if(isset( $_GET["id"])){
-                      $id = $_GET["id"];
-                      $name = $_GET["name"];
-                      $cat_id =  $_GET["cat_id"];
-                    }
-                    
-                    ?>
-                     <input name="cat_id"  type="text" value="<?php echo $cat_id; ?>" hidden>
-                    <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
-                    <input name="category"  type="text" value="<?php echo $name; ?>">
-                <input type="submit" name="addbtn" value="Update Category"  >
+  <div class="row">
+    <div class="edit-cat-2-dashboard-main" data-aos="zoom-out-right" data-aos-duration="1000">
+      <h1>edit Sub Category level 3</h1>
+    </div>
+    <div class="edit-cat-2-dashboard" data-aos="zoom-out-up" data-aos-duration="1000">
+      <label>Category name :</label>
+        <form action="<?php echo $controller ?>" method="post" >
+        <?php 
+            if(isset( $_GET["id"])){
+              $id = $_GET["id"];
+              $name = $_GET["name"];
+              $cat_id =  $_GET["cat_id"];
+            }    
+            ?>
+          <input name="cat_id"  type="text" value="<?php echo $cat_id; ?>" hidden>
+          <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
+          <input class="edit2text" name="category"  type="text" value="<?php echo $name; ?>">
+          <input class="edit2btn" type="submit" name="addbtn" value="Update Category"  >
         </form>
-                    </div>
-            
-</div>
+    </div>          
+  </div>
 </div>
 
 
