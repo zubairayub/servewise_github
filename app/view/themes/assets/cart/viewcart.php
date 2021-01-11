@@ -5,6 +5,21 @@ $product_list = filter_input(INPUT_POST, 'cart_list');
 $product_list_array = json_decode($product_list);
 //var_dump($product_list_array);
  ?>
+
+
+<?php 
+$final_price = 0;
+foreach($product_list_array as $results){ 
+  $total =   $results->product_quantity * $results->product_price;
+  $final_price += $total;
+  ?>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-7">
+      <div class="border border-gainsboro p-3">
+
+        <h2 class="h6 text-uppercase mb-0">Cart Total (<?= $results -> product_quantity ?> Items): <strong class="cart-total"><?= $results->product_price * $results->product_quantity; ?></strong></h2>
+
 <div class="container mt-5 mb-5 viewcart-main">
 <?php foreach($product_list_array as $results){ ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,6 +59,7 @@ $product_list_array = json_decode($product_list);
       <div class="border border-gainsboro p-3 viewcart-product-head">
 
         <h2 class="h6 text-uppercase mb-0 viewcart-heading">Cart Total (<?= $results -> product_quantity ?> Items): <strong class="cart-total"><?= $results->product_price * $results->product_quantity; ?></strong></h2>
+
       </div>
 
       <div class="border border-gainsboro p-3 mt-3 clearfix item viewcart-item-content">
@@ -73,7 +89,7 @@ $product_list_array = json_decode($product_list);
 	 
     </div>
 	<form method="post" action="checkout.php">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $results->product_quantity * $results->product_price; ?>">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $final_price ?>">
 	<input type="hidden" name="cart-discount" id="discount" value="">
 	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
@@ -81,6 +97,25 @@ $product_list_array = json_decode($product_list);
   </div>
 <!-- container -->
 <?php } ?>
+ <label for="coupon" class="coupon_label">Coupon</label>
+    <div class="coupon"><input type="number" name="coupon" id="coupon" /></div>
+    <button class='redeem'>Redeem</button>
+     <div class="col-xl-3 col-lg-4 col-md-5 totals">
+      <div class="border border-gainsboro px-3">
+        <div class="border-bottom border-gainsboro">
+          <p class="text-uppercase mb-0 py-3"><strong>Order Summary</strong></p>
+        </div>
+        <div class="totals-item d-flex align-items-center justify-content-between mt-3">
+          <p class="text-uppercase">Subtotal</p>
+          <p class="totals-value" name="cart-subtotal" id="cart-subtotal"><?= $final_price; ?></p>
+        </div>
+        <div class="totals-item d-flex align-items-center justify-content-between">
+          <p class="text-uppercase">Coupon discount</p>
+          <p class="totals-value" name="cart-discount" id="cart-discount"></p>
+        </div>
+        <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro">
+          <p class="text-uppercase"><strong>Total</strong></p>
+          <p class="totals-value font-weight-bold cart-total" name="total"><?=  $final_price; ?></p>
 </div>
 <div class="viewcart-sum-content">
   <div class="viewcart-sum">
@@ -109,6 +144,18 @@ $product_list_array = json_decode($product_list);
         </div>
     
       </div>
+   
+    </div>
+     <label>Payment Method</label>
+    <select name="payment-method">
+    <option value="pespal">pespal</option>
+    <option value="mpesa">mpesa</option>
+    <option value="paystack">paystack</option>
+    <option value="flutter">flutter</option>
+    </select> 
+      <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="submit">
+
+  </form>
       <div class="viewcart-payment-detail">
         <label>Payment Method</label>
         <select name="payment-method">

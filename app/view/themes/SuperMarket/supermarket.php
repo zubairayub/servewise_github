@@ -268,13 +268,15 @@ $image_path =   $image[0]['image_path'];
         <div class="container">
             <div class="hot-product-content">
                 <div class="hot-left-side" data-aos="fade-up-right">
-                    <img src="assets/hot product.png" alt="Hot product">
+                    <img src="assets/hot product.png" alt="Hot product" data-name="product_image">
                 </div>
-                <div class="hot-right-side" data-aos="fade-up-left">
-                    <div class="hot-product-heading">Product Name <span>Hot Deal</span></div>
-                    <div class="hot-product-dis">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, ab sit! Nisi, blanditiis animi aperiam ratione fugiat esse ut odio similique, nihil id alias iste tenetur rerum beatae, sed libero.</div>
-                    <div class="hot-product-btn">
-                        <a href="#">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <div class="hot-right-side sc-product-item" data-aos="fade-up-left">
+                    <div class="hot-product-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4><span>Hot Deal</span></div>
+                    <div class="hot-product-dis"><?php echo $value['description'] ; ?></div>
+                    <div class="product-card-button">
+                        <input name="product_price" value="<?= $value['price']?>" type="hidden" />
+                        <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
+                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
