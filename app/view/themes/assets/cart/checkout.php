@@ -4,7 +4,7 @@ $summary = $_POST;
 ?>
 <?php
 $product_name 	= 	$_POST['prod-name'];
-$subtotal		=  	$_POST['subtotal'];   
+$subtotal		=  	$_POST['subtotal'];  
 $discount		=	$_POST['cart-discount'];
 $payment_method	=	$_POST['payment-method'];
 ?>
