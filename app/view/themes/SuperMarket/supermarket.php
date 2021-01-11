@@ -16,7 +16,7 @@ include 'include/header.php';
         display: block!important;
         position: absolute;
         top: 35px;
-        right: 340px;
+        right: 48px;
         z-index: 1;
         display: none;
         -webkit-user-select: none;
@@ -54,7 +54,7 @@ include 'include/header.php';
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
+#menuToggle .fa-shopping-cart
 {
   display: block;
   width: 33px;
@@ -62,7 +62,6 @@ include 'include/header.php';
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
   border-radius: 3px;
   
   z-index: 1;
@@ -74,38 +73,22 @@ include 'include/header.php';
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
+#menuToggle:hover .fa-shopping-cart{
+    transform: rotate(360deg);
 }
 
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
 
-#menuToggle input:checked ~ span
+
+#menuToggle input:checked ~ .fa-shopping-cart
 {
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
 }
 
 #menu
 {
   position: absolute;
-  width: 1336px;
-  margin: -100px 0 0 -985px;
+  width: 1351px;
+  margin: -100px 0 0 -1270px;
   padding: 50px;
   padding-top: 125px;
   
