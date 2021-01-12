@@ -31,11 +31,15 @@ $vision         = $_POST['vision']          = isset($_POST['vision']) ? $_POST['
 
 
 
-if(!empty($about_desc)){
+if(!empty($formDesc)){
 
     $varr->query="UPDATE  `config` SET value=? where name = 'AboutDiscribtion' ";
-    $result=$varr->executeQuery($varr->query,array($about_desc),"update");
+    $result=$varr->executeQuery($varr->query,array($formDesc),"update");
+    if(!empty($about_desc)){
 
+        $varr->query="UPDATE  `config` SET value=? where name = 'AboutDiscribtion' ";
+        $result=$varr->executeQuery($varr->query,array($about_desc),"update");
+    }
 $response = 1;
 }
 
