@@ -4,34 +4,36 @@
             <h1 data-aos="fade-right" data-aos-duration="2000" >About Us</h1>
         </div>
         <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
-            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
+            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="formAbout">
+                <input type="hidden" name="formAbout">
                 <div class="dashboard-footer-about">
                     <div class="footer-about-upload-label">
-                        <label for="">About Discribtion :</label>
+                        <label for="">About Description :</label>
                     </div>
                     <div class="footer-about-upload-content">
                         <textarea name="about_desc" class="tinymce"></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
-                    <input type="button" value="Upadate" onclick="submitForm()">
+                    <input type="button" value="Upadate" onclick="submitFormAbout()">
                 </div>
             </form>
         </div>
         <div class="theme-about-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
-            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="cpyForm">
+            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="visionForm">
+                <input type="hidden" name="visionForm">
                 <div class="d-footer-copyright">
                     <div class="d-footer-copyright-head">
                         <label>Our Vision</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce"></textarea>
+                        <textarea class="tinymce" name="vision"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
                     <div class="d-footer-social-links">
                         <div class="footer-social-link-icon">
-                            <input type="button" value="Update" onclick="submitFormCpy()">
+                            <input type="button" value="Update" onclick="submitFormVision()">
                         </div>
                     </div>
                 </div>
@@ -41,4 +43,31 @@
     </div>
 </div>
 </div>
-
+<script>
+  function submitFormAbout(form){
+    
+    var url = $('#formAbout').attr("action");
+    
+    var formData = $('#formAbout').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+function submitFormVision(form){
+    
+    var url = $('#visionForm').attr("action");
+    
+    var formData = $('#visionForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>

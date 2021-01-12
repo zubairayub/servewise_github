@@ -7,15 +7,15 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="sms_sub">
+                    <input type="text" name="title">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Short Discribtion</label>
-                    <input type="text" name="sms_sub">
+                    <input type="text" name="short_desc">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Video</label>
-                    <input type="file">
+                    <input type="file" name="video">
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -47,3 +47,18 @@
         </div>
     </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+</script>
