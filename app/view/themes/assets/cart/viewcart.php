@@ -4,9 +4,13 @@ $product_list = filter_input(INPUT_POST, 'cart_list');
 // Convert JSON to array
 $product_list_array = json_decode($product_list);
 //var_dump($product_list_array);
+$proct_final_price = NULL;
  ?>
 <div class="container mt-5 mb-5 viewcart-main">
-<?php foreach($product_list_array as $results){ ?>
+<?php foreach($product_list_array as $results){
+$proct_final_price += $results->product_price * $results->product_quantity;
+
+ ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .viewcart-main{border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px;}
@@ -43,7 +47,7 @@ $product_list_array = json_decode($product_list);
     <div class="col-xl-7 col-lg-8 col-md-7 viewcart-content">
       <div class="border border-gainsboro p-3 viewcart-product-head">
 
-        <h2 class="h6 text-uppercase mb-0 viewcart-heading">Cart Total (<?= $results -> product_quantity ?> Items): <strong class="cart-total"><?= $results->product_price * $results->product_quantity; ?></strong></h2>
+       <!--  <h2 class="h6 text-uppercase mb-0 viewcart-heading">Cart Total (<?= $results -> product_quantity ?> Items): <strong class="cart-total"><?= $results->product_price * $results->product_quantity; ?></strong></h2> -->
       </div>
 
       <div class="border border-gainsboro p-3 mt-3 clearfix item viewcart-item-content">
@@ -73,7 +77,7 @@ $product_list_array = json_decode($product_list);
 	 
     </div>
 	<form method="post" action="checkout.php">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $results->product_quantity * $results->product_price; ?>">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $proct_final_price; ?>">
 	<input type="hidden" name="cart-discount" id="discount" value="">
 	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
@@ -96,7 +100,7 @@ $product_list_array = json_decode($product_list);
           </div>
           <div class="totals-item d-flex align-items-center justify-content-between mt-3 viewcart-sum1">
             <p class="text-uppercase">Subtotal</p>
-            <p class="totals-value" name="cart-subtotal" id="cart-subtotal"><?= $results->product_quantity * $results->product_price; ?></p>
+            <p class="totals-value" name="cart-subtotal" id="cart-subtotal"><?= $proct_final_price; ?></p>
           </div>
           <div class="totals-item d-flex align-items-center justify-content-between viewcart-sum1">
             <p class="text-uppercase">Coupon discount</p>
@@ -104,7 +108,7 @@ $product_list_array = json_decode($product_list);
           </div>
           <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro viewcart-sum1">
             <p class="text-uppercase"><strong>Total</strong></p>
-            <p class="totals-value font-weight-bold cart-total" name="total"><?= $results->product_quantity * $results->product_price; ?></p>
+            <p class="totals-value font-weight-bold cart-total" name="total"><?= $proct_final_price; ?></p>
           </div>
         </div>
     
