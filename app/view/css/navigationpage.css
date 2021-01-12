@@ -2466,6 +2466,16 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
 .product-theme-table-main{margin: 20px 0px;}
 /* flashdeail-dashboard-end */
 
+/* menu-theme-page */
+
+.menu-dash-main{display: flex;justify-content: center;align-items: center;margin: 20px 0px;flex-wrap: wrap;width: 100%;}
+.menu-dash-main .menu-input{margin-bottom: 20px;}
+.menu-dash-main .menu-input .menu{border-bottom: 1px solid rgba(0,0,0,0.5);width: 100%;font-size: 20px;padding: 0px 10px;}
+.menu-dash-main .menu-input .menu-select{width: 100%;border: 1px dashed black;border-radius: 4px;padding: 4px 10px;font-size: 19px;}
+
+
+/* menu-theme-page-end */
+
 /* newsletter-dashboard */
 .newsletter-head-dashboard{width: 100%;margin-bottom: 40px;}
 .newsletter-main{width: 70%;background: white;margin: auto; border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}

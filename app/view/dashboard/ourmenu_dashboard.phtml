@@ -1,0 +1,88 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="dashboard-footer">
+            <h1 data-aos="fade-right" data-aos-duration="2000" >Menu</h1>
+        </div>
+        <div class="about-us-dashboard-main2 menu-dash-main">
+        <div class="dashboard-footer-section-2">
+            <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
+                <h1>Menu info</h1>
+                <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
+                    <div class="dashboard-footer-contact-add">
+                        <div class="footer-contact-add-head">
+                            <label for="">Dish Name </label>
+                        </div>
+                        <div class="menu-input">
+                            <input class="menu" type='text' name="contact_add" />
+                        </div>
+                    </div>
+                    <div class="dashboard-footer-contact-phone">
+                        <div class="footer-contact-phone-head">
+                            <label for="">Dish Discribtion</label>
+                        </div>
+                        <div class="menu-input">
+                            <input class="menu" type='text' name="contact_ph" />
+                        </div>
+                    </div>
+                    <div class="dashboard-footer-contact-phone">
+                        <div class="footer-contact-phone-head">
+                            <label for="">Dish Price</label>
+                        </div>
+                        <div class="menu-input">
+                            <input class="menu" type='number' name="contact_ph" />
+                        </div>
+                    </div>
+                    <div class="dashboard-footer-contact-email">
+                        <div class="footer-contact-email-head">
+                            <label for="">Dish Type</label>
+                        </div>
+                        <div class="menu-input">
+                            <select class="menu-select" name="" id="">
+                                <option value="Starter">Starter</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                                <option value="Desserts">Desserts</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dashboard-footer-contact-btn">
+                        <input type="button" value="Add Dish" onclick="submitFormCnt()">
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+        <div class="about-us-dashboard-main">
+            <form >
+                <table>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Dish Name</th>
+                        <th>Dish Discribtion</th>                
+                        <th>Price</th>                
+                        <th>Dish Type</th>                
+                        <th>Option</th>                
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Dish 1</td>
+                        <td>Meat Dish</td>
+                        <td>20$</td>
+                        <td>Lunch</td>
+                        <td>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                            </a>
+                        </td>
+                    </tr>                
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
