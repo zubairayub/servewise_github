@@ -8,7 +8,7 @@
                 
                 <div class="bluk-sms-form3">
                     <label>Write Your Privacy Policy</label>
-                    <textarea class="tinymce" name="prvpy"></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="prvpy"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -19,7 +19,8 @@
 </div>
 <script>
   function submitForm(form){
-    
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var url = $('#form').attr("action");
     
     var formData = $('#form').serializeArray();

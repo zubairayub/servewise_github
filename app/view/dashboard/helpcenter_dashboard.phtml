@@ -7,11 +7,11 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Questions?</label>
-                    <input type="text" name="sms_sub">
+                    <input type="text" name="help_question">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Answers</label>
-                    <textarea class="tinymce" name="answers"></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="help_answers"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -45,7 +45,8 @@
 </div>
 <script>
   function submitForm(form){
-    
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var url = $('#form').attr("action");
     
     var formData = $('#form').serializeArray();

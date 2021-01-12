@@ -11,7 +11,7 @@
                         <label for="">About Discribtion :</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" class="tinymce"></textarea>
+                        <textarea name="about_desc" id="myTextArea" class="tinymce"></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -30,7 +30,7 @@
                             <label for="">Name </label>
                         </div>
                         <div class="footer-contact-add-input">
-                            <input type='text' name="contact_add" />
+                            <input type='text' name="team_name" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -38,7 +38,7 @@
                             <label for="">Position</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="contact_ph" />
+                            <input type='text' name="team_position" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -46,7 +46,7 @@
                             <label for="">Image</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='file' name="contact_img" />
+                            <input type='file' name="team_img" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-email">
@@ -54,7 +54,7 @@
                             <label for="">Company Name</label>
                         </div>
                         <div class="footer-contact-email-input">
-                            <input type='text' name="contact_email" />
+                            <input type='text' name="team_comp" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
@@ -71,7 +71,7 @@
                         <label>Our Vision</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" name="vision"></textarea>
+                        <textarea class="tinymce" id="myTextAreaSec" name="vision"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -117,12 +117,14 @@
 </div>
 </div>
 <script>
+    
   function submitFormDesc(form){
     var myContent = tinymce.get("myTextArea").getContent();
       $('#myTextArea').html(myContent);
     var url = $('#formDesc').attr("action");
     
     var formData = $('#formDesc').serializeArray();
+    
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
@@ -146,6 +148,8 @@ function submitFormCnt(form){
 }
 function submitFormVision(form){
     
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var url = $('#visionForm').attr("action");
     
     var formData = $('#visionForm').serializeArray();
@@ -156,6 +160,8 @@ function submitFormVision(form){
       alert('error');
     }
     });
+    
 }
+
 
 </script>

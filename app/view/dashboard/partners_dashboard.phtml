@@ -11,13 +11,13 @@
                         <label for="">FAQ Question ?</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <input type="text" name='faq'>
+                        <input type="text" name='partner_faq'>
                     </div>
                     <div class="footer-about-upload-label">
                         <label for="">FAQ Answer :</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" class="tinymce" name='faq_answers'></textarea>
+                        <textarea name="partner_faq_ans" id="myTextAreaSec" class="tinymce" name='faq_answers'></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -60,7 +60,7 @@
                             <label for="">Package Name </label>
                         </div>
                         <div class="footer-contact-add-input">
-                            <input type='text' name="pckg_name" />
+                            <input type='text' name="partner_package_name" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -68,7 +68,7 @@
                             <label for="">Package Price</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="pckg_price" />
+                            <input type='text' name="partner_package_price" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -76,7 +76,7 @@
                             <label for="">Package Heading</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="pckg_heading" />
+                            <input type='text' name="partner_package_heading" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-email">
@@ -84,7 +84,7 @@
                             <label for="">Package Description</label>
                         </div>
                         <div class="footer-contact-email-input">
-                            <textarea class="tinymce" name="pckg_desc"></textarea>
+                            <textarea class="tinymce" id="myTextAreaDis" name="partner_package_desc"></textarea>
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
@@ -101,13 +101,13 @@
                         <label>Partner Hero Head</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <input type="text" name="hero_head">
+                        <input type="text" name="partner_hero_heading">
                     </div>
                     <div class="d-footer-copyright-head">
                         <label>Partner Hero Discribtion</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" name="hero_desc"></textarea>
+                        <textarea class="tinymce" id="myTextArea" name="partner_discribtion"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -153,7 +153,8 @@
 </div>
 <script>
   function submitFormFAQ(form){
-    
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var url = $('#formFAQ').attr("action");
     
     var formData = $('#formFAQ').serializeArray();
@@ -166,7 +167,8 @@
     });
 }
 function submitFormPckg(form){
-    
+    var myContent = tinymce.get("myTextAreaDis").getContent();
+      $('#myTextAreaDis').html(myContent);
     var url = $('#pckgForm').attr("action");
     
     var formData = $('#pckgForm').serializeArray();
@@ -179,7 +181,8 @@ function submitFormPckg(form){
     });
 }
 function submitFormHero(form){
-    
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     var url = $('#heroForm').attr("action");
     
     var formData = $('#heroForm').serializeArray();
