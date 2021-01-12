@@ -118,7 +118,8 @@
 </div>
 <script>
   function submitFormDesc(form){
-    
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     var url = $('#formDesc').attr("action");
     
     var formData = $('#formDesc').serializeArray();
