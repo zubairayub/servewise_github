@@ -4,23 +4,24 @@
             <h1 data-aos="fade-right" data-aos-duration="2000" >Partners</h1>
         </div>
         <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
-            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
+            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="formFAQ">
+                <input type="hidden" name="formFAQ">
                 <div class="dashboard-footer-about">
                     <div class="footer-about-upload-label">
                         <label for="">FAQ Question ?</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <input type="text">
+                        <input type="text" name='faq'>
                     </div>
                     <div class="footer-about-upload-label">
                         <label for="">FAQ Answer :</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" class="tinymce"></textarea>
+                        <textarea name="about_desc" class="tinymce" name='faq_answers'></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
-                    <input type="button" value="Upadate" onclick="submitForm()">
+                    <input type="button" value="Upadate" onclick="submitFormFAQ()">
                 </div>
             </form>
         </div>
@@ -52,13 +53,14 @@
         <div class="dashboard-footer-section-2">
             <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
                 <h1>Packages</h1>
-                <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
+                <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="pckgForm">
+                    <input type="hidden" name="pckgForm">
                     <div class="dashboard-footer-contact-add">
                         <div class="footer-contact-add-head">
                             <label for="">Package Name </label>
                         </div>
                         <div class="footer-contact-add-input">
-                            <input type='text' name="contact_add" />
+                            <input type='text' name="pckg_name" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -66,7 +68,7 @@
                             <label for="">Package Price</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="contact_ph" />
+                            <input type='text' name="pckg_price" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -74,43 +76,44 @@
                             <label for="">Package Heading</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="contact_ph" />
+                            <input type='text' name="pckg_heading" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-email">
                         <div class="footer-contact-email-head">
-                            <label for="">Package Discribtion</label>
+                            <label for="">Package Description</label>
                         </div>
                         <div class="footer-contact-email-input">
-                            <textarea class="tinymce"></textarea>
+                            <textarea class="tinymce" name="pckg_desc"></textarea>
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
-                        <input type="button" value="Upadate" onclick="submitFormCnt()">
+                        <input type="button" value="Upadate" onclick="submitFormPckg()">
                     </div>
                 </form>
             </div>
         </div>
         <div class="dashboard-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
-            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="cpyForm">
+            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="heroForm">
+                <input type="hidden" name="heroForm">
                 <div class="d-footer-copyright">
                     <div class="d-footer-copyright-head">
                         <label>Partner Hero Head</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <input type="text">
+                        <input type="text" name="hero_head">
                     </div>
                     <div class="d-footer-copyright-head">
                         <label>Partner Hero Discribtion</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce"></textarea>
+                        <textarea class="tinymce" name="hero_desc"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
                     <div class="d-footer-social-links">
                         <div class="footer-social-link-icon">
-                            <input type="button" value="Update" onclick="submitFormCpy()">
+                            <input type="button" value="Update" onclick="submitFormHero()">
                         </div>
                     </div>
                 </div>
@@ -148,4 +151,47 @@
     </div>
 </div>
 </div>
+<script>
+  function submitFormFAQ(form){
+    
+    var url = $('#formFAQ').attr("action");
+    
+    var formData = $('#formFAQ').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+function submitFormPckg(form){
+    
+    var url = $('#pckgForm').attr("action");
+    
+    var formData = $('#pckgForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+function submitFormHero(form){
+    
+    var url = $('#heroForm').attr("action");
+    
+    var formData = $('#heroForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+
+</script>
+
 

@@ -1,0 +1,56 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="dashboard-footer">
+            <h1 data-aos="fade-right" data-aos-duration="2000" >(Resturant) Customer Review</h1>
+        </div>
+        <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
+            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
+                <div class="dashboard-footer-about">
+                    <div class="footer-about-upload-label">
+                        <label for="">Review :</label>
+                    </div>
+                    <div class="footer-about-upload-content">
+                        <textarea name="about_desc" class="tinymce"></textarea>
+                    </div>
+                </div>
+                <div class="dashboard-footer-about">
+                    <div class="footer-about-upload-label">
+                        <label for="">Customer Name</label>
+                    </div>
+                    <div class="footer-about-upload-content">
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="dashboard-footer-about-btn">
+                    <input type="button" value="ADD" onclick="submitForm()">
+                </div>
+            </form>
+        </div>
+        <div class="about-us-dashboard-main">
+            <form >
+                <table>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Customer Name</th>
+                        <th>Review</th>                               
+                        <th>Option</th>                
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Muzzamil</td>
+                        <td>Best Dish i every had</td>
+                        <td>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                            </a>
+                        </td>
+                    </tr>                
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+

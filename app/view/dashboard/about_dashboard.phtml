@@ -4,7 +4,8 @@
             <h1 data-aos="fade-right" data-aos-duration="2000" >About Us Edit</h1>
         </div>
         <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
-            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
+            <form action="<?= $controller; ?>" class="d-footer-logo-about" id="formDesc">
+                <input type="hidden" name="formDesc">
                 <div class="dashboard-footer-about">
                     <div class="footer-about-upload-label">
                         <label for="">About Discribtion :</label>
@@ -14,7 +15,7 @@
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
-                    <input type="button" value="Upadate" onclick="submitForm()">
+                    <input type="button" value="Upadate" onclick="submitFormDesc()">
                 </div>
             </form>
         </div>
@@ -23,6 +24,7 @@
             <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
                 <h1>Our Team info</h1>
                 <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
+                    <input type='hidden' name="cntForm">
                     <div class="dashboard-footer-contact-add">
                         <div class="footer-contact-add-head">
                             <label for="">Name </label>
@@ -44,7 +46,7 @@
                             <label for="">Image</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='file' name="contact_ph" />
+                            <input type='file' name="contact_img" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-email">
@@ -62,19 +64,20 @@
             </div>
         </div>
         <div class="dashboard-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
-            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="cpyForm">
+            <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="visionForm">
+                <input type="hidden" name="visionForm">
                 <div class="d-footer-copyright">
                     <div class="d-footer-copyright-head">
                         <label>Our Vision</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce"></textarea>
+                        <textarea class="tinymce" name="vision"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
                     <div class="d-footer-social-links">
                         <div class="footer-social-link-icon">
-                            <input type="button" value="Update" onclick="submitFormCpy()">
+                            <input type="button" value="Update" onclick="submitFormVision()">
                         </div>
                     </div>
                 </div>
@@ -82,7 +85,7 @@
         </div>
         </div>
         <div class="about-us-dashboard-main">
-            <form >
+            <form>
                 <table>
                     <tr>
                         <th>Serial No.</th>
@@ -113,4 +116,46 @@
     </div>
 </div>
 </div>
+<script>
+  function submitFormDesc(form){
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
+    var url = $('#formDesc').attr("action");
+    
+    var formData = $('#formDesc').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+function submitFormCnt(form){
+    
+    var url = $('#cntForm').attr("action");
+    
+    var formData = $('#cntForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
+function submitFormVision(form){
+    
+    var url = $('#visionForm').attr("action");
+    
+    var formData = $('#visionForm').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+      alert('success');
+    }else{
+      alert('error');
+    }
+    });
+}
 
+</script>
