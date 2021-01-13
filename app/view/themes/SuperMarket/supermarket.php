@@ -142,7 +142,7 @@ include 'include/header.php';
                     <div class="navigation">
                         <a href="#">Product</a>
                         <a href="#">About</a>
-                        <a href="#">Contact</a>
+                        <a href="#contactus">Contact</a>
                         <div id="menuToggle">
                         <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>

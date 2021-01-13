@@ -1,6 +1,6 @@
   <!-- contact us -->
 
-    <section class="contactus">
+    <section class="contactus" id="contactus">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-left-side" data-aos="zoom-in-right">
