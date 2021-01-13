@@ -3,16 +3,21 @@
 	<?php require $footer;?>		
 	<div class="wrapper">
 		<div class="row">
-			<div class="col-12 col-m-12 col-sm-12">
+            <div class="dashboard-footer user-profile-header">
+                <h1 data-aos="fade-right" data-aos-duration="2000" >User Profile</h1> 
+                <div class="user-profile-upper">
+                    <input type="button" class="editbtn1" name="updatebtn" value="update" onclick="submitForm()"  />
+                    <a class="editbtn2" href="?page=userprofile_dashboard">Cancel</a>
+                </div>
+            </div>
+            
+			<div class="user-edit-profile-main">
 				<div class="user-content">
                     <div class="user-content-upper"></div>
                     <div class="user-content-dis">
                         <div class="container-content">
                             <form action="<?php echo $controller; ?>" method="POST" id="form">
-                            <div class="user-profile-upper">
-                                 <input type="button" class="editbtn1" name="updatebtn" value="update" onclick="submitForm()"  />
-                                <a class="editbtn2" href="?page=userprofile_dashboard">Cancel</a>
-                            </div>
+                            
                             <div class="user-profile-dis">
                                
                                 <div class="user-detail1">
