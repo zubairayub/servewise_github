@@ -20,14 +20,23 @@
                     <th>Payment Status</th>
                     <th>Option</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0001</td>
-                    <td>01</td>
-                    <td>Griffin</td>
-                    <td>20$</td>
-                    <td>Pending</td>
-                    <td>Unpaid</td>
+                
+                    <?php  
+                        if (!empty($data)){
+                            $count = 1;
+                    foreach ($data as $key => $value) {  
+                            $product_name = getproductnamebyid($value['product_id']);
+                            $order_status = getorderstatus($value['op_id']);
+                            $payment_status = getordersalestatus($order_status[0]['orders_id']);
+                        ?> 
+                        <tr>
+                        <td><?php echo $count;?></td>
+                    <td><?php echo $value['op_id'];?></td>
+                    <td><?php echo $value['quantity'];?></td>
+                    <td><?php echo $product_name[0]['name'] ;?></td>
+                    <td><?php echo $value['totalprice'];?></td>
+                    <td><?php echo $order_status[0]['order_status'];?></td>
+                    <td><?php echo $payment_status[0]['sale_status']; ?></td>
                     <td class="option">
                         <a href="?page=orderview_dashboard">
                         <i class="fa fa-eye" aria-hidden="true"></i> view
@@ -36,7 +45,13 @@
                             <i class="fa fa-trash" aria-hidden="true"></i> Remove
                         </a>
                     </td>
-                </tr>
+ </tr>
+                       
+                    <?php  
+                    $count ++;
+                } }  ?>
+                    
+               
             </table>
         </form>
     </div>

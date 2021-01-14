@@ -1,5 +1,5 @@
 <?php
-
+ 
 if(!empty($dbcalss)){
 include_once($dbcalss); 
 }
@@ -76,6 +76,120 @@ header('Location: ?page=home');
 
 }
 
+
+
+
+
+
+
+function getorders($user_id =  NULL,$type =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(empty($user_id)){
+	                 $varr->query="SELECT * FROM `order_product` ";
+
+				}else{
+					$varr->query="SELECT * FROM `order_product`  where user_id=$user_id ";
+
+				}
+					
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+function getproductnamebyid($product_id =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				
+						$varr->query="SELECT name FROM `product`  where product_id=$product_id ";
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+
+
+function getorderstatus($op_id =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				
+						$varr->query="SELECT * FROM `orders`  where op_id=$op_id ";
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+
+function getordersalestatus($order_id =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				
+				$varr->query="SELECT sale_id FROM `orderandsale`  where order_id=$order_id ";
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+				$sale_id = $result[0]['sale_id'];
+				$varr->query="SELECT * FROM `sale`  where sale_id=$sale_id ";
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+			
+
+
+			return  $result;
+
+}
 
 
 

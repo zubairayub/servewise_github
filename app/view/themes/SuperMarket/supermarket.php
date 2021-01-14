@@ -140,7 +140,7 @@ include 'include/header.php';
                         <img src="assets/5.jpg" alt="LOGO" width="100px">
                     </div>
                     <div class="navigation">
-                        <a href="#">Product</a>
+                        <a href="../assets/themePages/productpage.phtml">Product</a>
                         <a href="#">About</a>
                         <a href="#contactus">Contact</a>
                         <div id="menuToggle">
