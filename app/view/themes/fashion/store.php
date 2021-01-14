@@ -24,7 +24,7 @@
                         <h3>LOGO</h3>
                     </div>
                     <div class="navigation">
-                        <a href="#">Product</a>
+                        <a href="../assets/themePages/productpage.php">Product</a>
                         <a href="#">Contact</a>
                         <a href="#">About</a>
                     </div>

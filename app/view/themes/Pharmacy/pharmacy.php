@@ -19,7 +19,7 @@ include '../include/config.php';
                     <img src="assets/logo.jpg" alt="LOGO">
                 </div>
                 <div class="nav-navigation">
-                    <a href="#">Products</a>
+                    <a href="../assets/themePages/productpage.php">Products</a>
                     <a href="#">Contact us</a>
                     <a href="#">About</a>
                 </div>

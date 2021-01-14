@@ -1,5 +1,5 @@
 <?php
-include 'include/header.php';
+include 'include/header.php'; 
 ?>
 <style>
     .img-responsive{width: 140px; flex-basis:20%}
@@ -140,7 +140,7 @@ include 'include/header.php';
                         <img src="assets/5.jpg" alt="LOGO" width="100px">
                     </div>
                     <div class="navigation">
-                        <a href="../assets/themePages/productpage.phtml">Product</a>
+                        <a href="../assets/themePages/productpage.php">Product</a>
                         <a href="#">About</a>
                         <a href="#contactus">Contact</a>
                         <div id="menuToggle">
@@ -173,7 +173,7 @@ include 'include/header.php';
                     data-aos-duration="1000">
                         <h1>Heading</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur sapiente sit neque necessitatibus quos voluptatem facilis, minima, consectetur temporibus explicabo est voluptatum non alias perferendis ipsam veritatis quis delectus.</p>
-                        <a href="#">Go To Product &#8594;</a>
+                        <a href="../assets/themePages/productpage.php">Go To Product &#8594;</a>
                     </div>
                     <div class="right-side" data-aos="fade-left"
                     data-aos-duration="1000">

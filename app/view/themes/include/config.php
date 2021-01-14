@@ -1,8 +1,10 @@
 <?php
 session_start();
-require  '../../../lib/functions.php';
-$DB_CLASS = '../../../model/classDatabaseManager.php';
-$PRODUCT_DIRECTORY = '../../../upload/products/';
+defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '/../../../../app')); 
+const DS = DIRECTORY_SEPARATOR; 
+require  APPLICATION_PATH . DS . 'lib'. DS .'functions.php';
+$DB_CLASS =     APPLICATION_PATH . DS . 'model' . DS. 'classDatabaseManager.php';
+$PRODUCT_DIRECTORY =  APPLICATION_PATH . DS . 'upload' . DS. 'products' . DS ;
 if(!empty($_SESSION['vb_id'])){
 
 $vb_id = $_SESSION['vb_id'];
