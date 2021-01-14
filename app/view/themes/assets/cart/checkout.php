@@ -126,5 +126,13 @@ function payWithPaystack(e) {
   });
   handler.openIframe();
 }
+
   </script>
 	<?php }else{echo 'payment method'.$payment_method.' is not available';} ?>
+	<script>
+		$('button').click(function(){
+			var listvalues = $("#js-demo-form").serialize();
+		localStorage.setItem('lists', JSON.stringify(listvalues));	
+		});
+		 
+	</script>
