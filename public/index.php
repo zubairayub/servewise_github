@@ -61,7 +61,7 @@ if((!isLogin()) && ($page!='\dashboard\login_dashboard' && $page!= '\dashboard\s
 
 
 
-
+$userstatus =NULL;
 
 
 //store session
@@ -79,6 +79,10 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 				$city   		=	$_SESSION['state'];
 				$zip    		=	$_SESSION['zip'];
 				$status 		=	$_SESSION['status'];
+
+
+			$userstatus	 = getusertypes($type);
+			$userstatus = $userstatus[0]['title'];
 
 }
 

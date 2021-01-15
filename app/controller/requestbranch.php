@@ -9,7 +9,9 @@ defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( di
 $PATH =  constant("APPLICATION_INNERPATH");
 
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+$DB_CLASS =  $config_service['DB_CLASS'];
 require_once $config_service['DB_CLASS'];
+require_once $config_service['FUNCTIONS'];
 require $config_service['BRANCH_CLASS'];
 	
 	$branch=new branch();
@@ -17,7 +19,12 @@ require $config_service['BRANCH_CLASS'];
 
 	
 
+$city = NULL;
+$state = NULL;
+if(isset($_POST["city"]) && !empty($_POST["city"])){
+$city = $_POST["city"];
 
+}
 	if(isset($_POST["vendor"])){
 	
 	       $vendorid = $_POST["vendor"];
@@ -26,12 +33,42 @@ require $config_service['BRANCH_CLASS'];
 	       $emailid = $_POST["email"];
 		     $address = $_POST["address"];
          $address2 = $_POST["address2"];
-      
+         $country = $_POST["country"];
+         $state = $_POST["state"]; 
+         
 		     $userid = $_SESSION['logInId'];
 	
+	 if($city == 'NULL'){
+
+    $city = NULL;
+   }
+
+
+    if($state == 'NULL'){
+
+    $state = NULL;
+   }
 	
-	
-		$reqbranch = $branch->requestbranch($name,$contactno,$emailid,$address,$address2,$userid,$vendorid);
+		$data =  checkbranchlevel($country,$state,$city,$vendorid,$DB_CLASS);
+//     print_r($data);
+// exit();
+
+   if($data ==  1){
+
+$reqbranch = $branch->requestbranch($name,$contactno,$emailid,$address,$address2,$userid,$vendorid);
+
+   }else{
+
+
+echo $data;
+exit();
+
+   }
+    
+
+
+
+
 	} 
         
         if (!empty($reqbranch)){
@@ -58,10 +95,12 @@ require $config_service['BRANCH_CLASS'];
                 $status = FALSE;
             }
                 if (!empty($getsubbranchcountry)){
-						$state = $_POST["state"];	
+						//$state = $_POST["state"];	
                 //    $branchid = $_SESSION['branchid'];
+                  if(!empty($state)){
 						$addstate = $branch->addstatetosubbranch($state,$branchid,$sbc);
 				    $status = TRUE;
+          }
                 }else {
                 $status = FALSE;
             } 
@@ -74,9 +113,11 @@ require $config_service['BRANCH_CLASS'];
                 $status = FALSE;
             }
                             if (!empty($getsubbranchstate)){
-							 $city = $_POST["city"];
+							// $city = $_POST["city"];
                       //          $branchid = $_SESSION['branchid'];
+                              if(!empty($city)){
 							$addcity = $branch->addcitytosubbranch($city,$branchid,$sbs);
+            }
 						//	echo "city added";
                                
 						}else {

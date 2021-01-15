@@ -65,14 +65,14 @@ foreach ($getcountries as $country) {
             <label>State:</label><br /> <select name="state"
                 id="state-list" 
                 onChange="getCityforbranch(this.value);">
-                <option value="">Select State</option>
+                <option value="NULL" >Select State</option>
           
             </select>
         </div>
         <div class="row">
             <label>City:</label><br /> <select name="city"
                 id="city-list" >
-                <option>Select City</option>
+                <option value="NULL">Select City</option>
             </select>
         </div>
     </div>
@@ -101,6 +101,12 @@ foreach ($getcountries as $country) {
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('branch is created');
+    }else if(data == 2){
+alert('Branch for this city already created');
+    }else if(data == 3){
+alert('Branch for this state already created');
+    }else if(data == 4){
+        alert('Branch for this country already created');
     }else{
       alert('branch not created');
     }

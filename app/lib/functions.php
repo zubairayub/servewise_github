@@ -8,6 +8,169 @@ function get($name, $def= '')
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
+
+
+
+function checkbranchlevel($country_id= NULL,$state_id= NULL,$city_id= NULL,$vendor_id= NULL,$dbclass = NULL)
+{
+$return = 1;
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	
+
+	 $query;
+	 $db;
+	 $varr = new databaseManager();
+
+	if(!empty($city_id)){
+
+
+		$varr->query="SELECT * FROM `branch`   where `vendor_id` = $vendor_id ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+		foreach ($result as $key => $value) {
+					
+				$branch_id = $value['branch_id'];
+		
+		$varr->query="SELECT * FROM `subbranch_city` WHERE `branch_id` = $branch_id AND `city` = $city_id  ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+
+		if(!empty($result)){
+
+			$return =  2;
+			 break;
+			 	}else{
+
+			$return = TRUE;
+
+		}
+
+
+
+				}
+				return $return;		
+
+
+	}elseif(!empty($state_id)){
+
+
+		$varr->query="SELECT * FROM `branch`   where `vendor_id` = $vendor_id ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+		foreach ($result as $key => $value) {
+					
+				$branch_id = $value['branch_id'];
+		
+		$varr->query="SELECT * FROM `subbranch_state` WHERE `branch_id` = $branch_id AND `state` = $state_id  ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+
+		if(!empty($result)){
+	    $varr->query="SELECT * FROM `subbranch_city` WHERE `branch_id` = $branch_id  ";
+		$result = $varr->executeQuery($varr->query,array(),"sread");
+if(empty($result)){
+
+		$return =  3;
+		 break;
+	
+
+
+}else{
+
+	 $return =  $result;
+}
+			 	}else{
+
+			$return = TRUE;
+
+		}
+
+
+
+				}
+				return $return;		
+
+
+
+
+
+
+
+
+
+
+	}elseif(!empty($country_id)){
+
+
+
+
+	$varr->query="SELECT * FROM `branch`   where `vendor_id` = $vendor_id ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+		foreach ($result as $key => $value) {
+					
+				$branch_id = $value['branch_id'];
+		
+		$varr->query="SELECT * FROM `subbranch_country` WHERE `branch_id` = $branch_id AND `country` = $country_id  ";
+		$result=$varr->executeQuery($varr->query,array(),"sread");
+
+		if(!empty($result)){
+
+	    $varr->query="SELECT * FROM `subbranch_state` WHERE `branch_id` = $branch_id  ";
+		$result = $varr->executeQuery($varr->query,array(),"sread");
+if(empty($result)){
+
+		$return =  4;
+		 break;
+	
+
+
+}else{
+
+	 $return =  $result;
+}
+
+			 	}else{
+
+			$return = TRUE;
+
+		}
+
+
+
+				}
+				return $return;		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}else{
+
+
+		return 'Something Went Wrong';
+	}
+
+
+
+
+
+
+
+
+}
+
 function gettheme($url){
  				
 

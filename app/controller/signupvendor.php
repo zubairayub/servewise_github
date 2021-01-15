@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 
@@ -21,22 +21,25 @@ require $config_service['VENDOR_CLASS'];
 
 	if(isset($_POST["name"])){
 	
-	$name = $_POST["name"];
-     $contactno = $_POST["contactno"];
-	$emailid = $_POST["email"];
+		$name = $_POST["name"];
+     	$contactno = $_POST["contactno"];
+		$emailid = $_POST["email"];
 		$address = $_POST["address"];
         $address2 = $_POST["address2"];
-        $countryid = $_POST["country"];
-        $stateid = $_POST["state"];
-        $cityid = $_POST["city"];
+        // $countryid = $_POST["country"];
+        // $stateid = $_POST["state"];
+        // $cityid = $_POST["city"];
 		$userid = $_SESSION['logInId'];
 	
-        $getcountryname = $vendor->getcountrynamebyid($countryid);
-        $getstatename = $vendor->getstatenamebyid($stateid);
-        $getcityname = $vendor->getcitynamebyid($cityid);
-        $country = $getcountryname[0]["name"];
-        $state = $getstatename[0]["name"];
-        $city = $getcityname[0]["name"];
+        // $getcountryname = $vendor->getcountrynamebyid($countryid);
+        // $getstatename = $vendor->getstatenamebyid($stateid);
+        // $getcityname = $vendor->getcitynamebyid($cityid);
+        // // $country = $getcountryname[0]["name"];
+        // $state = $getstatename[0]["name"];
+        // $city = $getcityname[0]["name"];
+		 $country = 'Default';
+         $state = 'Default';
+         $city = 'Default';
 	
 	
 		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid);
