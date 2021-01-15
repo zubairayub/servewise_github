@@ -1,7 +1,136 @@
 <?php
 include 'include/header.php'; 
 ?>
+<style>
+    .img-responsive{width: 140px; flex-basis:20%}
+    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
+    .sc-cart-item-list{font-size:14px;}
+    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
+    .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
+    .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
+    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .section1{flex-basis:10%;}
+    .section2{flex-basis:80%;}
+    .section3{flex-basis:100%;}
+    .section4{flex-basis:100%;}
+    .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
+    
+    
+    #menuToggle
+    {   
+        font-size: 25px;
+        display: block!important;
+        position: absolute;
+        top: 35px;
+        right: 48px;
+        z-index: 1;
+        display: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
 
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+
+
+#menuToggle .checkbox
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle .fa-shopping-cart
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle:hover .fa-shopping-cart{
+    transform: scale(1.1);
+}
+
+
+
+#menuToggle input:checked ~ .fa-shopping-cart
+{
+  opacity: 1;
+}
+
+#menu
+{
+  position: absolute;
+  width: 351px;
+  margin: -100px 0 0 -310px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  transition: .3s ease;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+
+
+
+
+</style>
 <body>
 
     <header></header>
@@ -14,8 +143,18 @@ include 'include/header.php';
                     </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
-                        <a href="#">Contact</a>
                         <a href="#">About</a>
+                        <a href="#contactus">Contact</a>
+                        <div id="menuToggle">
+                        <input type="checkbox" class="checkbox" />
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <ul id="menu">
+                            <!-- Cart submit form -->
+                            <form action="../assets/cart/viewcart.php" method="POST"> 
+                            <!-- SmartCart element -->
+                                <div id="smartcart"></div>
+                            </form>  
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -59,20 +198,33 @@ include 'include/header.php';
 
     </section>
     <section class="section-product-slider" data-aos="fade-up">
-        <div class="card">
+            <?php 
+            foreach ($result as $key => $value) {
+                if($value['is_featured'] == '1'){
+                    $image = getproductsimages($value['product_id'],$DB_CLASS);
+                $image_path =   $image[0]['image_path'];
+              ?>
+
+        <div class="card sc-product-item">
             <div class="product-img">
-                <img src="asset/p1.jpg" alt="product">
+                <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
             </div>
             <div class="product-content">
-                <h1>Product Name</h1>
-                <h3>Description</h3>
-                <p><span class="dollor">$</span> 99.00</p>
-                <div class="product-buy">
-                <a href="#">add to cart</a>
+                <h1 data-name="product_name"><?= $value['name']; ?></h1>
+                <h3><?= $value['description']; ?></h3>
+                <p><span class="dollor">$</span> <?= $value['price']; ?></p>
+
+                <div class="product-card-button product-buy">
+                    <input name="product_price" value="<?= $value['price']?>" type="hidden" />
+                    <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
+                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <?php }
+                }
+        ?>
+        <!--<div class="card">
             <div class="product-img">
             <img src="asset/p2.jpg" alt="product">
             </div>
@@ -123,7 +275,7 @@ include 'include/header.php';
                 <a href="#">add to cart</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <div class="heading">Feature Products</div>
     </section>
@@ -137,19 +289,25 @@ include 'include/header.php';
         <div class="product-slider"></div>
     </section>
     <div class="hero-product"  data-aos="flip-left">
+    
         <div class="container">
             <div class="hero-card">
-            <div class="left-side">
-                <img src="asset/3.jpg" alt="hero">
+                <div class="left-side">
+                    <img src='<?= $PRODUCT_DIRECTORY.$image_path; ?>' alt="hero">
+                </div>
+                <div class="right-side">
+                    <div class="right-heading"><?= $value['name']; ?>
+                        <span class="hot-span">Hot Product</span></div>
+                    <div class="right-des"><?= $value['description']; ?></div>
+                    <div class="right-price"><?= $value['price']; ?></div>
+                    <div class="product-card-button right-btn">
+                        <input name="product_price" value="<?= $value['price']?>" type="hidden" />
+                        <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
+                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="right-side">
-                <div class="right-heading">Product Name
-                    <span class="hot-span">Hot Product</span></div>
-                <div class="right-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, explicabo soluta iusto voluptatum reiciendis quaerat ad voluptates ullam facilis nostrum eos impedit deleniti eveniet fugit repudiandae quia tempora enim magni!</div>
-                <div class="right-price">$ 99.00</div>
-                <div class="right-btn"><a href="#">Add to cart</a></div>
-            </div>
-            </div>
+           
 
         </div>
     </div>
@@ -161,21 +319,29 @@ include 'include/header.php';
     </section>
     <section class="section-product-slider" data-aos="fade-up"
     data-aos-duration="500">
-        <div class="card">
+        <?php 
+            foreach ($result as $key => $value) {
+                $image = getproductsimages($value['product_id'],$DB_CLASS);
+                $image_path =   $image[0]['image_path'];
+        ?>
+        <div class="card sc-product-item">
             <div class="product-img">
-                <img src="asset/p1.jpg" alt="product">
+                <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
                 <div class="sub-heading">Brand LOGO</div>
             </div>
             <div class="product-content">
-                <h1>Product Name</h1>
-                <h3>Description</h3>
-                <p><span class="dollor">$</span> 99.00</p>
+                <h1><?= $value['name'];?></h1>
+                <h3><?= $value['description']; ?></h3>
+                <p><span class="dollor">$</span> <?= $value['price']; ?></p>
                 <div class="product-buy">
-                <a href="#">add to cart</a>
+                    <input name="product_price" value="<?= $value['price']?>" type="hidden" />
+                    <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
+                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <?php } ?>
+        <!-- <div class="card">
             <div class="product-img">
             <img src="asset/p2.jpg" alt="product">
             <div class="sub-heading">Brand LOGO</div>
@@ -230,7 +396,7 @@ include 'include/header.php';
                 <a href="#">add to cart</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <section class="ad-product">
         <div class="container">
@@ -326,14 +492,4 @@ include 'include/header.php';
 
     </section>
     <section class="payment"></section>
-
-    <!-- js lib -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- js lib end -->
-    <script src="js/slick.min.js"></script>
-    <script src="js/store.js"></script>
-</body>
-</html>
+    <?php  include 'include/footer.php'; ?>
