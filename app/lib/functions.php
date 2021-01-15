@@ -76,9 +76,207 @@ header('Location: ?page=home');
 
 }
 
+function getpickuppoint($user_id = NULL){
+	if(!empty($dbclass)){
+		include_once($dbclass);
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+	if(empty($usery_id)){
+		$varr->query = "SELECT * FROM `order_product` ";
+	}else{
+		$varr->query = "SELECT * FROM `order_product` where user_id=$user_id";
+	}
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+	return $result;
+}
 
+function getviewproduct($vb_id =  NULL){
 
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($vb_id)){
+						$varr->query="SELECT * FROM `product` ";
+   
+				   }else{
+						$varr->query="SELECT * FROM `product`  where vb_id=$vb_id ";
+						
+						
+				   }	
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+					
+				return  $result;
+	
+	}
 
+function getcategorybyid($cat_id = NULL){
+	if(!empty($dbclass)){
+		include_once($dbclass);
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+	if(empty($cat_id)){
+		$varr->query = "SELECT * FROM `category` ";
+	}else{
+		$varr->query = "SELECT * FROM `category` where category_id=$cat_id";
+	}
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+	return $result;
+}
+function getsubcategorybyid($sc_id = NULL){
+	if(!empty($dbclass)){
+		include_once($dbclass);
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+	if(empty($sc_id)){
+		$varr->query = "SELECT * FROM `subcategory_2_level` ";
+	}else{
+		$varr->query = "SELECT * FROM `subcategory_2_level` where sc_id=$sc_id";
+	}
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+	return $result;
+}
+function getsubsubcategorybyid($ssc_id = NULL){
+	if(!empty($dbclass)){
+		include_once($dbclass);
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+	if(empty($ssc_id)){
+		$varr->query = "SELECT * FROM `subcategory_3_level` ";
+	}else{
+		$varr->query = "SELECT * FROM `subcategory_3_level` where ssc_id=$ssc_id";
+	}
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+	return $result;
+}
+function getcustomerinfo($user_id =  NULL){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($user_id)){
+						$varr->query="SELECT * FROM `user` ";
+   
+				   }else{
+						$varr->query="SELECT * FROM `vendor`  where user_id=$user_id ";
+						$result=$varr->executeQuery($varr->query,array(),"sread");
+						$usr_id = $result[0]['user_id'];
+						$varr->query="SELECT * FROM `user  where user_id=$usr_id ";
+				   }	
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+					
+				return  $result;
+	
+	}
+
+function getuserinfo($user_id =  NULL){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($user_id)){
+						 $varr->query="SELECT * FROM `user` ";
+	
+					}else{
+						$varr->query="SELECT * FROM `user`  where user_id=$user_id ";
+	
+					}
+						
+				
+			
+			
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+				return  $result;
+	
+	}
+	function getproductinfo($pid =  NULL){
+
+		if(!empty($dbclass)){
+		
+				include_once($dbclass);
+		
+		}
+						 $query;
+						 $db;	
+				
+				
+						$varr = new databaseManager();
+		
+						if(empty($user_id)){
+							 $varr->query="SELECT * FROM `product` ";
+		
+						}else{
+							$varr->query="SELECT * FROM `product`  where user_id=$pid ";
+		
+						}
+							
+					
+				
+				
+					$result=$varr->executeQuery($varr->query,array(),"sread");
+					return  $result;
+		
+		}
+
+function getabandoncart($user_id =  NULL){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($user_id)){
+						 $varr->query="SELECT * FROM `abandon_cart` ";
+	
+					}else{
+						$varr->query="SELECT * FROM `abandon_cart`  where user_id=$user_id ";
+	
+					}
+						
+				
+			
+			
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+				return  $result;
+	
+	}
 
 
 

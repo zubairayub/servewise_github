@@ -1,15 +1,6 @@
-<?php 
-include '../include/config.php';
+<?php
+include 'include/header.php'; 
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $theme_title;?></title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/pharmacy.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <body>
     
     <header>
@@ -52,6 +43,12 @@ include '../include/config.php';
         </div>
         <div id="cards-container">
           <div class="cards">
+            <?php 
+                foreach ($result as $key => $value) {
+                    if($value['is_featured'] == '1'){
+                        $image = getproductsimages($value['product_id'],$DB_CLASS);
+                    $image_path =   $image[0]['image_path'];
+              ?>
             <div class="card">
               <img src="http://via.placeholder.com/220x220" alt="Animals" style="width:100%">
               <div class="container">

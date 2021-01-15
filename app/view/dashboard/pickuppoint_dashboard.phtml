@@ -20,11 +20,22 @@
                         <th>Payment Status</th>
                         <th>Option</th>
                     </tr>
+                
+                <?php  
+                    if (!empty($data)){
+                        $count = 1;
+                foreach ($data as $key => $value) {  
+                        $product_name = getproductnamebyid($value['product_id']);
+                        $order_status = getorderstatus($value['op_id']);
+                        $customer_name = getuserinfo($value['user_id']);
+                        //  $payment_status = getordersalestatus($order_status[0]['orders_id']);
+                        //var_dump($value);
+                    ?> 
                     <tr>
-                        <td>1</td>
+                        <td><?= $count; ?></td>
                         <td>0001</td>
-                        <td>01</td>
-                        <td>Griffin</td>
+                        <td><?= $value['quantity']; ?></td>
+                        <td><?= $customer_name[0]['first_name']; ?></td>
                         <td>20$</td>
                         <td>Pending</td>
                         <td>Unpaid</td>
@@ -37,6 +48,10 @@
                             </a>
                         </td>
                     </tr>
+                       
+                       <?php  
+                       $count ++;
+                   } }  ?>
                 </table>
             </form>
         </div>

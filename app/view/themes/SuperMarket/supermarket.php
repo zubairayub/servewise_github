@@ -191,15 +191,12 @@ include 'include/header.php';
             <div class="heading">Feature Products</div>
             <div class="product-cat-card" data-aos="fade-up" >
             <?php 
-            foreach ($result as $key => $value) {
-if($value['is_featured'] == '1'){
-     $image = getproductsimages($value['product_id'],$DB_CLASS);
-$image_path =   $image[0]['image_path'];
+                foreach ($result as $key => $value) {
+                    if($value['is_featured'] == '1'){
+                        $image = getproductsimages($value['product_id'],$DB_CLASS);
+                    $image_path =   $image[0]['image_path'];
               ?>
-
-
-             
-<div class="sc-product-item product-card">
+<               div class="sc-product-item product-card">
                     <div class="product-card-upper">
                         <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" data-name="product_image" style="width:100%;height:100%;">
                     </div>
@@ -219,15 +216,10 @@ $image_path =   $image[0]['image_path'];
                         <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
-
-
-<?php
-}
-               }
-            ?>
-            
-               
-               
+                <?php
+                        }
+                    }
+                ?>
             </div>
         </div>
     </section>
