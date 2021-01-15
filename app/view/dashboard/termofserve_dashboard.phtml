@@ -1,3 +1,7 @@
+<?php 
+            $terms_of_serv = search_array('Term of services',$config_system);
+?>
+
 <div class="wrapper">
     <div class="row">
         <div class="bluk-sms-dashboard">
@@ -8,7 +12,7 @@
                 
                 <div class="bluk-sms-form3">
                     <label>Write Your Terms of Service</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="tos"></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="tos"><?php echo $terms_of_serv['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -27,6 +31,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

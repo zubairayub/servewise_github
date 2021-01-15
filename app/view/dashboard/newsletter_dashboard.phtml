@@ -9,28 +9,24 @@
                 <div class="newsletter-form-1-1">
                     <div class="newsletter-form-1">
                         <label>Email (User)</label>
-                        <select name="email_user" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                        <input type="text" value="<?php echo $_SESSION["logIn"]?>">
                     </div>
                     <div class="newsletter-form-2">
                         <label>Email (Subcribers)</label>
                         <select name="email_sub" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option value="1">bunniqureshi007@gmail.com</option>
+                            <option value="2">zubairayub@gmail.com</option>
+                            <option value="3">daniyal88@gmail.com</option>
                         </select>
                     </div>
                 </div>
                 <div class="newsletter-form-3">
                     <label>Newsletter Subject :</label>
-                    <input type="text" name="subject">
+                    <input type="text" name="news_subject">
                 </div>
                 <div class="newsletter-form-4">
                     <label>Newsletter Content :</label>
-                    <textarea class="tinymce"></textarea>
+                    <textarea class="tinymce" name="news_content" id="myTextArea"></textarea>
                 </div>
 
                 <div class="newsletter-btn">
@@ -45,6 +41,8 @@
   function submitForm(form){
     
     var url = $('#form').attr("action");
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {

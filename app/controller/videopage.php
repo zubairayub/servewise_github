@@ -16,7 +16,7 @@ $varr = new databaseManager();
 
 $title       = $_POST['video_title']        = isset($_POST['video_title']) ? $_POST['video_title'] : '';
 $short_desc  = $_POST['video_short_desc']   = isset($_POST['video_short_desc']) ? $_POST['video_short_desc'] : '';
-$video  = $_FILES['video_video']   = isset($_FILES['video_video']) ? $_FILES['video_video'] : '';
+$video  = $_POST['video_video']   = isset($_POST['video_video']) ? $_POST['video_video'] : '';
 
 if(!empty($title)){
 
@@ -26,7 +26,7 @@ if(!empty($title)){
         $varr->query="UPDATE  `config` SET value=? where name = 'video short dis' ";
         $result=$varr->executeQuery($varr->query,array($short_desc),"update");
     }if(!empty($video)){
-        $varr->query="UPDATE  `config` SET value=? where name = 'video videofile' ";
+        $varr->query="UPDATE  `config` SET value=? where name = 'video dis' ";
         $result=$varr->executeQuery($varr->query,array($video),"update");
     }
     $response = 1;

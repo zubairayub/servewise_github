@@ -99,6 +99,8 @@ $menu = getmenu();
 
 $config_system = get_config_system();
 
+$config_system_pages = get_config_system($logInId);
+
 
 $language = search_array('language',$config_system);
 

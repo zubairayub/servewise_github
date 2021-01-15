@@ -1,3 +1,8 @@
+<?php 
+    $about_dis = search_array('AboutDiscribtion',$config_system);
+    $about_vision = search_array('about our vision',$config_system);
+?>
+
 <main class="about-page">
         <section class="section-about-page-heading">
             <div class="container">
@@ -18,7 +23,7 @@
             <div class="container">
                 <div class="about-content">
                     <div class="content-right-side" data-aos="fade-up-right">
-                        <p>Have you thought that selling online was a little out of your reach? Think again. Opening an online store has never been easier. <b>ServeWise</b> is a leading choice for small business merchants to easily set up a store and start selling fast. No need to abandon your existing site — <b>ServeWise</b> can be added virtually anywhere you have an online presence. You have the freedom to operate multiple online stores including on your website, social media channels, and mobile devices. So stop reading and start selling from your new online store!</p>
+                        <?php echo $about_dis['value'] ; ?>    
                     </div>
                     <div class="content-left-side"data-aos="fade-up-left">
                         <img src="<?php echo $image;?>marketingbg.png" alt="content-section logo">
@@ -26,7 +31,7 @@
                 </div>
             </div>
         </section>
-        <section class="team">
+        <!-- <section class="team">
             <h1>OUR TEAM</h1>
         </section>
         <section class="about-our-team">
@@ -102,7 +107,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="vision-heading">
             OUR Vision
         </section>
@@ -113,7 +118,7 @@
                             <img src="<?php echo $image;?>E-com.png" alt="vision-img">
                         </div>
                         <div class="vison-right" data-aos="zoom-out-up">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In sequi laudantium eligendi magnam similique explicabo dignissimos enim, minima sit iste. Magni asperiores molestias veritatis voluptate eos officiis hic necessitatibus esse?</p>
+                            <?php echo $about_vision['value'] ; ?>
                         </div>
                 </div>
             </div>

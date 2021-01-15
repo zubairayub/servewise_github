@@ -1,3 +1,10 @@
+<?php 
+            $about_desc = search_array('aboutdiscribtion',$config_system);
+            $about_vission = search_array('about our vision',$config_system);
+            $about_team_name = search_array('our team Name',$config_system);
+            $about_team_position = search_array('our team position',$config_system);
+            $about_team_company = search_array('our team company',$config_system);
+?>
 <div class="wrapper">
     <div class="row">
         <div class="dashboard-footer">
@@ -11,7 +18,7 @@
                         <label for="">About Discribtion :</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" id="myTextArea" class="tinymce"></textarea>
+                        <textarea name="about_desc" id="myTextArea" class="tinymce"><?php echo $about_desc['value'];?></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -30,7 +37,7 @@
                             <label for="">Name </label>
                         </div>
                         <div class="footer-contact-add-input">
-                            <input type='text' name="team_name" />
+                            <input type='text' name="team_name" value="<?php echo $about_team_name['value'];?>" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -38,7 +45,7 @@
                             <label for="">Position</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="team_position" />
+                            <input type='text' name="team_position" value="<?php echo $about_team_position['value'];?>" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -54,7 +61,7 @@
                             <label for="">Company Name</label>
                         </div>
                         <div class="footer-contact-email-input">
-                            <input type='text' name="team_comp" />
+                            <input type='text' name="team_comp"  value="<?php echo $about_team_company['value'];?>"/>
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
@@ -71,7 +78,7 @@
                         <label>Our Vision</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" id="myTextAreaSec" name="vision"></textarea>
+                        <textarea class="tinymce" id="myTextAreaSec" name="vision"><?php echo $about_vission['value']; ?></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -128,6 +135,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }
@@ -141,6 +149,7 @@ function submitFormCnt(form){
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }
@@ -156,6 +165,7 @@ function submitFormVision(form){
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

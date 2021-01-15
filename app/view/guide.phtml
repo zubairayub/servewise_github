@@ -1,3 +1,9 @@
+<?php 
+    $guid_title = search_array('guide title',$config_system);
+    $guid_dis = search_array('guide Short Description',$config_system);
+    $guid_code = search_array('guide video',$config_system);
+?>
+
 <main>
         <section class="learn-hero">
             <div class="container">
@@ -12,156 +18,15 @@
         <section class="section1-Guide">
             <div class="container">
                 <div class="section1-Guide-content" data-aos="fade-right">
-                    <div class="guide-heading-hero">Our E-Commerce guide</div>
-                    <div class="guide-heading-pera">Get the knowledge you need to build a successful e-commerce store with Ecwid’s comprehensive user guides.</div>
-                    <div class="guide-heading-btn"> <a href="#">READ</a> | <a href="#">LISTEN</a> | <a href="#">DOWNLOAD</a></div>
+                    <div class="guide-heading-hero"><?php echo $guid_title['value'] ; ?></div>
+                    <div class="guide-heading-pera"><?php echo $guid_dis['value'] ; ?></div>
+                    <!-- <div class="guide-heading-btn"> <a href="#">READ</a> | <a href="#">LISTEN</a> | <a href="#">DOWNLOAD</a></div> -->
                 </div>
             </div>
         </section>
         <section class="section2-Guide">
             <div class="container">
-                <div class="section2-Guide-content">
-                    <div class="guide-row-card">
-                        <div class="guide-card" data-aos="flip-left">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-right">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-up">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="guide-row-card">
-                        <div class="guide-card" data-aos="flip-down">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-left">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-right">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="guide-row-card" data-aos="flip-up">
-                        <div class="guide-card">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-down">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-left">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="guide-row-card" data-aos="flip-right">
-                        <div class="guide-card">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-up">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                        <div class="guide-card" data-aos="flip-down">
-                            <div class="g-card-upper">
-                                <p>Image Here</p>
-                            </div>
-                            <div class="g-card-btn">
-                                <a href="#">How to Do it..</a>
-                            </div>
-                            <div class="g-card-content">
-                                This Guide will Teach you how to do E-commerce.
-                            </div> 
-                        </div>
-                    </div>
-                </div>
+            <?php echo $guid_code['value'] ; ?>     
             </div>
         </section>
     </main>

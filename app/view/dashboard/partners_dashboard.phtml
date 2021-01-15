@@ -1,3 +1,14 @@
+<?php 
+    $partner_faq_que = search_array('partner faq title',$config_system);
+    $partner_faq_ans = search_array('partner faq ans',$config_system);
+    $partner_pkg_name = search_array('partner pkg name',$config_system);
+    $partner_pkg_price = search_array('partner pkg price',$config_system);
+    $partner_pkg_heading = search_array('partner pkg heading',$config_system);
+    $partner_pkg_disc = search_array('partner pkg dis',$config_system);
+    $partner_hero_head = search_array('partner hero heading',$config_system);
+    $partner_hero_disc = search_array('partner hero disc',$config_system);
+?>
+
 <div class="wrapper">
     <div class="row">
         <div class="dashboard-footer">
@@ -8,16 +19,16 @@
                 <input type="hidden" name="formFAQ">
                 <div class="dashboard-footer-about">
                     <div class="footer-about-upload-label">
-                        <label for="">FAQ Question ?</label>
+                        <label for="">FAQ Title</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <input type="text" name='partner_faq'>
+                        <input type="text" name='partner_faq' value="<?php echo $partner_faq_que['value'];?>">
                     </div>
                     <div class="footer-about-upload-label">
-                        <label for="">FAQ Answer :</label>
+                        <label for="">FAQ code</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="partner_faq_ans" id="myTextAreaSec" class="tinymce" name='faq_answers'></textarea>
+                        <textarea name="partner_faq_ans" id="myTextAreaSec" class="tinymce" name='faq_answers'> <?php echo $partner_faq_ans['value'];?></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -60,7 +71,7 @@
                             <label for="">Package Name </label>
                         </div>
                         <div class="footer-contact-add-input">
-                            <input type='text' name="partner_package_name" />
+                            <input type='text' name="partner_package_name" value="<?php echo $partner_pkg_name['value'];?>" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -68,7 +79,7 @@
                             <label for="">Package Price</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="partner_package_price" />
+                            <input type='text' name="partner_package_price" value="<?php echo $partner_pkg_price['value'];?>" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-phone">
@@ -76,7 +87,7 @@
                             <label for="">Package Heading</label>
                         </div>
                         <div class="footer-contact-phone-input">
-                            <input type='text' name="partner_package_heading" />
+                            <input type='text' name="partner_package_heading" value="<?php echo $partner_pkg_heading['value'];?>" />
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-email">
@@ -84,7 +95,7 @@
                             <label for="">Package Description</label>
                         </div>
                         <div class="footer-contact-email-input">
-                            <textarea class="tinymce" id="myTextAreaDis" name="partner_package_desc"></textarea>
+                            <textarea class="tinymce" id="myTextAreaDis" name="partner_package_desc"><?php echo $partner_pkg_disc['value'];?> </textarea>
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
@@ -101,13 +112,13 @@
                         <label>Partner Hero Head</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <input type="text" name="partner_hero_heading">
+                        <input type="text" name="partner_hero_heading" value="<?php echo $partner_hero_head['value'];?>">
                     </div>
                     <div class="d-footer-copyright-head">
                         <label>Partner Hero Discribtion</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" id="myTextArea" name="partner_discribtion"></textarea>
+                        <textarea class="tinymce" id="myTextArea" name="partner_discribtion"> <?php echo $partner_hero_disc['value'];?></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -161,6 +172,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }
@@ -175,6 +187,7 @@ function submitFormPckg(form){
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }
@@ -189,6 +202,7 @@ function submitFormHero(form){
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

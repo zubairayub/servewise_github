@@ -17,7 +17,7 @@ $varr = new databaseManager();
 
 $title          = $_POST['guid_title']        = isset($_POST['guid_title']) ? $_POST['guid_title'] : '';
 $short_desc     = $_POST['guid_short_desc']   = isset($_POST['guid_short_desc']) ? $_POST['guid_short_desc'] : '';
-$video          = $_FILES['guid_video']       = isset($_FILES['guid_video']) ? $_FILES['guid_video'] : '';
+$video          = $_POST['guid_video']       = isset($_POST['guid_video']) ? $_POST['guid_video'] : '';
                                                                                                                         
 if(!empty($title)){
 

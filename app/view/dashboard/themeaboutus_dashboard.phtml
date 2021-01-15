@@ -11,7 +11,7 @@
                         <label for="">About Description :</label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" class="tinymce"></textarea>
+                        <textarea name="theme_about_desc" id="myTextArea" class="tinymce"></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -27,7 +27,7 @@
                         <label>Our Vision</label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" name="vision"></textarea>
+                        <textarea class="tinymce" id="myTextAreaSec" name="theme_about_vision"></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -47,6 +47,8 @@
   function submitFormAbout(form){
     
     var url = $('#formAbout').attr("action");
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     
     var formData = $('#formAbout').serializeArray();
     $.post(url, formData).done(function (data) {
@@ -60,6 +62,8 @@
 function submitFormVision(form){
     
     var url = $('#visionForm').attr("action");
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     
     var formData = $('#visionForm').serializeArray();
     $.post(url, formData).done(function (data) {

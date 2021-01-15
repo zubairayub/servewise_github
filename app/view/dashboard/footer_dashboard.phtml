@@ -1,3 +1,16 @@
+<?php 
+    $footer_about_disc = search_array('footer about dis',$config_system);
+    $foote_ad = search_array('address',$config_system);
+    $footer_contact = search_array('contact',$config_system);
+    $footer_email = search_array('email',$config_system);
+    $footer_copyr = search_array('Copyrighttext',$config_system);
+    $footer_fb_link = search_array('facebook',$config_system);
+    $footer_tw_link = search_array('twitter',$config_system);
+    $footer_inst_link = search_array('instagram',$config_system);
+    $footer_in_link = search_array('Linkin',$config_system);
+?>
+
+
 <div class="wrapper">
     <div class="row">
         <div class="dashboard-footer">
@@ -19,7 +32,7 @@
                     <label for="">About Discribtion :</label>
                 </div>
                 <div class="footer-about-upload-content">
-                    <textarea name="about_desc" class="tinymce"></textarea>
+                    <textarea name="footer_about_desc" id="myTextAreaSec" class="tinymce"><?php echo $footer_about_disc['value'];?></textarea>
                 </div>
             </div>
             <div class="dashboard-footer-about-btn">
@@ -36,7 +49,7 @@
                     <label for="">Contact Address</label>
                 </div>
                 <div class="footer-contact-add-input">
-                    <input type='text' name="contact_add" />
+                    <input type='text' name="contact_add" value="<?php echo $foote_ad['value'];?>" />
                 </div>
             </div>
             <div class="dashboard-footer-contact-phone">
@@ -44,7 +57,7 @@
                     <label for="">Contact Phone</label>
                 </div>
                 <div class="footer-contact-phone-input">
-                    <input type='text' name="contact_ph" />
+                    <input type='text' name="contact_ph"  value="<?php echo $footer_contact['value'];?>"/>
                 </div>
             </div>
             <div class="dashboard-footer-contact-email">
@@ -52,7 +65,7 @@
                     <label for="">Contact E-mail</label>
                 </div>
                 <div class="footer-contact-email-input">
-                    <input type='text' name="contact_email" />
+                    <input type='text' name="contact_email" value="<?php echo $footer_email['value'];?>" />
                 </div>
             </div>
             <div class="dashboard-footer-contact-btn">
@@ -67,7 +80,7 @@
                     <label>Copyright Text</label>
                 </div>
                 <div class="d-footer-copyright-input">
-                    <input type="text" name="cpy_text">
+                    <input type="text" name="cpy_text" value="<?php echo $footer_copyr['value'];?>">
                 </div>
             </div>
             <div class="d-footer-social-media">
@@ -88,7 +101,7 @@
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text" name="facebook">
+                                <input type="text" name="facebook" value="<?php echo $footer_fb_link['value'];?>">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -96,7 +109,7 @@
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text" name="twitter">
+                                <input type="text" name="twitter" value="<?php echo $footer_tw_link['value'];?>">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -104,7 +117,7 @@
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text" name="instagram">
+                                <input type="text" name="instagram" value="<?php echo $footer_inst_link['value'];?>">
                             </div>
                         </div>
                         <div class="d-footer-icons-main">
@@ -112,7 +125,7 @@
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </div>
                             <div class="d-footer-icons-links">
-                                <input type="text" name="linkedin">
+                                <input type="text" name="linkedin" value="<?php echo $footer_in_link['value'];?>">
                             </div>
                         </div>
                     </div>
@@ -129,12 +142,14 @@
 
 <script>
   function submitForm(form){
-    
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
         url = $('#form').attr("action");
         formData = $('#form').serializeArray();
         $.post(url, formData).done(function (data) {
         if(data == 1){
             alert('success');
+            location.reload();
         }else{
             alert('error');
         }
@@ -147,6 +162,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
             alert('success');
+            location.reload();
         }else{
             alert('error');
         }
@@ -160,6 +176,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
             alert('success');
+            location.reload();
         }else{
             alert('error');
         }

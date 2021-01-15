@@ -1,3 +1,9 @@
+<?php 
+    $video_title = search_array('video Title',$config_system);
+    $video_short_dis = search_array('video short dis',$config_system);
+    $video_dis = search_array('video dis',$config_system);
+?>
+
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
@@ -7,15 +13,15 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="video_title">
+                    <input type="text" name="video_title" value="<?php echo $video_title['value'];?>">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Short Discribtion</label>
-                    <input type="text" name="video_short_desc">
+                    <input type="text" name="video_short_desc" value="<?php echo $video_short_dis['value'];?>">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Video</label>
-                    <input type="file" name='video_video'>
+                    <textarea name="video_video" id="myTextAreaSec" class="tinymce"><?php echo $video_dis['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -52,10 +58,13 @@
     
     var url = $('#form').attr("action");
     
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

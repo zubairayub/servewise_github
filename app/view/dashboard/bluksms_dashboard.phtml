@@ -7,19 +7,19 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form1">
                     <label >Mobile Users</label>
-                    <select name="mob_user" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                    <select name="bluk_sms-mob_user" id="">
+                        <option value="list 1">list 1</option>
+                        <option value="list 2">list 2</option>
+                        <option value="list 3">list 3</option>
                     </select>
                 </div>
                 <div class="bluk-sms-form2">
                     <label>SMS Subject</label>
-                    <input type="text" name="sms_sub">
+                    <input type="text" name="bluk_sms_sub">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>SMS Content</label>
-                    <textarea class="tinymce"></textarea>
+                    <textarea class="tinymce" id="myTextArea" name="bluk-sms-content"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="SEND" onclick="submitForm()">
@@ -33,6 +33,8 @@
   function submitForm(form){
     
     var url = $('#form').attr("action");
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
