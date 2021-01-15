@@ -1,0 +1,165 @@
+
+<style>
+body{margin:0px;padding:0px;font-family: sans-serif;}
+header{background: #ffe201;box-shadow: 0px 7px 10px rgba(0,0,0,0.2);}
+.container{max-width: 1280px;margin: auto;}
+.header-content{display: flex;justify-content: space-between;align-items: center;padding:10px 0px}
+.header-content .header-content-right .header-logo-section{width: 80px;height: 50px;overflow: hidden;}
+.header-content .header-content-right .header-logo-section img{width: 80px;height: 50px;}
+
+/* header-hamburger */
+
+#menuToggle
+{
+  display: block!important;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  z-index: 1;
+  display: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -340px;
+  padding: 50px;
+  padding-top: 125px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  background: whitesmoke;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  transition: .3s ease;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+
+/* login humburger */
+
+</style>
+
+<header>
+    <div class = "container">
+        <div class="header-content">
+            <div class="header-content-right">
+                <a herf="#" class="header-logo-section">
+                    <img src="https://picsum.photos/200/300?random=1" alt="">
+                </a>
+            </div>
+            <div class="header-content-left">
+                <div class="hamburger-section">
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        <ul id="menu">
+                            <a href="#"><li><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</li></a>
+                            <a href="#"><li><i class="fa fa-columns" aria-hidden="true"></i>  Dashboard</li></a>
+                            <a href="#"><li><i class="fa fa-product-hunt" aria-hidden="true"></i> Product</li></a>
+                            <a href="#"><li><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
