@@ -3,6 +3,10 @@
     $tw = search_array('twitter',$config_system);
     $inst = search_array('instagram',$config_system);
     $lin = search_array('Linkin',$config_system);
+    $contact = search_array('contact',$config_system);
+    $address = search_array('email',$config_system);
+    $e_mail = search_array('address',$config_system);
+    $about = search_array('footer about dis',$config_system);
 ?>
 <footer>
         <div class="container">
@@ -25,13 +29,15 @@
                         <a href="?page=blog">Feature</a>
                         <a href="?page=showcase">Showcase</a>
                     </div>
-                  
+                    <div class="footer-upper-1">
+                        <p>Contact:<?php echo $contact['value'] ; ?></p>
+                        <p>address :<?php echo $address['value'] ; ?></p>
+                        <p>E-mail:<?php echo $e_mail['value'] ; ?></p>
+                    </div>
+                    
                 </div>
                 <div class="footer-mid">
-                    <div class="footer-mid-1 md1">
-                        <div class="badge-1"></div>
-                        <div class="badge-2"></div>
-                    </div>
+                <?php echo $about['value'] ; ?>
                     <div class="footer-mid-1">
                         <h2>Partners</h2>
                         <a href="?page=partners">Referral Program</a>
