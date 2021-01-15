@@ -1,3 +1,9 @@
+<?php 
+            $help_que = search_array('Help Question',$config_system);
+            $help_ans = search_array('Help Ans',$config_system);
+?>
+
+
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
@@ -7,11 +13,11 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Questions?</label>
-                    <input type="text" name="help_question">
+                    <input type="text" name="help_question" value="<?php echo $help_que['value'];?>">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Answers</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="help_answers"></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="help_answers"><?php echo $help_ans['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -53,6 +59,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

@@ -1,3 +1,8 @@
+<?php 
+            $privacy_policy = search_array('privacy policy',$config_system);
+?>
+
+
 <div class="wrapper">
     <div class="row">
         <div class="bluk-sms-dashboard">
@@ -8,7 +13,7 @@
                 
                 <div class="bluk-sms-form3">
                     <label>Write Your Privacy Policy</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="prvpy"></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="prvpy"><?php echo $privacy_policy['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -27,6 +32,7 @@
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }

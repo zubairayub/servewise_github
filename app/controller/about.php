@@ -61,12 +61,6 @@ if(!empty($vision)){
     $response = 1;
 }
 
-else{
-
-
-    $response = 0;
-
-}
 echo $response;
 
 ?>

@@ -1,3 +1,13 @@
+<?php 
+    $fb = search_array('facebook',$config_system);
+    $tw = search_array('twitter',$config_system);
+    $inst = search_array('instagram',$config_system);
+    $lin = search_array('Linkin',$config_system);
+    $contact = search_array('contact',$config_system);
+    $address = search_array('email',$config_system);
+    $e_mail = search_array('address',$config_system);
+    $about = search_array('footer about dis',$config_system);
+?>
 <footer>
         <div class="container">
             <div class="footer-content">
@@ -19,13 +29,15 @@
                         <a href="?page=blog">Feature</a>
                         <a href="?page=showcase">Showcase</a>
                     </div>
-                  
+                    <div class="footer-upper-1">
+                        <p>Contact:<?php echo $contact['value'] ; ?></p>
+                        <p>address :<?php echo $address['value'] ; ?></p>
+                        <p>E-mail:<?php echo $e_mail['value'] ; ?></p>
+                    </div>
+                    
                 </div>
                 <div class="footer-mid">
-                    <div class="footer-mid-1 md1">
-                        <div class="badge-1"></div>
-                        <div class="badge-2"></div>
-                    </div>
+                <?php echo $about['value'] ; ?>
                     <div class="footer-mid-1">
                         <h2>Partners</h2>
                         <a href="?page=partners">Referral Program</a>
@@ -46,10 +58,10 @@
                     <div class="footer-mid-1">
                         <h2>Community</h2>
                         <a href="?page=blog">Blog</a>
-                        <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-                        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a>
+                        <a href="<?php echo $fb['value'] ; ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                        <a href="<?php echo $tw['value'] ; ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+                        <a href="<?php echo $inst['value'] ; ?>"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                        <a href="<?php echo $lin['value'] ; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i> Link In</a>
                         <a href="?page=video">Podcast</a>
                     </div>
                 </div>

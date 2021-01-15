@@ -1,3 +1,8 @@
+<?php 
+    $k_b_title = search_array('blogtitle',$config_system);
+    $k_b_dis = search_array('blogcode',$config_system);
+?>
+
 <div class="wrapper">
       <div class="row">
             <div class="general-dashboard-main">
@@ -8,20 +13,20 @@
                         <div class="general-input1">
                               <div class="g-input-label">Title</div>
                               <div class="g-input-input">
-                                    <input type="text" name="title">
+                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>">
                               </div>
                         </div>
                         <div class="general-input4">
                               <div class="g-input-label">Artical Type</div>
                               <div class="g-input-input">
-                                    <select name="art_type" id="">
+                                    <select name="art_type" id="" >
                                           <option value="Blog">Blog</option>
                                           <option value="knowledge base">Knowledge Base</option>
                                     </select>
                               </div>
                         </div>
                         <div class="know-art-text-dashboard">
-                            <textarea class="tinymce" id="myTextArea" name="blog"></textarea>
+                            <textarea class="tinymce" id="myTextArea" name="blog" > <?php echo $k_b_dis['value'];?></textarea>
                         </div>
                         <div class="g-btn">
                               <input type="button" value="Update" onclick="submitForm()">
@@ -45,6 +50,7 @@
         $.post(url, formData).done(function (data) {
         if(data == 1){
             alert('success');
+            location.reload();
         }else{
             alert('error');
         }

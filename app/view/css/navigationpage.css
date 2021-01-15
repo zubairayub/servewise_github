@@ -235,12 +235,12 @@ main{
     color: purple;
     transform: rotate(360deg) scale(1.2);
 }
-.about-social-icons .fa-google-plus{
+.about-social-icons .fa-linkedin{
     color: #a0a0a0;
     transition: .5s ease all;
 }
-.about-social-icons .fa-google-plus:hover{
-    color: red;
+.about-social-icons .fa-linkedin:hover{
+    color: rgb(68, 112, 255);
     transform: rotate(-360deg) scale(1.2);
 }
 
@@ -2502,7 +2502,7 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
 .newsletter-main form{width: 100%;}
 .newsletter-main form .newsletter-form-1-1{display: flex;margin-bottom: 30px;margin-top: 10px; justify-content: space-between;align-items: center;}
 .newsletter-main form .newsletter-form-1-1 .newsletter-form-1 label{font-size: 20px;font-weight: 600;}
-.newsletter-main form .newsletter-form-1-1 .newsletter-form-1 select{font-size: 16px;width: 190px;height: 30px;border: 1px dashed black;border-radius: 4px;}
+.newsletter-main form .newsletter-form-1-1 .newsletter-form-1 input{font-size: 20px;border: 1px dashed black;border-radius: 4px;width: 230px;padding: 0px 4px;}
 .newsletter-main form .newsletter-form-1-1 .newsletter-form-2 label{font-size: 20px;font-weight: 600;}
 .newsletter-main form .newsletter-form-1-1 .newsletter-form-2 select{font-size: 16px;width: 190px;height: 30px;border: 1px dashed black;border-radius: 4px;}
 .newsletter-main form .newsletter-form-3 label{font-size: 20px;font-weight: 600;}

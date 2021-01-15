@@ -11,11 +11,11 @@
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="title">
+                    <input type="text" name="email_title">
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Massage</label>
-                    <textarea class="tinymce"></textarea>
+                    <textarea class="tinymce" id="myTextArea" name="email_msg"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="SEND" onclick="submitForm()">
@@ -30,6 +30,8 @@
   function submitForm(form){
     
     var url = $('#form').attr("action");
+    var myContent = tinymce.get("myTextArea").getContent();
+      $('#myTextArea').html(myContent);
     
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {

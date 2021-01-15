@@ -17,7 +17,7 @@ $varr = new databaseManager();
 
 
  $footer_logo    = $_FILES['footer_logo']['name']    = isset($_FILES['footer_logo']['name']) ? $_FILES['footer_logo']['name'] : '';
- $about_desc     = $_POST['about_desc']     = isset($_POST['about_desc']) ? $_POST['about_desc'] : '';
+ $about_desc     = $_POST['footer_about_desc']     = isset($_POST['footer_about_desc']) ? $_POST['footer_about_desc'] : '';
  $contact_add    = $_POST['contact_add']    = isset($_POST['contact_add']) ? $_POST['contact_add'] : '';
  $contact_ph     = $_POST['contact_ph']     = isset($_POST['contact_ph']) ? $_POST['contact_ph'] : '';
  $contact_email  = $_POST['contact_email']  = isset($_POST['contact_email']) ? $_POST['contact_email'] : '';
@@ -30,15 +30,7 @@ $varr = new databaseManager();
 
 
                 
-		
-			
-		
-		
-		
-
-
 if(!empty($contact_add)){
-
 
     $varr->query="UPDATE  `config` SET value=? where name = 'contact' ";
     $result=$varr->executeQuery($varr->query,array($contact_ph),"update");
@@ -59,15 +51,15 @@ if(!empty($contact_add)){
     $response = 1;
 
 
-}elseif(!empty($footer_logo)){
+}elseif(!empty($about_desc)){
 
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'footerlogo' ";
-    $result=$varr->executeQuery($varr->query,array($footer_logo),"update");
+    // $varr->query="UPDATE  `config` SET value=? where name = 'footerlogo' ";
+    // $result=$varr->executeQuery($varr->query,array($footer_logo),"update");
     if(!empty($about_desc)){
 
 
-        $varr->query="UPDATE  `config` SET value=? where name = 'aboutdiscribtion' ";
+        $varr->query="UPDATE  `config` SET value=? where name = 'footer about dis' ";
         $result=$varr->executeQuery($varr->query,array($about_desc),"update");
     
     }
@@ -102,12 +94,7 @@ if(!empty($linkedin)){
 $response = 1;
 }
 
-else{
 
-
-    $response = 0;
-
-}
 echo $response;
 
 

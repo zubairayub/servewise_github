@@ -565,7 +565,7 @@ function switcher($action,$type,$dbclass)
 
 
 
-function get_config_system()
+function get_config_system($user_id = NULL)
 {
 
 	
@@ -576,8 +576,13 @@ function get_config_system()
 		
 		
 		$varr = new databaseManager();
-		
-		$varr->query="SELECT * FROM `config` where userid = 0  ";
+		if(empty($user_id)){
+			$varr->query="SELECT * FROM `config` where userid = 0  ";
+	
+		}else{
+			$varr->query="SELECT * FROM `config` where userid = $user_id  ";
+	
+		}
 		$result=$varr->executeQuery($varr->query,array(),"sread");
 		return  $result;
 

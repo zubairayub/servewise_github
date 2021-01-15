@@ -1,3 +1,11 @@
+<?php 
+    $tos = search_array('Term of services',$config_system);
+    $fb = search_array('facebook',$config_system);
+    $tw = search_array('twitter',$config_system);
+    $inst = search_array('instagram',$config_system);
+    $lin = search_array('Linkin',$config_system);
+?>
+
 <main class="about-page">
         <section class="section-about-page-heading">
             <div class="container">
@@ -11,14 +19,12 @@
         <section class="section-about-content">
             <div class="container">
                 <div class="about-content">
-                    <div class="content-right-side" data-aos="fade-up-right">
-                        <p>Have you thought that selling online was a little out of your reach? Think again. Opening an online store has never been easier. <b>ServeWise</b> is a leading choice for small business merchants to easily set up a store and start selling fast. No need to abandon your existing site — <b>ServeWise</b> can be added virtually anywhere you have an online presence. You have the freedom to operate multiple online stores including on your website, social media channels, and mobile devices. So stop reading and start selling from your new online store!</p>
-                    </div>
+                    <?php echo $tos['value'] ; ?>
                 </div>
             </div>
         </section>
         
-        <section class="vision-heading">
+        <!-- <section class="vision-heading">
             OUR Vision
         </section>
         <section class="about-ourvision">
@@ -32,7 +38,7 @@
                         </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="about-social">
             Join us
         </section>        
@@ -40,10 +46,10 @@
             <div class="container">
                 <div class="about-social-icons" data-aos="fade-up"
                 data-aos-duration="1500">
-                   <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                   <a href="<?php echo $fb['value'] ; ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="<?php echo $tw['value'] ; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="<?php echo $inst['value'] ; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="<?php echo $lin['value'] ; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>

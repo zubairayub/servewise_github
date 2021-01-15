@@ -1,3 +1,9 @@
+<?php 
+            $guide_title = search_array('guide title',$config_system);
+            $guide_short_dis = search_array('guide Short Description',$config_system);
+            $guide_code = search_array('guide video',$config_system);
+?>
+
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
@@ -7,15 +13,15 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="guid_title">
+                    <input type="text" name="guid_title" value="<?php echo $guide_title['value'];?>">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Short Discribtion</label>
-                    <input type="text" name="guid_short_desc">
+                    <input type="text" name="guid_short_desc" value="<?php echo $guide_short_dis['value'];?>">
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Video</label>
-                    <input type="file" name="guid_video">
+                    <textarea class="tinymce" id="myTextAreaSec" name="guid_video"></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
@@ -50,11 +56,13 @@
 <script>
   function submitForm(form){
     var url = $('#form').attr("action");
-    
+    var myContent = tinymce.get("myTextAreaSec").getContent();
+      $('#myTextAreaSec').html(myContent);
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
+      location.reload();
     }else{
       alert('error');
     }
