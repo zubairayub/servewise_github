@@ -2,7 +2,7 @@
  
 if(!empty($dbcalss)){
 include_once($dbcalss); 
-}
+} 
 function get($name, $def= '')
 {
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
@@ -512,16 +512,22 @@ function getmenu()
 
 
 
-function getvendors($user_id = NULL)
+function getvendors($user_id = NULL,$owner = NULL)
 {
 
 				 $query;
 		 		$db;	
 		
-		
+		 
 				$varr = new databaseManager();
 					if(!empty($user_id)){
+						IF($owner == "FALSE"){
+$varr->query="SELECT * FROM `vendor`  where vendor_id = $user_id";
+
+						}ELSE{
+
 $varr->query="SELECT * FROM `vendor`  where user_id = $user_id";
+}
 		}else{
 
 			$varr->query="SELECT * FROM `vendor` ";
@@ -536,7 +542,11 @@ $varr->query="SELECT * FROM `vendor`  where user_id = $user_id";
 
 
 
-function getbranches($user_id =  NULL)
+
+
+
+
+function getbranches($user_id =  NULL, $owner = NULL)
 {
 
 				 $query;
@@ -545,7 +555,13 @@ function getbranches($user_id =  NULL)
 		 
 				$varr = new databaseManager();
 		if(!empty($user_id)){
+			IF($owner == "TRUE"){
+$varr->query="SELECT * FROM `branch` where user_id=$user_id ";
+
+			}else{
 $varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_id";
+
+			}
 		}else{
 
 			$varr->query="SELECT * FROM `branch` ";

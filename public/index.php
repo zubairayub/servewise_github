@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '/../app'));
 const DS = DIRECTORY_SEPARATOR; 
 $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
@@ -99,8 +99,9 @@ $menu = getmenu();
 
 $config_system = get_config_system();
 
+if(!empty($logInId)){
 $config_system_pages = get_config_system($logInId);
-
+}
 
 $language = search_array('language',$config_system);
 

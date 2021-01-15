@@ -1,6 +1,6 @@
 <?php
 //session_start();
-//echo $_SESSION["logIn"];
+//echo $_SESSION["logIn"]; 
 //echo $_SESSION['logInName'];
 
 defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
@@ -15,7 +15,34 @@ require $config_service['BRANCH_CLASS'];
 	$branch=new branch();
 	$message=null;
 
-	$getvendors = $branch->getvendorsforbranch();
+	//$getvendors = $branch->getvendorsforbranch();
+    $usertype = getusertypes($logInId);
+    echo $logInId;
+    print_r($usertype);
+    exit();
+    if($usertype == 'Admin'){
+
+        $getvendors =  getvendors() ;
+
+        print_r($getvendors);
+        exit();
+
+    }elseif($usertype == 'Branch'){
+         $getvendors =   getbranches($logInId,"TRUE");
+
+$getvendors =  $getvendors[0]['vendor_id'] ; 
+
+
+
+    }elseif($usertype == 'Vendor'){
+
+
+
+
+    } 
+
+ 
+
 
 $getcountries = $branch->getallcountries();
         

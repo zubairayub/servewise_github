@@ -15,12 +15,15 @@
 
                             <select name="vendor" id="vendor">					
 						<?php  foreach($getvendors as $vendorlist){
+
 						?>
 						
   							<option value="<?php echo $vendorlist["vendor_id"];?>"><?php echo $vendorlist["name"];  ?></option>
   							
 						
-						<?php } ?>
+						<?php 
+                    } 
+                        ?>
                         </select>
                         </div>
 						<div class="user-detail1 req-n-c-e" data-aos="fade-left" data-aos-duration="1000">
