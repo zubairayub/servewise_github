@@ -1,5 +1,9 @@
 <?php 
     $tos = search_array('Term of services',$config_system);
+    $fb = search_array('facebook',$config_system);
+    $tw = search_array('twitter',$config_system);
+    $inst = search_array('instagram',$config_system);
+    $lin = search_array('Linkin',$config_system);
 ?>
 
 <main class="about-page">
@@ -42,10 +46,10 @@
             <div class="container">
                 <div class="about-social-icons" data-aos="fade-up"
                 data-aos-duration="1500">
-                   <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                   <a href="<?php echo $fb['value'] ; ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="<?php echo $tw['value'] ; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="<?php echo $inst['value'] ; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="<?php echo $lin['value'] ; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>

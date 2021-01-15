@@ -235,12 +235,12 @@ main{
     color: purple;
     transform: rotate(360deg) scale(1.2);
 }
-.about-social-icons .fa-google-plus{
+.about-social-icons .fa-linkedin{
     color: #a0a0a0;
     transition: .5s ease all;
 }
-.about-social-icons .fa-google-plus:hover{
-    color: red;
+.about-social-icons .fa-linkedin:hover{
+    color: rgb(68, 112, 255);
     transform: rotate(-360deg) scale(1.2);
 }
 
