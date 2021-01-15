@@ -24,24 +24,32 @@
                         </thead>
                    
 					   <tbody>
-						 <?php
-								foreach($getcustomers as $customerlist){
-                           ?>
-                        
-						 
-											
-								
-								<tr>
-								<td><?php echo $customerlist["first_name"]; ?></td>
-								<td><?php echo $customerlist["last_name"]; ?></td>
-								<td><?php echo $customerlist["name"]; ?></td>								
+					   <?php  
+                        if (!empty($data)){
+                            $count = 1;
+                    foreach ($data as $key => $value) {
+						$customer = getcustomerinfo($value['vendor_id']);
+						
+						var_dump($customer[0]['first_name']);
+                        //        
+                        // var_dump($user_name);
+						// var_dump($value);
+						$count++;
+					}
+				}
+                            
+                        ?>
+						 	<tr>
+								<td></td>
+								<td></td>
+								<td></td>								
                                
-							   </tr>
-								<?php } ?>
+						    </tr>
+						
 					   </tbody>	
 							
 					</table>
-					  </fieldset>
+				</fieldset>
             </div>
             
 </div>

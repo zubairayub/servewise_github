@@ -16,20 +16,30 @@
                     <th>Product Img</th>
                     <th>Price</th>
                     <th>Date</th>
-                    <th>Page Link</th>
                     <th>Option</th>
                 </tr>
+                <?php  
+                        if (!empty($data)){
+                            $count = 1;
+                            foreach ($data as $key => $value) {
+                                $product_image  = getproductsimages($value['product_id']);  
+                                $product_name   = getproductnamebyid($value['product_id']);
+                                $user_name      = getuserinfo($value['user_id']);
+                                $price          = getproductinfo($value['product_id']);
+                                $date           = getabandoncart($value['user_id']);
+                                // var_dump($user_name);
+                                // var_dump($value);
+                            
+                        ?> 
                 <tr>
-                    <td>1</td>
-                    <td>Muzzamil</td>
+                
+                    <td><?= $count; ?></td>
+                    <td><?= $user_name[0]['first_name']; ?></td>
                     <td>
-                        <img src="https://demo.sirv.com/chair.jpg?scale.width=71  " alt="">
+                        <img src="<?= $product_directory. $product_image[0]['image_path']; ?> " alt="<?= $product_name[0]['name']; ?>">
                     </td>
-                    <td>20$</td>
-                    <td>03/01/2021</td>
-                    <td> 
-                        <a href="#">www.google.com</a>
-                    </td>
+                    <td><?= $price[0]['price']; ?></td>
+                    <td><?= $date[0]['date']; ?></td>
                     <td class="option">
                         <a href="?page=email_dashboard">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Send Email
@@ -39,6 +49,9 @@
                         </a>
                     </td>
                 </tr>
+                <?php  
+                    $count ++;
+                } }  ?>
             </table>
         </form>
     </div>

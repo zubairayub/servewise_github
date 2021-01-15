@@ -14,7 +14,7 @@
                 <tr>
                     <th>Serial.No</th>
                     <th>Product Name</th>
-                    <th>Discribtion</th>
+                    <th>Discription</th>
                     <th>Product Image</th>
                     <th>Price</th>
                     <th>Qty</th>
@@ -23,19 +23,33 @@
                     <th>Category 3rd Level</th>
                     <th>Option</th>
                 </tr>
+                <?php  
+                        if (!empty($data)){
+                            $count = 1;
+                            foreach ($data as $key => $value) {
+                                 $product_image  = getproductsimages($value['product_id']);  
+                                 $product_name   = getviewproduct($value['vb_id']);
+                                 $category       = getcategorybyid($value['category_id']);
+                                // //$user_name      = getuserinfo($value['user_id']);
+                                 $price          = getproductinfo($value['product_id']);
+                                // //$date           = getabandoncart($value['user_id']);
+                                 //var_dump($value);
+                                 //var_dump($category);
+                            
+                        ?> 
                 <tr>
-                    <td>1</td>
-                    <td>Ikea Chair</td>
+                    <td><?= $count; ?></td>
+                    <td><?= $value['name']; ?></td>
                     <td>
-                        metal with soft lether
+                    <?= $value['description']; ?>
                     </td>
                     <td>
-                    <img src="https://demo.sirv.com/chair.jpg?scale.width=71  " alt="">
+                    <img src="<?= $product_directory.$product_image[0]['image_path'] ?>" alt="">
                     </td>
-                    <td>30 $</td>
-                    <td>2</td>
-                    <td>Home</td>
-                    <td>Living Room</td>
+                    <td><?= $value['price'] ?></td>
+                    <td><?= $value['quantity'] ?></td>
+                    <td><?= $category[0]['name'] ?></td>
+                    <td><?= $value['category_id'] ?></td>
                     <td>Chair</td>
                     <td class="option">
                         <a href="?page=addnewproduct_dashboard">
@@ -43,6 +57,9 @@
                         </a>
                     </td>
                 </tr>
+                <?php  
+                    $count ++;
+                } }  ?>
             </table>
         </form>
     </div>

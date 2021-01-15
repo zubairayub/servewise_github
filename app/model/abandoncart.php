@@ -2,12 +2,9 @@
 $type = getusertypes($type);
 $type = $type[0]['title'];
 
-
 if($type == 'Admin'){
-$data = getcustomerinfo();
+$data = getabandoncart();
 }else{
-$data = getcustomerinfo($logInId);
+    $data = getabandoncart($logInId);
 }
-
-
 ?>

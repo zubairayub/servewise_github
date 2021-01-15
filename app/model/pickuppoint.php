@@ -4,9 +4,9 @@ $type = $type[0]['title'];
 
 
 if($type == 'Admin'){
-$data = getcustomerinfo();
+$data = getpickuppoint();
 }else{
-$data = getcustomerinfo($logInId);
+$data = getpickuppoint($logInId,$type);
 }
 
 
