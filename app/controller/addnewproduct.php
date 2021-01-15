@@ -43,7 +43,7 @@ $randomstring = generateRandomString();
         {
 
         $data =  getbranches($createdby);
-        $vbid =  $data[0]['vendor_id'];
+        $vbid =  $data[0]['branch_id'];
         }elseif($type == 'Admin'){
 
         $vbid =  0;

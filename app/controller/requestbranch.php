@@ -13,6 +13,13 @@ $DB_CLASS =  $config_service['DB_CLASS'];
 require_once $config_service['DB_CLASS'];
 require_once $config_service['FUNCTIONS'];
 require $config_service['BRANCH_CLASS'];
+ $query;
+   $db; 
+
+    
+    
+    $varr = new databaseManager();
+
 	
 	$branch=new branch();
 	$message=null;
@@ -72,9 +79,19 @@ exit();
 	} 
         
         if (!empty($reqbranch)){
+
+            $name = $name;
+           
+
+
+
 			$getbranch=$branch->getspecificbranchbyemail($emailid);
 			$branchid = $getbranch[0]["branch_id"];
             $_SESSION['branchid'] = $branchid;
+
+             $varr->query="INSERT INTO `vb_themesetting`(`id`, `vb_id`, `domain_url`, `theme_id`, `type`) VALUES  (?,?,?,?,?) ";
+             $result=$varr->executeQuery($varr->query,array(NULL,$branchid,$name,4,4),"create");
+
          //   echo $_SESSION['branchid'];
       //  echo "record added";
 		}  

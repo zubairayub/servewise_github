@@ -1074,7 +1074,7 @@ $status = 0;
 					$result=$varr->executeQuery($varr->query,array($status),"update");
 					if($result){
 
-						$varr->query="select user_id from `branch`  where branch_id = $branch_id and status=1 ";
+						$varr->query="select user_id,name from `branch`  where branch_id = $branch_id and status=1 ";
 						$result=$varr->executeQuery($varr->query,array(),"sread");
 						if(!empty($result[0]['user_id'])){
 					$varr->query="UPDATE  `user` SET type=? where user_id = $userid ";
@@ -1089,6 +1089,8 @@ $status = 0;
 						}
 
 
+						// INSERT INTO `vb_themesetting`(`id`, `vb_id`, `domain_url`, `theme_id`, `type`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5])
+						
 
 					}
 
