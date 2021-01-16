@@ -137,7 +137,7 @@ include 'include/header.php';
             <div class="container">
                 <nav>
                     <div class="logo">
-                        <img src="assets/5.jpg" alt="LOGO" width="100px">
+                        <img src="<?php echo $logo ;?>" alt="LOGO" width="100px">
                     </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
