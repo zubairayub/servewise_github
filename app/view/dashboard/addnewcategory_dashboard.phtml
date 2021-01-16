@@ -4,7 +4,7 @@
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Category</h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="<?= $controller; ?>" id="newCat">
             <div class="add-new-cat-head">
                 Category Information
             </div>
@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="cat_name">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                         Type
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="" id="">
+                        <select name="cat_type" id="">
                             <option value="1">Physical</option>
                             <option value="2">Digital</option>
                         </select>
@@ -33,7 +33,7 @@
                         Meta Title
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="cat_meta_title">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -41,14 +41,29 @@
                         Meta Description
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="cat_meta_description">
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save">
+                    <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#newCat').attr("action");
+    
+    var formData = $('#newCat').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+      alert('New Category is added');
+    }else{
+      alert('New Category is not added');
+    }
+    });
+}
+</script> 

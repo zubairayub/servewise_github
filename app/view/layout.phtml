@@ -34,6 +34,31 @@ if($dashboard == NULL){
 	echo "<footer>";
  require($footer);
  echo "</footer>";
+ }else{
+	 ?>
+	     
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script>
+        $(document).ready(function() {
+        var ajaxCall = function() {
+            url       = '../app/lib/notifications.php';
+            //formData  = $("#myForm").serialize();
+            $.ajax({
+                type: 'post',
+                url: url,
+                data: 'formData',
+                success: function(data) {
+                // $('nav').hide();
+                // $('main').hide();
+                document.getElementById("result").innerHTML = data;
+                console.log(data);
+                }
+            });
+        }
+        setInterval(ajaxCall, 5000);
+        });
+    </script>
+	 <?php
  }
  
  ?>

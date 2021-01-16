@@ -4,7 +4,7 @@
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Deal</h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="<?= $controller; ?>" method="post" enctype="multipart/form-data" id="form"> 
             <div class="add-new-cat-head">
                 Flash Deal Information
             </div>
@@ -14,7 +14,7 @@
                         Title
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="title">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                         Banner(1920x500)
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="file">
+                        <input type="file" name="banner">
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -30,7 +30,7 @@
                         Start Date
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="date">
+                        <input type="date" name="strt_date">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -38,7 +38,7 @@
                         End Date
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="date">
+                        <input type="date" name="end_date">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -46,14 +46,29 @@
                         Page link
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="page_link">
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save">
+                    <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+      alert('New Deal is added');
+    }else{
+      alert('New Deal is not added');
+    }
+    });
+}
+</script> 
