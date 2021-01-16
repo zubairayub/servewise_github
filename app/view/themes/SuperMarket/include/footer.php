@@ -1,6 +1,6 @@
   <!-- contact us -->
 
-    <section class="contactus" id="contactus">
+    <!-- <section class="contactus" id="contactus">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-left-side" data-aos="zoom-in-right">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" >
   	
   </script>

@@ -141,8 +141,7 @@ include 'include/header.php';
                     </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
-                        <a href="#">About</a>
-                        <a href="#contactus">Contact</a>
+                        <a href="#about">About</a>
                         <div id="menuToggle">
                         <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -304,7 +303,7 @@ $image_path =   $image[0]['image_path'];
 
     <!-- Ads -->
 
-    <section class="ads">
+    <!-- <section class="ads">
         <div class="container">
             <div class="content-ad-1"  data-aos="flip-left">
                 <a class="ad1" href="#">
@@ -322,11 +321,11 @@ $image_path =   $image[0]['image_path'];
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- About us -->
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about-content" data-aos="zoom-in"   data-aos-duration="1000">
                 <div class="about-heading">About Us</div>

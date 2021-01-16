@@ -6,6 +6,7 @@ $product_list_array = json_decode($product_list);
 //var_dump($product_list_array);
 $proct_final_price = NULL;
  ?>
+ <?php  include '../themePages/theme_header.phtml'; ?>
 <div class="container mt-5 mb-5 viewcart-main">
 <?php foreach($product_list_array as $results){
 $proct_final_price += $results->product_price * $results->product_quantity;
@@ -87,6 +88,9 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 <?php } ?>
 </div>
 <div class="viewcart-sum-content">
+  <div class="short-note">
+    Note : ShortNote Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quidem vitae nesciunt nam aut soluta ipsum dicta, fuga laudantium tempore eum, minima odit quas nobis ad nulla eligendi ullam vel.
+  </div>
   <div class="viewcart-sum">
     <div class="viewcart-coupons">
       <label for="coupon" class="coupon_label">Coupon</label>
@@ -126,6 +130,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     </form>
   </div>
 </div>
+<?php  include '../themePages/theme_footer.phtml'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script>
 $(document).ready(function() {

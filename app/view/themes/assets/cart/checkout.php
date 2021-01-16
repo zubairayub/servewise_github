@@ -35,6 +35,7 @@ $payment_method	=	$_POST['payment-method'];
  </head>
 
 <body>
+<?php  include '../themePages/theme_header.phtml'; ?>
 	<aside>
 		<div class="cart_summary">
 			<p>Product Name: <?= $product_name;?></p>
@@ -98,8 +99,10 @@ $payment_method	=	$_POST['payment-method'];
 </form>
 <div class="resp"></div>
 </div>
+<?php  include '../themePages/theme_footer.phtml'; ?>
 <?php
 	if($payment_method == 'flutter'){?>
+	
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
  
   <script src="https://checkout.flutterwave.com/v3.js"></script>
@@ -128,6 +131,7 @@ function payWithPaystack(e) {
 }
 
   </script>
+  
 	<?php }else{echo 'payment method'.$payment_method.' is not available';} ?>
 	<script>
 		$('button').click(function(){
