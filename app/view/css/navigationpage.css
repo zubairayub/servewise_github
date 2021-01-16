@@ -5256,6 +5256,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   table td {font-size: 10px;}
   .order-view-box .order-view-total .order-view-total1 {width: 50%;}
   /* order-view-end */
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */  
 }
 
 @media (max-width:1125px){
@@ -5956,6 +5964,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   /* new-coupons */
   .add-new-category form {width: 100%;}
   /* new-coupons-end */  
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */  
 }
 
 @media (max-width:800px){
@@ -6543,7 +6559,15 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .language-main .language-selector {width: 60%;}
   .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
   .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
-  /* language-dashboard-end */  
+  /* language-dashboard-end */
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */    
 }
 
 @media (max-width:650px){
@@ -7033,6 +7057,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 14px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */  
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */  
 }
 
 @media (max-width:550px){
@@ -7611,6 +7643,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
   .currency-table{overflow: auto;}
   /* currency-dashboard-end */  
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */  
 }
 
 @media (max-width:450px){
@@ -8450,6 +8490,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
   .currency-table{overflow: auto;}
   /* currency-dashboard-end */
+  /* signupvendor-dashboard */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name {flex-wrap: wrap;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name label {width: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
+  .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  /* signupvendor-dashboard-end */
 }
 
 
