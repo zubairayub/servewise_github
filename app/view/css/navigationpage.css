@@ -6219,6 +6219,12 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   /* footer-dashboard */
   .dashboard-footer-bottom .dashboard-footer-bottom-content .d-footer-social-links .d-footer-social-icons .d-footer-icons-main .d-footer-icons-links input {width: 270px;}
   /* footer-dashboard-end */  
+  /* language-dashboard */
+  .lang-dashborad-table{overflow: auto;}
+  .language-main .language-selector {width: 60%;}
+  .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
+  .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
+  /* language-dashboard-end */  
 }
 
 
@@ -6522,6 +6528,22 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .newsletter-main form .newsletter-form-4 {flex-wrap: wrap;}
   .newsletter-main form .newsletter-btn input {font-size: 14px;}
   /* newsletter-end */
+  /* generalsetting */
+  .general-main form .general-input1 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input2 .g-input-input {flex-basis: 100%;flex-wrap: wrap;display: flex;justify-content: center;align-items: center;}
+  .general-main form .general-input2 {flex-wrap: wrap;}
+  .general-main form .general-input2 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input4 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input5 {flex-wrap: wrap;}
+  .general-main form .general-input5 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input5 .g-input-input {flex-basis: 100%;display: flex;flex-wrap: wrap;justify-content: center;}
+  /* generalsetting-end */  
+  /* language-dashboard */
+  .lang-dashborad-table{overflow: auto;}
+  .language-main .language-selector {width: 60%;}
+  .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
+  .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
+  /* language-dashboard-end */  
 }
 
 @media (max-width:650px){
@@ -6874,7 +6896,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-dis {font-size: 14px;}
   .theme-selection .theme-seclection-box .theme-type span {font-size: 14px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
-  /* theme-panel-dashboard-end */  
+  /* theme-panel-dashboard-end */
+  /* currency-dashboard */
+  .currency-main .sys-currency-dash {flex-wrap: wrap;}
+  .currency-main .sys-currency-dash .sys-box {flex-basis: 100%;margin-bottom: 20px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-head {font-size: 18px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
+  .currency-table{overflow: auto;}
+  /* currency-dashboard-end */    
 }
 
 @media (max-width:575px){
@@ -7136,6 +7165,12 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 14px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */  
+  /* language-dashboard */
+  .lang-dashborad-table{overflow: auto;}
+  .language-main .language-selector {width: 60%;}
+  .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
+  .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
+  /* language-dashboard-end */  
 }
 
 @media (max-width:525px){
@@ -7277,6 +7312,23 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 14px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */
+  /* generalsetting */
+  .general-main form .general-input1 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input2 .g-input-input {flex-basis: 100%;flex-wrap: wrap;display: flex;justify-content: center;align-items: center;}
+  .general-main form .general-input2 {flex-wrap: wrap;}
+  .general-main form .general-input2 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input4 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input5 {flex-wrap: wrap;}
+  .general-main form .general-input5 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input5 .g-input-input {flex-basis: 100%;display: flex;flex-wrap: wrap;justify-content: center;}
+  /* generalsetting-end */  
+  /* currency-dashboard */
+  .currency-main .sys-currency-dash {flex-wrap: wrap;}
+  .currency-main .sys-currency-dash .sys-box {flex-basis: 100%;margin-bottom: 20px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-head {font-size: 18px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
+  .currency-table{overflow: auto;}
+  /* currency-dashboard-end */  
 } 
 
 @media (max-width:500px){
@@ -7546,6 +7598,19 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .general-main form .general-input4 .g-input-input select {width: 100%;font-size: 14px;}
   .general-main {width: 100%;}
   /* blog&knowledge-end */   
+  /* language-dashboard */
+  .lang-dashborad-table{overflow: auto;}
+  .language-main .language-selector {width: 60%;}
+  .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
+  .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
+  /* language-dashboard-end */  
+  /* currency-dashboard */
+  .currency-main .sys-currency-dash {flex-wrap: wrap;}
+  .currency-main .sys-currency-dash .sys-box {flex-basis: 100%;margin-bottom: 20px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-head {font-size: 18px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
+  .currency-table{overflow: auto;}
+  /* currency-dashboard-end */  
 }
 
 @media (max-width:450px){
@@ -7942,6 +8007,23 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 16px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */    
+  /* generalsetting */
+  .general-main form .general-input1 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input2 .g-input-input {flex-basis: 100%;flex-wrap: wrap;display: flex;justify-content: center;align-items: center;}
+  .general-main form .general-input2 {flex-wrap: wrap;}
+  .general-main form .general-input2 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input4 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input5 {flex-wrap: wrap;}
+  .general-main form .general-input5 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input5 .g-input-input {flex-basis: 100%;display: flex;flex-wrap: wrap;justify-content: center;}
+  /* generalsetting-end */  
+  /* currency-dashboard */
+  .currency-main .sys-currency-dash {flex-wrap: wrap;}
+  .currency-main .sys-currency-dash .sys-box {flex-basis: 100%;margin-bottom: 20px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-head {font-size: 18px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
+  .currency-table{overflow: auto;}
+  /* currency-dashboard-end */  
 }
 
 @media (max-width:375px){
@@ -8345,6 +8427,29 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .general-main form .general-input4 .g-input-input select {width: 100%;font-size: 14px;}
   .general-main {width: 100%;}
   /* blog&knowledge-end */
+  /* generalsetting */
+  .general-main form .general-input1 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input2 .g-input-input {flex-basis: 100%;flex-wrap: wrap;display: flex;justify-content: center;align-items: center;}
+  .general-main form .general-input2 {flex-wrap: wrap;}
+  .general-main form .general-input2 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input4 .g-input-input {flex-basis: 100%;}
+  .general-main form .general-input5 {flex-wrap: wrap;}
+  .general-main form .general-input5 .g-input-label {flex-basis: 100%;}
+  .general-main form .general-input5 .g-input-input {flex-basis: 100%;display: flex;flex-wrap: wrap;justify-content: center;}
+  /* generalsetting-end */
+  /* language-dashboard */
+  .lang-dashborad-table{overflow: auto;}
+  .language-main .language-selector {width: 100%;}
+  .lang-d-box .lang-box-dis {display: flex;flex-wrap: wrap;}
+  .lang-d-box .lang-box-dis .head {flex-basis: 100%;margin-bottom: 10px;}
+  /* language-dashboard-end */
+  /* currency-dashboard */
+  .currency-main .sys-currency-dash {flex-wrap: wrap;}
+  .currency-main .sys-currency-dash .sys-box {flex-basis: 100%;margin-bottom: 20px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-head {font-size: 18px;}
+  .currency-main .sys-currency-dash .sys-box .sys-box-dis .sys-dis-sub-input select {width: 75%;font-size: 18px;}
+  .currency-table{overflow: auto;}
+  /* currency-dashboard-end */
 }
 
 
