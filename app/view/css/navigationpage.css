@@ -5184,6 +5184,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   table td {font-size: 10px;}
   .order-view-box .order-view-total .order-view-total1 {width: 50%;}
   /* order-view-end */
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 @media (max-width:1225px){
@@ -5287,6 +5292,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   table td {font-size: 10px;}
   .order-view-box .order-view-total .order-view-total1 {width: 50%;}
   /* order-view-end */
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 @media (max-width:1100px){
@@ -5610,6 +5620,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   /* footer-dashboard */
   .dashboard-footer-bottom .dashboard-footer-bottom-content .d-footer-social-links .d-footer-social-icons .d-footer-icons-main .d-footer-icons-links input {width: 250px;}
   /* footer-dashboard-end */
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 
@@ -6341,6 +6356,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   /* footer-dashboard */
   .dashboard-footer-bottom .dashboard-footer-bottom-content .d-footer-social-links .d-footer-social-icons .d-footer-icons-main .d-footer-icons-links input {width: 270px;}
   /* footer-dashboard-end */
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 @media (max-width:700px){
@@ -6798,6 +6818,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 14px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */  
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 @media (max-width:600px){
@@ -7490,7 +7515,12 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-dis{font-size: 14px;}
   .theme-selection .theme-seclection-box .theme-type span {font-size: 16px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
-  /* theme-panel-dashboard-end */  
+  /* theme-panel-dashboard-end */ 
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */   
 }
 
 @media (max-width:475px){
@@ -7911,6 +7941,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .theme-selection .theme-seclection-box .theme-type span {font-size: 16px;}  
   .theme-selection .theme-seclection-box .theme-btn input {font-size: 18px;}  
   /* theme-panel-dashboard-end */  
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */  
 }
 
 @media (max-width:400px){
@@ -8498,6 +8533,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
   .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
   /* signupvendor-dashboard-end */
+  /* about-dashboard */
+  .about-us-dashboard-main2 {flex-wrap: wrap;}
+  .about-us-dashboard-main2 .dashboard-footer-section-2 {flex-basis: 100%;}
+  .about-us-dashboard-main {margin: 20px 0px;overflow: auto;}
+  /* about-dashboard-end */
 }
 
 
