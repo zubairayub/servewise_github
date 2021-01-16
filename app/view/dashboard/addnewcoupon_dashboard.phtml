@@ -4,7 +4,7 @@
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Coupon</h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="<?= $controller; ?>" id="newCoupon">
             <div class="add-new-cat-head">
             Coupon Information Adding
             </div>
@@ -14,7 +14,7 @@
                         Coupon Type
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="" id="">
+                        <select name="coupon_type" id="">
                             <option value="1">for Product</option>
                             <option value="2">for Total Order</option>
                         </select>
@@ -25,7 +25,7 @@
                         Coupon code
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="coupon_code">
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -33,7 +33,7 @@
                         Minimum Shopping
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="min_shop">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -41,8 +41,8 @@
                         Discount
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
-                        <select name="" id="">
+                        <input type="text" name="discount">
+                        <select name="discount_select" id="">
                             <option value="1">Amount</option>
                             <option value="2">Percent</option>
                         </select>
@@ -53,7 +53,7 @@
                         Products
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="" id="">
+                        <select name="products" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                         </select>
@@ -64,7 +64,7 @@
                         Maximum Discount Amount
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text">
+                        <input type="text" name="max_discount">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -72,14 +72,29 @@
                         Date
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="date">
+                        <input type="date" name="coupon_date">
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save">
+                    <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#newCoupon').attr("action");
+    
+    var formData = $('#newCoupon').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+      alert('New Coupon is added');
+    }else{
+      alert('New Coupon is not added');
+    }
+    });
+}
+</script> 

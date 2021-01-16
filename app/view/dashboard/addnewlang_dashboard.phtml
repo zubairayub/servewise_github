@@ -4,7 +4,7 @@
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Language</h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="<?= $controller; ?>" id="newLang">
             <div class="add-new-cat-head">
             Language Information
             </div>
@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text">
+                       <input type="text" name="lang_name">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                        Code
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="" id="">
+                        <select name="lang_code" id="">
                             <option value="1">en</option>
                             <option value="2">ud</option>
                             <option value="2">ru</option>
@@ -31,10 +31,25 @@
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save">
+                    <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#newLang').attr("action");
+    
+    var formData = $('#newLang').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+      alert('New Language is added');
+    }else{
+      alert('New Language is not added');
+    }
+    });
+}
+</script> 

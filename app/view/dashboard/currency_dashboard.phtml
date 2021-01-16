@@ -5,47 +5,53 @@
         </div>
         <div class="currency-main">
             <div class="sys-currency-dash">
-                <div class="sys-box" data-aos="fade-right"data-aos-duration="900">
-                    <div class="sys-box-head">System Default Currency</div>
-                    <div class="sys-box-dis">
-                        <div class="sys-dis-sub-head">System Default Currency</div>
-                        <div class="sys-dis-sub-input">
-                            <select name="def_currency" id="">
-                                <option value="1">Pakistani</option>
-                                <option value="2">Pakistani</option>
-                                <option value="3">Pakistani</option>
-                            </select>
-                            <input type="button" value="SAVE">
+                <form action='<?= $controller; ?>' id="currencyForm"> 
+                    <input type="hidden" name="defaultCurrency">
+                    <div class="sys-box" data-aos="fade-right"data-aos-duration="900">
+                        <div class="sys-box-head">System Default Currency</div>
+                        <div class="sys-box-dis">
+                            <div class="sys-dis-sub-head">System Default Currency</div>
+                            <div class="sys-dis-sub-input">
+                                <select name="def_currency" id="">
+                                    <option value="1">Pakistani</option>
+                                    <option value="2">Pakistani</option>
+                                    <option value="3">Pakistani</option>
+                                </select>
+                                <input type="button" value="SAVE" onclick="submitDefaultForm()">
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="sys-box" data-aos="fade-left"data-aos-duration="900">
-                    <div class="sys-box-head">Set Currency Formats</div>
-                    <div class="sys-box-dis">
-                        <div class="sys-section1">
-                            <div class="sys-dis-sub-head">Symbol Format</div>
-                            <div class="sys-dis-sub-input">
-                                <select name="symbol_format" id="">
-                                    <option value="1">[Symbol] [Amount]</option>
-                                    <option value="2">[Amount] [Symbol]</option>
-                                </select>
+                    <form action="<?= $controller; ?>" id="symbolForm">
+                        <input type="hidden" name="currencySymbol">
+                        <div class="sys-box-head">Set Currency Formats</div>
+                        <div class="sys-box-dis">
+                            <div class="sys-section1">
+                                <div class="sys-dis-sub-head">Symbol Format</div>
+                                <div class="sys-dis-sub-input">
+                                    <select name="symbol_format" id="">
+                                        <option value="1">[Symbol] [Amount]</option>
+                                        <option value="2">[Amount] [Symbol]</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sys-section1">
+                                <div class="sys-dis-sub-head">No of decimals</div>
+                                <div class="sys-dis-sub-input">
+                                    <select name="decimals" id="">
+                                        <option value="1">1234</option>
+                                        <option value="2">123.4</option>
+                                        <option value="3">12.34</option>
+                                        <option value="4">1.234</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sys-dis-sub-btn">
+                                <input type="button" value="SAVE" onclick="submitSymbolForm()">
                             </div>
                         </div>
-                        <div class="sys-section1">
-                            <div class="sys-dis-sub-head">No of decimals</div>
-                            <div class="sys-dis-sub-input">
-                                <select name="" id="">
-                                    <option value="1">1234</option>
-                                    <option value="2">123.4</option>
-                                    <option value="3">12.34</option>
-                                    <option value="4">1.234</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="sys-dis-sub-btn">
-                            <input type="button" value="SAVE">
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="sys-dashboard-btn" data-aos="fade-left"data-aos-duration="700">
@@ -98,10 +104,10 @@
 
 
 <script>
-  function submitForm(form){
+  function submitDefaultForm(form){
     
-        url = $('#form').attr("action");
-        formData = $('#form').serializeArray();
+        url = $('#currencyForm').attr("action");
+        formData = $('#currencyForm').serializeArray();
 
         $.post(url, formData).done(function (data) {
         if(data == 1){
@@ -111,4 +117,17 @@
         }
     });
   }
+  function submitSymbolForm(form){
+    
+    url = $('#symbolForm').attr("action");
+    formData = $('#symbolForm').serializeArray();
+
+    $.post(url, formData).done(function (data) {
+    if(data == 1){
+        alert('success');
+    }else{
+        alert('error');
+    }
+});
+}
   </script>

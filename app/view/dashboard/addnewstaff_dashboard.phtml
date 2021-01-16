@@ -4,7 +4,7 @@
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Staff</h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="<?= $controller; ?>" id="newStaff">
             <div class="add-new-cat-head">
             Staff Information
             </div>
@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text">
+                       <input type="text" name="staff_name">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                         E-mail
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="E-mail ">
+                        <input type="E-mail" name="staff_email">
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -30,7 +30,7 @@
                         Phone
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="number">
+                        <input type="number" name="staff_phone">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -38,7 +38,7 @@
                         Password
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="password">
+                        <input type="password" name="staff_pass">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -46,17 +46,32 @@
                         Role
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="" id="">
+                        <select name="staff_role" id="">
                             <option value="1">Manager</option>
                             <option value="2">Sub-Admin</option>
                         </select>
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save">
+                    <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+<script>
+  function submitForm(form){
+    
+    var url = $('#newStaff').attr("action");
+    
+    var formData = $('#newStaff').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 0){
+      alert('New Staff is added');
+    }else{
+      alert('New Staff is not added');
+    }
+    });
+}
+</script> 
