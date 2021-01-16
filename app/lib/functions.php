@@ -192,9 +192,16 @@ function gettheme($url){
 						$data['domain_url'] =  $_SESSION['domain_url'] = $result[0]['domain_url'];
 						$data['theme_id'] =  $_SESSION['theme_id'] = $result[0]['theme_id'];
 
-				$varr = new databaseManager();
-				$varr->query="SELECT * FROM `themes`   where `id` = ".$data['theme_id']."";
-				$result=$varr->executeQuery($varr->query,array(),"sread");
+					$varr = new databaseManager();
+					$varr->query="SELECT * FROM `branch`   where `branch_id` = ".$data['vb_id']."";
+					$result=$varr->executeQuery($varr->query,array(),"sread");
+
+					$data['owner_id'] =  $_SESSION['owner_id'] = $result[0]['user_id'];
+
+
+					$varr = new databaseManager();
+					$varr->query="SELECT * FROM `themes`   where `id` = ".$data['theme_id']."";
+					$result=$varr->executeQuery($varr->query,array(),"sread");
 						
 					$data['theme_title'] = $_SESSION['theme_title'] = $result[0]['title'];
 					$data['theme_url'] =  $_SESSION['theme_url'] = $result[0]['theme_url'];
@@ -240,23 +247,27 @@ header('Location: ?page=home');
 }
 
 
-function getlogo_dashboard($userid= null,$dbclass = null,$directory = null){
+function getlogo_dashboard($userid = null,$dbclass = null,$directory = null){
+
+
 
 if(!empty($dbclass)){
 		
-		include_once($dbclass);
-	
+		require_once($dbclass);
+		
 	}
 	$query;
 	$db;
 	$varr = new databaseManager();
 
-	if(empty($usery_id)){
-		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 0 ";
+	if(empty($userid)){
+		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 16 ";
 	}else{
-		$varr->query = "SELECT * FROM `config` where name='logo' AND userid=$user_id";
+		$varr->query = "SELECT * FROM `config` where name='logo' AND userid = '28' ";
 	}
 	$result = $varr->executeQuery($varr->query,array(),"sread");
+	
+
 
 	if(empty($result))
 	{
@@ -778,7 +789,7 @@ $varr->query="SELECT * FROM `vendor`  where user_id = $user_id";
 function getbranches($user_id =  NULL, $owner = NULL)
 {
 
-				 $query;
+				 $query; 
 		 		$db;	
 		
 		 
@@ -797,6 +808,18 @@ $varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_i
 		}
 			
 			$result=$varr->executeQuery($varr->query,array(),"sread");
+     		
+
+			// $themesurl = '?domain=';
+   //         $varr->query="SELECT * FROM `vb_themesetting`  where vb_id=$user_id";
+   //        $resulttheme = $varr->executeQuery($varr->query,array(),"sread");
+   //        if(!empty($resulttheme)){
+
+   //        	$themesurl = $themesurl.$result[0]['domain_url'];
+   //        	$result[] = $themesurl;
+
+   //         }
+
 			return  $result;
 	 
 
