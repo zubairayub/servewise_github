@@ -239,6 +239,72 @@ header('Location: ?page=home');
 
 }
 
+
+function getlogo_dashboard($userid= null,$dbclass = null,$directory = null){
+
+if(!empty($dbclass)){
+		
+		include_once($dbclass);
+	
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+
+	if(empty($usery_id)){
+		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 0 ";
+	}else{
+		$varr->query = "SELECT * FROM `config` where name='logo' AND userid=$user_id";
+	}
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+
+	if(empty($result))
+	{
+		$logo = $directory.'logo.jpg';
+	}else{
+
+		$logo = $directory.$result[0]['value'];
+	}
+	return $logo;
+
+
+
+
+}
+
+
+
+function getlogo($dbclass = null,$directory = null){
+
+if(!empty($dbclass)){
+		
+		include_once($dbclass);
+	
+	}
+	$query;
+	$db;
+	$varr = new databaseManager();
+
+	
+		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 6 ";
+	
+	$result = $varr->executeQuery($varr->query,array(),"sread");
+
+	if(empty($result))
+	{
+		$logo = $directory.'logo.jpg';
+	}else{
+
+		$logo = $directory.$result[0]['value'];
+	}
+	return $logo;
+
+
+
+
+}
+
+
 function getpickuppoint($user_id = NULL){
 	if(!empty($dbclass)){
 		include_once($dbclass);

@@ -62,7 +62,7 @@ if((!isLogin()) && ($page!='\dashboard\login_dashboard' && $page!= '\dashboard\s
 
 
 $userstatus =NULL;
-
+$logInId = NULL;
 
 //store session
 if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
@@ -163,6 +163,8 @@ $logo_directory = $config['LOGO_DIRECTORY'];
 $_404 = $config['VIEW_PATH'] . '404.phtml';
 
 
+$logo = getlogo_dashboard($logInId,'',$logo_directory);
+$logo_frontend = getlogo('',$logo_directory);
 
 if (file_exists($model)) {
 	require $model;
