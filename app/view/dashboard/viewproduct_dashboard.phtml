@@ -26,12 +26,26 @@
                 <?php  
                         if (!empty($data)){
                             $count = 1;
+                            
                             foreach ($data as $key => $value) {
                                  $product_image  = getproductsimages($value['product_id']);  
                                  $product_name   = getviewproduct($value['vb_id']);
                                  $category       = getcategorybyid($value['category_id']);
-                                // //$user_name      = getuserinfo($value['user_id']);
+                                 $subcategory = getsubcategorybyid($value['sc_id']);
+                                 $subsubcategory = getsubsubcategorybyid($value['ssc_id']);
                                  $price          = getproductinfo($value['product_id']);
+                                 if(empty($subcategory)){
+                                    $subcategory = '-';
+                                 }else{
+                                    $subcategory = $subcategory[0]['sub_category'];
+
+                                 }
+                                 if(empty($subsubcategory)){
+                                    $subsubcategory = '-';
+                                 }else{
+                                    $subsubcategory = $subsubcategory[0]['ss_category'];
+
+                                 }
                                 // //$date           = getabandoncart($value['user_id']);
                                  //var_dump($value);
                                  //var_dump($category);
@@ -49,8 +63,8 @@
                     <td><?= $value['price'] ?></td>
                     <td><?= $value['quantity'] ?></td>
                     <td><?= $category[0]['name'] ?></td>
-                    <td><?= $value['category_id'] ?></td>
-                    <td>Chair</td>
+                    <td><?= $subcategory ?></td>
+                    <td><?= $subsubcategory ?></td>
                     <td class="option">
                         <a href="?page=addnewproduct_dashboard">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
