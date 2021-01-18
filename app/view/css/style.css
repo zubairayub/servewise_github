@@ -736,7 +736,6 @@ width: 200px;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
@@ -937,6 +936,7 @@ background: radial-gradient(circle, rgba(254,255,0,1) 0%, rgba(255,205,0,1) 53%,
 }
 
 .main-shape1{
+    display: none;
     width: 55%;
     z-index: -1;
     background-color: #fff;
@@ -4168,27 +4168,28 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
 .section-sell .main-content .main-section-left .btn-main a {font-size: 13px;}
 .section-market .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-market {margin-top: 30px;}
+.scrollEffect1 #logosvg1 {display: none;}
 .market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */  
@@ -4215,7 +4216,7 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
@@ -4224,18 +4225,19 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-market {margin-top: 30px;}
 .market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
+.scrollEffect1 #logosvg1 {display: none;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */  
@@ -4262,8 +4264,9 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
+.scrollEffect1 #logosvg1 {display: none;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
 .section-sell .main-content .main-section-left .btn-main a {font-size: 13px;}
@@ -4271,18 +4274,18 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-market {margin-top: 30px;}
 .market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */  
@@ -4309,7 +4312,7 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
@@ -4317,19 +4320,20 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-market .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-market {margin-top: 30px;}
 .market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
+.scrollEffect1 #logosvg1 {display: none;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */
@@ -4357,7 +4361,7 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
@@ -4366,18 +4370,19 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-market {margin-top: 30px;}
 .market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
+.scrollEffect1 #logosvg1 {display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */  
@@ -4403,27 +4408,30 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
 .section-sell .main-content .main-section-left .btn-main a {font-size: 13px;}
 .section-market .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-market {margin-top: 30px;}
-.market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
+.market-shape2 {width: 100%;left: 0px;height: 145px;top: 62px;}
+.scrollEffect1 #logosvg1 {display: none;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
+#logosvg2 {width: 120px;}
+.manage-splash {width: 105px;height: 231px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
 /* home-page end */
@@ -4449,27 +4457,30 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
 .section-main .main-content .main-section-left {flex-basis: 100%;text-align: center;}
 .section-sell .main-content .main-section-left {padding: 0px 20px;text-align: center;}
 .section-sell {margin-top: 10px;}
-.sell-shape1 {top: 4px;width: 100%;}
+.sell-shape1 {top: 4px;width: 100%;display: none;}
 .sell-shape2 {width: 100%;left: 0px;top: 38px;height: 117px;}
 #logosvg {max-width: 270px;}
 .section-sell .main-content .main-section-left .para {padding: 10px 20px;}
 .section-sell .main-content .main-section-left .btn-main a {font-size: 13px;}
 .section-market .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-market {margin-top: 30px;}
-.market-shape2 {width: 100%;left: 0px;height: 130px;top: 62px;}
+.market-shape2 {width: 100%;left: 0px;height: 145px;top: 62px;}
 .section-market .main-content {margin-top: 0px;}
-.market-shape1 {width: 100%;height: 6px;top: 12px;}
+.market-shape1 {width: 100%;height: 6px;top: 12px;display: none;}
 .section-Manage {margin-top: 10px;}
 .section-Manage .main-content .main-section-left {justify-content: center;padding: 0px 20px;text-align: center;}
-.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px;}
-.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px;}  
+.manage-shape1 {top: 7px;width: 100%;height: 10px;left: 0px; display: none;}
+.manage-shape2 {top: 36px;width: 100%;height: 10px;left: 0px; display: none;}  
 .manage-shape3 {left: 0px;height: 61px;top: 93px;width: 100%;}
 .section-Learn {margin-top: 10px;}
 .section-Learn .main-content .main-section-left {DISPLAY: none;}
 .section-Learn .main-content .main-section-right {flex-basis: 100%;text-align: center;}
 .section-Learn .main-content .main-section-right .heading {font-size: 21px;font-weight: 600;}
-.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;}
-.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;}
+.learn-shape1 {top: 10px;left: 0px;width: 100%;height: 10px;display: none;}
+.learn-shape2 {top: 38px;left: 0px;width: 100%;height: 10px;display: none;}
 .learn-shape3 {left: 0px;top: 67px;height: 110px;width: 100%;}
 .section-Learn .main-content .main-section-right .para {padding: 20px 0px;}
+.section-market .main-content .main-section-left{display: none;}
+.manage-splash {width: 125px;height: 269px;}
+#logosvg2 {width: 140px;}
 }
