@@ -10,6 +10,27 @@ function get($name, $def= '')
 
 
 
+function getnotifications($dbclass,$userid,$type = NULL){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+if(empty($type)){
+$varr->query="SELECT * FROM `notifications`   where `to_user_id` = '$userid' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+}
+
+
+}
+
+
+
 
 function checkbranchlevel($country_id= NULL,$state_id= NULL,$city_id= NULL,$vendor_id= NULL,$dbclass = NULL)
 {
