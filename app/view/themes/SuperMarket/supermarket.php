@@ -232,8 +232,10 @@ include 'include/header.php';
         </div>
     </section>
 
+
     <section class="product-cat">
         <div class="container">
+            <div class="heading">Products</div>
             <div class="product-cat-card" data-aos="fade-up">
 
 
