@@ -23,8 +23,8 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 35px;
-        right: 48px;
+        top: 58px;
+        right: 38px;
         z-index: 1;
         display: none;
         -webkit-user-select: none;
@@ -101,7 +101,8 @@ include 'include/header.php';
   margin: -100px 0 0 -310px;
   padding: 50px;
   padding-top: 125px;
-  
+  border-radius:4px;
+  box-shadow:0px 3px 6px rgba(0,0,0,0.2);
   background: white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -142,7 +143,6 @@ include 'include/header.php';
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
                         <a href="#">About</a>
-                        <a href="#contactus">Contact</a>
                         <div id="menuToggle">
                         <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -155,7 +155,8 @@ include 'include/header.php';
                         </ul>
                     </div>
             </div>
-            <div class="hero-main">
+        </div>
+        <div class="hero-main">
                 <div class="hero-left" data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
@@ -170,7 +171,6 @@ include 'include/header.php';
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 
    <section class="product" data-aos="fade-up"
@@ -194,9 +194,9 @@ include 'include/header.php';
                 <div class="container">
                     <h4>
                         <h4 data-name="product_name"><?php echo $value['name'] ; ?></h4>
-                        <br>
+                        
                         <span><?php echo $value['description'] ; ?></span>
-                        <br>
+                        
                         <div class="form-group2">
                             <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                         </div>
@@ -269,16 +269,16 @@ include 'include/header.php';
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
                     <div class="homo-card-content">
-                        <h4>
+                        <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>
-                            <br>
-                            <span><?php echo $value['description'] ; ?></span>
-                            <br>
+                            
+                            <span class="product-dis-homo"><?php echo $value['description'] ; ?></span>
+                            
                             <div class="form-group2">
-                                <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                             </div>
-                            <span>$</span><?php echo $value['price'] ; ?>
-                        </h4>        
+                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+            </div>        
                     </div>
                     <div class="homo-card-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
@@ -304,16 +304,16 @@ include 'include/header.php';
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
                     <div class="homo-card-content">
-                        <h4>
+                        <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>
-                            <br>
-                            <span><?php echo $value['description'] ; ?></span>
-                            <br>
+                            
+                            <span class="product-dis-homo"><?php echo $value['description'] ; ?></span>
+                            
                             <div class="form-group2">
-                                <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                             </div>
-                            <span>$</span><?php echo $value['price'] ; ?>
-                        </h4>        
+                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+            </div>        
                     </div>
                     <div class="homo-card-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
@@ -346,16 +346,16 @@ include 'include/header.php';
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
                     <div class="homo-card-content">
-                        <h4>
+                        <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>
-                            <br>
-                            <span><?php echo $value['description'] ; ?></span>
-                            <br>
+                            
+                            <span class="product-dis-homo"><?php echo $value['description'] ; ?></span>
+                            
                             <div class="form-group2">
-                                <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                             </div>
-                            <span>$</span><?php echo $value['price'] ; ?>
-                        </h4>        
+                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+            </div>        
                     </div>
                     <div class="homo-card-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
