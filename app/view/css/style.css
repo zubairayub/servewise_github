@@ -2008,6 +2008,29 @@ a.animated-button.thar-one{
                 padding-top:10px ;
                 color: #bfbfbf;
             }
+            .footer-upper-1 .ft-about-info{
+                font-size: 24px;
+                color: white;
+            }
+
+            .lower-ft{   
+                display: none; 
+                width: 20%;
+                border: 1px dashed white;
+                border-radius: 4px;
+                padding: 4px;
+            }
+
+            .lower-ft p{
+                margin: 10px 0px;
+                padding: 0px 10px;
+            }
+
+            .lower-ft-head{
+                font-size: 24px;
+                color: white;
+            }
+
             /* Meida res */
             @media (max-width: 600px){
                 .footer-content .footer-upper .up1{
@@ -2245,8 +2268,26 @@ a.animated-button.thar-one{
             }
     
             @media (max-width: 450px){
+                .footer-upper {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    padding-bottom: 0px;
+                }
                 .footer-content .footer-upper .up1{
                     flex-basis: 100%;
+                    text-align: center;
+                    border: none;
+                }
+                .footer-upper-1 .ft-about-info {
+                    font-size: 16px;
+                    color: white;
+                    width: 100%;
+                    padding: 0px 5px;
+                }
+                .lower-ft {
+                    display: block;
+                    width: 100%;
                     text-align: center;
                 }
                 .footer-upper .footer-upper-1 {
@@ -2255,6 +2296,7 @@ a.animated-button.thar-one{
                     flex-direction: column;
                     align-items: center;
                     border-left: 1px solid white;
+                    border-right: 1px solid white;
                 }
                 .footer-upper .footer-upper-1 a {
                     text-decoration: none;
@@ -2267,12 +2309,23 @@ a.animated-button.thar-one{
                     flex-basis: 100%;
                     text-align: center;
                 }
+                #lowerTap{
+                    display: none;
+                }
+                .footer-mid .footer-mid-1 h2 {
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+                .footer-mid .footer-mid-1 a {
+                    font-size: 12px;
+                }
                 .footer-mid .footer-mid-1 {
                     flex-basis: calc(100%/3);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     border-left: 1px solid white;
+                    border-right: 1px solid white;
                 }
                 .footer-mid .footer-mid-1 a {
                     text-decoration: none;
@@ -2283,8 +2336,26 @@ a.animated-button.thar-one{
                 }
             }
             @media (max-width: 425px){
+                .footer-upper {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    padding-bottom: 0px;
+                }
                 .footer-content .footer-upper .up1{
                     flex-basis: 100%;
+                    text-align: center;
+                    border: none;
+                }
+                .footer-upper-1 .ft-about-info {
+                    font-size: 16px;
+                    color: white;
+                    width: 100%;
+                    padding: 0px 5px;
+                }
+                .lower-ft {
+                    display: block;
+                    width: 100%;
                     text-align: center;
                 }
                 .footer-upper .footer-upper-1 {
@@ -2293,6 +2364,7 @@ a.animated-button.thar-one{
                     flex-direction: column;
                     align-items: center;
                     border-left: 1px solid white;
+                    border-right: 1px solid white;
                 }
                 .footer-upper .footer-upper-1 a {
                     text-decoration: none;
@@ -2305,12 +2377,23 @@ a.animated-button.thar-one{
                     flex-basis: 100%;
                     text-align: center;
                 }
+                #lowerTap{
+                    display: none;
+                }
+                .footer-mid .footer-mid-1 h2 {
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+                .footer-mid .footer-mid-1 a {
+                    font-size: 12px;
+                }
                 .footer-mid .footer-mid-1 {
                     flex-basis: calc(100%/3);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     border-left: 1px solid white;
+                    border-right: 1px solid white;
                 }
                 .footer-mid .footer-mid-1 a {
                     text-decoration: none;
@@ -2321,9 +2404,39 @@ a.animated-button.thar-one{
                 }
             }
             @media (max-width: 400px){
+                .footer-upper-1 .ft-about-info {
+                    font-size: 14px;
+                    width: 100%;
+                    padding: 0px 5px;
+                    align-items: flex-end;
+                    color: white;
+                }
+
+                .footer-mid {
+                    display: none;
+                    width: 100%;
+                }
+                .footer-mid .lower-tap{
+                    display: none;
+                }
+
+                .footer-upper-1 p{
+                    width: 100%;
+                    padding: 0px 10px;
+                }
+                .lower-ft {
+                    display: block;
+                    width: 100%;
+                    margin:10px 0px;
+                }
+                .lower-ft p {
+                    text-align: center;
+                }
+
                 .footer-content .footer-upper .up1{
                     flex-basis: 100%;
                     text-align: center;
+                    border-left: none;
                 }
                 .footer-upper .footer-upper-1 {
                     flex-basis: calc(100%/3);
