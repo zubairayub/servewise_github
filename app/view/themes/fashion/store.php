@@ -23,8 +23,8 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 35px;
-        right: 48px;
+        top: 6px;
+        right: 8px;
         z-index: 1;
         display: none;
         -webkit-user-select: none;
@@ -144,7 +144,6 @@ include 'include/header.php';
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
                         <a href="#">About</a>
-                        <a href="#contactus">Contact</a>
                         <div id="menuToggle">
                         <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -475,20 +474,7 @@ include 'include/header.php';
             </div>
         </div>
     </section>
-    <section class="contact">
-        <div class="container">
-            <div class="content-contact-form">
-                <h2>Contact Us</h2>
-                <form action="sumit">
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="last Name">
-                    <input type="email" placeholder="Your E-mail">
-                    <input type="text" placeholder="Your Contact Number">
-                    <textarea name="Your Question"cols="10" rows="1" placeholder="Your Messege Here"></textarea>
-                    <button>Sumit</button>
-                </form>
-            </div>
-        </div>
+    
 
     </section>
     <section class="payment"></section>
