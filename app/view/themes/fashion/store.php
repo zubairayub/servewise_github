@@ -139,7 +139,9 @@ include 'include/header.php';
             <div class="container">
                 <div class="nav">
                     <div class="logo">
-                        <h3>LOGO</h3>
+                    <a herf="#" class="header-logo-section">
+                    <img src="https://picsum.photos/200/300?random=1" alt="">
+                </a>
                     </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>

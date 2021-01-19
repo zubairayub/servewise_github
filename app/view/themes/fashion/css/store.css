@@ -43,11 +43,16 @@ nav{
     align-items: center;
 }
 
-.nav .logo h3{
-    font-size: 24px;
-    letter-spacing: 6px;
+.nav .logo a{
+    overflow: hidden;
+    width: 80px;
+    height: 50px;
 }
 
+.nav .logo a img{
+    width: 80px;
+    height: 50px;
+}
 .nav .navigation {
     flex-basis: 50%;
     display: flex;
