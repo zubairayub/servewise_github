@@ -333,7 +333,7 @@ nav .btn-1-nav a{
     font-size: 16px;
     font-family:'Poppins', sans-serif;
     font-weight: 600;
-    padding: 0px 15px;
+    padding: 10px 15px;
 }
 
 nav .btn-2-nav{
@@ -559,8 +559,9 @@ color: white;
 display: flex;
 flex-direction: column;
 position: absolute;
-border-radius: 5px 15px 15px 15px;
+border-radius: 4px;
 display: none;
+box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
 transition: .3s ease all;
 
 }
@@ -581,11 +582,15 @@ letter-spacing: 1px;
 }
 
 .learn-option .learn-select1{
-border-radius: 0px 10px 0px 0px;
+border-radius: 0px 0px 0px 0px;
 }
 
 .learn-option .learn-select3{
-border-radius: 0px 0px 10px 10px;
+border-radius: 0px 0px 0px 0px;
+}
+
+.section-Learn .main-content .main-section-left .learn-img{
+    width: 440px;
 }
 .learn-dropdown{
 padding-right: 180px;
