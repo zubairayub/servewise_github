@@ -43,7 +43,6 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     .viewcart-payment-detail input{border: 1px solid rgba(0,0,0,0.2);background: white;font-size: 20px;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); transition: .3s ease;}
     .viewcart-payment-detail input:hover{transform: scale(1.1); box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
   </style>
-
   <div class="row justify-content-center viewcart-main-content">
     <div class="col-xl-7 col-lg-8 col-md-7 viewcart-content">
       <div class="border border-gainsboro p-3 viewcart-product-head">

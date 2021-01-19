@@ -3,10 +3,22 @@
 $summary = $_POST; //var_dump($summary);
 ?>
 <?php //foreach($summary as $results):  var_dump($results);
-$product_name = $_POST['prod-name'];
-$prod_name = array_fill_keys($product_name, 'product_name');
+$array['data']['product_name'] = $_POST['prod-name'];
+$array['data']['subtotal'] = $_POST['subtotal'];
+$payment_method = $_POST['payment-method'];
+// $dataArray = array();	
+// $count = 0;
+$count = count($array['data']);
+for($i=0; $i < $count; $i++) {
+
+foreach($array as $key => $value):
+	// $dataArray[$count]['product_name'] = $value['product_name'];
+	// print_r($dataArray[$count]['product_name'][$count] ); echo '<br />';
+	//echo $value['product_name'][$i]; echo '<br>';	
+endforeach;
+}
 //$args = array( $_POST['prod-name'],$_POST['subtotal'],$_POST['payment-method'],$_POST['product_quantity'],$_POST['product_price'], );//endforeach;
-var_dump($prod_name);?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +26,7 @@ var_dump($prod_name);?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-	 *{font-family: sans-serif;}
+	  *{font-family: sans-serif;}
 	.cart_summary{border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px;width: 40%;margin: auto;text-align: center;font-size: 20px;font-weight: 600;}
 	.checkout-main{border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px;width: 80%;margin: 20px auto;}
 	.checkout-main h3{font-size: 30px;}
@@ -34,22 +46,24 @@ var_dump($prod_name);?>
  </head>
 
 <body>
-<?php  include '../themePages/theme_header.phtml'; ?> <?php foreach($args as $product_data): print_r($product_data);?>
+<?php  include '../themePages/theme_header.phtml'; 
+
+foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<aside>
 		<div class="cart_summary"> 
-			<p>Product Name: <?= $product_data; ?></p> 
-			<p>Subtotal: <?= $subtotal;?></p>
+			<p>Product Name: <?= $value['product_name'][$i]; ?></p> 
+			<p>Subtotal: <?= $value['subtotal'][$i]; ?></p>
 			<p>Discount:</p>
 			<p>Payment Method: <?= $payment_method;?></p>
 		</div>
-	</aside><?php endforeach; ?>
+	</aside><?php endfor; ?>
 <div class="container checkout-main">
 <h3>Payment Form</h3>
 <form id="js-demo-form" name="form" method="post">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $subtotal; ?>">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $value['subtotal'][$i]; ?>">
 	<input type="hidden" name="subtotal" id="subtotal" value="<?= $product_price; ?>">
 	<input type="hidden" name="total" class="cart-total" value="<?= ($product_quantity * $product_price); ?>">
-	<input type="hidden" name="prod_name" value="<?= $product_name; ?>">
+	<input type="hidden" name="prod_name" value="<?= $value['product_name'][$i]; ?>">
 	<input type="hidden" name="product_quantity" value="<?= $product_quantity; ?>">
 	<div class="form-group row">
 		<label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -72,7 +86,7 @@ var_dump($prod_name);?>
 	<div class="form-group row">
 		<label for="amount" class="col-sm-2 col-form-label">Amount</label>
 		<div class="col-sm-10">
-		  <input type="number" class="form-control" id="amount" value="<?= $subtotal; ?>" readonly="readonly">
+		  <input type="number" class="form-control" id="amount" value="<?= $value['subtotal'][$i]; ?>" readonly="readonly">
 		</div>
 	</div>
 		
@@ -100,7 +114,7 @@ var_dump($prod_name);?>
 		  <button <?php if($payment_method == 'flutter') { echo 'type="button"';} elseif($payment_method == 'paystack'){ echo 'type="submit"';} ?> name="pay_now" id="pay-now" <?php if($payment_method == 'flutter'){echo 'onClick="makePayment()"'; }?> title="Pay now">Pay now</button>
 		</div>
 	</div>
-</form>
+</form><?php endforeach; ?>
 <div class="resp"></div>
 </div>
 <?php  include '../themePages/theme_footer.phtml'; ?>
