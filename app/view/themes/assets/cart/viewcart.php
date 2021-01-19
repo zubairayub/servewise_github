@@ -63,7 +63,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
         <div class="product-price d-none viewcart3"><?= $results->product_price; ?></div>
         <div class="pass-quantity col-lg-3 col-md-4 col-sm-3 viewcart4">
           <label for="pass-quantity" class="pass-quantity">Quantity</label>
-          <input class="form-control" type="number" value="<?= $results->product_quantity;?>" min="1">
+          <input class="form-control" type="number" name="product_quantity" value="<?= $results->product_quantity;?>" min="1">
         </div>
         <div class="col-lg-2 col-md-1 col-sm-2 product-line-price pt-4 viewcart5">
           <span class="product-line-price"><?= $results->product_quantity * $results->product_price; ?>
@@ -78,11 +78,11 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 	 
     </div>
 	<form method="post" action="checkout.php">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $proct_final_price; ?>">
-	<input type="hidden" name="cart-discount" id="discount" value="">
-	<input type="hidden" name="total" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
-	<input type="hidden" name="prod-name" value="<?= $results->product_name; ?>">
-  
+	<input type="hidden" name="subtotal[]" id="subtotal" value="<?= $proct_final_price; ?>">
+	<input type="hidden" name="total[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
+	<input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
+  <input type="hidden" name="product_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
+  <input type="hidden" name="product_price[]" value="<?= $results->product_price; ?>" min="1">
   </div>
 <!-- container -->
 <?php } ?>

@@ -152,7 +152,7 @@ include 'include/header.php';
                                 <div id="smartcart"></div>
                             </form>  
                         </ul>
-        </div>
+                    </div>
 
                     </div>
                 </nav>
@@ -188,11 +188,15 @@ include 'include/header.php';
         <div class="container">
             <div class="heading">Feature Products</div>
             <div class="product-cat-card" data-aos="fade-up" >
+<<<<<<< Updated upstream
 
          
 
              
   <?php
+=======
+            <?php 
+>>>>>>> Stashed changes
                 foreach ($result as $key => $value) {
                     if($value['is_featured'] == '1'){
                         $image = getproductsimages($value['product_id'],$DB_CLASS);

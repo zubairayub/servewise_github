@@ -1,13 +1,12 @@
 <?php
 
-$summary = $_POST; 
+$summary = $_POST; //var_dump($summary);
 ?>
-<?php
-$product_name 	= 	$_POST['prod-name'];
-$subtotal		=  	$_POST['subtotal'];  
-$discount		=	$_POST['cart-discount'];
-$payment_method	=	$_POST['payment-method'];
-?>
+<?php //foreach($summary as $results):  var_dump($results);
+$product_name = $_POST['prod-name'];
+$prod_name = array_fill_keys($product_name, 'product_name');
+//$args = array( $_POST['prod-name'],$_POST['subtotal'],$_POST['payment-method'],$_POST['product_quantity'],$_POST['product_price'], );//endforeach;
+var_dump($prod_name);?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,18 +34,23 @@ $payment_method	=	$_POST['payment-method'];
  </head>
 
 <body>
-<?php  include '../themePages/theme_header.phtml'; ?>
+<?php  include '../themePages/theme_header.phtml'; ?> <?php foreach($args as $product_data): print_r($product_data);?>
 	<aside>
-		<div class="cart_summary">
-			<p>Product Name: <?= $product_name;?></p>
+		<div class="cart_summary"> 
+			<p>Product Name: <?= $product_data; ?></p> 
 			<p>Subtotal: <?= $subtotal;?></p>
-			<p>Discount:<?= $discount;?></p>
+			<p>Discount:</p>
 			<p>Payment Method: <?= $payment_method;?></p>
 		</div>
-	</aside>
+	</aside><?php endforeach; ?>
 <div class="container checkout-main">
 <h3>Payment Form</h3>
-<form id="js-demo-form" method="post">
+<form id="js-demo-form" name="form" method="post">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $subtotal; ?>">
+	<input type="hidden" name="subtotal" id="subtotal" value="<?= $product_price; ?>">
+	<input type="hidden" name="total" class="cart-total" value="<?= ($product_quantity * $product_price); ?>">
+	<input type="hidden" name="prod_name" value="<?= $product_name; ?>">
+	<input type="hidden" name="product_quantity" value="<?= $product_quantity; ?>">
 	<div class="form-group row">
 		<label for="name" class="col-sm-2 col-form-label">Name</label>
 		<div class="col-sm-10">
@@ -102,8 +106,23 @@ $payment_method	=	$_POST['payment-method'];
 <?php  include '../themePages/theme_footer.phtml'; ?>
 <?php
 	if($payment_method == 'flutter'){?>
-	
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+	<script>
+	$('#pay-now').click(function(){
+		
+		url='checkoutData.php';
+		formData = $('form').serialize();
+		$.ajax({
+			type : 'post',
+			url : url,
+			data : formData,
+			success: function(data) {
+				console.log(data);
+			}
+		});
+	});
+	</script>
+	 
  
   <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script src="../js/flutter.js"></script>
@@ -140,3 +159,4 @@ function payWithPaystack(e) {
 		});
 		 
 	</script>
+	
