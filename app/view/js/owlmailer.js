@@ -94,7 +94,7 @@
       form_data.append("smtpAcct", smtpAccountsTextAreaLines.randomElement());
 
       request = $.ajax({
-        url : "app/lib/owl.php",
+        url : "../app/lib/owl.php",
         type: "post",
         data: form_data,
         contentType: false,
