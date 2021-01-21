@@ -149,6 +149,7 @@ $aosstyle = $config['AOSSTYLE_PATH'];
 $fonts = $config['FONTS_PATH'];
 $fontawsome = $config['FONTAWSOME'];
 $jscript = $config['JS_PATH'];
+$owlmailerjs = $config['OWL_MAILER_JS'];
 $editorjs = $config['EDITOR_PATH'];
 $editorsubjs = $config ['EDITOR_SUB_PATH'];
 $jscript_dashboard = $config['JS_PATH_DASHBOARD'];
