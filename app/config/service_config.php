@@ -12,7 +12,7 @@ $config_service = [
 	'VENDOR_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'vendor' . DSINNER . 'vendorClass.php',
     'CATEGORY_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'category' . DSINNER . 'categoryClass.php',
     'LOGO_DIRECTORY' =>  APPLICATION_INNERPATH  . DSINNER  . 'upload'  . DSINNER  .  'logos' . DSINNER ,
-    'CATEGORY_DIRECTORY' =>  APPLICATION_INNERPATH  . DSINNER  . 'upload'  . DSINNER  .  'categories' . DSINNER ,
+	'CATEGORY_DIRECTORY' =>  APPLICATION_INNERPATH  . DSINNER  . 'upload'  . DSINNER  .  'categories' . DSINNER ,
     'PRODUCT_DIRECTORY' =>  APPLICATION_INNERPATH  . DSINNER  . 'upload'  . DSINNER  .  'products' . DSINNER ,
     'BRAND_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'brand' . DSINNER . 'brandClass.php'
 ];

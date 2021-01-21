@@ -21,6 +21,7 @@ $config = [
 'AOSJS_PATH' => '../app/view/js/aos.js',
 'IMAGE_PATH'=> '../app/view/img/',
 'LOGO_DIRECTORY' =>   '../app/upload/logos/' ,
+'LOGO_DIRECTORY_FOOTER' => '../app/upload/logos/footerllog/' ,
 'CATEGORY_DIRECTORY' =>   '../app/upload/categories/',
 'PRODUCT_DIRECTORY' => '../app/upload/products/'  ,
 'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',

@@ -932,11 +932,11 @@ a.animated-button.thar-five:before {
 
 .main-section-drop-shape{
     background: rgb(254,255,0);
-background: radial-gradient(circle, rgba(254,255,0,1) 0%, rgba(255,205,0,1) 53%, rgba(255,222,0,1) 100%);
+background: radial-gradient(circle, rgb(253, 241, 68) 0%, rgb(253, 227, 123) 53%, rgb(253, 241, 68) 100%);
     height: 100vh;
     width: 100%;
     position: absolute;
-    box-shadow: 40px 0px 40px -50px rgb(0, 0, 0,0.8);
+    box-shadow: 0px 3px 6px rgb(0, 0, 0,0.2);
     border-radius: 99% 1% 0% 100% / 0% 0% 100% 100%;
 }
 
@@ -3232,6 +3232,8 @@ nav .btn-1-nav {display: flex; flex-basis: 30%;}
     nav .logo {width: 20%;justify-content: flex-start;}
     nav .btn-1-nav {display: none;}
 /* header-end */    
+.section-market .main-content .main-section-left {
+    display: none;}
 
 
 /* home-page */
