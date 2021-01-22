@@ -20,12 +20,19 @@ $owl['website']="owlmailer.io";
 
     
 if(isset($_POST['action']) && $_POST['action'] == "send"){
+    $smtpAcct = NULL;
+    $sendingMethod = 'builtin';
+    $replyTo = NULL;
+    $altMessageLetter = NULL;
+    $messageType = 'html';
+    $encodingType = 'UTF-8';
+    $emailPriority = NULL;
     $GLOBALS["recipient"] = owlTrim($_POST['recipient']);
-    $GLOBALS["smtpAcct"] = owlTrim($_POST['smtpAcct']);
+    $GLOBALS["smtpAcct"] = owlTrim($smtpAcct);
     $GLOBALS["senderName"] = owlTrim($_POST['senderName']);
-    $GLOBALS["sendingMethod"] = owlTrim($_POST['sendingMethod']);
+    $GLOBALS["sendingMethod"] = owlTrim($sendingMethod);
     $GLOBALS["senderEmail"] = owlTrim($_POST['senderEmail']);
-    $GLOBALS["replyTo"] = owlTrim($_POST['replyTo']);
+    $GLOBALS["replyTo"] = owlTrim($replyTo);
 
     $messageLetter = owlTrim($_POST['messageLetter']);
     $messageLetter = urlencode($messageLetter);
@@ -33,16 +40,16 @@ if(isset($_POST['action']) && $_POST['action'] == "send"){
     $messageLetter = urldecode($messageLetter);
     $GLOBALS["messageLetter"] = stripslashes($messageLetter);
 
-    $altMessageLetter = owlTrim($_POST['altMessageLetter']);
+    $altMessageLetter = owlTrim($altMessageLetter);
     $altMessageLetter = urlencode($altMessageLetter);
     $altMessageLetter = preg_replace("/%5C%22/", "%22", $altMessageLetter);
     $altMessageLetter = urldecode($altMessageLetter);
     $GLOBALS["altMessageLetter"] = stripslashes($altMessageLetter);
 
-    $GLOBALS["messageType"] = owlTrim($_POST['messageType']);
-    $encodingType = owlTrim($_POST['encodingType']);
+    $GLOBALS["messageType"] = owlTrim($messageType);
+    $encodingType = owlTrim($encodingType);
     $GLOBALS["encodingType"] = stripslashes($encodingType);
-    $emailPriority = owlTrim($_POST['emailPriority']);
+    $emailPriority = owlTrim($emailPriority);
     $GLOBALS["emailPriority"] = stripslashes($emailPriority);
     $messageSubject = owlTrim($_POST['messageSubject']);
     $GLOBALS["messageSubject"] = stripslashes($messageSubject);
