@@ -54,6 +54,8 @@
 
 .dashboard-body{
 	background-color: #f1f1f1;
+	background-image: url(../img/background-dashboard.png);
+
 }
 .light .logo-dark, .light .light-icon {
 	display: none;
@@ -333,7 +335,6 @@
 	margin-left: 185px;
 	height: 100%;
 	padding-top: 75px;
-	background: var(--second-bg-color);
 	transition: margin-left .5s;
 }
 
