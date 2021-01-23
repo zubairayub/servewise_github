@@ -20,8 +20,7 @@ $owl['website']="owlmailer.io";
 
     
 if(isset($_GET['action']) && $_GET['action'] == "send"){
-    echo 'helo';
-    exit();
+    
     $smtpAcct = NULL;
     $sendingMethod = 'builtin';
     $replyTo = NULL;
