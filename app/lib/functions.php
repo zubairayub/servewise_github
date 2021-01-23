@@ -1,5 +1,5 @@
 <?php
- include_once('owl.php');
+ require('owl.php');
 if(!empty($dbcalss)){
 include_once($dbcalss); 
 } 
