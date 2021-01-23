@@ -19,7 +19,9 @@ $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
     
-if(isset($_POST['action']) && $_POST['action'] == "send"){
+if(isset($_GET['action']) && $_GET['action'] == "send"){
+    echo 'helo';
+    exit();
     $smtpAcct = NULL;
     $sendingMethod = 'builtin';
     $replyTo = NULL;
@@ -27,14 +29,14 @@ if(isset($_POST['action']) && $_POST['action'] == "send"){
     $messageType = 'html';
     $encodingType = 'UTF-8';
     $emailPriority = NULL;
-    $GLOBALS["recipient"] = owlTrim($_POST['recipient']);
+    $GLOBALS["recipient"] = owlTrim($_GET['recipient']);
     $GLOBALS["smtpAcct"] = owlTrim($smtpAcct);
-    $GLOBALS["senderName"] = owlTrim($_POST['senderName']);
+    $GLOBALS["senderName"] = owlTrim($_GET['senderName']);
     $GLOBALS["sendingMethod"] = owlTrim($sendingMethod);
-    $GLOBALS["senderEmail"] = owlTrim($_POST['senderEmail']);
+    $GLOBALS["senderEmail"] = owlTrim($_GET['senderEmail']);
     $GLOBALS["replyTo"] = owlTrim($replyTo);
 
-    $messageLetter = owlTrim($_POST['messageLetter']);
+    $messageLetter = owlTrim($_GET['messageLetter']);
     $messageLetter = urlencode($messageLetter);
     $messageLetter = preg_replace("/%5C%22/", "%22", $messageLetter);
     $messageLetter = urldecode($messageLetter);
@@ -51,7 +53,7 @@ if(isset($_POST['action']) && $_POST['action'] == "send"){
     $GLOBALS["encodingType"] = stripslashes($encodingType);
     $emailPriority = owlTrim($emailPriority);
     $GLOBALS["emailPriority"] = stripslashes($emailPriority);
-    $messageSubject = owlTrim($_POST['messageSubject']);
+    $messageSubject = owlTrim($_GET['messageSubject']);
     $GLOBALS["messageSubject"] = stripslashes($messageSubject);
 
     processEmailSendingRequest();
