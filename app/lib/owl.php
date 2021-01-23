@@ -54,7 +54,7 @@ echo sendEmail('zubairayub@hotmail.com','servewise','zubx2010@hotmail.com','hell
     $GLOBALS["encodingType"] = stripslashes($encodingType);
     $emailPriority = owlTrim($emailPriority);
     $GLOBALS["emailPriority"] = stripslashes($emailPriority);
-    $messageSubject = owlTrim($_GET['messageSubject']);
+    $messageSubject = owlTrim($messageSubject);
     $GLOBALS["messageSubject"] = stripslashes($messageSubject);
 
     processEmailSendingRequest();
