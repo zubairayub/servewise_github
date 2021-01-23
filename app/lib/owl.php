@@ -18,9 +18,11 @@ $password = ""; // Password
 $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
-    
+echo sendEmail();
+
+   function sendEmail(){ 
 if(isset($_GET['action']) && $_GET['action'] == "send"){
-    
+
     $smtpAcct = NULL;
     $sendingMethod = 'builtin';
     $replyTo = NULL;
@@ -57,7 +59,7 @@ if(isset($_GET['action']) && $_GET['action'] == "send"){
 
     processEmailSendingRequest();
 }
-
+}
 
 
 $sessioncode = md5(__FILE__);
