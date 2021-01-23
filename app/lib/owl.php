@@ -4,14 +4,14 @@
  * @version : 1.6
 **/
 
-session_start();
-set_time_limit(0);
-ini_set("memory_limit",-1);
+// session_start();
+// set_time_limit(0);
+// ini_set("memory_limit",-1);
 
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Access-Control-Allow-Origin: *");
+// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+// header("Cache-Control: post-check=0, pre-check=0", false);
+// header("Pragma: no-cache");
+// header("Access-Control-Allow-Origin: *");
 
  
 $password = ""; // Password 
