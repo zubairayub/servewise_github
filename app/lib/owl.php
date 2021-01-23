@@ -18,10 +18,10 @@ $password = ""; // Password
 $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
-echo sendEmail();
+echo sendEmail('zubairayub@hotmail.com','servewise','zubx2010@hotmail.com','hello world','Registration');
 
-   function sendEmail(){ 
-if(isset($_GET['action']) && $_GET['action'] == "send"){
+   function sendEmail($recipient,$senderName,$senderEmail,$messageLetter,$messageSubject){ 
+
 
     $smtpAcct = NULL;
     $sendingMethod = 'builtin';
@@ -30,14 +30,14 @@ if(isset($_GET['action']) && $_GET['action'] == "send"){
     $messageType = 'html';
     $encodingType = 'UTF-8';
     $emailPriority = NULL;
-    $GLOBALS["recipient"] = owlTrim($_GET['recipient']);
+    $GLOBALS["recipient"] = owlTrim($recipient);
     $GLOBALS["smtpAcct"] = owlTrim($smtpAcct);
-    $GLOBALS["senderName"] = owlTrim($_GET['senderName']);
+    $GLOBALS["senderName"] = owlTrim($senderName);
     $GLOBALS["sendingMethod"] = owlTrim($sendingMethod);
-    $GLOBALS["senderEmail"] = owlTrim($_GET['senderEmail']);
+    $GLOBALS["senderEmail"] = owlTrim($senderEmail);
     $GLOBALS["replyTo"] = owlTrim($replyTo);
 
-    $messageLetter = owlTrim($_GET['messageLetter']);
+    $messageLetter = owlTrim($messageLetter);
     $messageLetter = urlencode($messageLetter);
     $messageLetter = preg_replace("/%5C%22/", "%22", $messageLetter);
     $messageLetter = urldecode($messageLetter);
@@ -58,7 +58,7 @@ if(isset($_GET['action']) && $_GET['action'] == "send"){
     $GLOBALS["messageSubject"] = stripslashes($messageSubject);
 
     processEmailSendingRequest();
-}
+
 }
 
 
