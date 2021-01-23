@@ -18,7 +18,6 @@ $password = ""; // Password
 $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
-echo sendEmail('zubairayub@hotmail.com','servewise','zubx2010@hotmail.com','hello world','Registration');
 
    function sendEmail($recipient,$senderName,$senderEmail,$messageLetter,$messageSubject){ 
 
