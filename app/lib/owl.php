@@ -5608,11 +5608,3 @@ class phpmailerException extends Exception
 
 ?>
 
-<script>
- $("#btnStart").attr("disabled", false);
- $("#btnStop").attr("disabled", true);
-</script>
-</body>
-<footer></footer>
-
-</html>

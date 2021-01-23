@@ -1,5 +1,5 @@
 <?php
- //require_once('owl.php');
+ require_once('owl.php');
 if(!empty($dbcalss)){
 include_once($dbcalss); 
 } 
@@ -8,8 +8,6 @@ function get($name, $def= '')
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
-// echo sendEmail('zubairayub@hotmail.com','servewise','zubx2010@hotmail.com','hello world','Registration');
-// exit();
 
 function getnotifications($dbclass,$userid,$type = NULL){
 

@@ -8,6 +8,7 @@ $PATH =  constant("APPLICATION_INNERPATH");
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
 require_once $config_service['DB_CLASS'];
 require $config_service['USER_CLASS'];
+require_once $config_service['FUNCTIONS'];
 	
 $user=new User();
 	$message=null;
@@ -57,6 +58,9 @@ mail($to,$subject,$txt,$headers);
 		$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
 		   
 		if (!empty($signup)){
+			 sendEmail('zubairayub@hotmail.com','servewise','$email','$email','Registration');
+
+
 			echo "1";
 			
 		} else {
