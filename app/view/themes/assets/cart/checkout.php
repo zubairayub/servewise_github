@@ -51,8 +51,8 @@ endforeach;
 foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<aside>
 		<div class="cart_summary"> 
-			<p>Product Name: <?= $value['product_name'][$i]; ?></p> 
-			<p>Subtotal: <?= $value['subtotal'][$i]; ?></p>
+			<p>Product Name: <?= $value['product_name']; ?></p> 
+			<p>Subtotal: <?= $value['subtotal']; ?></p>
 			<p>Discount:</p>
 			<p>Payment Method: <?= $payment_method;?></p>
 		</div>

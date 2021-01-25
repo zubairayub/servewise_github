@@ -1177,8 +1177,8 @@ $status = 0;
 
 						}
 
-						insert_notifications('',$userid,$userid,'vendor_approve','https://servewise.shop');
-						insert_notifications('',$userid,6,'vendor_approve','https://servewise.shop');
+						// insert_notifications('',$userid,$userid,'vendor_approve','https://servewise.shop');
+						// insert_notifications('',$userid,6,'vendor_approve','https://servewise.shop');
 
 					}
 
