@@ -29,6 +29,26 @@ return $result;
 }
 
 
+function insert_notifications($dbclass=null,$userid,$to_user_id,$type,$url){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+if(empty($type)){
+	$varr->query="INSERT INTO `notifications`(`id`, `from_user_id`, `to_user_id`, `type`, `link`, `status`) VALUES (?,?,?,?,?,?)";
+	$result=$varr->executeQuery($varr->query,array(NULL,$userid,$to_user_id,$type,$url,'0'),"create");
+
+return $result;
+}
+
+
+}
+
+
 
 
 function checkbranchlevel($country_id= NULL,$state_id= NULL,$city_id= NULL,$vendor_id= NULL,$dbclass = NULL)
@@ -262,9 +282,17 @@ ini_set('session.gc_divisor', 1);
 // Completely destroy our server sessions..
 session_destroy();
 
-header('Location: http://servewise.shop/public/?page=home');
+
+
+?>
+<script>window.location.replace("https://www.servewise.shop/public");</script>
+<?php
+//header('Location: http://servewise.shop/public/');
+
+//exit();
 
 }
+
 
 
 function getlogo_dashboard($userid = null,$dbclass = null,$directory = null){
@@ -1149,7 +1177,8 @@ $status = 0;
 
 						}
 
-
+						insert_notifications('',$userid,$userid,'vendor_approve','https://servewise.shop');
+						insert_notifications('',$userid,6,'vendor_approve','https://servewise.shop');
 
 					}
 
