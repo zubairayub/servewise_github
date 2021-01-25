@@ -1,4 +1,64 @@
-    
+<section class="login-main">
+    <div class="logincontent">
+        <div class="login-section-right">
+            <div class="login-heading">Welcome to ServeWise</div>
+            <a herf="#" class="login-btn-google"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
+            <a herf="#" class="login-btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+            <a herf="#" class="login-btn-twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+            <div class="login-slipt"><div class="span-1"></div>OR LOGIN WITH EMAIL<div class="span-2"></div></div>
+            <form action="<?php echo $controller ;?>" method="post" id="form" class="login-form">
+                <input class="login-email" name="email" type="text" required>
+                <input class="login-password" name="password" type="password" required>
+                <div class="form-lower-content">
+                    <div class="radio">
+                        <input type="checkbox">
+                        <label>Keep me logged in</label>
+                    </div>
+                    <a href="?page=forgot_dashboard">Forget Password</a>
+                </div>
+                <label class='bg-danger'><?php 
+				if(isset($_GET["message"])){
+				echo $_GET['message'];
+				}
+				?></label>
+                <div class="login-btn-login">
+                    <input class="login-btn" type="button" name="loginbtn" value="Log In" onclick="submitForm()">
+                </div>
+            </form>
+            <div class="login-nav-signup">
+                <p>Don't have an account yet? <a href="?page=signup_dashboard">Sign up</a></p>
+            </div>
+        </div>
+        <div class="login-section-left">
+            <div class="login-section-upper">
+                <div class="login-upper-heading"><a href="#"><img src="img/servewis_logo.png" alt="logo"></a></div>
+                <div class="login-upper-shap1"></div>
+                <div class="login-upper-shap2"><img src="img/laptop.png" alt="123"></div>
+            </div>
+            <div class="login-section-upper"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			        window.location.replace("?page=dashboard");
+		}else{
+			alert('signin failed');
+		}
+    });
+}
+</script>
+
+
+
+<!--     
     
     <div class="container-login">
     <div class="img"></div>
@@ -29,10 +89,10 @@
               <a href="?page=forgot_dashboard" style='text-align: center;'>Forgot Password?</a>
             </div>
                   <label class='bg-danger'><?php 
-				if(isset($_GET["message"])){
-				echo $_GET['message'];
-				}
-				?></label>
+                  if(isset($_GET["message"])){
+                  echo $_GET['message'];
+                  }
+                  ?></label>
             <input type="button" class="btn-login" name="loginbtn" value="Login" onclick="submitForm()" />
           </form>
              
@@ -54,4 +114,4 @@
     });
 }
 </script>
-
+ -->

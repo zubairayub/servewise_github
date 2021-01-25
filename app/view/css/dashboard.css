@@ -54,7 +54,7 @@
 
 .dashboard-body{
 	background-color: #f1f1f1;
-	background-image: url(../img/background-dashboard.png);
+	/* background-image: url(../img/background-dashboard.png); */
 
 }
 .light .logo-dark, .light .light-icon {
@@ -227,6 +227,120 @@
 	border-radius: 10px;
 	border: 0.125px solid var(--second-bg-color);
 }
+
+
+/* login-new-page */
+.login-main{width: 100%;height:100vh;display: flex;justify-content: center;align-items: center;}
+.login-main .logincontent{background: white; display: flex;width: 80%;justify-content: center;align-items: center;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);border-radius: 4px;}
+.login-main .logincontent .login-section-right{display: flex;justify-content: center;align-items: center;flex-direction: column;flex-basis: 50%;}
+.login-main .logincontent .login-section-right .login-logo{width: 100px;height: 100px;}
+.login-main .logincontent .login-section-right .login-heading{font-size: 34px;font-weight: 600;color: #6b6b6b;margin-bottom: 30px;}
+.login-main .logincontent .login-section-right .login-btn-google{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.login-main .logincontent .login-section-right .login-btn-google:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:red;color:white;}
+.login-main .logincontent .login-section-right .login-btn-google i{margin-right:10px;}
+.login-main .logincontent .login-section-right .login-btn-facebook{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.login-main .logincontent .login-section-right .login-btn-facebook:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:#1167b1;color:white;}
+.login-main .logincontent .login-section-right .login-btn-facebook i{margin-right:10px;}
+.login-main .logincontent .login-section-right .login-btn-twitter{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.login-main .logincontent .login-section-right .login-btn-twitter:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:#40beef;color:white;}
+.login-main .logincontent .login-section-right .login-btn-twitter i{margin-right:10px;}
+.login-main .logincontent .login-section-right .login-form{width: 70%;}
+.login-main .logincontent .login-section-right .login-slipt{margin:15px 10px; width:100%; display: flex;align-items: center;justify-content: center;}
+.login-main .logincontent .login-section-right .login-slipt .span-1{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
+.login-main .logincontent .login-section-right .login-slipt .span-2{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
+.login-main .logincontent .login-section-right .login-form .login-email{width: 100%;margin-bottom:10px; font-size: 16px;padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.login-main .logincontent .login-section-right .login-form .login-password{width: 100%;margin-bottom:10px; font-size: 16px; padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.login-main .logincontent .login-section-right .login-form .form-lower-content{display: flex;justify-content: space-between;align-items: center;}
+.login-main .logincontent .login-section-right .login-form .form-lower-content .radio{font-size:14px;}
+.login-main .logincontent .login-section-right .login-form .form-lower-content a{font-size:14px;}
+.login-main .logincontent .login-section-right .login-form .login-btn-login{display:flex;justify-content: center;align-items: center;}
+.login-main .logincontent .login-section-right .login-form .login-btn-login .login-btn{cursor: pointer;width: 50%;border-radius: 4px;font-size: 16px;padding: 5px;border: 1px solid rgba(0,0,0,0.2);box-shadow: 0px 3px 6px rgba(0,0,0,0.1);margin: 20px 0px;transition: .3s ease!important;}
+.login-main .logincontent .login-section-right .login-form .login-btn-login .login-btn:hover{background-color:#91daf5;width: 100%;color:white;box-shadow:0px 3px 6px rgba(0,0,0,0.2);}
+.login-main .logincontent .login-section-right .login-nav-signup{font-size:14px; width: 100%;display: flex;justify-content: center;align-items: center;}
+.login-main .logincontent .login-section-right .login-nav-signup p{display: flex;}
+.login-main .logincontent .login-section-right .login-nav-signup p a{margin-left:5px}
+.login-main .logincontent .login-section-left{flex-basis:50%;}
+.login-main .logincontent .login-section-left .login-upper-shap1{clip-path: polygon(50% 0%, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 25% 0);background: rgb(249,18,18);background: linear-gradient(274deg, rgba(249,18,18,1) 0%, rgba(214,42,4,1) 100%);width: 100%;height: 530px;border-radius: 0px 4px 4px 0px;animation-name: divshap1;animation-duration: 4s;animation-fill-mode: both;}
+@keyframes divshap1 {
+	0%   {width:0%;}
+	25%   {width:50%;}
+	50%   {width:20%;}
+	100% {width:100%;}
+}
+.login-main .logincontent .login-section-left .login-upper-heading{animation-delay: 2s;z-index: 9;position: absolute;animation-name: signup;animation-duration: 2s;animation-fill-mode: both;}
+.login-main .logincontent .login-section-left .login-upper-heading a{text-decoration: none;font-size: 30px;color: #a0a0a0;}
+.login-main .logincontent .login-section-left .login-upper-heading a img{width:200px;height:200px;}
+@keyframes signup {
+	0%   {top:-350px;right: 370px;}
+	100% {top: 190px;right: 370px;}
+}
+.login-main .logincontent .login-section-left .login-upper-shap2{position: absolute;top: -350px;animation-name: example;animation-duration: 4s;animation-fill-mode: both;transition: .3s ease!important;}
+.login-main .logincontent .login-section-left .login-upper-shap2:hover{transform: scale(1.1);}
+@keyframes example {
+	0%   {top:-350px;}
+	25%  {top:300px;}
+	50%  {top:20px;}
+	100% {top:160px;}
+}
+/* login-new-page-end */
+/* signup-new-page */
+.signup-main{width: 100%;height:100vh;display: flex;justify-content: center;align-items: center;}
+.signup-main .signupcontent{background: white; display: flex;width: 80%;justify-content: center;align-items: center;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);border-radius: 4px;}
+.signup-main .signupcontent .signup-section-left{display: flex;justify-content: center;align-items: center;flex-direction: column;flex-basis: 50%;background-color: white;}
+.signup-main .signupcontent .signup-section-left .login-logo{width: 100px;height: 100px;}
+.signup-main .signupcontent .signup-section-left .login-heading{font-size: 34px;font-weight: 600;color: #6b6b6b;margin-bottom: 30px;}
+.signup-main .signupcontent .signup-section-left .login-btn-google{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.signup-main .signupcontent .signup-section-left .login-btn-google:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:red;color:white;}
+.signup-main .signupcontent .signup-section-left .login-btn-google i{margin-right:10px;}
+.signup-main .signupcontent .signup-section-left .login-btn-facebook{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.signup-main .signupcontent .signup-section-left .login-btn-facebook:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:#1167b1;color:white;}
+.signup-main .signupcontent .signup-section-left .login-btn-facebook i{margin-right:10px;}
+.signup-main .signupcontent .signup-section-left .login-btn-twitter{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.signup-main .signupcontent .signup-section-left .login-btn-twitter:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:#40beef;color:white;}
+.signup-main .signupcontent .signup-section-left .login-btn-twitter i{margin-right:10px;}
+.signup-main .signupcontent .signup-section-left .login-form{width: 70%;}
+.signup-main .signupcontent .signup-section-left .login-slipt{margin:15px 10px; width:100%; display: flex;align-items: center;justify-content: center;}
+.signup-main .signupcontent .signup-section-left .login-slipt .span-1{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
+.signup-main .signupcontent .signup-section-left .login-slipt .span-2{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
+.signup-main .signupcontent .signup-section-left .login-form .login-email{width: 100%;margin-bottom:10px; font-size: 16px;padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.signup-main .signupcontent .signup-section-left .login-form .login-password{width: 100%;margin-bottom:10px; font-size: 16px; padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.signup-main .signupcontent .signup-section-left .login-form .form-lower-content{display: flex;justify-content: space-between;align-items: center;}
+.signup-main .signupcontent .signup-section-left .login-form .form-lower-content .radio{font-size:14px;width: 100%;display: flex;justify-content: center;align-items: center; }
+.signup-main .signupcontent .signup-section-left .login-form .form-lower-content .radio input{margin-right: 10px;}
+.signup-main .signupcontent .signup-section-left .login-form .form-lower-content .radio label{width: 100%;display: flex;justify-content: space-between;align-items: center;}
+.signup-main .signupcontent .signup-section-left .login-form .form-lower-content a{font-size:14px;}
+.signup-main .signupcontent .signup-section-left .login-form .login-btn-login{display:flex;justify-content: center;align-items: center;}
+.signup-main .signupcontent .signup-section-left .login-form .login-btn-login .login-btn{cursor: pointer;width: 50%;border-radius: 4px;font-size: 16px;padding: 5px;border: 1px solid rgba(0,0,0,0.2);box-shadow: 0px 3px 6px rgba(0,0,0,0.1);margin: 20px 0px;transition: .3s ease!important;}
+.signup-main .signupcontent .signup-section-left .login-form .login-btn-login .login-btn:hover{background-color:#91daf5;width: 100%;color:white;box-shadow:0px 3px 6px rgba(0,0,0,0.2);}
+.signup-main .signupcontent .signup-section-left .login-nav-signup{font-size:14px; width: 100%;display: flex;justify-content: center;align-items: center;}
+.signup-main .signupcontent .signup-section-left .login-nav-signup p{display: flex;}
+.signup-main .signupcontent .signup-section-left .login-nav-signup p a{margin-left:5px}
+.signup-main .signupcontent .signup-section-right{flex-basis:50%; background-color: white;}
+.signup-main .signupcontent .signup-section-right .login-upper-shap1{clip-path: polygon(50% 0%, 72% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 0);background: rgb(249,246,18);background: linear-gradient(274deg, rgba(249,246,18,1) 0%, rgba(255,171,0,1) 100%);width: 100%;height: 531px;border-radius: 4px 0px 0px 4px;animation-name: divshap1;animation-duration: 4s;animation-fill-mode: both;}
+@keyframes divshap1 {
+	0%   {width:0%;}
+	25%   {width:50%;}
+	50%   {width:20%;}
+	100% {width:100%;}
+}
+.signup-main .signupcontent .signup-section-right .login-upper-heading{animation-delay: 2s;z-index: 9;position: absolute;animation-name: signup;animation-duration: 2s;animation-fill-mode: both;}
+.signup-main .signupcontent .signup-section-right .login-upper-heading a{text-decoration: none;font-size: 30px;color: #a0a0a0;}
+.signup-main .signupcontent .signup-section-right .login-upper-heading a img{width:200px;height:200px;}
+@keyframes signup {
+	0%   {top:-350px;left: 260px;}
+	100% {top: 40px;left: 260px;}
+}
+.signup-main .signupcontent .signup-section-right .login-upper-shap2{position: absolute;top: -350px;animation-name: example;animation-duration: 4s;animation-fill-mode: both;transition: .3s ease!important;}
+.signup-main .signupcontent .signup-section-right .login-upper-shap2 img{width: 280px;height: 420px;}
+.signup-main .signupcontent .signup-section-right .login-upper-shap2:hover{transform: scale(1.1);}
+@keyframes example {
+	0%   {left:-350;top:-350px;}
+	50%   {left:-350;top:180px;}
+	100% {left:230px;top:180px;}
+}
+
+
+/* signup-new-page-end */
 
 .dropdown-expand {
 	display: flex;
