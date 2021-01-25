@@ -240,8 +240,7 @@ function gettheme($url){
 }
 
 function logout(){
-echo 'hello';
-exit();
+
 // Finds all server sessions
 session_start();
 // Stores in Array
@@ -263,7 +262,7 @@ ini_set('session.gc_divisor', 1);
 // Completely destroy our server sessions..
 session_destroy();
 
-header('Location: ?page=home');
+header('Location: http://servewise.shop/public/?page=home');
 
 }
 
