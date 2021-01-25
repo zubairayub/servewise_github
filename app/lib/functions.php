@@ -240,7 +240,8 @@ function gettheme($url){
 }
 
 function logout(){
-
+echo 'hello';
+exit();
 // Finds all server sessions
 session_start();
 // Stores in Array
