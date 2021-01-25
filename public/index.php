@@ -38,17 +38,17 @@ if (strpos($page, 'dashboard') !== false) {
 	$page = DS . 'dashboard' . DS . $page;
 	$dashboard = DS . 'dashboard' . DS;
 
-if((!isLogin()) && ($page!='\dashboard\login_dashboard' && $page!= '\dashboard\signup_dashboard')){
+// if((!isLogin()) && ($page!='\dashboard\login_dashboard' && $page!= '\dashboard\signup_dashboard')){
 
 
-	$page ='login_dashboard';
-	$path = str_replace("_dashboard","",$page);
-	$page = DS . 'dashboard' . DS . $page;
-	$dashboard = DS . 'dashboard' . DS;
+// 	$page ='login_dashboard';
+// 	$path = str_replace("_dashboard","",$page);
+// 	$page = DS . 'dashboard' . DS . $page;
+// 	$dashboard = DS . 'dashboard' . DS;
 
 
 
-}
+// }
 
 
 	
