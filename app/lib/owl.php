@@ -163,7 +163,7 @@ function processEmailSendingRequest()
       exit($mail->ErrorInfo);
   }
   else {
-      exit("OK");
+      return 'ok';
   }
 }
 

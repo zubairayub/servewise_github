@@ -58,7 +58,7 @@ mail($to,$subject,$txt,$headers);
 		$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
 		   
 		if (!empty($signup)){
-			 sendEmail('zubairayub@hotmail.com','servewise',$email,$email,'Registration');
+			 sendEmail($email,'servewise',$email,$email,'Registration');
 
 
 			echo "1";
