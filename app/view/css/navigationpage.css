@@ -2276,7 +2276,7 @@ form {
 /*staff-permission-end */
 
 /* dashboard-header */
-img{max-width:350px;}
+img{max-width:500px;}
 input[type=file]{padding:10px;}
 .switch {position: relative;display: inline-block;width: 60px;height: 34px;}
 .switch input {opacity: 0;width: 0;height: 0;}

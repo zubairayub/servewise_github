@@ -1,4 +1,55 @@
-<?php //require $footer;
+<section class="signup-main">
+    <div class="signupcontent">
+        <div class="signup-section-right">
+            <div class="login-section-upper">
+                <div class="login-upper-heading"><a href="#"><img src="<?php echo $image;?>servewis_logo.png" alt="logo"></a></div>
+                <div class="login-upper-shap1"></div>
+                <div class="login-upper-shap2"><img src="<?php echo $image;?>signup-model.png" alt="123"></div>
+            </div>
+            <div class="login-section-upper"></div>
+        </div>
+        <div class="signup-section-left">
+        <div class="login-heading">Get Started</div>
+            <form class="login-form" action="<?php echo $controller ;?>" method="POST" id="form">
+                <input class="login-email" type="text" name="email" placeholder="Your Email" required>
+                <input class="login-password"  type="password" name="password" id="Password" placeholder="Password" required>
+                <input class="login-password" name="confirm_Password" type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <span id="message"></span>
+                <div class="form-lower-content">
+                    <div class="radio">
+                        <input type="checkbox">
+                        <label>I agreed to the <a href="#"> Terms of Services</a> & <a href="#">Privacy Policy</a>.</label>
+                    </div>
+                </div>
+                <div class="login-btn-login">
+                    <input class="login-btn" type="button" value="Sign up" name="signupbtn" onclick="submitForm()">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script>
+  function submitForm(form){
+    
+    var url = $('#form').attr("action");
+    
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+       window.location.replace("?page=verification_dashboard");
+    }else if (data== 0){
+      alert('sign up failed');
+    } else {
+        alert("email already registered");
+    }
+    });
+}
+</script>
+
+
+<!-- <?php //require $footer;
 ?>	
     <div class="container-varification">
     <div class="login-content">
@@ -35,7 +86,7 @@
             </div>
             <span id="message"></span>
            
-            <input type="buttton" class="btn" value="Sign Up" name="signupbtn" onclick="submitForm()" />
+            <input type="button" class="btn" value="Sign Up" name="signupbtn" onclick="submitForm()" />
             
           </form>
           
@@ -59,4 +110,4 @@
     }
     });
 }
-</script>
+</script> -->
