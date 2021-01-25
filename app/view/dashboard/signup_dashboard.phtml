@@ -10,22 +10,45 @@
         </div>
         <div class="signup-section-left">
         <div class="login-heading">Get Started</div>
-            <form class="login-form" action="<?php echo $controller ;?>" method="POST" id="form">
-                <input class="login-email" type="text" name="email" placeholder="Your Email" required>
-                <input class="login-password"  type="password" name="password" id="Password" placeholder="Password" required>
-                <input class="login-password" name="confirm_Password" type="password" id="confirmPassword" placeholder="Confirm Password" required>
-                <input type="hidden" name="type" class="input" id="confirmPassword" value="2" />
-                <span id="message"></span>
-                <div class="form-lower-content">
-                    <div class="radio">
-                        <input type="checkbox">
-                        <label>I agreed to the <a href="#"> Terms of Services</a> & <a href="#">Privacy Policy</a>.</label>
-                    </div>
+        <div class="login-content">
+        <form action="<?php echo $controller ;?>" method="POST" id="form">
+            <div class="input-div one">
+              <div class="i">
+                <i class="fa fa-user"></i>
+              </div>
+              <div class="div">
+                <h5>E-mail</h5>
+                <input type="text" name="email" class="input" required />
+              </div>
+            </div>
+            <div class="input-div pass">
+              <div class="i">
+                <i class="fa fa-lock"></i>
+              </div>
+              <div class="div">
+                <h5>Password</h5>
+                <input type="password" class="input" name="password" id="password" required />
+              </div>
+              
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                  <i class="fa fa-unlock-alt"></i>
                 </div>
-                <div class="login-btn-login">
-                    <input class="login-btn" type="button" value="Sign up" name="signupbtn" onclick="submitForm()">
+                <div class="div">
+                  <h5>Confirm Password</h5>
+                  <input type="password" name="confirm_Password" class="input" id="confirmPassword" required />
+                  <input type="hidden" name="type" class="input" id="confirmPassword" value="2" />
                 </div>
-            </form>
+            </div>
+            <span id="message"></span>
+            <div class="sign-btn-login">
+              <input type="button" class="login-btn" value="Sign Up" name="signupbtn" onclick="submitForm()" />
+            </div>
+          </form>
+          
+            
+    </div>
         </div>
     </div>
 </section>
