@@ -285,7 +285,7 @@ session_destroy();
 
 
 
-header('Location: https://servewise.shop/public/');
+header('Location: https://servewise.shop/public/?page=home');
 
 exit();
 
