@@ -235,8 +235,11 @@
 .login-main .logincontent .login-section-right{display: flex;justify-content: center;align-items: center;flex-direction: column;flex-basis: 50%;}
 .login-main .logincontent .login-section-right .login-logo{width: 100px;height: 100px;}
 .login-main .logincontent .login-section-right .login-heading{font-size: 34px;font-weight: 600;color: #6b6b6b;margin-bottom: 30px;}
-.login-main .logincontent .login-section-right .login-btn-google{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
-.login-main .logincontent .login-section-right .login-btn-google:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:red;color:white;}
+.login-main .logincontent .login-section-right .login-btn-google{cursor: pointer; font-size: 14px; display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
+.login-main .logincontent .login-section-right .login-btn-google .abcRioButtonLightBlue{    height: 36px;width: 230px!important;}
+.login-main .logincontent .login-section-right .login-btn-google .abcRioButtonLightBlue .abcRioButtonContentWrapper .abcRioButtonContents #not_signed_inu1u78idksxaw{font-size: 20px;}
+.login-main .logincontent .login-section-right .login-btn-google .abcRioButtonLightBlue .abcRioButtonContentWrapper .abcRioButtonIcon .abcRioButtonIconImage .abcRioButtonSvg{transition: .3s ease;}
+.login-main .logincontent .login-section-right .login-btn-google .abcRioButtonLightBlue .abcRioButtonContentWrapper:hover .abcRioButtonIcon .abcRioButtonIconImage .abcRioButtonSvg{transform: rotate(360deg);}
 .login-main .logincontent .login-section-right .login-btn-google i{margin-right:10px;}
 .login-main .logincontent .login-section-right .login-btn-facebook{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
 .login-main .logincontent .login-section-right .login-btn-facebook:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:#1167b1;color:white;}
