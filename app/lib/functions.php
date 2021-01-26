@@ -478,7 +478,7 @@ function getcustomerinfo($user_id =  NULL){
 	
 	}
 
-function getuserinfo($user_id =  NULL){
+function getuserinfo($user_id =  NULL,$dbclass = NULL){
 
 	if(!empty($dbclass)){
 	
