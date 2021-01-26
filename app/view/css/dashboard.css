@@ -290,6 +290,10 @@
 .signup-main{width: 100%;height:100vh;display: flex;justify-content: center;align-items: center;}
 .signup-main .signupcontent{background: white; display: flex;width: 80%;justify-content: center;align-items: center;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);border-radius: 4px;}
 .signup-main .signupcontent .signup-section-left{display: flex;justify-content: center;align-items: center;flex-direction: column;flex-basis: 50%;background-color: white;}
+.signup-main .signupcontent .signup-section-left .login-content .form-lower-content{width: 100%;}
+.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio{margin: 20px 0px; display: flex;justify-content: center;align-items: center;font-size: 14px;}
+.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input{margin-right: 10px;}
+.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label{display: flex;justify-content: center;align-items: center;}
 .signup-main .signupcontent .signup-section-left .login-logo{width: 100px;height: 100px;}
 .signup-main .signupcontent .signup-section-left .login-heading{font-size: 34px;font-weight: 600;color: #6b6b6b;margin-bottom: 30px;}
 .signup-main .signupcontent .signup-section-left .login-btn-google{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
@@ -1255,6 +1259,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 65%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 215px;}
+	100% {top: 20px;left: 215px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 280px;height: 420px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 120px;left: -350px;}
+	100% {top: 120px;left: 155px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 465px;}				
 }
 
 
@@ -1280,6 +1302,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 65%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 215px;}
+	100% {top: 20px;left: 215px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 280px;height: 420px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 120px;left: -350px;}
+	100% {top: 120px;left: 155px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 465px;}			
 }
 
 
@@ -1330,6 +1370,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 170px;}
+	100% {top: 60px;left: 170px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 160px;left: -350px;}
+	100% {top: 160px;left: 155px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}			
 }
 
 @media (max-width:1100px){
@@ -1354,6 +1412,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 170px;}
+	100% {top: 60px;left: 170px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 160px;left: -350px;}
+	100% {top: 160px;left: 155px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}			
 }
 
 @media (max-width:1000px){
@@ -1378,6 +1454,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 170px;}
+	100% {top: 60px;left: 170px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 160px;left: -350px;}
+	100% {top: 160px;left: 155px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}		
 }
 
 @media (max-width:975px){
@@ -1475,6 +1569,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 70px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}		
 }
 
 @media (max-width:875px){
@@ -1523,6 +1635,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 70px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}		
 }
 
 
@@ -1548,6 +1678,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 70px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}	
 }
 
 @media (max-width:800px){
@@ -1572,6 +1720,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 40px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}	
 }
 
 @media (max-width:775px){
@@ -1596,6 +1762,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 40px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}	
 }
 
 @media (max-width:768px){
@@ -1620,6 +1804,24 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
 	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	/* signup-page */
+	.signup-main .signupcontent {width: 90%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signup{
+	0% {top: -350px;left: 100px;}
+	100% {top: 40px;left: 100px;}
+	}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 img {width: 200px;height: 340px;}
+	@keyframes example22{
+	0% {top: -350px;left: -350px;}
+	50% {top: 180px;left: -350px;}
+	100% {top: 180px;left: 85px;}
+	}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content .input-div {margin: 15px 0;}
+	.signup-section-left .login-content {display: flex;width: 90%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label a{text-align: center;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {height: 430px;}
 }
 
 
@@ -1641,6 +1843,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:700px){
@@ -1661,6 +1877,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:600px){
@@ -1681,6 +1911,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:575px){
@@ -1701,6 +1945,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:550px){
@@ -1721,6 +1979,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:525px){
@@ -1741,6 +2013,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:500px){
@@ -1761,6 +2047,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:475px){
@@ -1781,6 +2081,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:450px){
@@ -1801,6 +2115,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}			
 }
 
 @media (max-width:425px){
@@ -1821,6 +2149,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}		
 }
 
 @media (max-width:400px){
@@ -1841,6 +2183,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:375px){
@@ -1861,6 +2217,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:350px){
@@ -1881,6 +2251,20 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}	
 }
 
 @media (max-width:320px){
@@ -1901,4 +2285,18 @@ th:last-child{
 	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
 	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
 	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+	/* signup-page */
+	.signup-main .signupcontent {flex-wrap: wrap;overflow: hidden;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap2 {display: none;}
+	.signup-main .signupcontent .signup-section-right .login-upper-heading {display: none;}
+	.signup-main .signupcontent .signup-section-right {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-right .login-upper-shap1 {clip-path: none;height: 20px;}
+	.signup-main .signupcontent .signup-section-left {flex-basis: 100%;}
+	.signup-main .signupcontent .signup-section-left .login-heading {font-size: 24px;}
+	.signup-section-left .login-content {display: flex;width: 100%; justify-content: center;}
+	.signup-section-left .login-content form{width: 90%;}
+	.input-div > div > input {font-size: 1rem;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input {width: 20px;height: 20px;flex-basis: 20%;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label {flex-basis: 80%;display: flex;flex-wrap: wrap;}
+	.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio {margin: 10px 0px;}
 }
