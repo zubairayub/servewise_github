@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '../../'));
-// const DS = DIRECTORY_SEPARATOR; 
-// $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
-// include_once('functions.php'); 
- 
+session_start();
+defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '../../'));
+const DS = DIRECTORY_SEPARATOR; 
+$dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
+include_once('functions.php'); 
+ echo $_SESSION['logInId'].'hi';
 
 //  if(!empty($_SESSION['logInId'])){
 
@@ -36,6 +36,6 @@
 
 
 
-echo 0;
+
 
 ?>
