@@ -69,7 +69,6 @@ $from_email = 'vendor@servewise.shop';
 			 insert_notifications($DB_CLASS,'6',$user_id,$subject,'https://servewise.shop');
 
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit();
+header("location:javascript://history.go(-1)");
 
 ?>
