@@ -1,15 +1,10 @@
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="982422029890-q28rmfama5olf3kgtjond6qkkebscebf.apps.googleusercontent.com">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=229595958647533&autoLogAppEvents=1" nonce="dEzEjn6Z"></script>
-<section class="login-main">
+ <section class="login-main">
     <div class="logincontent">
         <div class="login-section-right">
             <div class="login-heading">Welcome to ServeWise</div>
-            
-            <a herf="#" class="login-btn-google g-signin2" data-onsuccess="onSignIn"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
-            <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
-            
+            <a herf="#" class="login-btn-google"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
+            <a herf="#" class="login-btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+            <a herf="#" class="login-btn-twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
             <div class="login-slipt"><div class="span-1"></div>OR LOGIN WITH EMAIL<div class="span-2"></div></div>
             <form action="<?php echo $controller ;?>" method="post" id="form" class="login-form">
                 <input class="login-email" name="email" type="text" required>
@@ -46,39 +41,6 @@
 </section>
 
 <script>
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
-
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '229595958647533',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v9.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-
 	function submitForm(form){
 		
     var url = $('#form').attr("action");
