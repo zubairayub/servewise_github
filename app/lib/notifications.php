@@ -4,7 +4,7 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FI
 const DS = DIRECTORY_SEPARATOR; 
 $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 $functions = APPLICATION_PATH . DS . 'lib' . DS . 'functions.php';
-require_once $functions ; 
+echo $functions;
 
  if(!empty($_SESSION['logInId'])){
  	echo 'hiii';
