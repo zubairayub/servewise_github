@@ -345,6 +345,7 @@
 
 /* signup-new-page-end */
 
+
 .dropdown-expand {
 	display: flex;
 }
@@ -1200,4 +1201,12 @@ td:last-child{
 }
 th:last-child{
 	text-align: right;
+}
+
+/* media res */
+
+@media (max-width:320px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	
 }
