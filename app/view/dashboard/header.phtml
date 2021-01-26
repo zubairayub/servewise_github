@@ -1,3 +1,16 @@
+<?php
+$dbcalss = '../app/model/classDatabaseManager.php';
+require_once '../app/lib/functions.php';
+
+ if(!empty($_SESSION['logInId'])){
+ 	
+
+$user_id = $_SESSION['logInId'];
+
+$result = getnotifications($dbcalss,$user_id,'');
+}
+
+?>
 <body class="overlay-scrollbar light dashboard-body">
 
 <div class="navbar">
@@ -34,21 +47,38 @@
 						</span>
 					</div>
 					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
-						<li class="dropdown-menu-item">
+						<?php   
+
+						if(!empty($result)){
+							foreach ($result as $key => $value) {
+								?>
+
+				<li class="dropdown-menu-item">
 							<a href="#" class="dropdown-menu-link">
 								<div>
 									<i class="fa fa-gift" aria-hidden="true"></i>
 								</div>
 								<span>
-									Nazreen Consulting Demo.
+									<?php echo $value['type'] ; ?>
 									<br>
-									<span>
+									<!-- <span>
 										23/10/2020
-									</span>
+									</span> -->
 								</span>
 							</a>
 						</li>
-						<li class="dropdown-menu-item">
+								<?php
+							}
+
+
+
+						}
+
+							
+
+						 ?>
+						
+						<!-- <li class="dropdown-menu-item">
 							<a href="#" class="dropdown-menu-link">
 								<div>
 									<i class="fa fa-tasks" aria-hidden="true"></i>
@@ -61,7 +91,7 @@
 									</span>
 								</span>
 							</a>
-						</li>
+						</li> -->
 					</div>
 					<div class="dropdown-menu-footer">
 						<span>
