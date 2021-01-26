@@ -59,7 +59,7 @@ mail($to,$subject,$txt,$headers);
 		   
 		if (!empty($signup)){
 			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
-			 sendEmail('zubairayub@hotmail.com','ServeWise','zubx2010@hotmail.com',$message_body,'Registration');
+			 sendEmail($email,'ServeWise','register@servewise.shop',$message_body,'Registration');
 
 
 			echo "1";
