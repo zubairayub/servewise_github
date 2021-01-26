@@ -11,7 +11,7 @@ session_start();
 // require_once $config_service['FUNCTIONS'];
 
 $DB_CLASS = '../model/classDatabaseManager.php';
-require_once '../lib/functions.php';
+include_once '../lib/functions.php';
 
 
 
