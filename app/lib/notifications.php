@@ -6,6 +6,7 @@ $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 include_once('functions.php'); 
 
  if(!empty($_SESSION['logInId'])){
+ 	echo 'hiii';
 
 $user_id = $_SESSION['logInId'];
 
@@ -14,6 +15,7 @@ $result = getnotifications($dbcalss,$user_id,'');
 if(!empty($result)){
 
 print_r($result);
+echo 'hi';
 
 	// $count = count($result);
 	// echo $count;
@@ -21,7 +23,7 @@ print_r($result);
 
 }else{
 
-
+echo 'helo';
 	echo 0;
 }
 
