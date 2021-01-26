@@ -70,4 +70,6 @@ $from_email = 'vendor@servewise.shop';
 
 
 header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit();
+
 ?>
