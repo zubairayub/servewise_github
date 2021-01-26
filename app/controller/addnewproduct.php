@@ -93,9 +93,13 @@ $url = upload_file($fileName,$fileExtension,$fileTmpPath,$fileSize,$fileType,$fi
     //     array_push($error,"$file_name, ");
     // }
 
-            echo "0";
+            ?>
+
+<script>window.location.replace("https://servewise.shop/public/?page=viewproduct_dashboard");</script>
+            <?php
         } else {
-			echo "1";		
+            ?>
+			<script>window.location.replace("https://servewise.shop/public/?page=addnewproduct_dashboard");</script>	<?php
         }
 	
 	} else {
