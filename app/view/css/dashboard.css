@@ -1208,8 +1208,697 @@ th:last-child{
 
 /* media res */
 
+
+@media (max-width:1325px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:350px!important;}
+	@keyframes examplelog{
+		0% {right: 190px; top: -350px;}
+		25% {right: 190px; top: 300px;}
+		50% {right: 190px; top: 30px;}
+		100% {right: 190px; top: 360px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 295px;}
+	100% {top: 375px;right: 295px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 550px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 65%;}
+}
+
+@media (max-width:1300px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:350px!important;}
+	@keyframes examplelog{
+		0% {right: 150px; top: -350px;}
+		25% {right: 150px; top: 300px;}
+		50% {right: 150px; top: 30px;}
+		100% {right: 150px; top: 320px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 245px;}
+	100% {top: 335px;right: 245px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 550px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 65%;}
+}
+
+
+@media (max-width:1280px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:350px!important;}
+	@keyframes examplelog{
+		0% {right: 150px; top: -350px;}
+		25% {right: 150px; top: 300px;}
+		50% {right: 150px; top: 30px;}
+		100% {right: 150px; top: 320px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 245px;}
+	100% {top: 335px;right: 245px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 550px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 65%;}
+}
+
+
+
+@media (max-width:1225px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:350px!important;}
+	@keyframes examplelog{
+		0% {right: 150px; top: -350px;}
+		25% {right: 150px; top: 300px;}
+		50% {right: 150px; top: 30px;}
+		100% {right: 150px; top: 320px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 245px;}
+	100% {top: 335px;right: 245px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:1200px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:350px!important;}
+	@keyframes examplelog{
+		0% {right: 150px; top: -350px;}
+		25% {right: 150px; top: 300px;}
+		50% {right: 150px; top: 30px;}
+		100% {right: 150px; top: 320px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 245px;}
+	100% {top: 335px;right: 245px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:1100px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:300px!important;}
+	@keyframes examplelog{
+		0% {right: 130px; top: -350px;}
+		25% {right: 130px; top: 300px;}
+		50% {right: 130px; top: 30px;}
+		100% {right: 130px; top: 270px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 210px;}
+	100% {top: 275px;right: 210px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:1000px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:300px!important;}
+	@keyframes examplelog{
+		0% {right: 130px; top: -350px;}
+		25% {right: 130px; top: 300px;}
+		50% {right: 130px; top: 30px;}
+		100% {right: 130px; top: 270px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 210px;}
+	100% {top: 275px;right: 210px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:975px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 140px; top: -350px;}
+		25% {right: 140px; top: 300px;}
+		50% {right: 140px; top: 30px;}
+		100% {right: 140px; top: 270px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 190px;}
+	100% {top: 260px;right: 190px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:950px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 110px; top: -350px;}
+		25% {right: 110px; top: 300px;}
+		50% {right: 110px; top: 30px;}
+		100% {right: 110px; top: 250px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 160px;}
+	100% {top: 240px;right: 160px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:925px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 110px; top: -350px;}
+		25% {right: 110px; top: 300px;}
+		50% {right: 110px; top: 30px;}
+		100% {right: 110px; top: 250px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 160px;}
+	100% {top: 240px;right: 160px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+
+@media (max-width:900px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 110px; top: -350px;}
+		25% {right: 110px; top: 300px;}
+		50% {right: 110px; top: 30px;}
+		100% {right: 110px; top: 200px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 160px;}
+	100% {top: 190px;right: 160px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:875px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 110px; top: -350px;}
+		25% {right: 110px; top: 300px;}
+		50% {right: 110px; top: 30px;}
+		100% {right: 110px; top: 200px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 160px;}
+	100% {top: 190px;right: 160px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:850px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 90px; top: -350px;}
+		25% {right: 90px; top: 300px;}
+		50% {right: 90px; top: 30px;}
+		100% {right: 90px; top: 200px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 140px;}
+	100% {top: 190px;right: 140px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+
+@media (max-width:825px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 90px; top: -350px;}
+		25% {right: 90px; top: 300px;}
+		50% {right: 90px; top: 30px;}
+		100% {right: 90px; top: 200px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 140px;}
+	100% {top: 190px;right: 140px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:800px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 90px; top: -350px;}
+		25% {right: 90px; top: 300px;}
+		50% {right: 90px; top: 30px;}
+		100% {right: 90px; top: 150px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 140px;}
+	100% {top: 145px;right: 140px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:775px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 90px; top: -350px;}
+		25% {right: 90px; top: 300px;}
+		50% {right: 90px; top: 30px;}
+		100% {right: 90px; top: 150px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 140px;}
+	100% {top: 145px;right: 140px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+@media (max-width:768px){
+	.login-main .logincontent .login-section-left {flex-basis: 50%;}
+	.login-main .logincontent .login-section-right {flex-basis: 50%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 20px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-left .login-upper-shap2 img{max-width:250px!important;}
+	@keyframes examplelog{
+		0% {right: 90px; top: -350px;}
+		25% {right: 90px; top: 300px;}
+		50% {right: 90px; top: 30px;}
+		100% {right: 90px; top: 150px;}
+		}
+	.login-main .logincontent .login-section-left .login-upper-heading a img {width: 150px;height: 150px;}
+	@keyframes signuplog{
+	0% {top: -350px;right: 140px;}
+	100% {top: 145px;right: 140px;}
+	}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {height: 450px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+}
+
+
+@media (max-width:750px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:700px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:600px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:575px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:550px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:525px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:500px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:475px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 24px;margin-bottom: 10px; margin-top: 10px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:450px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 50%;display: flex;margin-bottom: 0px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 50%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:425px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 100%;display: flex;margin-bottom: 10px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 100%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:400px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 100%;display: flex;margin-bottom: 10px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 100%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:375px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 100%;display: flex;margin-bottom: 10px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 100%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
+@media (max-width:350px){
+	.login-main .logincontent .login-section-left {flex-basis: 100%;}
+	.login-main .logincontent .login-section-right {flex-basis: 100%;}
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 100%;display: flex;margin-bottom: 10px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 100%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
+}
+
 @media (max-width:320px){
 	.login-main .logincontent .login-section-left {flex-basis: 100%;}
 	.login-main .logincontent .login-section-right {flex-basis: 100%;}
-	
+	.login-main .logincontent{flex-wrap: wrap;}
+	.login-main .logincontent .login-section-left .login-upper-shap2{display: none;}
+	.login-main .logincontent .login-section-left .login-upper-shap1{height: 10px;}
+	.login-main .logincontent .login-section-right .login-heading {font-size: 14px;margin-bottom: 20px;}
+	.login-main .logincontent .login-section-right .login-slipt {font-size: 14px;}
+	.login-main .logincontent .login-section-right .login-slipt .span-1 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-slipt .span-2 {width: 20%;}
+	.login-main .logincontent .login-section-right .login-form {width: 90%;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content {flex-wrap: wrap;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio {width: 100%;display: flex;margin-bottom: 10px; align-items: center;justify-content: center;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content .radio input{margin-right: 10px;}
+	.login-main .logincontent .login-section-right .login-form .form-lower-content a {width: 100%;text-align: center;}
+	.login-main .logincontent .login-section-right .login-nav-signup {margin-bottom: 10px;}
+	.login-main .logincontent .login-section-left .login-upper-shap1 {clip-path: none;}
+	.login-main .logincontent .login-section-left .login-upper-heading {display: none;}
 }
