@@ -58,8 +58,7 @@ mail($to,$subject,$txt,$headers);
 		   
 		//$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
 		  $signup= 1;
-		  echo $email;
-		  exit(); 
+		   
 		if (!empty($signup)){
 			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
 			 sendEmail($email,'ServeWise','register@servewise.shop',$message_body,'Registration');
