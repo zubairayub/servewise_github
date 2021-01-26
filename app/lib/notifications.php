@@ -3,7 +3,8 @@ session_start();
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '../../'));
 const DS = DIRECTORY_SEPARATOR; 
 $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
-include_once('functions.php'); 
+$functions = APPLICATION_PATH . DS . 'lib' . DS . 'functions.php';
+require_once $functions ; 
 
  if(!empty($_SESSION['logInId'])){
  	echo 'hiii';
