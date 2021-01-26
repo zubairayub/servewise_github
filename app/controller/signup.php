@@ -29,41 +29,17 @@ $user=new User();
    
 	
     
-	//mail securtiy code
-/*	$to = $email;
-$subject = "ServeWise Verification of Email";
-$txt = "Your Verification code for ServeWise is ". $security_code. "\n Add this verification code to enjoy our services. \n 
-            <html>
-            <body> 
-            <a href='http://www.servewise.com/varification.php?id=".$_SESSION['email']."&code=".$security_code."'>Click here to validate your account.
-                        </a>
-                        </body>
-                        </html>";
-// Always set content-type when sending HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-$headers .= 'From: <noreply@servewise.com>' . "\r\n";
-
-
-
-mail($to,$subject,$txt,$headers);
-// end
-	
-*/	
 		$checkuser= $user->CheckUser($email);
 		
 		if (empty($checkuser)){
 		   
-		//$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
-		  $signup= 1;
+		$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
 		   
 		if (!empty($signup)){
-			$from_email = 'register@servewise.com' ;
+			$from_email = 'register@servewise.shop' ;
 			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
-			 echo sendEmail($email,'ServeWise',$from_email,$message_body,'Registration');
-			// insert_notifications($DB_CLASS,'6','6','User_register','https://servewise.shop');
+			 sendEmail($email,'ServeWise',$from_email,$message_body,'Registration');
+			 insert_notifications($DB_CLASS,'6','6','User_register','https://servewise.shop');
 
 			echo "1";
 			
