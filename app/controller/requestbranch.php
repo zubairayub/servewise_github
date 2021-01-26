@@ -89,8 +89,17 @@ exit();
 			$branchid = $getbranch[0]["branch_id"];
             $_SESSION['branchid'] = $branchid;
 
+
              $varr->query="INSERT INTO `vb_themesetting`(`id`, `vb_id`, `domain_url`, `theme_id`, `type`) VALUES  (?,?,?,?,?) ";
              $result=$varr->executeQuery($varr->query,array(NULL,$branchid,$name,4,4),"create");
+
+              $from_email = 'branch@servewise.shop';
+      $message_body = 'Welcome to ServeWise! Your Request for opening Branch has been sent. you will get status of your Shop ' .$name. ' with in 24 hours. Thanks for becoming a part of ServeWise';
+       sendEmail($emailid,'ServeWise',$from_email,$message_body,'Request Branch');
+      
+       insert_notifications($DB_CLASS,$userid,'6','branch_singup','https://servewise.shop');
+      
+       insert_notifications($DB_CLASS,'6',$userid,'branch_singup','https://servewise.shop');
 
          //   echo $_SESSION['branchid'];
       //  echo "record added";
