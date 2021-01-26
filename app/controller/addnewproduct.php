@@ -14,7 +14,7 @@ require $config_service['PRODUCT_CLASS'];
 require $config_service['FUNCTIONS'];
 
 
-
+$DB_CLASS = $config_service['DB_CLASS'];
 
 $PRODUCT_DIRECTORY  = $config_service['PRODUCT_DIRECTORY'];
 
