@@ -61,8 +61,8 @@ mail($to,$subject,$txt,$headers);
 		   
 		if (!empty($signup)){
 			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
-			 sendEmail($email,'ServeWise','register@servewise.shop',$message_body,'Registration');
-			 insert_notifications($DB_CLASS,'6','6','User_register','https://servewise.shop');
+			 echo sendEmail($email,'ServeWise','register@servewise.shop',$message_body,'Registration');
+			// insert_notifications($DB_CLASS,'6','6','User_register','https://servewise.shop');
 
 			echo "1";
 			
