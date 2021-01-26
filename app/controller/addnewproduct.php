@@ -26,7 +26,7 @@ $randomstring = generateRandomString();
 	$product=new Product();
 	$message=null;
 
-	if(isset($_POST["add"])){
+	if(isset($_POST["name"])){
 	
 	    $name = $_POST["name"];
         $description = $_POST["description"];
