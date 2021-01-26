@@ -38,12 +38,12 @@ if(!empty($dbclass)){
 	  $query;
 	 $db;
 	 $varr = new databaseManager();
-if(empty($type)){
+
 	$varr->query="INSERT INTO `notifications`(`id`, `from_user_id`, `to_user_id`, `type`, `link`, `status`) VALUES (?,?,?,?,?,?)";
 	$result=$varr->executeQuery($varr->query,array(NULL,$userid,$to_user_id,$type,$url,'0'),"create");
 
 return $result;
-}
+
 
 
 }
@@ -287,7 +287,7 @@ session_destroy();
 
 header('Location: https://servewise.shop/public/');
 
-//exit();
+exit();
 
 }
 

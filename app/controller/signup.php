@@ -9,6 +9,7 @@ require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_
 require_once $config_service['DB_CLASS'];
 require $config_service['USER_CLASS'];
 require_once $config_service['FUNCTIONS'];
+$DB_CLASS = $config_service['DB_CLASS'];
 	
 $user=new User();
 	$message=null;
@@ -55,12 +56,14 @@ mail($to,$subject,$txt,$headers);
 		
 		if (empty($checkuser)){
 		   
-		$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
-		   
+		//$signup = $user->newSignUp($email,$password,$security_code,$status,$type);        
+		  $signup= 1;
+		  echo $email;
+		  exit(); 
 		if (!empty($signup)){
 			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
 			 sendEmail($email,'ServeWise','register@servewise.shop',$message_body,'Registration');
-
+			 insert_notifications($DB_CLASS,$userid,'6','User_register','https://servewise.shop');
 
 			echo "1";
 			
