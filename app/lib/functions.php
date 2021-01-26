@@ -282,12 +282,14 @@ ini_set('session.gc_divisor', 1);
 // Completely destroy our server sessions..
 session_destroy();
 
+?>
 
+<script>window.location.replace("https://servewise.shop/public");</script>
 
+<?php
+// header('Location: https://servewise.shop/public/?page=home');
 
-header('Location: https://servewise.shop/public/?page=home');
-
-exit();
+// exit();
 
 }
 
