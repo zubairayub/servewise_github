@@ -4,35 +4,35 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FI
 const DS = DIRECTORY_SEPARATOR; 
 $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 include_once('functions.php'); 
- echo $_SESSION['logInId'].'hi';
 
-//  if(!empty($_SESSION['logInId'])){
+ if(!empty($_SESSION['logInId'])){
 
-// $user_id = $_SESSION['logInId'];
+$user_id = $_SESSION['logInId'];
 
-// $result = getnotifications($dbcalss,$user_id,'');
+$result = getnotifications($dbcalss,$user_id,'');
 
-// if(!empty($result)){
+if(!empty($result)){
 
+print_r($result);
 
-// 	$count = count($result);
-// 	echo $count;
-
-
-// }else{
+	// $count = count($result);
+	// echo $count;
 
 
-// 	echo 0;
-// }
+}else{
 
 
+	echo 0;
+}
 
 
 
-// }else{
 
-// 	echo 0;
-// } 
+
+}else{
+
+	echo 0;
+} 
 
 
 
