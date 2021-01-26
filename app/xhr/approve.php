@@ -69,9 +69,9 @@ $from_email = 'vendor@servewise.shop';
 			 insert_notifications($DB_CLASS,'6',$user_id,$subject,'https://servewise.shop');
 
 
-// header('Location: https://servewise.shop/?page=viewvendor_dashboard');
+header('Location: https://servewise.shop/public/?page=viewvendor_dashboard');
 
-// exit();
+exit();
 ?>
 
-<script>window.location.replace("https://servewise.shop/?page=viewvendor_dashboard");</script>
+<!-- <script>window.location.replace("https://servewise.shop/?page=viewvendor_dashboard");</script> -->
