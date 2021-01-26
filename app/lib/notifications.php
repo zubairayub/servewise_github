@@ -8,24 +8,24 @@ $dbcalss = '../model/classDatabaseManager.php';
 require_once 'functions.php';
 
  if(!empty($_SESSION['logInId'])){
- 	echo 'hiii';
+ 	
 
 $user_id = $_SESSION['logInId'];
 
 $result = getnotifications($dbcalss,$user_id,'');
-echo 'hoo';
+
 if(!empty($result)){
 
-print_r($result);
-echo 'hi';
+//print_r($result);
 
-	// $count = count($result);
-	// echo $count;
+
+	 $count = count($result);
+	 echo $count;
 
 
 }else{
 
-echo 'helo';
+
 	echo 0;
 }
 
