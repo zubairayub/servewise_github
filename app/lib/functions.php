@@ -284,10 +284,8 @@ session_destroy();
 
 
 
-?>
-<script>window.location.replace("https://www.servewise.shop/public");</script>
-<?php
-//header('Location: http://servewise.shop/public/');
+
+header('Location: https://servewise.shop/public/');
 
 //exit();
 
