@@ -6,8 +6,9 @@
             <div class="view-branch-main" data-aos="fade-up" data-aos-duration="900">
                   <table>
             	      <tr>
-                              <th>Username</th>
-                              <th>Name</th>
+                             
+                              <th>Branch Name</th>
+                              <th>Branch Url</th>
                               <th>Contact No</th>
                               <th>Email</th>
                               <th>Address</th>
@@ -17,6 +18,8 @@
                         <?php
                         $admin = NULL;
                         foreach ($branch as $key => $value) {
+
+                              $url = getthemeurl($value['branch_id']);
                               $status = $value['status'];
                               if($status == 0){
                                     $approval = 'NOT APPROVED';
@@ -29,7 +32,7 @@
                                     }
                                     $approval = 'APPROVED';
                               }
-                              echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['name'].'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$approval .'</td>'.'<td> <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>'. $action . ' </td></tr>';
+                              echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$url[0]['domain_url'].'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$approval .'</td>'.'<td> <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>'. $action . ' </td></tr>';
                         }
                         ?>
                   </table>

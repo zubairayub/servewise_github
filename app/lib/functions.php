@@ -259,6 +259,24 @@ function gettheme($url){
 
 }
 
+
+function getthemeurl($branch_id){
+
+	$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+
+				$varr->query="SELECT * FROM `vb_themesetting`  where `vb_id` = '$branch_id'";
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+
+				return $result;
+
+}
+
+
 function logout(){
 
 // Finds all server sessions
