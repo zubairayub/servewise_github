@@ -44,6 +44,7 @@ $randomstring = generateRandomString();
 
         $data =  getbranches($createdby);
         $vbid =  $data[0]['branch_id'];
+        $vendorid =  $data[0]['vendor_id'];
         }elseif($type == 'Admin'){
 
         $vbid =  0;
@@ -79,19 +80,11 @@ $url = upload_file($fileName,$fileExtension,$fileTmpPath,$fileSize,$fileType,$fi
     
 
  $addimages = $product->insertimagesbyproductid($productid,$url);
-
-    // if(in_array($ext,$extension)) {
-        
-    //         $filename=basename($file_name,$ext);
-    //         $newFileName=$randomstring.$filename.time().".".$ext;
-    //         move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"../upload/products/".$newFileName);
-    //         echo $newFileName;
-    //         $addimages = $product->insertimagesbyproductid($productid,$newFileName);
-          
-    // }
-    // else {
-    //     array_push($error,"$file_name, ");
-    // }
+   
+            
+             insert_notifications($DB_CLASS,$createdby,'6','product_added','https://servewise.shop');
+            
+             insert_notifications($DB_CLASS,$createdby,$vendorid,'product_added','https://servewise.shop');
 
             ?>
 
