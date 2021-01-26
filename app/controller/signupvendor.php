@@ -11,6 +11,7 @@ $PATH =  constant("APPLICATION_INNERPATH");
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
 require_once $config_service['DB_CLASS'];
 require $config_service['VENDOR_CLASS'];
+require_once $config_service['FUNCTIONS'];
 $DB_CLASS = $config_service['DB_CLASS'];
 	$vendor=new Vendor();
 	$message=null;
@@ -45,16 +46,15 @@ $DB_CLASS = $config_service['DB_CLASS'];
 	
 		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid);
 		if (!empty($becomevendor)){
-			echo 'hi';
+		
 			$from_email = 'vendor@servewise.shop';
-			$message_body = 'Welcome to ServeWise! Your Request for become vendor has been sent. you will get status of your Vendor Ship  with in 24 hours. Thanks for becoming a part of ServeWise';
+			$message_body = 'Welcome to ServeWise! Your Request for become vendor has been sent. you will get status of your Shop ' .$name. ' with in 24 hours. Thanks for becoming a part of ServeWise';
 			 sendEmail($emailid,'ServeWise',$from_email,$message_body,'Become A Vendor');
-			 echo 'helo';
+			
 			 insert_notifications($DB_CLASS,$userid,'6','vendor_singup','https://servewise.shop');
-			 echo 'hello';
+			
 			 insert_notifications($DB_CLASS,'6',$userid,'vendor_singup','https://servewise.shop');
-			 echo 'heli';
-
+			
 			echo "1";	
 		} else {
 			echo "0";
