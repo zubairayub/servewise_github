@@ -19,7 +19,7 @@
                         $admin = NULL;
                         foreach ($branch as $key => $value) {
 
-                              $url = getthemeurl($value['branch_id']);
+                              $url = '?domain='.getthemeurl($value['branch_id']);
                               $status = $value['status'];
                               if($status == 0){
                                     $approval = 'NOT APPROVED';
