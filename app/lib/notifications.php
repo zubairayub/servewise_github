@@ -12,7 +12,7 @@ include_once '../app/lib/functions.php';
 $user_id = $_SESSION['logInId'];
 
 $result = getnotifications($dbcalss,$user_id,'');
-
+echo 'hoo';
 if(!empty($result)){
 
 print_r($result);
