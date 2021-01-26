@@ -18,7 +18,7 @@ if(!empty($result)){
 
 //print_r($result);
 
-
+	$data = $result;
 	 $count = count($result);
 	 echo $count;
 
