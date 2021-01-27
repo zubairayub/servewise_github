@@ -1969,6 +1969,9 @@ a.animated-button.thar-one{
                 width: 100%;
                 flex-wrap: wrap
             }
+            .footer-mid p{
+                width: 25%;
+            }
     
             .footer-mid .footer-mid-1{
                 flex-basis: calc(100%/4);
