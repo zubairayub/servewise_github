@@ -12,6 +12,7 @@ require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_
 require_once $config_service['DB_CLASS'];
 require $config_service['CATEGORY_CLASS'];
 require $config_service['FUNCTIONS'];
+$DB_CLASS = $config_service['DB_CLASS'];
 
 
 	$category=new Category();
@@ -49,8 +50,8 @@ if($type == 'Branch')
 $vbid =  0;
 
 }elseif($type == 'Vendor'){
-	$data =  getvendors('',$createdby,'TRUE');
-	$vbid =  $data[0]['vendor_id'];
+	// $data =  getvendors($DB_CLASS,$createdby,'TRUE');
+	$vbid =  $_SESSION['vendor_id'];
 
 }else{
 
