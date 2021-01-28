@@ -23,7 +23,7 @@ require_once $config_service['DB_CLASS'];
 	
 
    // $vbid = $_SESSION['vendorid'];
-  $branch = getbranches($logInId);
+  //$branch = getbranches($logInId);
 
   $vbid = $_SESSION['vendor_id'];
      		$getcategories = $product->getallcategories($vbid);
