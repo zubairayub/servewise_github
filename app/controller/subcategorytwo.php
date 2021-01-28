@@ -49,7 +49,7 @@ if($type == 'Branch')
 $vbid =  0;
 
 }elseif($type == 'Vendor'){
-	$data =  getvendors($createdby);
+	$data =  getvendors('',$createdby,'TRUE');
 	$vbid =  $data[0]['vendor_id'];
 
 }else{
