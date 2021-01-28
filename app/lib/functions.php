@@ -243,6 +243,7 @@ if(!empty($dbclass)){
 
 $vendor_data = getbranchbybranchid('',$branch_id);
 $vendor_id = $vendor_data[0]['vendor_id'];
+$payment_method = 2;
 
 $varr->query="INSERT INTO `order_details`( `user_id`, `branch_id`, `branch_owner_id`, `vendor_id`,`shipping_type`, `payment_method`) VALUES (?,?,?,?,?,?)";
 				$result=$varr->executeQuery($varr->query,array($purchaser_id,$branch_id,$owner_id,$vendor_id,$shipping_type,$payment_method),"create");
