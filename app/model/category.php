@@ -25,8 +25,8 @@ if($type == 'Branch')
 $vbid =  0;
 
 }elseif($type == 'Vendor'){
-$data =  getvendors($logInId );
-	$vbid =  $data[0]['vendor_id'];
+// $data =  getvendors($logInId );
+	$vbid =  $_SESSION['vendor_id'];
 
 }else{
 
