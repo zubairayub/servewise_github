@@ -8,7 +8,21 @@ function get($name, $def= '')
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
+function getthemebybranchid($id)
+{
+	if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
 
+$varr->query="SELECT * FROM `vb_themesetting`  where vb_id='$id'";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+}
 
 function getallthemes()
 {
@@ -487,6 +501,8 @@ if(empty($result)){
 
 
 }
+
+
 
 function gettheme($url){
  				

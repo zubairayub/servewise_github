@@ -95,13 +95,14 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
  				$vendor_id = $vendor_data[0]['vendor_id'];
  					$_SESSION['vendor_id'] = $vendor_id;
  				$getbranches = getbranches($vendor_id,'');
- 				
+				 $branch_id = null; 				
 
 			  }elseif($userstatus == 'Branch'){
 
 			  $getbranches = 	getbranches($logInId,'TRUE');
 
 			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
+			  $branch_id = $_SESSION['branch_id'] = $getbranches[0]['branch_id'];
 			  }
 
 }

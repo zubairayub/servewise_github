@@ -7,6 +7,15 @@
 
         <?php
 foreach ($data as $key => $value) {
+$datatheme = getthemebybranchid($branch_id);
+$theme_id = $datatheme[0]['theme_id'];
+
+if($theme_id == $value['id']){
+$text = 'Activated';
+}else{
+    $text = 'Activate';
+}
+
     ?>
 
              <div class="theme-seclection-box" data-aos="fade-right" data-aos-duration="1000">
@@ -14,7 +23,7 @@ foreach ($data as $key => $value) {
                 <div class="theme-dis"><?= $value['description'] ?></div>
                 <div class="theme-type">Website Type:<span><?= $value['type'] ?></span></div>
                 <div class="theme-btn">
-                    <input type="button" value="Activate">    
+                    <input type="button" value="<?= $text?>">    
                 </div>
             </div>
 
