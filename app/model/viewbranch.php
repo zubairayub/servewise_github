@@ -5,20 +5,22 @@ if(getstatus($type) == 'Admin'){
 
 $branch = getbranches();	
 
-}else{
+}elseif(getstatus($type) == 'Branch'){
+
+$owner = FALSE;
+		$branch = getbranches($logInId);
+
+	
+}elseif(getstatus($type) == 'Vendor'){
 
 
-$vendor_id	 = getvendors($logInId);
-	if(!empty($vendor_id)){
+	$vendor_id	 = getvendors('',$logInId,'');
+	
 	$branch = getbranches($vendor_id[0]['vendor_id']);
 
 	$owner = TRUE;
-	}else{
-
-		$owner = FALSE;
-		$branch = getbranches($logInId);
-	}	
 	
+
 }
 
 
