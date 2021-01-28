@@ -200,7 +200,7 @@ include 'include/header.php';
          
                 <div class="sc-product-item product-card">
                     <div class="product-card-upper">
-                        <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" data-name="product_image" style="width:100%;height:100%;">
+                        <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4></div>
@@ -248,7 +248,7 @@ include 'include/header.php';
               ?>
                 <div class="sc-product-item product-card">
                     <div class="product-card-upper">
-                        <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" data-name="product_image" style="width:100%;height:100%;">
+                        <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4></div>
