@@ -112,9 +112,9 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     </div>
 	<form method="post" action="checkout.php">
 	<input type="hidden" name="subtotal[]" id="subtotal" value="<?= $proct_final_price; ?>">
-	<input type="hidden" name="total[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
+	<input type="hidden" name="totals[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
-  <input type="hidden" name="product_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
+  <input type="hidden" name="products_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
   <input type="hidden" name="product_price[]" value="<?= $results->product_price; ?>" min="1">
   </div>
 <!-- container -->
@@ -144,6 +144,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
           <div class="totals-item d-flex align-items-center justify-content-between mt-3 viewcart-sum1">
             <p class="text-uppercase1">Subtotal</p>
             <p class="totals-value1" name="cart-subtotal" id="cart-subtotal"><?= $proct_final_price; ?></p>
+            <input type="hidden" name="final_total" value="<?= $proct_final_price; ?>">
           </div>
           <div class="totals-item d-flex align-items-center justify-content-between viewcart-sum1">
             <p class="text-uppercase2">Coupon discount</p>

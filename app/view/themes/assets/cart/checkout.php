@@ -5,18 +5,25 @@ $summary = $_POST; //var_dump($summary);
 <?php //foreach($summary as $results):  var_dump($results);
 $array['data']['product_name'] = $_POST['prod-name'];
 $array['data']['subtotal'] = $_POST['subtotal'];
+$array['data']['product_price'] = $_POST['product_price'];
+$array['data']['totals'] = $_POST['totals'];
+$array['data']['products_quantity'] = $_POST['products_quantity'];
+$final_total = $_POST['final_total'];
+
+
+
 $payment_method = $_POST['payment-method'];
 // $dataArray = array();	
 // $count = 0;
-$count = count($array['data']);
-for($i=0; $i < $count; $i++) {
+$count = count($array['data']['product_name']);
+// for($i=0; $i < $count; $i++) {
 
-foreach($array as $key => $value):
-	// $dataArray[$count]['product_name'] = $value['product_name'];
-	// print_r($dataArray[$count]['product_name'][$count] ); echo '<br />';
-	//echo $value['product_name'][$i]; echo '<br>';	
-endforeach;
-}
+// foreach($array as $key => $value):
+// 	// $dataArray[$count]['product_name'] = $value['product_name'];
+// 	// print_r($dataArray[$count]['product_name'][$count] ); echo '<br />';
+// 	//echo $value['product_name'][$i]; echo '<br>';	
+// endforeach;
+// }
 //$args = array( $_POST['prod-name'],$_POST['subtotal'],$_POST['payment-method'],$_POST['product_quantity'],$_POST['product_price'], );//endforeach;
 ?>
 <!DOCTYPE html>
@@ -46,10 +53,7 @@ endforeach;
  </head>
 
 <body>
-<?php  include '../themePages/theme_header.phtml'; 
-
-foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
-	<div class="container">
+	<form id="js-demo-form" name="form" method="post">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -60,49 +64,57 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
+<?php  include '../themePages/theme_header.phtml'; 
+
+foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
+		<?php $values =  $value['products_quantity'][$i]; ?> 
+		<input type="hidden" name="payment_method" value="<?= $payment_method ?>">
+	<input type="hidden" name="totals[]" class="cart-total" value="<?= $value['totals'][$i]; ?>">
+	<input type="hidden" name="prod-name[]" value="<?= $value['product_name'][$i]; ?>">
+    <input type="hidden" name="products_quantity[]" value="<?= $values; ?>" min="1">
+    <input type="hidden" name="product_price[]" value="<?= $value['product_price'][$i]; ?>" min="1">
+	<div class="container">
+	
 					<tbody>
 						<tr>
 							<td data-th="Product">
 								<div class="row">
 									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin"><?= $value['product_name'][$i]; ?> 1</h4>
+										<h4 class="nomargin"><?= $value['product_name'][$i]; ?> </h4>
 										<!-- <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p> -->
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">$1.99</td>
+							<td data-th="Price"><?= $value['product_price'][$i]; ?></td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
+							
+								<input type="number" class="form-control text-center" value="<?=  $values ?>">
 							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
+							<td data-th="Subtotal" class="text-center"><?= $value['totals'][$i]; ?></td>
 							<td class="actions" data-th="">
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
 					</tbody>
+					
+				
+</div><?php endfor; ?>
+</table>
 					<tfoot>
 						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 1.99</strong></td>
+							<td class="text-center"><strong>Total <?= $final_total; ?></strong></td>
 						</tr>
 						<tr>
 							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+							
 						</tr>
 					</tfoot>
-				</table>
-</div><?php endfor; ?>
 <div class="container checkout-main">
 <h3>Payment Form</h3>
-<form id="js-demo-form" name="form" method="post">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $value['subtotal'][$i]; ?>">
-	<input type="hidden" name="subtotal" id="subtotal" value="<?= $product_price; ?>">
-	<input type="hidden" name="total" class="cart-total" value="<?= ($product_quantity * $product_price); ?>">
-	<input type="hidden" name="prod_name" value="<?= $value['product_name'][$i]; ?>">
-	<input type="hidden" name="product_quantity" value="<?= $product_quantity; ?>">
+
 	<div class="form-group row">
 		<label for="name" class="col-sm-2 col-form-label">Name</label>
 		<div class="col-sm-10">
@@ -118,13 +130,13 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<div class="form-group row">
 		<label for="email" class="col-sm-2 col-form-label">Email</label>
 		<div class="col-sm-10">
-		  <input type="text" class="form-control" id="email" placeholder="email@example.com">
+		  <input type="text" class="form-control" id="email" name="email" placeholder="email@example.com">
 		</div>
 	</div>	
 	<div class="form-group row">
 		<label for="amount" class="col-sm-2 col-form-label">Amount</label>
 		<div class="col-sm-10">
-		  <input type="number" class="form-control" id="amount" value="<?= $value['subtotal'][$i]; ?>" readonly="readonly">
+		  <input type="number" name='final_total' class="form-control" id="amount" value="<?= $final_total; ?>" readonly="readonly">
 		</div>
 	</div>
 		

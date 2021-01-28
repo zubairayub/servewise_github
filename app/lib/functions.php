@@ -49,6 +49,61 @@ return $result;
 }
 
 
+function randomPassword() {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+
+
+function register_user($dbclass=null,$useremail,$name,$phoneno){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+$varr->query="SELECT * FROM `user`    where `email_id` = '$useremail' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+
+if(count($result) == 0){
+	$password = randomPassword();
+	$status = 'active';
+	$type = 2;
+	$email = $useremail;
+$varr->query="insert into user(email_id,password,status,type,created_date) values(?,?,?,?,CURRENT_DATE())";
+				$result=$varr->executeQuery($varr->query,array($useremail,$password,$status,$type),"create");
+					
+
+}else{
+
+
+	$email = $result[0]['email_id'];
+}
+
+if($result){
+						$varr->query="select * from user where email_id=?  ";
+				$result=$varr->executeQuery($varr->query,array($email),"cread");
+				if($result){
+					
+				
+					return $result;
+				}
+
+
+
+}
+
+}
 
 
 function checkbranchlevel($country_id= NULL,$state_id= NULL,$city_id= NULL,$vendor_id= NULL,$dbclass = NULL)
