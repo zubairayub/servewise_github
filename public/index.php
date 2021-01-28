@@ -97,6 +97,11 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
  				$getbranches = getbranches($vendor_id,'');
  				
 
+			  }elseif($userstatus == 'Branch'){
+
+			  $getbranches = 	getbranches($logInId,'TRUE');
+
+			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
 			  }
 
 }
