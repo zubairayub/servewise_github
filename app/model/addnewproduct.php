@@ -25,9 +25,9 @@ require_once $config_service['DB_CLASS'];
    // $vbid = $_SESSION['vendorid'];
   $branch = getbranches($logInId);
 
-  $vbid = $branch[0]['vendor_id'];
+  $vbid = $_SESSION['vendor_id'];
      		$getcategories = $product->getallcategories($vbid);
-       
+
 if (isset($_POST["sc_id"])){
     $scid = $_POST["sc_id"];
     $hhtml = "";
