@@ -29,6 +29,8 @@
 					$_SESSION['state']=$result[0]['state'];
 					$_SESSION['zip']=$result[0]['zip'];
 					$_SESSION['status']=$result[0]['status'];
+
+					
 					
 				
 					return true;
@@ -59,6 +61,8 @@
 					$_SESSION['state']=$result[0]['state'];
 					$_SESSION['zip']=$result[0]['zip'];
 					$_SESSION['status']=$result[0]['status'];
+
+
 					
 				
 					return true;
