@@ -190,7 +190,7 @@ include 'include/header.php';
                         $image_path =   $image[0]['image_path'];
               ?>
             <div class="card sc-product-item">
-                <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
+                <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
                 <div class="container">
                     <h4>
                         <h4 data-name="product_name"><?php echo $value['name'] ; ?></h4>
@@ -267,7 +267,7 @@ include 'include/header.php';
                 $image_path =   $image[0]['image_path'];
               ?>
                 <div class="homo-product-card sc-product-item">
-                    <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
+                    <div class="homo-card-upper"><img data-name="product_cart_img" src='<?= $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
                     <div class="homo-card-content">
                         <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>

@@ -3,8 +3,9 @@
 $product_list = filter_input(INPUT_POST, 'cart_list');
 // Convert JSON to array
 $product_list_array = json_decode($product_list);
-//var_dump($product_list_array);
+//var_dump(count($product_list_array)); var_dump($product_list_array);
 $proct_final_price = NULL;
+$total_product = NULL;
  ?>
  <?php  include '../themePages/theme_header.phtml'; ?>
 <div class="container mt-5 mb-5 viewcart-main">
@@ -20,7 +21,7 @@ $proct_final_price = NULL;
  </table>
 <?php foreach($product_list_array as $results){
 $proct_final_price += $results->product_price * $results->product_quantity;
-
+// var_dump($results);
  ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
@@ -63,7 +64,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     .viewcart-payment-detail select{flex-basis: 40%;border: 1px dashed black;font-size: 20px;border-radius: 4px;padding: 0px 10px;margin-right: 10px;}
     .viewcart-payment-detail input{border: 1px solid rgba(0,0,0,0.2);background: white;font-size: 20px;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); transition: .3s ease;}
     .viewcart-payment-detail input:hover{transform: scale(1.1); box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
-
+    .pic100x100{width:100px;height:100px}
     .viewcart-table{width: 100%;}
     .viewcart-table .viewcart-table-row{display: flex;justify-content: center;align-items: center;}
     .viewcart-table .viewcart-table-row .viewcart-heading1{flex-basis:15%;color: #4c4c4c;}
@@ -83,7 +84,8 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 
       <div class="border border-gainsboro p-3 mt-3 clearfix item viewcart-item-content">
         <div class="text-lg-left viewcart1">
-          <i class="fa fa-product-hunt fa-2x text-center" aria-hidden="true"></i>
+        <img name="prod_img" class="pic100x100" src="<?= '../'.$results -> product_cart_img ?>" alt="<?= $results->product_name; ?>">
+          <!-- <i class="fa fa-product-hunt fa-2x text-center" aria-hidden="true"></i> -->
         </div>
         <div class="col-lg-5 col-5 text-lg-left viewcart2">
           <h3 class="h6 mb-0"><?= $results->product_name; ?>
@@ -111,6 +113,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 	 
     </div>
 	<form method="post" action="checkout.php">
+  <input type="hidden" name="prod_img[]" value="<?= '../'.$results->product_cart_img ?>">
 	<input type="hidden" name="subtotal[]" id="subtotal" value="<?= $proct_final_price; ?>">
 	<input type="hidden" name="totals[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
 	<input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
@@ -141,6 +144,10 @@ $proct_final_price += $results->product_price * $results->product_quantity;
           <div class="border-bottom border-gainsboro viewcart-sum-heading">
             <p class="text-uppercase mb-0 py-3 sum-head"><strong>Order Summary</strong></p>
           </div>
+          <!-- <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro viewcart-sum1">
+            <p class="text-uppercase3"><strong>Product</strong></p>
+            <p class="totals-value3 font-weight-bold cart-total" name="total"><?= count($product_list_array); ?></p>
+          </div> -->
           <div class="totals-item d-flex align-items-center justify-content-between mt-3 viewcart-sum1">
             <p class="text-uppercase1">Subtotal</p>
             <p class="totals-value1" name="cart-subtotal" id="cart-subtotal"><?= $proct_final_price; ?></p>
