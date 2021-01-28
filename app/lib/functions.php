@@ -78,7 +78,7 @@ $payment_method = 1;
 
 }else{
 
-	$payment_method = $order_data['payment_method'];
+	$payment_method = 2;
 }
 
 
