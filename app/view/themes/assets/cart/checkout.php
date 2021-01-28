@@ -1,5 +1,4 @@
 <?php
-
 $summary = $_POST; //var_dump($summary);
 ?>
 <?php //foreach($summary as $results):  var_dump($results);
@@ -7,6 +6,7 @@ $array['data']['product_img'] = $_POST['prod_img'];
 $array['data']['product_name'] = $_POST['prod-name'];
 $array['data']['subtotal'] = $_POST['subtotal'];
 $array['data']['product_price'] = $_POST['product_price'];
+$array['data']['product_id'] = $_POST['product_id'];
 $array['data']['totals'] = $_POST['totals'];
 $array['data']['products_quantity'] = $_POST['products_quantity'];
 $final_total = $_POST['final_total'];
@@ -128,6 +128,7 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<input type="hidden" name="prod-name[]" value="<?= $value['product_name'][$i]; ?>">
     <input type="hidden" name="products_quantity[]" value="<?= $values; ?>" min="1">
     <input type="hidden" name="product_price[]" value="<?= $value['product_price'][$i]; ?>" min="1">
+    <input type="hidden" name="product_id[]" value="<?= $value['product_id'][$i]; ?>" min="1">
 	<div class="container">
 	
 					<tbody>

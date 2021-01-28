@@ -119,6 +119,8 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 	<input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
   <input type="hidden" name="products_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
   <input type="hidden" name="product_price[]" value="<?= $results->product_price; ?>" min="1">
+  <input type="hidden" name="product_id[]" value="<?= $results->product_id; ?>" min="1">
+  
   </div>
 <!-- container -->
 <?php } ?>

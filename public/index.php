@@ -23,7 +23,11 @@ if(isset($_REQUEST['page'])){
 		}else{
 		$url = $page['theme_url_dummy'];
 		}
-		header('Location:  '.$url);
+
+		?>
+<script>window.location.replace("<?= $url ?>");</script>
+		<?php
+		//header('Location:  '.$url);
 
 
 	}
@@ -81,8 +85,19 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 				$status 		=	$_SESSION['status'];
 
 
-			$userstatus	 = getusertypes($type);
-			$userstatus = $userstatus[0]['title'];
+			  $userstatus	 = getusertypes($type);
+			  $userstatus = $userstatus[0]['title'];
+
+			  if($userstatus == 'Vendor'){
+
+				$vendor_data = getvendors('',$logInId,'');
+
+ 				$vendor_id = $vendor_data[0]['vendor_id'];
+ 					$_SESSION['vendor_id'] = $vendor_id;
+ 				$getbranches = getbranches($vendor_id,'');
+ 				
+
+			  }
 
 }
 

@@ -19,7 +19,7 @@ if(!empty($dbclass)){
 	 $db;
 	 $varr = new databaseManager();
 if(empty($type)){
-$varr->query="SELECT * FROM `notifications`   where `to_user_id` = '$userid' ";
+$varr->query="SELECT * FROM `notifications`   where `to_user_id` = '$userid'  ORDER BY id DESC";
 $result=$varr->executeQuery($varr->query,array(),"sread");
 
 return $result;
@@ -27,6 +27,175 @@ return $result;
 
 
 }
+
+
+function process_order($dbclass=null,$order_data,$owner_id,$branch_id){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+$array['data']['product_name'] = $order_data['prod-name'];
+
+$array['data']['product_price'] = $order_data['product_price'];
+$array['data']['totals'] = $order_data['totals'];
+$array['data']['products_quantity'] = $order_data['products_quantity'];
+$array['data']['product_id'] = $order_data['product_id'];
+$final_total = $order_data['final_total'];
+$payment_method = $order_data['payment_method'];
+$customer_name = $order_data['name'];
+$customer_email = $order_data['email'];
+$customer_phone = $order_data['phone'];
+$customer_country = $order_data['country'];
+$customer_currency = $order_data['currency'];
+$count = count($array['data']['product_name']);
+$owner_id = $owner_id;
+$branch_id = $branch_id;
+if(empty($order_data['discount'])){
+$discount = 0;
+
+}else{
+
+	$discount = $order_data['discount'];
+}
+
+
+if(empty($order_data['shipping_type'])){
+$shipping_type = 1;
+
+}else{
+
+	$shipping_type = $order_data['shipping_type'];
+}
+
+if(empty($order_data['payment_method'])){
+$payment_method = 1;
+
+}else{
+
+	$payment_method = $order_data['payment_method'];
+}
+
+
+
+
+
+//insert_notifications($DB_CLASS,'1','6','product_purchase','https://servewise.shop');
+$dataall = register_user($dbclass,$customer_email,$customer_name,$customer_phone);
+
+if(!empty($dataall)){
+
+
+$purchaser_id = $dataall[0]['user_id'];
+
+$order_details_id =  add_order_details($dbclass,$purchaser_id,$branch_id,$owner_id,$shipping_type,$payment_method);
+
+if($order_details_id != 0){
+
+
+
+	
+
+//add order status
+	$varr->query="INSERT INTO `order_status`(`order_id`, `status`) VALUES (?,?)";
+	$result=$varr->executeQuery($varr->query,array($order_details_id,'1'),"create");
+//create invoice
+	$varr->query="	INSERT INTO `invoice`(`order_id`, `amount`, `discount`, `status`) VALUES (?,?,?,?)";
+	$result=$varr->executeQuery($varr->query,array($order_details_id,$final_total,$discount,'0'),"create");
+
+//insert each product details
+	foreach($array as $key => $value): for($i=0; $i < $count; $i++) :
+		$quantity =  $value['products_quantity'][$i]; 
+		$product_name =  $value['product_name'][$i]; 	
+        $product_price =  $value['product_price'][$i]; 
+          $product_id =  $value['product_id'][$i]; 
+        $totals =  $value['totals'][$i]; 
+
+$product_data =  getproductbyid($dbclass,$product_id);
+
+if($product_data[0]['quantity'] > 0){
+		
+		$varr->query="INSERT INTO `orders`(`product_id`, `product_quantity`, `product_price`, `product_total_price`, `order_id`) VALUES (?,?,?,?,?)";
+	$result=$varr->executeQuery($varr->query,array($product_id,$quantity,$product_price,$totals,$order_details_id),"create");
+
+
+if($result){
+	$update_quantity = $product_data[0]['quantity'] - $quantity ; 
+
+		$varr->query="UPDATE  `product` SET quantity=? where product_id = $product_id ";
+					$result=$varr->executeQuery($varr->query,array($update_quantity),"update");
+
+}	
+
+}
+
+
+
+ endfor; 
+endforeach;
+
+$branch_data  = getbranchbybranchid($dbclass,$branch_id);
+
+$vendor_data = getvendors($dbclass,$branch_data[0]['vendor_id'],'FALSE');
+if(!empty($vendor_data) && !empty($branch_data)){
+
+
+//user -> branch -> vendor -> admin
+insert_notifications($dbclass,$owner_id,$purchaser_id,'Order_initiate','https://servewise.shop/public');
+insert_notifications($dbclass,$purchaser_id,$owner_id,'new_order','https://servewise.shop/public');
+insert_notifications($dbclass,$owner_id,$branch_data[0]['vendor_id'],'new_order','https://servewise.shop/public');
+insert_notifications($dbclass,$branch_data[0]['vendor_id'],'6','new_order','https://servewise.shop/public');
+
+//send emails
+$from_email_vendor = $vendor_data[0]['email_id'];
+$from_email_branch = $branch_data[0]['email_id'];
+$from_email_admin  = 'order@servewise.shop';
+$purchaser_email   =  $customer_email;
+$message_body_vendor = 'Hello! ' . $vendor_data[0]['name'] . 'Congratulations - Your Branch'. $branch_data[0]['name'] . 'Got New Order';
+$message_body_admin = 'Hello!  Admin Congratulations - Your Vendor'. $vendor_data[0]['name'] . 'Got New Order from his branch' . $branch_data[0]['name'] ;
+$message_body_branch = 'Hello! ' . $branch_data[0]['name'] . 'Congratulations - Got New Order from  '. $customer_name ;
+$message_body_user = 'Hello! ' . $customer_name. 'Thanks - For Your Order';
+$subject_admin = $vendor_data[0]['name'].' Got New Order!';
+$subject_vendor = $branch_data[0]['name'].' Got New Order!';
+$subject_branch = $customer_name.' Order From Your Store';
+$subject_user = 'Order Initiated';
+
+			 sendEmail('admin@servewise.shop','ServeWise',$from_email_admin,$message_body_admin,$subject_admin);
+			 sendEmail($from_email_vendor,'ServeWise',$from_email_admin,$message_body_vendor,$subject_vendor);
+			 sendEmail($from_email_branch,'ServeWise',$from_email_vendor,$message_body_branch,$subject_branch);
+			 sendEmail($purchaser_email,'ServeWise',$from_email_branch,$message_body_branch,$subject_branch);
+
+
+
+}
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+// 	$varr->query="INSERT INTO `order_details`(`id`, `user_id`, `branch_id`, `branch_owner_id`, `shipping_type`, `payment_method`) VALUES (?,?,?,?,?,?)";
+// 	$result=$varr->executeQuery($varr->query,array(NULL,$userid,$to_user_id,$type,$url,'0'),"create");
+
+// return $result;
+
+
+
+}
+
 
 
 function insert_notifications($dbclass=null,$userid,$to_user_id,$type,$url){
@@ -59,6 +228,37 @@ function randomPassword() {
     }
     return implode($pass); //turn the array into a string
 }
+
+
+function add_order_details($dbclass=null,$purchaser_id,$branch_id,$owner_id,$shipping_type,$payment_method){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+$vendor_data = getbranchbybranchid('',$branch_id);
+$vendor_id = $vendor_data[0]['vendor_id'];
+
+$varr->query="INSERT INTO `order_details`( `user_id`, `branch_id`, `branch_owner_id`, `vendor_id`,`shipping_type`, `payment_method`) VALUES (?,?,?,?,?,?)";
+				$result=$varr->executeQuery($varr->query,array($purchaser_id,$branch_id,$owner_id,$vendor_id,$shipping_type,$payment_method),"create");
+if($result){
+$last_id =  $result;
+
+
+
+
+}else{
+	$last_id = 0;
+}
+return $last_id;
+
+}
+
 
 
 function register_user($dbclass=null,$useremail,$name,$phoneno){
@@ -290,6 +490,7 @@ function gettheme($url){
 					$varr = new databaseManager();
 					$varr->query="SELECT * FROM `branch`   where `branch_id` = ".$data['vb_id']."";
 					$result=$varr->executeQuery($varr->query,array(),"sread");
+
 
 					$data['owner_id'] =  $_SESSION['owner_id'] = $result[0]['user_id'];
 
@@ -610,6 +811,34 @@ function getuserinfo($user_id =  NULL,$dbclass = NULL){
 		
 		}
 
+
+
+		function getproductbyid($dbclass =null ,$pid =  NULL){
+
+		if(!empty($dbclass)){
+		
+				include_once($dbclass);
+		
+		}
+						 $query;
+						 $db;	
+				
+				
+						$varr = new databaseManager();
+		
+						
+							$varr->query="SELECT * FROM `product`  where product_id=$pid ";
+		
+						
+							
+					
+				
+				
+					$result=$varr->executeQuery($varr->query,array(),"sread");
+					return  $result;
+		
+		}
+
 function getabandoncart($user_id =  NULL){
 
 	if(!empty($dbclass)){
@@ -639,6 +868,87 @@ function getabandoncart($user_id =  NULL){
 	
 	}
 
+function getordersdetailsbyid($dbclass = null, $order_id,$branch_id = null){
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+ 				$query;
+		 		$db;	
+				
+		
+				$varr = new databaseManager();
+
+				
+	            $varr->query="SELECT * FROM `orders`  where order_id= '$order_id'  ";	
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+			    return  $result;
+
+
+
+
+}
+function getorderamountbyorderid($dbclass = null, $order_id){
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+ 				$query;
+		 		$db;	
+				
+		
+				$varr = new databaseManager();
+
+				
+	            $varr->query="SELECT * FROM `invoice`  where order_id= '$order_id'  ";	
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+			    return  $result;
+
+
+
+
+}
+
+
+function getorderstatusbyorderid($dbclass = null, $order_id){
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+ 				$query;
+		 		$db;	
+				
+		
+				$varr = new databaseManager();
+
+				
+	            $varr->query="SELECT * FROM `order_status`  where order_id= '$order_id'  ";	
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+			   
+			    if($result){
+
+			    	$status_id = $result[0]['status'];
+			    	$varr->query="SELECT * FROM `order_process`   where id= '$status_id'  ";	
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+
+			    }
+
+			    return  $result;
+
+
+
+
+}
+
+
+
 
 
 function getorders($user_id =  NULL,$type =  NULL){
@@ -655,10 +965,25 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(empty($user_id)){
-	                 $varr->query="SELECT * FROM `order_product` ";
+	                 $varr->query="SELECT * FROM `order_details` ";
 
 				}else{
-					$varr->query="SELECT * FROM `order_product`  where user_id=$user_id ";
+
+					
+
+					if($type == 'Branch'){
+							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ";
+
+					}
+					elseif($type == 'Vendor'){
+
+							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ";
+
+					}elseif($type == 'User'){
+							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id ";
+
+					}
+				
 
 				}
 					
@@ -685,7 +1010,7 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				
-						$varr->query="SELECT name FROM `product`  where product_id=$product_id ";
+						$varr->query="SELECT * FROM `product`  where product_id=$product_id ";
 
 				
 		
@@ -765,10 +1090,10 @@ if(!empty($dbclass)){
 		
 				$varr = new databaseManager();
 
-				if(empty($id)){
-						$varr->query="SELECT * FROM `product`  where vb_id=$vbid ";
+				
+						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
 
-				}
+				
 		
 		
 			$result=$varr->executeQuery($varr->query,array(),"sread");
@@ -873,8 +1198,14 @@ function getmenu()
 
 
 
-function getvendors($user_id = NULL,$owner = NULL)
+function getvendors($dbclass = null ,$user_id = NULL,$owner = NULL)
 {
+		if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
 
 				 $query;
 		 		$db;	
@@ -902,7 +1233,31 @@ $varr->query="SELECT * FROM `vendor`  where user_id = $user_id";
 }
 
 
+function getbranchbybranchid($dbclass = null , $branch_id)
+{
 
+	if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+				 $query; 
+		 		$db;	
+		
+		 
+				$varr = new databaseManager();
+		
+			$varr->query="SELECT * FROM `branch` where branch_id='$branch_id' ";
+			
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+     		
+
+
+			return  $result;
+	 
+
+}
 
 
 

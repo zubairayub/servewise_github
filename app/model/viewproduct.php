@@ -6,8 +6,12 @@ $type = $type[0]['title'];
 if($type == 'Admin'){
 $data = getviewproduct();
 }elseif($type == 'Branch') {
+
 	$Branchid = getbranches($logInId,'TRUE');
-$data = getproducts($Branchid[0]['branch_id']);
+
+	
+$data = getproducts($Branchid[0]['branch_id'],'');
+
 
 }elseif($type == 'Vendor'){
 	$vendor_id	 = getvendors($logInId);
@@ -17,7 +21,7 @@ $data = getproducts($Branchid[0]['branch_id']);
 	
 foreach ($Branchid as $key => $value) {
 
-	$valuepro  = getproducts($value['branch_id']);
+	$valuepro  = getproducts($value['branch_id'],'');
 
 	if(!empty($value)){
 foreach ($valuepro as $key => $value) {
