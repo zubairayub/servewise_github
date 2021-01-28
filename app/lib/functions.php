@@ -9,6 +9,27 @@ function get($name, $def= '')
 }
 
 
+
+function getallthemes()
+{
+	if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+$varr->query="SELECT * FROM `themes`";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+
+
+}
+
+
 function getnotifications($dbclass,$userid,$type = NULL){
 
 if(!empty($dbclass)){

@@ -3,39 +3,28 @@
 			<div class="dashboard-theme-main">
             <h1 data-aos="fade-right" data-aos-duration="1500">Appearance</h1>
         </div>
-        <div class="theme-selection">
+        <?php
+foreach ($data as $key => $value) {
+    ?>
+
+ <div class="theme-selection">
             <div class="theme-seclection-box" data-aos="fade-right" data-aos-duration="1000">
-                <div class="theme-heading">Restaurant</div>
-                <div class="theme-dis">Your restaurant’s website matters more than ever in the age of delivery apps like Uber Eats and Door Dash.</div>
-                <div class="theme-type">Website Type:<span>Restaurant Website</span></div>
+                <div class="theme-heading"><?= $value['title'] ?></div>
+                <div class="theme-dis"><?= $value['description'] ?></div>
+                <div class="theme-type">Website Type:<span><?= $value['type'] ?></span></div>
                 <div class="theme-btn">
                     <input type="button" value="Activate">    
                 </div>
             </div>
-            <div class="theme-seclection-box" data-aos="fade-left" data-aos-duration="1000">
-                <div class="theme-heading">Pharmacy</div>
-                <div class="theme-dis">It should market your pharmacy. Most people research a company online before they visit or buy from it.</div>
-                <div class="theme-type">Website Type:<span>Pharmacy Website</span></div>
-                <div class="theme-btn">
-                    <input type="button" value="Activate">    
-                </div>
-            </div>
-            <div class="theme-seclection-box" data-aos="fade-up-right" data-aos-duration="1000">
-                <div class="theme-heading">Fashion</div>
-                <div class="theme-dis">An online store with all the tools you need to build, manage, and grow your business.</div>
-                <div class="theme-type">Website Type:<span>Fashion Website</span></div>
-                <div class="theme-btn">
-                    <input type="button" value="Activate">    
-                </div>
-            </div>
-            <div class="theme-seclection-box" data-aos="fade-up-left" data-aos-duration="1000">
-                <div class="theme-heading">Store</div>
-                <div class="theme-dis">Search Faster, Better & Smarter Here! Find Building An eCommerce Website.</div>
-                <div class="theme-type">Website Type:<span>Store Website</span></div>
-                <div class="theme-btn">
-                    <input type="button" value="Activate">    
-                </div>
-            </div>
+
+
+
+    <?php
+}
+
+        ?>
+       
+          
         </div>
 </div>
 </div>
