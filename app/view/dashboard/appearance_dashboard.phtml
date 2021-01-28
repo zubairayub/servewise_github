@@ -3,12 +3,13 @@
 			<div class="dashboard-theme-main">
             <h1 data-aos="fade-right" data-aos-duration="1500">Appearance</h1>
         </div>
+ <div class="theme-selection">
+
         <?php
 foreach ($data as $key => $value) {
     ?>
 
- <div class="theme-selection">
-            <div class="theme-seclection-box" data-aos="fade-right" data-aos-duration="1000">
+             <div class="theme-seclection-box" data-aos="fade-right" data-aos-duration="1000">
                 <div class="theme-heading"><?= $value['title'] ?></div>
                 <div class="theme-dis"><?= $value['description'] ?></div>
                 <div class="theme-type">Website Type:<span><?= $value['type'] ?></span></div>
