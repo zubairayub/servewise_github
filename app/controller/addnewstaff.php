@@ -32,7 +32,7 @@ $staff_type = getusertypes($staff_role);
 $message_body = 'Hi '.$staff_name . ' You assigned role of '. $staff_type[0]['title'] . ' From '.$_SESSION['logInId'] . ' Your login details are username: '. $staff_email . ' and password is ' .$dataall[0]['password'] . ' Website url is : https://servewise.shop';
 $subject = 'New Role Assigned';
 
-			//  sendEmail($staff_email,'ServeWise',$_SESSION['logIn'],$message_body,$subject);
+			  sendEmail($staff_email,'ServeWise',$_SESSION['logIn'],$message_body,$subject);
 
 
 
