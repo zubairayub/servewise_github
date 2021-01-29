@@ -6,6 +6,7 @@ require  APPLICATION_PATH . DS . 'lib'. DS .'functions.php';
 $DB_CLASS =     APPLICATION_PATH . DS . 'model' . DS. 'classDatabaseManager.php';
 $PRODUCT_DIRECTORY = '../../../upload/products/';
 $logo_directory =  '../../../upload/logos/';
+
 if(!empty($_SESSION['vb_id'])){
 
 $vb_id = $_SESSION['vb_id'];

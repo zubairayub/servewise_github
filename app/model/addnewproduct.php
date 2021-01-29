@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 
@@ -24,9 +24,14 @@ require_once $config_service['DB_CLASS'];
 
    // $vbid = $_SESSION['vendorid'];
   //$branch = getbranches($logInId);
-
-  $vbid = $_SESSION['vendor_id'];
-     		$getcategories = $product->getallcategories($vbid);
+if(isset($_SESSION['vendor_id'])){
+    $vbid = $_SESSION['vendor_id'];
+}else{
+    $vbid =null;
+}
+  
+    
+    $getcategories = $product->getallcategories($vbid);
 
 if (isset($_POST["sc_id"])){
     $scid = $_POST["sc_id"];

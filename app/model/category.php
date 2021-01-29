@@ -15,16 +15,17 @@
 
 	$type =  $type;
 $type = getstatus($type);
-if($type == 'Branch')
+if($type == 'Branch' || $owner_type == 'Branch')
 {
 
-	$data =  getbranches($logInId );
-	$vbid =  $data[0]['branch_id'];
-}elseif($type == 'Admin'){
+	//$data =  getbranches($logInId );
+	$vbid =  $_SESSION['vendor_id'];
+	
+}elseif($type == 'Admin' || $owner_type == 'Admin'){
 
 $vbid =  0;
 
-}elseif($type == 'Vendor'){
+}elseif($type == 'Vendor' || $owner_type == 'Vendor'){
 // $data =  getvendors($logInId );
 	$vbid =  $_SESSION['vendor_id'];
 

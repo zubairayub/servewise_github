@@ -39,19 +39,19 @@ $randomstring = generateRandomString();
         $createdby = $_SESSION['logInId'];  
         $type =  $_SESSION['type'];
         $type = getstatus($type);
-        if($type == 'Branch')
+        if($type == 'Branch' || $_SESSION['owner_type'] == 'Branch')
         {
 
-        $data =  getbranches($createdby);
-        $vbid =  $data[0]['branch_id'];
-        $vendorid =  $data[0]['vendor_id'];
+        //$data =  getbranches($createdby);
+        $vbid =  $_SESSION['branch_id'];
+        $vendorid =  $_SESSION['vendor_id'];
         }elseif($type == 'Admin'){
 
         $vbid =  0;
 
-        }elseif($type == 'Vendor'){
-        $data =  getvendors($createdby);
-        $vbid =  $data[0]['vendor_id'];
+        }elseif($type == 'Vendor' || $_SESSION['owner_type'] == 'Vendor'){
+       // $data =  getvendors($createdby);
+        $vbid =  $_SESSION['vendor_id'];
 
         }else{
 

@@ -83,7 +83,7 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 				$city   		=	$_SESSION['state'];
 				$zip    		=	$_SESSION['zip'];
 				$status 		=	$_SESSION['status'];
-
+				$owner_type 	=	$_SESSION['owner_type'] = null;
 
 			  $userstatus	 = getusertypes($type);
 			  $userstatus = $userstatus[0]['title'];
@@ -93,9 +93,9 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 				$vendor_data = getvendors('',$logInId,'');
 
  				$vendor_id = $vendor_data[0]['vendor_id'];
- 					$_SESSION['vendor_id'] = $vendor_id;
+ 				$_SESSION['vendor_id'] = $vendor_id;
  				$getbranches = getbranches($vendor_id,'');
-				 $branch_id = null; 				
+				$branch_id = null; 				
 
 			  }elseif($userstatus == 'Branch'){
 
@@ -103,6 +103,45 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 
 			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
 			  $branch_id = $_SESSION['branch_id'] = $getbranches[0]['branch_id'];
+			  }else{
+
+if($userstatus != 'Admin' && $userstatus != 'User' ){
+ $getownerinfo =  get_staff('','',$logInId);
+ $ownerstatus	 = getusertypes($getownerinfo[0]['owner_type']);
+ $owner_id = $_SESSION['owner_id'] = $getownerinfo[0]['owner_id'];
+ $owner_type = $_SESSION['owner_type'] = $ownerstatus[0]['title'];
+	 
+if($ownerstatus[0]['title'] == 'Vendor'){
+//vendor
+	 
+	           $vendor_data = getvendors('',$owner_id,'');
+
+ 				$vendor_id = $vendor_data[0]['vendor_id'];
+ 				$_SESSION['vendor_id'] = $vendor_id;
+ 				$getbranches = getbranches($vendor_id,'');
+				$branch_id = null; 	
+
+
+}elseif($ownerstatus[0]['title'] == 'Branch'){
+//branch
+
+	 			$getbranches = 	getbranches($owner_id,'TRUE');
+
+			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
+			  $branch_id = $_SESSION['branch_id'] = $getbranches[0]['branch_id'];
+
+}elseif($ownerstatus[0]['title'] == 'Admin'){
+//admin
+
+	 		$vendor_id = $_SESSION['vendor_id'] = NULL;
+			$branch_id = $_SESSION['branch_id'] = NULL;
+
+}
+
+
+}
+
+
 			  }
 
 }

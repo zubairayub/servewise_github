@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text" name="staff_name">
+                       <input type="text" name="staff_name" value="<?= $name ?>" <?= $update ?>>
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                         E-mail
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="E-mail" name="staff_email">
+                        <input type="E-mail" name="staff_email" value="<?= $email ?>" <?= $update ?>>
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -30,25 +30,29 @@
                         Phone
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="number" name="staff_phone">
+                        <input type="number" name="staff_phone" value="<?= $phone ?>" <?= $update ?>>
                     </div>
                 </div>
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        Password
-                    </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="password" name="staff_pass">
-                    </div>
-                </div>
-                <div class="add-new-cat-content1">
+                  <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
                         Role
                     </div>
                     <div class="add-new-cat-content-input">
                         <select name="staff_role" id="">
-                            <option value="1">Manager</option>
-                            <option value="2">Sub-Admin</option>
+                           <?php
+                            foreach ($data as $key => $value) {
+                                if($value['title'] != 'Admin' && $value['title'] != 'Branch' && $value['title'] != 'Vendor' &&  $value['title'] != 'User'){
+                                if($type == $value['title']){
+                                        $selected = 'SELECTED';
+                                }else{
+                                    $selected = null;
+                                }
+                                ?>
+                                <option value="<?= $value['id'] ?>" <?= $selected ?> ><?= $value['title']?></option>
+                                <?php
+                          }  }
+
+                           ?>
                         </select>
                     </div>
                 </div>

@@ -294,10 +294,65 @@ $last_id =  $result;
 return $last_id;
 
 }
+function add_staff($dbclass=null,$userid,$ownerid,$type,$owner_type){
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+	 $varr->query="SELECT * FROM `staff`  where `user` = '$userid' ";
+$result=$varr->executeQuery($varr->query,array(),"sread"); 
+if($result == null){
+$varr->query="INSERT INTO `staff`(`user`, `owner_id`, `type`, `owner_type`) VALUES (?,?,?,?)";
+	$result=$varr->executeQuery($varr->query,array($userid,$ownerid,$type,$owner_type),"create");
+	
+
+}else{
+
+
+	$varr->query="UPDATE  `staff` SET type=? where user = $userid ";
+	$result=$varr->executeQuery($varr->query,array($type),"update");
+	$varr->query="UPDATE  `user` SET type=? where user_id = $userid ";
+	$result=$varr->executeQuery($varr->query,array($type),"update");
+
+}
+
+	return $result;
+
+}
 
 
 
-function register_user($dbclass=null,$useremail,$name,$phoneno){
+
+function get_staff($dbclass=null,$ownerid = null,$user_id = null){
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+if($ownerid != null){
+	 $varr->query="SELECT * FROM `staff`  where `owner_id` = '$ownerid' ";
+	$result=$varr->executeQuery($varr->query,array(),"sread"); 
+	
+}elseif($user_id != null){
+	 $varr->query="SELECT * FROM `staff`  where `user` = '$user_id' ";
+	$result=$varr->executeQuery($varr->query,array(),"sread"); 
+}
+else{
+	 $varr->query="SELECT * FROM `staff` ";
+	$result=$varr->executeQuery($varr->query,array(),"sread"); 
+}
+	return $result;
+
+}
+
+
+function register_user($dbclass=null,$useremail,$name,$phoneno,$type =  NULL){
 
 if(!empty($dbclass)){
 	
@@ -313,11 +368,15 @@ $result=$varr->executeQuery($varr->query,array(),"sread");
 
 if(count($result) == 0){
 	$password = randomPassword();
+
 	$status = 'active';
+if($type == null){
+
 	$type = 2;
+}
 	$email = $useremail;
-$varr->query="insert into user(email_id,password,status,type,created_date) values(?,?,?,?,CURRENT_DATE())";
-				$result=$varr->executeQuery($varr->query,array($useremail,$password,$status,$type),"create");
+$varr->query="insert into user(email_id,first_name,contact_no,password,status,type,created_date) values(?,?,?,?,?,?,CURRENT_DATE())";
+				$result=$varr->executeQuery($varr->query,array($useremail,$name,$phoneno,$password,$status,$type),"create");
 					
 
 }else{
@@ -1116,6 +1175,8 @@ if(!empty($dbclass)){
 
 
 function getproducts($vbid,$dbclass =  NULL){
+
+
 
 if(!empty($dbclass)){
 
