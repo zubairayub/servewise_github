@@ -25,8 +25,10 @@
             </div>
         </div>
     </section> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" >
-  	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
   </script>
        <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -34,5 +36,53 @@
         	
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
+        
+
+            
+$('.sc-add-to-cart').on('click', function () {
+        var cart = $('.fa-shopping-cart');
+        var imgtodrag = $(this).parent('.item').parent('.items').eq(0);
+      
+        $(this).text('Added | Buy More');
+       
+   
+        if (imgtodrag) {
+            var imgclone = imgtodrag.clone()
+                .offset({
+                top: imgtodrag.offset().top,
+                left: imgtodrag.offset().left
+            })
+                .css({
+                'opacity': '1',
+                    'position': 'absolute',
+                    'height': '150px',
+                    'width': '150px',
+                    'z-index': '100'
+            })
+                .appendTo($('body'))
+                .animate({
+                'top': cart.offset().top + 10,
+                    'left': cart.offset().left + 10,
+                    'width': 75,
+                    'height': 75
+            }, 1500, 'easeInOutExpo');
+            
+            setTimeout(function () {
+                cart.effect("shake", {
+                    times: 2
+                }, 200);
+            }, 1500);
+
+            imgclone.animate({
+                'width': 0,
+                    'height': 0
+            }, function () {
+                $(this).detach()
+            });
+         
+           
+        }
+    });    
         });
+
     </script>

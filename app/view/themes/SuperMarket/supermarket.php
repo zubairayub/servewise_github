@@ -137,7 +137,7 @@ include 'include/header.php';
         <section class="nav">
             <div class="container">
                 <nav>
-                    <div class="logo">
+                    <div class="logo item">
                         <img src="<?php echo $logo ;?>" alt="LOGO" width="100px">
                     </div>
                     <div class="navigation">
@@ -199,9 +199,9 @@ include 'include/header.php';
                     $image_path =   $image[0]['image_path'];
             ?>
          
-                <div class="sc-product-item product-card">
-                    <div class="product-card-upper">
-                        <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
+                <div class="sc-product-item product-card items">
+                    <div class="product-card-upper img1">
+                        <img data-name="product_cart_img" class="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4></div>
@@ -213,7 +213,8 @@ include 'include/header.php';
                        
                     </div>
 
-                    <div class="product-card-button">
+                    <div class="product-card-button item">
+                   
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -247,9 +248,9 @@ include 'include/header.php';
                 
                 
               ?>
-                <div class="sc-product-item product-card">
+                <div class="sc-product-item product-card items">
                     <div class="product-card-upper">
-                        <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
+                        <img data-name="product_cart_img" class="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Product-img" style="width:100%;height:100%;">
                     </div>
                     <div class="product-card-content">
                        <div class="product-content-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4></div>
@@ -261,10 +262,10 @@ include 'include/header.php';
                        
                     </div>
 
-                    <div class="product-card-button">
+                    <div class="product-card-button item">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a href="#" class="sc-add-to-cart add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
                <?php
@@ -288,7 +289,7 @@ include 'include/header.php';
                     <div class="product-card-button">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a href="#" class="sc-add-to-cart add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -332,6 +333,7 @@ include 'include/header.php';
 <?php  include 'include/footer.php'; ?>
 
     <!-- js lib -->
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- js lib end -->
 
