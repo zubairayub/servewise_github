@@ -57,7 +57,7 @@ $('.sc-add-to-cart').on('click', function () {
                     'position': 'absolute',
                     'height': '150px',
                     'width': '150px',
-                    'z-index': '100'
+                    'z-index': '9999'
             })
                 .appendTo($('body'))
                 .animate({
