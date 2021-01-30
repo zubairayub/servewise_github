@@ -18,7 +18,7 @@ $password = ""; // Password
 $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
-if(!empty(ISSET($_POST))){
+if(!empty(ISSET($_POST['senderEmail']))){
 
 $senderEmail    =  $_POST['senderEmail'];
 $senderName    =  $_POST['senderName'];
