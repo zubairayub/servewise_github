@@ -1,7 +1,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <link rel="icon" href="https://owlmailer.io/img/favicon.ico" type="image/x-icon" />
+<style >
+  .hide {
 
+    display: none;
+  }
+
+</style>
 
 <div class="wrapper">
     <div class="row">
@@ -19,8 +25,8 @@
     <div class="row"> 
     <span class="form-group col-lg-6 attachment-newsletter-div"><label for="attachment" class="l-20-w-600">Attachment <small>(Multiple Available) :</small></label><input type="file" name="attachment[]" id="attachment" multiple/></span>
     </div>
-    <div class="row flex-div-fs-c">  
-      <div class="form-group col-lg-6 width100">
+    <div class="row flex-div-fs-c hide">  
+      <div class="form-group col-lg-6 width100 hide">
         <label for="replyTo" class="l-20-w-600">Reply-to</label>
         <input type="text" class="form-control  input-sm w-100-br-4-dashed" id="replyTo" name="replyTo" />
       </div>
@@ -37,8 +43,8 @@
         <textarea placeholder="Message Letter" name="messageLetter" id="myTextAreaSec" class="form-control tinymce" rows="10" id="textArea"></textarea>
       </div>
     </div>
-    <div class="row flex-div-fs-c">  
-      <div class="form-group col-lg-6 width100">
+    <div class="row flex-div-fs-c hide">  
+      <div class="form-group col-lg-6 width100 hide">
         <label for="altMessageLetter" class="flex-div-fs-c l-20-w-600">Alternative Message Letter</label>
         <textarea placeholder="Alternative Message Letter.&#10;This body can be read by mail clients that do not have HTML email.&#10;capability such as mutt &#38; Eudora.&#10;Clients that can read HTML will view the normal Body." name="altMessageLetter" id="altMessageLetter" class="form-control tinymce" rows="10" id="textArea"></textarea>
       </div>
@@ -49,28 +55,28 @@
         <textarea name="emailList" id="emailList" class="form-control wd-100-h-20" rows="10" id="textArea"></textarea>
       </div>
     </div>
-    <div class="row flex-div-fs-c">  
-      <div class="form-group col-lg-6 width100">
+    <div class="row flex-div-fs-c hide">  
+      <div class="form-group col-lg-6 width100 hide">
         <label for="smtpAccounts" class="flex-div-fs-c l-20-w-600">SMTP Accounts</label>
         <textarea  placeholder="Random account will be used when sending a message.&#10;1) Format: HOST:PORT:SSL&#10;2) Format: HOST:PORT:SSL:Username:Password&#10;Example: smtp.gmail.com:587:tls:xx@gmail.com:123&#10;Example: smtp.gmail.com:587:nossl:xx@gmail.com:123&#10;&#10;SSL Options: tls , ssl, nossl" name="smtpAccounts" id="smtpAccounts" class="form-control wd-50-br-4" rows="10" id="textArea"></textarea>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row hide">
       <div class="form-group col-lg-6 flex-div-c-c width100 ">
         <label for="messageType" class="l-20-w-600">Message Type</label>
         <input type="radio" name="messageType" class="radio-news" id="messageType" value="html" checked> HTML
         <input type="radio" name="messageType" class="radio-news" id="messageType" value="plain"> Plain
       </div>
     </div>
-    <div class="row">  
+    <div class="row hide">  
       <div class="form-group col-lg-6  flex-div-c-c width100">
         <label for="sendingMethod" class="l-20-w-600">Sending Method</label>
         <input type="radio" name="sendingMethod" class="radio-news" id="sendingMethod" value="builtin" checked> Builtin
         <input type="radio" name="sendingMethod" class="radio-news" id="sendingMethod" value="smtp"> SMTP
       </div>
     </div>
-    <div class="row">  
+    <div class="row hide">  
       <div class="form-group col-lg-6 flex-div-c-c width100">
         <label for="encoding" class="l-20-w-600">Encoding Type</label>
         <select class="form-control input-sm sl-br-4" id="encoding" name="encoding">
@@ -95,7 +101,7 @@
         </select>
       </div>
     </div>
-    <div class="row">  
+    <div class="row hide">  
       <div class="form-group col-lg-3 flex-div-c-c width100">
         <label for="priority" class="l-20-w-600">Email Priority</label>
         <select class="form-control input-sm sl-br-4" id="priority" name="priority">
@@ -111,7 +117,7 @@
       <button type="button"id="btnStop" class="btn btn-default btn-sm btn-stop" onclick="stopSending();">STOP</button>
     </div>
   </div>
-  <div class="form-sen-f-c-c">
+  <div class="form-sen-f-c-c hide">
     <div class="col-lg-6 form-sen"><br>
         <label for="well">Instruction</label>
         <div id="well" class="well well">
