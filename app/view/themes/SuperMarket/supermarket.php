@@ -134,7 +134,7 @@ include 'include/header.php';
 </style>
 <body> 
     <header>
-        <section class="nav">
+        <section class="nav" id="myNav">
             <div class="container">
                 <nav>
                     <div class="logo item">

@@ -13,6 +13,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
 }
 .container{
     max-width: 1280px;
@@ -54,6 +55,13 @@ nav{
     letter-spacing: 5px;
     border-bottom: 3px solid rgb(255, 74, 2);
     border-radius: 5px;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
 }
 
 /* hero-main */
@@ -171,6 +179,14 @@ nav .logo img{
     font-size: 20px;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 99;
+  }
+  
 
 .product-cat .product-cat-card .product-card .product-card-content .product-content-price span{
     font-size: 18px;

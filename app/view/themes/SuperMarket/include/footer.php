@@ -85,4 +85,32 @@ $('.sc-add-to-cart').on('click', function () {
     });    
         });
 
+
+//         window.onscroll = function() {myFunction()};
+
+// // Get the header
+// var header = document.getElementById("myNav");
+
+// // Get the offset position of the navbar
+// var sticky = header.offsetTop;
+
+// // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+// function myFunction() {
+//   if (window.pageYOffset > sticky) {
+//     header.classList.add("sticky");
+//   } else {
+//     header.classList.remove("sticky");
+//   }
+// } 
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+  } else {
+    document.getElementById("myNav").style.background = "transparent";
+  }
+}
+
     </script>
