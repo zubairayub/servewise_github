@@ -26,7 +26,7 @@ $user_email =  $_SESSION['logIn'] ;
 if(isset($email) && !empty($email)){
 
      sendEmail($email,'ServeWise',$user_email,$message,$title);
-
+echo 1;
 
   
 }
