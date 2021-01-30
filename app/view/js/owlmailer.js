@@ -1,4 +1,3 @@
- 
         var running = false;
         var request;
  
