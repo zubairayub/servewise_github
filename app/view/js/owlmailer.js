@@ -34,7 +34,8 @@
 
  function startSending() {
 
- 
+ var myContent = tinymce.get("myTextAreaSec").getContent();
+  $('#myTextAreaSec').html(myContent);
 
   var eMailTextArea = document.getElementById("emailList");
   var eMailTextAreaLines = eMailTextArea.value.split("\n");
