@@ -18,6 +18,20 @@ $password = ""; // Password
 $owl['version']="1.6";
 $owl['website']="owlmailer.io";
 
+if(!empty(ISSET($_POST['senderEmail']))){
+
+$senderEmail    =  $_POST['senderEmail'];
+$senderName    =  $_POST['senderName'];
+$messageSubject    =  $_POST['messageSubject'];
+$messageLetter    =  $_POST['messageLetter'];
+$recipient    =  $_POST['recipient'];
+
+sendEmail($recipient,$senderName,$senderEmail,$messageLetter,$messageSubject);
+
+
+}
+
+
 
    function sendEmail($recipient,$senderName,$senderEmail,$messageLetter,$messageSubject){ 
 

@@ -1,4 +1,3 @@
- 
         var running = false;
         var request;
  
@@ -34,7 +33,8 @@
 
  function startSending() {
 
- 
+ var myContent = tinymce.get("myTextAreaSec").getContent();
+  $('#myTextAreaSec').html(myContent);
 
   var eMailTextArea = document.getElementById("emailList");
   var eMailTextAreaLines = eMailTextArea.value.split("\n");
@@ -52,7 +52,7 @@
    form_data.append("senderName", document.getElementById('senderName').value);
    form_data.append("replyTo", document.getElementById('replyTo').value);
    form_data.append("messageSubject", document.getElementById('subject').value);
-   form_data.append("messageLetter", document.getElementById('messageLetter').value);
+   form_data.append("messageLetter", tinymce.get("myTextAreaSec").getContent());
    form_data.append("altMessageLetter", document.getElementById('altMessageLetter').value);
    form_data.append("messageType", document.querySelector('input[name="messageType"]:checked').value);
    form_data.append("encodingType", encodingType);

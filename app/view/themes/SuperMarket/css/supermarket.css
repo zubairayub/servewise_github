@@ -13,6 +13,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
 }
 .container{
     max-width: 1280px;
@@ -54,6 +55,13 @@ nav{
     letter-spacing: 5px;
     border-bottom: 3px solid rgb(255, 74, 2);
     border-radius: 5px;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
 }
 
 /* hero-main */
@@ -132,15 +140,15 @@ nav .logo img{
 .product-cat .product-cat-card .product-card{
     flex-basis: calc(100%/6);
     margin: 10px 20px;
-    border-radius: 15px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: -1px 0px 30px -10px rgb(0, 0, 0,0.5);
+    box-shadow: -1px 0px 30px -10px rgb(0, 0, 0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
     transition: .5s ease all;
 }
 
 .product-cat .product-cat-card .product-card:hover{
-    transform: scale(1.1);
-    box-shadow: -1px 0px 30px -10px rgb(0, 0, 0)
+    box-shadow: -1px 0px 30px -10px rgb(0, 0, 0,0.4);
 }
 
 .product-cat .product-cat-card .product-card .product-card-upper{
@@ -157,6 +165,8 @@ nav .logo img{
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 10px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .product-cat .product-cat-card .product-card .product-card-content .product-content-dis{
@@ -169,6 +179,14 @@ nav .logo img{
     font-size: 20px;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 99;
+  }
+  
 
 .product-cat .product-cat-card .product-card .product-card-content .product-content-price span{
     font-size: 18px;
@@ -177,7 +195,7 @@ nav .logo img{
 }
 
 .product-cat .product-cat-card .product-card .product-card-button{
-    padding: 10px 0px;
+    padding: 5px 0px;
     display: flex;
     justify-content: center;
     border-top: 1px solid black ;
@@ -192,11 +210,13 @@ nav .logo img{
     color: black;
     font-weight: 700;
     transition: .5s ease all;
+    width: 100%;
+    text-align: center;
 }
 
 .product-cat .product-cat-card .product-card .product-card-button a:hover{
     color: white;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
 
 }
 
