@@ -1,0 +1,51 @@
+
+        .vcht_selectedDom {
+            -moz-box-shadow: 0px 0px 40px 0px #1ABC9C !important;
+            -webkit-box-shadow: 0px 0px 40px 0px #1ABC9C !important;
+            -o-box-shadow: 0px 0px 40px 0px #1ABC9C !important ;
+            box-shadow: 0px 0px 40px 0px #1ABC9C !important ;
+        }
+        @-o-keyframes glow {
+            0% {
+                -o-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+            50% {
+                -o-box-shadow: 0px 0px 40px 0px #1ABC9C;
+            }
+            100% {
+                -o-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+        }
+        @-moz-keyframes glow {
+            0% {
+                -moz-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+            50% {
+                -moz-box-shadow: 0px 0px 40px 0px #1ABC9C;
+            }
+            100% {
+                -moz-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+        }
+        @-webkit-keyframes glow {
+            0% {
+                -webkit-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+            50% {
+                -webkit-box-shadow: 0px 0px 40px 0px #1ABC9C;
+            }
+            100% {
+                -webkit-box-shadow: 0px 0px 10px 0px #1ABC9C;
+            }
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0px 0px 10px 0px #1ABC9C ;
+            }
+            50% {
+                box-shadow: 0px 0px 40px 0px #1ABC9C ;
+            }
+            100% {
+                box-shadow: 0px 0px 10px 0px #1ABC9C ;
+            }
+        }
