@@ -16,6 +16,7 @@ $final_total = $_POST['final_total'];
 $payment_method = $_POST['payment-method'];
 // $dataArray = array();	
 // $count = 0;
+//var_dump($array['data']);
 $count = count($array['data']['product_name']);
 // for($i=0; $i < $count; $i++) {
 
@@ -25,6 +26,7 @@ $count = count($array['data']['product_name']);
 // 	//echo $value['product_name'][$i]; echo '<br>';	
 // endforeach;
 // }
+
 //$args = array( $_POST['prod-name'],$_POST['subtotal'],$_POST['payment-method'],$_POST['product_quantity'],$_POST['product_price'], );//endforeach;
 ?>
 <!DOCTYPE html>

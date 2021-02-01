@@ -74,7 +74,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     .viewcart-table .viewcart-table-row .viewcart-heading5{flex-basis:10%; color: #4c4c4c;}
     .viewcart-table .viewcart-table-row .viewcart-heading6{flex-basis:10%; color: #4c4c4c;}
 
-  </style>
+  </style><form method="post" action="checkout.php">
   <div class="row justify-content-center viewcart-main-content">
     <div class="col-xl-7 col-lg-8 col-md-7 viewcart-content">
       <div class="border border-gainsboro p-3 viewcart-product-head">
@@ -110,23 +110,24 @@ $proct_final_price += $results->product_price * $results->product_quantity;
           </button>
         </div>
       </div>
-	 
+	<div class="hiddenFields">
+    <input type="hidden" name="prod_img[]" value="<?= '../'.$results->product_cart_img ?>">
+    <input type="hidden" name="subtotal[]" id="subtotal" value="<?= $proct_final_price; ?>">
+    <input type="hidden" name="totals[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
+    <input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
+    <input type="hidden" name="products_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
+    <input type="hidden" name="product_price[]" value="<?= $results->product_price; ?>" min="1">
+    <input type="hidden" name="product_id[]" value="<?= $results->product_id; ?>" min="1">
+    
+	 </div>
     </div>
-	<form method="post" action="checkout.php">
-  <input type="hidden" name="prod_img[]" value="<?= '../'.$results->product_cart_img ?>">
-	<input type="hidden" name="subtotal[]" id="subtotal" value="<?= $proct_final_price; ?>">
-	<input type="hidden" name="totals[]" class="cart-total" value="<?= $results->product_quantity * $results->product_price; ?>">
-	<input type="hidden" name="prod-name[]" value="<?= $results->product_name; ?>">
-  <input type="hidden" name="products_quantity[]" value="<?= $results->product_quantity; ?>" min="1">
-  <input type="hidden" name="product_price[]" value="<?= $results->product_price; ?>" min="1">
-  <input type="hidden" name="product_id[]" value="<?= $results->product_id; ?>" min="1">
-  
+
   </div>
 <!-- container -->
 <?php } ?>
 </div>
 <div class="viewcart-sum-content">
-  
+<input type="hidden" name="final_total" id="final-subtotal" value="<?= $proct_final_price; ?>">
   <div class="short-note">
     <div class="short-note-heading">
       <h3>Note <i class="fa fa-exclamation" aria-hidden="true"></i></h3>
@@ -153,7 +154,6 @@ $proct_final_price += $results->product_price * $results->product_quantity;
           <div class="totals-item d-flex align-items-center justify-content-between mt-3 viewcart-sum1">
             <p class="text-uppercase1">Subtotal</p>
             <p class="totals-value1" name="cart-subtotal" id="cart-subtotal"><?= $proct_final_price; ?></p>
-            <input type="hidden" name="final_total" value="<?= $proct_final_price; ?>">
           </div>
           <div class="totals-item d-flex align-items-center justify-content-between viewcart-sum1">
             <p class="text-uppercase2">Coupon discount</p>
@@ -192,7 +192,8 @@ $(document).ready(function() {
    });
 
    $('.remove-item button').click(function() {
-     removeItem(this);
+     removeItem(this); //$(this).find($("input[type='hidden']")).remove();
+     removeHidden(this);
    });
    
    $('.redeem').click(function(){
@@ -215,6 +216,7 @@ console.log(subtotal);
      /* Update totals display */
      $('.coupon').fadeOut(fadeTime, function() {
        $('#cart-subtotal').html(subtotal);
+       $('#final-subtotal').val(total);
        $('#subtotal').val(subtotal);
        //$('#coupon').val(coupon);
        $('.cart-total').html(total);
@@ -279,10 +281,16 @@ console.log(subtotal);
    function removeItem(removeButton) {
      /* Remove row from DOM and recalc cart total */
      var productRow = $(removeButton).parent().parent();
+     //var hiddenRow  = $("input[type='hidden']");
      productRow.slideUp(fadeTime, function() {
-       productRow.remove();
+       productRow.remove(); //hiddenRow.remove();
+       //console.log(hiddenRow);
        recalculateCart();
      });
+   }
+   function removeHidden(removeHidden) {
+     var hiddenRow = $(removeHidden).parent().parent().parent().children(); 
+     console.log(hiddenRow); hiddenRow.remove();
    }
 
  });
