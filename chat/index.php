@@ -108,8 +108,9 @@ function loginForm(){
                     $("#usermsg").val("");
                     return false;
                 });
- 
-                function loadLog() {
+ <?php  if(isset($_SESSION['visitor_id'])){
+?>
+      function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
                     var postForm = { //Fetch form data
                        
@@ -135,6 +136,11 @@ function loginForm(){
                 }
  
                 setInterval (loadLog, 1500);
+
+
+<?php
+ } ?>
+          
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
