@@ -24,7 +24,7 @@ if($type == 'Branch' || $_SESSION['owner_type'] == 'Branch')
 
           header('Location ?page=logout');
         }
- $data = getchat($dbcalss,null,$branch_id);
+ $data = getuseridbychat($dbcalss,$branch_id);
  
 
  //print_r($data);

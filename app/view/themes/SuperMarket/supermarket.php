@@ -1,6 +1,5 @@
 <?php
 include 'include/header.php'; 
-
 ?>
 <style>
     .img-responsive{width: 140px; flex-basis:20%}
@@ -319,7 +318,10 @@ include 'include/header.php';
     </section> -->
 
     <!-- About us -->
+<?php
+include '../../../../chat/index.php'; 
 
+?>
     <section class="about" id="about">
         <div class="container">
             <div class="about-content" data-aos="zoom-in"   data-aos-duration="1000">

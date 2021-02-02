@@ -24,11 +24,21 @@ if(isset($_SESSION['name']) && isset($_SESSION['vb_id'])){
 
   $_SESSION['visitor_id'] = $user_data[0]['user_id']; 
   $data =  sendchat($dbclass,$user_data[0]['user_id'],$branch_id,$text_message);
+}else{
+
+
+if(!empty($_SESSION['branch_id'])){
+
+
+
+}
+
+
 }
 
 
 
-print_r($data);
+//print_r($data);
 
 
 

@@ -1,8 +1,8 @@
 <?php
  
-session_start();
+//session_start();
 $dbclass = '../app/model/classDatabaseManager.php';
-require_once '../app/lib/functions.php';
+require_once '../../../lib/functions.php';
  
 if(isset($_GET['logout'])){    
      
@@ -88,6 +88,12 @@ function loginForm(){
             <div class="chatbox__button">
                 <button>Branch-1</button>
             </div>
+ 
+           <!--  <form class="chat-inner-btn" name="message" action="">
+                <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+              
+                <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form> -->
         </div>
     <!--  -->
 
@@ -98,7 +104,7 @@ function loginForm(){
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                    $.post("../app/lib/chat.php", { text: clientmsg });
+                    $.post("../../../lib/chat.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
                 });
@@ -113,7 +119,7 @@ function loginForm(){
                     
                     $.ajax({
                         type : 'POST',
-                        url: "../app/lib/getchat.php",
+                        url: "../../../lib/getchat.php",
                         data : postForm,
                         cache: false,
                         success: function (html) {

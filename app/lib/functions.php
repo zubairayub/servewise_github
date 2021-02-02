@@ -91,6 +91,29 @@ return $result;
 
 }
 
+
+
+function getuseridbychat($dbcalss,$branch_id = NULL){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+$varr->query="SELECT * FROM `users_chat`   where  branch_id = '$branch_id' group by user_id ";	
+
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
+
 function getnotifications($dbclass,$userid,$type = NULL){
 
 if(!empty($dbclass)){
