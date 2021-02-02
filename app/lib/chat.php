@@ -1,15 +1,15 @@
 <?php
 session_start();
-// defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '../../app'));
-// const DS = DIRECTORY_SEPARATOR; 
-// $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
-// $functions = APPLICATION_PATH . DS . 'lib' . DS . 'functions.php';
-$dbclass = '../model/classDatabaseManager.php';
+defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '../../app'));
+const DS = DIRECTORY_SEPARATOR; 
+//$dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
+$functions = APPLICATION_PATH . DS . 'lib' . DS . 'functions.php';
+$dbcalss = '../model/classDatabaseManager.php';
 require_once 'functions.php';
 
 
 
-if(isset($_SESSION['name']) && isset($_SESSION['vb_id'])){
+if(!empty(isset($_SESSION['name'])) && isset($_SESSION['vb_id'])){
     
 
 	$name = $_SESSION['name'];
@@ -23,13 +23,17 @@ if(isset($_SESSION['name']) && isset($_SESSION['vb_id'])){
   $user_data =   register_user($dbclass,$useremail,$name,$phoneno);
 
   $_SESSION['visitor_id'] = $user_data[0]['user_id']; 
-  $data =  sendchat($dbclass,$user_data[0]['user_id'],$branch_id,$text_message);
+  $data =  sendchat($dbcalss,$user_data[0]['user_id'],$branch_id,$text_message,0);
+
 }else{
 
 
 if(!empty($_SESSION['branch_id'])){
-
-
+	$branch_id = $_SESSION['branch_id'];
+    $text_message = $_POST['text'];
+     $user_id = $_POST['user_id'];
+ 
+ $data =  sendchat($dbcalss,$user_id,$branch_id,$text_message,1);
 
 }
 

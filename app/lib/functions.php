@@ -43,7 +43,7 @@ return $result;
 
 }
 
-function sendchat($dbcalss,$user_id,$branch_id,$text_message){
+function sendchat($dbcalss,$user_id,$branch_id,$text_message,$status = null){
 
 if(!empty($dbclass)){
 	
@@ -55,8 +55,8 @@ if(!empty($dbclass)){
 
 
 	 if(empty($type)){
-$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`) VALUES (?,?,?)";
-$result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message),"create");
+$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`,`status`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message,$status),"create");
 
 return $result;
 }

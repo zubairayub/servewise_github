@@ -6,7 +6,7 @@
     <div class="chat-dashboard-main" data-aos="zoom-in-up" data-aos-duration="600">
 <div id="wrapper">
             <div id="menu">
-                <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="welcome">Welcome, <br></p>
                 <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
             </div>
  
@@ -28,7 +28,7 @@
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                    $.post("../app/lib/chat.php", { text: clientmsg });
+                    $.post("../app/lib/chat.php", { text: clientmsg , user_id: <?php echo $_GET['user_id'] ?> });
                     $("#usermsg").val("");
                     return false;
                 });
