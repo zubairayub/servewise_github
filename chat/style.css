@@ -42,8 +42,8 @@
   #loginform {
     margin: 0 auto;
     padding-bottom: 5px;
-    background: #eee;
-    width: 250px;
+    background: #fff;
+    width: 350px;
     overflow: hidden;
     max-width: 100%;
     border: 1px solid rgba(0,0,0,0.1);
@@ -73,18 +73,22 @@
     margin-bottom: 5px;
     padding: 10px;
     background: #fff;
-    height: 300px;
+    height: 250px;
     width: 530px;
     border: 1px solid #a7a7a7;
     overflow: auto;
-    border-radius: 4px;
+    border: none;
     border-bottom: 4px solid #a7a7a7;
   }
    
   #usermsg {
-    flex: 1;
-    border-radius: 4px;
-    border: 1px solid #ff9800;
+    flex-basis: 70%;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    outline: none;
+    font-size: 20px;
+    font-family: sans-serif;
   }
    
   #name {
@@ -124,28 +128,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #2979ff;
   }
    
   #menu p.welcome {
     flex: 1;
+    color: #ffff;
   }
    
   a#exit {
     color: white;
     text-decoration: none;
-    background: #ec4f4f;
+    border: 1px solid #ffff;
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 50%;
     font-weight: bold;
     transition: .3s ease;
   }
 
   .chat-inner-btn{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    background-color: #fff;
   }
 
   .chat-inner-btn .chat-text-box{
@@ -153,67 +160,81 @@
     margin: 5px 0px;
     flex-basis: 50%;
   }
-  .chat-inner-btn .chat-text-button{
-    flex-basis: 50%;
+  .chat-inner-btn .chat-text-button {
+    flex-basis: 26%;
+    margin-left: 10px;
     font-family: sans-serif;
-    background-color: rgb(31, 224, 31);
     font-size: 18px;
-    color: white;
+    color: #928c8c;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     padding: 5px;
     transition: .3s ease;
-  }
+}
 
   .chat-inner-btn .chat-text-button:hover{
-    background-color: rgb(27, 153, 10);
+    background-color: #2979ff;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
   }
+
 
   a#exit:hover {
     background: #c62828;
+    color: white;
+    border: 1px solid #c62828;
   }
    
    
-  .msgln {
-    margin: 0 0 5px 0;
+  #chatbox .msgIn{
+    margin: 0 0 10px 0;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
-  .msgln .msgc{
-    background: rgb(7,198,238);
-    background: linear-gradient(274deg, rgba(7,198,238,1) 0%, rgba(4,142,214,1) 100%);
-    width: 100%;
+  #chatbox .msgIn .msgc{
+    background-color: #e0e0e0;
+    width: 60%;
     border-radius: 0px 10px 10px 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     padding: 5px;
     overflow: hidden;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
+  #chatbox .msgSend{
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
 
-  .msgln .msgc-reve{
-    background: rgb(47,191,44);
-    background: linear-gradient(274deg, rgba(47,191,44,1) 0%, rgba(52,217,48,1) 100%);
-    width: 100%;
+  #chatbox .msgSend .msgs{
+    background: rgb(41,121,255);
+background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
+    width: 60%;
     border-radius: 10px 0px 10px 10px;
     padding: 5px;
     overflow: hidden;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
   }
    
-  .msgln .left-info{
+  .msgIn .left-info{
     width: 100%;
     border-right: 4px;
     padding: 5px;
     overflow: hidden;
   }
 
-  .msgln .left-info p{
+  .msgIn .left-info p{
     width: 100%;
     text-align: center;
     border-right: 4px;
@@ -223,15 +244,22 @@
     border-bottom: 1px dashed rgba(0,0,0,0.2);
   }
    
-  .msgln span.chat-time {
-    color: #ffff;
+  .msgIn span.chat-time {
+    color: #3a3a3a;
+    font-size: 60%;
+    vertical-align: super;
+    width: 100%;
+    text-align: end;
+  }
+  .msgSend span.chat-time {
+    color: white;
     font-size: 60%;
     vertical-align: super;
     width: 100%;
     text-align: end;
   }
    
-  .msgln b.user-name, .msgln b.user-name-left {
+  .msgIn b.user-name, .msgIn b.user-name-left {
     font-weight: bold;
     color: white;
     padding: 2px 4px;
@@ -240,25 +268,84 @@
     margin: 0 5px 0 0;
   }
 
-  .msgln .user-name{
+  #chatbox .msgIn .user-name{
     width: 100%;
     background-color: transparent;
+    color: #3a3a3a;
   }
-  .msgln .msgc .msginner{
+  .msgIn .msgc .msginner{
     text-align: start;
     font-size: 20px;
     margin-top: 5px;
+    padding: 0px 5px;
+    color: #3a3a3a;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .msgIn .msgc .msginner p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+
+  /*  */
+  #chatbox .msgSend .user-name{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+  }
+  .msgSend .msgs .msginner{
+    text-align: start;
+    font-size: 20px;
+    margin: 5px 0px;
     padding: 0px 5px;
     color: white;
     display: flex;
     flex-wrap: wrap;
   }
-  .msgln .msgc .msginner p{
+  .msgSend .msgs .msginner p{
     display: flex;
     flex-wrap: wrap;
     font-size: 14px;
   }
    
-  .msgln b.user-name-left {
+  .msgIn b.user-name-left {
     background: orangered;
   }
+
+  /* chatbox */
+  .chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    width: 300px;
+    height: 450px;
+    z-index: -123456;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.chatbox--active {
+  transform: translateY(-40px);
+  z-index: 123456;
+  opacity: 1;
+}
+
+.chatbox{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chatbox .chatbox__button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.chatbox .chatbox__button button{
+  font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+}
