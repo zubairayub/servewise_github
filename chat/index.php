@@ -5,7 +5,7 @@ session_start();
 if(isset($_GET['logout'])){    
      
     //Simple exit message
-    $logout_message = "<div class='msgln'><span class='left-info'>User <b class='user-name-left'>". $_SESSION['name'] ."</b> has left the chat session.</span><br></div>";
+    $logout_message = "<div class='msgln'><div class='left-info'><p> User <b class='user-name-left'>". $_SESSION['name'] ."</b> has left the chat session.</p></div></div>";
     file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
      
     session_destroy();
@@ -53,7 +53,7 @@ function loginForm(){
     ?>
         <div id="wrapper">
             <div id="menu">
-                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
                 <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
             </div>
  
@@ -66,9 +66,9 @@ function loginForm(){
             ?>
             </div>
  
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" />
-                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            <form class="chat-inner-btn" name="message" action="">
+                <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+                <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -107,7 +107,7 @@ function loginForm(){
                     });
                 }
  
-                setInterval (loadLog, 2500);
+                setInterval (loadLog, 1000500);
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");

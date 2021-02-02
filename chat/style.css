@@ -5,20 +5,24 @@
    
   body {
     margin: 20px auto;
-    font-family: "Lato";
+    font-family: sans-serif;
     font-weight: 300;
   }
    
   form {
     padding: 15px 25px;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
   }
    
   form label {
-    font-size: 1.5rem;
+    font-size: 14px;
     font-weight: bold;
+    text-align: start;
+    width: 100%;
   }
    
   input {
@@ -37,12 +41,18 @@
   #wrapper,
   #loginform {
     margin: 0 auto;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
     background: #eee;
-    width: 600px;
+    width: 250px;
+    overflow: hidden;
     max-width: 100%;
-    border: 2px solid #212121;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
    
   #loginform {
@@ -52,14 +62,15 @@
    
   #loginform p {
     padding: 15px 25px;
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: bold;
+    font-family: sans-serif;
   }
    
   #chatbox {
     text-align: left;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     padding: 10px;
     background: #fff;
     height: 300px;
@@ -78,18 +89,29 @@
    
   #name {
     border-radius: 4px;
-    border: 1px solid #ff9800;
+    border: 1px solid rgba(0,0,0,0.2);
     padding: 2px 8px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
   }
    
-  #submitmsg,
+
   #enter{
-    background: #ff9800;
-    border: 2px solid #e65100;
+    background: #3ff57f;
+    border: 1px solid #08732c;
     color: white;
     padding: 4px 10px;
     font-weight: bold;
     border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+  }
+  #enter:hover{
+    background: #08732c;
   }
    
   .error {
@@ -97,8 +119,11 @@
   }
    
   #menu {
-    padding: 15px 25px;
+    width: 100%;
+    padding: 15px 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
    
   #menu p.welcome {
@@ -107,34 +132,131 @@
    
   a#exit {
     color: white;
-    background: #c62828;
+    text-decoration: none;
+    background: #ec4f4f;
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
+    transition: .3s ease;
   }
+
+  .chat-inner-btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .chat-inner-btn .chat-text-box{
+    font-size: 18px;
+    margin: 5px 0px;
+    flex-basis: 50%;
+  }
+  .chat-inner-btn .chat-text-button{
+    flex-basis: 50%;
+    font-family: sans-serif;
+    background-color: rgb(31, 224, 31);
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .3s ease;
+  }
+
+  .chat-inner-btn .chat-text-button:hover{
+    background-color: rgb(27, 153, 10);
+  }
+
+  a#exit:hover {
+    background: #c62828;
+  }
+   
    
   .msgln {
     margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .msgln .msgc{
+    background: rgb(7,198,238);
+    background: linear-gradient(274deg, rgba(7,198,238,1) 0%, rgba(4,142,214,1) 100%);
+    width: 100%;
+    border-radius: 0px 10px 10px 10px;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .msgln .msgc-reve{
+    background: rgb(47,191,44);
+    background: linear-gradient(274deg, rgba(47,191,44,1) 0%, rgba(52,217,48,1) 100%);
+    width: 100%;
+    border-radius: 10px 0px 10px 10px;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
    
-  .msgln span.left-info {
-    color: orangered;
+  .msgln .left-info{
+    width: 100%;
+    border-right: 4px;
+    padding: 5px;
+    overflow: hidden;
+  }
+
+  .msgln .left-info p{
+    width: 100%;
+    text-align: center;
+    border-right: 4px;
+    padding: 5px;
+    overflow: hidden;
+    border-top: 1px dashed rgba(0,0,0,0.2);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
   }
    
   .msgln span.chat-time {
-    color: #666;
+    color: #ffff;
     font-size: 60%;
     vertical-align: super;
+    width: 100%;
+    text-align: end;
   }
    
   .msgln b.user-name, .msgln b.user-name-left {
     font-weight: bold;
-    background: #546e7a;
     color: white;
     padding: 2px 4px;
     font-size: 90%;
     border-radius: 4px;
     margin: 0 5px 0 0;
+  }
+
+  .msgln .user-name{
+    width: 100%;
+    background-color: transparent;
+  }
+  .msgln .msgc .msginner{
+    text-align: start;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 0px 5px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .msgln .msgc .msginner p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
   }
    
   .msgln b.user-name-left {
