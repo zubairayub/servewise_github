@@ -475,9 +475,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
-                    if (exit == true) {
-                    window.location = "&logout=true";
-                    }
+                    
                 });
             });
             class InteractiveChatbox {
