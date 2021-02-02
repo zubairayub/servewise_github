@@ -1,6 +1,8 @@
 <?php
  
 session_start();
+$dbclass = '../app/model/classDatabaseManager.php';
+require_once '../app/lib/functions.php';
  
 if(isset($_GET['logout'])){    
      
@@ -14,7 +16,15 @@ if(isset($_GET['logout'])){
  
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
+
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+        $name = $_SESSION['name'];
+    $useremail = $_SESSION['email'] = $_POST['email'];
+    $phoneno = $_SESSION['phone'] = $_POST['phone'];
+    $branch_id  = $_SESSION['vb_id'] = $_POST['vb_id'];
+      $user_data =   register_user($dbclass,$useremail,$name,$phoneno);
+
+  $_SESSION['visitor_id'] = $user_data[0]['user_id']; 
     }
     else{
         echo '<span class="error">Please type in a name</span>';
@@ -28,6 +38,9 @@ function loginForm(){
     <form action="index.php" method="post">
       <label for="name">Name &mdash;</label>
       <input type="text" name="name" id="name" />
+       <input type="text" name="email" id="name" />
+        <input type="text" name="phone" id="name" />
+         <input type="text" name="vb_id" id="name" value='. $_SESSION['vb_id'].' />
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
   </div>';
@@ -72,7 +85,7 @@ function loginForm(){
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                    $.post("post.php", { text: clientmsg });
+                    $.post("../app/lib/chat.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
                 });
@@ -81,8 +94,8 @@ function loginForm(){
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
                     var postForm = { //Fetch form data
                        
-            'user_id'     :  '31',
-            'branch_id'     :  '14' //Store name fields value
+            'user_id'     :  '<?php echo $_SESSION['visitor_id'] ;?>',
+            'branch_id'     :  '<?php echo $_SESSION['vb_id']  ?>' //Store name fields value
         };
                     
                     $.ajax({

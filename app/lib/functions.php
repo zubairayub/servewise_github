@@ -55,7 +55,7 @@ if(!empty($dbclass)){
 
 
 	 if(empty($type)){
-$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`) VALUES (?,?,?";
+$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`) VALUES (?,?,?)";
 $result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message),"create");
 
 return $result;
@@ -77,10 +77,12 @@ if(!empty($dbclass)){
 
 
 	 if(empty($branch_id)){
-$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$userid' ";
+$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' ";
 
+}elseif(empty($user_id)){
+$varr->query="SELECT * FROM `users_chat`   where  branch_id = '$branch_id' ";	
 }else{
-$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' and branch_id = '$branch_id' ";	
+	$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' and branch_id = '$branch_id' ";	
 }
 
 $result=$varr->executeQuery($varr->query,array(),"sread");

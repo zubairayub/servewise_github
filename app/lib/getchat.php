@@ -27,17 +27,27 @@ if(isset($_POST['branch_id']) && !empty($_POST['user_id'])){
 
    $data = getchat($dbcalss,$visitor_id,$branch_id);
 
+
 }
+$getuser_data = getuserinfo($visitor_id,$dbcalss);
+$username = $getuser_data[0]['first_name']; 
+if(empty($username)){
+$username = 'GUEST';
+}
+
+$getbranch_data = getbranchbybranchid($dbcalss,$branch_id);
+$branchname = $getbranch_data[0]['name']; 
 
 $messsages  = NULL;
 foreach ($data as $key => $value) {
+
 
 	 if($value['status'] == 0){
 ?>
 	 	<div class='msgIn'>
     <div class='msgc'>
         <div class='user-name'>
-            <b class='user-name'><?=  $value['user_id'] ?></b> 
+            <b class='user-name'><?=  $username ?></b> 
         </div> 
         <div class='msginner'>
             <p><?= $value['text'] ?></p> 
@@ -56,7 +66,7 @@ foreach ($data as $key => $value) {
 <div class='msgSend'>
     <div class='msgs'>
         <div class='user-name'>
-            <b class='user-name'><?= $value['user_id'] ?></b> 
+            <b class='user-name'><?= $branchname; ?></b> 
         </div> 
         <div class='msginner'>
             <p><?= $value['text'] ?></p> 
