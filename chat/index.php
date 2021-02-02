@@ -1,8 +1,8 @@
 <?php
  
-session_start();
+//session_start();
 $dbclass = '../app/model/classDatabaseManager.php';
-require_once '../app/lib/functions.php';
+require_once '../../../lib/functions.php';
  
 if(isset($_GET['logout'])){    
      
@@ -74,10 +74,11 @@ function loginForm(){
             Coversations
             </div>
  
-            <form class="chat-inner-btn" name="message" action="">
+           <!--  <form class="chat-inner-btn" name="message" action="">
                 <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+              
                 <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
-            </form>
+            </form> -->
         </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
@@ -85,7 +86,7 @@ function loginForm(){
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                    $.post("../app/lib/chat.php", { text: clientmsg });
+                    $.post("../../../lib/chat.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
                 });
@@ -100,7 +101,7 @@ function loginForm(){
                     
                     $.ajax({
                         type : 'POST',
-                        url: "../app/lib/getchat.php",
+                        url: "../../../lib/getchat.php",
                         data : postForm,
                         cache: false,
                         success: function (html) {
@@ -115,7 +116,7 @@ function loginForm(){
                     });
                 }
  
-                setInterval (loadLog, 1000500);
+                setInterval (loadLog, 1500);
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
