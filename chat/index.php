@@ -55,7 +55,337 @@ function loginForm(){
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
-        <link rel="stylesheet" href="style.css" />
+        <style>
+            
+   
+  form {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+   
+  form label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: start;
+    width: 100%;
+  }
+    
+  #wrapper,
+  #loginform {
+    margin: 0 auto;
+    padding-bottom: 5px;
+    background: #fff;
+    width: 350px;
+    overflow: hidden;
+    max-width: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+   
+  #loginform {
+    padding-top: 18px;
+    text-align: center;
+  }
+   
+  #loginform p {
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+   
+  #chatbox {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #fff;
+    height: 250px;
+    width: 530px;
+    border: 1px solid #a7a7a7;
+    overflow: auto;
+    border: none;
+    border-bottom: 4px solid #a7a7a7;
+  }
+   
+  #usermsg {
+    flex-basis: 70%;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    outline: none;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+   
+  #name {
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 2px 8px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
+  }
+   
+
+  #enter{
+    background: #3ff57f;
+    border: 1px solid #08732c;
+    color: white;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+  }
+  #enter:hover{
+    background: #08732c;
+  }
+   
+  .error {
+    color: #ff0000;
+  }
+   
+  #menu {
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2979ff;
+  }
+   
+  #menu p.welcome {
+    flex: 1;
+    color: #ffff;
+  }
+   
+  a#exit {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ffff;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: .3s ease;
+  }
+
+  .chat-inner-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .chat-inner-btn .chat-text-box{
+    font-size: 18px;
+    margin: 5px 0px;
+    flex-basis: 50%;
+  }
+  .chat-inner-btn .chat-text-button {
+    flex-basis: 26%;
+    margin-left: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #928c8c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .3s ease;
+}
+
+  .chat-inner-btn .chat-text-button:hover{
+    background-color: #2979ff;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  }
+
+
+  a#exit:hover {
+    background: #c62828;
+    color: white;
+    border: 1px solid #c62828;
+  }
+   
+   
+  #chatbox .msgIn{
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  #chatbox .msgIn .msgc{
+    background-color: #e0e0e0;
+    width: 60%;
+    border-radius: 0px 10px 10px 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #chatbox .msgSend{
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  #chatbox .msgSend .msgs{
+    background: rgb(41,121,255);
+background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
+    width: 60%;
+    border-radius: 10px 0px 10px 10px;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  }
+   
+  .msgIn .left-info{
+    width: 100%;
+    border-right: 4px;
+    padding: 5px;
+    overflow: hidden;
+  }
+
+  .msgIn .left-info p{
+    width: 100%;
+    text-align: center;
+    border-right: 4px;
+    padding: 5px;
+    overflow: hidden;
+    border-top: 1px dashed rgba(0,0,0,0.2);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+  }
+   
+  .msgIn span.chat-time {
+    color: #3a3a3a;
+    font-size: 60%;
+    vertical-align: super;
+    width: 100%;
+    text-align: end;
+  }
+  .msgSend span.chat-time {
+    color: white;
+    font-size: 60%;
+    vertical-align: super;
+    width: 100%;
+    text-align: end;
+  }
+   
+  .msgIn b.user-name, .msgIn b.user-name-left {
+    font-weight: bold;
+    color: white;
+    padding: 2px 4px;
+    font-size: 90%;
+    border-radius: 4px;
+    margin: 0 5px 0 0;
+  }
+
+  #chatbox .msgIn .user-name{
+    width: 100%;
+    background-color: transparent;
+    color: #3a3a3a;
+  }
+  .msgIn .msgc .msginner{
+    text-align: start;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 0px 5px;
+    color: #3a3a3a;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .msgIn .msgc .msginner p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+
+  /*  */
+  #chatbox .msgSend .user-name{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+  }
+  .msgSend .msgs .msginner{
+    text-align: start;
+    font-size: 20px;
+    margin: 5px 0px;
+    padding: 0px 5px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .msgSend .msgs .msginner p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+   
+  .msgIn b.user-name-left {
+    background: orangered;
+  }
+
+  /* chatbox */
+  .chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    width: 300px;
+    height: 450px;
+    z-index: -123456;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.chatbox--active {
+  transform: translateY(-40px);
+  z-index: 123456;
+  opacity: 1;
+}
+
+.chatbox{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chatbox .chatbox__button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.chatbox .chatbox__button button{
+  font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+}
+        </style>
     </head>
     <body>
     <!--  -->
@@ -102,6 +432,7 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
+                alert('hi');
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
                     $.post("../../../lib/chat.php", { text: clientmsg });
