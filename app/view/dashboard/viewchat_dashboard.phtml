@@ -5,7 +5,8 @@
     </div>
     <div class="chat-dashboard-main" data-aos="zoom-in-up" data-aos-duration="600">
 <div id="wrapper">
-            <div id="menu">
+            <div class="chat-content">
+            <div id="menuChat">
                 <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
                 <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
             </div>
@@ -13,7 +14,7 @@
             <div id="chatbox">
             Coversations
             </div>
- 
+            </div>
             <form class="chat-inner-btn" name="message" action="">
                 <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
                 <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
@@ -58,7 +59,7 @@
                     });
                 }
  
-                setInterval (loadLog, 1500);
+                setInterval (loadLog, 11500);
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
