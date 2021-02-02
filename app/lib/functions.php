@@ -43,6 +43,51 @@ return $result;
 
 }
 
+function sendchat($dbcalss,$user_id,$branch_id,$text_message){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($type)){
+$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`) VALUES (?,?,?";
+$result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message),"create");
+
+return $result;
+}
+
+
+
+}
+
+function getchat($dbcalss,$user_id = NULL , $branch_id = NULL){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($branch_id)){
+$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$userid' ";
+
+}else{
+$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' and branch_id = '$branch_id' ";	
+}
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
 
 function getnotifications($dbclass,$userid,$type = NULL){
 

@@ -84,9 +84,16 @@ function loginForm(){
  
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
- 
+                    var postForm = { //Fetch form data
+                       
+            'user_id'     :  '31',
+            'branch_id'     :  '14' //Store name fields value
+        };
+                    
                     $.ajax({
-                        url: "log.html",
+                        type : 'POST',
+                        url: "../app/lib/getchat.php",
+                        data : postForm,
                         cache: false,
                         success: function (html) {
                             $("#chatbox").html(html); //Insert chat log into the #chatbox div

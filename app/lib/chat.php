@@ -9,38 +9,26 @@ require_once 'functions.php';
 
 
 
-if(isset($_SESSION['name'])){
+if(isset($_SESSION['name']) && isset($_SESSION['vb_id'])){
+    
+
+	$name = $_SESSION['visitor_name'];
+	$useremail = $_SESSION['visitor_email'];
+	$phoneno = $_SESSION['visitor_phone'];
+	$branch_id = $_SESSION['vb_id'];
     $text = $_POST['text'];
      
     $text_message = "<div class='msgln'><span class='chat-time'>".date("g:i A")."</span> <b class='user-name'>".$_SESSION['name']."</b> ".stripslashes(htmlspecialchars($text))."<br></div>";
    // file_put_contents("log.html", $text_message, FILE_APPEND | LOCK_EX);
+  $user_data =   register_user($dbclass,$useremail,$name,$phoneno);
 
-    sendchat($dbcalss,$user_id,$branch_id,$text_message);
+  $_SESSION['visitor_id'] = $user_data[0]['user_id']; 
+    sendchat($dbcalss,$user_data[0]['user_id'],$branch_id,$text_message);
 }
 
 
 
-function sendchat($dbcalss,$user_id,$branch_id,$text_message){
 
-if(!empty($dbclass)){
-	
-		include_once($dbclass);
-	 }
-	  $query;
-	 $db;
-	 $varr = new databaseManager();
-
-
-	 if(empty($type)){
-$varr->query="SELECT * FROM `notifications`   where `to_user_id` = '$userid'  ORDER BY id DESC";
-$result=$varr->executeQuery($varr->query,array(),"sread");
-
-return $result;
-}
-
-
-
-}
 
 
 
