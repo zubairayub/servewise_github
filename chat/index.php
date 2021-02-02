@@ -35,7 +35,7 @@ function loginForm(){
     echo
     '<div id="loginform">
     <p>Please enter your name to continue!</p>
-    <form action="index.php" method="post">
+    <form action="#" method="post">
       <label for="name">Name &mdash;</label>
       <input type="text" name="name" id="name" />
        <input type="text" name="email" id="name" />
@@ -476,7 +476,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
                     if (exit == true) {
-                    window.location = "index.php?logout=true";
+                    window.location = "&logout=true";
                     }
                 });
             });
