@@ -158,7 +158,7 @@ function loginForm(){
     color: #ff0000;
   }
    
-  #menu {
+  #menuChat {
     width: 100%;
     padding: 15px 10px;
     display: flex;
@@ -167,7 +167,7 @@ function loginForm(){
     background-color: #2979ff;
   }
    
-  #menu p.welcome {
+  #menuChat p.welcome {
     flex: 1;
     color: #ffff;
   }
@@ -381,10 +381,20 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
 }
 
 .chatbox .chatbox__button button{
-  font-size: 20px;
+    font-size: 40px;
     font-weight: 600;
     padding: 5px;
+    border-radius: 50px;
+    border: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline:none;
+    transition:.3s ease;
 }
+.chatbox .chatbox__button button:hover{
+    background-color:#2979ff;
+    color:white;
+}
+
         </style>
     </head>
     <body>
@@ -398,9 +408,8 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
         ?>
 
 <div id="wrapper">
-                <div id="menu">
+                <div id="menuChat">
                     <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
-                    <p class="logout"><a id="exit" href="#">X</a></p>
                 </div>
     
                 <div id="chatbox">
@@ -524,8 +533,8 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
 const chatButton = document.querySelector('.chatbox__button');
 const chatContent = document.querySelector('.chatbox__support');
 const icons = {
-    isClicked: '</p style="background-color:red; color:white;">X</p>',
-    isNotClicked: '<p>CHAT</p>'
+    isClicked: '</p class="Close">X</p>',
+    isNotClicked: '<p class="CloseAplha"><i class="fa fa-comments" aria-hidden="true"></i></p>'
 }
 const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
 chatbox.display();

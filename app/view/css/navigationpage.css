@@ -2227,6 +2227,25 @@ form {
 .viewbranch-dashboard-main{width: 100%; margin: 20px 0px;}
 .view-branch-main{width: 100%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 5px;}
 .view-branch-main tr td{font-size: 14px;}
+.chat-content{overflow: hidden;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;}
+.chat-content #menuChat{display: flex;width: 100%;justify-content: space-between;align-items: center;padding: 5px 10px;border-bottom: 1px solid rgba(0,0,0,0.2);}
+.chat-content #chatbox{height: 400px;overflow: hidden;overflow-y: auto;}
+.chat-content #chatbox .msgIn{width: 100%; display: flex;justify-content: flex-start;margin: 10px 10px;}
+.chat-content #chatbox .msgIn .msgc{width: 40%;padding: 5px;}
+.chat-content #chatbox .msgIn .msgc .user-name{color: rgb(58, 58, 58);font-size: 20px;}
+.chat-content #chatbox .msgIn .msgc .msginner{margin: 10px 0px; background: #2979ff;padding: 5px 10px;border-radius: 0px 10px 10px 10px;}
+.chat-content #chatbox .msgIn .msgc .msginner p{color: #f4f4f4;}
+.chat-content #chatbox .msgIn .msgc .chat-time{width: 100%;text-align: end;float: right;color: rgb(58, 58, 58);font-size: 14px;}
+.chat-content #chatbox .msgSend{width: 100%; display: flex;justify-content: flex-end;margin: 10px 10px;padding: 0px 20px; }
+.chat-content #chatbox .msgSend .msgs{width: 40%; padding: 5px;}
+.chat-content #chatbox .msgSend .msgs .user-name{color: rgb(58, 58, 58);font-size: 20px;text-align: end;}
+.chat-content #chatbox .msgSend .msgs .msginner{border-radius: 10px 0px 10px 10px;background: #f4f4f4;margin: 10px 0px;padding: 5px 10px;}
+.chat-content #chatbox .msgSend .msgs .msginner p{color: rgb(58, 58, 58);}
+.chat-content #chatbox .msgSend .msgs .chat-time{width: 100%;text-align: end;float: right;color: rgb(58, 58, 58);font-size: 14px;}
+.chat-inner-btn{display: flex;justify-content: space-between;padding: 10px 25px;align-items: center;}
+.chat-text-box{border: 1px solid rgba(0,0,0,0.3);width: 600px;font-size: 20px;border-radius: 4px;box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);}
+.chat-text-button{cursor: pointer; font-size: 20px;border: 1px solid #08B708;color: #08b708;padding: 5px;border-radius: 4px;transition: .3s ease;}
+.chat-text-button:hover{background: #08B708;color: white;letter-spacing: 2px; }
 /* view-branch-dashboard-end */
 
 /* sigupvendor-dashboard */
