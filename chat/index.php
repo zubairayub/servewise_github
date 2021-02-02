@@ -432,7 +432,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-                alert('hi');
+              
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
                     $.post("../../../lib/chat.php", { text: clientmsg });
@@ -474,8 +474,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
           
  
                 $("#exit").click(function () {
-                    var exit = confirm("Are you sure you want to end the session?");
-                    
+                     
                 });
             });
             class InteractiveChatbox {

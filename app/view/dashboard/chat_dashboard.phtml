@@ -16,6 +16,7 @@
                 </tr>
                 <?php
                 $count  = 1; 
+                if(count($data) > 0){
 foreach ($data as $key => $value) {
     # code...
 
@@ -27,7 +28,7 @@ foreach ($data as $key => $value) {
                     <td>John Adams</td>
                     <td>Admin</td>
                     <td class="option">
-                        <a href="?page=viewchat_dashboard">
+                        <a href="?page=viewchat_dashboard&user_id=<?= $value['user_id'] ?>">
                         <i class="fa fa-eye" aria-hidden="true"></i> view
                         </a>
                         <a href="#">
@@ -38,6 +39,7 @@ foreach ($data as $key => $value) {
                 <?php
                 $count ++;
             }
+        }
             ?>
               </table>
         </form>
