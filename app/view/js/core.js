@@ -36,31 +36,6 @@ $(window).scroll(function(){
     }
 })
 
-$(window).scroll(function(){ 
-    let windowPosition = $(window).scrollTop();
-    let sectionPosition = $('.section-market').position().top;
-    if( windowPosition >= sectionPosition )
-    {
-        $('.section-market').addClass('scrollEffect1')
-        $('.section-market').data('fade-up')
-    }
-    else{
-        $('.section-market').removeClass('scrollEffect1')
-    }
-})
-
-
-$(window).scroll(function(){
-    let windowPosition = $(window).scrollTop();
-    let sectionPosition = $('.section-market').position().top;
-    if( windowPosition >= sectionPosition )
-    {
-        $('.section-Manage').addClass('scrollEffect2')
-    }
-    else{
-        $('.section-Manage').removeClass('scrollEffect2')
-    }
-})
 
 var acc = document.getElementsByClassName("accordion");
 var i;
