@@ -105,7 +105,7 @@ if(!empty($dbclass)){
 
 
 
-$varr->query="SELECT * FROM `users_chat`   where  branch_id = '$branch_id' group by user_id ";	
+$varr->query="SELECT DISTINCT `user_id`,`datetime` FROM `users_chat`   where  branch_id = '$branch_id'  ";	
 
 
 $result=$varr->executeQuery($varr->query,array(),"sread");
