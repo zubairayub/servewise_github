@@ -58,28 +58,41 @@ function loginForm(){
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-    <?php
-    if(!isset($_SESSION['name'])){
+    <!--  -->
+        <div class="chatbox">
+            <div class="chatbox__support">
+            <?php 
+            if(!isset($_SESSION['name'])){
         loginForm();
-    }
-    else {
-    ?>
-        <div id="wrapper">
-            <div id="menu">
-                <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+    }else{
+        ?>
+
+<div id="wrapper">
+                <div id="menu">
+                    <p class="welcome">Welcome, <br><b><?php echo $_SESSION['name']; ?></b></p>
+                    <p class="logout"><a id="exit" href="#">X</a></p>
+                </div>
+    
+                <div id="chatbox">
+                Coversations
+                </div>
+    
+                <form class="chat-inner-btn" name="message" action="">
+                    <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+                    <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+                </form>
+                </div>
+    <?php } ?>
+                    
             </div>
- 
-            <div id="chatbox">
-            Coversations
+            <div class="chatbox__button">
+                <button>Branch-1</button>
             </div>
- 
-            <form class="chat-inner-btn" name="message" action="">
-                <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
-                <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
-            </form>
         </div>
+    <!--  -->
+
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
@@ -115,7 +128,7 @@ function loginForm(){
                     });
                 }
  
-                setInterval (loadLog, 1000500);
+                setInterval (loadLog, 1500);
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
@@ -124,9 +137,62 @@ function loginForm(){
                     }
                 });
             });
+            class InteractiveChatbox {
+    constructor(a, b, c) {
+        this.args = {
+            button: a,
+            chatbox: b
+        }
+        this.icons = c;
+        this.state = false; 
+    }
+
+    display() {
+        const {button, chatbox} = this.args;
+        
+        button.addEventListener('click', () => this.toggleState(chatbox))
+    }
+
+    toggleState(chatbox) {
+        this.state = !this.state;
+        this.showOrHideChatBox(chatbox, this.args.button);
+    }
+
+    showOrHideChatBox(chatbox, button) {
+        if(this.state) {
+            chatbox.classList.add('chatbox--active')
+            this.toggleIcon(true, button);
+        } else if (!this.state) {
+            chatbox.classList.remove('chatbox--active')
+            this.toggleIcon(false, button);
+        }
+    }
+
+    toggleIcon(state, button) {
+        const { isClicked, isNotClicked } = this.icons;
+        let b = button.children[0].innerHTML;
+
+        if(state) {
+            button.children[0].innerHTML = isClicked; 
+        } else if(!state) {
+            button.children[0].innerHTML = isNotClicked;
+        }
+    }
+}
+
+
+const chatButton = document.querySelector('.chatbox__button');
+const chatContent = document.querySelector('.chatbox__support');
+const icons = {
+    isClicked: '</p style="background-color:red; color:white;">X</p>',
+    isNotClicked: '<p>CHAT</p>'
+}
+const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
+chatbox.display();
+chatbox.toggleIcon(false, chatButton);
         </script>
     </body>
 </html>
 <?php
-}
+
 ?>
