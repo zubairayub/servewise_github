@@ -2239,7 +2239,7 @@ form {
 .chat-content #chatbox .msgSend{width: 100%; display: flex;justify-content: flex-end;margin: 10px 10px;padding: 0px 20px; }
 .chat-content #chatbox .msgSend .msgs{width: 40%; padding: 5px;}
 .chat-content #chatbox .msgSend .msgs .user-name{color: rgb(58, 58, 58);font-size: 20px;text-align: end;}
-.chat-content #chatbox .msgSend .msgs .msginner{border-radius: 10px 0px 10px 10px;background: #f4f4f4;margin: 10px 0px;padding: 5px 10px;}
+.chat-content #chatbox .msgSend .msgs .msginner{border-radius: 10px 0px 10px 10px;background: #dddddd;margin: 10px 0px;padding: 5px 10px;}
 .chat-content #chatbox .msgSend .msgs .msginner p{color: rgb(58, 58, 58);}
 .chat-content #chatbox .msgSend .msgs .chat-time{width: 100%;text-align: end;float: right;color: rgb(58, 58, 58);font-size: 14px;}
 .chat-inner-btn{display: flex;justify-content: space-between;padding: 10px 25px;align-items: center;}

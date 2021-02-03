@@ -36,11 +36,10 @@ function loginForm(){
     '<div id="loginform">
     <p>Please enter your name to continue!</p>
     <form action="#" method="post">
-      <label for="name">Name &mdash;</label>
-      <input type="text" name="name" id="name" />
-       <input type="text" name="email" id="name" />
-        <input type="text" name="phone" id="name" />
-         <input type="text" name="vb_id" id="name" value='. $_SESSION['vb_id'].' />
+      <input type="text" name="name" id="name" placeholder="Your Name here"/>
+       <input type="text" name="email" id="name" placeholder="Your E-mail here" />
+        <input type="text" name="phone" id="name" placeholder="Your Phone Number here"/>
+        <!-- <input type="text" name="vb_id" id="name" value='. $_SESSION['vb_id'].' /> --> 
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
   </div>';
@@ -80,6 +79,7 @@ function loginForm(){
     padding-bottom: 5px;
     background: #fff;
     width: 350px;
+    height:100%;
     overflow: hidden;
     max-width: 100%;
     border: 1px solid rgba(0,0,0,0.1);
@@ -98,7 +98,7 @@ function loginForm(){
    
   #loginform p {
     padding: 15px 25px;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
     font-family: sans-serif;
   }
@@ -119,7 +119,7 @@ function loginForm(){
    
   #usermsg {
     flex-basis: 70%;
-    width: 200px;
+    width: 160px;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.4);
     outline: none;
@@ -130,11 +130,11 @@ function loginForm(){
   #name {
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0.2);
-    padding: 2px 8px;
+    padding: 8px 8px;
     width: 100%;
     margin-top: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 30px;
     box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
   }
    
@@ -197,7 +197,7 @@ function loginForm(){
     flex-basis: 50%;
   }
   .chat-inner-btn .chat-text-button {
-    flex-basis: 26%;
+    flex-basis: 16%;
     margin-left: 10px;
     font-family: sans-serif;
     font-size: 18px;
@@ -316,10 +316,10 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     padding: 0px 5px;
     color: #3a3a3a;
     display: flex;
-    flex-wrap: wrap;
   }
   .msgIn .msgc .msginner p{
     display: flex;
+    width:100%;
     flex-wrap: wrap;
     font-size: 14px;
   }
@@ -356,14 +356,14 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     flex-direction: column;
     background: #eee;
     width: 300px;
-    height: 450px;
+    height: 400px;
     z-index: -123456;
     opacity: 0;
     transition: all .5s ease-in-out;
 }
 
 .chatbox--active {
-  transform: translateY(-40px);
+  transform: translateY(-5px);
   z-index: 123456;
   opacity: 1;
 }
@@ -372,6 +372,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index:9;
 }
 
 .chatbox .chatbox__button{
@@ -384,15 +385,46 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     font-size: 40px;
     font-weight: 600;
     padding: 5px;
-    border-radius: 50px;
+    background: transparent;
     border: none;
-    border: 1px solid rgba(0,0,0,0.2);
     outline:none;
+    cursor: pointer;
     transition:.3s ease;
 }
-.chatbox .chatbox__button button:hover{
-    background-color:#2979ff;
-    color:white;
+
+.chatbox__button button .CloseAplha{
+  padding:15px;
+  border-radius: 50%;
+  transition:.3s ease;
+}
+
+.chatbox__button button .CloseAplha:hover{
+  background: #2979ff;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.chatbox__button button .Close{
+  font-size:20px;
+  padding: 4px;
+  transition:.3s ease;
+}
+
+.chatbox__button button .Close:hover{
+  font-size: 20px;
+  background: #ec5e5e;
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+}
+
+.chatbox__button button .Close:hover .closespan{
+  color:white;
+} 
+
+.chatbox__button button .Close .closespan{
+  color: transparent;
 }
 
         </style>
@@ -533,7 +565,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
 const chatButton = document.querySelector('.chatbox__button');
 const chatContent = document.querySelector('.chatbox__support');
 const icons = {
-    isClicked: '</p class="Close">X</p>',
+    isClicked: '<p class="Close"><span class="closespan">Close</span> X</p>',
     isNotClicked: '<p class="CloseAplha"><i class="fa fa-comments" aria-hidden="true"></i></p>'
 }
 const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
