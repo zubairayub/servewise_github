@@ -178,14 +178,11 @@ header .hero-main .hero-right .hero-btn a:hover span{
   }
 
   .container .product-btn{
-    font-size: 20px;
-    color: blue;
+    font-size: 14px;
+    color: white;
     transition: .5s ease all;
   }
 
-  .container .product-btn:hover{
-      letter-spacing: 2px;
-  }
   
   .card .img {
     max-width: 220px;
@@ -339,8 +336,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
 }
 
 .homo-content .homo-product-card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    transform:scale(1.1) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .homopatic .homo-card-content{
@@ -357,9 +353,6 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homopatic .homo-content .homo-product-card .homo-card-btn{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
 }
 
 .homopatic .homo-content .homo-product-card .homo-btn{

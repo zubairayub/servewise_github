@@ -65,7 +65,7 @@ $('.sc-add-to-cart').on('click', function () {
                     'left': cart.offset().left + 10,
                     'width': 75,
                     'height': 75
-            }, 1500, 'easeInOutExpo');
+            }, 11500, 'easeInOutExpo');
             
             setTimeout(function () {
                 cart.effect("shake", {

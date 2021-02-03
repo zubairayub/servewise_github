@@ -1,3 +1,5 @@
+
+
 function updateSliderArrowsStatus(
     cardsContainer,
     containerWidth,
@@ -93,6 +95,11 @@ function updateSliderArrowsStatus(
       }
     });
   });
+
+
+  
   
 
   AOS.init();
+
+  

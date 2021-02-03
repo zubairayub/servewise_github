@@ -14,4 +14,17 @@
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
         });
+
+        //
+         
+// 
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+  } else {
+    document.getElementById("myNav").style.background = "transparent";
+  }
+}    
     </script>
