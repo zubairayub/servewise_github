@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2021 at 11:01 AM
+-- Generation Time: Feb 02, 2021 at 05:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.28
 
@@ -38,15 +38,6 @@ CREATE TABLE `users_chat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users_chat`
---
-
-INSERT INTO `users_chat` (`id`, `user_id`, `branch_id`, `text`, `datetime`, `status`) VALUES
-(1, 31, 14, 'Hello', '2021-02-02 14:16:51', 0),
-(2, 31, 14, 'Hi\r\nhow can i help you?', '2021-02-02 14:16:51', 1),
-(3, 31, 14, 'please let me know how to buy', '2021-02-02 14:16:51', 0);
-
---
 -- Indexes for dumped tables
 --
 
@@ -64,7 +55,7 @@ ALTER TABLE `users_chat`
 -- AUTO_INCREMENT for table `users_chat`
 --
 ALTER TABLE `users_chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

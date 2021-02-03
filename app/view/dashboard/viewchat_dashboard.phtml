@@ -5,10 +5,14 @@
     </div>
     <div class="chat-dashboard-main" data-aos="zoom-in-up" data-aos-duration="600">
 <div id="wrapper">
+
+          
+
             <div class="chat-content">
             <div id="menuChat">
-                <p class="welcome">Welcome, <br><!-- <b><?php echo $_SESSION['name']; ?></b> --></p>
-                <!-- <p class="logout"><a id="exit" href="#">Exit Chat</a></p> -->
+                <p class="welcome">Welcome <br></p>
+
+               
             </div>
  
             <div id="chatbox">
@@ -29,7 +33,7 @@
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                    $.post("../app/lib/chat.php", { text: clientmsg });
+                    $.post("../app/lib/chat.php", { text: clientmsg , user_id: <?php echo $_GET['user_id'] ?> });
                     $("#usermsg").val("");
                     return false;
                 });
@@ -48,6 +52,7 @@
                         data : postForm,
                         cache: false,
                         success: function (html) {
+                           
                             $("#chatbox").html(html); //Insert chat log into the #chatbox div
  
                             //Auto-scroll           

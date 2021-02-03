@@ -8,32 +8,33 @@
             <table>
                 <tr>
                     <th>Serial No.</th>
-                    <th>Date</th>
-                    <th>Title</th>
+                    
                     <th>Sender</th>
-                    <th>Receiver</th>
+                   
                     <th>Options</th>
                 </tr>
                 <?php
                 $count  = 1; 
                 if(count($data) > 0){
 foreach ($data as $key => $value) {
-    # code...
+    $userdata = getuserinfo($value['user_id'],'');
+    if(empty($userdata[0]['first_name'])){
+$username = 'Guest';
+    }else{
+        $username = $userdata[0]['first_name'];
+    }
 
                 ?>
                 <tr>
                     <td><?= $count ;?></td>
-                    <td>23/12/2020</td>
-                    <td>Nex</td>
-                    <td>John Adams</td>
-                    <td>Admin</td>
+                   
+                    <td><?= $username ?></td>
+                   
                     <td class="option">
                         <a href="?page=viewchat_dashboard&user_id=<?= $value['user_id'] ?>">
                         <i class="fa fa-eye" aria-hidden="true"></i> view
                         </a>
-                        <a href="#">
-                              <i class="fa fa-trash" aria-hidden="true"></i> Remove
-                        </a>
+                      
                   </td>
                 </tr>
                 <?php
