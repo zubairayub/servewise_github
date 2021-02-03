@@ -124,9 +124,139 @@ include 'include/header.php';
 }
 
 
+/* add to cart */
 
+.buttons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
 
+.cart-button {
+    position: relative;
+    outline: 0;
+    background: rgb(131,58,180);
+    background: linear-gradient(74deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    color: #fff;
+    border: none;
+    height: 48px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    line-height: 0px;
+    overflow: hidden;
+    cursor: pointer
+}
 
+.cart-button:focus {
+    outline: none !important
+}
+
+.cart-button .fa-cart-arrow-down {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -20%;
+    font-size: 1.8em;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button .fa-gift {
+    position: absolute;
+    z-index: 1;
+    top: -20%;
+    left: 53%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button span.added {
+    opacity: 0
+}
+
+.cart-button.clicked .fa-cart-arrow-down {
+    animation: cart 2s ease-in forwards
+}
+
+.cart-button.clicked .fa-gift {
+    animation: box 2s ease-in forwards
+}
+
+.cart-button.clicked span.add-to-cart {
+    animation: addcart 2s ease-in forwards
+}
+
+.cart-button.clicked span.added {
+    animation: added 2s ease-in forwards
+}
+
+@keyframes cart {
+    0% {
+        left: -10%
+    }
+
+    40%,
+    60% {
+        left: 50%
+    }
+
+    100% {
+        left: 110%
+    }
+}
+
+@keyframes box {
+
+    0%,
+    40% {
+        top: -20%
+    }
+
+    60% {
+        top: 36%;
+        left: 53%
+    }
+
+    100% {
+        top: 40%;
+        left: 112%
+    }
+}
+
+@keyframes addcart {
+
+    0%,
+    30% {
+        opacity: 1
+    }
+
+    30%,
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes added {
+
+    0%,
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
 
 
 
@@ -218,7 +348,14 @@ include 'include/header.php';
                 <div class="product-card-button product-buy">
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <div class="buttons"> 
+                        <button class="cart-button sc-add-to-cart product-btn"> 
+                            <span class="add-to-cart ">Add to cart</span> 
+                            <span class="added">Item added</span> 
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                        </button> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -304,7 +441,14 @@ include 'include/header.php';
                     <div class="product-card-button right-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <div class="buttons"> 
+                            <button class="cart-button sc-add-to-cart product-btn"> 
+                                <span class="add-to-cart ">Add to cart</span> 
+                                <span class="added">Item added</span> 
+                                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                <i class="fa fa-gift" aria-hidden="true"></i>
+                            </button> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -337,7 +481,14 @@ include 'include/header.php';
                 <div class="product-buy">
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <div class="buttons"> 
+                        <button class="cart-button sc-add-to-cart product-btn"> 
+                            <span class="add-to-cart ">Add to cart</span> 
+                            <span class="added">Item added</span> 
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                        </button> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -476,6 +627,10 @@ include 'include/header.php';
             </div>
         </div>
     </section>
+    <?php
+include '../../../../chat/index.php'; 
+
+?>
     
 
     </section>

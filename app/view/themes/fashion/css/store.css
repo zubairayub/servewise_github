@@ -167,8 +167,7 @@ nav{
 }
 
 .section-product-slider .card .product-content .product-buy{
-    display: flex;
-    justify-content: center;
+
     align-items: center ;
 }
 

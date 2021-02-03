@@ -10,16 +10,19 @@
 <!-- js lib end -->
 <script src="js/slick.min.js"></script>
 <script src="js/store.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" >
-  	
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
        <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
     <script type="text/javascript">
+    
         $(document).ready(function(){
         	
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
+               
+            document.addEventListener("DOMContentLoaded", function(event) {
+           
         });
+      });
     </script>
 </body>
 </html>
