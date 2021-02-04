@@ -1279,7 +1279,37 @@ if(!empty($dbclass)){
 
 }
 
+function getstock($vbid,$dbclass =  NULL,$type = null){
 
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if($type == 'Branch'){
+						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+				}elseif($type == 'Vendor'){
+						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+				}elseif($type == 'Admin'){
+					    $varr->query="SELECT * FROM `product` " ;
+				}
+				
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
 
 function getproducts($vbid,$dbclass =  NULL){
 
