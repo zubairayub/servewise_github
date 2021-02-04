@@ -36,10 +36,11 @@ function loginForm(){
     '<div id="loginform">
     <p>Please enter your name to continue!</p>
     <form action="#" method="post">
-      <input type="text" name="name" id="name" placeholder="Your Name here"/>
-       <input type="text" name="email" id="name" placeholder="Your E-mail here" />
-        <input type="text" name="phone" id="name" placeholder="Your Phone Number here"/>
-        <!-- <input type="text" name="vb_id" id="name" value='. $_SESSION['vb_id'].' /> --> 
+     
+      <input type="text" name="name" id="name" placeholder="Name" />
+       <input type="text" name="email" id="name" placeholder="Email" />
+        <input type="text" name="phone" id="name"  placeholder="Phone" />
+         <input type="hidden" name="vb_id" id="name" value='. $_SESSION['vb_id'].' />
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
   </div>';
@@ -51,17 +52,14 @@ function loginForm(){
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-
         <style>
             
    
   form {
-    padding: 0px 5px;
+    padding: 15px 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,9 +80,9 @@ function loginForm(){
     padding-bottom: 5px;
     background: #fff;
     width: 350px;
-    height:100%;
     overflow: hidden;
     max-width: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     border-radius: 4px;
     display: flex;
@@ -100,7 +98,7 @@ function loginForm(){
    
   #loginform p {
     padding: 15px 25px;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: bold;
     font-family: sans-serif;
   }
@@ -108,6 +106,7 @@ function loginForm(){
   #chatbox {
     text-align: left;
     margin: 0 auto;
+    margin-bottom: 5px;
     padding: 10px;
     background: #fff;
     height: 250px;
@@ -120,10 +119,9 @@ function loginForm(){
    
   #usermsg {
     flex-basis: 70%;
-    width: 160px;
+    width: 200px;
     border: none;
-    border-right: 1px solid rgba(0,0,0,0.4);
-    border-left: 1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
     outline: none;
     font-size: 20px;
     font-family: sans-serif;
@@ -132,10 +130,10 @@ function loginForm(){
   #name {
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0.2);
-    padding: 8px 8px;
+    padding: 2px 8px;
     width: 100%;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 10px;
     box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
   }
@@ -198,9 +196,9 @@ function loginForm(){
     margin: 5px 0px;
     flex-basis: 50%;
   }
-  .chat-inner-btn .send-btn-chat-box {
-    flex-basis: 30%;
-    display:flex;
+  .chat-inner-btn .chat-text-button {
+    flex-basis: 26%;
+    margin-left: 10px;
     font-family: sans-serif;
     font-size: 18px;
     color: #928c8c;
@@ -208,33 +206,13 @@ function loginForm(){
     border-radius: 4px;
     cursor: pointer;
     padding: 5px;
-    transition: .2s ease;
-  }
+    transition: .3s ease;
+}
 
-  .chat-inner-btn .send-btn-chat-box .fa-paper-plane{
-    transition:.3s ease;
-  }
-
-  .chat-inner-btn .send-btn-chat-box:hover .fa-paper-plane{
-    transform: rotate(400deg);
-  }
-
-  .chat-inner-btn .send-btn-chat-box:hover{
+  .chat-inner-btn .chat-text-button:hover{
     background-color: #2979ff;
     color: white;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
-  }
-  .chat-inner-btn .send-btn-chat-box:hover .chat-text-button{
-    color:white;
-    cursor:pointer;
-  }
-
-  .chat-inner-btn .send-btn-chat-box .chat-text-button{
-    border: none;
-    font-size: 18px;
-    padding-right: 4px;
-    background: transparent;
-    color: #545454;
   }
 
 
@@ -254,8 +232,10 @@ function loginForm(){
   }
 
   #chatbox .msgIn .msgc{
-    background-color: transparent;
+    background-color: #e0e0e0;
     width: 60%;
+    border-radius: 0px 10px 10px 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     padding: 5px;
     overflow: hidden;
     display: flex;
@@ -271,12 +251,16 @@ function loginForm(){
   }
 
   #chatbox .msgSend .msgs{
+    background: rgb(41,121,255);
+background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
     width: 60%;
+    border-radius: 10px 0px 10px 10px;
     padding: 5px;
     overflow: hidden;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
   }
    
   .msgIn .left-info{
@@ -304,7 +288,7 @@ function loginForm(){
     text-align: end;
   }
   .msgSend span.chat-time {
-    color: #3a3a3a;
+    color: white;
     font-size: 60%;
     vertical-align: super;
     width: 100%;
@@ -328,18 +312,14 @@ function loginForm(){
   .msgIn .msgc .msginner{
     text-align: start;
     font-size: 20px;
-    margin: 5px 0px;
-    border-radius: 0px 10px 10px 10px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-    background:#d8d8d8;
-    width:100%;
-    padding: 5px 5px;
+    margin-top: 5px;
+    padding: 0px 5px;
     color: #3a3a3a;
     display: flex;
+    flex-wrap: wrap;
   }
   .msgIn .msgc .msginner p{
     display: flex;
-    width:100%;
     flex-wrap: wrap;
     font-size: 14px;
   }
@@ -349,18 +329,12 @@ function loginForm(){
   #chatbox .msgSend .user-name{
     width: 100%;
     background-color: transparent;
-    text-align:end;
-    color: #3a3a3a;
+    color: white;
   }
   .msgSend .msgs .msginner{
     text-align: start;
     font-size: 20px;
-    width:100%;
-    border-radius: 10px 0px 10px 10px;
-    background: rgb(41,121,255);
-    background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
     margin: 5px 0px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     padding: 0px 5px;
     color: white;
     display: flex;
@@ -382,17 +356,14 @@ function loginForm(){
     flex-direction: column;
     background: #eee;
     width: 300px;
-    height: 350px;
+    height: 450px;
     z-index: -123456;
-    border-radius: 20px 20px 4px 4px;
-    overflow:hidden;
-    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
     opacity: 0;
     transition: all .5s ease-in-out;
 }
 
 .chatbox--active {
-  transform: translateY(-5px);
+  transform: translateY(-40px);
   z-index: 123456;
   opacity: 1;
 }
@@ -401,7 +372,6 @@ function loginForm(){
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index:9;
 }
 
 .chatbox .chatbox__button{
@@ -414,56 +384,15 @@ function loginForm(){
     font-size: 40px;
     font-weight: 600;
     padding: 5px;
-    background: transparent;
+    border-radius: 50px;
     border: none;
+    border: 1px solid rgba(0,0,0,0.2);
     outline:none;
-    cursor: pointer;
     transition:.3s ease;
 }
-
-.chatbox__button button .CloseAplha{
-  padding:15px;
-  border-radius: 50%;
-  transition:.3s ease;
-}
-
-.chatbox__button button .CloseAplha:hover{
-  background: #2979ff;
-    color: white;
-    border-radius: 50%;
-    padding: 15px;
-}
-
-.chatbox__button button .Close{
-  font-size:20px;
-  padding: 4px;
-  transition:.3s ease;
-}
-
-.chatbox__button button .Close:hover{
-  font-size: 20px;
-  background: #ec5e5e;
-  border-radius: 4px;
-  padding: 4px;
-  color: white;
-}
-
-.chatbox__button button .Close:hover .closespan{
-  color:white;
-} 
-
-.chatbox__button button .Close .closespan{
-  color: transparent;
-}
-
-@media (max-width:600px){
-.chatbox__support {display: none;}
-.chatbox--active {display:flex;}
-}
-
-@media (max-width:400px){
-.chatbox__support {display: none;}
-.chatbox--active {display:flex;}
+.chatbox .chatbox__button button:hover{
+    background-color:#2979ff;
+    color:white;
 }
 
         </style>
@@ -489,11 +418,7 @@ function loginForm(){
     
                 <form class="chat-inner-btn" name="message" action="">
                     <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
-                    <div class="send-btn-chat-box" id="submitmsg">
-                    <input class="chat-text-button" name="submitmsg" type="submit"  value="Send" />
-                    <i class="fa fa-paper-plane"></i>
-                    </div>
-                    
+                    <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
                 </form>
                 </div>
     <?php } ?>
@@ -608,7 +533,7 @@ function loginForm(){
 const chatButton = document.querySelector('.chatbox__button');
 const chatContent = document.querySelector('.chatbox__support');
 const icons = {
-    isClicked: '<p class="Close"><span class="closespan">Close</span> X</p>',
+    isClicked: '</p class="Close">X</p>',
     isNotClicked: '<p class="CloseAplha"><i class="fa fa-comments" aria-hidden="true"></i></p>'
 }
 const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);

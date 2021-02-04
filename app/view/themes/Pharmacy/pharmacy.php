@@ -344,7 +344,7 @@ include 'include/header.php';
                     <div class="product-card-button item">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <div class="buttons"> <button class="cart-button sc-add-to-cart product-btn"> <span class="add-to-cart ">Add to cart</span> <span class="added">Item added</span> <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> </button> </div>
+                        <div class="buttons"> <button class="cart-button sc-add-to-cart product-btn"> <span class="add-to-cart ">Add to cart</span> <span class="added">click to add more</span> <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> </button> </div>
                     </div>
                </div>
             </div>   
@@ -424,7 +424,7 @@ include 'include/header.php';
                         <div class="buttons">
                             <button class="cart-button sc-add-to-cart product-btn"> 
                                 <span class="add-to-cart ">Add to cart</span> 
-                                <span class="added">Item added</span> 
+                                <span class="added">click to add more</span> 
                                 <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> 
                             </button> 
                         </div>
@@ -466,7 +466,7 @@ include 'include/header.php';
                         <div class="buttons">
                             <button class="cart-button sc-add-to-cart product-btn"> 
                                 <span class="add-to-cart ">Add to cart</span> 
-                                <span class="added">Item added</span> 
+                                <span class="added">click to add more</span> 
                                 <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> 
                             </button> 
                         </div>
@@ -514,7 +514,7 @@ include 'include/header.php';
                         <div class="buttons">
                             <button class="cart-button sc-add-to-cart product-btn"> 
                                 <span class="add-to-cart ">Add to cart</span> 
-                                <span class="added" onclick="cartClick()">Item added</span> 
+                                <span class="added">click to add more </span> 
                                 <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> 
                             </button> 
                         </div>
@@ -558,7 +558,7 @@ button.addEventListener('click',cartClick);
 
 function cartClick(){
 let button =this;
-button.classList.add('clicked');
+button.classList.toggle('clicked');
 }
 
 
