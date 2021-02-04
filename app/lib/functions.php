@@ -893,6 +893,43 @@ function getsubsubcategorybyid($ssc_id = NULL){
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 	return $result;
 }
+
+
+function getcustomerlist($vb_id =  NULL, $type = null){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if($type == 'Branch'){
+						$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` where branch_id = '$vb_id' ";
+   
+				   }elseif($type == 'Vendor'){
+						$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` where vendor_id = '$vb_id' ";
+					
+						
+				   }elseif($type == 'Admin'){
+
+					$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` ";
+
+				   }else{
+
+				   	return 0;
+				   }	
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+					
+				return  $result;
+	
+	}
+
+
 function getcustomerinfo($user_id =  NULL){
 
 	if(!empty($dbclass)){
