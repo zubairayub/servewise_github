@@ -1297,7 +1297,9 @@ if(!empty($dbclass)){
 				if($type == 'Branch'){
 						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
 				}elseif($type == 'Vendor'){
-						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+						$varr->query="SELECT *
+FROM branch
+INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";
 				}elseif($type == 'Admin'){
 					    $varr->query="SELECT * FROM `product` " ;
 				}
