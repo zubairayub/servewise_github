@@ -51,6 +51,7 @@ function loginForm(){
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
@@ -455,6 +456,16 @@ function loginForm(){
   color: transparent;
 }
 
+@media (max-width:600px){
+.chatbox__support {display: none;}
+.chatbox--active {display:flex;}
+}
+
+@media (max-width:400px){
+.chatbox__support {display: none;}
+.chatbox--active {display:flex;}
+}
+
         </style>
     </head>
     <body>
@@ -539,7 +550,7 @@ function loginForm(){
                     });
                 }
  
-                setInterval (loadLog, 11500);
+                setInterval (loadLog, 1500);
 
 
 <?php

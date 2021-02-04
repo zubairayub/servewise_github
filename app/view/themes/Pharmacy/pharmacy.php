@@ -137,7 +137,7 @@ include 'include/header.php';
 .cart-button {
     position: relative;
     outline: 0;
-    background-color: blue;
+    background-color: #4949f5;
     color: #fff;
     border: none;
     height: 48px;
@@ -328,13 +328,18 @@ include 'include/header.php';
                 <div class="container-alpha">
                     <h4>
                         <h4 class="aplha-head" data-name="product_name"><?php echo $value['name'] ; ?></h4>
-                        
-                        <span><?php echo $value['description'] ; ?></span>
-                        
-                        <div class="form-group2">
-                            <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                        <div class="disc-feature-product-phy">
+                            <span><?php echo $value['description'] ; ?></span>
                         </div>
-                        <span>$</span><?php echo $value['price'] ; ?>
+                        <div class="form-group2">
+                            <p>Quantity</p><input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                        </div>
+                        <div class="feature-product-phy-price">
+                            <p>Price</p>    
+                            <div class="f-p-p-value">
+                                <span>$</span><?php echo $value['price'] ; ?>
+                            </div>
+                        </div>
                     </h4>
                     <div class="product-card-button item">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />

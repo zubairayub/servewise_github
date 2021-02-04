@@ -530,6 +530,54 @@ header .hero-main .hero-right .hero-btn a:hover span{
     letter-spacing: 4px;
 }
 
+.container-alpha .disc-feature-product-phy{    
+    padding: 4px 4px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.container-alpha .form-group2{
+    display: flex;
+    align-items: center;
+    padding: 14px 4px;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.container-alpha .form-group2 p{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.container-alpha .form-group2 .sc-cart-item-qty{
+    border: 1px dashed rgba(0,0,0,0.5);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 18px;
+    width: 50px;
+    color: darkorange;
+    margin-left: 10px;
+}
+
+.container-alpha .feature-product-phy-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px;
+}
+.container-alpha .feature-product-phy-price p{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container-alpha .feature-product-phy-price .f-p-p-value{
+    font-size: 24px;
+}
+
+.container-alpha .feature-product-phy-price .f-p-p-value span{
+    color: green;
+    font-size: 18px;
+}
+
 /* media res */
 
 @media (max-width:1000px){
@@ -860,6 +908,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:600px){
@@ -890,6 +939,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:575px){
@@ -920,6 +970,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:550px){
@@ -950,6 +1001,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:525px){
@@ -980,6 +1032,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:500px){
@@ -1010,6 +1063,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:475px){
@@ -1040,6 +1094,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 
@@ -1071,6 +1126,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:425px){
@@ -1101,6 +1157,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:400px){
@@ -1125,12 +1182,13 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homo-content .homo-product-card .homo-card-upper {height: 100px;overflow: hidden;}
     .homo-content .homo-product-card .homo-card-upper img {height: 100px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:375px){
