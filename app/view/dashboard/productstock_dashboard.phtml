@@ -18,10 +18,13 @@
                         <th>Selling Price</th>
                     
                         <th>Stock left</th>
+                        <th>Branch</th>
+
                     </tr>
                     <?php
                     $count = 1;
                     foreach ($data as $key => $value) {
+                  $branch_data =      getbranchbybranchid('',$value['vb_id']) ;
                         ?>
  <tr>
                         <td><?= $count ?></td>
@@ -31,6 +34,7 @@
                         <td><?= $value['price'] ?></td>
                        
                         <td><?= $value['quantity'] ?></td>
+                        <td><?= $branch_data[0]['name']; ?></td>
                     </tr>
 
                         <?php
