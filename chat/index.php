@@ -36,10 +36,10 @@ function loginForm(){
     '<div id="loginform">
     <p>Please enter your name to continue!</p>
     <form action="#" method="post">
-      <input type="text" name="name" id="name" placeholder="Your Name here" />
+      <input type="text" name="name" id="name" placeholder="Your Name here "/>
        <input type="text" name="email" id="name" placeholder="Your E-mail here" />
-        <input type="text" name="phone" id="name"  placeholder="Your Phone Number here" />
-         <input type="hidden" name="vb_id" id="name" value='. $_SESSION['vb_id'].' />
+        <input type="text" name="phone" id="name" placeholder="Your Phone Number Here"/>
+        <input type="hidden" name="vb_id" id="name" value='. $_SESSION['vb_id'].' />
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
   </div>';
@@ -51,7 +51,6 @@ function loginForm(){
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
@@ -605,7 +604,7 @@ function loginForm(){
 const chatButton = document.querySelector('.chatbox__button');
 const chatContent = document.querySelector('.chatbox__support');
 const icons = {
-  isClicked: '<p class="Close"><span class="closespan">Close</span> X</p>',
+    isClicked: '<p class="Close"><span class="closespan">Close</span> X</p>',
     isNotClicked: '<p class="CloseAplha"><i class="fa fa-comments" aria-hidden="true"></i></p>'
 }
 const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
