@@ -325,9 +325,9 @@ include 'include/header.php';
               ?>
             <div class="card sc-product-item items">
                 <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
-                <div class="container">
+                <div class="container-alpha">
                     <h4>
-                        <h4 data-name="product_name"><?php echo $value['name'] ; ?></h4>
+                        <h4 class="aplha-head" data-name="product_name"><?php echo $value['name'] ; ?></h4>
                         
                         <span><?php echo $value['description'] ; ?></span>
                         
@@ -509,7 +509,7 @@ include 'include/header.php';
                         <div class="buttons">
                             <button class="cart-button sc-add-to-cart product-btn"> 
                                 <span class="add-to-cart ">Add to cart</span> 
-                                <span class="added">Item added</span> 
+                                <span class="added" onclick="cartClick()">Item added</span> 
                                 <i class="fa fa-shopping-basket"></i> <i class="fa fa-square"></i> 
                             </button> 
                         </div>
@@ -529,7 +529,6 @@ include 'include/header.php';
     </section>
     <?php
 include '../../../../chat/index.php'; 
-
 ?>
 
     <?php  include 'include/footer.php'; ?>

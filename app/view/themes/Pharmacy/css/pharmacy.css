@@ -21,6 +21,22 @@ a{
     overflow: hidden;
 }
 
+.container-alpha{
+    max-width: 1280px;
+    margin: auto;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.container-alpha .aplha-head{
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
+    font-size: 20px;
+    padding: 10px 0px;
+    color: #2b7a8c;
+}
+
 /* header */
 header{
     width: 100%;

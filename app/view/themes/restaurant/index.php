@@ -31,12 +31,17 @@ include 'include/header.php';
                             </li>
                             <li><a href="./contact.html">Contact</a></li>
                             <li>
-                            <a>Cart</a>
+                            <div id="menuToggle">
+                        <input type="checkbox" class="checkbox" />
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <ul id="menu">
                             <!-- Cart submit form -->
                             <form action="../assets/cart/viewcart.php" method="POST"> 
                             <!-- SmartCart element -->
                                 <div id="smartcart"></div>
-                            </form>
+                            </form>  
+                        </ul>
+                            
                             </li>
                         </ul>
                     </div>

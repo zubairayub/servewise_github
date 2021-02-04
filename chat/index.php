@@ -54,11 +54,13 @@ function loginForm(){
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
         <style>
             
    
   form {
-    padding: 15px 25px;
+    padding: 0px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +84,6 @@ function loginForm(){
     height:100%;
     overflow: hidden;
     max-width: 100%;
-    border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     border-radius: 4px;
     display: flex;
@@ -106,7 +107,6 @@ function loginForm(){
   #chatbox {
     text-align: left;
     margin: 0 auto;
-    margin-bottom: 5px;
     padding: 10px;
     background: #fff;
     height: 250px;
@@ -121,7 +121,8 @@ function loginForm(){
     flex-basis: 70%;
     width: 160px;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border-right: 1px solid rgba(0,0,0,0.4);
+    border-left: 1px solid rgba(0,0,0,0.4);
     outline: none;
     font-size: 20px;
     font-family: sans-serif;
@@ -134,7 +135,7 @@ function loginForm(){
     width: 100%;
     margin-top: 10px;
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
   }
    
@@ -196,9 +197,9 @@ function loginForm(){
     margin: 5px 0px;
     flex-basis: 50%;
   }
-  .chat-inner-btn .chat-text-button {
-    flex-basis: 16%;
-    margin-left: 10px;
+  .chat-inner-btn .send-btn-chat-box {
+    flex-basis: 30%;
+    display:flex;
     font-family: sans-serif;
     font-size: 18px;
     color: #928c8c;
@@ -206,13 +207,33 @@ function loginForm(){
     border-radius: 4px;
     cursor: pointer;
     padding: 5px;
-    transition: .3s ease;
-}
+    transition: .2s ease;
+  }
 
-  .chat-inner-btn .chat-text-button:hover{
+  .chat-inner-btn .send-btn-chat-box .fa-paper-plane{
+    transition:.3s ease;
+  }
+
+  .chat-inner-btn .send-btn-chat-box:hover .fa-paper-plane{
+    transform: rotate(400deg);
+  }
+
+  .chat-inner-btn .send-btn-chat-box:hover{
     background-color: #2979ff;
     color: white;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  }
+  .chat-inner-btn .send-btn-chat-box:hover .chat-text-button{
+    color:white;
+    cursor:pointer;
+  }
+
+  .chat-inner-btn .send-btn-chat-box .chat-text-button{
+    border: none;
+    font-size: 18px;
+    padding-right: 4px;
+    background: transparent;
+    color: #545454;
   }
 
 
@@ -232,10 +253,8 @@ function loginForm(){
   }
 
   #chatbox .msgIn .msgc{
-    background-color: #e0e0e0;
+    background-color: transparent;
     width: 60%;
-    border-radius: 0px 10px 10px 10px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     padding: 5px;
     overflow: hidden;
     display: flex;
@@ -251,16 +270,12 @@ function loginForm(){
   }
 
   #chatbox .msgSend .msgs{
-    background: rgb(41,121,255);
-background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
     width: 60%;
-    border-radius: 10px 0px 10px 10px;
     padding: 5px;
     overflow: hidden;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
   }
    
   .msgIn .left-info{
@@ -288,7 +303,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     text-align: end;
   }
   .msgSend span.chat-time {
-    color: white;
+    color: #3a3a3a;
     font-size: 60%;
     vertical-align: super;
     width: 100%;
@@ -312,8 +327,12 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
   .msgIn .msgc .msginner{
     text-align: start;
     font-size: 20px;
-    margin-top: 5px;
-    padding: 0px 5px;
+    margin: 5px 0px;
+    border-radius: 0px 10px 10px 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    background:#d8d8d8;
+    width:100%;
+    padding: 5px 5px;
     color: #3a3a3a;
     display: flex;
   }
@@ -329,12 +348,18 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
   #chatbox .msgSend .user-name{
     width: 100%;
     background-color: transparent;
-    color: white;
+    text-align:end;
+    color: #3a3a3a;
   }
   .msgSend .msgs .msginner{
     text-align: start;
     font-size: 20px;
+    width:100%;
+    border-radius: 10px 0px 10px 10px;
+    background: rgb(41,121,255);
+    background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 100%);
     margin: 5px 0px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
     padding: 0px 5px;
     color: white;
     display: flex;
@@ -356,8 +381,11 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     flex-direction: column;
     background: #eee;
     width: 300px;
-    height: 400px;
+    height: 350px;
     z-index: -123456;
+    border-radius: 20px 20px 4px 4px;
+    overflow:hidden;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
     opacity: 0;
     transition: all .5s ease-in-out;
 }
@@ -450,7 +478,11 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
     
                 <form class="chat-inner-btn" name="message" action="">
                     <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
-                    <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+                    <div class="send-btn-chat-box" id="submitmsg">
+                    <input class="chat-text-button" name="submitmsg" type="submit"  value="Send" />
+                    <i class="fa fa-paper-plane"></i>
+                    </div>
+                    
                 </form>
                 </div>
     <?php } ?>
@@ -507,7 +539,7 @@ background: linear-gradient(274deg, rgba(41,121,255,1) 0%, rgba(80,143,249,1) 10
                     });
                 }
  
-                setInterval (loadLog, 1500);
+                setInterval (loadLog, 11500);
 
 
 <?php
