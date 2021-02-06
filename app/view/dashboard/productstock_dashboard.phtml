@@ -15,10 +15,12 @@
                         <th>Product Name</th>
                    
                         <th>Purchase Price</th>
+                        <th>Purchased from</th>
                         <th>Selling Price</th>
-                    
+                        <th>Quantity purchased</th>
                         <th>Stock left</th>
                         <th>Branch</th>
+                        <th>Vendor</th>
 
                     </tr>
                     <?php
@@ -30,11 +32,12 @@
                         <td><?= $count ?></td>
                         <td><?= $value['name'] ?></td>
                         <td>100$</td>
-                     
+                        <td>Karachi</td>
                         <td><?= $value['price'] ?></td>
-                       
                         <td><?= $value['quantity'] ?></td>
-                        <td><?= $branch_data[0]['name']; ?></td>
+                        <td>100/pc</td>
+                        <?= $branch_data[0]['name']; ?>
+                        <td>vendor</td>
                     </tr>
 
                         <?php

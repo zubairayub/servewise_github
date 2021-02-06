@@ -333,12 +333,13 @@ function loginForm(){
     padding: 5px 5px;
     color: #3a3a3a;
     display: flex;
+    flex-wrap:wrap;
   }
   .msgIn .msgc .msginner p{
     display: flex;
     width:100%;
     flex-wrap: wrap;
-    font-size: 14px;
+    font-size: 16px;
   }
 
 
@@ -468,7 +469,7 @@ function loginForm(){
     <body>
     <!--  -->
         <div class="chatbox">
-            <div class="chatbox__support">
+            <div class="chatbox__support chatbox--active">
             <?php 
             if(!isset($_SESSION['name'])){
         loginForm();
@@ -580,10 +581,10 @@ function loginForm(){
 
     showOrHideChatBox(chatbox, button) {
         if(this.state) {
-            chatbox.classList.add('chatbox--active')
+            chatbox.classList.remove('chatbox--active')
             this.toggleIcon(true, button);
         } else if (!this.state) {
-            chatbox.classList.remove('chatbox--active')
+            chatbox.classList.add('chatbox--active')
             this.toggleIcon(false, button);
         }
     }
@@ -593,9 +594,9 @@ function loginForm(){
         let b = button.children[0].innerHTML;
 
         if(state) {
-            button.children[0].innerHTML = isClicked; 
+            button.children[0].innerHTML = isNotClicked; 
         } else if(!state) {
-            button.children[0].innerHTML = isNotClicked;
+            button.children[0].innerHTML = isClicked;
         }
     }
 }

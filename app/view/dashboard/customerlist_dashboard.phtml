@@ -16,10 +16,13 @@
 					  <table class="table table-bordered" id="clientstable">
 					
 						<thead class="bg-info">
-							<th>First Name</th>
-							<th>Email</th>
-							<th>Branch</th>
-							<th>Vendor</th>
+							<th>Serial No.</th>
+							<th>Name <i class="fa fa-user" aria-hidden="true"></i></th>
+							<th>Email <i class="fa fa-envelope" aria-hidden="true"></i></th>
+							<th>Phone <i class="fa fa-mobile" aria-hidden="true"></i></th>
+							<th>Brand <i class="fa fa-product-hunt" aria-hidden="true"></i></th>
+							<th>Vendor <i class="fa fa-building-o" aria-hidden="true"></i></th>
+							<th>Option <i class="fa fa-cogs" aria-hidden="true"></i></th>
                            
                         </thead> 
                    
@@ -28,7 +31,7 @@
 
 					   if(!empty($data)){
 
-					   	$count = 0;
+					   	$count = 1;
 
 					   foreach ($data as $key => $value) {
 					   	$user_data = getuserinfo($value['user_id'],'');
@@ -47,10 +50,17 @@
 
 <tr>
 
+	<td><?= $count ?></td>
 	<td><?= $username ?></td>
 	<td><?= $user_data[0]['email_id'] ?></td>
-	<td><?= $branch_data[0]['name'] ?></td>
+	<td>(00) +123 123123123</td>
+	<td>Nike</td>
+	<!-- <td><?= $branch_data[0]['name'] ?></td> -->
 	<td><?= $vendor_data[0]['name'] ?></td>
+	<td>
+		<a href="#">Edit</a>
+		<a href="#">view</a>
+	</td>
 	
 
 </tr>

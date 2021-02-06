@@ -49,28 +49,31 @@ header .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
+    padding: 0px 30px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .nav .nav-logo{
     width: 100px;
     overflow: hidden;
+    flex-basis:70%;
 }
 
 header .nav .nav-logo img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 header .nav .navigation{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-basis: 30%;
 }
 
 header .nav .navigation a{
     padding: 0px 40px;
-    font-size: 24px;
+    font-size: 18px;
     transition: .5s ease all;
 }
 
@@ -81,6 +84,7 @@ header .nav .navigation a:hover{
 }
 
 header .hero-main {
+    margin-top:50px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -615,7 +619,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 400px;}
@@ -705,7 +709,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 300px;}
@@ -947,7 +951,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 300px;}
@@ -1009,7 +1013,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1040,7 +1044,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1071,7 +1075,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1103,7 +1107,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1134,7 +1138,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1165,7 +1169,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -40px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
