@@ -1094,6 +1094,42 @@ if(!empty($dbclass)){
 
 
 }
+
+
+function getorderamount($dbclass = null, $user_id = null , $type){
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+ 				$query;
+		 		$db;	
+				
+		
+				$varr = new databaseManager();
+
+				if($type == 'Admin'){
+  						$varr->query="SELECT sum(amount) as totalamount FROM `invoice`    ";	
+				}elseif($type == 'Vendor'){
+					  	$varr->query="SELECT sum(amount) as totalamount FROM `invoice`   ";	
+
+				}elseif($type == 'Branch'){
+					  	$varr->query="SELECT sum(amount) as totalamount FROM `invoice`  ";	
+
+				}
+	          
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+			    return  $result;
+
+
+
+
+}
+
+
+
+
 function getorderamountbyorderid($dbclass = null, $order_id){
 if(!empty($dbclass)){
 
@@ -1153,6 +1189,55 @@ if(!empty($dbclass)){
 
 
 
+function progress_dashboard_weekly($dbcalss = null,$user_id =  NULL,$type =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		$y_orders = 100;
+
+		
+				$varr = new databaseManager();
+
+				if(empty($user_id)){
+	                 $varr->query="SELECT id FROM order_details
+							WHERE datetime >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
+							AND datetime < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
+
+				}else{
+
+					
+
+					if($type == 'Branch'){
+							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ORDER BY id DESC ";
+
+					}
+					elseif($type == 'Vendor'){
+
+							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ORDER BY id DESC ";
+
+					}elseif($type == 'User'){
+							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  ORDER BY id DESC";
+
+					}
+				
+
+				}
+					
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
 
 
 function getorders($user_id =  NULL,$type =  NULL){
@@ -1169,22 +1254,22 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(empty($user_id)){
-	                 $varr->query="SELECT * FROM `order_details` ";
+	                 $varr->query="SELECT * FROM `order_details` ORDER BY id DESC ";
 
 				}else{
 
 					
 
 					if($type == 'Branch'){
-							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ";
+							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ORDER BY id DESC ";
 
 					}
 					elseif($type == 'Vendor'){
 
-							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ";
+							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ORDER BY id DESC ";
 
 					}elseif($type == 'User'){
-							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id ";
+							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  ORDER BY id DESC";
 
 					}
 				
@@ -1313,6 +1398,71 @@ INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.v
 
 }
 
+
+function getoutofstockproducts($vbid,$dbclass =  NULL){
+
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(!empty($vbid)){
+				$varr->query="SELECT * FROM `product` where vb_id=$vbid AND quantity < 5";
+
+				}else{
+					$varr->query="SELECT * FROM `product` where quantity < 5 ";
+				}
+						
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+
+function getproductsamount($vbid,$dbclass =  NULL){
+
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(!empty($vbid)){
+				$varr->query="SELECT sum(price) as productamount FROM `product` where vb_id=$vbid ";
+
+				}else{
+					$varr->query="SELECT sum(price) as productamount FROM `product` ";
+				}
+						
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
 function getproducts($vbid,$dbclass =  NULL){
 
 
@@ -1328,8 +1478,13 @@ if(!empty($dbclass)){
 		
 				$varr = new databaseManager();
 
-				
-						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+				if(!empty($vbid)){
+				$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+
+				}else{
+					$varr->query="SELECT * FROM `product` ";
+				}
+						
 
 				
 		

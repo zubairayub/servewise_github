@@ -4,70 +4,88 @@
 
 	<!-- main content -->
 	<div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>132</h3>
-					<p>Order Placed</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>156</h3>
-					<p>Number of Visitors</p>
-				</div>
-			</div>
-		</div>
+		<?= $first_row ?>
+		<?= $second_row ?>
+		
 		<div class="row">
 			<div class="col-8 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Placed Order:
+							Recent Orders:
 						</h3>
 						<i class="fa fa-ellipsis-h"></i>
 					</div>
 					<div class="card-content">
-						<table>
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Product Name</th>
-									<th>Product Description</th>
-									<th>Price</th>
-									<th>Quantity Ordered</th>
-									<th>Quantity In Stock</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>t-shirt</td>
-									<td>Red color</td>
-									<td>
-                                        $20
-									</td>
-									<td>2</td>
-									<td>20</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>jeans</td>
-									<td>Gray shadded</td>
-									<td>
-                                        $35
-									</td>
-									<td>11</td>
-									<td>50</td>
-								</tr>
-							</tbody>
-						</table>
+						 <table>
+                <tr>
+                    <th>Serial.No</th>
+                    <th>Order Code</th>
+                 
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Delivery Status</th>
+                    <th>Payment Status</th>
+                    <th>Option</th>
+                </tr>
+                
+                    <?php  
+
+                        if (!empty($recent_orders)){
+                            $count = 1;
+                            
+                    foreach ($recent_orders as $key => $value) { 
+                    	if($count < 5){
+                           $orderdata =  getordersdetailsbyid('',$value['id'],$value['branch_id']);
+                           if(!empty($orderdata)){
+                           $product_data = getproductnamebyid($orderdata[0]['product_id']);
+                           $customer_data = getuserinfo($value['user_id'],'');
+                           $invoice_datails = getorderamountbyorderid('',$value['id']);
+                          $status_datails =  getorderstatusbyorderid('',$value['id']);
+                           if($invoice_datails[0]['status'] == 0){
+                            $status_payment = 'Unpaid';
+
+                           }else{
+
+                           $status_payment = 'Paid';
+
+                           }
+
+
+                           if($customer_data[0]['first_name'] == ''){
+$customer_name =   'Guest User' ;
+
+                           }else{
+
+                          $customer_name =   $customer_data[0]['first_name'] .' '. $customer_data[0]['last_name'] ;
+                           }
+                          ?> 
+                        <tr>
+                        <td><?php echo $count;?></td>
+                    <td><?php echo $value['id'];?></td>
+                   
+                    <td><?php echo  $customer_name ;?></td>
+                    <td><?php echo $invoice_datails[0]['amount'];?></td>
+                    <td><?php echo $status_datails[0]['title'];?></td>
+                    <td><?php echo $status_payment; ?></td>
+                    <td class="option">
+                        <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
+                        <i class="fa fa-eye" aria-hidden="true"></i> view
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                        </a>
+                    </td>
+                </tr>
+                       
+                    <?php  
+                    $count ++;
+                } }else{
+                	   break;
+                } } } ?>
+                    
+               
+            </table>
 					</div>
 				</div>
 			</div>
@@ -79,51 +97,7 @@
 						</h3>
 						<i class="fa fa-ellipsis-h"></i>
 					</div>
-					<div class="card-content">
-						<div class="progress-wrapper">
-							<p>
-								Weekly Sales 
-								<span class="float-right">321 $</span>
-							</p>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Delivered
-								<span class="float-right"> 70%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:70%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								On the way to Client
-								<span class="float-right"> 80%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:80%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Returned
-								<span class="float-right"> 10%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:10%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Pickup in Store
-								<span class="float-right"> ( 20 / 18)</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:70%"></div>
-							</div>
-						</div>
-						</div>
-					</div>
+					<?= $weekly_sales ;?>
 				</div>
 			</div>
 		</div>
