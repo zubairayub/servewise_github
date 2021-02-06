@@ -1110,12 +1110,18 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if($type == 'Admin'){
-  						$varr->query="SELECT sum(amount) as totalamount FROM `invoice`    ";	
+  						$varr->query="SELECT sum(amount) as totalamount FROM `invoice`     ";	
+
+
+
+
 				}elseif($type == 'Vendor'){
-					  	$varr->query="SELECT sum(amount) as totalamount FROM `invoice`   ";	
+					   $varr->query="SELECT sum(invoice.amount) as totalamount FROM `invoice` INNER JOIN order_details where  order_details.Vendor_id = '$user_id'  AND  order_details.id = invoice.order_id";	
 
 				}elseif($type == 'Branch'){
-					  	$varr->query="SELECT sum(amount) as totalamount FROM `invoice`  ";	
+					  	
+
+					  	 $varr->query="SELECT sum(invoice.amount) as totalamount FROM `invoice` INNER JOIN order_details where  order_details.branch_owner_id = '$user_id'  AND  order_details.id = invoice.order_id";	
 
 				}
 	          
@@ -1205,22 +1211,66 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(empty($user_id)){
-	                 $varr->query="SELECT *FROM order_details WHERE YEARWEEK(datetime) = YEARWEEK(NOW())";
+	                
+	                 $weekly_order = $varr->query="SELECT *FROM order_details WHERE YEARWEEK(datetime) = YEARWEEK(NOW())";
 
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+				
 				}else{
 
 					
 
 					if($type == 'Branch'){
-							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC ";
+							
+
+							 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.branch_owner_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+
+
+
+
+
+
+
 
 					}
 					elseif($type == 'Vendor'){
 
-							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC ";
+							
+
+
+
+								 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.Vendor_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+
+
+
 
 					}elseif($type == 'User'){
-							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC";
+							
+
+
+								 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.user_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
 
 					}
 				
@@ -1230,10 +1280,24 @@ if(!empty($dbclass)){
 				
 		
 		
-				$result=$varr->executeQuery($varr->query,array(),"sread");
+				$weekly_deliverd_order =$varr->executeQuery($weekly_deliverd_order,array(),"sread");
+				$weekly_order =$varr->executeQuery($weekly_order,array(),"sread");
 
-				$weekly_order = count($result);
+				$weekly_route_order =$varr->executeQuery($weekly_route_order,array(),"sread");
+				$weekly_returned_order =$varr->executeQuery($weekly_returned_order,array(),"sread");
+				$weekly_store_pickup_order =$varr->executeQuery($weekly_store_pickup_order,array(),"sread");
 
+				
+				$result['weekly_deliverd_order'] = count($weekly_deliverd_order);
+				$result['weekly_order'] = count($weekly_order);
+				$result['weekly_route_order'] = count($weekly_route_order);
+				$result['weekly_returned_order'] = count($weekly_returned_order);
+				$result['weekly_store_pickup_order'] = count($weekly_store_pickup_order);
+
+
+
+
+				
 
 
 			return  $result;
@@ -1402,7 +1466,7 @@ INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.v
 }
 
 
-function getoutofstockproducts($vbid,$dbclass =  NULL){
+function getoutofstockproducts($vbid,$dbclass =  NULL,$type = null){
 
 
 
@@ -1418,7 +1482,14 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(!empty($vbid)){
-				$varr->query="SELECT * FROM `product` where vb_id=$vbid AND quantity < 5";
+					if($type == 'Branch'){
+		$varr->query="SELECT * FROM `product` where vb_id=$vbid AND quantity < 5";
+					}else{
+		$varr->query="SELECT *
+FROM branch
+INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";
+					}
+		
 
 				}else{
 					$varr->query="SELECT * FROM `product` where quantity < 5 ";
@@ -1435,7 +1506,7 @@ if(!empty($dbclass)){
 
 
 
-function getproductsamount($vbid,$dbclass =  NULL){
+function getproductsamount($vbid,$dbclass =  NULL,$type = null){
 
 
 
@@ -1451,7 +1522,17 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(!empty($vbid)){
-				$varr->query="SELECT sum(price) as productamount FROM `product` where vb_id=$vbid ";
+					if($type == 'Branch'){
+$varr->query="SELECT sum(price) as productamount FROM `product` where vb_id=$vbid ";
+ 					}else{
+
+$varr->query="SELECT sum(price) as productamount
+FROM product
+INNER JOIN branch ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";	
+
+	  
+					}
+				
 
 				}else{
 					$varr->query="SELECT sum(price) as productamount FROM `product` ";
@@ -1466,7 +1547,7 @@ if(!empty($dbclass)){
 
 }
 
-function getproducts($vbid,$dbclass =  NULL){
+function getproducts($vbid,$dbclass =  NULL,$type = null){
 
 
 
@@ -1482,8 +1563,11 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(!empty($vbid)){
+					if($type == 'Vendor'){
+$varr->query="SELECT * FROM `product` INNER JOIN branch where branch.vendor_id='$vbid' AND product.vb_id = branch.branch_id  ";
+					}else{
 				$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
-
+}
 				}else{
 					$varr->query="SELECT * FROM `product` ";
 				}
@@ -1671,7 +1755,7 @@ function getbranches($user_id =  NULL, $owner = NULL)
 $varr->query="SELECT * FROM `branch` where user_id=$user_id ";
 
 			}else{
-$varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_id";
+$varr->query="SELECT * FROM `branch` INNER JOIN vendor  where vendor.user_id='$user_id' AND  vendor.vendor_id=branch.vendor_id";
 
 			}
 		}else{
