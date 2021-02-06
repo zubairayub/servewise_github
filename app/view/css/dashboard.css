@@ -893,6 +893,30 @@ table th {
 	float: right;
 }
 
+/* table_dashboard */
+
+.dashboard_table_main tbody{width: 100%;display: flex;flex-wrap: wrap;}
+.dashboard_table_main tbody .dashboard_product_table{display: flex;font-size: 12px; width: 100%;flex-wrap: wrap;justify-content: center;}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_1{flex-basis: 10%;padding: 10px 9px;display: flex;justify-content: center;align-items: center; border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_2{flex-basis: 15%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_3{flex-basis: 20%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_4{flex-basis: 11%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_5{flex-basis: 17%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_6{flex-basis: 17%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main tbody .dashboard_product_table .dashboard_product_7{flex-basis: 10%;padding: 10px 9px;display: flex;justify-content: center;align-items: center;border-left: 1px solid rgba(0,0,0,0.4);border-right: 1px solid rgba(0,0,0,0.4);border-bottom: 1px dashed rgba(0,0,0,0.2);border-top: 1px dashed rgba(0,0,0,0.2);}
+.dashboard_table_main .dashboard_table_data{display: flex;justify-content: center;align-items: center;width: 100%;font-size: 12px;transition: .3s ease;}
+.dashboard_table_main .dashboard_table_data:hover{background-color: #17a9ff;color: white;}
+.dashboard_table_main .dashboard_table_data:hover .dashboard_table_row_7 a{background-color: #17a9ff;color: white;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_7 a:hover{color: black;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_1{border-top: none; border-left: 2px solid rgba(0,0,0,0.4);flex-basis: 10%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_2{border-top: none;flex-basis: 15%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_3{border-top: none;flex-basis: 20%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_4{border-top: none;flex-basis: 11%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_5{border-top: none;flex-basis: 17%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_6{border-top: none;flex-basis: 17%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_7{border-top: none;flex-basis: 10%;display: flex;justify-content: center;align-items: center;padding: 10px 9px;font-size: 12px;flex-wrap: wrap;}
+.dashboard_table_main .dashboard_table_data .dashboard_table_row_7 a{font-size: 10px;display: flex;justify-content: space-around;align-items: center;width: 100%;}
+/* table_dashboard-end */
 .progress {
 	height: 10px;
 	overflow: hidden;

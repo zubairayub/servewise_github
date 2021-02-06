@@ -17,16 +17,15 @@
 						<i class="fa fa-ellipsis-h"></i>
 					</div>
 					<div class="card-content">
-						 <table>
-                <tr>
-                    <th>Serial.No</th>
-                    <th>Order Code</th>
-                 
-                    <th>Customer</th>
-                    <th>Amount</th>
-                    <th>Delivery Status</th>
-                    <th>Payment Status</th>
-                    <th>Option</th>
+						 <table class="dashboard_table_main">
+                <tr class="dashboard_product_table">
+                    <th class="dashboard_product_1">Serial.No</th>
+                    <th class="dashboard_product_2">Order Code</th>
+                    <th class="dashboard_product_3">Customer</th>
+                    <th class="dashboard_product_4">Amount</th>
+                    <th class="dashboard_product_5">Delivery Status</th>
+                    <th class="dashboard_product_6">Payment Status</th>
+                    <th class="dashboard_product_7">Option</th>
                 </tr>
                 
                     <?php  
@@ -60,22 +59,21 @@ $customer_name =   'Guest User' ;
                           $customer_name =   $customer_data[0]['first_name'] .' '. $customer_data[0]['last_name'] ;
                            }
                           ?> 
-                        <tr>
-                        <td><?php echo $count;?></td>
-                    <td><?php echo $value['id'];?></td>
-                   
-                    <td><?php echo  $customer_name ;?></td>
-                    <td><?php echo $invoice_datails[0]['amount'];?></td>
-                    <td><?php echo $status_datails[0]['title'];?></td>
-                    <td><?php echo $status_payment; ?></td>
-                    <td class="option">
-                        <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
-                        <i class="fa fa-eye" aria-hidden="true"></i> view
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
-                        </a>
-                    </td>
+                    <tr class="dashboard_table_data">   
+                        <td class="dashboard_table_row_1"><?php echo $count;?></td>
+                        <td class="dashboard_table_row_2"><?php echo $value['id'];?></td>
+                        <td class="dashboard_table_row_3"><?php echo  $customer_name ;?></td>
+                        <td class="dashboard_table_row_4"><?php echo $invoice_datails[0]['amount'];?></td>
+                        <td class="dashboard_table_row_5"><?php echo $status_datails[0]['title'];?></td>
+                        <td class="dashboard_table_row_6"><?php echo $status_payment; ?></td>
+                        <td class="option dashboard_table_row_7">
+                            <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
+                            <i class="fa fa-eye" aria-hidden="true"></i> view
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                            </a>
+                        </td>
                 </tr>
                        
                     <?php  
@@ -99,9 +97,20 @@ $customer_name =   'Guest User' ;
 					</div>
 					<?= $weekly_sales ;?>
 				</div>
-			</div>
-		</div>
-		
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        Chartjs
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
 	</div>
 
-	</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
