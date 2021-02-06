@@ -42,13 +42,13 @@ $total_weekly_sale = progress_dashboard_weekly('','','');
 
 
 
-$first_row = '<div class="row">
+$first_row = '<div class="row" >
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(252,235,69);background: linear-gradient(74deg, rgba(252,235,69,1) 0%, rgba(199,122,40,1) 100%);">
+				<div  class="counter" style="background: rgb(252,235,69);background: linear-gradient(74deg, rgba(252,235,69,1) 0%, rgba(199,122,40,1) 100%);">
 					<p>
 						<i class="fa fa-user-circle-o" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3> ' . $vendor_count . ' </h3>
+					<h3 class="timer count-title count-number" data-to="' . $vendor_count .'" data-speed="1500"> </h3>
 					<p>Total Vendors</p>
 				</div>
 			</div>
@@ -57,7 +57,7 @@ $first_row = '<div class="row">
 					<p>
 						<i class="fa fa-home" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $branch_count .' </h3>
+					<h3 class="timer count-title count-number" data-to="' . $branch_count .'" data-speed="1700"></h3>
 					<p>Total Branch</p>
 				</div>
 			</div>
@@ -66,7 +66,7 @@ $first_row = '<div class="row">
 					<p>
 						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $product_count .' </h3>
+					<h3 class="timer count-title count-number" data-to="' . $product_count .'" data-speed="1700"></h3>
 					<p>Total Products</p>
 				</div>
 			</div>
@@ -75,7 +75,7 @@ $first_row = '<div class="row">
 					<p>
 						<i class="fa fa-book" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $order_count . '</h3>
+					<h3 class="timer count-title count-number" data-to="' . $order_count .'" data-speed="2700"></h3>
 					<p>Total Orders</p>
 				</div>
 			</div>
@@ -90,7 +90,7 @@ $second_row = '<div class="row">
 					<p>
 						<i class="fa fa-users" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $customer_count .'</h3>
+					<h3 class="timer count-title count-number" data-to="' . $customer_count .'" data-speed="2200"></h3>
 					<p>Total Customers</p>
 				</div>
 			</div>
@@ -99,7 +99,7 @@ $second_row = '<div class="row">
 					<p>
 						<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $order_amount .'</h3>
+					<h3 class="timer count-title count-number" data-to="' . $order_amount .'" data-speed="3000"></h3>
 					<p>Total Orders Amount</p>
 				</div>
 			</div>
@@ -109,7 +109,7 @@ $second_row = '<div class="row">
 					<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
 						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $product_amount .'</h3>
+					<h3 class="timer count-title count-number" data-to="' . $product_amount .'" data-speed="2700"></h3>
 					<p>Total Products Amount</p>
 				</div>
 			</div>
@@ -118,7 +118,7 @@ $second_row = '<div class="row">
 					<p>
 						<i class="fa fa-archive" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
-					<h3>'. $out_of_stock .'</h3>
+					<h3 class="timer count-title count-number" data-to="' . $out_of_stock .'" data-speed="3000"></h3>
 					<p>Running OUT OF STOCK</p>
 				</div>
 			</div>
