@@ -39,8 +39,6 @@ $product_amount = $product_amount[0]['productamount'];
 $recent_orders = getorders('','');
 $total_weekly_sale = progress_dashboard_weekly('','','');
 
-print_r($total_weekly_sale);
-exit();
 
 
 

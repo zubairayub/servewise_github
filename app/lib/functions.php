@@ -1205,24 +1205,22 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(empty($user_id)){
-	                 $varr->query="SELECT id FROM order_details
-							WHERE datetime >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
-							AND datetime < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
+	                 $varr->query="SELECT *FROM order_details WHERE YEARWEEK(datetime) = YEARWEEK(NOW())";
 
 				}else{
 
 					
 
 					if($type == 'Branch'){
-							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ORDER BY id DESC ";
+							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC ";
 
 					}
 					elseif($type == 'Vendor'){
 
-							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ORDER BY id DESC ";
+							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC ";
 
 					}elseif($type == 'User'){
-							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  ORDER BY id DESC";
+							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  AND YEARWEEK(datetime) = YEARWEEK(NOW()) ORDER BY id DESC";
 
 					}
 				
@@ -1232,7 +1230,12 @@ if(!empty($dbclass)){
 				
 		
 		
-			$result=$varr->executeQuery($varr->query,array(),"sread");
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+
+				$weekly_order = count($result);
+
+
+
 			return  $result;
 
 }
