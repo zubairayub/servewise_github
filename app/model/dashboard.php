@@ -44,36 +44,36 @@ $total_weekly_sale = progress_dashboard_weekly('','','');
 
 $first_row = '<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
+				<div class="counter" style="background: rgb(252,235,69);background: linear-gradient(74deg, rgba(252,235,69,1) 0%, rgba(199,122,40,1) 100%);">
 					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-user-circle-o" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3> ' . $vendor_count . ' </h3>
 					<p>Total Vendors</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(255,86,86);background: linear-gradient(74deg, rgba(255,86,86,1) 0%, rgba(255,35,35,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-home" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $branch_count .' </h3>
 					<p>Total Branch</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(255,130,27);background: linear-gradient(74deg, rgba(255,130,27,1) 0%, rgba(255,100,23,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $product_count .' </h3>
 					<p>Total Products</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(238,255,27);background: linear-gradient(74deg, rgba(238,255,27,1) 0%, rgba(255,225,23,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-book" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $order_count . '</h3>
 					<p>Total Orders</p>
@@ -86,36 +86,37 @@ $first_row = '<div class="row">
 
 $second_row = '<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
+				<div class="counter" style="background: rgb(123,255,27);background: linear-gradient(74deg, rgba(123,255,27,1) 0%, rgba(152,255,23,1) 100%);">
 					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-users" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $customer_count .'</h3>
 					<p>Total Customers</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(27,146,255);background: linear-gradient(74deg, rgba(27,146,255,1) 0%, rgba(23,172,255,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $order_amount .'</h3>
 					<p>Total Orders Amount</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(161,27,255);background: linear-gradient(74deg, rgba(161,27,255,1) 0%, rgba(210,23,255,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+					<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $product_amount .'</h3>
 					<p>Total Products Amount</p>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter" style="background: rgb(255,27,139);background: linear-gradient(74deg, rgba(255,27,139,1) 0%, rgba(255,23,51,1) 100%);">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-archive" aria-hidden="true" style="color:white; font-size:20px;"></i>
 					</p>
 					<h3>'. $out_of_stock .'</h3>
 					<p>Running OUT OF STOCK</p>
