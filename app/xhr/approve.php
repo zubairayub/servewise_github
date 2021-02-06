@@ -23,14 +23,14 @@ $result = approve_vendor($user_id,$vendor_id,$action,$DB_CLASS);
 
 if($action == 'approve'){
 
-			$message_body = 'Congratulations! Your Request for become vendor has been approved. Thanks for becoming a part of ServeWise';
-			$subject = 'Shop Approved';
+			$message_body = '<h2>Congratulations!</h2> <br><br> Your Request for become vendor has been approved.<br><br> Thanks for becoming a part of ServeWise';
+			$subject = 'SHOP APPROVED';
 
 
 }else{
 
-			$message_body = 'Hello your shop has been delisted from ServeWise. for more queries please contact at info@servewise.shop Thanks';
-			$subject = 'Shop Delisted';
+			$message_body = 'Sorry your shop has been delisted from ServeWise.<br><br> for more queries please contact at info@servewise.shop Thanks';
+			$subject = 'SHOP DELISTED';
 
 
 }
@@ -45,14 +45,14 @@ $result = approve_branch($user_id,$vendor_id,$branch_id,$action,$DB_CLASS);
 
 if($action == 'approve'){
 
-			$message_body = 'Congratulations! Your Request for Branch has been approved. Thanks for becoming a part of ServeWise';
-			$subject = 'Shop_Approved';
+			$message_body = '<h2>Congratulations!</h2> <br><br> Your Request for Branch has been approved.<br><br> Thanks for becoming a part of ServeWise';
+			$subject = 'SHOP APPROVE';
 
 
 }else{
 
-			$message_body = 'Hello your shop has been delisted from ServeWise. for more queries please contact at info@servewise.shop Thanks';
-			$subject = 'Shop_Delisted';
+			$message_body = 'Sorry your shop has been delisted from ServeWise.<br><br> for more queries please contact at info@servewise.shop Thanks';
+			$subject = 'SHOP DELISTED';
 
 
 }

@@ -37,7 +37,7 @@ $user=new User();
 		   
 		if (!empty($signup)){
 			$from_email = 'register@servewise.shop' ;
-			$message_body = 'Welcome to ServeWise You securtiy code is '.$security_code.' Please verify your email using this code Thanks';
+			$message_body = '<h2>Welcome to ServeWise</h2> <br><br> You securtiy code is <h3>'.$security_code.'</h3> Please verify your email using this code Thanks';
 			 sendEmail($email,'ServeWise',$from_email,$message_body,'Registration');
 			 insert_notifications($DB_CLASS,'6','6','User_register','https://servewise.shop');
 			 

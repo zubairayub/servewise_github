@@ -29,8 +29,8 @@ $dataall = register_user($DB_CLASS,$staff_email,$staff_name,$staff_phone,$staff_
 
 $addstaff = add_staff($DB_CLASS,$dataall[0]['user_id'],$_SESSION['logInId'],$staff_role,$_SESSION['type']);
 $staff_type = getusertypes($staff_role);
-$message_body = 'Hi '.$staff_name . ' You assigned role of '. $staff_type[0]['title'] . ' From '.$_SESSION['logInId'] . ' Your login details are username: '. $staff_email . ' and password is ' .$dataall[0]['password'] . ' Website url is : https://servewise.shop';
-$subject = 'New Role Assigned';
+$message_body = '<b> Hi '.$staff_name . '</b> <br><br> <b> You assigned role of '. $staff_type[0]['title'] . ' From '.$_SESSION['logInId'] . ' </b> <br><br>Your login details are <br><b>username:</b>'. $staff_email .'<br> <b>password:</b>' .$dataall[0]['password'].' <br> <b>Website url is:</b> https://servewise.shop';
+$subject = 'NEW ROLE ASSIGNED';
 
 			  sendEmail($staff_email,'ServeWise',$_SESSION['logIn'],$message_body,$subject);
 

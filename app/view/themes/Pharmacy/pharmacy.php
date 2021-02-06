@@ -2,19 +2,22 @@
 include 'include/header.php'; 
 ?>
 <style>
-    .img-responsive{width: 140px; flex-basis:20%}
+    .img-responsive{width: 80px;height:80px; flex-basis:20%}
+    .sc-theme-default{width:100%;}
     .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
     .sc-cart-item-list{font-size:14px;}
-    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
-    .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 5px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
+    .sc-cart-remove{flex-basis: 7%;height: 20px;width:20px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 50%;font-size: 16px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
     .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
     .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
+    .sc-cart-item-summary .sc-cart-item-qty{border-radius: 4px;border: 1px dashed rgba(0,0,0,0.4);padding: 5px 9px;width: 60px;}
     .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
     .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
     .section1{flex-basis:10%;}
-    .section2{flex-basis:80%;}
-    .section3{flex-basis:100%;}
+    .section2{flex-basis:40%;}
+    .section3{flex-basis:40%;}
     .section4{flex-basis:100%;}
+    .section4 .sc-cart-item-summary{display: flex;justify-content: space-between;align-items: center;}
     .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
     
     
@@ -23,8 +26,8 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 58px;
-        right: 38px;
+        top: 28px;
+        right: 35px;
         z-index: 1;
         display: none;
         -webkit-user-select: none;
@@ -96,21 +99,23 @@ include 'include/header.php';
 
 #menu
 {
-  position: absolute;
-  width: 351px;
-  margin: -100px 0 0 -310px;
-  padding: 50px;
-  padding-top: 125px;
-  border-radius:4px;
-  box-shadow:0px 3px 6px rgba(0,0,0,0.2);
-  background: white;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(0, -100%);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    position: absolute;
+    display: block;
+    width: 351px;
+    margin: 40px 0 0 -310px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    background: white;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(0, -170%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
+
+
 
 #menu li
 {
@@ -125,6 +130,15 @@ include 'include/header.php';
 }
 
 /*  */
+
+.nav{
+    position:fixed;
+    position: fixed;
+    top: 0px;
+    z-index: 9;
+    left: 0px;
+    width: 100%;
+}
 
 .buttons {
     margin: 0;
@@ -182,6 +196,83 @@ include 'include/header.php';
 .cart-button span.added {
     opacity: 0
 }
+
+/*  */
+.cart-button.clicked1 .fa-shopping-basket {
+    animation: cart 2s ease-in forwards
+}
+
+.cart-button.clicked1 .fa-square {
+    animation: box 2s ease-in forwards
+}
+
+.cart-button.clicked1 span.add-to-cart {
+    animation: addcart 2s ease-in forwards
+}
+
+.cart-button.clicked1 span.added {
+    animation: added 2s ease-in forwards
+}
+
+@keyframes cart {
+    0% {
+        left: -10%
+    }
+
+    40%,
+    60% {
+        left: 50%
+    }
+
+    100% {
+        left: 110%
+    }
+}
+
+@keyframes box {
+
+    0%,
+    40% {
+        top: -20%
+    }
+
+    60% {
+        top: 36%;
+        left: 53%
+    }
+
+    100% {
+        top: 40%;
+        left: 112%
+    }
+}
+
+@keyframes addcart {
+
+    0%,
+    30% {
+        opacity: 1
+    }
+
+    30%,
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes added {
+
+    0%,
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/*  */
 
 .cart-button.clicked .fa-shopping-basket {
     animation: cart 2s ease-in forwards
@@ -270,7 +361,7 @@ include 'include/header.php';
     
     <header>
         <div class="container">
-            <div class="nav">
+            <div class="nav" id="myNav">
                 <div class="nav-logo">
                     <img src="assets/logo.jpg" alt="LOGO">
                 </div>
@@ -564,6 +655,19 @@ button.classList.toggle('clicked');
 
 
 });
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+  } else {
+    document.getElementById("myNav").style.background = "transparent";
+  }
+}
+
+
 
         AOS.init();
   </script>
