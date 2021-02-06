@@ -121,7 +121,8 @@ inputs.forEach((input) => {
   input.addEventListener("focus", addClass);
   input.addEventListener("blur", removeClass);
 });                      
-        
+   
+
 
 
 
@@ -275,4 +276,7 @@ function readURL(input) {
 
 		reader.readAsDataURL(input.files[0]);
 	}
+
 }
+
+

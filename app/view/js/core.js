@@ -9,6 +9,14 @@ AOS.init();
         $(this).toggleClass("not-link2");
     });
 
+    $(".not-link").click(function(){
+        $(".notification-menu").toggleClass("notification-menu-show");
+    });
+    $(".avt-wrapper").click(function(){
+        $(".drop-down-menu").toggleClass("notification-menu-show");
+    });
+
+
 
 
     function searchToggle(obj, evt){

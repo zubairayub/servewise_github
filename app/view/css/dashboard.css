@@ -58,7 +58,7 @@
 }
 	/* background-image: url(../img/background-dashboard.png); */
 
-}
+
 .light .logo-dark, .light .light-icon {
 	display: none;
 }
@@ -132,7 +132,7 @@
 }
 
 .not-link2{
-	transform: rotate(360deg);
+	transform: scale(1.1);
 }
 
 .nav-link:hover {
@@ -362,6 +362,11 @@
 .notification-menu {
 	min-width: 380px;
 }
+
+.notification-menu-show{
+	display: block;
+}
+
 
 .dropdown-menu-content {
 	max-height: 500px;
