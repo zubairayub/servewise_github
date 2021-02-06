@@ -278,6 +278,7 @@ $weekly_store_pickup_order = $total_weekly_sale['weekly_store_pickup_order'];
 
 
 
+if($weekly_order > 0){
 $weekly_order_percantage = ($weekly_order / $order_count) * 100 ;
 
 
@@ -295,6 +296,33 @@ $weekly_returned_order_percantage = ($weekly_returned_order / $weekly_order) * 1
 
 
 $weekly_store_pickup_order_percantage = ($weekly_store_pickup_order / $weekly_order) * 100 ;
+
+}else{
+
+$weekly_order_percantage = 0 ;
+
+
+
+$weekly_deliverd_order_percantage = 0;
+
+
+
+$weekly_route_order_percantage = 0 ;
+
+
+
+$weekly_returned_order_percantage = 0 ;
+
+
+
+$weekly_store_pickup_order_percantage = 0 ;
+
+
+
+
+}
+
+
 
 
 
