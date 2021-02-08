@@ -4,6 +4,8 @@ AOS.init();
     
     $(".nav-link").click(function(){
         $(this).toggleClass("nav-link2");
+        $('body').toggleClass("sidebar-expand")
+        $('.navbar').toggleClass("navbar-second")
     });
     $(".not-link").click(function(){
         $(this).toggleClass("not-link2");
@@ -78,6 +80,8 @@ function openCloseDropdown(event) {
 		}
 	}
 }
+
+$
 
 // $('.sub-menu ul').hide();
 // $(".sub-menu a").click(function () {
