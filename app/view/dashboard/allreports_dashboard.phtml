@@ -6,7 +6,8 @@
 </div>
 </div> -->
 
-
+<div class="wrapper">
+		<div class="row">
 
 <?php
 
@@ -72,7 +73,9 @@ function getFirstProfileId($analytics) {
         $items = $profiles->getItems();
 
         // Return the first view (profile) ID.
-        return $items[0]->getId();
+       // return $items[0]->getId();
+        print_r($items);
+
 
       } else {
         throw new Exception('No views (profiles) found for this user.');
@@ -114,3 +117,8 @@ function printResults($results) {
     print "No results found.\n";
   }
 }
+
+
+?>
+
+</div></div>
