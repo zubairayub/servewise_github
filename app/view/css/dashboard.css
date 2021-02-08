@@ -86,11 +86,11 @@
 
 
 .navbar {
-	width: calc(100% - 175px);
-    margin-left: 175px;
+	width: calc(100% - 210px);
+    margin-left: 210px;
     display: flex;
     flex-direction: row;
-    background: var(--main-bg-color);
+    background: transparent;
     color: var(--main-color);
     position: fixed;
     top: 0;
@@ -142,6 +142,7 @@
 
 .navbar-nav i {
 	font-size: 1.6rem;
+	margin-left: 20px;
 }
 
 .nav-right {
@@ -465,7 +466,7 @@
 .wrapper {
 	overflow: hidden;
 	padding: 10px;
-	margin-left: 175px;
+	margin-left: 210px;
 	height: 100%;
 	padding-top: 55px;
 	transition: margin-left .5s;
@@ -478,7 +479,7 @@
 }
 
 .sidebar {
-	width: 175px;
+	width: 210px;
 	height: 100vh;
 	position: fixed;
 	background: #17191c;
@@ -567,12 +568,12 @@
 
 .sidebar-nav-link div {
 	min-width: 60px;
-	height: 35px;
+	height: 40px;
 	position: relative;
 }
 
 .sidebar-nav-link span{
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .sidebar-nav-link:hover { 
@@ -584,7 +585,7 @@
 }
 
 .sidebar-nav-link {  
-	height: 35px;
+	height: 40px;
 	background-color: #068eef;
     background: linear-gradient(to right, #068eef 50%, #17191c 50%);
     background-size: 200% 100%;
