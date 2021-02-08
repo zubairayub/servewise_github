@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "servewise",
+  "private_key_id": "d00c4687d4e44569ea396dc761c971719639fef0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDGpQn3GCc9S4bl\ngpC8UmbzHo7xMRbUnmES+GIhpQ7GqRnQVLT9h6MAuO5VdiZ56n0ggxh0QcRESvH3\n/TJM87xJjsDRcOj1tHmhOBGIiqg1p+ztMLbIvbuHY8LqwBNj8S73lnVkOt+dCT3+\n7x/ECwoGvrlitosHHwKC4rB9fBouHteCITcqUUPeKF0Nv8VE6ZiBjMgC8NJ0lm9E\ndHoDXnXvaggluUifex+Hilr1+U5RFqu0d/PcMdtWgojVaGQaJKdREka/cJqTZr7G\nKtAtgdi/F3ZBOR0eyx11OdMHT9eI8a2aqEc2TBMhIEpv+hLHJZYFFPZAxFSPIYA5\nN9TMR0UNAgMBAAECggEAChIS48KHNr3N/HO2l72Lt5acg5DMCgJvhHEwNGl0StEG\n3H9234WRV3eIqa+AOt0O8+eBhV9SLm4oPzzIYItYx9fjYZraTJ6WLfy0MtpotbOq\nOMon8hxgVfhSSOls8juneGjZ0beEX6c4y+RelWdD3lyr9Fuxx64kR/NrJCl3AFB8\nBMslcwwH5nlu1ORm2clT+FeHT1vHaexyVEvoP8ddLyjLj6FABi3Ug41uuvmcfWsq\n4UpfooZ6Sv1Z7aAKMwyLIRGhhVzNF+cprImTxJkDMMC9t3Pu0GQQnKPF4H4VpFcF\nz21rQXW8wqswPvZnGYzQvCMDXFVMk99CMs/pWasL5wKBgQD1jBatXAeZ3vFrAQ9X\nLfC3xyvs+cE1Rq4eYTjSh9HzlrJR3eP42q5p/S8BEPwJOZh42LWbPDhwVekLsX6Q\nwhqGm8e8kOtkEoy1ofEy4h2xsGZI24UcgKCU1AjB0IpA/odveSctQPQ1pY+5vZlR\ndOAjjIdF1gZMi83T9MTM7l+APwKBgQDPGdGAlVlZDhkkVqO8jROiEq2f6IxcmHDA\ntSN+0v4LucOjSx9YXYZY5Xkb/dms4FnsZikjHwWRQqjASqI4gRa2N0FTSKd3GCiy\nwKgUyUUeGV5tcyMMzi2J2MD/AnUjFiIcqARD/6sjwog2OlxIDDNRfzzdCn54uXyU\nzNHxv0knswKBgEEAXbx0wVpdZ2FhPXNhqPitlBY+o4P7+vn12Ln61Hx8ZyY+7Cuj\nkEpkiL3qhh3XDmLnU2QN1A8A3xmGWi/uAmGh+YUUhAvQ0Uj/3r8OlrfEL7+XxSwf\nbOMZIlxUXVUJTEcZNmLHcB6Hfn24EE889lzSxbiaCL7Yv5sdj7+EVum3AoGBAJ6g\n8f2BZ7x0tgFFc4j6ri0YDXFMWCachNC2bge4aOpmUVmEMvAmQr9YlRlBqTdnaLlP\nzvadzk/jNQqEoBiTl+feDuVR4yOvl4zDUHsLZyuU1uUSqagnTG4nXjx1j29ehqZY\nc1v6OwXa/SY8MW7mGXC0+tN8ND8YJDp9X9nBYLFNAoGBANAvUgNoqbHB45yE1N9+\ncTHidBqE+j89YOfsnHRIwosa7pfOHadvPNl9qBNov5N5bkUCyHkmI6l0K1ioupmS\nl9HjZmRYECt/bLP5n+qaetwlDlr8pFevrZGGFyYGbT8+fBWgI3c/Wpi7jDs/NfNq\nwz3VllcZpXp7oDuij6XHl1QS\n-----END PRIVATE KEY-----\n",
+  "client_email": "analytic-servewise-shop@servewise.iam.gserviceaccount.com",
+  "client_id": "102322697671305274182",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/analytic-servewise-shop%40servewise.iam.gserviceaccount.com"
+}
