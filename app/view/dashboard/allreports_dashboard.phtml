@@ -17,6 +17,11 @@ require_once '../app/lib/gogolee/vendor/autoload.php';
 
 $analytics = initializeAnalytics();
 $profile = getFirstProfileId($analytics);
+
+
+print_r($analytics);
+exit();
+
 $results = getResults($analytics, $profile);
 printResults($results);
 
@@ -92,10 +97,7 @@ function getResults($analytics, $profileId) {
   // Calls the Core Reporting API and queries for the number of sessions
   // for the last seven days.
    return $analytics->data_ga->get(
-       'ga:' . $profileId,
-       '7daysAgo',
-       'today',
-       'ga:sessions');
+       'ga:'  . '261561716' ,'7daysAgo','today','ga:sessions');
 }
 
 function printResults($results) {
