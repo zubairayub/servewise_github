@@ -79,9 +79,202 @@ function openCloseDropdown(event) {
 	}
 }
 
-$('.sub-menu ul').hide();
-$(".sub-menu a").click(function () {
-	$(this).parent(".sub-menu").children("ul").slideToggle("100");
-	$(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+// $('.sub-menu ul').hide();
+// $(".sub-menu a").click(function () {
+
+//     $(this).parent(".sub-menu").children("ul").slideToggle("100");
+// });
+
+
+$(".sub-menu:nth-child(3)").children("ul").slideUp();
+$(".sub-menu:nth-child(4)").children("ul").slideUp();
+$(".sub-menu:nth-child(5)").children("ul").slideUp();
+$(".sub-menu:nth-child(6)").children("ul").slideUp();
+$(".sub-menu:nth-child(7)").children("ul").slideUp();
+$(".sub-menu:nth-child(8)").children("ul").slideUp();
+$(".sub-menu:nth-child(9)").children("ul").slideUp();
+$(".sub-menu:nth-child(10)").children("ul").slideUp();
+$(".sub-menu:nth-child(11)").children("ul").slideUp();
+$(".sub-menu:nth-child(12)").children("ul").slideUp();
+$(".sub-menu:nth-child(13)").children("ul").slideUp();
+$(".sub-menu:nth-child(14)").children("ul").slideUp();
+
+$( ".sub-menu:nth-child(3)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
 });
 
+$( ".sub-menu:nth-child(4)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(5)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(6)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(7)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(8)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(9)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(10)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(11)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(12)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(13)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+});
+
+$( ".sub-menu:nth-child(14)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideToggle();
+});
