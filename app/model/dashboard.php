@@ -334,40 +334,56 @@ $weekly_store_pickup_order_percantage = 0 ;
 
 
 $first_row = '<div class="row" >
-			<div class="col-3 col-m-6 col-sm-6">
-				<div  class="counter" style="background: rgb(252,235,69);background: linear-gradient(74deg, rgba(252,235,69,1) 0%, rgba(199,122,40,1) 100%);">
-					<p>
-						<i class="fa fa-user-circle-o" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $vendor_count .'" data-speed="1500"> </h3>
-					<p>Total Vendors</p>
+			<div class="col-3 col-m-6 col-sm-6 d1-main">
+				<div  class="counter d1-content" >
+					<div class="content-1">
+						<p>
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $vendor_count .'" data-speed="1500"> </h3>
+						<p>Total Vendors</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(255,86,86);background: linear-gradient(74deg, rgba(255,86,86,1) 0%, rgba(255,35,35,1) 100%);">
-					<p>
-						<i class="fa fa-home" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $branch_count .'" data-speed="1700"></h3>
-					<p>Total Branch</p>
+				<div class="counter d2" >
+					<div class="content-1">
+						<p>
+							<i class="fa fa-home" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $branch_count .'" data-speed="1700"></h3>
+						<p>Total Branch</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(255,130,27);background: linear-gradient(74deg, rgba(255,130,27,1) 0%, rgba(255,100,23,1) 100%);">
-					<p>
-						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $product_count .'" data-speed="1700"></h3>
-					<p>Total Products</p>
+				<div class="counter d3">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-product-hunt" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $product_count .'" data-speed="1700"></h3>
+						<p>Total Products</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(238,255,27);background: linear-gradient(74deg, rgba(238,255,27,1) 0%, rgba(255,225,23,1) 100%);">
-					<p>
-						<i class="fa fa-book" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $order_count .'" data-speed="2700"></h3>
-					<p>Total Orders</p>
+				<div class="counter d4">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-book" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $order_count .'" data-speed="2700"></h3>
+						<p>Total Orders</p>
+					</div>
 				</div>
 			</div>
 		</div>';
@@ -377,40 +393,55 @@ $first_row = '<div class="row" >
 
 $second_row = '<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(123,255,27);background: linear-gradient(74deg, rgba(123,255,27,1) 0%, rgba(152,255,23,1) 100%);">
-					<p>
-						<i class="fa fa-users" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $customer_count .'" data-speed="2200"></h3>
-					<p>Total Customers</p>
+				<div class="counter d5">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $customer_count .'" data-speed="2200"></h3>
+						<p>Total Customers</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(27,146,255);background: linear-gradient(74deg, rgba(27,146,255,1) 0%, rgba(23,172,255,1) 100%);">
-					<p>
-						<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $order_amount .'" data-speed="3000"></h3>
-					<p>Total Orders Amount</p>
+				<div class="counter d6">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-money" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $order_amount .'" data-speed="3000"></h3>
+						<p>Total Orders Amount</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(161,27,255);background: linear-gradient(74deg, rgba(161,27,255,1) 0%, rgba(210,23,255,1) 100%);">
-					<p>
-					<i class="fa fa-money" aria-hidden="true" style="color:white; font-size:20px;"></i>
-						<i class="fa fa-product-hunt" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $product_amount .'" data-speed="2700"></h3>
-					<p>Total Products Amount</p>
+				<div class="counter d7">
+					<div class="content-1">
+						<p>
+						<i class="fa fa-list-alt" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $product_amount .'" data-speed="2700"></h3>
+						<p>Total Products Amount</p>
+					</div>
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter" style="background: rgb(255,27,139);background: linear-gradient(74deg, rgba(255,27,139,1) 0%, rgba(255,23,51,1) 100%);">
-					<p>
-						<i class="fa fa-archive" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3 class="timer count-title count-number" data-to="' . $out_of_stock .'" data-speed="3000"></h3>
-					<p>Running OUT OF STOCK</p>
+				<div class="counter d8">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-archive" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $out_of_stock .'" data-speed="3000"></h3>
+						<p>Running OUT OF STOCK</p>
+					</div>
 				</div>
 			</div>
 		</div>';

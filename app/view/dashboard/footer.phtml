@@ -17,6 +17,16 @@ header('Location: ?page=verification_dashboard');
 	<div class="sidebar">
 		
 		<ul class="sidebar-nav">
+			<div class="sidebar-head-content">
+				<div class="sidebar-head-content-main-upper">
+					<a class="content-main-upper-2" href="?page=home"><img src="<?php echo $logo;?>" alt="Admin logo" class="logo logo-light"></a>
+				</div>
+				<div class="sidebar-head-content-main-lower">
+					<div class="content-main-lower">
+						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $userstatus; }?></h4>
+					</div>
+				</div>
+			</div>
 			<?php 
 			foreach ($menu as $key => $value) {
 
