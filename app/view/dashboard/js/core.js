@@ -1,3 +1,5 @@
+
+
 (function ($) {
 	$.fn.countTo = function (options) {
 		options = options || {};
@@ -99,8 +101,7 @@ jQuery(function ($) {
 
 // counter-end
   
-  const obj = document.getElementById("value");
-  animateValue(obj, 100, 0, 5000);
+
 
 
 const inputs = document.querySelectorAll(".input");
@@ -218,65 +219,68 @@ function openCloseDropdown(event) {
 	}
 }
 
-var ctx = document.getElementById('myChart')
-ctx.height = 500
-ctx.width = 500
-var data = {
-	labels: ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-	datasets: [{
-		fill: false,
-		label: 'Completed',
-		borderColor: successColor,
-		data: [120, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
-		borderWidth: 2,
-		lineTension: 0,
-	}, {
-		fill: false,
-		label: 'Issues',
-		borderColor: dangerColor,
-		data: [66, 44, 12, 48, 99, 56, 78, 23, 100, 22, 47],
-		borderWidth: 2,
-		lineTension: 0,
-	}]
-}
 
-var lineChart = new Chart(ctx, {
-	type: 'line',
-	data: data,
-	options: {
-		maintainAspectRatio: false,
-		bezierCurve: false,
-	}
-})
 
-var ProductImgGrid = document.getElementById("ProductImgGrid");
-var SmallImgGrid = document.getElementsByClassName("small-grid")
 
-SmallImgGrid[0].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[0].src;
-}
-SmallImgGrid[1].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[1].src;
-}
-SmallImgGrid[2].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[2].src;
-}
-SmallImgGrid[3].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[3].src;
-}
+// var ctx = document.getElementById('myChart')
+// ctx.height = 500
+// ctx.width = 500
+// var data = {
+// 	labels: ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+// 	datasets: [{
+// 		fill: false,
+// 		label: 'Completed',
+// 		borderColor: successColor,
+// 		data: [120, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
+// 		borderWidth: 2,
+// 		lineTension: 0,
+// 	}, {
+// 		fill: false,
+// 		label: 'Issues',
+// 		borderColor: dangerColor,
+// 		data: [66, 44, 12, 48, 99, 56, 78, 23, 100, 22, 47],
+// 		borderWidth: 2,
+// 		lineTension: 0,
+// 	}]
+// }
 
-function readURL(input) {
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
+// var lineChart = new Chart(ctx, {
+// 	type: 'line',
+// 	data: data,
+// 	options: {
+// 		maintainAspectRatio: false,
+// 		bezierCurve: false,
+// 	}
+// })
 
-		reader.onload = function (e) {
-			$('#blah')
-				.attr('src', e.target.result);
-		};
+// var ProductImgGrid = document.getElementById("ProductImgGrid");
+// var SmallImgGrid = document.getElementsByClassName("small-grid")
 
-		reader.readAsDataURL(input.files[0]);
-	}
+// SmallImgGrid[0].onclick = function(){
+// 	ProductImgGrid.src = SmallImgGrid[0].src;
+// }
+// SmallImgGrid[1].onclick = function(){
+// 	ProductImgGrid.src = SmallImgGrid[1].src;
+// }
+// SmallImgGrid[2].onclick = function(){
+// 	ProductImgGrid.src = SmallImgGrid[2].src;
+// }
+// SmallImgGrid[3].onclick = function(){
+// 	ProductImgGrid.src = SmallImgGrid[3].src;
+// }
 
-}
+// function readURL(input) {
+// 	if (input.files && input.files[0]) {
+// 		var reader = new FileReader();
+
+// 		reader.onload = function (e) {
+// 			$('#blah')
+// 				.attr('src', e.target.result);
+// 		};
+
+// 		reader.readAsDataURL(input.files[0]);
+// 	}
+
+// }
 
 

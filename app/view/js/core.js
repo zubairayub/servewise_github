@@ -17,7 +17,7 @@ AOS.init();
     $(".avt-wrapper").click(function(){
         $(".drop-down-menu").toggleClass("notification-menu-show");
     });
-
+    
 
 
 

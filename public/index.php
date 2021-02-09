@@ -213,6 +213,7 @@ $owlmailerjs = $config['OWL_MAILER_JS'];
 $editorjs = $config['EDITOR_PATH'];
 $editorsubjs = $config ['EDITOR_SUB_PATH'];
 $jscript_dashboard = $config['JS_PATH_DASHBOARD'];
+$jscript_tile_dashboard = $config['JS_TITLE_DASHBOARD'];
 $ajax_handler = $config['AJAX_HANDLER_DASHBOARD'];
 $dashboardcss = $config['DASHBOARD_PATH'];
 $jqurey = $config['JQUREY_PATH'];

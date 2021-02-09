@@ -334,11 +334,11 @@ $weekly_store_pickup_order_percantage = 0 ;
 
 
 $first_row = '<div class="row" >
-			<div class="col-3 col-m-6 col-sm-6 d1-main">
+			<div class="col-3 col-m-6 col-sm-6 d1-main title" data-tilt>
 				<div  class="counter d1-content" >
 					<div class="content-1">
 						<p>
-							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+							<img src="../app/view/img/model-2.png" alt="model-1">
 						</p>
 					</div>
 					<div class="content-2">
@@ -347,11 +347,11 @@ $first_row = '<div class="row" >
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d2-main title" data-tilt>
 				<div class="counter d2" >
 					<div class="content-1">
 						<p>
-							<i class="fa fa-home" aria-hidden="true"></i>
+							<img src="../app/view/img/model-1.png" alt="model-1">
 						</p>
 					</div>
 					<div class="content-2">
@@ -360,7 +360,7 @@ $first_row = '<div class="row" >
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d3-main title" data-tilt>
 				<div class="counter d3">
 					<div class="content-1">
 						<p>
@@ -373,7 +373,7 @@ $first_row = '<div class="row" >
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d4-main title" data-tilt>
 				<div class="counter d4">
 					<div class="content-1">
 						<p>
@@ -392,11 +392,11 @@ $first_row = '<div class="row" >
 
 
 $second_row = '<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d5-main title" data-tilt>
 				<div class="counter d5">
 					<div class="content-1">
 						<p>
-							<i class="fa fa-users" aria-hidden="true"></i>
+							<img src="../app/view/img/model-3.png" alt="model-1">
 						</p>
 					</div>
 					<div class="content-2">
@@ -405,7 +405,7 @@ $second_row = '<div class="row">
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d6-main title" data-tilt>
 				<div class="counter d6">
 					<div class="content-1">
 						<p>
@@ -418,7 +418,7 @@ $second_row = '<div class="row">
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d7-main title" data-tilt>
 				<div class="counter d7">
 					<div class="content-1">
 						<p>
@@ -431,7 +431,7 @@ $second_row = '<div class="row">
 					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
+			<div class="col-3 col-m-6 col-sm-6 d8-main title" data-tilt>
 				<div class="counter d8">
 					<div class="content-1">
 						<p>

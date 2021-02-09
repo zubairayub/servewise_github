@@ -4,8 +4,46 @@
 
 	<!-- main content -->
 	<div class="wrapper">
-		<?= $first_row ?>
-		<?= $second_row ?>
+        <div class="dashboard-detail-main">
+            
+            <div class="dashboard-detail-content-1">
+                <?= $first_row ?>
+                <?= $second_row ?>
+            </div>
+            <div class="dashboard-detail-content-2">
+                <div class="dashboard-detail-content-upper">
+                    <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $userstatus; }?></h4>
+                </div>
+                <div class="dashboard-detail-content-lower">
+                    <div class="dashboard-detail-content-lower-content">
+                        <div class="dashboard-detail-heading">Quick Navigation Tab</div>
+                        <div class="dashboard-detail-heading-main-row">
+                            <a href="?page=viewvendor_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                <div class="label">Go to Vendor</div>
+                            </a >
+                            <a href="?page=viewbranch_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                                <div class="label">Go to Branches</div>
+                            </a >
+                        </div>
+                        <div class="dashboard-detail-heading-main-row" >
+                            <a href="?page=staffpermission_dashboard" class="dashboard-detail-cards"data-tilt>
+                                <div class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+                                <div class="label">Staff Roles</div>
+                            </a >
+                            <a href="?page=generalsetting_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                <div class="label">general Setting</div>
+                            </a >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-shap-animation1"></div>
+        <div class="div-shap-animation2"></div>
+        <div class="div-shap-animation3"></div>
 		
 		<div class="row">
 			<div class="col-8 col-m-12 col-sm-12">
@@ -110,5 +148,4 @@ $customer_name =   'Guest User' ;
 	</div>
 
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>

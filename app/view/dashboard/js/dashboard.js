@@ -1,3 +1,5 @@
+
+
 function openCloseDropdown(event) {
 	if (!event.target.matches('.dropdown-toggle')) {
 		// 
