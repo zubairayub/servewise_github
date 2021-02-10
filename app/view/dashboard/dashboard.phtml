@@ -5,7 +5,11 @@
 	<!-- main content -->
 	<div class="wrapper">
         <div class="dashboard-detail-main">
-            
+                <div class="mobile-heading-dashboard">
+                    <div class="dashboard-detail-content-upper">
+                        <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $userstatus; }?></h4>
+                    </div>
+                </div>
             <div class="dashboard-detail-content-1">
                 <?= $first_row ?>
                 <?= $second_row ?>
