@@ -1,12 +1,12 @@
-
 AOS.init();
 
     
     $(".nav-link").click(function(){
         $(this).toggleClass("nav-link2");
-        $('body').toggleClass("sidebar-expand")
-        $('.navbar').toggleClass("navbar-second")
+        $('.navbar').toggleClass("navbar-second");
     });
+
+
     $(".not-link").click(function(){
         $(this).toggleClass("not-link2");
     });

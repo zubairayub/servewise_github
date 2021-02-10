@@ -1,26 +1,3 @@
-
-
-function openCloseDropdown(event) {
-	if (!event.target.matches('.dropdown-toggle')) {
-		// 
-		// Close dropdown when click out of dropdown menu
-		// 
-		closeAllDropdown()
-	} else {
-		var toggle = event.target.dataset.toggle
-		var content = document.getElementById(toggle)
-		if (content.classList.contains('dropdown-expand')) {
-			closeAllDropdown()
-		} else {
-			closeAllDropdown()
-			content.classList.add('dropdown-expand')
-		}
-	}
-}
-
-
-
-
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
