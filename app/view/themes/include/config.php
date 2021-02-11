@@ -19,6 +19,9 @@ $owner_id = $_SESSION['owner_id'];
 
 $result = getproducts($vb_id,$DB_CLASS);
 
+$branch_data = getbranchbybranchid($DB_CLASS,$vb_id);
+$branch_name = $branch_data[0]['name'];
+
 $logo = getlogo_dashboard($owner_id,$DB_CLASS,$logo_directory);
 
 }else{
