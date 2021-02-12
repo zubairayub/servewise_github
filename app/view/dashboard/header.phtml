@@ -13,7 +13,7 @@ $result = getnotifications($dbcalss,$user_id,'');
 ?>
 <body class="overlay-scrollbar light dashboard-body">
 
-<div class="navbar">
+<div class="navbar" id="myNav">
 		<!-- nav left -->
 		<ul class="navbar-nav">
 			<li class="nav-item">
@@ -128,4 +128,15 @@ $result = getnotifications($dbcalss,$user_id,'');
 		<!-- end nav right -->
   </div>
   <div id="result"></div>  
+  <script>
+	window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("myNav").style.background = "rgba(0,0,0,0.4)";
+  } else {
+    document.getElementById("myNav").style.background = "transparent";
+  }
+}  
+  </script>
   </body>

@@ -54,7 +54,7 @@
 }
 
 .dashboard-body{
-	background-color: #f1f1f1;
+	background-color: #f9f9f9;
 	overflow: hidden;
 	overflow-y: auto;
 }
@@ -88,8 +88,8 @@
 
 
 .navbar {
-	width: calc(100% - 210px);
-    margin-left: 210px;
+	width: calc(100% - 200px);
+    margin-left: 200px;
     display: flex;
     flex-direction: row;
     background: transparent;
@@ -110,6 +110,8 @@
 	padding-left: 0;
 	margin-bottom: 0;
 	margin-top: 0;
+	justify-content: center;
+	align-items: center;
 }
 
 .not-link {
@@ -2721,7 +2723,7 @@ th:last-child{
 	#main .dashboard .wrapper .row .d1-main .d1-content {height: 170px;}
 	#main .dashboard .wrapper .row .d2 {height: 170px;}
 	.dashboard-detail-content-1 .d2-main {flex-basis: 100%;}
-	.d3 .content-1 i {font-size: 20px;}
+	.d3 .content-1 i {font-size: 40px;}
 	#main .dashboard .wrapper .row .d3 {height: 120px;}
 	#main .dashboard .wrapper .row .d4 {height: 120px;}
 	#main .dashboard .wrapper .row .d5 {height: 120px;}
@@ -2735,6 +2737,7 @@ th:last-child{
 	.dashboard-detail-main .dashboard-detail-content-2 .dashboard-detail-content-lower-content .dashboard-detail-heading {font-size: 14px;}
 	.dashboard-detail-main .dashboard-detail-content-2 .dashboard-detail-content-lower-content .dashboard-detail-heading-main-row .dashboard-detail-cards .icon {font-size: 25px;}
 	.dashboard-detail-main .dashboard-detail-content-2 .dashboard-detail-content-lower-content .dashboard-detail-heading-main-row .dashboard-detail-cards {height: 80px;}
+	.dashboard-detail-main .dashboard-detail-content-2 .dashboard-detail-content-lower-content .dashboard-detail-heading-main-row {flex-basis: 100%;justify-content: space-around;}
 	.dashboard_table_main tbody .dashboard_product_table {flex-wrap: nowrap;}
 }
 
@@ -2847,10 +2850,10 @@ th:last-child{
 	#main .dashboard .wrapper .row .d1-main .d1-content {height: 170px;}
 	#main .dashboard .wrapper .row .d2 {height: 170px;}
 	.dashboard-detail-content-1 .d2-main {flex-basis: 100%;}
-	.d3 .content-1 i {font-size: 20px;}
+	.d3 .content-1 i {font-size: 40px;}
 	#main .dashboard .wrapper .row .d3 {height: 120px;}
 	#main .dashboard .wrapper .row .d4 {height: 120px;}
-	#main .dashboard .wrapper .row .d5 {height: 90px;}
+	#main .dashboard .wrapper .row .d5 {height: 110px;}
 	.dashboard-detail-content-1 .d6-main {flex-basis: 50%;}
 	.dashboard-detail-content-1 .d7-main {flex-basis: 50%;}
 	.dashboard-detail-content-1 .d8-main {flex-basis: 100%;}

@@ -1,3 +1,5 @@
+
+
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
@@ -148,3 +150,5 @@ function animateValue(obj, start, end, duration) {
   
   const obj = document.getElementById("value");
   animateValue(obj, 100, 2, 5000);
+
+
