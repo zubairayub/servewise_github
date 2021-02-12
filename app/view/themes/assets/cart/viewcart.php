@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
 // Get the results as JSON string
 $product_list = filter_input(INPUT_POST, 'cart_list');
@@ -8,6 +9,7 @@ $proct_final_price = NULL;
 $total_product = NULL;
  ?>
  <?php  include '../themePages/theme_header.phtml'; ?>
+
 <div class="container mt-5 mb-5 viewcart-main">
 <table class="viewcart-table">
    <tr class="viewcart-table-row">
@@ -73,8 +75,500 @@ $proct_final_price += $results->product_price * $results->product_quantity;
     .viewcart-table .viewcart-table-row .viewcart-heading4{flex-basis:20%; color: #4c4c4c;}
     .viewcart-table .viewcart-table-row .viewcart-heading5{flex-basis:10%; color: #4c4c4c;}
     .viewcart-table .viewcart-table-row .viewcart-heading6{flex-basis:10%; color: #4c4c4c;}
+    
+    @media(max-width:1000px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 40%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:100%;}
+      .lower-table{width:100%;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 18px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 30%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 0px;flex-basis: 60%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 20%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 35%;margin: 10px 5px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 30%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
 
-  </style><form method="post" action="checkout.php">
+
+    @media(max-width:900px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 40%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:100%;}
+      .lower-table{width:100%;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 18px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 30%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 0px;flex-basis: 60%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 20%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 35%;margin: 10px 5px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 30%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+    @media(max-width:800px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 40%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:100%;}
+      .lower-table{width:100%;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 18px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 30%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 0px;flex-basis: 60%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 20%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 35%;margin: 10px 5px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 30%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+
+    @media(max-width:768px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 40%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:100%;}
+      .lower-table{width:100%;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 18px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 30%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 0px;flex-basis: 60%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 20%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 35%;margin: 10px 5px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 30%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+    @media(max-width:600px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:560px;}
+      .lower-table{width:560px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 50%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+
+    @media(max-width:500px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 50%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+    @media(max-width:475px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 50%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+    @media(max-width:450px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 50%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+    @media(max-width:425px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 50%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+    @media(max-width:400px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 100%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 10px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 10px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+
+    @media(max-width:375px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:12px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 100%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 3px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 285px;margin: -40px 0 0 -302px;padding: 35px;}
+    }
+
+
+    @media(max-width:350px){
+      .header-content {padding: 10px 10px;}
+      .viewcart-payment-detail select {flex-basis: 70%;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:10px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 100%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 3px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 240px;margin: -40px 0 0 -252px;padding: 35px;}
+    }
+
+
+    @media(max-width:320px){
+      .header-content {padding: 10px 10px;}
+      .header-content .header-content-right .header-logo-section img {width: 40px;height: 38px;}
+      .viewcart-main {overflow: auto;padding: 5px;margin:auto 10px!important;}
+      .viewcart-main .viewcart-item-content .viewcart2 .h6 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content {padding: 10px 4px;}
+      .pic100x100 {width: 50px;height: 50px;}
+      .viewcart-table tbody{font-size:10px;}
+      .viewcart-table{width:500px;}
+      .lower-table{width:500px;}
+      .container {margin: auto 10px;}
+      .viewcart-main .viewcart-item-content .viewcart4 {font-size: 12px;}
+      .viewcart-main .viewcart-item-content .viewcart4 input {width: 60px;font-size: 18px;padding: 10px 10px;}
+      .viewcart-main .viewcart-item-content .viewcart6 .vewcart-delet {width: 25px;height: 25px;}
+      .viewcart-sum-content {flex-wrap: wrap;    padding: 0px 10px;}
+      .viewcart-sum-content .short-note {flex-basis: 100%;padding: 10px;}
+      .short-note-heading h3{margin: 3px 0px;}
+      .short-note-disc p{font-size:12px;}
+      .viewcart-sum-content .viewcart-sum {    margin-top: 10px;flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons {flex-wrap: wrap;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons label {flex-basis: 100%;}
+      .viewcart-sum-content .viewcart-sum .viewcart-coupons .coupon {flex-basis: 100%;margin: 10px 30px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum-heading .sum-head {font-size: 24px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 {font-size: 16px;}
+      .viewcart-payment-detail {flex-wrap: wrap;}
+      .viewcart-payment-detail label {flex-basis: 100%;font-size:16px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value1 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase2 {margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value2{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .text-uppercase3{margin: 3px 0px;}
+      .viewcart-sum-content .viewcart-main-content .viewcart-sum1 .totals-value3{margin: 3px 0px;}
+      .viewcart-payment-detail input {font-size: 16px;padding: 5px;}
+      #menu {position: absolute;width: 240px;margin: -40px 0 0 -252px;padding: 35px;}
+    }
+
+
+  </style><form  class="lower-table" method="post" action="checkout.php">
   <div class="row justify-content-center viewcart-main-content">
     <div class="col-xl-7 col-lg-8 col-md-7 viewcart-content">
       <div class="border border-gainsboro p-3 viewcart-product-head">
