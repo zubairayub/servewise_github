@@ -450,3 +450,14 @@ $( ".sub-menu:nth-child(14)" ).click(function() {
     $(".sub-menu:nth-child(14)").children("a").toggleClass("active-sm");
 
 });
+
+
+$(".section-upper-low").slideUp();
+
+$(".edit-cust").click(function() {
+    $(".section-upper-low").slideDown();
+});
+
+$(".btn-2").click(function() {
+    $(".section-upper-low").slideUp();
+});
