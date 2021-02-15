@@ -103,6 +103,7 @@ $(".sub-menu:nth-child(11)").children("ul").slideUp();
 $(".sub-menu:nth-child(12)").children("ul").slideUp();
 $(".sub-menu:nth-child(13)").children("ul").slideUp();
 $(".sub-menu:nth-child(14)").children("ul").slideUp();
+$(".sub-menu:nth-child(15)").children("ul").slideUp();
 
 $( ".sub-menu:nth-child(3)" ).click(function() {
     $(".sub-menu:nth-child(3)").children("ul").slideToggle();  
@@ -117,6 +118,7 @@ $( ".sub-menu:nth-child(3)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
 // active-class
     $(".sub-menu:nth-child(3)").children("a").toggleClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -130,6 +132,7 @@ $( ".sub-menu:nth-child(3)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -146,6 +149,7 @@ $( ".sub-menu:nth-child(4)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").toggleClass("active-sm");
@@ -159,6 +163,7 @@ $( ".sub-menu:nth-child(4)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -175,6 +180,7 @@ $( ".sub-menu:nth-child(5)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -188,6 +194,7 @@ $( ".sub-menu:nth-child(5)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 });
 
 $( ".sub-menu:nth-child(6)" ).click(function() {
@@ -203,6 +210,7 @@ $( ".sub-menu:nth-child(6)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -216,6 +224,7 @@ $( ".sub-menu:nth-child(6)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
     
 });
 
@@ -232,6 +241,7 @@ $( ".sub-menu:nth-child(7)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -245,6 +255,7 @@ $( ".sub-menu:nth-child(7)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -261,6 +272,7 @@ $( ".sub-menu:nth-child(8)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -274,6 +286,7 @@ $( ".sub-menu:nth-child(8)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -290,6 +303,7 @@ $( ".sub-menu:nth-child(9)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -303,6 +317,7 @@ $( ".sub-menu:nth-child(9)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -319,6 +334,7 @@ $( ".sub-menu:nth-child(10)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -332,6 +348,7 @@ $( ".sub-menu:nth-child(10)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -348,6 +365,7 @@ $( ".sub-menu:nth-child(11)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -361,6 +379,7 @@ $( ".sub-menu:nth-child(11)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -377,6 +396,7 @@ $( ".sub-menu:nth-child(12)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideToggle();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -390,6 +410,7 @@ $( ".sub-menu:nth-child(12)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").toggleClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -406,6 +427,7 @@ $( ".sub-menu:nth-child(13)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideToggle();
     $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -419,6 +441,7 @@ $( ".sub-menu:nth-child(13)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").toggleClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
 
 });
 
@@ -435,6 +458,7 @@ $( ".sub-menu:nth-child(14)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("ul").slideUp();
     $(".sub-menu:nth-child(13)").children("ul").slideUp();
     $(".sub-menu:nth-child(14)").children("ul").slideToggle();
+    $(".sub-menu:nth-child(15)").children("ul").slideUp();
     // active-class
     $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
@@ -448,7 +472,37 @@ $( ".sub-menu:nth-child(14)" ).click(function() {
     $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
     $(".sub-menu:nth-child(14)").children("a").toggleClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").removeClass("active-sm");
+});
 
+$( ".sub-menu:nth-child(15)" ).click(function() {
+    $(".sub-menu:nth-child(3)").children("ul").slideUp();
+    $(".sub-menu:nth-child(4)").children("ul").slideUp();
+    $(".sub-menu:nth-child(5)").children("ul").slideUp();
+    $(".sub-menu:nth-child(6)").children("ul").slideUp();
+    $(".sub-menu:nth-child(7)").children("ul").slideUp();
+    $(".sub-menu:nth-child(8)").children("ul").slideUp();
+    $(".sub-menu:nth-child(9)").children("ul").slideUp();
+    $(".sub-menu:nth-child(10)").children("ul").slideUp();
+    $(".sub-menu:nth-child(11)").children("ul").slideUp();
+    $(".sub-menu:nth-child(12)").children("ul").slideUp();
+    $(".sub-menu:nth-child(13)").children("ul").slideUp();
+    $(".sub-menu:nth-child(14)").children("ul").slideUp();
+    $(".sub-menu:nth-child(15)").children("ul").slideToggle();
+    // active-class
+    $(".sub-menu:nth-child(3)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(4)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(5)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(6)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(7)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(8)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(9)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(10)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(11)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(12)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(13)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(14)").children("a").removeClass("active-sm");
+    $(".sub-menu:nth-child(15)").children("a").toggleClass("active-sm");
 });
 
 
