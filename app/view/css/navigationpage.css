@@ -2470,7 +2470,9 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
 
 /* sub-category-two */
 
-.sub-cat-two-dashboard-main{width: 100%;margin: 20px 0px;}
+.sub-cat-two-dashboard-main{width: 100%;margin: 20px 0px;display: flex;justify-content: space-between;align-items: center;}
+.sub-cat-two-dashboard-main .sub-cat-two-back{font-size: 20px;background-color: white; border: 1px solid rgba(0,0,0,0.4);border-radius: 4px;padding: 4px 10px;transition: .3s ease;}
+.sub-cat-two-dashboard-main .sub-cat-two-back:hover{color: black;background-color: rgb(252, 252, 252);box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
 .sub-cat-two-dashboard{width: 65%;margin: 20px auto;display: flex;align-items: center;background: white;border-radius: 4px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
 .sub-cat-two-dashboard label{flex-basis: 35%; font-size: 20px;font-weight: 600;}
 .sub-cat-two-dashboard form{width: 70%;}
