@@ -6,121 +6,338 @@
 </div>
 </div> -->
 
+
 <div class="wrapper">
 		<div class="row">
-
-<?php
-
-// Load the Google API PHP Client Library.
-require_once '../app/lib/gogolee/vendor/autoload.php';
-
-
-$analytics = initializeAnalytics();
-$profile = getFirstProfileId($analytics);
-
-
-print_r($analytics);
-exit();
-
-$results = getResults($analytics, $profile);
-printResults($results);
-
-
-
-
-
-
-function initializeAnalytics()
-{
-  // Creates and returns the Analytics Reporting service object.
-
-  // Use the developers console and download your service account
-  // credentials in JSON format. Place them in this directory or
-  // change the key file location if necessary.
-  $KEY_FILE_LOCATION =  '../app/lib/gogolee/vendor/servewise-d00c4687d4e4.json';
-
-  // Create and configure a new client object.
-  $client = new Google_Client();
-  $client->setApplicationName("Hello Analytics Reporting");
-  $client->setAuthConfig($KEY_FILE_LOCATION);
-  $client->setScopes(['https://www.googleapis.com/auth/analytics.readonly']);
-  $analytics = new Google_Service_Analytics($client);
-
- return $analytics;
-
-}
-
-function getFirstProfileId($analytics) {
-  // Get the user's first view (profile) ID.
-
-  // Get the list of accounts for the authorized user.
-  $accounts = $analytics->management_accounts->listManagementAccounts();
-
-  if (count($accounts->getItems()) > 0) {
-
-    $items = $accounts->getItems();
-
-    $firstAccountId = $items[0]->getId();
-
-    // Get the list of properties for the authorized user.
-    $properties = $analytics->management_webproperties
-        ->listManagementWebproperties($firstAccountId);
-
-    if (count($properties->getItems()) > 0) {
-      $items = $properties->getItems();
-      $firstPropertyId = $items[0]->getId();
-
-      // Get the list of views (profiles) for the authorized user.
-      $profiles = $analytics->management_profiles
-          ->listManagementProfiles($firstAccountId, $firstPropertyId);
-
-      if (count($profiles->getItems()) > 0) {
-        $items = $profiles->getItems();
-
-        // Return the first view (profile) ID.
-       // return $items[0]->getId();
-        print_r($items);
-
-
-      } else {
-        throw new Exception('No views (profiles) found for this user.');
+    <!-- <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQHWjaE_ZsHq7jFNAxy6xxAMXsOJB1JDdCy9eZ3OIVCggY-hqagUhqcBtrzT4dV9R_ZHdRJXDhw4YaM/pubchart?oid=1672328284&amp;format=interactive"></iframe> -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+      function getRealtimeData(){
+        $.post('../app/lib/realtime-analytics.php', {}, function(response){
+          console.log(response);
+          $("#online-user").text(response.online);
+          $('#online-users-data').html('');
+          $.each(response.data, function(key, val){
+              $("#online-users-data").append('<li>' +
+              '<b>Device :</b> ' + (val[0]) + '<br>' +
+              '<b>Branch :</b> ' + (val[1]) + '<br>' +
+              '<b>Page :</b> ' + (val[2]) + '<br>' +
+              '<b>Location :</b> ' + (val[3] + '<br> <b>Region :</b> ' + val[4]) + '<br>' +
+              '<b>City :</b> ' + (val[5]) + '<br>' +
+              //'users' + (val[5]) +
+              '</li>')
+          });
+          //realtimeDataContainer.find('#online-users').text(response.online);
+        }, 'json');
       }
-    } else {
-      throw new Exception('No properties found for this user.');
+      getRealtimeData();
+      setInterval(getRealtimeData, 10000);
+    </script>
+    
+<div id="realtime-data">
+  <h3>
+    Online <span id="online-user"></span> users
+  </h3>
+  <ul id="online-users-data"></ul>
+</div>
+</div>
+<?php
+    require_once '../app/lib/gogolee/vendor/autoload.php'; 
+ 
+    $KEY_FILE_LOCATION =  '../app/lib/gogolee/servewise-f14444187f92.json';
+
+    $client = new Google_Client();
+    $client->setAuthConfig($KEY_FILE_LOCATION);
+    $client->setScopes(['https://www.googleapis.com/auth/analytics.readonly']);
+    $analytics = new Google_Service_Analytics($client);
+
+    $client->useApplicationDefaultCredentials();
+ 
+    if ($client->isAccessTokenExpired()) {
+      $client->refreshTokenWithAssertion();
     }
-  } else {
-    throw new Exception('No accounts found for this user.');
-  }
-}
-
-function getResults($analytics, $profileId) {
-  // Calls the Core Reporting API and queries for the number of sessions
-  // for the last seven days.
-   return $analytics->data_ga->get(
-       'ga:'  . '261561716' ,'7daysAgo','today','ga:sessions');
-}
-
-function printResults($results) {
-  // Parses the response from the Core Reporting API and prints
-  // the profile name and total sessions.
-  if (count($results->getRows()) > 0) {
-
-    // Get the profile name.
-    $profileName = $results->getProfileInfo()->getProfileName();
-
-    // Get the entry for the first entry in the first row.
-    $rows = $results->getRows();
-    $sessions = $rows[0][0];
-
-    // Print the results.
-    print "First view (profile) found: $profileName\n";
-    print "Total sessions: $sessions\n";
-  } else {
-    print "No results found.\n";
-  }
-}
-
-
+ 
+    $arrayInfo = $client->getAccessToken();
+ 
+    $accesstoken = $arrayInfo['access_token'];
+ 
 ?>
+<script>
+(function(w,d,s,g,js,fs){
+  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+  js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+  js.src='https://apis.google.com/js/platform.js';
+  fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+}(window,document,'script'));
+</script>
+
+<div id="embed-api-auth-container"></div>
+<div id="main-chart-container"></div>
+<div id="breakdown-chart-container"></div>
+<div id="chart-container"></div>
+<div id="timeline"></div>
+<div id="timeChart"></div>
+<div id="pieChart"></div>
+<div id="userType"></div>
+<div id="sourceMedium"></div>
+<div id="view-selector-container" style="display:none"></div>
+
+<script>
+
+gapi.analytics.ready(function() {
+
+  /**
+   * Authorize the user immediately if the user has already granted access.
+   * If no access has been created, render an authorize button inside the
+   * element with the ID "embed-api-auth-container".
+   */
+  gapi.analytics.auth.authorize({
+    container: 'embed-api-auth-container',
+    clientid: '714909486631-mhae30ro7tkvnud5c8e4644a66nra9e5.apps.googleusercontent.com',
+    'serverAuth': {
+      'access_token': '<?= $accesstoken; ?>'
+      //'ya29.c.KpwB8ge3Gx_uWSjzTcAVry6mKYhHRsCRWoEkTEwZScYYkZCBXYywfXp6qCoU0X9wXjQrJEya9ZV8e5lGDvLEAcW3Hm3w6MBrQfNlC1Raym8jvwlDCz4Z2IMCBmvffkYUNPnCMprT7ALouMitZC4-8M_15DsCZamltVvcGLPHqEDsTljJwW_8hW6mG3BF4Wwij9rSr78poycWxbEgt76G'
+    }
+  });
+  
+
+  /**
+   * Create a new ViewSelector instance to be rendered inside of an
+   * element with the id "view-selector-container".
+   */
+  var viewSelector = new gapi.analytics.ViewSelector({
+    container: 'view-selector-container'
+  });
+
+  // Render the view selector to the page.
+  viewSelector.execute();
+
+
+  /**
+   * Create a new DataChart instance with the given query parameters
+   * and Google chart options. It will be rendered inside an element
+   * with the id "chart-container".
+   */
+  var dataChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'metrics': 'ga:sessions,ga:users',
+      'dimensions': 'ga:date',
+      'start-date': '7daysAgo',
+      'end-date': 'today'
+    },
+    chart: {
+      container: 'chart-container',
+      type: 'LINE',
+      options: {
+        title: 'Sessions over the past week.',
+        fontSize: 12,
+      }
+    }
+  });
+  var userType = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'metrics': 'ga:users',
+      'dimensions': 'ga:userType',
+      'start-date': '7daysAgo',
+      'end-date': 'today'
+    },
+    chart: {
+      container: 'userType',
+      type: 'PIE',
+      options: {
+        title: 'User Types',
+        fontSize: 12,
+      }
+    }
+  });
+  var sourceMedium = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'metrics': 'ga:users',
+      'dimensions': 'ga:sourceMedium',
+      'start-date': '30daysAgo',
+      'end-date': 'today'
+    },
+    chart: {
+      container: 'sourceMedium',
+      type: 'COLUMN',
+      options: {
+        title: 'User Types',
+        fontSize: 12,
+      }
+    }
+  });
+  var timeline = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      metrics: 'ga:visits',
+      'dimensions': 'ga:city',
+      'start-date': '7daysAgo',
+      'end-date': 'today',
+    },
+    chart: {
+      type: 'COLUMN',
+      container: 'timeline',
+      options: {
+        title: 'Top Locations',
+        fontSize:12
+      }
+    }
+  });
+  var pieChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'start-date': '7daysAgo',
+      'end-date': 'today',
+      'metrics': 'ga:pageviews',
+      'dimensions': 'ga:pagePathLevel1',
+      'sort': '-ga:pageviews',
+      'filters': 'ga:pagePathLevel1!=/',
+      'max-results': 7
+    },
+    chart: {
+      'container': 'pieChart',
+      'type': 'PIE',
+      'options': {
+        'pieHole': 4/9,
+      }
+    }
+
+  });
+  
+  var timeChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'start-date': '7daysAgo',
+      'end-date': 'today',
+      'metrics': 'ga:users,ga:pageviews',
+      'dimensions': 'ga:dateHour',
+      'max-results': 7
+    },
+    chart: {
+      'container': 'timeChart',
+      'type': 'COLUMN',
+      'options': {
+        'pieHole': 4/9,
+      }
+    }
+
+  });
+  var mainChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'dimensions': 'ga:pageTitle',
+      'metrics': 'ga:sessions',
+      'sort': '-ga:sessions',
+      'max-results': '6'
+    },
+    chart: {
+      type: 'TABLE',
+      container: 'main-chart-container',
+      options: {
+        width: '100%'
+      }
+    }
+  });
+
+
+  /**
+   * Create a timeline chart showing sessions over time for the browser the
+   * user selected in the main chart.
+   */
+  var breakdownChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'dimensions': 'ga:date',
+      'metrics': 'ga:sessions',
+      'start-date': '7daysAgo',
+      'end-date': 'today'
+    },
+    chart: {
+      type: 'LINE',
+      container: 'breakdown-chart-container',
+      options: {
+        width: '100%'
+      }
+    }
+  });
+
+
+  /**
+   * Store a refernce to the row click listener variable so it can be
+   * removed later to prevent leaking memory when the chart instance is
+   * replaced.
+   */
+  var mainChartRowClickListener;
+
+
+  /**
+   * Render the dataChart on the page whenever a new view is selected.
+   */
+  viewSelector.on('change', function(ids) {
+    
+    var options = {query: {ids: ids}};
+
+    // Clean up any event listeners registered on the main chart before
+    // rendering a new one.
+    if (mainChartRowClickListener) {
+      google.visualization.events.removeListener(mainChartRowClickListener);
+    }
+
+    mainChart.set(options).execute();
+      dataChart.set(options).execute();
+      timeChart.set(options).execute();
+      userType.set(options).execute();
+      sourceMedium.set(options).execute();
+      timeline.set(options).execute();
+      pieChart.set(options).execute();
+
+    // Only render the breakdown chart if a browser filter has been set.
+    if (breakdownChart.get().query.filters) breakdownChart.execute();
+  });
+
+
+  /**
+   * Each time the main chart is rendered, add an event listener to it so
+   * that when the user clicks on a row, the line chart is updated with
+   * the data from the browser in the clicked row.
+   */
+  mainChart.on('success', function(response) {
+
+    var chart = response.chart;
+    var dataTable = response.dataTable;
+
+    // Store a reference to this listener so it can be cleaned up later.
+    mainChartRowClickListener = google.visualization.events
+        .addListener(chart, 'select', function(event) {
+
+      // When you unselect a row, the "select" event still fires
+      // but the selection is empty. Ignore that case.
+      if (!chart.getSelection().length) return;
+
+      var row =  chart.getSelection()[0].row;
+      var pageTitle =  dataTable.getValue(row, 0);
+      var options = {
+        query: {
+          filters: 'ga:pageTitle==' + pageTitle
+        },
+        chart: {
+          options: {
+            title: pageTitle
+          }
+        }
+      };
+
+      breakdownChart.set(options).execute();
+      dataChart.set(options).execute();
+      userType.set(options).execute();
+      sourceMedium.set(options).execute();
+      timeChart.set(options).execute();
+      timeline.set(options).execute();
+      pieChart.set(options).execute();
+        });
+
+    // dataChart.set({query: {ids: ids}}).execute();
+    // timeline.set({query: {ids: ids}}).execute();
+    // pieChart.set({query: {ids: ids}}).execute();
+  });
+ 
+});
+</script>
+
 
 </div></div>

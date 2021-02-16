@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "servewise",
+  "private_key_id": "692afdd815b9599fae9538cbd8966e0a52b611f1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCIUZnvW9PnLz+1\n1Bl7Zqn7XJpdlVzAGAaqBpL+08QpqlLicUAPLg4Gx3ihiBjctG4JRl7lDel+dfcN\n9Q6K/mv1G4awzLq/XrS1lkHmPJvLwkxIbliZygZWc1DIVc4Lsq6MiDVQjpuItDcQ\n/o6pAqoDO0j/fMMo48Ze9fFQNKAt39cgR+HtzAALcY8EuQoI/qNt9r8M0KyvESNc\nom3hzCcZPAnW5gEkhqSwDLTUGbqkyOUkL3cyM64SCkdKPjf7o0WI0gO1l92r+jVT\nZwJez+hp3rN81RXcOOzfcLOuPBhSdv8AsGp6RXgJJ045KYGZReZ/PKNTOTl6jXCa\n/KF0aBSvAgMBAAECggEAOnNq4vRn7xgWZFvWtU/3EN3LHtd9lqx2pw78lqGs2gS7\nV3ch9aBUyVlcgz69El2XVQjEhciqVtw0G9r46mZfWhD8dvDCHm54Y+hSx2szjnH4\njZIrEX5Lq2P0voH0QJXUPFPnMGyFil9jwTi1aQjIZ2xTR6FyeST5mRwx5ac7C4/w\nC5QF19/Kkx5wdnBlBZV1rc62hjrbg0zJRAmHbeWtRAqqiflap295MnDMxoSR3JiX\nUsz1/6ozjVMgAz+UGXHaD0dd+jmJpUD9JVcL2veHYSf5wCp87REZZD4NyZJWhecu\nK+5Tl4w/bn4bP5iO54f+IehSig2Wdxq5sWNjdIdWoQKBgQC+9af6m3DTirbaKQLT\nFf8V5iS5KyUtyFptoL0bnNbY7BDAR0vDSWg0B99aP6S0B5l2EiF9zCepyP1OTEgs\nH3IqrOx9oeRVDkvl8MFX8G81AqmkP/gOqmGLKX2gxcwKTyVmcoy1I1ZWhPU460JF\n6P6xz9kB82ksKD81jL/7L2PGnwKBgQC2v6Uzp8GvPcCkEdOSbEHMYMMksSow1hN9\ndDq0gfeG19rG6vMMm/VI0din/mc61xDqho9K3RXfLPCu2fr4v0SdKstbhM5rHqLf\nl/UDFJYLt+Qp4hkr5NDrJBqAbDHHJzlTgnJi+i12MjgPzfks3/qhV0hChtRkjXIp\nkDoJThxH8QKBgQCIeZ0B+FGcfkjMhf7kyZWzGvYn+HPr0oL+UqCUuXS7N4uJP+sf\nuLjmZrH0GAQoPj4pKjARbfTy3Rhb+xyhnB/F7CxgZXGAcGVCAtzLcqSn6C1BnA42\nvQJVqOOGIZb/zyzVmQyC8KxlzURM16ZXvHs6rWdUg5go3OK/7MXQSUAv1QKBgHQc\nCXNrZ5TW0Fmt9dW3MIsRA4uBgMPskA+KVG4xkTo8VQVDa88cG9j7cwMxkRcCY/4O\nJmazV10nqXf+iQWYSJjvAquQErJeka8sVgByCO9DFBVEUSfhRpfPpYLouyvEkRis\n7c5TE6VgPNxVyrYnTI9L7F5QWgvVDq63sxgMZ82RAoGAKQPa5ZF5lugEF7cL30YE\nt0IHjdX3frNhq7GWxOdaaUHNR3IdgXSPM0CA022rR7DduYKdf49jkO82ATFY0x21\nAGKAjj/MHsil9sYLIZmk8YFpfErm2ErS0SH3SIDKFOpQ4BZJHcoPNU/8ViRGp4NB\nkkixQJtIUOG5JCodoBZqMcg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "servewise@servewise.iam.gserviceaccount.com",
+  "client_id": "105521624146121246480",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/servewise%40servewise.iam.gserviceaccount.com"
+}
