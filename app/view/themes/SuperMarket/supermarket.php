@@ -135,6 +135,12 @@ include 'include/header.php';
 
 </style>
 <body> 
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</head>
     <header>
         <section class="nav" id="myNav">
             <div class="container">
