@@ -23,14 +23,4 @@ $arr = [
   'data' => $result->getRows()
 ];
 echo json_encode($arr);
-//print_r($arr);
-// foreach($result as $key => $value):
-	//echo 'Device '.$value[0][0];
 	?>
-<?php 
-	//print_r($value[0][0]);
-// endforeach;
-?>
-<script>
-
-</script>

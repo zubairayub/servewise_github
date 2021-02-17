@@ -515,3 +515,27 @@ $(".edit-cust").click(function() {
 $(".btn-2").click(function() {
     $(".section-upper-low").slideUp();
 });
+
+$("#online-users-data").slideUp();
+$("#main-chart-container").slideUp();
+
+$( "#realtime-data" ).children('h3').click(function() {
+    $("#online-users-data").slideToggle();
+    $(".fa-angle-right").toggleClass("angle-active")
+    $("#realtime-data").children('h3').toggleClass("realtime-data-2")
+    $("#main-chart-container").slideUp();
+    $(".session-selector").children('h3').removeClass("realtime-data-2")
+    $(".fa-angle-double-right").removeClass("d-angle-active")
+});
+
+$( ".session-selector" ).children('h3').click(function() {
+    $("#main-chart-container").slideToggle();
+    $(".fa-angle-double-right").toggleClass("d-angle-active")
+    $(".session-selector").children('h3').toggleClass("realtime-data-2")
+    $("#online-users-data").slideUp();
+    $(".fa-angle-right").removeClass("angle-active")
+    $("#realtime-data").children('h3').removeClass("realtime-data-2")
+});
+
+
+
