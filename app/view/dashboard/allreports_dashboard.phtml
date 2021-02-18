@@ -110,6 +110,10 @@
     <h3>User Type Grade:</h3>
   <div id="sourceMedium"></div>
   </div>
+  <div class="chart-advance">
+    <h3>Product added to Cart:</h3>
+  <div id="cartProduct"></div>
+  </div>
 
   <div id="view-selector-container" style="display:none"></div>
 </div>
@@ -165,6 +169,24 @@ gapi.analytics.ready(function() {
       }
     }
   });
+  var cartProduct = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      'metrics': 'ga:totalEvents',
+      'dimensions': 'ga:date,ga:country,ga:userType,ga:eventAction,ga:eventLabel',
+      'sort': '-ga:eventLabel',
+      'start-date': '7daysAgo',
+      'end-date': 'today'
+    },
+    chart: {
+      container: 'cartProduct',
+      type: 'TABLE',
+      options: {
+        title: 'Product added to Cart over the past week.',
+        fontSize: 12,
+      }
+    }
+  });
+  
   var userType = new gapi.analytics.googleCharts.DataChart({
     query: {
       'metrics': 'ga:users',
@@ -316,6 +338,7 @@ gapi.analytics.ready(function() {
       sourceMedium.set(options).execute();
       timeline.set(options).execute();
       pieChart.set(options).execute();
+      cartProduct.set(options).execute();
 
     // Only render the breakdown chart if a browser filter has been set.
     if (breakdownChart.get().query.filters) breakdownChart.execute();
@@ -360,6 +383,7 @@ gapi.analytics.ready(function() {
       timeChart.set(options).execute();
       timeline.set(options).execute();
       pieChart.set(options).execute();
+      cartProduct.set(options).execute();
         });
 
     // dataChart.set({query: {ids: ids}}).execute();
