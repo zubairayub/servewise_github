@@ -66,5 +66,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MXSHQXW');</script>
 <!-- End Google Tag Manager -->
+<?php
+// Transaction Data
+$trans = array('id'=>'1234', 'affiliation'=>'Acme Clothing',
+               'revenue'=>'11.99', 'shipping'=>'5', 'tax'=>'1.29');
 
+// List of Items Purchased.
+$items = array(
+  array('sku'=>'SDFSDF', 'name'=>'Shoes', 'category'=>'Footwear', 'price'=>'100', 'quantity'=>'1'),
+  array('sku'=>'123DSW', 'name'=>'Sandals', 'category'=>'Footwear', 'price'=>'87', 'quantity'=>'1'),
+  array('sku'=>'UHDF93', 'name'=>'Socks', 'category'=>'Footwear', 'price'=>'5.99', 'quantity'=>'2')
+);
+?>
+<?php
+// Function to return the JavaScript representation of a TransactionData object.
+function getTransactionJs(&$trans) {
+  return <<<HTML
+ga('ecommerce:addTransaction', {
+  'id': '{$trans['id']}',
+  'affiliation': '{$trans['affiliation']}',
+  'revenue': '{$trans['revenue']}',
+  'shipping': '{$trans['shipping']}',
+  'tax': '{$trans['tax']}'
+});
+HTML;
+}
+
+// Function to return the JavaScript representation of an ItemData object.
+function getItemJs(&$transId, &$item) {
+  return <<<HTML
+ga('ecommerce:addItem', {
+  'id': '$transId',
+  'name': '{$item['name']}',
+  'sku': '{$item['sku']}',
+  'category': '{$item['category']}',
+  'price': '{$item['price']}',
+  'quantity': '{$item['quantity']}'
+});
+HTML;
+}
+?>
+<!-- Begin HTML -->
+<script>
+ga('require', 'ecommerce');
+
+<?php
+echo getTransactionJs($trans);
+
+foreach ($items as &$item) {
+  echo getItemJs($trans['id'], $item);
+}
+?>
+
+ga('ecommerce:send');
+</script>
 </head>
