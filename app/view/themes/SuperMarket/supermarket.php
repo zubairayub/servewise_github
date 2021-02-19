@@ -137,9 +137,15 @@ include 'include/header.php';
 <body> 
 	
 <!-- Google Tag Manager (noscript) -->
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 </head>
     <header>
         <section class="nav" id="myNav">
@@ -225,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                    
                         <input name="product_price" value="<?= $value['price']?>"type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart-<?= $value['name'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -350,5 +356,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         AOS.init();
       </script>
+      <?php
+// Transaction Data
+$trans = array('id'=>'1234', 'affiliation'=>'Acme Clothing',
+               'revenue'=>'11.99', 'shipping'=>'5', 'tax'=>'1.29');
+
+// List of Items Purchased.
+$items = array(
+  array('sku'=>'SDFSDF', 'name'=>'Shoes', 'category'=>'Footwear', 'price'=>'100', 'quantity'=>'1'),
+  array('sku'=>'123DSW', 'name'=>'Sandals', 'category'=>'Footwear', 'price'=>'87', 'quantity'=>'1'),
+  array('sku'=>'UHDF93', 'name'=>'Socks', 'category'=>'Footwear', 'price'=>'5.99', 'quantity'=>'2')
+);
+?>
+<?php
+// Function to return the JavaScript representation of a TransactionData object.
+function getTransactionJs(&$trans) {
+  return <<<HTML
+ga('ecommerce:addTransaction', {
+  'id': '{$trans['id']}',
+  'affiliation': '{$trans['affiliation']}',
+  'revenue': '{$trans['revenue']}',
+  'shipping': '{$trans['shipping']}',
+  'tax': '{$trans['tax']}'
+});
+HTML;
+}
+
+// Function to return the JavaScript representation of an ItemData object.
+function getItemJs(&$transId, &$item) {
+  return <<<HTML
+ga('ecommerce:addItem', {
+  'id': '$transId',
+  'name': '{$item['name']}',
+  'sku': '{$item['sku']}',
+  'category': '{$item['category']}',
+  'price': '{$item['price']}',
+  'quantity': '{$item['quantity']}'
+});
+HTML;
+}
+?>
+<!-- Begin HTML -->
+<script>
+ga('require', 'ecommerce');
+
+<?php
+echo getTransactionJs($trans);
+
+foreach ($items as &$item) {
+  echo getItemJs($trans['id'], $item);
+}
+?>
+
+ga('ecommerce:send');
+</script>
 </body>
 </html>
