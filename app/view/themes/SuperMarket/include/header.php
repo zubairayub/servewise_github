@@ -66,5 +66,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MXSHQXW');</script>
 <!-- End Google Tag Manager -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer||[];
+function trackGTMEcommerce() {
+    this._addTrans = addTrans;
+    this._addItem = addItems;
+    this._trackTrans = trackTrans;
+}
 
+var transaction = {};
+transaction.transactionProducts = [];
+
+function addTrans(orderID, store, total, tax, shipping, city, state, country) {
+    transaction.transactionId = orderID;
+    transaction.transactionAffiliation = store;
+    transaction.transactionTotal = total;
+    transaction.transactionTax = tax;
+    transaction.transactionShipping = shipping;
+}
+
+
+function addItems(orderID, sku, product, variation, price, quantity) {
+    transaction.transactionProducts.push({
+        'id': orderID,
+            'sku': sku,
+            'name': product,
+            'category': variation,
+            'price': price,
+            'quantity': quantity
+    });
+}
+
+function trackTrans() {
+    transaction.event = 'transactionSuccess';
+    dataLayer.push(transaction);
+}
+
+var pageTracker = new trackGTMEcommerce();
+</script>
 </head>
