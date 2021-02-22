@@ -663,9 +663,9 @@ $proct_final_price += $results->product_price * $results->product_quantity;
       <div class="viewcart-payment-detail">
         <label>Payment Method</label>
         <select name="payment-method">
-          <option value="pespal">pespal</option>
+          <option value="pespal">PESAPAL</option>
           <option value="mpesa">mpesa</option>
-          <option value="paystack">paystack</option>
+          <option value="paystack">PayStack</option>
           <option value="flutter">flutter</option>
         </select> 
           <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="Submit">

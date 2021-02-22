@@ -43,6 +43,8 @@ nav{
     justify-content: space-between;
 }
 
+#myNav{transition: .3s ease;}
+
 .navigation a{
     padding: 0px 10px;
     color: black;

@@ -66,6 +66,10 @@ include 'include/header.php';
   
   -webkit-touch-callout: none;
 }
+#menuToggle .checkbox::before{
+    font-family: FontAwesome;
+    content: "\f095";
+}
 
 #menuToggle .fa-shopping-cart
 {
