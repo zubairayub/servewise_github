@@ -246,6 +246,8 @@ endforeach;
 
 $branch_data  = getbranchbybranchid($dbclass,$branch_id);
 
+echo $order_details_id;
+
 $vendor_data = getvendors($dbclass,$branch_data[0]['vendor_id'],'FALSE');
 if(!empty($vendor_data) && !empty($branch_data)){
 
@@ -295,7 +297,7 @@ $subject_user = 'Order Initiated';
 // 	$varr->query="INSERT INTO `order_details`(`id`, `user_id`, `branch_id`, `branch_owner_id`, `shipping_type`, `payment_method`) VALUES (?,?,?,?,?,?)";
 // 	$result=$varr->executeQuery($varr->query,array(NULL,$userid,$to_user_id,$type,$url,'0'),"create");
 
-// return $result;
+ 
 
 
 
