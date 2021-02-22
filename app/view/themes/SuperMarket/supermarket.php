@@ -228,11 +228,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                         </div>
                        <div class="product-content-price"><span>$</span><?php echo $value['price'] ; ?></div>
+
                        
                     </div>
 
                     <div class="product-card-button item">
-                   
+                    <input name="product_purchase_price" value="<?= '50'?>"type="hidden" />
                         <input name="product_price" value="<?= $value['price']?>"type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -307,6 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
 
                     <div class="product-card-button item">
+                        <input name="product_purchase_price" value="<?= '50'?>"type="hidden" />
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -358,6 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="hot-product-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4><span>Hot Deal</span></div>
                     <div class="hot-product-dis"><?php echo $value['description'] ; ?></div>
                     <div class="product-card-button">
+                        <input name="product_purchase_price" value="<?= '50'?>"type="hidden" />
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
