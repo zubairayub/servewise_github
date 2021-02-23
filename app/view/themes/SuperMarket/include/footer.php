@@ -114,3 +114,28 @@ function scrollFunction() {
 }
 
     </script>
+    <script>
+product_id = $('#product_id').val();
+Product_name = $('#product_price').val();
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'eec.detail',
+  ecommerce: {
+    detail: {
+      actionField: {
+        list: 'Search Results'
+      },
+      products: [{
+        id: product_id,
+        name: 'MY PRODUCT',
+        category: 'devesa',
+        variant: 'Text',
+        brand: SIMO AHAVA,
+        dimension3: 'Ecommerce',
+        metric5: 12,
+        metric6: 1002
+      }]
+    }
+  }
+});
+</script>
