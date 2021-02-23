@@ -86,7 +86,7 @@ $('.sc-add-to-cart').on('click', function () {
         });
 
 
-//         window.onscroll = function() {myFunction()};
+//window.onscroll = function() {myFunction()};
 
 // // Get the header
 // var header = document.getElementById("myNav");
