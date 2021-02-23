@@ -104,5 +104,27 @@ function trackTrans() {
 
 var pageTracker = new trackGTMEcommerce();
 </script>
+<script>
 
+product_id = $('#product_id').val();
+Product_name = $('#product_price').val();
+product_price = $('#product_price').val();
+// Measures product impressions and also tracks a standard
+// pageview for the tag configuration.
+// Product impressions are sent by pushing an impressions object
+// containing one or more impressionFieldObjects.
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'USD',                       // Local currency is optional.
+    'impressions': [
+     {
+       'name': product_name,       // Name or ID is required.
+       'id': product_id,
+       'price': product_price,
+       'category': 'Any',
+       'list': 'Search Results'
+     }]
+  }
+});
+</script>
 </head>
