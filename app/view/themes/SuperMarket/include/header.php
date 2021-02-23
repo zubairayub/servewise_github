@@ -106,9 +106,9 @@ var pageTracker = new trackGTMEcommerce();
 </script>
 <script>
 
-product_id = $('#product_id').val();
-Product_name = $('#product_price').val();
-product_price = $('#product_price').val();
+var product_id = $('#product_id').val();
+var Product_name = $('#product_price').val();
+var product_price = $('#product_price').val();
 // Measures product impressions and also tracks a standard
 // pageview for the tag configuration.
 // Product impressions are sent by pushing an impressions object
