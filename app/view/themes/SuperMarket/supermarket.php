@@ -312,7 +312,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input id="product_price" name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input id="product_id" name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        
+                        <script>
+                            product_id = $('#product_id').val();
+                            Product_name = $('#product_price').val();
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                            event: 'eec.detail',
+                            ecommerce: {
+                                detail: {
+                                actionField: {
+                                    list: 'Search Results'
+                                },
+                                products: [{
+                                    id: product_id,
+                                    name: 'MY PRODUCT',
+                                    category: 'devesa',
+                                    variant: 'Text',
+                                    brand: SIMO AHAVA,
+                                    dimension3: 'Ecommerce',
+                                    metric5: 12,
+                                    metric6: 1002
+                                }]
+                                }
+                            }
+                            });
+                        </script>
                         <script>
                             var qty = $('.sc-cart-item-qty').val();
                             dataLayer.push({
