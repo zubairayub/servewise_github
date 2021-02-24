@@ -709,6 +709,27 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 	<script>
 	$('#pay-now').click(function(){
+		var dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'transaction',
+			'ecommerce': {
+				'purchase': {
+					'actionField': {
+						'id': <?= $trans_id; ?>,
+						'revenue' : '68.00'
+					},
+					'products': [{
+						'name': 'cow_meat',
+						'id': '32',
+						'price': '15.25',
+						'quantity': '1',
+					},
+				]
+				
+			}
+			
+		}
+		});
 		
 		url='checkoutData.php';
 		formData = $('form').serialize();
