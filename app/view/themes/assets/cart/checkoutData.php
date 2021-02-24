@@ -18,16 +18,19 @@ dataLayer.push({
         'purchase': {
             'actionField': {
                 'id': <?= $trans_id; ?>,
-                'revenue' : '35.43'
+                'revenue' : '68.00'
             },
             'products': [{
                 'name': 'cow_meat',
                 'id': '32',
                 'price': '15.25',
                 'quantity': '1',
-            }]
-        }
+            },
+        ]
+        
     }
+    
+}
 });
 </script>
 <?php
