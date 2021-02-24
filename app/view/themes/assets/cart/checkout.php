@@ -614,7 +614,29 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 							</td> -->
 						</tr>
 					</tbody>
-					
+					<script>
+					var dataLayer = window.dataLayer || [];
+					dataLayer.push({
+						'event': 'transaction',
+						'ecommerce': {
+							'purchase': {
+								'actionField': {
+									'id': '1', //transaction id
+									'revenue' : <?= $value['totals'][$i]; ?>
+								},
+								'products': [{
+									'name': <?= $value['product_name'][$i]; ?>,
+									'id': <?= $value['product_id'][$i]; ?>,
+									'price': <?= $value['product_price'][$i]; ?>,
+									'quantity': '1',
+								},
+							]
+							
+						}
+						
+					}
+					});
+					</script>
 				
 </div><?php endfor; ?>
 </table>
@@ -709,27 +731,7 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 	<script>
 	
-	var dataLayer = window.dataLayer || [];
-		dataLayer.push({
-			'event': 'transaction',
-			'ecommerce': {
-				'purchase': {
-					'actionField': {
-						'id': '1', //transaction id
-						'revenue' : '68.00'
-					},
-					'products': [{
-						'name': 'cow_meat',
-						'id': '32',
-						'price': '15.25',
-						'quantity': '1',
-					},
-				]
-				
-			}
-			
-		}
-		});
+	
 	$('#pay-now').click(function(){
 		url='checkoutData.php';
 		formData = $('form').serialize();
