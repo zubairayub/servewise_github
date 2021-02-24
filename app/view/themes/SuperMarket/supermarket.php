@@ -374,7 +374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </script>
  <script>
     var product_name = $('.sc-cart h4.list-group-item-heading').html();
-    var product_price = $('.sc-cart span.sc-cart-item-price').html().replace("$", "");
+    var product_price = $('.sc-cart span.sc-cart-item-price').html();
     var product_qty = $('.sc-cart .sc-cart-item-qty').val();
     dataLayer.push({
 
@@ -386,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     'add': {'products': [{'name': product_name,
 
-    'id': '<?= $value['product_id']; ?>',
+    'id': '37',
 
     'price': product_price,
 
