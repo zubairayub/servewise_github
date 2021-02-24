@@ -708,14 +708,14 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	if($payment_method == 'flutter'){?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 	<script>
-	$('#pay-now').click(function(){
-		var dataLayer = window.dataLayer || [];
+	
+	var dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'transaction',
 			'ecommerce': {
 				'purchase': {
 					'actionField': {
-						'id': <?= $trans_id; ?>,
+						'id': '1', //transaction id
 						'revenue' : '68.00'
 					},
 					'products': [{
@@ -730,7 +730,7 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 			
 		}
 		});
-		
+	$('#pay-now').click(function(){
 		url='checkoutData.php';
 		formData = $('form').serialize();
 		$.ajax({
