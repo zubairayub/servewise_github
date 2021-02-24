@@ -47,9 +47,6 @@ include 'include/header.php';
   color: tomato;
 }
 
-
-
-
 #menuToggle .checkbox
 {
   display: block;
@@ -94,8 +91,6 @@ include 'include/header.php';
     transform: scale(1.1);
 }
 
-
-
 #menuToggle input:checked ~ .fa-shopping-cart
 {
   opacity: 1;
@@ -129,22 +124,8 @@ include 'include/header.php';
 {
   transform: none;
 }
-
-
-
-
-
-
-
-
 </style>
 <body> 
-	
-<!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
-<!-- End Google Tag Manager (noscript) -->
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -237,32 +218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input name="product_price" value="<?= $value['price']?>"type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        <script>
-                            var qty = $('.sc-cart-item-qty').val();
-                            dataLayer.push({
-
-                            'event': 'addToCart',
-
-                            'ecommerce': {
-
-                            'currencyCode': 'USD',
-
-                            'add': {'products': [{'name': '<?= $value['name']; ?>',
-
-                            'id': '<?= $value['product_id']; ?>',
-
-                            'price': '<?= $value['price']; ?>',
-
-                            'quantity': qty
-
-                            }]
-
-                            }
-
-                            }
-
-                            });
-                        </script>
+                        
                     </div>
                 </div>
 
@@ -416,6 +372,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         AOS.init();
       </script>
-      
+ <script>
+    var product_name = $('.sc-cart h4.list-group-item-heading').html();
+    var product_price = $('.sc-cart span.sc-cart-item-price').html().replace("$", "");
+    var product_qty = $('.sc-cart .sc-cart-item-qty').val();
+    dataLayer.push({
+
+    'event': 'addToCart',
+
+    'ecommerce': {
+
+    'currencyCode': 'USD',
+
+    'add': {'products': [{'name': product_name,
+
+    'id': '<?= $value['product_id']; ?>',
+
+    'price': product_price,
+
+    'quantity': product_qty
+
+    }]
+
+    }
+
+    }
+
+    });
+</script>     
 </body>
 </html>
