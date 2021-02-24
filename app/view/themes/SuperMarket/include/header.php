@@ -66,4 +66,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MXSHQXW');</script>
 <!-- End Google Tag Manager -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer||[];
+function trackGTMEcommerce() {
+    this._addTrans = addTrans;
+    this._addItem = addItems;
+    this._trackTrans = trackTrans;
+}
+
+var transaction = {};
+transaction.transactionProducts = [];
+
+function addTrans(orderID, store, total, tax, shipping, city, state, country) {
+    transaction.transactionId = orderID;
+    transaction.transactionAffiliation = store;
+    transaction.transactionTotal = total;
+    transaction.transactionTax = tax;
+    transaction.transactionShipping = shipping;
+}
+
+
+function addItems(orderID, sku, product, variation, price, quantity) {
+    transaction.transactionProducts.push({
+        'id': orderID,
+            'sku': sku,
+            'name': product,
+            'category': variation,
+            'price': price,
+            'quantity': quantity
+    });
+}
+
+function trackTrans() {
+    transaction.event = 'transactionSuccess';
+    dataLayer.push(transaction);
+}
+
+var pageTracker = new trackGTMEcommerce();
+</script>
+<script>
+
+var product_id = $('#product_id').val();
+var Product_name = $('#product_price').val();
+var product_price = $('#product_price').val();
+// Measures product impressions and also tracks a standard
+// pageview for the tag configuration.
+// Product impressions are sent by pushing an impressions object
+// containing one or more impressionFieldObjects.
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'USD',                       // Local currency is optional.
+    'impressions': [
+     {
+       'name': product_name,       // Name or ID is required.
+       'id': product_id,
+       'price': product_price,
+       'category': 'Any',
+       'list': 'Search Results'
+     }]
+  }
+});
+</script>
 </head>
