@@ -7,9 +7,8 @@ echo process_order($DB_CLASS,$_POST,$owner_id,$vb_id);
 
 }
 if(!empty($_GET)){
-    echo $_GET['status'];
-    echo $_GET['transaction_id'];
-    echo process_order($DB_CLASS,$_POST,$owner_id,$vb_id);
+    echo $_GET['status'].'<br>';
+    echo $_GET['transaction_id'].'<br>';
 }
 
 
