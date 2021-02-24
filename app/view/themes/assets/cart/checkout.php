@@ -615,7 +615,6 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 						</tr>
 					</tbody>
 					<script>
-					var dataLayer = window.dataLayer || [];
 					dataLayer.push({
 						'event': 'transaction',
 						'ecommerce': {
