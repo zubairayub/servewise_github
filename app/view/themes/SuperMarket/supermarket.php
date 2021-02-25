@@ -346,7 +346,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input id="product_price" name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input id="product_id" name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                      
+                        <script>
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                        'event': 'eec.impressionView',  
+                        'ecommerce': {
+                            'currencyCode': 'USD',                       // Local currency is optional.
+                            'impressions': [
+                            {
+                            'name': <?= $value['name']; ?>,       // Name or ID is required.
+                            'id': <?= $value['product_id']; ?>,
+                            'price': <?= $value['price']; ?>,
+                            'category': 'Devesa/SuperMarket',
+                            'list': 'Latest Products',
+                            'position': <?= count($value['name']); ?>
+                            },]
+                        }
+                        });
+                        
+                        window.dataLayer.push({
+                        event: 'eec.impressionClick',
+                        ecommerce: {
+                            click: {
+                            actionField: {
+                                list: 'Latest products'
+                            },
+                            products: [{
+                                'name': <?= $value['name']; ?>,       // Name or ID is required.
+                                'id': <?= $value['product_id']; ?>,
+                                'category': 'Devesa/SuperMarket',
+                                'position': <?= count($value['name']); ?>
+                            }]
+                            }
+                        }
+                        });
+                        </script>
                         <script>
                             var qty = $('.sc-cart-item-qty').val();
                             dataLayer.push({
