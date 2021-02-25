@@ -16,11 +16,14 @@
                     <th>Product Name</th>
                     <th>Discription</th>
                     <th>Product Image</th>
+                    <th>Purchase Price</th>
                     <th>Price</th>
                     <th>Qty</th>
                     <th>Category</th>
                     <th>Category 2nd Level</th>
                     <th>Category 3rd Level</th>
+                    <th>Featured?</th>
+                    <th>Publish?</th>
                     <th>Option</th>
                 </tr>
                 <?php  
@@ -47,6 +50,24 @@
                                     $subsubcategory = $subsubcategory[0]['ss_category'];
 
                                  }
+
+                                $is_featured =  $value['is_featured'];
+
+                                $publish =  $value['publish'];
+
+
+                                if($is_featured == 1){
+                                    $is_featured = 'Yes';
+                                }else{
+                                    $is_featured = 'No';
+                                }
+
+
+                                if($publish == 1){
+                                    $publish = 'Yes';
+                                }else{
+                                    $publish = 'No';
+                                }
                                 // //$date           = getabandoncart($value['user_id']);
                                  //var_dump($value);
                                  //var_dump($category);
@@ -61,13 +82,16 @@
                     <td>
                     <img src="<?= $product_directory.$product_image[0]['image_path'] ?>" alt="">
                     </td>
+                    <td><?= $value['purchase_price'] ?></td>
                     <td><?= $value['price'] ?></td>
                     <td><?= $value['quantity'] ?></td>
                     <td><?= $category[0]['name'] ?></td>
                     <td><?= $subcategory ?></td>
                     <td><?= $subsubcategory ?></td>
+                     <td><?= $is_featured ?></td>
+                      <td><?= $publish ?></td>
                     <td class="option">
-                        <a href="?page=addnewproduct_dashboard">
+                        <a href="?page=addnewproduct_dashboard&product_name=<?= $value['name']; ?>&product_id=<?= $value['product_id']; ?>&product_desc=<?= $value['description']; ?>&product_qty=<?= $value['quantity']; ?>&product_sell=<?= $value['price']?>&product_purchase=<?= $value ['purchase_price']?>&product_weight=<?= $value['weight']?>&product_feature=<?= $value['is_featured']?>&product_publish=<?= $value['publish']?>&product_cat=<?= $category[0]['name'] ?>&product_cat_sub=<?= $subcategory?>&product_cat_ssub=<?= $subsubcategory?>&product_img= <?= $product_directory.$product_image[0]['image_path']?>">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                         </a>
                     </td>

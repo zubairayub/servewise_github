@@ -100,9 +100,10 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 			  }elseif($userstatus == 'Branch'){
 
 			  $getbranches = 	getbranches($logInId,'TRUE');
-
+			  if(!empty($getbranches)){
 			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
 			  $branch_id = $_SESSION['branch_id'] = $getbranches[0]['branch_id'];
+			}
 			  }else{
 
 if($userstatus != 'Admin' && $userstatus != 'User' ){

@@ -36,6 +36,21 @@ $randomstring = generateRandomString();
         $category = $_POST["category"];
         $secondlevel = $_POST["secondlevel"];
         $thirdlevel = $_POST["thirdlevel"];
+        $weight = $_POST["weight"];
+        $featured = $_POST["featured"];
+        $publish = $_POST["publish"];
+
+IF($publish != 1){
+$publish = 0;
+}
+
+IF($featured != 1){
+$featured = 0;
+}
+
+       
+
+        $purchase_price = $_POST["purchase_price"];
         $createdby = $_SESSION['logInId'];  
         $type =  $_SESSION['type'];
         $type = getstatus($type);
@@ -60,17 +75,20 @@ $randomstring = generateRandomString();
        if (!empty($vbid)){
         
 	
-		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid);
+		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price);
 		if (!empty($addedproduct)){
 			$getproductid = $product->getproductidbycode($code);
                 $productid = $getproductid[0]["product_id"];
 		
               
 // get details of the uploaded file
-$fileTmpPath = $_FILES['files']['tmp_name'];
-$fileName = $_FILES['files']['name'];
-$fileSize = $_FILES['files']['size'];
-$fileType = $_FILES['files']['type'];
+foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
+ //   $file_name=$_FILES["files"]["name"][$key];
+
+$fileTmpPath = $_FILES['files']['tmp_name'][$key];
+$fileName = $_FILES['files']['name'][$key];
+$fileSize = $_FILES['files']['size'][$key];
+$fileType = $_FILES['files']['type'][$key];
 $fileNameCmps = explode(".", $fileName);
 $fileExtension = strtolower(end($fileNameCmps));
 
@@ -81,7 +99,7 @@ $url = upload_file($fileName,$fileExtension,$fileTmpPath,$fileSize,$fileType,$fi
 
  $addimages = $product->insertimagesbyproductid($productid,$url);
    
-            
+    }        
              insert_notifications($DB_CLASS,$createdby,'6','product_added','https://servewise.shop');
             
              insert_notifications($DB_CLASS,$createdby,$vendorid,'product_added','https://servewise.shop');
