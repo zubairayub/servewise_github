@@ -238,29 +238,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <script>
-                            var qty = $('.sc-cart-item-qty').val();
                             dataLayer.push({
-
-                            'event': 'addToCart',
-
-                            'ecommerce': {
-
-                            'currencyCode': 'USD',
-
-                            'add': {'products': [{'name': '<?= $value['name']; ?>',
-
-                            'id': '<?= $value['product_id']; ?>',
-
-                            'price': '<?= $value['price']; ?>',
-
-                            'quantity': qty
-
-                            }]
-
-                            }
-
-                            }
-
+                                'event': 'addToCart',
+                                'ecommerce': {
+                                    'currencyCode': 'USD',
+                                    'add': {
+                                        'products': [{
+                                            'name': '<?= $value['name']; ?>',
+                                            'id': '<?= $value['product_id']; ?>',
+                                            'price': '<?= $value['price']; ?>',
+                                            'brand': 'Devesa',
+                                            'category': 'Apparel',
+                                            'variant': 'Gray',
+                                            'quantity': 1
+                                        }]
+                                    }
+                                }
                             });
                         </script>
                     </div>
