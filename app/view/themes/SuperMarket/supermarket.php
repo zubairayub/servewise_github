@@ -243,6 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 // Product impressions are sent by pushing an impressions object
 // containing one or more impressionFieldObjects.
 dataLayer.push({
+  'event': 'eec.impressionView',  
   'ecommerce': {
     'currencyCode': 'USD',                       // Local currency is optional.
     'impressions': [
@@ -250,10 +251,8 @@ dataLayer.push({
        'name': <?= $value['name']; ?>,       // Name or ID is required.
        'id': <?= $value['product_id']; ?>,
        'price': <?= $value['price']; ?>,
-       'brand': 'Google',
-       'category': 'Apparel',
-       'variant': 'Gray',
-       'list': 'Search Results',
+       'category': 'Devesa/SuperMarket',
+       'list': 'Featured Product',
        'position': <?= count($value['name']); ?>
      },]
   }
