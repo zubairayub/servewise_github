@@ -618,6 +618,31 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 
   </div>
 <!-- container -->
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'eec.add',
+  ecommerce: {
+    add: {
+      actionField: {
+        list: 'Shopping cart'
+      },
+      products: [{
+        id: <?= $results->product_id; ?>,
+        name: <?= $results->product_name; ?>,
+        category: 'Devesa/SuperMarket/ViewCart',
+        variant: 'Product',
+        brand: 'Devesa',
+        quantity: <?= $results->product_quantity; ?>,
+        dimension3: 'Ecommerce',
+        metric5: 12,
+        metric6: 1002
+      },
+      ]
+    }
+  }
+});
+</script>
 <?php } ?>
 </div>
 <div class="viewcart-sum-content">
