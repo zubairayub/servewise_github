@@ -238,6 +238,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <script>
+// Measures product impressions and also tracks a standard
+// pageview for the tag configuration.
+// Product impressions are sent by pushing an impressions object
+// containing one or more impressionFieldObjects.
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'USD',                       // Local currency is optional.
+    'impressions': [
+     {
+       'name': <?= $value['name']; ?>,       // Name or ID is required.
+       'id': <?= $value['product_id']; ?>,
+       'price': <?= $value['price']; ?>,
+       'brand': 'Google',
+       'category': 'Apparel',
+       'variant': 'Gray',
+       'list': 'Search Results',
+       'position': <?= count($value['name']); ?>
+     },]
+  }
+});
+</script>
+                        <script>
                             dataLayer.push({
                                 'event': 'addToCart',
                                 'ecommerce': {
