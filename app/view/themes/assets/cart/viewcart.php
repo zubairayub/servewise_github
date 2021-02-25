@@ -636,9 +636,8 @@ window.dataLayer.push({
         variant: 'Product',
         brand: 'Devesa',
         quantity: <?= $results->product_quantity; ?>,
-        dimension3: 'Ecommerce',
-        metric2: 12,
-        metric3: 1002
+        dimension1: 'Ecommerce',
+        metric2: <?= count($product_list_array); ?>
       },
       ]
     }
