@@ -619,6 +619,8 @@ $proct_final_price += $results->product_price * $results->product_quantity;
   </div>
 <!-- container -->
 <script>
+// var metricValue = '123';
+// ga('set', 'metric3', metricValue);
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'eec.add',
@@ -635,8 +637,8 @@ window.dataLayer.push({
         brand: 'Devesa',
         quantity: <?= $results->product_quantity; ?>,
         dimension3: 'Ecommerce',
-        metric5: 12,
-        metric6: 1002
+        metric2: 12,
+        metric3: 1002
       },
       ]
     }
