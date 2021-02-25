@@ -189,8 +189,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="left-side"  data-aos="fade-right"
                     
                     data-aos-duration="1000">
-                        <h1>Heading</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur sapiente sit neque necessitatibus quos voluptatem facilis, minima, consectetur temporibus explicabo est voluptatum non alias perferendis ipsam veritatis quis delectus.</p>
+                        <h1>Best Quality Food On your Door Step</h1>
+                        <p>get best Quality food and Supply here with Amazing Discount Offer</p>
                         <a href="../assets/themePages/productpage.php">Go To Product &#8594;</a>
                     </div>
                     <div class="right-side" data-aos="fade-left"
@@ -205,7 +205,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- product-cat -->
     <section class="product-cat">
         <div class="container">
-            <div class="heading">Feature Products</div>
+            <div class="product-heading-div">
+                <div class="heading">Feature Products</div>
+                <div class="ouderline"></div>
+            </div>
             <div class="product-cat-card" data-aos="fade-up" >
 
 
@@ -238,29 +241,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <a href="#" class="sc-add-to-cart-<?= $value['product_id'];?>" id="<?= $value['name']; ?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <script>
-                            var qty = $('.sc-cart-item-qty').val();
-                            dataLayer.push({
-
-                            'event': 'addToCart',
-
-                            'ecommerce': {
-
-                            'currencyCode': 'USD',
-
-                            'add': {'products': [{'name': '<?= $value['name']; ?>',
-
-                            'id': '<?= $value['product_id']; ?>',
-
-                            'price': '<?= $value['price']; ?>',
-
-                            'quantity': qty
-
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                        'event': 'eec.impressionView',  
+                        'ecommerce': {
+                            'currencyCode': 'USD',                       // Local currency is optional.
+                            'impressions': [
+                            {
+                            'name': <?= $value['name']; ?>,       // Name or ID is required.
+                            'id': <?= $value['product_id']; ?>,
+                            'price': <?= $value['price']; ?>,
+                            'category': 'Devesa/SuperMarket',
+                            'list': 'Featured Products',
+                            'position': <?= count($value['name']); ?>
+                            },]
+                        }
+                        });
+                        
+                        window.dataLayer.push({
+                        event: 'eec.impressionClick',
+                        ecommerce: {
+                            click: {
+                            actionField: {
+                                list: 'Featured products'
+                            },
+                            products: [{
+                                'name': <?= $value['name']; ?>,       // Name or ID is required.
+                                'id': <?= $value['product_id']; ?>,
+                                'category': 'Devesa/SuperMarket',
+                                'position': <?= count($value['name']); ?>
                             }]
-
                             }
-
-                            }
-
+                        }
+                        });
+                        </script>
+                        <script>
+                            dataLayer.push({
+                                'event': 'addToCart',
+                                'ecommerce': {
+                                    'currencyCode': 'USD',
+                                    'add': {
+                                        'products': [{
+                                            'name': '<?= $value['name']; ?>',
+                                            'id': '<?= $value['product_id']; ?>',
+                                            'price': '<?= $value['price']; ?>',
+                                            'brand': 'Devesa',
+                                            'category': 'Apparel',
+                                            'variant': 'Gray',
+                                            'quantity': 1
+                                        }]
+                                    }
+                                }
                             });
                         </script>
                     </div>
@@ -281,7 +312,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="product-cat">
         <div class="container">
-            <div class="heading">Products</div>
+            <div class="product-heading-div">
+                <div class="heading">Latest Products</div>
+                <div class="ouderline"></div>
+            </div>
             <div class="product-cat-card" data-aos="fade-up">
 
 
@@ -354,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="hot-product-content">
                 <div class="hot-left-side" data-aos="fade-up-right">
-                    <img src="assets/hot product.png" alt="Hot product" data-name="product_image">
+                    <img src="assets/hot-product.png" alt="Hot product" data-name="product_image">
                 </div>
                 <div class="hot-right-side sc-product-item" data-aos="fade-up-left">
                     <div class="hot-product-heading"><h4 data-name="product_name"><?php echo $value['name'] ; ?></h4><span>Hot Deal</span></div>
@@ -399,7 +433,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="about" id="about">
         <div class="container">
             <div class="about-content" data-aos="zoom-in"   data-aos-duration="1000">
-                <div class="about-heading">About Us</div>
+                <div class="about-head-main">
+                    <div class="about-heading">About Us</div>
+                    <div class="underline-div"></div>
+                </div>
                 <div class="about-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nobis dolores qui debitis, nam odit repellendus obcaecati, modi adipisci beatae, esse autem hic ullam laboriosam magni! Voluptas suscipit qui tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti eos numquam hic consectetur in illo vitae, quo harum veniam magnam non, provident ex quasi! Aliquam eaque commodi autem voluptatum alias.</div>
             </div>
         </div>
