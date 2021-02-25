@@ -643,6 +643,27 @@ window.dataLayer.push({
     }
   }
 });
+window.dataLayer.push({
+  event: 'eec.remove',
+  ecommerce: {
+    remove: {
+      actionField: {
+        list: 'Shopping cart'
+      },
+      products: [{
+        id: <?= $results->product_id; ?>,
+        name: <?= $results->product_name; ?>,
+        category: 'Devesa/SuperMarket/ViewCart',
+        variant: 'Product',
+        brand: 'Devesa',
+        quantity: <?= $results->product_quantity; ?>,
+        dimension1: 'Ecommerce',
+        metric2: <?= count($product_list_array); ?>
+      },
+      ]
+    }
+  }
+});
 </script>
 <?php } ?>
 </div>
