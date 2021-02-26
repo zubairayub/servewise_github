@@ -87,7 +87,11 @@ $proct_final_price = NULL;
 $total_product = NULL;
  ?>
  <?php  include '../themePages/theme_header.phtml'; ?>
-
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSHQXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="container mt-5 mb-5 viewcart-main">
 <table class="viewcart-table">
    <tr class="viewcart-table-row">
