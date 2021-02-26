@@ -7,6 +7,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-189150205-1');
+  // Maps 'metric5' to 'avg_page_load_time'.
+gtag('config', 'UA-189150205-1, {
+  'custom_map': {'metric2': 'Total quantity added to cart'}
+});
+
+// Sends an event that passes 'avg_page_load_time' as a parameter.
+gtag('event', 'load_time_metric', {'avg_page_load_time': 1});
 </script>
 
 <!-- Google Tag Manager -->
