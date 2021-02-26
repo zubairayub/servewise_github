@@ -704,27 +704,7 @@ $proct_final_price += $results->product_price * $results->product_quantity;
 // var metricValue = '123';
 // ga('set', 'metric3', metricValue);
 window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'eec.add',
-  ecommerce: {
-    add: {
-      actionField: {
-        list: 'Shopping cart'
-      },
-      products: [{
-        id: <?= $results->product_id; ?>,
-        name: <?= $results->product_name; ?>,
-        category: 'Devesa/SuperMarket/ViewCart',
-        variant: 'Product',
-        brand: 'Devesa',
-        quantity: <?= $results->product_quantity; ?>,
-        dimension1: 'Ecommerce',
-        metric2: <?= count($product_list_array); ?>
-      },
-      ]
-    }
-  }
-});
+
 window.dataLayer.push({
   event: 'eec.remove',
   ecommerce: {
