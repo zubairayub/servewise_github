@@ -36,8 +36,9 @@ $result = getnotifications($dbcalss,$user_id,'');
 		<ul class="navbar-nav nav-right">
 			
 			<li class="nav-item dropdown">
-				<a class="not-link">
-          <i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
+				<a class="not-link" onclick="playAudio();">
+					<audio src="../app/view/img/slow-spring-board-longer-tail-571.mp3" id="audio" controls style="display:none"></audio>
+          			<i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
 					<span class="navbar-badge"><div id="result"></div> </span>
 				</a>
 				<ul id="notification-menu" class="dropdown-menu notification-menu">

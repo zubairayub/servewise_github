@@ -3,7 +3,7 @@
         <div class="order-dashboard-main">
             <h1 data-aos="fade-right"data-aos-duration="1500">Order Detail</h1>
         </div>
-        <div class="orderview-dashboard">
+        <form class="orderview-dashboard" id='myFrame' >
             <div class="order-view-box" data-aos="zoom-in-up" data-aos-duration="600">
                 <div class="order-view-upper">
                     <div class="order-view-upper-left">
@@ -90,10 +90,11 @@
                         <p><?= $amount ?> $</p>
                     </div>
                 </div>
-                <div class="order-view-btn">
-                    <input type="button" value="Print">
-                </div>
             </div>
-        </div>
+        </form>
+        <div class="order-view-btn">
+                    <input id="btnPrint" type="button" value="Print">
+                </div>
     </div>
 </div>
+

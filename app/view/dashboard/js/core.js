@@ -150,7 +150,7 @@ function setCookie(cname, cvalue, exdays) {
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
   var expires = "expires="+d.toUTCString()
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
-}
+};
 
 function getCookie(cname) {
   var name = cname + "="
@@ -165,7 +165,7 @@ function getCookie(cname) {
     }
   }
   return ""
-}
+};
 
 loadTheme()
 
@@ -184,22 +184,22 @@ function switchTheme() {
 		body.classList.add(themeLight)
 		setCookie(themeCookieName, themeLight)
 	}
-}
+};
 
 function collapseSidebar() {
 	body.classList.toggle('sidebar-expand')
-}
+};
 
 window.onclick = function(event) {
 	openCloseDropdown(event)
-}
+};
 
 function closeAllDropdown() {
 	var dropdowns = document.getElementsByClassName('dropdown-expand')
 	for (var i = 0; i < dropdowns.length; i++) {
 		dropdowns[i].classList.remove('dropdown-expand')
 	}
-}
+};
 
 function openCloseDropdown(event) {
 	if (!event.target.matches('.dropdown-toggle')) {
@@ -217,7 +217,7 @@ function openCloseDropdown(event) {
 			content.classList.add('dropdown-expand')
 		}
 	}
-}
+};
 
 function readURL(input) {
 	if (input.files && input.files[0]) {
@@ -231,7 +231,7 @@ function readURL(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 
-}
+};
 
 
 
@@ -294,6 +294,10 @@ function readURL(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 
-}
+};
+
+
+
+
 
 

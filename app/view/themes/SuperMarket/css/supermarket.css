@@ -261,15 +261,15 @@ nav .logo img{
 }
 
 .product-cat .product-cat-card .product-card .product-card-button:hover{
-    background-color:  rgb(255, 74, 2) ;
+    background-color:  var(--main-color-2) ;
 }
 
 .product-cat .product-cat-card .product-card .product-card-button a{
     color: black;
     font-weight: 700;
-    transition: .5s ease all;
     width: 100%;
     text-align: center;
+    transition: .3s ease all;
 }
 
 .product-cat .product-cat-card .product-card .product-card-button a:hover{

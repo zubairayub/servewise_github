@@ -10,7 +10,8 @@
             <td class="product-table-data">
                 <div class="add-image">
                     <input type="file" name="files[]" onchange="readURL(this);"  multiple/>
-                    <span>Upload .jpeg, .jpg, .png, .gif </span>
+                    <span class="img-text-1">+</span>
+                    <span class="img-text-2">Uplaod Images</span>
                 </div>
                 <div class="add-image-box">
                     <?php 
@@ -18,10 +19,10 @@
                             $img = $product_img;
                         }else{
 
-                            $img = 'http://placehold.it/150';
+                            $img = '../app/view/img/add-product.png';
                         }
                     ?>
-                <img id="blah" src="<?= $img ?>" alt="your image" style="width:150px;height:200px" />
+                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
                 </div>
                 
                    
@@ -53,7 +54,7 @@ $select = 'SELECTED';
 </select>
         </div>
         <div class="row" data-aos="fade-up">
-            <label>Second Level Category:</label><br /> <select name="secondlevel"
+            <label>Sub Category:</label><br /> <select name="secondlevel"
                 id="state-list" 
                 onChange="getthirdlevel(this.value);">
                 <option value ="">Select Second Level</option>
@@ -62,51 +63,59 @@ $select = 'SELECTED';
             </select>
         </div>
         <div class="row" data-aos="fade-left">
-            <label>Third Level Category:</label><br /> <select name="thirdlevel"
+            <label>2nd Sub Category:</label><br /> <select name="thirdlevel"
                 id="city-list" >
                 <option >Select Third Level</option>
             </select>
         </div>
     </div>
                 <div class="add-details" data-aos="zoom-in">
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Name :</label>
-                    <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right"/>
+                    <div class="add-product-content-main">
+                        <div class="add-d-coulum">
+                        <label data-aos="fade-right">Name</label>
+                        <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right"/>
+                        </div>
+                        <div class="add-d-coulum">
+                        <label data-aos="fade-right">Quantity</label>
+                        <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right"/>
+                        </div>
+                        <div class="add-d-coulum">
+                        <label data-aos="fade-right">Weight, Kg</label>
+                        <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right"/>
+                        </div>
+                        <div class="add-d-coulum">
+                        <label data-aos="fade-right">Description</label>
+                        <input class="dis" name="description" type="text" value="<?= $product_desc ?>" data-aos="fade-right" />
+                        </div>
                     </div>
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Description :</label>
-                    <input class="dis" name="description" type="text" value="<?= $product_desc ?>" data-aos="fade-right" />
+                    <div class="add-product-content-main">
+                        <div class="add-product-main-content">
+                                <div class="add-d-coulum">
+                                    <label data-aos="fade-right">Purchase Price</label>
+                                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right"/><br>
+                                </div>
+                                <div class="add-d-coulum">
+                                    <label data-aos="fade-right">Sell Price :</label>
+                                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right"/><br>
+                            </div>
+                        </div>
+                        <div class="add-product-main-content">
+                            <div class="add-d-coulum">
+                                <label data-aos="fade-right">Is Featured :</label>
+                                <input name="featured" type="checkbox" value="<?= $product_feature?>" data-aos="fade-right" <?= $product_feature ?>/>
+                            </div>
+                            <div class="add-d-coulum">
+                                <label data-aos="fade-right">Publish :</label>
+                                <input name="publish" type="checkbox" value="<?= $product_publish?>" data-aos="fade-right" <?= $product_publish ?>/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Quantity :</label>
-                    <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right"/>
-                    </div>
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Purchase Price :</label>
-                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right"/><br>
-                    </div>
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Sell Price :</label>
-                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right"/><br>
-                    </div>
-                    <div class="add-d-coulum">
-                    <label data-aos="fade-right">Weight, Kg :</label>
-                    <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right"/>
-                    </div>
-                   <div class="add-d-coulum">
-                    <label data-aos="fade-right">Is Featured :</label>
-                    <input name="featured" type="checkbox" value="<?= $product_feature?>" data-aos="fade-right" <?= $product_feature ?>/>
-                    </div>
-                   
-                   <div class="add-d-coulum">
-                    <label data-aos="fade-right">Publish :</label>
-                    <input name="publish" type="checkbox" value="<?= $product_publish?>" data-aos="fade-right" <?= $product_publish ?>/>
-                    </div>
-                   
-                    <div class="add-btn" data-aos="fade-right">
-                    <input  type="submit" value="Add Product" name="add"  data-aos="fade-right"/>
-                     <input name="action" type="hidden" value="<?= $update ?>" data-aos="fade-right"/>
-                    <input name="product_id" type="hidden" value="<?= $product_id?>" data-aos="fade-right"/>
+                    <div class="add-product-content-main">
+                        <div class="add-btn" data-aos="fade-right">
+                        <input  type="submit" value="Add Product" name="add"  data-aos="fade-right"/>
+                        <input name="action" type="hidden" value="<?= $update ?>" data-aos="fade-right"/>
+                        <input name="product_id" type="hidden" value="<?= $product_id?>" data-aos="fade-right"/>
+                        </div>
                     </div>
                    
                     <div class="add-msg">

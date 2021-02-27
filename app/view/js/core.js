@@ -1,3 +1,5 @@
+
+
 AOS.init();
 
     
@@ -17,6 +19,35 @@ AOS.init();
     $(".avt-wrapper").click(function(){
         $(".drop-down-menu").toggleClass("notification-menu-show");
     });
+
+    $('#btnPrint').click(function(){
+        $('#myFrame').printThis({
+            debug: false,               // show the iframe for debugging
+            importCSS: true,            // import parent page css
+            importStyle: false,         // import style tags
+            printContainer: true,       // print outer container/$.selector
+            loadCSS: "http://localhost/servewsie_main/servewise_github/app/view/css/navigationpage.css",                // path to additional css file - use an array [] for multiple
+            pageTitle: "",              // add title to print page
+            removeInline: false,        // remove inline styles from print elements
+            removeInlineSelector: "*",  // custom selectors to filter inline styles. removeInline must be true
+            printDelay: 333,            // variable print delay
+            header: null,               // prefix to html
+            footer: "<p>Power By 'Nazreen Consulting'</p>",               // postfix to html
+            base: false,                // preserve the BASE tag or accept a string for the URL
+            formValues: true,           // preserve input/form values
+            canvas: false,              // copy canvas content
+            doctypeString: '...',       // enter a different doctype for older markup
+            removeScripts: false,       // remove script tags from print content
+            copyTagClasses: false,      // copy classes from the html & body tag
+            beforePrintEvent: null,     // function for printEvent in iframe
+            beforePrint: null,          // function called before iframe is filled
+            afterPrint: null            // function called before iframe is removed
+        });
+    });
+    
+    function playAudio() {
+        document.getElementById("audio").play();
+    };
     
 
     
@@ -33,7 +64,7 @@ AOS.init();
                 // clear input
                 container.find('.search-input').val('');
             }
-    }
+    };
 
 $(window).scroll(function(){
     let windowPosition = $(window).scrollTop();
@@ -61,7 +92,7 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
-}
+};
 
 
 function openCloseDropdown(event) {
@@ -80,7 +111,7 @@ function openCloseDropdown(event) {
 			content.classList.add('dropdown-expand')
 		}
 	}
-}
+};
 
 $
 
@@ -536,6 +567,7 @@ $( ".session-selector" ).children('h3').click(function() {
     $(".fa-angle-right").removeClass("angle-active")
     $("#realtime-data").children('h3').removeClass("realtime-data-2")
 });
+
 
 
 
