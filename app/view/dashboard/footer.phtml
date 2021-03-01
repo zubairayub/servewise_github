@@ -10,6 +10,13 @@ header('Location: ?page=verification_dashboard');
 
 }else{
 
+if($userstatus == 'Branch'){
+                                $ustatus = 'Vendor';
+                            }elseif ($userstatus == 'Vendor') {
+                                $ustatus = 'Brand';
+                            }else{
+                                $ustatus = $userstatus;
+                            }
 
 ?>
 
@@ -23,7 +30,7 @@ header('Location: ?page=verification_dashboard');
 				</div>
 				<div class="sidebar-head-content-main-lower">
 					<div class="content-main-lower">
-						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $userstatus; }?></h4>
+						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $ustatus; }?></h4>
 					</div>
 				</div>
 			</div>

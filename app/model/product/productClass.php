@@ -12,8 +12,24 @@
 			
 			function addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price)
 {
-					$this->query="insert into product(name,description,quantity,price,code,category_id,sc_id,ssc_id,vb_id,weight,is_featured,publish,purchase_price) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price),"create");
+					$this->query="insert into product(name,description,quantity,price,code,category_id,sc_id,ssc_id,vb_id,weight,is_featured,publish,purchase_price,quantity_purchase) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price,$quantity),"create");
+					if($result){
+						return $result;
+						}    
+				    else{
+						return false;
+						}
+				}
+
+
+
+
+							function updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id)
+{
+	
+					$this->query="UPDATE  `product` SET name=?,description=?,quantity=?,price=?,category_id=?,sc_id=?,ssc_id=?,weight=?,is_featured=?,publish=?,purchase_price=?,purchase_price=?,quantity_purchase=? where product_id = $product_id ";
+				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id,$quantity),"update");
 					if($result){
 						return $result;
 						}    

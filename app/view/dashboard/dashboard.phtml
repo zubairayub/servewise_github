@@ -7,7 +7,20 @@
         <div class="dashboard-detail-main">
                 <div class="mobile-heading-dashboard">
                     <div class="dashboard-detail-content-upper">
-                        <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $userstatus; }?></h4>
+                        <h4><?PHP IF(!empty($userstatus)){ 
+                            if($userstatus == 'Branch'){
+                                $ustatus = 'Vendor';
+                            }elseif ($userstatus == 'Vendor') {
+                                $ustatus = 'Brand';
+                            }else{
+                                $ustatus = $userstatus;
+                            }
+
+
+                            ECHO '<span> Welcome,</span> <br>'. $ustatus; 
+
+
+                        }?></h4>
                     </div>
                 </div>
             <div class="dashboard-detail-content-1">
@@ -16,7 +29,7 @@
             </div>
             <div class="dashboard-detail-content-2">
                 <div class="dashboard-detail-content-upper">
-                    <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $userstatus; }?></h4>
+                    <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $ustatus; }?></h4>
                 </div>
                 <div class="dashboard-detail-content-lower">
                     <div class="dashboard-detail-content-lower-content">

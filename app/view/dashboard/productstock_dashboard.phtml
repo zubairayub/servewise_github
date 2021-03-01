@@ -18,7 +18,7 @@
                         <th>Purchased from</th>
                         <th>Selling Price</th>
                         <th>Quantity purchased</th>
-                        <th>Stock left</th>
+                        <th>Stock left</th> 
                         <th>Branch</th>
                         <th>Vendor</th>
 
@@ -27,17 +27,28 @@
                     $count = 1;
                     foreach ($data as $key => $value) {
                   $branch_data =      getbranchbybranchid('',$value['vb_id']) ;
+                  if(!empty($branch_data))
+                  {
+                    $branchname = $branch_data[0]['name'];
+                    $vendor_data = getvendors('',$branch_data[0]['vendor_id'],'FALSE');
+                    $vendor_name = $vendor_data[0]['name'];
+                  }else{
+                    $branchname = NULL;
+                    $vendor_name = null;
+                  }
                         ?>
+                  
+                  
  <tr>
                         <td><?= $count ?></td>
                         <td><?= $value['name'] ?></td>
-                        <td>100$</td>
-                        <td>Karachi</td>
+                        <td><?= $value['purchase_price'] ?></td>
+                        <td><?=  $vendor_name ?></td>
                         <td><?= $value['price'] ?></td>
-                        <td><?= $value['quantity'] ?></td>
-                        <td>100/pc</td>
-                        <?= $branch_data[0]['name']; ?>
-                        <td>vendor</td>
+                        <td><?= $value['quantity_purchase'] ?></td>
+                         <td><?= $value['quantity'] ?></td>
+                       <td> <?= $branchname; ?></td>
+                        <td><?=  $vendor_name;?></td>
                     </tr>
 
                         <?php

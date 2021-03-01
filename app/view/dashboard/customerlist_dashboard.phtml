@@ -45,6 +45,17 @@
 					   	}else{
 					   			$username = $user_data[0]['first_name'];
 					   	}
+
+					   	if(empty($user_data[0]['contact_no'])){
+
+					   		$contact_no = '00-00-0000';
+
+					   	}else{
+					   			$contact_no = $user_data[0]['contact_no'];
+					   	}
+
+
+					   	
 					   	
 					  ?>
 
@@ -53,12 +64,12 @@
 	<td><?= $count ?></td>
 	<td><?= $username ?></td>
 	<td><?= $user_data[0]['email_id'] ?></td>
-	<td>(00) +123 123123123</td>
-	<td>Nike</td>
-	<!-- <td><?= $branch_data[0]['name'] ?></td> -->
+	<td><?= $contact_no;?></td>
+	<!-- <td>Nike</td> -->
 	<td><?= $vendor_data[0]['name'] ?></td>
+	<td><?= $branch_data[0]['name'] ?></td>
 	<td>
-		<a href="?page=viewcustomer_dashboard">view</a>
+		<a href="?page=viewcustomer_dashboard&name=<?= $username?>&email=<?= $user_data[0]['email_id']?>&phone=<?= $contact_no?>&country=<?= $user_data[0]['country']?>&dob=<?= $user_data[0]['dob']?>&address=<?= $user_data[0]['address'].$user_data[0]['address_2']?>">view</a>
 		<!-- <a href="?page=viewcustomer_dashboard">Edit</a> -->
 	</td>
 	

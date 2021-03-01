@@ -5,6 +5,9 @@
 <!-- main content -->
 <div class="wrapper">
     <div class="section-upper-cust">
+        <?PHP
+if($type == 'USER'){
+?>
         <div class="section-content">
             <div class="cust-card-1">
                 <div class="cust-name">
@@ -40,32 +43,43 @@
                 </div>
             </div>
         </div>
+
+<?PHP
+}
+
+        ?>
     </div>
     <div class="section-upper-mid">
         <div class="section-mid-info-content">
+             <?PHP
+if($type == 'USER'){
+?>
             <div class="section-mid-info-btn">
                 <a href="#editSec" class="edit-cust"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
             </div>
+            <?PHP 
+        } 
+        ?>
             <div class="section-mid-info-detail">
                 <div class="detail-1">
                     <div class="detail-head">Name :</div>
-                    <div class="detail-decs">Muzzamil Qureshi</div>
+                    <div class="detail-decs"><?= $name ?></div>
                 </div>
                 <div class="detail-2">
                     <div class="detail-head">E-mail :</div>
-                    <div class="detail-decs">bunniqureshi007@gmail.com</div>
+                    <div class="detail-decs"><?= $email ?></div>
                 </div>
                 <div class="detail-3">
                     <div class="detail-head">Phone :</div>
-                    <div class="detail-decs">+92 349 0950536</div>
+                    <div class="detail-decs"><?= $phone ?></div>
                 </div>
                 <div class="detail-4">
                     <div class="detail-head">Country :</div>
-                    <div class="detail-decs">Pakistan</div>
+                    <div class="detail-decs"><?= $country ?></div>
                 </div>
                 <div class="detail-3">
                     <div class="detail-head">Date Of Birth :</div>
-                    <div class="detail-decs">10 / 08 / 1997</div>
+                    <div class="detail-decs"><?= $dob ?></div>
                 </div>
                 <div class="detail-4">
                     <div class="detail-head">Address :</div>

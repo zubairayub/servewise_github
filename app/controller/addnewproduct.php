@@ -39,6 +39,8 @@ $randomstring = generateRandomString();
         $weight = $_POST["weight"];
         $featured = $_POST["featured"];
         $publish = $_POST["publish"];
+        $action = $_POST['action'];
+
 
 IF($publish != 1){
 $publish = 0;
@@ -74,8 +76,17 @@ $featured = 0;
         }
        if (!empty($vbid)){
         
-	
-		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price);
+	if($action == 'TRUE'){
+          $product_id = $_POST['product_id'];
+          
+          
+
+$addedproduct = $product->updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id);
+    }else{
+       
+       $addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price);
+    }
+		
 		if (!empty($addedproduct)){
 			$getproductid = $product->getproductidbycode($code);
                 $productid = $getproductid[0]["product_id"];
