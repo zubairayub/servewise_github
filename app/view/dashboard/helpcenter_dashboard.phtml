@@ -13,18 +13,18 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Questions?</label>
-                    <input type="text" name="help_question" value="<?php echo $help_que['value'];?>">
+                    <input type="text" name="help_question" value="<?php echo $help_que['value'];?>" require>
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Answers</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="help_answers"><?php echo $help_ans['value'];?></textarea>
+                    <textarea class="tinymce" id="myTextAreaSec" name="help_answers" require><?php echo $help_ans['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">
                 </div>
             </form>
         </div>
-        <div class="help-center-dashboard-main">
+        <!-- <div class="help-center-dashboard-main">
             <form >
                 <table>
                     <tr>
@@ -46,7 +46,7 @@
                     </tr>                
                 </table>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
 <script>

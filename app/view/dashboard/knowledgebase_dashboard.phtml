@@ -13,7 +13,7 @@
                         <div class="general-input1">
                               <div class="g-input-label">Title</div>
                               <div class="g-input-input">
-                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>">
+                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>" require>
                               </div>
                         </div>
                         <div class="general-input4">
@@ -26,7 +26,7 @@
                               </div>
                         </div>
                         <div class="know-art-text-dashboard">
-                            <textarea class="tinymce" id="myTextArea" name="blog" > <?php echo $k_b_dis['value'];?></textarea>
+                            <textarea class="tinymce" id="myTextArea" name="blog" require> <?php echo $k_b_dis['value'];?></textarea>
                         </div>
                         <div class="g-btn">
                               <input type="button" value="Update" onclick="submitForm()">

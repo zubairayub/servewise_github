@@ -7,15 +7,15 @@
             <form action="<?= $controller; ?>" id="form">
                 <div class="bluk-sms-form4">
                     <label >Email To</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" require>
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="email_title">
+                    <input type="text" name="email_title" require>
                 </div>
                 <div class="bluk-sms-form3">
                     <label>Massage</label>
-                    <textarea class="tinymce" id="myTextArea" name="email_msg"></textarea>
+                    <textarea class="tinymce" id="myTextArea" name="email_msg" require></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="SEND" onclick="submitForm()">

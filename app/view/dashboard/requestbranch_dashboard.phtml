@@ -13,7 +13,7 @@
                     <div class="req-choose-vendor" data-aos="fade-right" data-aos-duration="1000">
                             <label for="vendor">Choose a vendor</label>
 
-                            <select name="vendor" id="vendor">					
+                            <select name="vendor" id="vendor" require>					
 						<?php  foreach($getvendors as $vendorlist){
 
 						?>
@@ -29,22 +29,22 @@
 						<div class="user-detail1 req-n-c-e" data-aos="fade-left" data-aos-duration="1000">
                             <div class="req-n-c-e-main">
                                 <label>Name</label>
-                                <input name="name" type="text" >
+                                <input name="name" type="text" require>
                             </div>
                             <div class="req-n-c-e-main">
                                 <label>Contact Number</label>
-                                <input name="contactno" type="number" >
+                                <input name="contactno" type="number" require>
                             </div>
                             <div class="req-n-c-e-main">
                                 <label>Email</label>
-                                <input name="email" type="text" >
+                                <input name="email" type="text" require>
                             </div>
                         </div>
                         <div class="user-detail1" data-aos="fade-up-left" data-aos-duration="1000">
                             <div class="req-address">
                                 <div class="req-add-1">
                                     <label>Address.</label>
-                                    <input name="address" type="text" >
+                                    <input name="address" type="text" require>
                                 </div>
                                 <div class="req-add-1">
                                     <label>Address2.</label>
@@ -55,7 +55,7 @@
         <div class="row">
             <label>Country:</label><br /> <select name="country"
                 id="country-list" 
-                onChange="getStateforbranch(this.value);">
+                onChange="getStateforbranch(this.value);" require>
                 <option value disabled selected>Select Country</option>
 <?php
 foreach ($getcountries as $country) {
