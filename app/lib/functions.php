@@ -633,6 +633,28 @@ if(empty($result)){
 
 }
 
+function updatetheme($branch_id,$theme_id){
+
+
+		$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+
+
+
+
+				$varr->query="UPDATE  `vb_themesetting` SET theme_id=? where vb_id = $branch_id ";
+					$result=$varr->executeQuery($varr->query,array($theme_id),"update");
+
+
+
+
+
+
+}
 
 
 function gettheme($url){

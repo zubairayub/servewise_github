@@ -12,7 +12,10 @@ $result = getnotifications($dbcalss,$user_id,'');
 
 ?>
 <body class="overlay-scrollbar light dashboard-body">
-
+<?php
+if(!empty($type)){
+$type =  $type;
+?>
 <div class="navbar" id="myNav">
 		<!-- nav left -->
 		<ul class="navbar-nav">
@@ -21,10 +24,22 @@ $result = getnotifications($dbcalss,$user_id,'');
 					<i class="fa fa-angle-double-left" id="angle" aria-hidden="true" ></i>
 				</a>
 			</li>
-			<li class="nav-item">
+		
 
-			<a href="?page=home">   <i class="fa fa-globe" aria-hidden="true"></i> View Your Site</a>
-			</li>
+<?php
+if($type == 'Branch'){
+	$urll = getthemeurl($branch_id);
+	
+?>
+
+	<li class="nav-item">
+		<a href="?domain=<?= $urll[0]['domain_url'] ?> ">   <i class="fa fa-globe" aria-hidden="true"></i> View Your Site</a>
+		</li>
+<?php
+}
+
+?>
+			
 		</ul>
 		<!-- end nav left -->
 		<!-- form -->
@@ -128,6 +143,9 @@ $result = getnotifications($dbcalss,$user_id,'');
 		</ul>
 		<!-- end nav right -->
   </div>
+  <?php
+}
+?>
   <div id="result"></div>  
   <script>
 	window.onscroll = function() {scrollFunction()};
