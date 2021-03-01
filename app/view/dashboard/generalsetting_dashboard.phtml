@@ -8,20 +8,20 @@
                         <div class="general-input1">
                               <div class="g-input-label">System Name</div>
                               <div class="g-input-input">
-                                    <input type="text" name="system_name">
+                                    <input type="text" name="system_name" require>
                               </div>
                         </div>
                         <div class="general-input2">
                               <div class="g-input-label">System Logo</div>
                               <div class="g-input-input">
-                                    <input type='file' name="system_logo" onchange="readURL(this);" />
+                                    <input type='file' name="system_logo" onchange="readURL(this);" require />
                                     <img id="blah" src="http://placehold.it/100" alt="your image" style="width:100px" />
                               </div>
                         </div>
                         <div class="general-input4">
                               <div class="g-input-label">System timezone</div>
                               <div class="g-input-input">
-                                    <select name="system_time" id="">
+                                    <select name="system_time" id="" require>
                                           <option value="1">1</option>
                                           <option value="2">2</option>
                                           <option value="3">3</option>

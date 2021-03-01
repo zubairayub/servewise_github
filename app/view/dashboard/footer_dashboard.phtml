@@ -23,7 +23,7 @@
                     <label for="">Footer Logo</label>
                 </div>
                 <div class="footer-logo-upload-content">
-                    <input type='file' name="footer_logo" onchange="readURL(this);" />
+                    <input type='file' name="footer_logo" onchange="readURL(this);" require/>
                     <img id="blah" src="http://placehold.it/180" alt="your image" />
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <label for="">About Discribtion :</label>
                 </div>
                 <div class="footer-about-upload-content">
-                    <textarea name="footer_about_desc" id="myTextAreaSec" class="tinymce"><?php echo $footer_about_disc['value'];?></textarea>
+                    <textarea name="footer_about_desc" id="myTextAreaSec" class="tinymce" require><?php echo $footer_about_disc['value'];?></textarea>
                 </div>
             </div>
             <div class="dashboard-footer-about-btn">
@@ -49,7 +49,7 @@
                     <label for="">Contact Address</label>
                 </div>
                 <div class="footer-contact-add-input">
-                    <input type='text' name="contact_add" value="<?php echo $foote_ad['value'];?>" />
+                    <input type='text' name="contact_add" value="<?php echo $foote_ad['value'];?>" require/>
                 </div>
             </div>
             <div class="dashboard-footer-contact-phone">
@@ -57,7 +57,7 @@
                     <label for="">Contact Phone</label>
                 </div>
                 <div class="footer-contact-phone-input">
-                    <input type='text' name="contact_ph"  value="<?php echo $footer_contact['value'];?>"/>
+                    <input type='text' name="contact_ph"  value="<?php echo $footer_contact['value'];?>" require/>
                 </div>
             </div>
             <div class="dashboard-footer-contact-email">
@@ -65,7 +65,7 @@
                     <label for="">Contact E-mail</label>
                 </div>
                 <div class="footer-contact-email-input">
-                    <input type='text' name="contact_email" value="<?php echo $footer_email['value'];?>" />
+                    <input type='text' name="contact_email" value="<?php echo $footer_email['value'];?>" require/>
                 </div>
             </div>
             <div class="dashboard-footer-contact-btn">

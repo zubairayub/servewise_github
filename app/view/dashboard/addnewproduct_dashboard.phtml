@@ -34,7 +34,7 @@
         <div class="row" data-aos="fade-right">
             <label>Category:</label><br /> <select name="category"
                 id="country-list" 
-                onChange="getsecondlevel(this.value);">
+                onChange="getsecondlevel(this.value);" require>
                 <option value disabled selected>Select Category</option>
 <?php
 foreach ($getcategories as $category) {
@@ -73,15 +73,15 @@ $select = 'SELECTED';
                     <div class="add-product-content-main">
                         <div class="add-d-coulum">
                         <label data-aos="fade-right">Name</label>
-                        <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right"/>
+                        <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right" require/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right">Quantity</label>
-                        <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right"/>
+                        <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right" require/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right">Weight, Kg</label>
-                        <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right"/>
+                        <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right" require/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right">Description</label>
@@ -92,11 +92,11 @@ $select = 'SELECTED';
                         <div class="add-product-main-content">
                                 <div class="add-d-coulum">
                                     <label data-aos="fade-right">Purchase Price</label>
-                                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right"/><br>
+                                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right" require/><br>
                                 </div>
                                 <div class="add-d-coulum">
                                     <label data-aos="fade-right">Sell Price :</label>
-                                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right"/><br>
+                                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right" require /><br>
                             </div>
                         </div>
                         <div class="add-product-main-content">
