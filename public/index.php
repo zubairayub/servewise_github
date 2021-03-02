@@ -6,6 +6,11 @@ $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
 
+
+
+setlangcookie('pt');
+
+
 //index.php?page=
 if(isset($_REQUEST['page'])){
  $page = get ('page','home');

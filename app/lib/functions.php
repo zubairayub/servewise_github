@@ -8,6 +8,50 @@ function get($name, $def= '')
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
+
+
+
+function setlangcookie($lang){
+	$cookie_name = "lang";
+$cookie_value = $lang;
+setcookie($cookie_name, $cookie_value,  time()+(60*60*24*31)); 
+}
+
+
+function getlangcookie() {
+ if (isset($_COOKIE["lang"])){
+ 
+  return $_COOKIE["lang"];
+}
+};
+
+
+function cookies() {
+ if (!isset($_COOKIE["lang"])){
+ setcookie('lang','eng', time()+(60*60*24*31)); 
+  
+}};
+
+
+function getlang($dbclass= '',$word= '', $lang= '')
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+$varr->query="SELECT * FROM `languages`  where value = '$word'";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result[0][$lang];
+
+
+
+}
+
 function getthemebybranchid($id)
 {
 	if(!empty($dbclass)){

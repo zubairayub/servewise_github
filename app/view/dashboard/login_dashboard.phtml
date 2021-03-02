@@ -5,7 +5,12 @@
 <section class="login-main">
     <div class="logincontent">
         <div class="login-section-right">
-            <div class="login-heading">Welcome to ServeWise</div>
+
+            <div class="login-heading">Welcome to ServeWise <?php 
+
+ 
+
+echo getlang('','login',getlangcookie()); ?></div>
             
             <a herf="#" class="login-btn-google g-signin2" data-onsuccess="onSignIn"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
             <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
@@ -22,8 +27,8 @@
                     <a href="?page=forgot_dashboard">Forget Password</a>
                 </div>
                 <label class='bg-danger'><?php 
-				if(isset($_GET["message"])){
-				echo $_GET['message'];
+				if(isset($_GET["message"]) && !empty($_GET["message"]) && $_GET["message"] != 0){
+				//echo $_GET['message'];
 				}
 				?></label>
                 <div class="login-btn-login">
