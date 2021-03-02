@@ -776,7 +776,7 @@ if(!empty($dbclass)){
 	if(empty($userid)){
 		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 16 ";
 	}else{
-		$varr->query = "SELECT * FROM `config` where name='logo' AND userid = '28' ";
+		$varr->query = "SELECT * FROM `config` where name='logo' AND userid = $userid ";
 	}
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 	

@@ -363,7 +363,7 @@ include 'include/header.php';
         <div class="container">
             <div class="nav" id="myNav">
                 <div class="nav-logo">
-                    <img src="assets/logo.jpg" alt="LOGO">
+                    <img src="<?= $logo?>" alt="LOGO">
                 </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
