@@ -333,7 +333,9 @@ include 'include/header.php';
             foreach ($result as $key => $value) {
                 if($value['is_featured'] == '1'){
                     $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                    if(!empty($image)){
+                   $image_path =   $image[0]['image_path'];
+               }
               ?>
 
         <div class="card sc-product-item">
