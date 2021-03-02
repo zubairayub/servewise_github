@@ -798,7 +798,7 @@ if(!empty($dbclass)){
 
 
 
-function getlogo($dbclass = null,$directory = null){
+function getlogo($dbclass = null,$directory = null,$vendor_id = null){
 
 if(!empty($dbclass)){
 		
@@ -809,8 +809,11 @@ if(!empty($dbclass)){
 	$db;
 	$varr = new databaseManager();
 
-	
+	if(empty($vendor_id)){
 		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 6 ";
+	}else{
+$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= $vendor_id ";
+	}
 	
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 
