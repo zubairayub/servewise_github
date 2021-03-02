@@ -5945,6 +5945,13 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .order-table-main form table tbody tr td{font-size: 12px;}
   .order-table-main form table tbody tr td a{font-size: 12px;}
   /* all-order-end */
+  /* vendor_signup */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(1){flex-basis: 30%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(2){flex-basis: 30%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(3){flex-basis: 30%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main {flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main:nth-child(1) input {width: 100%;margin-right: 0;}  
+  /* vendor_signup End */  
   /* order-view */
   .orderview-dashboard{overflow: hidden;}
   .order-view-box .order-view-upper {flex-wrap: wrap;}
@@ -6333,6 +6340,13 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .order-table-main form table tbody tr td{font-size: 12px;}
   .order-table-main form table tbody tr td a{font-size: 12px;}
   /* all-order-end */
+  /* vendor_signup */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(1){flex-basis: 30%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(2){flex-basis: 30%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(3){flex-basis: 30%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main {flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main:nth-child(1) input {width: 100%;margin-right: 0;}  
+  /* vendor_signup End */
   /* request branch */
   .reqbranch-main .req-form .req-choose-vendor {padding: 20px;}
   .reqbranch-main .req-form .req-choose-vendor label {font-size: 18px;}
@@ -7894,6 +7908,14 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .order-table-main form table tbody tr td{font-size: 12px;}
   .order-table-main form table tbody tr td a{font-size: 12px;}
   /* all-order-end */
+  /* vendor_signup */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(1){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(2){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(3){flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main {flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main:nth-child(1) input {width: 100%;margin-right: 0;}
+
+  /* vendor_signup End */
   /* request branch */
   .reqbranch-main .req-form .req-choose-vendor {padding: 20px;}
   .reqbranch-main .req-form .req-choose-vendor label {font-size: 18px;}
@@ -8901,6 +8923,13 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .session-selector h3 .fa-angle-double-right{margin-left: 10px;}
   #main-chart-container .gapi-analytics-data-chart {width: 100%;}
   /* advance-report-end */
+  /* vendor_signup */
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(1){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(2){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(3){flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main {flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main:nth-child(1) input {width: 100%;margin-right: 0;}
+  /* vendor_signup End */
 }
 
 @media (max-width:375px){
@@ -9418,6 +9447,11 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
   .signup-profile-dis .user-detail1 .signup-address {width: 100%;display: flex;margin-bottom: 20px;flex-wrap: wrap;}
   .signup-profile-dis .user-detail1 .signup-address label {width: 100%;}
   .signup-profile-dis .user-detail1 .signup-address input {width: 100%;margin-bottom: 30px;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(1){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(2){flex-basis: 100%;}
+  .signup-profile-dis .signup-vendor-form .sign-vendor-name .signup-vendor-main:nth-child(3){flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main {flex-basis: 100%;}
+  .signup-profile-dis .user-detail1 .signup-address .signup-address-main:nth-child(1) input {width: 100%;margin-right: 0;}
   /* signupvendor-dashboard-end */
   /* about-dashboard */
   .about-us-dashboard-main2 {flex-wrap: wrap;}
