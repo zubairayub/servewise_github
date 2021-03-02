@@ -26,7 +26,7 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 28px;
+        top: 18px;
         right: 35px;
         z-index: 1;
         display: none;
@@ -157,7 +157,6 @@ include 'include/header.php';
     height: 48px;
     width: 100%;
     padding: 10px;
-    border-radius: 4px;
     line-height: 0px;
     overflow: hidden;
     cursor: pointer
@@ -457,7 +456,7 @@ include 'include/header.php';
     
       </div>
     </section>   
-    <section class="brand">
+    <!-- <section class="brand">
         <div class="container">
             <div class="brand-content">
                 <div class="brand-heading">Popular Brands & Manufactures</div>
@@ -480,14 +479,14 @@ include 'include/header.php';
                 </div>
             </div>
         </div>
-    </section>
-    <section class="ad" data-aos="flip-right">
+    </section> -->
+    <!-- <section class="ad" data-aos="flip-right">
         <div class="container">
             <div class="ad-content">
                <a href="#"><img src="assets/side-effects-banner.jpg" alt="ad"></a> 
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="homopatic" class="product" data-aos="fade-up"
     data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="product-heading">
@@ -574,13 +573,13 @@ include 'include/header.php';
             </div>
         </div>
     </section>
-    <section class="ad" data-aos="flip-right">
+    <!-- <section class="ad" data-aos="flip-right">
         <div class="container">
             <div class="ad-content">
                <a href="#"><img src="assets/side-effects-banner.jpg" alt="ad"></a> 
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="homopatic" class="product" data-aos="fade-up"
     data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="product-heading">

@@ -23,7 +23,7 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 6px;
+        top: 12px;
         right: 8px;
         z-index: 1;
         display: none;
@@ -137,17 +137,15 @@ include 'include/header.php';
 .cart-button {
     position: relative;
     outline: 0;
-    background: rgb(131,58,180);
-    background: linear-gradient(74deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: #ff4c4c;
     color: #fff;
     border: none;
-    height: 48px;
+    height: 40px;
     width: 100%;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 0px;
     line-height: 0px;
     overflow: hidden;
-    cursor: pointer
 }
 
 .cart-button:focus {
@@ -421,10 +419,10 @@ include 'include/header.php';
     </section>
     <section class="features-product">
         <div class="heading">
-            <h1 class="feature-heading">HEADING</h1>
+            <h1 class="feature-heading">What's New</h1>
         </div>
         <div class="des">
-            <h3 class="des-heading">Your Description</h3>
+            <h3 class="des-heading">Fresh & New Style Option</h3>
         </div>
         <div class="product-slider"></div>
     </section>
@@ -460,7 +458,7 @@ include 'include/header.php';
     </div>
     <section class="features-product">
         <div class="heading">
-            <h1 class="feature-heading">BEST PRODUCT</h1>
+            <h1 class="feature-heading">LATEST PRODUCT</h1>
         </div>
         <div class="product-slider"></div>
     </section>
@@ -477,7 +475,6 @@ include 'include/header.php';
         <div class="card sc-product-item">
             <div class="product-img">
                 <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
-                <div class="sub-heading">Brand LOGO</div>
             </div>
             <div class="product-content">
                 <h1><?= $value['name'];?></h1>
@@ -555,7 +552,7 @@ include 'include/header.php';
             </div>
         </div> -->
     </section>
-    <section class="ad-product">
+    <!-- <section class="ad-product">
         <div class="container">
             <div class="ad-content">
                 <div class="left-side-content" data-aos="fade-right">
@@ -583,8 +580,8 @@ include 'include/header.php';
                 </div>
             </div>
         </div>
-    </section>
-    <section class="brand-logo">
+    </section> -->
+    <!-- <section class="brand-logo">
         <div class="container">
             <div class="brand-content">
                 <a href="#"  data-aos="flip-left">
@@ -607,7 +604,7 @@ include 'include/header.php';
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="about">
         <div class="container">
             <div class="about-content">

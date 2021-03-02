@@ -39,6 +39,12 @@ small {
     color: #eee;
 }
 
+.features .wow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .black {
     color: #4b4741;
 }

@@ -460,7 +460,7 @@ include 'include/header.php';
                 </div>
 
                 <!-- Quotes section-->
-                <div class="trusted-quote">
+                <!-- <div class="trusted-quote">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-offset-1 col-md-10">
@@ -487,7 +487,7 @@ include 'include/header.php';
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="instagram">
                 <div class="container">
