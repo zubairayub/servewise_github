@@ -119,7 +119,9 @@ include 'include/header.php';
                                     <?php 
                                         foreach ($result as $key => $value) {
                                                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                                $image_path =   $image[0]['image_path'];
+                                                if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                                     ?>
 
                                     <li>
@@ -258,7 +260,9 @@ include 'include/header.php';
                                 foreach ($result as $key => $value) {
                                     if($value['is_featured'] == '1'){
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                        $image_path =   $image[0]['image_path'];
+                                       if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                             ?>
                             <div class="features-tile sc-product-item">
                                 <div class="features-img">
@@ -352,7 +356,9 @@ include 'include/header.php';
                             <?php 
                                 foreach ($result as $key => $value) {
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                        $image_path =   $image[0]['image_path'];
+                                       if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                             ?>
                             <div class="menu-item col-sm-6 col-xs-12 starter dinner desserts">
                                 <div class="clearfix menu-wrapper">

@@ -217,7 +217,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 foreach ($result as $key => $value) {
                     if($value['is_featured'] == '1'){
                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                    $image_path =   $image[0]['image_path'];
+                     if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
             ?>
          
                 <div class="sc-product-item product-card items">
@@ -337,7 +339,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             foreach ($result as $key => $value) {
 
                  $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                 
                 
               ?>

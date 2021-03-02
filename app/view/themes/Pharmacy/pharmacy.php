@@ -412,7 +412,10 @@ include 'include/header.php';
                 foreach ($result as $key => $value) {
                     if($value['is_featured'] == '1'){
                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                        $image_path =   $image[0]['image_path'];
+                        if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
+                     
               ?>
             <div class="card sc-product-item items">
                 <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
@@ -494,7 +497,9 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
               ?>
                 <div class="homo-product-card sc-product-item items">
                     <div class="homo-card-upper"><img data-name="product_cart_img" src='<?= $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
@@ -534,7 +539,9 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
               ?>
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
@@ -583,7 +590,9 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+               if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
               ?>
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
