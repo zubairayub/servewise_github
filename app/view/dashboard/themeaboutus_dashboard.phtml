@@ -3,6 +3,36 @@
         <div class="dashboard-footer">
             <h1 data-aos="fade-right" data-aos-duration="2000" >About Us</h1>
         </div>
+
+        <table class="product-table" width="100%" data-aos="fade-up-right">
+        <tr class="product-table-row">
+            <td class="product-table-data">
+                <div class="add-image">
+                    <input type="file" name="files[]" onchange="readURL(this);"  multiple/>
+                    <span class="img-text-1">+</span>
+                    <span class="img-text-2">Uplaod Images</span>
+                </div>
+                <div class="add-image-box">
+                    <!-- <?php 
+                        if(!empty($product_img)){
+                            $img = $product_img;
+                        }else{
+
+                            $img = '../app/view/img/add-product.png';
+                        }
+                    ?> -->
+                <img id="blah" src="../app/view/img/add-product.png" alt="your image" style="width:130px;height:130px;" />
+                </div>
+                
+                   
+            </td>
+        </tr>
+        
+    </table>
+
+
+
+
         <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
             <form action="<?= $controller; ?>" class="d-footer-logo-about" id="formAbout">
                 <input type="hidden" name="formAbout">
