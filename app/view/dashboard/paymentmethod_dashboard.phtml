@@ -9,22 +9,22 @@
         <form action="<?= $controller; ?>" id="paypalForm">
             <input type="hidden" name="paypalForm" value="Paypal Form">
             <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
-                <div class="pay-me-box-head">Paypal Credential</div>
+                <div class="pay-me-box-head">Flutter Wave Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Paypal Client Id</div>
+                        <div class="pay-me-dis-head">Flutter Wave Public key</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="paypal_id" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Paypal Client Secret</div>
+                        <div class="pay-me-dis-head">Flutter Wave Client Secret</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="paypal_secret" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Paypal Sandbox Mode</div>
+                        <div class="pay-me-dis-head">Flutter Wave Sandbox Mode</div>
                         <div class="pay-me-dis-input">
                             <label class="switch">
                                 <input type="checkbox" name="paypal_mode">
@@ -44,22 +44,22 @@
         <form action="<?= $controller; ?>" id="sslczForm">
             <input type="hidden" name="sslczForm" value="Sslcommerz Form">
             <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
-                <div class="pay-me-box-head">Sslcommerz Credential</div>
+                <div class="pay-me-box-head">Pesapal Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Sslcz Store Id</div>
+                        <div class="pay-me-dis-head">Pesapal Store Id</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="sslcz_store_id" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Sslcz store password</div>
+                        <div class="pay-me-dis-head">Pesapal store password</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="sslcz_store_pass" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Sslcommerz Sandbox Mode</div>
+                        <div class="pay-me-dis-head">Pesapal Sandbox Mode</div>
                         <div class="pay-me-dis-input">
                             <label class="switch">
                                 <input type="checkbox" name="sslcz_mode">
@@ -79,16 +79,16 @@
         <form action="<?= $controller; ?>" id="stripeForm">
             <input type="hidden" name="stripeForm" value="Stripe Form">
             <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
-                <div class="pay-me-box-head">Stripe Credential</div>
+                <div class="pay-me-box-head">Paystack Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Stripe Key</div>
+                        <div class="pay-me-dis-head">Paystack Key</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="st_key" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Stripe Secret</div>
+                        <div class="pay-me-dis-head">Paystack Secret</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="st_secret" require>
                         </div>
@@ -105,16 +105,16 @@
         <form action="<?= $controller; ?>" id="razForm">
             <input type="hidden" name="razForm" value="RazorPay Form">
             <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
-                <div class="pay-me-box-head">RazorPay Credential</div>
+                <div class="pay-me-box-head">mpesa Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">RAZOR KEY</div>
+                        <div class="pay-me-dis-head">mpesa KEY</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="raz_key" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">RAZOR SECRET</div>
+                        <div class="pay-me-dis-head">mpesa SECRET</div>
                         <div class="pay-me-dis-input">
                             <input type="text" name="raz_secret" require>
                         </div>
@@ -127,174 +127,7 @@
         </form>
         <!-- RazorPay Form End -->
 
-        <!-- Instamojo Form Start -->
-        <form action="<?= $controller; ?>" id="instaForm">
-            <input type="hidden" name="instaForm" value="Instamojo Form">
-            <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
-                <div class="pay-me-box-head">Instamojo Credential</div>
-                <div class="pay-me-box-dis">
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">API KEY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="insta_key" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">AUTH TOKEN</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="insta_token" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Instamojo Sandbox Mode</div>
-                        <div class="pay-me-dis-input">
-                            <label class="switch">
-                                <input type="checkbox" name="insta_mode">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-me-box-btn" >
-                    <input type="button" value="SAVE" onclick="submitFormInsta()">
-                </div>
-            </div>
-        </form>
-        <!-- Instamojo Form End -->
-
-        <!-- Paystack Form Start -->
-        <form action="<?= $controller; ?>" id="paystackForm">
-            <input type="hidden" name="paystackForm" value="PayStack Form">
-            <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
-                <div class="pay-me-box-head">PayStack Credential</div>
-                <div class="pay-me-box-dis">
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">PUBLIC KEY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="paystack_public" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">SECRET KEY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="paystack_secret" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">MERCHANT EMAIL</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="merchant_email">
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-me-box-btn">
-                    <input type="button" value="SAVE" onclick="submitFormPaystack()">
-                </div>
-            </div>
-        </form>
-        <!-- Paystack Form End -->
-
-        <!-- VoguePay Form Start -->
-        <form action="<?= $controller; ?>" id="vogueForm">
-            <input type="hidden" name="vogueForm" value="vogue Form">
-            <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
-                <div class="pay-me-box-head">VoguePay Credential</div>
-                <div class="pay-me-box-dis">
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">MERCHANT ID</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="merchant_id" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Sandbox Mode</div>
-                        <div class="pay-me-dis-input">
-                            <label class="switch">
-                                <input type="checkbox" name="vogue_mode" require>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-me-box-btn">
-                    <input type="button" value="SAVE" onclick="submitFormVogue()">
-                </div>
-            </div>
-        </form>
-        <!-- VoguePay Form End -->
-
-        <!-- Payhere Form Start -->
-        <form action="<?= $controller; ?>" id="payhereForm">
-            <input type="hidden" name="payhereForm" value="Payhere Form">
-            <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
-                <div class="pay-me-box-head">Payhere Credential</div>
-                <div class="pay-me-box-dis">
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">PAYHERE MERCHANT ID</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="payhere_merchant_id" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">PAYHERE SECRET</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="payhere_secret" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">PAYHERE CURRENCY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="payhere_currency" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Payhere Sandbox Mode</div>
-                        <div class="pay-me-dis-input">
-                            <label class="switch">
-                                <input type="checkbox" name="payhere_mode">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-me-box-btn">
-                    <input type="button" value="SAVE" onclick="submitFormPayhere()">
-                </div>
-            </div>
-        </form>
-        <!-- Payhere Form End -->
-
-        <!-- Ngenius Form Start -->
-        <form action="<?= $controller; ?>" id="ngeniusForm">
-            <input type="hidden" name="ngeniusForm" value="Ngenius Form">
-            <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
-                <div class="pay-me-box-head">Ngenius Credential</div>
-                <div class="pay-me-box-dis">
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">NGENIUS OUTLET ID</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="ngenius_id" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">NGENIUS API KEY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="ngenius_key" require>
-                        </div>
-                    </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">NGENIUS CURRENCY</div>
-                        <div class="pay-me-dis-input">
-                            <input type="text" name="ngenius_currency" require>
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-me-box-btn">
-                    <input type="button" value="SAVE" onclick="submitFormNgenius()">
-                </div>
-            </div>
-        </form>
-        <!-- Ngenius Form End -->
+     
 
     </div>
 </div>

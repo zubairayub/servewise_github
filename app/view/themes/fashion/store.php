@@ -268,7 +268,7 @@ include 'include/header.php';
                 <div class="nav">
                     <div class="logo">
                     <a herf="#" class="header-logo-section">
-                    <img src="https://picsum.photos/200/300?random=1" alt="">
+                    <img src="<?=  $logo?>" alt="">
                 </a>
                     </div>
                     <div class="navigation">

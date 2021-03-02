@@ -16,7 +16,7 @@ include 'include/header.php';
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="./index.html">
-                            <img src="img/img/quote.png" alt="LOGO" width="50px">
+                            <img src="<?= $logo ;?>" alt="LOGO" width="50px">
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
