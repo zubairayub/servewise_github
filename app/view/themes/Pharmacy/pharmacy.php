@@ -26,8 +26,8 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 18px;
-        right: 35px;
+        top: 15px;
+        right: 150px;
         z-index: 1;
         display: none;
         -webkit-user-select: none;
@@ -350,7 +350,131 @@ include 'include/header.php';
 /*  */
 
 
+/* selector */
 
+            
+              
+.wrapper .title{
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+}
+              
+.select_wrap{
+    width: 125px;
+    height: 30px;
+    top: 0px;
+    position: absolute;
+    user-select: none;
+    z-index: 9;
+    left: 0px;
+}
+    
+.dashboard-lang{
+    width: 125px;
+    height: 30px;
+    top: 0%;
+    position: absolute;
+    user-select: none;
+    z-index: 999;
+    left: 90%;
+}
+    
+.select_wrap .default_option{
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    list-style:none;
+}
+    
+    .select_wrap .default_option li{
+    padding: 3px 10px;
+}
+    
+.select_wrap .default_option:before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid;
+    border-color: transparent transparent #555555 #555555;
+    transform: rotate(-45deg);
+}
+    
+.select_wrap .select_ul{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    display: none;
+}   
+.select_wrap .select_ul li{
+    padding: 3px 20px;
+    cursor: pointer;
+}
+.select_wrap .select_ul li:first-child:hover{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+    
+.select_wrap .select_ul li:last-child:hover{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+    
+.select_wrap .select_ul li:hover{
+    background: #fff4dd;
+}
+    
+.select_wrap .en{
+    display: flex;
+    align-items: center;
+}
+
+.select_wrap .pt{
+    display: flex;
+    align-items: center;
+}
+    
+.select_wrap .en .icon{
+    background: url(assets/us-flag.png) no-repeat 0 0;
+    width: 30px;
+    height: 11px;
+    background-size: contain;
+    background-position: center;
+}
+.select_wrap .en p{
+    margin:0px;
+    font-size:12px;
+}
+.select_wrap .pt .icon{
+    background: url(assets/pt-flag.png) no-repeat 0 0;
+    width: 30px;
+    height: 11px;
+    background-size: contain;
+    background-position: center;
+}    
+.select_wrap .pt p{
+    margin:0px;
+    font-size:12px;
+}
+
+
+.select_wrap.active .select_ul{
+    display: block;
+    list-style:none;
+}             
+.select_wrap.active .default_option:before{
+    top: 12px;
+    transform: rotate(-225deg);
+}
+
+            /* selector end */
 
 
 
@@ -359,6 +483,32 @@ include 'include/header.php';
 <body  data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     
     <header>
+        <!-- lang selector -->
+        <div class="select_wrap dashboard-lang">
+            <ul class="default_option">
+                <li>
+                    <div class="option en">
+                    <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="select_ul">
+                <li>
+                    <div class="option en">
+                        <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option pt">
+                        <div class="icon"></div>
+                        <p>PT</p>
+                    </div>  
+                </li>
+            </ul>
+        </div>
+        <!-- lang selector End -->
         <div class="container">
             <div class="nav" id="myNav">
                 <div class="nav-logo">
