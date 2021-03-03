@@ -2160,6 +2160,32 @@ form {
 .user-edit-profile-main .user-content .container-content form .edit-detail input{border: 1px solid rgba(0,0,0,0.5);border-radius: 4px;    width: 100%;font-size: 20px;padding: 6px 6px;}
 /* user-profile & user-edit-end */
 
+
+/* add-new-deal */
+
+.add-new-deal{width: 100%;}
+.add-new-deal form{width: 100%;}
+.add-new-deal form .add-new-deal-content{display: flex;justify-content: center;align-items: center;flex-wrap: wrap;width: 100%;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(1){background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);padding: 10px;flex-basis: 47%;margin-right: 3%;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(1) .new-content:nth-child(1){display: flex;justify-content: center;align-items: flex-start;flex-direction: column;padding-bottom: 25px;border-bottom: 1px solid rgba(0,0,0,0.2);}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(1) .new-content:nth-child(1) .add-new-deal-content-head{font-size: 18px;font-weight: 700;color: var(--dark-background);}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(1) .new-content:nth-child(1) .add-new-deal-content-input{border: 1px solid rgba(0,0,0,0.4);border-radius: 4px;font-size: 18px;padding: 3px 10px;width: 100%;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(1) .new-content:nth-child(2){display: flex;justify-content: center;align-items: center;padding-top: 20px;padding-bottom: 15px;}
+
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(2){flex-basis: 50%;background: white;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);padding: 10px;border-radius: 4px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(2) .add-new-deal-content-head{font-size: 18px;font-weight: 700;color: var(--dark-background);}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(2) textarea{width: 100%;border: 1px solid rgba(0,0,0,0.4);border-radius: 4px;font-size: 18px;height: 120px;}
+
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(3){flex-basis: 100%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);padding: 10px;margin-top: 25px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(3) .add-new-deal-content-head{font-size: 18px;font-weight: 700;color: var(--dark-background);padding-bottom: 10px;padding-top: 15px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(3) .add-new-deal-content-input{margin-bottom: 15px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content1:nth-child(3) .add-new-deal-content-input input{width: 100%;border: 1px solid rgba(0,0,0,0.4);border-radius: 4px;font-size: 18px;padding: 3px 10px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content-btn{width: 100%;display: flex;justify-content: flex-end;align-items: center;margin-top: 10px;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content-btn input{font-size: 24px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.2);padding: 4px;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);cursor: pointer; transition: .3s ease;}
+.add-new-deal form .add-new-deal-content .add-new-deal-content-btn input:hover{background: rgb(70, 255, 86);color: white;transform: translateY(-5px);box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
+
+/* add-new-deal End*/
+
 /* advance-report */
 .advance-report-heading{width: 100%;margin: 10px 0px;}
 #online-users-data .advanve-table{background: white;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);}
