@@ -8,7 +8,7 @@ require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
 
 
-setlangcookie('pt');
+
 
 
 //index.php?page=
