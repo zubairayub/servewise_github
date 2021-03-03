@@ -52,23 +52,54 @@ return $result;
 
 
 function setlangcookie($lang){
+
+	
+    unset($_COOKIE['lang']); 
+    setcookie('lang', null, -1, '/'); 
+  //  return true;
+
 	$cookie_name = "lang";
 $cookie_value = $lang;
-setcookie($cookie_name, $cookie_value,  time()+(60*60*24*31)); 
+setcookie($cookie_name, $cookie_value,  time()+(60*60*24*31) ,'/'); 
 }
 
 
 function getlangcookie() {
  if (isset($_COOKIE["lang"])){
- 
-  return $_COOKIE["lang"];
+   return $_COOKIE["lang"];
 }
 };
 
 
+
+
+function getdefaultlanguage(){
+
+	 if (isset($_COOKIE["lang"])){
+ 
+ $df =  $_COOKIE["lang"];
+}else{
+	cookies();
+}
+
+$varr = "<ul class='default_option'>
+					<li>
+						<div class='option  $df '>
+						<div class='icon'></div>
+							<p> ". strtoupper($df) ." </p>
+						</div>
+					</li>
+				</ul>"  ;
+
+
+return $varr;
+
+}
+
+
 function cookies() {
- if (!isset($_COOKIE["lang"])){
- setcookie('lang','eng', time()+(60*60*24*31)); 
+ if (!isset($_COOKIE["lang"]) && empty($_COOKIE["lang"])){
+ setcookie('lang','eng', time()+(60*60*24*31), '/'); 
   
 }};
 
