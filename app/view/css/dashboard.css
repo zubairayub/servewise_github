@@ -737,9 +737,9 @@ html{
 
 .sidebar-nav .sidebar-head-content{width: 100%;padding-bottom: 10px;border-bottom: 1px solid rgba(0,0,0,0.4);}
 
-.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper{width: 100%;height: 70px;}
-.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper .content-main-upper-2{width: 100%;display: flex;justify-content: center;align-items: center;}
-.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper .content-main-upper-2 img{padding:0px;height: 100px;width: 100px;}
+.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper{width: 100%;height: 70px;display: flex;justify-content: center;align-items: center;}
+.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper .content-main-upper-2{width: 35%;display: flex;justify-content: center;align-items: center;border-radius: 50%;overflow: hidden;}
+.sidebar-nav .sidebar-head-content .sidebar-head-content-main-upper .content-main-upper-2 img{padding:0px;height: 70px;width: 70px;}
 .sidebar-nav .sidebar-head-content .sidebar-head-content-main-lower{width: 100%;}
 .sidebar-nav .sidebar-head-content .sidebar-head-content-main-lower .content-main-lower{width: 100%;text-align: center;color: white;}
 
