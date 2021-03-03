@@ -69,7 +69,11 @@ if($type == 'Branch'){
 			</div>
 			
 			<li class="nav-item dropdown">
-				<a class="not-link" onclick="playAudio();">
+				<!-- <a class="not-link" onclick="playAudio();"> -->
+					
+					<a class="not-link" >
+					
+
 					<audio src="../app/view/img/slow-spring-board-longer-tail-571.mp3" id="audio" controls style="display:none"></audio>
           			<i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
 					<span class="navbar-badge"><div id="result"></div> </span>
@@ -85,21 +89,194 @@ if($type == 'Branch'){
 
 						if(!empty($result)){
 							foreach ($result as $key => $value) {
-								?>
 
-				<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
+								$type =  $value['type'] ;
+								$to_user_data =  getuserinfo($value['to_user_id']);
+								$from_user_data = getuserinfo($value['from_user_id']);
+
+								if(!empty($to_user_data)){
+
+									$to_username = $to_user_data[0]['first_name'];
+								}
+
+								if(!empty($from_user_data)){
+									$from_username = $from_user_data[0]['first_name'];
+									$from_email = $from_user_data[0]['email_id'];
+									$from_id = $from_user_data[0]['user_id'];
+								}
+
+								if($type == 'Puchased'){
+
+						$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
 								<div>
 									<i class="fa fa-gift" aria-hidden="true"></i>
 								</div>
 								<span>
-									<?php echo $value['type'] ; ?>
-									<br>
-									<!-- <span>
-										23/10/2020
-									</span> -->
+									New Order from <b>' .$from_username. '</b> Just Arrived 
+									
 								</span>
-							</a>
+							</a>';
+
+
+					
+
+
+								}elseif($type == 'User_register'){
+
+
+									$type = '<a href="?page=customerlist_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+									New user ('.$from_email.') register
+									
+								</span>
+							</a>';
+									
+
+								}elseif($type == 'vendor_singup'){
+
+$vendor_data = getvendors('',$value['from_user_id'],'TRUE');
+if(!empty($vendor_data)){
+
+	$vendor_name = $vendor_data[0]['name'];
+
+}else{
+	$vendor_name = null;
+}
+
+	$type = '<a href="?page=viewvendor_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+								New vendor <b>' .$vendor_name . '</b> signup now
+									
+								</span>
+							</a>';
+
+								
+
+								}elseif($type == 'Shop Approved'){
+
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+	$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! <b>'. $branch_data[0]['name'].'</b> has been approved
+									
+								</span>
+							</a>';
+								
+
+								}
+								elseif($type == 'Shop Delisted'){
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+
+										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+								oooops! <b>'. $branch_data[0]['name'].'</b> has been Delisted
+									
+								</span>
+							</a>';
+
+
+
+								}
+								elseif($type == 'branch_singup'){
+
+
+
+									$branch_data =  getbranches($value['from_user_id'],'TRUE');
+
+									if(!empty($branch_data)){
+
+	$branch_name = $branch_data[0]['name'];
+
+}else{
+	$branch_name = null;
+}
+										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! Your got new branch <b>'. $branch_name.'</b>
+									
+								</span>
+							</a>';
+
+
+
+								}
+								elseif($type == 'product_added'){
+
+										$type = '<a href="?page=viewproduct_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+								New product added by <b>' . $from_username . '</b>
+									
+								</span>
+							</a>';
+
+								}
+								elseif($type == 'new_order'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! there is new order from '. $from_username. '
+									
+								</span>
+							</a>';
+
+								}
+								elseif($type == 'Order_initiate'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+								Order Status change by '. $from_username .'
+									
+								</span>
+							</a>';
+								}
+									elseif($type == 'product_purchase'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-gift" aria-hidden="true"></i>
+								</div>
+								<span>
+								New order just Arrived from ' . $from_username . '
+									
+								</span>
+							</a>';
+								}
+
+
+
+								
+
+
+								?>
+
+				<li class="dropdown-menu-item">
+						<?= $type;?>	
 						</li>
 								<?php
 							}
