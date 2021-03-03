@@ -11,6 +11,46 @@ function get($name, $def= '')
 
 
 
+
+
+
+
+function deleteorder($dbclass= null,$order_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE FROM `order_details` WHERE id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE FROM `orders` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+$varr->query="DELETE FROM `invoice` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE FROM `order_status` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+return $result;
+
+
+
+}
+
+
+
+
+
+
+
+
 function setlangcookie($lang){
 	$cookie_name = "lang";
 $cookie_value = $lang;
