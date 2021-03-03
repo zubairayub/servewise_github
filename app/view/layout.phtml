@@ -42,7 +42,7 @@ if(($dashboard != NULL) && !empty($_SESSION['status'])){
 include $main_content; 
 
 ?>
-<input type="" name="" id="countnoti" value="">
+<div id="countnoti"></div>
 </section>
 
 <?php 
@@ -67,11 +67,18 @@ if($dashboard == NULL){
                 success: function(data) {
                 // $('nav').hide();
                 // $('main').hide();
-                document.getElementById("result").innerHTML = data;
-               //  document.getElementById("#noticount").innerHTML = data;
+                
+                oldnotival = document.getElementById("result").innerHTML = data;
+                old = oldnotival.replace(/[^0-9\.]/g, '');
+                //alert(old);
+                var notival = document.getElementById("countnoti").innerHTML = old;
               //  playAudio();
-              //if(countnoti < data){
-                //playAudio();
+              //alert(notival);
+              //console.log(old);
+              if(notival == old){
+                //alert(oldnotival);
+                 //alert(notival);
+                playAudio();
              //noticount->data
               }
                 }
