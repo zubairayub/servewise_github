@@ -155,7 +155,7 @@ include 'include/header.php';
     top: 0%;
     position: absolute;
     user-select: none;
-    z-index: 999;
+    z-index: 9999;
     left: 90%;
 }
     
@@ -174,7 +174,7 @@ include 'include/header.php';
 .select_wrap .default_option:before{
     content: "";
     position: absolute;
-    top: 8px;
+    top: 3px;
     right: 18px;
     width: 6px;
     height: 6px;
@@ -253,7 +253,7 @@ include 'include/header.php';
     transform: rotate(-225deg);
 }
 
-            /* selector end */
+/* selector end */
 
 
 
