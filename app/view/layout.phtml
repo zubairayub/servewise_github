@@ -42,6 +42,7 @@ if(($dashboard != NULL) && !empty($_SESSION['status'])){
 include $main_content; 
 
 ?>
+<input type="" name="" id="countnoti" value="">
 </section>
 
 <?php 
@@ -67,7 +68,12 @@ if($dashboard == NULL){
                 // $('nav').hide();
                 // $('main').hide();
                 document.getElementById("result").innerHTML = data;
-                console.log(data);
+               //  document.getElementById("#noticount").innerHTML = data;
+              //  playAudio();
+              //if(countnoti < data){
+                //playAudio();
+             //noticount->data
+              }
                 }
             });
         }
