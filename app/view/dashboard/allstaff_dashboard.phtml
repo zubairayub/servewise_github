@@ -37,7 +37,7 @@
                         <a href="?page=addnewstaff_dashboard&name=<?= $user_data[0]['first_name'] ?>&email=<?= $user_data[0]['email_id'] ?>&phone=<?= $user_data[0]['contact_no'] ?>&type=<?= $user_type[0]['title'] ?>">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                         </a>
-                        <a href="#">
+                        <a href="../app/xhr/delete.php?action=allstaff&allstaff_id=<?= $value['user'] ?>">
                             <i class="fa fa-trash" aria-hidden="true"></i> Remove
                         </a>
                     </td>

@@ -47,6 +47,61 @@ return $result;
 
 
 
+function deletevendor($dbclass= null,$vendor_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE FROM `vendor` WHERE vendor_id = $vendor_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE  FROM `branch` WHERE vendor_id = $vendor_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+
+
+return $result;
+
+
+
+}
+
+
+
+
+function deleteallstaff($dbclass= null,$allstaff_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE  FROM `user` WHERE user_id = $allstaff_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE  FROM `staff` WHERE user = $allstaff_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+
+
+return $result;
+
+
+
+}
+
+
+
 
 
 

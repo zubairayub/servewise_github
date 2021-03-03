@@ -40,10 +40,6 @@ $order_id = $_GET['order_id'];
 
 $result = deleteorder($DB_CLASS,$order_id);
 
-
-
-
-
 	
 
 }elseif($action == 'user'){
@@ -58,17 +54,28 @@ $result = deleteorder($DB_CLASS,$order_id);
 
 
 
-}elseif($action == 'vendor'){
+}elseif($action == "vendor"){
+
+$vendor_id=$_GET['vendor_id'];
+
+$result = deletevendor($DB_CLASS,$vendor_id);
 
 
+}elseif ($action == "allstaff") {
+
+$allstaff_id=$_GET['allstaff_id'];
+$result = deleteallstaff($DB_CLASS,$allstaff_id);
 
 
+}
 
 
-}else{
+else{
 
 
 	echo 'no condition match';
+
+
 }
 
 
