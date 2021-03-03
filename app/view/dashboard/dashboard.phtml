@@ -124,7 +124,7 @@ $customer_name =   'Guest User' ;
                             <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
                             <i class="fa fa-eye" aria-hidden="true"></i> view
                             </a>
-                            <a href="#">
+                            <a href="../app/xhr/delete.php?action=order&order_id=<?= $value['id']?>">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Remove
                             </a>
                         </td>
