@@ -1972,12 +1972,7 @@ a.animated-button.thar-one{
            
             /* selector */
 
-            .wrapper{
-                position: absolute;
-                top: 35%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-              }
+            
               
               .wrapper .title{
                 font-weight: 700;
@@ -1993,6 +1988,16 @@ a.animated-button.thar-one{
                 user-select: none;
                 z-index: 9;
                 right: 0px;
+              }
+              
+              .dashboard-lang{
+                width: 125px;
+                height: 30px;
+                top: 20%;
+                position: absolute;
+                user-select: none;
+                z-index: 9;
+                right: 0%;
               }
               
               .select_wrap .default_option{
