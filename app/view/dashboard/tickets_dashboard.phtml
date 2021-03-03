@@ -6,11 +6,11 @@
             <a href="?page=tickettable_dashboard">View Table <i class="fa fa-angle-right" aria-hidden="true"></i></a>
         </div>
     </div>
-    <form class="ticket-content">
+    <form class="ticket-content" action='<?= $controller; ?>' id="ticketForm">
         <div class="ticket-content">
             <div class="tk-content">
                 <label>Send Ticket to</label>
-                <select>
+                <select name="sendto_ticket">
                     <option value="1">Jhon</option>
                     <option value="2">Mike</option>
                     <option value="3">Jack</option>
@@ -21,17 +21,17 @@
             <div class="tk-conetnt">
                 <div class="ticket-div">
                     <label>Ticket Title</label>
-                    <input type="text">
+                    <input type="text" name="ticket_title">
                 </div>
                 <div class="ticket-div">
                     <label>Ticket Discribtion</label>
-                    <input type="text">
+                    <input type="text" name="ticket-dis">
                 </div>
             </div>
         </div>
         <div class="ticket-content">
             <div class="tk-btn">
-                <input type="Button" value="Send">
+                <input type="Button" value="Send" onclick="submitticketForm()">
             </div>
         </div>
     </form>
@@ -39,3 +39,20 @@
 
 </div>
 </div>
+
+<script>
+    function submitticketForm(form){
+    
+    url = $('#ticketForm').attr("action");
+    formData = $('#ticketForm').serializeArray();
+
+    $.post(url, formData).done(function (data) {
+    if(data == 1){
+        alert('success');
+    }else{
+        alert('error');
+    }
+});
+}
+
+</script>
