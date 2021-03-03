@@ -2,37 +2,40 @@
     <div class="row">
         <div class="ticket-dashboard-main">
         <h1 data-aos="fade-right"data-aos-duration="1500">Ticket (Support Desk)</h1>
+        <div class="ticket-view-table">
+            <a href="?page=tickettable_dashboard">View Table <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
     </div>
-    <div class="ticket-main" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
-            <table>
-                <tr>
-                    <th>Ticket ID</th>
-                    <th>Sending Code</th>
-                    <th>Subject</th>
-                    <th>User</th>
-                    <th>Status</th>
-                    <th>Last Reply</th>
-                    <th>Options</th>
-                </tr>
-                <tr>
-                    <td>1234</td>
-                    <td>01/01/2021</td>
-                    <td>Delivery</td>
-                    <td>Muzzamil</td>
-                    <td>Pending</td>
-                    <td>hi....</td>
-                    <td class="option">
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+    <form class="ticket-content">
+        <div class="ticket-content">
+            <div class="tk-content">
+                <label>Send Ticket to</label>
+                <select>
+                    <option value="1">Jhon</option>
+                    <option value="2">Mike</option>
+                    <option value="3">Jack</option>
+                </select>
+            </div>
+        </div>
+        <div class="ticket-content">
+            <div class="tk-conetnt">
+                <div class="ticket-div">
+                    <label>Ticket Title</label>
+                    <input type="text">
+                </div>
+                <div class="ticket-div">
+                    <label>Ticket Discribtion</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+        <div class="ticket-content">
+            <div class="tk-btn">
+                <input type="Button" value="Send">
+            </div>
+        </div>
+    </form>
+
+
 </div>
 </div>
