@@ -57,9 +57,9 @@ $(document).ready(function(){
         });
     });
     
-    // function playAudio() {
-    //     document.getElementById("audio").play();
-    // };
+    function playAudio() {
+        document.getElementById("audio").play();
+    };
     
 
     
