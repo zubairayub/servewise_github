@@ -2186,6 +2186,19 @@ form {
 
 /* add-new-deal End*/
 
+/* all-notification */
+
+.noti-table{width: 100%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);}
+.noti-table .noti-table-content caption{font-size: 24px;font-weight: 700;color: var(--dark-background);padding: 10px 0px;}
+.noti-table .noti-table-content tbody tr th:nth-child(1){text-align: start;}
+.noti-table .noti-table-content tbody tr th:nth-child(2){text-align: center;}
+.noti-table .noti-table-content tbody tr th:nth-child(3){text-align: end;}
+.noti-table .noti-table-content tbody tr td:nth-child(1){text-align: start;}
+.noti-table .noti-table-content tbody tr td:nth-child(2){text-align: center;}
+.noti-table .noti-table-content tbody tr td:nth-child(3){text-align: end;}
+.noti-table .noti-table-content tbody tr td:nth-child(3) a{text-align: end;}
+/* all-notification End */
+
 /* advance-report */
 .advance-report-heading{width: 100%;margin: 10px 0px;}
 #online-users-data .advanve-table{background: white;box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);}
