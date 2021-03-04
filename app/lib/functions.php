@@ -228,6 +228,15 @@ if(!empty($dbclass)){
 $varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`,`status`) VALUES (?,?,?,?)";
 $result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message,$status),"create");
 
+if(($status == 0) || empty($status)){
+
+	$branch_owner_data =	getbranchbybranchid($dbcalss,$branch_id);
+$owner_id = $branch_owner_data[0]['user_id'];
+$link = 'viewchat_dashboard&user_id=' . $user_id ;
+insert_notifications($dbcalss,$user_id,$owner_id,'message_recieved',$link);	
+}
+
+
 return $result;
 }
 

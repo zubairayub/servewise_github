@@ -174,6 +174,22 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 								
 
 								}
+								elseif($type == 'Shop_Approved'){
+
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+	$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-home" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! <b>'. $branch_data[0]['name'].'</b> has been approved
+									
+								</span>
+							</a>';
+								
+
+								}
 								elseif($type == 'Shop Delisted'){
 
 $branch_data =  getbranches($value['to_user_id'],'TRUE');
@@ -263,6 +279,18 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 								</div>
 								<span>
 								New order just Arrived from ' . $from_username . '
+									
+								</span>
+							</a>';
+								}
+								elseif($type == 'message_recieved'){
+										$link = $value['link'];
+										$type = '<a href="?page=' .$link .' " class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</div>
+								<span>
+								New Message Recieved ' . $from_username . '
 									
 								</span>
 							</a>';
