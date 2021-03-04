@@ -109,7 +109,7 @@ if($type == 'Branch'){
 
 						$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 								</div>
 								<span>
 									New Order from <b>' .$from_username. '</b> Just Arrived 
@@ -126,10 +126,10 @@ if($type == 'Branch'){
 
 									$type = '<a href="?page=customerlist_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-registered" aria-hidden="true"></i>
 								</div>
 								<span>
-									New user ('.$from_email.') register
+									New user <b> ('.$from_email.') </b> register
 									
 								</span>
 							</a>';
@@ -148,7 +148,7 @@ if(!empty($vendor_data)){
 
 	$type = '<a href="?page=viewvendor_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-sign-in" aria-hidden="true"></i>
 								</div>
 								<span>
 								New vendor <b>' .$vendor_name . '</b> signup now
@@ -164,7 +164,7 @@ if(!empty($vendor_data)){
 $branch_data =  getbranches($value['to_user_id'],'TRUE');
 	$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-home" aria-hidden="true"></i>
 								</div>
 								<span>
 									Congratulations! <b>'. $branch_data[0]['name'].'</b> has been approved
@@ -180,7 +180,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-retweet" aria-hidden="true"></i>
 								</div>
 								<span>
 								oooops! <b>'. $branch_data[0]['name'].'</b> has been Delisted
@@ -206,7 +206,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 }
 										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-briefcase" aria-hidden="true"></i>
 								</div>
 								<span>
 									Congratulations! Your got new branch <b>'. $branch_name.'</b>
@@ -221,7 +221,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 										$type = '<a href="?page=viewproduct_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-cart-plus" aria-hidden="true"></i>
 								</div>
 								<span>
 								New product added by <b>' . $from_username . '</b>
@@ -234,7 +234,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 								</div>
 								<span>
 									Congratulations! there is new order from '. $from_username. '
@@ -247,7 +247,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-exchange" aria-hidden="true"></i>
 								</div>
 								<span>
 								Order Status change by '. $from_username .'
@@ -259,7 +259,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</div>
 								<span>
 								New order just Arrived from ' . $from_username . '
@@ -306,7 +306,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 					</div>
 					<div class="dropdown-menu-footer">
 						<span>
-							View all notifications
+						<a href="?page=allnoti_dashboard">View all notifications</a>
 						</span>
 					</div>
 				</ul>
@@ -319,7 +319,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 						<li  class="dropdown-menu-item">
 							<a href="?page=userprofile_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fas fa-user-tie"></i>
+									<i class="fa fa-user-circle" aria-hidden="true"></i>
 								</div>
 								<span>Profile</span>
 							</a>
@@ -327,7 +327,7 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 						<li  class="dropdown-menu-item">
 							<a href="?page=logout" class="dropdown-menu-link">
 								<div>
-									<i class="fas fa-sign-out-alt"></i>
+									<i class="fa fa-sign-out" aria-hidden="true"></i>
 								</div>
 								<span>Logout</span>
 							</a>
