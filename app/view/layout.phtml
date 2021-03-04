@@ -71,15 +71,23 @@ if($dashboard == NULL){
                 oldnotival = document.getElementById("result").innerHTML = data;
                 old = oldnotival.replace(/[^0-9\.]/g, '');
                 //alert(old);
-                var notival = document.getElementById("countnoti").innerHTML = old;
               //  playAudio();
               //alert(notival);
               //console.log(old);
-              if(notival == old){
+              var notival = document.getElementById("countnoti").innerHTML;
+              // alert(old);
+              // alert(notival);
+              if(notival < old){
                 //alert(oldnotival);
                  //alert(notival);
-                playAudio();
+              //   alert(old);
+                   playAudio();
+                    var notival = document.getElementById("countnoti").innerHTML = old;
+            
              //noticount->data
+              }else{
+
+                  var notival = document.getElementById("countnoti").innerHTML = old;
               }
                 }
             });
