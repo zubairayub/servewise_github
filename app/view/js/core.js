@@ -78,17 +78,17 @@ $(document).ready(function(){
             }
     };
 
-$(window).scroll(function(){
-    let windowPosition = $(window).scrollTop();
-    let sectionPosition = $('.section-sell').position().top;
-    if( windowPosition >= sectionPosition )
-    {
-        $('.section-sell').addClass('scrollEffect')
-    }
-    else{
-        $('.section-sell').removeClass('scrollEffect')
-    }
-})
+// $(window).scroll(function(){
+//     let windowPosition = $(window).scrollTop();
+//     let sectionPosition = $('.section-sell').position().top;
+//     if( windowPosition >= sectionPosition )
+//     {
+//         $('.section-sell').addClass('scrollEffect')
+//     }
+//     else{
+//         $('.section-sell').removeClass('scrollEffect')
+//     }
+// })
 
 
 var acc = document.getElementsByClassName("accordion");

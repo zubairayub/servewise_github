@@ -42,6 +42,7 @@ if(($dashboard != NULL) && !empty($_SESSION['status'])){
 include $main_content; 
 
 ?>
+<div id="countnoti"></div>
 </section>
 
 <?php 
@@ -54,6 +55,14 @@ if($dashboard == NULL){
 	 ?>
 	     
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    //$('iframe html').css('display','none !important');
+    var t = document.getElementById("ifr");
+    var y =( t.contentWindow || t.contentDocument);
+        alert(y.document.body.innerHTML)
+  });
+</script>
 	 <script>
         $(document).ready(function() {
         var ajaxCall = function() {
@@ -66,8 +75,28 @@ if($dashboard == NULL){
                 success: function(data) {
                 // $('nav').hide();
                 // $('main').hide();
-                document.getElementById("result").innerHTML = data;
-                console.log(data);
+                
+                oldnotival = document.getElementById("result").innerHTML = data;
+                old = oldnotival.replace(/[^0-9\.]/g, '');
+                //alert(old);
+              //  playAudio();
+              //alert(notival);
+              //console.log(old);
+              var notival = document.getElementById("countnoti").innerHTML;
+              // alert(old);
+              // alert(notival);
+              if(notival < old){
+                //alert(oldnotival);
+                 //alert(notival);
+              //   alert(old);
+                    playAudio();
+                    var notival = document.getElementById("countnoti").innerHTML = old;
+            
+             //noticount->data
+              }else{
+
+                  var notival = document.getElementById("countnoti").innerHTML = old;
+              }
                 }
             });
         }

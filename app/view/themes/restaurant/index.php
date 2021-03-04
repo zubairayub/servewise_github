@@ -6,6 +6,32 @@ include 'include/header.php';
 
     <div class="body">
         <div class="main-wrapper">
+            <!-- lang selector -->
+        <div class="select_wrap dashboard-lang">
+            <ul class="default_option">
+                <li>
+                    <div class="option en">
+                    <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="select_ul">
+                <li>
+                    <div class="option en">
+                        <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option pt">
+                        <div class="icon"></div>
+                        <p>PT</p>
+                    </div>  
+                </li>
+            </ul>
+        </div>
+        <!-- lang selector End -->
             <nav class="navbar navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
