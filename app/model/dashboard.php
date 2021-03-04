@@ -106,42 +106,57 @@ $weekly_store_pickup_order_percantage = 0 ;
 
 
 
-
-$first_row = '<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3> ' . $vendor_count . ' </h3>
-					<p>Total Vendors</p>
+$first_row = '<div class="row" >
+			<div class="col-3 col-m-6 col-sm-6 d1-main title" data-tilt>
+				<div  class="counter d1-content" >
+					<div class="content-1">
+						<p>
+							<img src="../app/view/img/model-2.png" alt="model-1">
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $vendor_count .'" data-speed="1500"> </h3>
+						<p>Total Vendors</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $branch_count .' </h3>
-					<p>Total Branch</p>
+			<div class="col-3 col-m-6 col-sm-6 d2-main title" data-tilt>
+				<div class="counter d2" >
+					<div class="content-1">
+						<p>
+							<img src="../app/view/img/model-1.png" alt="model-1">
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $branch_count .'" data-speed="1700"></h3>
+						<p>Total Branch</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $product_count .' </h3>
-					<p>Total Products</p>
+			<div class="col-3 col-m-6 col-sm-6 d3-main title" data-tilt>
+				<div class="counter d3">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-product-hunt" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $product_count .'" data-speed="1700"></h3>
+						<p>Total Products</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $order_count . '</h3>
-					<p>Total Orders</p>
+			<div class="col-3 col-m-6 col-sm-6 d4-main title" data-tilt>
+				<div class="counter d4">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-book" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $order_count .'" data-speed="2700"></h3>
+						<p>Total Orders</p>
+					</div>
 				</div>
 			</div>
 		</div>';
@@ -150,40 +165,56 @@ $first_row = '<div class="row">
 
 
 $second_row = '<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $customer_count .'</h3>
-					<p>Total Customers</p>
+			<div class="col-3 col-m-6 col-sm-6 d5-main title" data-tilt>
+				<div class="counter d5">
+					<div class="content-1">
+						<p>
+							<img src="../app/view/img/model-3.png" alt="model-1">
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $customer_count .'" data-speed="2200"></h3>
+						<p>Total Customers</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $order_amount .'</h3>
-					<p>Total Orders Amount</p>
+			<div class="col-3 col-m-6 col-sm-6 d6-main title" data-tilt>
+				<div class="counter d6">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-money" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $order_amount .'" data-speed="3000"></h3>
+						<p>Total Orders Amount</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $product_amount .'</h3>
-					<p>Total Products Amount</p>
+			<div class="col-3 col-m-6 col-sm-6 d7-main title" data-tilt>
+				<div class="counter d7">
+					<div class="content-1">
+						<p>
+						<i class="fa fa-list-alt" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $product_amount .'" data-speed="2700"></h3>
+						<p>Total Products Amount</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $out_of_stock .'</h3>
-					<p>Running OUT OF STOCK</p>
+			<div class="col-3 col-m-6 col-sm-6 d8-main title" data-tilt>
+				<div class="counter d8">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-archive" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $out_of_stock .'" data-speed="3000"></h3>
+						<p>Running OUT OF STOCK</p>
+					</div>
 				</div>
 			</div>
 		</div>';
@@ -604,41 +635,57 @@ $weekly_store_pickup_order_percantage = 0 ;
 
 
 
-$first_row = '<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3> ' . $vendor_count . ' </h3>
-					<p>Total Vendors</p>
+$first_row = '<div class="row" >
+			<div class="col-3 col-m-6 col-sm-6 d1-main title" data-tilt>
+				<div  class="counter d1-content" >
+					<div class="content-1">
+						<p>
+							<img src="../app/view/img/model-2.png" alt="model-1">
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $vendor_count .'" data-speed="1500"> </h3>
+						<p>Total Vendors</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $branch_count .' </h3>
-					<p>Total Branch</p>
+			<div class="col-3 col-m-6 col-sm-6 d2-main title" data-tilt>
+				<div class="counter d2" >
+					<div class="content-1">
+						<p>
+							<img src="../app/view/img/model-1.png" alt="model-1">
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $branch_count .'" data-speed="1700"></h3>
+						<p>Total Branch</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $product_count .' </h3>
-					<p>Total Products</p>
+			<div class="col-3 col-m-6 col-sm-6 d3-main title" data-tilt>
+				<div class="counter d3">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-product-hunt" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $product_count .'" data-speed="1700"></h3>
+						<p>Total Products</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>'. $order_count . '</h3>
-					<p>Total Orders</p>
+			<div class="col-3 col-m-6 col-sm-6 d4-main title" data-tilt>
+				<div class="counter d4">
+					<div class="content-1">
+						<p>
+							<i class="fa fa-book" aria-hidden="true"></i>
+						</p>
+					</div>
+					<div class="content-2">
+						<h3 class="timer count-title count-number" data-to="' . $order_count .'" data-speed="2700"></h3>
+						<p>Total Orders</p>
+					</div>
 				</div>
 			</div>
 		</div>';
@@ -646,44 +693,60 @@ $first_row = '<div class="row">
 
 
 
-$second_row = '<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
+		$second_row = '<div class="row">
+		<div class="col-3 col-m-6 col-sm-6 d5-main title" data-tilt>
+			<div class="counter d5">
+				<div class="content-1">
 					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<img src="../app/view/img/model-3.png" alt="model-1">
 					</p>
-					<h3>'. $customer_count .'</h3>
+				</div>
+				<div class="content-2">
+					<h3 class="timer count-title count-number" data-to="' . $customer_count .'" data-speed="2200"></h3>
 					<p>Total Customers</p>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+		</div>
+		<div class="col-3 col-m-6 col-sm-6 d6-main title" data-tilt>
+			<div class="counter d6">
+				<div class="content-1">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-money" aria-hidden="true"></i>
 					</p>
-					<h3>'. $order_amount .'</h3>
+				</div>
+				<div class="content-2">
+					<h3 class="timer count-title count-number" data-to="' . $order_amount .'" data-speed="3000"></h3>
 					<p>Total Orders Amount</p>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+		</div>
+		<div class="col-3 col-m-6 col-sm-6 d7-main title" data-tilt>
+			<div class="counter d7">
+				<div class="content-1">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+					<i class="fa fa-list-alt" aria-hidden="true"></i>
 					</p>
-					<h3>'. $product_amount .'</h3>
+				</div>
+				<div class="content-2">
+					<h3 class="timer count-title count-number" data-to="' . $product_amount .'" data-speed="2700"></h3>
 					<p>Total Products Amount</p>
 				</div>
 			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+		</div>
+		<div class="col-3 col-m-6 col-sm-6 d8-main title" data-tilt>
+			<div class="counter d8">
+				<div class="content-1">
 					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
+						<i class="fa fa-archive" aria-hidden="true"></i>
 					</p>
-					<h3>'. $out_of_stock .'</h3>
+				</div>
+				<div class="content-2">
+					<h3 class="timer count-title count-number" data-to="' . $out_of_stock .'" data-speed="3000"></h3>
 					<p>Running OUT OF STOCK</p>
 				</div>
 			</div>
-		</div>';
+		</div>
+	</div>';
 
 
 
@@ -691,54 +754,54 @@ $second_row = '<div class="row">
 
 
 
-$weekly_sales = '<div class="card-content">
-						<div class="progress-wrapper">
-							<p>
-								Weekly Sales 
-								<span class="float-right">'.$weekly_order.'</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:'.$weekly_order_percantage.'%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Delivered
-								<span class="float-right">'.$weekly_deliverd_order.'</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:'.$weekly_deliverd_order_percantage.'%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								On the way to Client
-								<span class="float-right">'.$weekly_route_order.'</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:'.$weekly_route_order_percantage.'%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Returned
-								<span class="float-right">'.$weekly_returned_order.'</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:'.$weekly_returned_order_percantage.'%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Pickup in Store
-								<span class="float-right">'.$weekly_store_pickup_order.'</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:'.$weekly_store_pickup_order_percantage.'%"></div>
-							</div>
-						</div>
-						</div>
-					</div>';
+	$weekly_sales = '<div class="card-content">
+	<div class="progress-wrapper">
+		<p>
+			Weekly Sales 
+			<span class="float-right">'.$weekly_order.'</span>
+		</p>
+		<div class="progress">
+			<div class="bg-primary" style="width:'.$weekly_order_percantage.'%"></div>
+		</div>
+	</div>
+	<div class="progress-wrapper">
+		<p>
+			Delivered
+			<span class="float-right">'.$weekly_deliverd_order.'</span>
+		</p>
+		<div class="progress">
+			<div class="bg-primary" style="width:'.$weekly_deliverd_order_percantage.'%"></div>
+		</div>
+	</div>
+	<div class="progress-wrapper">
+		<p>
+			On the way to Client
+			<span class="float-right">'.$weekly_route_order.'</span>
+		</p>
+		<div class="progress">
+			<div class="bg-primary" style="width:'.$weekly_route_order_percantage.'%"></div>
+		</div>
+	</div>
+	<div class="progress-wrapper">
+		<p>
+			Returned
+			<span class="float-right">'.$weekly_returned_order.'</span>
+		</p>
+		<div class="progress">
+			<div class="bg-primary" style="width:'.$weekly_returned_order_percantage.'%"></div>
+		</div>
+	</div>
+	<div class="progress-wrapper">
+		<p>
+			Pickup in Store
+			<span class="float-right">'.$weekly_store_pickup_order.'</span>
+		</p>
+		<div class="progress">
+			<div class="bg-primary" style="width:'.$weekly_store_pickup_order_percantage.'%"></div>
+		</div>
+	</div>
+	</div>
+</div>';
 
 
 
