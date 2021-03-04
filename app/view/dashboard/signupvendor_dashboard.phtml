@@ -3,7 +3,9 @@
 	<!-- main content --> 
 	<div class="wrapper">
     <h1 data-aos="fade-right"
-     data-aos-duration="1500">Signup Vendor</h1>
+     data-aos-duration="1500"><?php 
+echo getlang('','Signup Vendor',getlangcookie()); 
+?>  </h1>
 		<div class="row">
 			<div class="signup-dashboard">
 				<div class="container-content">
@@ -13,26 +15,36 @@
                     <form class="signup-vendor-form" action="<?= $controller; ?>" method="post" id="form">
 						<div class="user-detail1 sign-vendor-name" data-aos="fade-right" data-aos-duration="1000">
                             <div class="signup-vendor-main">
-                                <label>Name</label>
+                                <label><?php 
+echo getlang('','Name',getlangcookie()); 
+?>  </label>
                                 <input name="name" type="text" require>
                             </div>
                             <div class="signup-vendor-main">
-                                <label>Contact Number</label>
+                                <label><?php 
+echo getlang('','Contact Number',getlangcookie()); 
+?>  </label>
                                 <input name="contactno" type="number" require>
                             </div>
                             <div class="signup-vendor-main">
-                                <label>Email</label>
+                                <label><?php 
+echo getlang('','Email',getlangcookie()); 
+?>  </label>
                                 <input name="email" type="text" require>
                             </div>
                         </div>
                         <div class="user-detail1"  data-aos="fade-left" data-aos-duration="1000">
                             <div class="signup-address">
                                 <div class="signup-address-main">
-                                    <label>Address</label>
+                                    <label><?php 
+echo getlang('','Address',getlangcookie()); 
+?>  </label>
                                     <input name="address" type="text" require>
                                 </div>
                                 <div class="signup-address-main">
-                                    <label>Address 2nd</label>
+                                    <label><?php 
+echo getlang('','Address 2nd',getlangcookie()); 
+?>  </label>
                                     <input name="address2" type="text" >
                                 </div>
                             </div>
@@ -71,7 +83,9 @@ foreach ($getcountries as $country) {
 						
 						<div class="user-detail1" data-aos="fade-up-left" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                             <div class="signup-vendor-btn">
-							    <input type="button" name="signupbtn" value="Request" onclick="submitForm()">
+							    <input type="button" name="signupbtn" value="<?php 
+echo getlang('','Request',getlangcookie()); 
+?>  " onclick="submitForm()">
                             </div>
                         </div>
 						</form>

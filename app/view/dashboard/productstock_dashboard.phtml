@@ -11,16 +11,34 @@
             <form action="">
                 <table>
                     <tr>
-                        <th>Serial.No</th>
-                        <th>Product Name</th>
+                        <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                        <th>v<?php 
+echo getlang('','Product Name',getlangcookie()); 
+?> </th>
                    
-                        <th>Purchase Price</th>
-                        <th>Purchased from</th>
-                        <th>Selling Price</th>
-                        <th>Quantity purchased</th>
-                        <th>Stock left</th> 
-                        <th>Branch</th>
-                        <th>Vendor</th>
+                        <th><?php 
+echo getlang('','Delivery Status',getlangcookie()); 
+?>  Purchase Price</th>
+                        <th><?php 
+echo getlang('','Purchased from',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Selling Price',getlangcookie()); 
+?>  </th>
+                        <th<?php 
+echo getlang('','Quantity purchased',getlangcookie()); 
+?>  ></th>
+                        <th><?php 
+echo getlang('','Stock left',getlangcookie()); 
+?>  </th> 
+                        <th><?php 
+echo getlang('','Branch',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Vendor',getlangcookie()); 
+?>  </th>
 
                     </tr>
                     <?php

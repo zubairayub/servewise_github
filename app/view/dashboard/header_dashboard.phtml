@@ -1,12 +1,16 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="dashboard-header">
-            <h1  data-aos="fade-right" data-aos-duration="500">Header</h1>
+            <h1  data-aos="fade-right" data-aos-duration="500"><?php 
+echo getlang('','Header',getlangcookie()); 
+?>  </h1>
 
             <form class="dashboard-header-form" method="post" action="<?php echo $controller;?>" data-aos="fade-right" id="form" enctype='multipart/form-data'>
                 <div class="header-logo-upload" data-aos="fade-right" data-aos-duration="800">
                     <div class="header-logo-upload-label">
-                        <label for="">Header Logo :</label>
+                        <label for=""><?php 
+echo getlang('','Header Logo :',getlangcookie()); 
+?>  </label>
                     </div>
                     <div class="header-logo-upload-content">
                         <input type='file' name="logo" onchange="readURL(this);" require />
@@ -16,7 +20,9 @@
                 
                 <div class="header-language-switch" data-aos="fade-right" data-aos-duration="900">
                     <div class="header-language-label">
-                        <p>Show language Switch</p>
+                        <p><?php 
+echo getlang('','Show language Switch',getlangcookie()); 
+?>  </p>
                     </div>
                     <div class="header-language-content">
                         <label class="switch">
@@ -28,7 +34,9 @@
 
                 <div class="header-currency-switch" data-aos="fade-right" data-aos-duration="1000">
                     <div class="header-currency-label">
-                        <p>Show Currency Switch</p>
+                        <p><?php 
+echo getlang('','Show Currency Switch',getlangcookie()); 
+?>  </p>
                     </div>
                     <div class="header-currency-content">
                         <label class="switch">
@@ -40,7 +48,9 @@
                 
 
                 <div class="dashboard-header-btn">
-                    <input type="submit" value="Update" onclick="submitForm()">
+                    <input type="submit" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>  " onclick="submitForm()">
                 </div>
             </form>
         </div>

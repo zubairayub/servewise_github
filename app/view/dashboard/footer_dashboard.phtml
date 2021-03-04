@@ -14,13 +14,17 @@
 <div class="wrapper">
     <div class="row">
         <div class="dashboard-footer">
-        <h1 data-aos="fade-right" data-aos-duration="2000" >Footer</h1>
+        <h1 data-aos="fade-right" data-aos-duration="2000" ><?php 
+echo getlang('','Footer',getlangcookie()); 
+?>  </h1>
     </div>
     <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
         <form action="<?= $controller; ?>" class="d-footer-logo-about" id="form">
             <div class="dashboard-footer-logo">
                 <div class="footer-logo-upload-label">
-                    <label for="">Footer Logo</label>
+                    <label for=""><?php 
+echo getlang('','Footer Logo',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="footer-logo-upload-content">
                     <input type='file' name="footer_logo" onchange="readURL(this);" require/>
@@ -29,24 +33,32 @@
             </div>
             <div class="dashboard-footer-about-dis">
                 <div class="footer-about-upload-label">
-                    <label for="">About Discribtion :</label>
+                    <label for=""><?php 
+echo getlang('','About Discribtion :',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="footer-about-upload-content">
                     <textarea name="footer_about_desc" id="myTextAreaSec" class="tinymce" require><?php echo $footer_about_disc['value'];?></textarea>
                 </div>
             </div>
             <div class="dashboard-footer-about-btn">
-                <input type="button" value="Update logo & Discribtion" onclick="submitForm()">
+                <input type="button" value="<?php 
+echo getlang('','Update logo & Discribtion',getlangcookie()); 
+?>  " onclick="submitForm()">
             </div>
         </form>
     </div>
 <div class="dashboard-footer-section-2">
     <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
-        <h1>Contact info</h1>
+        <h1><?php 
+echo getlang('','Contact info',getlangcookie()); 
+?>  </h1>
         <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
             <div class="dashboard-footer-contact-add">
                 <div class="footer-contact-add-head">
-                    <label for="">Contact Address</label>
+                    <label for=""><?php 
+echo getlang('','Contact Address',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="footer-contact-add-input">
                     <input type='text' name="contact_add" value="<?php echo $foote_ad['value'];?>" require/>
@@ -54,7 +66,9 @@
             </div>
             <div class="dashboard-footer-contact-phone">
                 <div class="footer-contact-phone-head">
-                    <label for="">Contact Phone</label>
+                    <label for=""><?php 
+echo getlang('','Contact Phone',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="footer-contact-phone-input">
                     <input type='text' name="contact_ph"  value="<?php echo $footer_contact['value'];?>" require/>
@@ -62,14 +76,18 @@
             </div>
             <div class="dashboard-footer-contact-email">
                 <div class="footer-contact-email-head">
-                    <label for="">Contact E-mail</label>
+                    <label for=""><?php 
+echo getlang('','Contact E-mail',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="footer-contact-email-input">
                     <input type='text' name="contact_email" value="<?php echo $footer_email['value'];?>" require/>
                 </div>
             </div>
             <div class="dashboard-footer-contact-btn">
-                <input type="button" value="Update" onclick="submitFormCnt()">
+                <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>  " onclick="submitFormCnt()">
             </div>
         </form>
     </div>
@@ -77,7 +95,9 @@
         <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="cpyForm">
             <div class="d-footer-copyright">
                 <div class="d-footer-copyright-head">
-                    <label>Copyright Text</label>
+                    <label><?php 
+echo getlang('','Copyright Text',getlangcookie()); 
+?>  </label>
                 </div>
                 <div class="d-footer-copyright-input">
                     <input type="text" name="cpy_text" value="<?php echo $footer_copyr['value'];?>">
@@ -85,7 +105,9 @@
             </div>
             <div class="d-footer-social-media">
                 <div class="d-footer-social-link-switcher">
-                    <label>Show Social Media Links.</label>
+                    <label><?php 
+echo getlang('','Show Social Media Links.',getlangcookie()); 
+?>  </label>
                     <div class="d-footer-social-switch">
                         <label class="switch">
                         <input type="checkbox" name="social_links">
@@ -94,7 +116,9 @@
                     </div>
                 </div>
                 <div class="d-footer-social-links">
-                    <div class="d-footer-social-links-head">Social links</div>
+                    <div class="d-footer-social-links-head"><?php 
+echo getlang('','Social links',getlangcookie()); 
+?>  </div>
                     <div class="d-footer-social-icons">
                         <div class="d-footer-icons-main">
                             <div class="d-footer-icons">
@@ -130,7 +154,9 @@
                         </div>
                     </div>
                     <div class="footer-social-link-icon">
-                        <input type="button" value="Update" onclick="submitFormCpy()">
+                        <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>  " onclick="submitFormCpy()">
                     </div>
                 </div>
             </div>

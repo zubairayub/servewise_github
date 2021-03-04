@@ -1,15 +1,23 @@
 <div class="wrapper">
     <div class="row">
         <div class="sub-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">All Subscribers</h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','All Subscribers',getlangcookie()); 
+?>  </h1>
     </div>
     <div class="subs-main" data-aos="zoom-in-up" data-aos-duration="600">
         <form action="">
             <table>
                 <tr>
-                    <th>Serial.No</th>
-                    <th>E-main</th>
-                    <th>Date</th>
+                    <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','E-mail',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Date',getlangcookie()); 
+?>  </th>
                 </tr>
                 <tr>
                     <td>1</td>

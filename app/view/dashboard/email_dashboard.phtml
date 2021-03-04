@@ -1,24 +1,34 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">E-mail</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','E-mail',getlangcookie()); 
+?>  </h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form">
                 <div class="bluk-sms-form4">
-                    <label >Email To</label>
+                    <label ><?php 
+echo getlang('','Email To',getlangcookie()); 
+?>  </label>
                     <input type="email" name="email" require>
                 </div>
                 <div class="bluk-sms-form2">
-                    <label>Title</label>
+                    <label><?php 
+echo getlang('','Title',getlangcookie()); 
+?>  </label>
                     <input type="text" name="email_title" require>
                 </div>
                 <div class="bluk-sms-form3">
-                    <label>Massage</label>
+                    <label><?php 
+echo getlang('','Massage',getlangcookie()); 
+?>  </label>
                     <textarea class="tinymce" id="myTextArea" name="email_msg" require></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="SEND" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','SEND',getlangcookie()); 
+?>  " onclick="submitForm()">
                 </div>
             </form>
         </div>

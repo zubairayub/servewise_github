@@ -28,7 +28,9 @@ $usertypes = getusertypes();
 		<div class="row">
 			<div class="staff-permission-main">
             <form class="premission-assign" action="#"  method="POST" data-aos="fade-right">
-                  <p>Premission Assign</p>
+                  <p><?php 
+echo getlang('','Premission Assign',getlangcookie()); 
+?>    </p>
             <select onchange="this.form.submit()" name='usertype'>
             	<?php
 
