@@ -115,7 +115,7 @@ function setlangcookie($lang){
 
 	$cookie_name = "lang";
 $cookie_value = $lang;
-setcookie($cookie_name, $cookie_value,  time()+(60*60*24*31) ,'/','.servewise.shop'); 
+setcookie($cookie_name, $cookie_value,  0 ,'/'); 
 }
 
 
