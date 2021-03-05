@@ -53,7 +53,7 @@ $returnpage = $_SERVER['HTTP_REFERER'] ;
 
 ?>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	window.location.replace("<?= $returnpage ?>");
 
-</script> -->
+</script>
