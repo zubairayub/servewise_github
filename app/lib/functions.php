@@ -106,17 +106,17 @@ return $result;
 
 
 
-function setlangcookie($lang){
+// function setlangcookie($lang){
 
 	
-    unset($_COOKIE['lang']); 
-    setcookie('lang', null, -1, '/'); 
-  //  return true;
+//     unset($_COOKIE['lang']); 
+//     setcookie('lang', null, -1, '/'); 
+//   //  return true;
 
-	$cookie_name = "lang";
-$cookie_value = $lang;
-setcookie($cookie_name, $cookie_value,0,'/'); 
-}
+// 	$cookie_name = "lang";
+// $cookie_value = $lang;
+// setcookie($cookie_name, $cookie_value,0,'/'); 
+// }
 
 
 function getlangcookie() {
