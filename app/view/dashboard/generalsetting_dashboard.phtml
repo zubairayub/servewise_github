@@ -12,7 +12,7 @@ echo getlang('','General Setting',getlangcookie());
 echo getlang('','System Name',getlangcookie()); 
 ?>  </div>
                               <div class="g-input-input">
-                                    <input type="text" name="system_name" require>
+                                    <input type="text" name="system_name" required>
                               </div>
                         </div>
                         <div class="general-input2">
@@ -20,7 +20,7 @@ echo getlang('','System Name',getlangcookie());
 echo getlang('','System Logo',getlangcookie()); 
 ?>  </div>
                               <div class="g-input-input">
-                                    <input type='file' name="system_logo" onchange="readURL(this);" require />
+                                    <input type='file' name="system_logo" onchange="readURL(this);" required />
                                     <img id="blah" src="http://placehold.it/100" alt="your image" style="width:100px" />
                               </div>
                         </div>
@@ -29,7 +29,7 @@ echo getlang('','System Logo',getlangcookie());
 echo getlang('','System timezone',getlangcookie()); 
 ?>  </div>
                               <div class="g-input-input">
-                                    <select name="system_time" id="" require>
+                                    <select name="system_time" id="" required>
                                           <option value="1">1</option>
                                           <option value="2">2</option>
                                           <option value="3">3</option>

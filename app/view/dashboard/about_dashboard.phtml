@@ -22,7 +22,7 @@ echo getlang('','About Discribtion :',getlangcookie());
 ?>  </label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" id="myTextArea" class="tinymce" require><?php echo $about_desc['value'];?></textarea>
+                        <textarea name="about_desc" id="myTextArea" class="tinymce" required><?php echo $about_desc['value'];?></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
@@ -33,7 +33,7 @@ echo getlang('','Upadate',getlangcookie());
             </form>
         </div>
         <div class="about-us-dashboard-main2">
-        <div class="dashboard-footer-section-2">
+        <!-- <div class="dashboard-footer-section-2">
             <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
                 <h1><?php 
 echo getlang('','Our Team info',getlangcookie()); 
@@ -87,7 +87,7 @@ echo getlang('','Upadate',getlangcookie());
                     </div>
                 </form>
             </div>
-        </div>
+        </div> -->
         <div class="dashboard-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
             <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="visionForm">
                 <input type="hidden" name="visionForm">
@@ -98,7 +98,7 @@ echo getlang('','Our Vision',getlangcookie());
 ?>  </label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" id="myTextAreaSec" name="vision" require><?php echo $about_vission['value']; ?></textarea>
+                        <textarea class="tinymce" id="myTextAreaSec" name="vision" required><?php echo $about_vission['value']; ?></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
@@ -113,7 +113,7 @@ echo getlang('','Update',getlangcookie());
             </form>
         </div>
         </div>
-        <div class="about-us-dashboard-main">
+        <!-- <div class="about-us-dashboard-main">
             <form>
                 <table>
                     <tr>
@@ -153,7 +153,7 @@ echo getlang('','Option',getlangcookie());
                     </tr>                
                 </table>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>

@@ -13,7 +13,7 @@ echo getlang('','View Product',getlangcookie());
         <tr class="product-table-row">
             <td class="product-table-data">
                 <div class="add-image">
-                    <input type="file" name="files[]" onchange="readURL(this);"  multiple/>
+                    <input type="file" name="files[]" onchange="readURL(this);" required  multiple/>
                     <span class="img-text-1">+</span>
                     <span class="img-text-2"><?php 
 echo getlang('','Uplaod Images',getlangcookie()); 
@@ -42,7 +42,7 @@ echo getlang('','Uplaod Images',getlangcookie());
 echo getlang('','Category',getlangcookie()); 
 ?>:</label><br /> <select name="category"
                 id="country-list" 
-                onChange="getsecondlevel(this.value);" require>
+                onChange="getsecondlevel(this.value);" required>
                 <option value disabled selected><?php 
 echo getlang('','Select Category',getlangcookie()); 
 ?></option>
@@ -93,19 +93,19 @@ echo getlang('','Select Third Level',getlangcookie());
                         <label data-aos="fade-right"><?php 
 echo getlang('','Name',getlangcookie()); 
 ?></label>
-                        <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right" require/>
+                        <input name="name" type="text" value="<?= $product_name ?>" data-aos="fade-right" required/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right"><?php 
 echo getlang('','Quantity',getlangcookie()); 
 ?></label>
-                        <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right" require/>
+                        <input class="count" name="quantity" type="number" value="<?= $product_qty ?>" placeholder="1"  data-aos="fade-right" required/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right"><?php 
 echo getlang('','Weight, KG',getlangcookie()); 
 ?></label>
-                        <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right" require/>
+                        <input name="weight" type="text" value="<?= $product_weight?>" data-aos="fade-right" required/>
                         </div>
                         <div class="add-d-coulum">
                         <label data-aos="fade-right"><?php 
@@ -120,13 +120,13 @@ echo getlang('','Description',getlangcookie());
                                     <label data-aos="fade-right"><?php 
 echo getlang('','Purchase Price',getlangcookie()); 
 ?></label>
-                                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right" require/><br>
+                                    <input class="count" name="purchase_price" type="number" value="<?= $product_purchase?>"  data-aos="fade-right" required/><br>
                                 </div>
                                 <div class="add-d-coulum">
                                     <label data-aos="fade-right"><?php 
 echo getlang('','Sell Price',getlangcookie()); 
 ?>:</label>
-                                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right" require /><br>
+                                    <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right" required /><br>
                             </div>
                         </div>
                         <div class="add-product-main-content">

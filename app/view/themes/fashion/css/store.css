@@ -96,8 +96,9 @@ nav{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
-    height: 600px;
+    z-index: 9;
+    width: 400px;
+    height: 400px;
 }
 
 .carousel-item .overlay{
@@ -211,6 +212,62 @@ nav{
     color: black;
     letter-spacing: 2px;
 }
+
+/* carousel-content  */
+
+.carousel-item .overlay .carousel-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(1){
+    flex-basis: 55%;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2){
+    flex-basis: 45%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1{
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) p{
+    width: 400px;
+    white-space: pre-wrap;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover{
+    letter-spacing: 3px;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a i{
+    transition: .3s ease;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover i{
+    transform: rotate(-45deg);
+}
+
+/* carousel-content End */
 
 /* Productcart slider end */
 

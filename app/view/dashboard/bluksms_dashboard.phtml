@@ -11,7 +11,7 @@ echo getlang('','Send Bulk SMS',getlangcookie());
                     <label ><?php 
 echo getlang('','Mobile Users',getlangcookie()); 
 ?>  </label>
-                    <select name="bluk_sms-mob_user" id="">
+                    <select name="bluk_sms-mob_user" id="" required>
                         <option value="list 1"><?php 
 echo getlang('','list 1',getlangcookie()); 
 ?>  </option>
@@ -27,13 +27,13 @@ echo getlang('','list 3',getlangcookie());
                     <label><?php 
 echo getlang('','SMS Subject',getlangcookie()); 
 ?>  </label>
-                    <input type="text" name="bluk_sms_sub" require>
+                    <input type="text" name="bluk_sms_sub" required>
                 </div>
                 <div class="bluk-sms-form3">
                     <label><?php 
 echo getlang('','SMS Content',getlangcookie()); 
 ?>  </label>
-                    <textarea class="tinymce" id="myTextArea" name="bluk-sms-content" require></textarea>
+                    <textarea class="tinymce" id="myTextArea" name="bluk-sms-content" required></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="<?php 

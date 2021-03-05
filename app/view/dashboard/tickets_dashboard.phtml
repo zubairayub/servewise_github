@@ -16,7 +16,7 @@ echo getlang('','View Table',getlangcookie());
                 <label><?php 
 echo getlang('','Send Ticket to',getlangcookie()); 
 ?>  </label>
-                <select>
+                <select required>
                     <option value="1">Jhon</option>
                     <option value="2">Mike</option>
                     <option value="3">Jack</option>
@@ -29,13 +29,13 @@ echo getlang('','Send Ticket to',getlangcookie());
                     <label><?php 
 echo getlang('','Ticket Title',getlangcookie()); 
 ?>  </label>
-                    <input type="text">
+                    <input type="text" required>
                 </div>
                 <div class="ticket-div">
                     <label><?php 
 echo getlang('','Ticket Discribtion',getlangcookie()); 
 ?>  </label>
-                    <input type="text">
+                    <input type="text" required>
                 </div>
             </div>
         </div>

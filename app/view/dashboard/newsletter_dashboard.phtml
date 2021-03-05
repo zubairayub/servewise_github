@@ -17,13 +17,13 @@
         <label for="senderEmail" class="l-20-w-600"><?php 
 echo getlang('','Sender Email',getlangcookie()); 
 ?>  </label>
-        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Example@abc.com.." id="senderEmail" name="senderEmail" require>
+        <input type="email" class="form-control  input-sm newsletter-input-top" placeholder="Example@abc.com.." id="senderEmail" name="senderEmail" required>
       </div>
       <div class="form-group col-lg-6 ">
         <label for="senderEmail" class="l-20-w-600"><?php 
 echo getlang('','Sender Name',getlangcookie()); 
 ?>  </label>
-        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Jhon Doe" id="senderName" name="senderName" require>
+        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Jhon Doe" id="senderName" name="senderName" required>
       </div>
     </div>
     <div class="row"> 
@@ -44,7 +44,7 @@ echo getlang('','Multiple Available',getlangcookie());
         <label for="subject" class="l-20-w-600 "><?php 
 echo getlang('','Subject',getlangcookie()); 
 ?>  </label>
-        <input type="text" class="form-control  input-sm w-100-br-4-dashed" id="subject" name="subject" require/>
+        <input type="text" class="form-control  input-sm w-100-br-4-dashed" id="subject" name="subject" required/>
       </div>
     </div>
     <div class="row flex-div-fs-c">
@@ -52,7 +52,7 @@ echo getlang('','Subject',getlangcookie());
         <label for="messageLetter " class="flex-div-fs-c l-20-w-600"><?php 
 echo getlang('','Message Letter',getlangcookie()); 
 ?>  </label>
-        <textarea placeholder="Message Letter" name="messageLetter" id="myTextAreaSec" class="form-control tinymce" rows="10" id="textArea" require></textarea>
+        <textarea placeholder="Message Letter" name="messageLetter" id="myTextAreaSec" class="form-control tinymce" rows="10" id="textArea" required></textarea>
       </div>
     </div>
     <div class="row flex-div-fs-c hide">  
@@ -66,7 +66,7 @@ echo getlang('','Message Letter',getlangcookie());
         <label for="emailList" class="flex-div-fs-c l-20-w-600"><?php 
 echo getlang('','Email List',getlangcookie()); 
 ?>  </label>
-        <textarea name="emailList" id="emailList" class="form-control wd-100-h-20" rows="10" id="textArea" require></textarea>
+        <textarea name="emailList" id="emailList" class="form-control wd-100-h-20" rows="10" id="textArea" required></textarea>
       </div>
     </div>
     <div class="row flex-div-fs-c hide">  

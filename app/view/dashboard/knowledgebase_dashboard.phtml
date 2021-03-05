@@ -17,7 +17,7 @@ echo getlang('','Knowledgebase & Blog',getlangcookie());
 echo getlang('','Title',getlangcookie()); 
 ?>  </div>
                               <div class="g-input-input">
-                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>" require>
+                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>" required>
                               </div>
                         </div>
                         <div class="general-input4">
@@ -36,7 +36,7 @@ echo getlang('','Knowledge Base',getlangcookie());
                               </div>
                         </div>
                         <div class="know-art-text-dashboard">
-                            <textarea class="tinymce" id="myTextArea" name="blog" require> <?php echo $k_b_dis['value'];?></textarea>
+                            <textarea class="tinymce" id="myTextArea" name="blog" required> <?php echo $k_b_dis['value'];?></textarea>
                         </div>
                         <div class="g-btn">
                               <input type="button" value="<?php 
