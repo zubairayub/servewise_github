@@ -33,25 +33,35 @@
                 </div>
                 <div class="dashboard-detail-content-lower">
                     <div class="dashboard-detail-content-lower-content">
-                        <div class="dashboard-detail-heading">Quick Navigation Tab</div>
+                        <div class="dashboard-detail-heading"><?php 
+echo getlang('','Quick Navigation Tab',getlangcookie()); 
+?></div>
                         <div class="dashboard-detail-heading-main-row">
                             <a href="?page=viewvendor_dashboard" class="dashboard-detail-cards" data-tilt>
                                 <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-                                <div class="label">Go to Vendor</div>
+                                <div class="label"><?php 
+echo getlang('','Go to Vendor',getlangcookie()); 
+?></div>
                             </a >
                             <a href="?page=viewbranch_dashboard" class="dashboard-detail-cards" data-tilt>
                                 <div class="icon"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
-                                <div class="label">Go to Branch</div>
+                                <div class="label"><?php 
+echo getlang('','Go to Branch',getlangcookie()); 
+?></div>
                             </a >
                         </div>
                         <div class="dashboard-detail-heading-main-row" >
                             <a href="?page=staffpermission_dashboard" class="dashboard-detail-cards"data-tilt>
                                 <div class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
-                                <div class="label">Staff Role</div>
+                                <div class="label"><?php 
+echo getlang('','Staff Role',getlangcookie()); 
+?></div>
                             </a >
                             <a href="?page=generalsetting_dashboard" class="dashboard-detail-cards" data-tilt>
                                 <div class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                <div class="label">general Setting</div>
+                                <div class="label"><?php 
+echo getlang('','General Setting',getlangcookie()); 
+?></div>
                             </a >
                         </div>
                     </div>
@@ -67,19 +77,35 @@
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Recent Orders:
+							<?php 
+echo getlang('','Recent Orders',getlangcookie()); 
+?>
 						</h3>
 					</div>
 					<div class="card-content">
 						 <table class="dashboard_table_main">
                 <tr class="dashboard_product_table">
-                    <th class="dashboard_product_1">Serial.No</th>
-                    <th class="dashboard_product_2">Order Code</th>
-                    <th class="dashboard_product_3">Customer</th>
-                    <th class="dashboard_product_4">Amount</th>
-                    <th class="dashboard_product_5">Delivery Status</th>
-                    <th class="dashboard_product_6">Payment Status</th>
-                    <th class="dashboard_product_7">Option</th>
+                    <th class="dashboard_product_1"><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_2"><?php 
+echo getlang('','Order Code',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_3"><?php 
+echo getlang('','Customer',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_4"><?php 
+echo getlang('','Amount',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_5"><?php 
+echo getlang('','Delivery Status',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_6"><?php 
+echo getlang('','Payment Status',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_7"><?php 
+echo getlang('','Option',getlangcookie()); 
+?></th>
                 </tr>
                 
                     <?php  
@@ -122,10 +148,14 @@ $customer_name =   'Guest User' ;
                         <td class="dashboard_table_row_6"><?php echo $status_payment; ?></td>
                         <td class="option dashboard_table_row_7">
                             <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
-                            <i class="fa fa-eye" aria-hidden="true"></i> view
+                            <i class="fa fa-eye" aria-hidden="true"></i> <?php 
+echo getlang('','view',getlangcookie()); 
+?>
                             </a>
                             <a href="../app/xhr/delete.php?action=order&order_id=<?= $value['id']?>">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                                <i class="fa fa-trash" aria-hidden="true"></i> <?php 
+echo getlang('','Remove',getlangcookie()); 
+?>
                             </a>
                         </td>
                 </tr>
@@ -144,8 +174,9 @@ $customer_name =   'Guest User' ;
 			<div class="col-4 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h3>
-							Progress bar
+						<h3><?php 
+echo getlang('','Progress bar',getlangcookie()); 
+?>
 						</h3>
 					</div>
 					<?= $weekly_sales ;?>
