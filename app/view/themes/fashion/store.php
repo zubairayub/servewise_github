@@ -453,22 +453,47 @@ include 'include/header.php';
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="overlay">
-                    <img src="asset/1.jpg" class="d-block w-100" alt="1">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="overlay" style="background: rgb(255,141,27);background: linear-gradient(74deg, rgba(255,141,27,1) 0%, rgba(255,23,90,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                            <img src="asset/1.jpg" alt="">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
                     </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src="asset/2.jpg" class="d-block w-100" alt="2">
-                <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-item">
+                <div class="overlay" style="background: rgb(255,27,27);background: linear-gradient(74deg, rgba(255,27,27,1) 0%, rgba(255,23,168,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                        <img src="asset/2.jpg" alt="2">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="asset/3.jpg" class="d-block w-100" alt="3">
-                <div class="carousel-caption d-none d-md-block">
+            </div>
+            <div class="carousel-item">
+                <div class="overlay" style="background: rgb(255,57,27);background: linear-gradient(74deg, rgba(255,57,27,1) 0%, rgba(255,23,187,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                        <img src="asset/3.jpg" alt="2">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

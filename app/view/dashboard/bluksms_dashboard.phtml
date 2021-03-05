@@ -1,28 +1,44 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Send Bulk SMS</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Send Bulk SMS',getlangcookie()); 
+?>  </h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form1">
-                    <label >Mobile Users</label>
-                    <select name="bluk_sms-mob_user" id="">
-                        <option value="list 1">list 1</option>
-                        <option value="list 2">list 2</option>
-                        <option value="list 3">list 3</option>
+                    <label ><?php 
+echo getlang('','Mobile Users',getlangcookie()); 
+?>  </label>
+                    <select name="bluk_sms-mob_user" id="" required>
+                        <option value="list 1"><?php 
+echo getlang('','list 1',getlangcookie()); 
+?>  </option>
+                        <option value="list 2"><?php 
+echo getlang('','list 2',getlangcookie()); 
+?>  </option>
+                        <option value="list 3"><?php 
+echo getlang('','list 3',getlangcookie()); 
+?>  </option>
                     </select>
                 </div>
                 <div class="bluk-sms-form2">
-                    <label>SMS Subject</label>
-                    <input type="text" name="bluk_sms_sub" require>
+                    <label><?php 
+echo getlang('','SMS Subject',getlangcookie()); 
+?>  </label>
+                    <input type="text" name="bluk_sms_sub" required>
                 </div>
                 <div class="bluk-sms-form3">
-                    <label>SMS Content</label>
-                    <textarea class="tinymce" id="myTextArea" name="bluk-sms-content" require></textarea>
+                    <label><?php 
+echo getlang('','SMS Content',getlangcookie()); 
+?>  </label>
+                    <textarea class="tinymce" id="myTextArea" name="bluk-sms-content" required></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="SEND" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','SEND',getlangcookie()); 
+?>  " onclick="submitForm()">
                 </div>
             </form>
         </div>

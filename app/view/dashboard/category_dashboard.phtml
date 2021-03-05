@@ -1,12 +1,16 @@
 <div class="wrapper">
 		<div class="row">
-			<h1 data-aos="fade-right" data-aos-duration="1500">Category</h1>
+			<h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+echo getlang('','Category',getlangcookie()); 
+?>	</h1>
 			<div class="category-dashboard-main" data-aos="fade-left" data-aos-duration="900" >
 				<form action="<?php echo $controller ?>" method="post" id="form">
 				<div class="cat-dashboard-1">
 						<div class="cat-dashboard-name">
-							<label>Category name :</label>
-							<input name="category" value="" type="text" require>
+							<label><?php 
+echo getlang('','Category name',getlangcookie()); 
+?>	 :</label>
+							<input name="category" value="" type="text" required >
 						</div>
 					<!-- 	<div class="cat-dashboard-id">
 							<label>Category ID :</label>
@@ -18,7 +22,9 @@
 						</div> -->
 					</div>
 					<div class="cat-dashboard-btn">
-						<input type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
+						<input type="button" name="addbtn" value="<?php 
+echo getlang('','Add Category',getlangcookie()); 
+?>	" onclick="submitForm()" >
 					</div>
 				</form>
 			</div>
@@ -26,9 +32,15 @@
 					  <fieldset>
 					  <table class="table table-bordered" id="clientstable">
 						<thead class="bg-info">
-							<th>Category ID</th>
-							<th>Category</th>
-                            <th>2nd Level Category</th>
+							<th><?php 
+echo getlang('','Category ID',getlangcookie()); 
+?>	</th>
+							<th><?php 
+echo getlang('','Category',getlangcookie()); 
+?>	</th>
+                            <th><?php 
+echo getlang('','2nd Level Category',getlangcookie()); 
+?>	</th>
 							<th></th>
 							<th></th>
                         </thead>

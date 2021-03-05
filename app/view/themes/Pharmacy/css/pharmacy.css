@@ -23,7 +23,6 @@ a{
 
 .container-alpha{
     max-width: 1280px;
-    margin: auto;
     padding: 0px;
     overflow: hidden;
 }
@@ -50,6 +49,7 @@ header .nav{
     align-items: center;
     padding: 0px 30px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: .3s ease;
 }
 
 header .nav .nav-logo{
@@ -138,6 +138,203 @@ header .hero-main .hero-right .hero-btn a:hover span{
     padding-left: 50px;
     color: white;
 }
+
+/* Slider */
+
+/* slider */
+
+.carousel-item{
+    background-color: #777;
+    color: white;
+    position: relative;
+    height: 600px;
+}
+
+.carousel-item img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 9;
+    width: 400px;
+    height: 400px;
+}
+
+.carousel-item .overlay{
+    background-color: #0000;
+}
+
+/* productcart slider */
+
+
+
+.section-product-slider{
+    width: 90%;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.section-product-slider .heading{
+    text-orientation: inherit;
+    writing-mode: tb;
+    font-size: 23px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.section-product-slider .card{
+    flex-basis: 13%;
+    margin: 15px 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.section-product-slider .card:hover{
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 40%);
+    transform: translateY(-6px);
+}
+
+.section-product-slider .card .product-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.section-product-slider .card .product-img{
+    width: 100%;
+    height: 155px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 20px;
+    align-items: center;
+    transition: 0.5s ease all;
+
+}
+
+
+.section-product-slider .card .product-img img{
+    width: 100%;
+    height: 155px;
+}
+
+    .section-product-slider .card .product-content h1{
+    text-align: start;
+    flex-basis: 100%;
+    border-top: 1px solid #a0a0a0;
+    font-size: 16px;
+    padding: 5px 5px;
+    margin-bottom: 1px;
+    font-weight: 700;
+}
+
+.section-product-slider .card .product-content h3{
+    font-size: 14px;
+    flex-basis: 100%;
+    padding: 0px 5px;
+}
+
+.section-product-slider .card .product-content p{
+    font-size: 20px;
+    text-align: start;
+    flex-basis: 100%;
+    padding: 0px 5px;
+    margin-bottom: 5px;
+}
+
+.section-product-slider .card .product-content p .dollor{
+    color: green;
+    font-size: 16px;
+}
+
+.section-product-slider .card .product-content .product-buy{
+    flex-basis: 100%;
+    align-items: center ;
+}
+
+.section-product-slider .card .product-content a{
+    color: #a0a0a0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease all;
+}
+
+.section-product-slider .card .product-content a:hover{
+    color: black;
+    letter-spacing: 2px;
+}
+
+/* carousel-content  */
+
+.carousel-item .overlay .carousel-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(1){
+    flex-basis: 55%;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2){
+    flex-basis: 45%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1{
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgb(27, 27, 27);
+}
+
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) p{
+    width: 400px;
+    white-space: pre-wrap;
+    color: rgb(27, 27, 27);
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a{
+    color: rgb(27, 27, 27);
+    font-size: 24px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover{
+    letter-spacing: 3px;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a i{
+    transition: .3s ease;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover i{
+    transform: rotate(-45deg);
+}
+
+/* carousel-content End */
+
+/* Productcart slider end */
+
+
+
+/* Slider End */
+
 
 /*  product1 */
 

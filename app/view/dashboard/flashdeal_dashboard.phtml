@@ -1,24 +1,50 @@
 <div class="wrapper">
     <div class="row">
         <div class="flashdeal-dashboard-main">
-        <h1 data-aos="fade-right" data-aos-duration="1500">Flash Deal</h1>
+        <h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+echo getlang('','Flash Deal',getlangcookie()); 
+?>  </h1>
         <!-- <form data-aos="fade-down" data-aos-duration="1500">
             <input type="text">
             <input class="s-btn" type="button" value="Search">
         </form> -->
         <div class="flash-new-deal-btn">
-            <a href="?page=addnewdeal_dashboard" data-aos="fade-left" data-aos-duration="1500">Add New Deal</a>
+            <a href="?page=addnewdeal_dashboard" data-aos="fade-left" data-aos-duration="1500"><?php 
+echo getlang('','Add New Deal',getlangcookie()); 
+?>  </a>
         </div>
     </div>
     <div class="Flashdeal-table-main" data-aos="zoom-out-up" data-aos-duration="600">
         <form action="">
             <table>
                 <tr>
-                    <th>Serial.No</th>
-                    <th>title</th>
-                    <th>Banner</th>
-                    <th>Short Discribtion</th>
-                    <th>Option</th>
+                    <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','title',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Banner',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Start Date',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','End Date',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Status',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Featured',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Page Link',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Option',getlangcookie()); 
+?>  </th>
                 </tr>
                 <tr>
                     <td>1</td>

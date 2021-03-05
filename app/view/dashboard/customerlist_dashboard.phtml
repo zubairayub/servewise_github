@@ -8,7 +8,9 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="customer-list-dashboard-main">
-            <h1 data-aos="fade-right" data-aos-duration="1500">Customers List</h1>
+            <h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+echo getlang('','Customers List',getlangcookie()); 
+?></h1>
                     </div>
             <div class="customer-list-dashboard" data-aos="fade-up" data-aos-duration="900">
             
@@ -16,13 +18,27 @@
 					  <table class="table table-bordered" id="clientstable">
 					
 						<thead class="bg-info">
-							<th>Serial No.</th>
-							<th>Name <i class="fa fa-user" aria-hidden="true"></i></th>
-							<th>Email <i class="fa fa-envelope" aria-hidden="true"></i></th>
-							<th>Phone <i class="fa fa-mobile" aria-hidden="true"></i></th>
-							<th>Brand <i class="fa fa-product-hunt" aria-hidden="true"></i></th>
-							<th>Vendor <i class="fa fa-building-o" aria-hidden="true"></i></th>
-							<th>Option <i class="fa fa-cogs" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Serial No',getlangcookie()); 
+?>.</th>
+							<th><?php 
+echo getlang('','Name',getlangcookie()); 
+?> <i class="fa fa-user" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Email',getlangcookie()); 
+?> <i class="fa fa-envelope" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Phone',getlangcookie()); 
+?> <i class="fa fa-mobile" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Brand',getlangcookie()); 
+?> <i class="fa fa-product-hunt" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','vendor',getlangcookie()); 
+?> <i class="fa fa-building-o" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Option',getlangcookie()); 
+?> <i class="fa fa-cogs" aria-hidden="true"></i></th>
                            
                         </thead> 
                    

@@ -14,16 +14,24 @@
 <div class="container col-lg-6 main-content-newsletter-bulk">
     <div class="row flex-div-c-c">
       <div class="form-group col-lg-6 ">
-        <label for="senderEmail" class="l-20-w-600">Sender Email</label>
-        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Example@abc.com.." id="senderEmail" name="senderEmail" require>
+        <label for="senderEmail" class="l-20-w-600"><?php 
+echo getlang('','Sender Email',getlangcookie()); 
+?>  </label>
+        <input type="email" class="form-control  input-sm newsletter-input-top" placeholder="Example@abc.com.." id="senderEmail" name="senderEmail" required>
       </div>
       <div class="form-group col-lg-6 ">
-        <label for="senderEmail" class="l-20-w-600">Sender Name</label>
-        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Jhon Doe" id="senderName" name="senderName" require>
+        <label for="senderEmail" class="l-20-w-600"><?php 
+echo getlang('','Sender Name',getlangcookie()); 
+?>  </label>
+        <input type="text" class="form-control  input-sm newsletter-input-top" placeholder="Jhon Doe" id="senderName" name="senderName" required>
       </div>
     </div>
     <div class="row"> 
-    <span class="form-group col-lg-6 attachment-newsletter-div"><label for="attachment" class="l-20-w-600">Attachment <small>(Multiple Available) :</small></label><input type="file" name="attachment[]" id="attachment" multiple/></span>
+    <span class="form-group col-lg-6 attachment-newsletter-div"><label for="attachment" class="l-20-w-600"><?php 
+echo getlang('','Attachment',getlangcookie()); 
+?>   <small>(<?php 
+echo getlang('','Multiple Available',getlangcookie()); 
+?>  ) :</small></label><input type="file" name="attachment[]" id="attachment" multiple/></span>
     </div>
     <div class="row flex-div-fs-c hide">  
       <div class="form-group col-lg-6 width100 hide">
@@ -33,14 +41,18 @@
     </div>
     <div class="row flex-div-fs-c" >
       <div class="form-group col-lg-12 width100">
-        <label for="subject" class="l-20-w-600 ">Subject</label>
-        <input type="text" class="form-control  input-sm w-100-br-4-dashed" id="subject" name="subject" require/>
+        <label for="subject" class="l-20-w-600 "><?php 
+echo getlang('','Subject',getlangcookie()); 
+?>  </label>
+        <input type="text" class="form-control  input-sm w-100-br-4-dashed" id="subject" name="subject" required/>
       </div>
     </div>
     <div class="row flex-div-fs-c">
       <div class="form-group col-lg-6 width100">
-        <label for="messageLetter " class="flex-div-fs-c l-20-w-600">Message Letter</label>
-        <textarea placeholder="Message Letter" name="messageLetter" id="myTextAreaSec" class="form-control tinymce" rows="10" id="textArea" require></textarea>
+        <label for="messageLetter " class="flex-div-fs-c l-20-w-600"><?php 
+echo getlang('','Message Letter',getlangcookie()); 
+?>  </label>
+        <textarea placeholder="Message Letter" name="messageLetter" id="myTextAreaSec" class="form-control tinymce" rows="10" id="textArea" required></textarea>
       </div>
     </div>
     <div class="row flex-div-fs-c hide">  
@@ -51,8 +63,10 @@
     </div>
     <div class="row flex-div-fs-c">
       <div class="form-group col-lg-6 width100">
-        <label for="emailList" class="flex-div-fs-c l-20-w-600">Email List</label>
-        <textarea name="emailList" id="emailList" class="form-control wd-100-h-20" rows="10" id="textArea" require></textarea>
+        <label for="emailList" class="flex-div-fs-c l-20-w-600"><?php 
+echo getlang('','Email List',getlangcookie()); 
+?>  </label>
+        <textarea name="emailList" id="emailList" class="form-control wd-100-h-20" rows="10" id="textArea" required></textarea>
       </div>
     </div>
     <div class="row flex-div-fs-c hide">  
@@ -113,8 +127,12 @@
       </div>
     </div>
     <div class="row flex-div-fe-c">
-      <button type="button" id="btnStart" class="btn btn-default btn-sm btn-start" onclick="startSending();">Start Sending Email </button>
-      <button type="button"id="btnStop" class="btn btn-default btn-sm btn-stop" onclick="stopSending();">STOP</button>
+      <button type="button" id="btnStart" class="btn btn-default btn-sm btn-start" onclick="startSending();"><?php 
+echo getlang('','Start Sending Email',getlangcookie()); 
+?>   </button>
+      <button type="button"id="btnStop" class="btn btn-default btn-sm btn-stop" onclick="stopSending();"><?php 
+echo getlang('','STOP',getlangcookie()); 
+?>  </button>
     </div>
   </div>
   <div class="form-sen-f-c-c hide">

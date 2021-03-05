@@ -28,6 +28,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/slick.min.js"></script>
 	
   </script>
        <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
@@ -37,6 +38,7 @@
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
         
+          
 
             
 $('.sc-add-to-cart').on('click', function () {
@@ -84,6 +86,7 @@ $('.sc-add-to-cart').on('click', function () {
         }
     });    
         });
+        
 
 
 //window.onscroll = function() {myFunction()};

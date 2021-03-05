@@ -6,30 +6,42 @@
 <div class="wrapper">
       <div class="row">
             <div class="general-dashboard-main">
-                  <h1 data-aos="fade-right"data-aos-duration="1500">Knowledgebase & Blog</h1>
+                  <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Knowledgebase & Blog',getlangcookie()); 
+?>  </h1>
             </div>  
             <div class="general-main" data-aos="zoom-in-up" data-aos-duration="600">
                   <form action="<?= $controller ?>" id="form">
                         <div class="general-input1">
-                              <div class="g-input-label">Title</div>
+                              <div class="g-input-label"><?php 
+echo getlang('','Title',getlangcookie()); 
+?>  </div>
                               <div class="g-input-input">
-                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>" require>
+                                    <input type="text" name="title" value="<?php echo $k_b_title['value'];?>" required>
                               </div>
                         </div>
                         <div class="general-input4">
-                              <div class="g-input-label">Artical Type</div>
+                              <div class="g-input-label"><?php 
+echo getlang('','Artical Type',getlangcookie()); 
+?>  </div>
                               <div class="g-input-input">
                                     <select name="art_type" id="" >
-                                          <option value="Blog">Blog</option>
-                                          <option value="knowledge base">Knowledge Base</option>
+                                          <option value="Blog"><?php 
+echo getlang('','Blog',getlangcookie()); 
+?>  </option>
+                                          <option value="knowledge base"><?php 
+echo getlang('','Knowledge Base',getlangcookie()); 
+?>  </option>
                                     </select>
                               </div>
                         </div>
                         <div class="know-art-text-dashboard">
-                            <textarea class="tinymce" id="myTextArea" name="blog" require> <?php echo $k_b_dis['value'];?></textarea>
+                            <textarea class="tinymce" id="myTextArea" name="blog" required> <?php echo $k_b_dis['value'];?></textarea>
                         </div>
                         <div class="g-btn">
-                              <input type="button" value="Update" onclick="submitForm()">
+                              <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>  " onclick="submitForm()">
                         </div>
                   </form>
             </div>    

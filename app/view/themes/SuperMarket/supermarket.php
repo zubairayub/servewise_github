@@ -330,7 +330,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </aside>
         </section>
 
-        <section class="hero-main">
+        <!-- <section class="hero-main">
             <div class="container">
                 <div class="hero-content">
                     <div class="left-side"  data-aos="fade-right"
@@ -346,8 +346,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </header>
+    <!-- slider -->
+    <section class="slider">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="overlay" style="background: rgb(255,235,195);background: linear-gradient(74deg, rgba(255,235,195,1) 0%, rgba(230,230,255,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                            <img src="asset/1.jpg" alt="">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            <div class="carousel-item">
+                <div class="overlay" style="background: rgb(255,195,195);background: linear-gradient(74deg, rgba(255,195,195,1) 0%, rgba(230,253,255,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                        <img src="asset/2.jpg" alt="2">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="overlay" style="background: rgb(199,255,195);background: linear-gradient(74deg, rgba(199,255,195,1) 0%, rgba(255,230,250,1) 100%);">
+                    <div class="carousel-content">
+                        <div class="carosel-section">
+                        <img src="asset/3.jpg" alt="2">
+                        </div>
+                        <div class="carosel-section" style="color:white;">
+                            <h1>Best Product</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+    </section>
+
+
+    <!-- slider End-->
+
 
     <!-- product-cat -->
     <section class="product-cat">
@@ -664,17 +731,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         AOS.init();
-        $(document).ready(function(){
-    $(".default_option").click(function(){
-      $(this).parent().toggleClass("active");
-    })
+                        
+    
 
-    $(".select_ul li").click(function(){
-      var currentele = $(this).html();
-      $(".default_option li").html(currentele);
-      $(this).parents(".select_wrap").removeClass("active");
-    })
-});
       </script>
       
 </body>

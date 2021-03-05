@@ -13,15 +13,15 @@
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
                     <label>Title</label>
-                    <input type="text" name="video_title" value="<?php echo $video_title['value'];?>" require>
+                    <input type="text" name="video_title" value="<?php echo $video_title['value'];?>" required>
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Short Discribtion</label>
-                    <input type="text" name="video_short_desc" value="<?php echo $video_short_dis['value'];?>" require>
+                    <input type="text" name="video_short_desc" value="<?php echo $video_short_dis['value'];?>" required>
                 </div>
                 <div class="bluk-sms-form2">
                     <label>Video</label>
-                    <textarea name="video_video" id="myTextAreaSec" class="tinymce" require><?php echo $video_dis['value'];?></textarea>
+                    <textarea name="video_video" id="myTextAreaSec" class="tinymce" required><?php echo $video_dis['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
                     <input type="button" value="Update" onclick="submitForm()">

@@ -7,11 +7,17 @@
         <form action="">
             <table>
                 <tr>
-                    <th>Serial No.</th>
+                    <th><?php 
+echo getlang('','Serial No.',getlangcookie()); 
+?>  </th>
                     
-                    <th>Sender</th>
+                    <th><?php 
+echo getlang('','Sender',getlangcookie()); 
+?>  </th>
                    
-                    <th>Options</th>
+                    <th><?php 
+echo getlang('','Options',getlangcookie()); 
+?>  </th>
                 </tr>
                 <?php
                 $count  = 1; 
