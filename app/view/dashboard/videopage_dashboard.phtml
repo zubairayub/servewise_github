@@ -7,24 +7,34 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Video</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Video',getlangcookie()); 
+?></h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
-                    <label>Title</label>
+                    <label><?php 
+echo getlang('','Title',getlangcookie()); 
+?></label>
                     <input type="text" name="video_title" value="<?php echo $video_title['value'];?>" required>
                 </div>
                 <div class="bluk-sms-form2">
-                    <label>Short Discribtion</label>
+                    <label><?php 
+echo getlang('','Short Description',getlangcookie()); 
+?></label>
                     <input type="text" name="video_short_desc" value="<?php echo $video_short_dis['value'];?>" required>
                 </div>
                 <div class="bluk-sms-form2">
-                    <label>Video</label>
+                    <label><?php 
+echo getlang('','Video',getlangcookie()); 
+?></label>
                     <textarea name="video_video" id="myTextAreaSec" class="tinymce" required><?php echo $video_dis['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="Update" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>" onclick="submitForm()">
                 </div>
             </form>
         </div>

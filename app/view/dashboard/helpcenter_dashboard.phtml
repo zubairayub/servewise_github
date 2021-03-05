@@ -7,20 +7,28 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Help Center</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Help Center',getlangcookie()); 
+?></h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form"> 
                 <div class="bluk-sms-form2">
-                    <label>Questions?</label>
+                    <label><?php 
+echo getlang('','Questions',getlangcookie()); 
+?>?</label>
                     <input type="text" name="help_question" value="<?php echo $help_que['value'];?>" required>
                 </div>
                 <div class="bluk-sms-form3">
-                    <label>Answers</label>
+                    <label><?php 
+echo getlang('','Answers',getlangcookie()); 
+?></label>
                     <textarea class="tinymce" id="myTextAreaSec" name="help_answers" required><?php echo $help_ans['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="Update" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>" onclick="submitForm()">
                 </div>
             </form>
         </div>

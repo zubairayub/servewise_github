@@ -1,17 +1,23 @@
 <div class="wrapper">
     <div class="row">
         <div class="order-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">Add New Coupon</h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Coupons',getlangcookie()); 
+?>  </h1>
     </div>
     <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
         <form action="<?= $controller; ?>" id="newCoupon">
             <div class="add-new-cat-head">
-            Coupon Information Adding
+            <?php 
+echo getlang('','Coupon Information Adding',getlangcookie()); 
+?>
             </div>
             <div class="add-new-cat-content">
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Coupon Type
+                        <?php 
+echo getlang('','Coupon Type',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <select name="coupon_type" id="">
@@ -22,7 +28,9 @@
                 </div>
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Coupon code
+                        <?php 
+echo getlang('','Coupon code',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <input type="text" name="coupon_code" required>
@@ -30,7 +38,9 @@
                 </div>
                  <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Minimum Shopping
+                        <?php 
+echo getlang('','Minimum Shopping',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <input type="text" name="min_shop" required>
@@ -38,7 +48,9 @@
                 </div>
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Discount
+                        <?php 
+echo getlang('','Discount',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <input type="text" name="discount">
@@ -50,7 +62,9 @@
                 </div>
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Products
+                        <?php 
+echo getlang('','Products',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <select name="products" id="">
@@ -61,7 +75,9 @@
                 </div>
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Maximum Discount Amount
+                        <?php 
+echo getlang('','Maximum Discount Amount',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <input type="text" name="max_discount" required>
@@ -69,14 +85,18 @@
                 </div>
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
-                        Date
+                        <?php 
+echo getlang('','Date',getlangcookie()); 
+?>
                     </div>
                     <div class="add-new-cat-content-input">
                         <input type="date" name="coupon_date" required>
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
-                    <input type="button" value="Save" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','Save',getlangcookie()); 
+?>" onclick="submitForm()">
                 </div>
             </div>
         </form>
