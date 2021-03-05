@@ -33,7 +33,7 @@
 
 $value = 'something from somewhere';
 
-setcookie("TestCookie", $value, '/');
+setcookie("TestCookie", $value, 0,'/');
 
 ?>
 
