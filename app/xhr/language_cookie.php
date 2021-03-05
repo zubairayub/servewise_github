@@ -23,12 +23,17 @@ setlangcookie($LANG);
 
 
 $returnpage = $_SERVER['HTTP_REFERER'] ;
-echo $returnpage;
 
-    header("Location: $returnpage");
+
+    //header("Location: $returnpage");
 
 
 }
 
 
 ?>
+
+<script type="text/javascript">
+	window.location.replace("<?= $returnpage ?>");
+
+</script>
