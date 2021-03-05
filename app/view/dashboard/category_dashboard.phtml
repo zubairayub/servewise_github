@@ -10,7 +10,7 @@ echo getlang('','Category',getlangcookie());
 							<label><?php 
 echo getlang('','Category name',getlangcookie()); 
 ?>	 :</label>
-							<input name="category" value="" type="text" required >
+							<input name="category" value="" type="text" required />
 						</div>
 					<!-- 	<div class="cat-dashboard-id">
 							<label>Category ID :</label>
@@ -24,7 +24,7 @@ echo getlang('','Category name',getlangcookie());
 					<div class="cat-dashboard-btn">
 						<input type="button" name="addbtn" value="<?php 
 echo getlang('','Add Category',getlangcookie()); 
-?>	" onclick="submitForm()" >
+?>	" onclick="submitForm()" />
 					</div>
 				</form>
 			</div>
@@ -54,9 +54,15 @@ echo getlang('','2nd Level Category',getlangcookie());
 								<tr>
 								<td><?php echo $categorylist["category_id"]; ?></td>
 								<td><?php echo $categorylist["name"]; ?></td>
-								<td><a href="?page=subcategorytwo_dashboard&id=<?php echo $categorylist["category_id"]; ?>" >Add</a></td>								
-                                <td><a href="?page=editcategory_dashboard&id=<?php echo $categorylist["category_id"]; ?>&name=<?php echo $categorylist["name"]?>">Edit</a></td>
-								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+								<td><a href="?page=subcategorytwo_dashboard&id=<?php echo $categorylist["category_id"]; ?>" ><?php 
+				echo getlang('','Add',getlangcookie()); 
+				?></a></td>								
+                                <td><a href="?page=editcategory_dashboard&id=<?php echo $categorylist["category_id"]; ?>&name=<?php echo $categorylist["name"]?>"><?php 
+				echo getlang('','Edit',getlangcookie()); 
+				?></a></td>
+								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')"><?php 
+				echo getlang('','Delete',getlangcookie()); 
+				?></a></td>
 								
 							   </tr>
 								<?php }
@@ -77,17 +83,20 @@ echo getlang('','2nd Level Category',getlangcookie());
 
 <script>
 	function submitForm(form){
-		
-    var url = $('#form').attr("action");
-		
-    var formData = $('#form').serializeArray();
-    $.post(url, formData).done(function (data) {
-        if(data == 1){
-			        alert('category added');
-			        location.reload(); 
+		var  validInput = $('input[name=category]').val();
+		var url = $('#form').attr("action");
+		var formData = $('#form').serializeArray();
+		if(validInput == ""){
+			alert('this field is required');
 		}else{
-			alert('category not added');
+			$.post(url, formData).done(function (data) {
+				if(data == 1){
+							alert('category added');
+							location.reload(); 
+				}else{
+					alert('category not added');
+				}
+			});
 		}
-    });
 }
 </script>
