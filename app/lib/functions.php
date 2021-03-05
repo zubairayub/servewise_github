@@ -115,7 +115,7 @@ function setlangcookie($lang){
 
 	$cookie_name = "lang";
 $cookie_value = $lang;
-setcookie($cookie_name, $cookie_value,  0 ,'/'); 
+setcookie($cookie_name, $cookie_value,0,'/'); 
 }
 
 
