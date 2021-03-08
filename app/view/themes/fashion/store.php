@@ -2,20 +2,23 @@
 include 'include/header.php'; 
 ?>
 <style>
-    .img-responsive{width: 140px; flex-basis:20%}
-    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
+    .img-responsive{width: 80px;height:80px;}
+    .panel-heading{width: 100%;margin: 10px 0px;font-size: 14px;font-weight: 600;}
     .sc-cart-item-list{font-size:14px;}
-    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
-    .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
-    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
+    .list-group{overflow-y: auto;height:320px;}
+    .list-group-item{border:none;padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
+    .sc-cart-remove{height: 40px;margin-right: 0px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 20px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item-heading{padding:20px 0px;flex-basis: 100%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
     .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
-    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);color:black;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);color:black;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .section4 .sc-cart-item-summary{margin-top: 10px;display: flex;justify-content: space-around;}
     .section1{flex-basis:10%;}
-    .section2{flex-basis:80%;}
-    .section3{flex-basis:100%;}
+    .section2{flex-basis:35%;}
+    .section3{flex-basis:55%;display: flex;justify-content: center;align-items: center;}
     .section4{flex-basis:100%;}
     .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
+    #smartcart{width:100%;}
     
     
     #menuToggle
@@ -25,7 +28,7 @@ include 'include/header.php';
         position: absolute;
         top: 30px;
         right: 8px;
-        z-index: 1;
+        z-index: 99;
         display: none;
         -webkit-user-select: none;
         user-select: none;
@@ -98,10 +101,11 @@ include 'include/header.php';
 {
   position: absolute;
   width: 351px;
-  margin: -100px 0 0 -310px;
-  padding: 50px;
+  margin: -100px 0 0 -315px;
+  padding: 30px 20px;
   padding-top: 125px;
-  
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
   background: white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -122,6 +126,13 @@ include 'include/header.php';
 {
   transform: none;
 }
+
+/*  */
+
+#chatbox {height: 215px!important;}
+.cart-button.clicked span.added{width:100%;}
+.chatbox__support {height:350px!important;}
+#name {margin-top: 0px!important;}
 
 
 /* add to cart */
@@ -283,7 +294,7 @@ include 'include/header.php';
     top: 0%;
     position: absolute;
     user-select: none;
-    z-index: 9;
+    z-index: 999;
     left: 90%;
 }
     
@@ -445,6 +456,7 @@ include 'include/header.php';
         </nav>
     </section>
     <section class="slider">
+        
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -470,7 +482,7 @@ include 'include/header.php';
                 <div class="overlay" style="background: rgb(255,27,27);background: linear-gradient(74deg, rgba(255,27,27,1) 0%, rgba(255,23,168,1) 100%);">
                     <div class="carousel-content">
                         <div class="carosel-section">
-                        <img src="asset/2.jpg" alt="2">
+                            <img src="asset/2.jpg" alt="2">
                         </div>
                         <div class="carosel-section" style="color:white;">
                             <h1>Best Product</h1>
@@ -484,7 +496,7 @@ include 'include/header.php';
                 <div class="overlay" style="background: rgb(255,57,27);background: linear-gradient(74deg, rgba(255,57,27,1) 0%, rgba(255,23,187,1) 100%);">
                     <div class="carousel-content">
                         <div class="carosel-section">
-                        <img src="asset/3.jpg" alt="2">
+                            <img src="asset/3.jpg" alt="2">
                         </div>
                         <div class="carosel-section" style="color:white;">
                             <h1>Best Product</h1>

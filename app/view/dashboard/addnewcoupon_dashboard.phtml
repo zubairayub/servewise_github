@@ -105,10 +105,12 @@ echo getlang('','Save',getlangcookie());
 </div>
 <script>
   function submitForm(form){
-    
+    var validInput = $('input').val();
     var url = $('#newCoupon').attr("action");
-    
     var formData = $('#newCoupon').serializeArray();
+    if(validInput == ""){
+        alert('Please Fill the required field')
+    }else{
     $.post(url, formData).done(function (data) {
         if(data == 0){
       alert('New Coupon is added');
@@ -116,5 +118,6 @@ echo getlang('','Save',getlangcookie());
       alert('New Coupon is not added');
     }
     });
+}
 }
 </script> 

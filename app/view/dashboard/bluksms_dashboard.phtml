@@ -47,12 +47,15 @@ echo getlang('','SEND',getlangcookie());
 
 <script>
   function submitForm(form){
-    
+    var validInput = $('input').val();
     var url = $('#form').attr("action");
     var myContent = tinymce.get("myTextArea").getContent();
       $('#myTextArea').html(myContent);
     
     var formData = $('#form').serializeArray();
+    if(validInput == ""){
+			alert('this field is required');
+		}else{
     $.post(url, formData).done(function (data) {
         if(data == 1){
       alert('success');
@@ -60,5 +63,6 @@ echo getlang('','SEND',getlangcookie());
       alert('error');
     }
     });
+  }
 }
 </script>

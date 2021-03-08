@@ -63,10 +63,12 @@ echo getlang('','Add Category',getlangcookie());
 
 <script>
 	function submitForm(form){
-		
+	var  validInput = $('input[name=category]').val();
     var url = $('#form').attr("action");
-		
     var formData = $('#form').serializeArray();
+	if(validInput == ""){
+			alert('this field is required');
+		}else{
     $.post(url, formData).done(function (data) {
        if(data == 1){
 			        alert('sub category added');
@@ -75,5 +77,6 @@ echo getlang('','Add Category',getlangcookie());
 			alert('sub category not added');
 		}
     });
+}
 }
 </script>

@@ -66,10 +66,12 @@
 </div>
 <script>
   function submitForm(form){
-    
+    var  validInput = $('input').val();
     var url = $('#newStaff').attr("action");
-    
     var formData = $('#newStaff').serializeArray();
+    if(validInput == ""){
+			alert('Please Fill the required field');
+		}else{
     $.post(url, formData).done(function (data) {
         if(data == 0){
       alert('New Staff is added');
@@ -77,5 +79,6 @@
       alert('New Staff is not added');
     }
     });
+        }
 }
 </script> 

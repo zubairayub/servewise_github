@@ -1,4 +1,22 @@
+document.addEventListener("DOMContentLoaded", function(event) {
 
+
+  const cartButtons = document.querySelectorAll('.cart-button');
+  
+  cartButtons.forEach(button => {
+  
+  button.addEventListener('click',cartClick);
+  
+  });
+  
+  function cartClick(){
+  let button =this;
+  button.classList.toggle('clicked');
+  }
+  
+  
+  
+  });
 
 function updateSliderArrowsStatus(
     cardsContainer,
@@ -19,7 +37,7 @@ function updateSliderArrowsStatus(
     } else {
       $("#slide-left-container").removeClass("active");
     }
-  }
+  };
   $(function() {
     // Scroll products' slider left/right
     let div = $("#cards-container");
@@ -106,6 +124,20 @@ function updateSliderArrowsStatus(
       $(".default_option li").html(currentele);
       $(this).parents(".select_wrap").removeClass("active");
     });
+  
+  
+
+  
+  
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+    } else {
+      document.getElementById("myNav").style.background = "transparent";
+    }
+  };
   
   
 

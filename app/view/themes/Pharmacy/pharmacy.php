@@ -286,7 +286,8 @@ include 'include/header.php';
 }
 
 .cart-button.clicked span.added {
-    animation: added 2s ease-in forwards
+    animation: added 2s ease-in forwards;
+    width:100%;
 }
 
 @keyframes cart {
@@ -350,6 +351,9 @@ include 'include/header.php';
 /*  */
 
 
+#chatbox {
+    height: 220px!important;
+}
 /* selector */
 
             
@@ -638,7 +642,7 @@ include 'include/header.php';
             <div class="card sc-product-item items">
                 <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
                 <div class="container-alpha">
-                    <h4>
+                    
                         <h4 class="aplha-head" data-name="product_name"><?php echo $value['name'] ; ?></h4>
                         <div class="disc-feature-product-phy">
                             <span><?php echo $value['description'] ; ?></span>
@@ -652,7 +656,6 @@ include 'include/header.php';
                                 <span>$</span><?php echo $value['price'] ; ?>
                             </div>
                         </div>
-                    </h4>
                     <div class="product-card-button item">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
@@ -850,11 +853,10 @@ include 'include/header.php';
             </div>
         </div>
     </section>
-    <?php
-include '../../../../chat/index.php'; 
-?>
-
+    
+   
     <?php  include 'include/footer.php'; ?>
+ 
 
 <!-- js lib -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -863,40 +865,9 @@ include '../../../../chat/index.php';
 <script>  
 
 
-document.addEventListener("DOMContentLoaded", function(event) {
-
-
-const cartButtons = document.querySelectorAll('.cart-button');
-
-cartButtons.forEach(button => {
-
-button.addEventListener('click',cartClick);
-
-});
-
-function cartClick(){
-let button =this;
-button.classList.toggle('clicked');
-}
-
-
-
-});
-
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
-  } else {
-    document.getElementById("myNav").style.background = "transparent";
-  }
-}
-
-
 
         AOS.init();
   </script>
+  
 </body>
 </html>
