@@ -26,7 +26,7 @@ function updateSliderArrowsStatus(
   ) {
     if (
       $(cardsContainer).scrollLeft() + containerWidth <
-      cardCount * cardWidth + 15
+      cardCount * cardWidth + 20
     ) {
       $("#slide-right-container").addClass("active");
     } else {
@@ -45,8 +45,8 @@ function updateSliderArrowsStatus(
       .find(".cards")
       .children(".card").length;
     let speed = 1000;
-    let containerWidth = $(".container").width();
-    let cardWidth = 250;
+    let containerWidth = $(".right-content").width();
+    let cardWidth = 300;
   
     updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
   

@@ -4,20 +4,20 @@ include 'include/header.php';
 <style>
     .img-responsive{width: 80px;height:80px; flex-basis:20%}
     .sc-theme-default{width:100%;}
-    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
-    .sc-cart-item-list{font-size:14px;}
-    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 5px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
+    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600; color:black;}
+    .sc-cart-item-list{font-size:14px;overflow: auto;height: 300px;}
+    .list-group-item{padding: 5px 0px; border:none; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
     .sc-cart-remove{flex-basis: 7%;height: 20px;width:20px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 50%;font-size: 16px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
-    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
-    .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
-    .sc-cart-item-summary .sc-cart-item-qty{border-radius: 4px;border: 1px dashed rgba(0,0,0,0.4);padding: 5px 9px;width: 60px;}
-    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 14px;display: flex;justify-content: center;align-items: center;}
+    .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;}
+    .sc-cart-item-summary .sc-cart-item-qty{border-radius: 4px;border: 1px dashed rgba(0,0,0,0.4);padding: 2px 4px;width: 50px;}
+    .sc-cart-checkout{font-size: 14px;color:black; background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;    color: black; background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
     .section1{flex-basis:10%;}
     .section2{flex-basis:40%;}
-    .section3{flex-basis:40%;}
-    .section4{flex-basis:100%;}
-    .section4 .sc-cart-item-summary{display: flex;justify-content: space-between;align-items: center;}
+    .section3{flex-basis:40%; color:black;}
+    .section4{flex-basis:100%;margin-top: 10px;border-bottom: 1px solid rgba(0,0,0,0.2);padding-bottom: 10px; color:black;}
+    .section4 .sc-cart-item-summary{display: flex;justify-content: space-around;align-items: center;}
     .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
     
     
@@ -101,10 +101,10 @@ include 'include/header.php';
 {
     position: absolute;
     display: block;
-    width: 351px;
-    margin: 40px 0 0 -310px;
-    padding: 20px;
-    padding-top: 10px;
+    width: 260px;
+    margin: 40px 0 0 -230px;
+    padding: 5px;
+    padding-top: 5px;
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
     background: white;
@@ -481,7 +481,16 @@ include 'include/header.php';
             /* selector end */
 
 
+            .chatbox__support{display: none!important;
+            }
+            .chatbox--active{
+                display:flex!important;
+            }
 
+            #name {
+                margin-top: 5px!important;
+                margin-bottom: 5px!important;
+            }
 
 </style>
 <body  data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
@@ -516,7 +525,15 @@ include 'include/header.php';
         <div class="container">
             <div class="nav" id="myNav">
                 <div class="nav-logo">
-                    <img src="<?= $logo?>" alt="LOGO">
+                <?php 
+                        if(!empty($logo)){
+                            $logo_base = $logo;
+                        }else{
+
+                            $logo_base = '../asstes/logo.jpg';
+                        }
+                    ?>
+                    <img src="<?= $logo_base?>" alt="LOGO">
                 </div>
                     <div class="navigation">
                         <a href="../assets/themePages/productpage.php">Product</a>
@@ -562,42 +579,48 @@ include 'include/header.php';
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="overlay" style="background: rgb(255,235,195);background: linear-gradient(74deg, rgba(255,235,195,1) 0%, rgba(230,230,255,1) 100%);">
+                <div class="overlay" style="background-image:url(assets/backgoround.jpg);background-repeat:no-repeat;background-size:cover;">
                     <div class="carousel-content">
                         <div class="carosel-section">
-                            <img src="asset/1.jpg" alt="">
+                            <img src="assets/h1-new02.png" alt="pic1" style="width: 510px;height: 340px;">
                         </div>
                         <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                            <h1>Flat 25% Off <br> Medicine order</h1>
+                            <div class="icons">
+
+                            </div>
                             <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
               </div>
             <div class="carousel-item">
-                <div class="overlay" style="background: rgb(255,195,195);background: linear-gradient(74deg, rgba(255,195,195,1) 0%, rgba(230,253,255,1) 100%);">
+                <div class="overlay" style="background-image:url(assets/background-2.jpg);background-repeat:no-repeat;background-size:cover;">
                     <div class="carousel-content">
                         <div class="carosel-section">
-                        <img src="asset/2.jpg" alt="2">
+                        <img src="assets/h1-new04.png" alt="2">
                         </div>
                         <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                             <h1>Flat 25% Off <br> Medicine order</h1>
+                            <div class="icons">
+                                
+                            </div>
                             <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="overlay" style="background: rgb(199,255,195);background: linear-gradient(74deg, rgba(199,255,195,1) 0%, rgba(255,230,250,1) 100%);">
+                <div class="overlay" style="background-image:url(assets/background-2.jpg);background-repeat:no-repeat;background-size:cover;">
                     <div class="carousel-content">
                         <div class="carosel-section">
-                        <img src="asset/3.jpg" alt="2">
+                        <img src="assets/h1-news01.png" alt="2">
                         </div>
                         <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                        <h1>Flat 25% Off <br> Medicine order</h1>
+                            <div class="icons">
+                                
+                            </div>
                             <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -624,10 +647,20 @@ include 'include/header.php';
    data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
        <h1 class="product-heading">Feature product</h1>
     <div class="container1">
-        <div id="slide-left-container">
-          <div class="slide-left">
-          </div>
+        <div class="left-content">
+            h1
         </div>
+        <div class="right-content">
+            <div class="slide-click">
+                <div id="slide-left-container">
+                    <div class="slide-left">
+                    </div>
+                </div>
+                <div id="slide-right-container">
+                    <div class="slide-right">
+                    </div>
+                </div>
+            </div>
         <div id="cards-container">
           <div class="cards">
             <?php 
@@ -671,9 +704,6 @@ include 'include/header.php';
           </div>
         </div>
     
-        <div id="slide-right-container">
-          <div class="slide-right">
-          </div>
         </div>
     
       </div>
@@ -713,7 +743,7 @@ include 'include/header.php';
     data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="product-heading">
         <div class="container">
-            <div class="homo-heading">Homeopathic & Herbal Products</div>
+            <div class="homo-heading">Herbal Products</div>
             <div class="homo-content">
             <?php 
             foreach ($result as $key => $value) {
@@ -751,11 +781,47 @@ include 'include/header.php';
             </div>
         </div>
     </section>
+    <!-- add Section -->
+    <section class="add">
+        <div class="container">
+            <div class="add-content">
+                <div class="left-add">
+                    <div class="add-heading">
+                        Deal of the Day
+                    </div>
+                    <div class="add-short-dis">
+                        Best Digital Thermometer In The Market.
+                    </div>
+                    <div class="add-Price">
+                       <span>$</span> 326.00
+                    </div>
+                    <div class="add-btn">
+                        <a href="#">
+                        <div class="content">SHOP NOW</div>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-add">
+                    <div class="img">
+                        <img src="assets/add.png" alt="add">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- add Section End-->
+
+
+
     <section class="homopatic" class="product" data-aos="fade-up"
     data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="product-heading">
         <div class="container">
-            <div class="homo-heading">Sexual Wellness</div>
+            <div class="homo-heading">Best Selling Products</div>
             <div class="homo-content">
             <?php 
             foreach ($result as $key => $value) {
@@ -806,7 +872,7 @@ include 'include/header.php';
     data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="product-heading">
         <div class="container">
-            <div class="homo-heading">Medical Equipment</div>
+            <div class="homo-heading">Latest Products</div>
             <div class="homo-content">
             <?php 
             foreach ($result as $key => $value) {
