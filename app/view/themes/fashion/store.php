@@ -399,9 +399,6 @@ include 'include/header.php';
 </style>
 <body>
 
-    <header>
-        
-    </header>
     <section class="store-nav">
         <!-- lang selector -->
         <div class="select_wrap dashboard-lang">
@@ -430,26 +427,30 @@ include 'include/header.php';
         </div>
         <!-- lang selector End -->
         <nav>
-            <div class="container">
-                <div class="nav">
+            <div class="nav">
+                <div class="container">
                     <div class="logo">
-                    <a herf="#" class="header-logo-section">
-                    <img src="<?=  $logo?>" alt="">
-                </a>
+                        <a herf="#" class="header-logo-section">
+                        <img src="<?=  $logo?>" alt="">
+                        </a>
                     </div>
-                    <div class="navigation">
-                        <a href="../assets/themePages/productpage.php">Product</a>
-                        <a href="#">About</a>
-                        <div id="menuToggle">
-                        <input type="checkbox" class="checkbox" />
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <ul id="menu">
-                            <!-- Cart submit form -->
-                            <form action="../assets/cart/viewcart.php" method="POST"> 
-                            <!-- SmartCart element -->
-                                <div id="smartcart"></div>
-                            </form>  
-                        </ul>
+                </div>
+                <div class="navigation">
+                    <div class="container">
+                        <div class="navigation-content">
+                            <a href="../assets/themePages/productpage.php">Product</a>
+                            <a href="#">About</a>
+                            <div id="menuToggle">
+                            <input type="checkbox" class="checkbox" />
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <ul id="menu">
+                                <!-- Cart submit form -->
+                                <form action="../assets/cart/viewcart.php" method="POST"> 
+                                <!-- SmartCart element -->
+                                    <div id="smartcart"></div>
+                                </form>  
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -464,48 +465,48 @@ include 'include/header.php';
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="overlay" style="background: rgb(255,141,27);background: linear-gradient(74deg, rgba(255,141,27,1) 0%, rgba(255,23,90,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                            <img src="asset/1.jpg" alt="">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            <div class="carousel-item">
-                <div class="overlay" style="background: rgb(255,27,27);background: linear-gradient(74deg, rgba(255,27,27,1) 0%, rgba(255,23,168,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                            <img src="asset/2.jpg" alt="2">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <div class="carousel-item p1 active">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/1.jpg" alt="">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="overlay" style="background: rgb(255,57,27);background: linear-gradient(74deg, rgba(255,57,27,1) 0%, rgba(255,23,187,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                            <img src="asset/3.jpg" alt="2">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <div class="carousel-item p1">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/2.jpg" alt="2">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="carousel-item p1">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/3.jpg" alt="2">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -518,6 +519,31 @@ include 'include/header.php';
           </div>
 
     </section>
+    <section class="add">
+        <div class="container">
+            <div class="add-content">
+                <div class="content-left">
+                    <div class="box">
+                        <div class="sub-heading">Best Deal</div>
+                        <div class="heading">25% OFF</div>
+                        <div class="dis">Best Women's Fashion</div>
+                        <div class="btn"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i> Show Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="box">
+                        <div class="sub-heading">Best Deal</div>
+                        <div class="heading">25% OFF</div>
+                        <div class="dis">Best Men's Fashion</div>
+                        <div class="btn"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i> Show Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section class="section-product-slider" data-aos="fade-up">
             <?php 
             foreach ($result as $key => $value) {
