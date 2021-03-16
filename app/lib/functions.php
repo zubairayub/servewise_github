@@ -244,6 +244,64 @@ return $result;
 
 }
 
+
+
+
+
+function sendtickets($dbcalss=null,$sender_id,$reciever_id,$branch_id=null,$vendor_id=null,$message,$title=null,$ticket_id = null,$sender_email= null  ,$reciever_email = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($ticket_id)){
+$varr->query="INSERT INTO `tickets`(`from_user`, `to_user`, `vendor_id`, `branch_id`,`title`) VALUES (?,?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($sender_id,$reciever_id,$vendor_id,$branch_id,$title),"create");
+
+if(!empty($result)){
+
+$ticket_id = $result[0]['id'];
+$title_ticket = 'Ticket Generated ' . $title ;
+$message_body = 'You recieved new ticket';
+ sendEmail($reciever_email,$title_ticket,$sender_email,$message_body,$title_ticket);
+
+
+}
+
+}
+
+
+if(!empty($message)){
+
+$varr->query="INSERT INTO `tickets_conversation`(`ticket_id`, `reciever_id`, `sender_id`, `message`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($ticket_id,$reciever_id,$sender_id,$message),"create");
+
+		
+
+}
+
+
+
+
+return $result;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 function getchat($dbcalss,$user_id = NULL , $branch_id = NULL){
 
 if(!empty($dbclass)){
@@ -1192,6 +1250,36 @@ function getuserinfo($user_id =  NULL,$dbclass = NULL){
 				return  $result;
 	
 	}
+
+function getuserinfobyemail($user_id =  NULL,$dbclass = NULL){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($user_id)){
+						 $varr->query="SELECT * FROM `user` ";
+	
+					}else{
+						$varr->query="SELECT * FROM `user`  where email_id = '$user_id' ";
+	
+					}
+						
+				
+			
+			
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+				return  $result;
+	
+	}
+
 	function getproductinfo($pid =  NULL){
 
 		if(!empty($dbclass)){
