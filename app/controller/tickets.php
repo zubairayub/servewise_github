@@ -57,5 +57,10 @@ $ticket_id = null;
 sendtickets($DB_CLASS,$sender_id,$reciever_id,$branch_id,$vendor_id,$message,$title,$ticket_id,$sender_email,$tomeail);
 
 
+
+	insert_notifications($DB_CLASS,$sender_id,$reciever_id,'Ticket_generated','tickettable_dashboard');	
+	insert_notifications($DB_CLASS,$reciever_id,$sender_id,'Ticket_generated','tickettable_dashboard');	
+
+
 echo 1;
 ?>

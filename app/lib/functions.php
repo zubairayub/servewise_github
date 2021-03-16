@@ -281,7 +281,6 @@ if(!empty($message)){
 $varr->query="INSERT INTO `tickets_conversation`(`ticket_id`, `reciever_id`, `sender_id`, `message`) VALUES (?,?,?,?)";
 $result=$varr->executeQuery($varr->query,array($ticket_id,$reciever_id,$sender_id,$message),"create");
 
-		
 
 }
 
