@@ -35,6 +35,8 @@ $product_cat = $_GET['product_cat'];
 $product_cat_sub = $_GET['product_cat_sub'];
 $product_cat_ssub = $_GET['product_cat_ssub'];
 $product_img = $_GET['product_img'];
+$product_min_quantity = $_GET['product_min_quantity'];
+$tax_percantage = $_GET['tax_percantage'];
 
 
 
@@ -56,7 +58,8 @@ $product_cat = NULL;
 $product_cat_sub = NULL;
 $product_cat_ssub = NULL;
 $product_image = NULL;
-
+$product_min_quantity = null;
+$tax_percantage = null;
 
 
 

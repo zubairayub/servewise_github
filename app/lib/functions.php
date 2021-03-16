@@ -248,7 +248,7 @@ return $result;
 
 
 
-function sendtickets($dbcalss=null,$sender_id,$reciever_id,$branch_id=null,$vendor_id=null,$message,$title=null,$ticket_id = null,$sender_email= null  ,$reciever_email = null){
+function sendtickets($dbcalss=null,$sender_id,$reciever_id,$branch_id=null,$vendor_id=null,$message,$title=null,$ticket_id = null,$sender_email= null  ,$reciever_email = null,$priority = null){
 
 if(!empty($dbclass)){
 	
@@ -260,8 +260,8 @@ if(!empty($dbclass)){
 
 
 	 if(empty($ticket_id)){
-$varr->query="INSERT INTO `tickets`(`from_user`, `to_user`, `vendor_id`, `branch_id`,`title`) VALUES (?,?,?,?,?)";
-$result=$varr->executeQuery($varr->query,array($sender_id,$reciever_id,$vendor_id,$branch_id,$title),"create");
+$varr->query="INSERT INTO `tickets`(`from_user`, `to_user`, `vendor_id`, `branch_id`,`title`,`priority`) VALUES (?,?,?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($sender_id,$reciever_id,$vendor_id,$branch_id,$title,$priority),"create");
 
 if(!empty($result)){
 
@@ -326,6 +326,79 @@ $result=$varr->executeQuery($varr->query,array(),"sread");
 return $result;
 
 }
+
+
+
+
+
+function getticketsconversation($db_class = null,$t_id){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+
+
+$varr->query="SELECT * FROM `tickets_conversation`  where ticket_id = $t_id ";
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+
+}
+
+
+
+
+
+
+
+function gettickets($dbcalss=null,$branch_id = NULL , $vendor_id = NULL,$user_id= null,$status = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+if($status == 'Admin'){
+
+$varr->query="SELECT * FROM `tickets` ";
+
+}elseif($status == 'Vendor'){
+
+$varr->query="SELECT * FROM `tickets` where branch_id = $branch_id ";
+
+}
+elseif($status == 'Brand'){
+
+$varr->query="SELECT * FROM `tickets` where vendor_id = $vendor_id  ";
+
+
+}
+elseif($status == 'user'){
+$varr->query="SELECT * FROM `tickets` where from_user = $user_id  OR to_user = $user_id ";
+}
+
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
+
+
 
 
 

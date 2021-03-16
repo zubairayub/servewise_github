@@ -22,6 +22,16 @@ $vendoremail  = $_POST['emailvendor']  = isset($_POST['emailvendor'])  ? $_POST[
 $title    = $_POST['Title']    = isset($_POST['Title'])    ? $_POST['Title'] : '';
 $description    = $_POST['description']    = isset($_POST['description'])    ? $_POST['description'] : '';
 
+$ticket_id    = $_POST['ticket_id']    = isset($_POST['ticket_id'])    ? $_POST['ticket_id'] : '';
+
+
+$priority    = $_POST['priority']    = isset($_POST['priority'])    ? $_POST['priority'] : '';
+
+
+
+
+
+
 
 $tovendor    = $_POST['Branch']    = isset($_POST['Branch'])    ? $_POST['Branch'] : '';
 
@@ -30,19 +40,25 @@ if($tovendor == 'on'){
 
 
 $tomeail = $vendoremail;
+$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
+$branch_data = getbranches($reciever_data[0]['user_id'],'TRUE');
+$branch_id = $branch_data[0]['branch_id'];
+$vendor_id = null;
 }else{
 
 $tomeail = $brandemail;
+$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
+$vendor_data = getvendors('',$reciever_data[0]['user_id'],'TRUE');
+$vendor_id = $vendor_data[0]['vendor_id'];
+$branch_id = $_SESSION['branch_id'];
 }
 
 
 
-$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
-$vendor_id = $_SESSION['vendor_id'];
-$branch_id = $_SESSION['branch_id'];
+
 
 
 $sender_id = $_SESSION["logInId"];
@@ -51,10 +67,13 @@ $reciever_id = $reciever_data[0]['user_id'];
 
 $message = $description;
 $title = $title;
+if(empty($ticket_id) && $ticket_id != ''){
 $ticket_id = null;
+}
 
 
-sendtickets($DB_CLASS,$sender_id,$reciever_id,$branch_id,$vendor_id,$message,$title,$ticket_id,$sender_email,$tomeail);
+
+sendtickets($DB_CLASS,$sender_id,$reciever_id,$branch_id,$vendor_id,$message,$title,$ticket_id,$sender_email,$tomeail,$priority);
 
 
 
