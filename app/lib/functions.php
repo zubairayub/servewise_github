@@ -383,7 +383,7 @@ $varr->query="SELECT * FROM `tickets` where branch_id = $branch_id ";
 }
 elseif($status == 'Brand'){
 
-$varr->query="SELECT * FROM `tickets` where vendor_id = $vendor_id ";
+$varr->query="SELECT * FROM `tickets` where from_user = $vendor_id ";
 
 
 }

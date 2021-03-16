@@ -33,19 +33,25 @@ if($tovendor == 'on'){
 
 
 $tomeail = $vendoremail;
+$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
+$branch_data = getbranches($reciever_data[0]['user_id'],'TRUE');
+$branch_id = $branch_data[0]['branch_id'];
+$vendor_id = null;
 }else{
 
 $tomeail = $brandemail;
+$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
+$vendor_data = getvendors('',$reciever_data[0]['user_id'],'TRUE');
+$vendor_id = $vendor_data[0]['vendor_id'];
+$branch_id = null;
 }
 
 
 
-$reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
-$vendor_id = $_SESSION['vendor_id'];
-$branch_id = $_SESSION['branch_id'];
+
 
 
 $sender_id = $_SESSION["logInId"];
