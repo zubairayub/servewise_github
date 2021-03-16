@@ -10,11 +10,25 @@
                     <th>Ticket Form <i class="fa fa-reply-all" aria-hidden="true"></i></th>
                     <th>Options <i class="fa fa-cogs" aria-hidden="true"></i></th>
                 </tr>
+
+                <?php
+                foreach ($data_tickets as $key => $value) {
+
+                    $from_user_data =  getuserinfo($value['from_user'],'') ; 
+                    $toemail = $from_user_data[0]['email_id'];
+                  ?>
+
                 <tr>
-                    <td>Demo</td>
-                    <td>Demo</td>
-                    <td><a href="?page=ticketchat_dashboard">View <i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                    <td><?= $value['title'] ; ?></td>
+                    <td><?=  $toemail ; ?></td>
+                    <td><a href="?page=ticketchat_dashboard&t_id=<?= $value['id']?>&to_email=<?= $toemail ?>">View <i class="fa fa-eye" aria-hidden="true"></i></a></td>
                 </tr>
+
+
+                  <?php
+                }
+
+                ?>
             </table>
         </div>
 
