@@ -61,9 +61,9 @@
 			}
 		//getting categories
         
-        function getallcategories($vbid){
-				$this->query="select * from category where vb_id = ? ";
-				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
+        function getallcategories(){
+				$this->query="select * from category  ";
+				$result=$this->db->executeQuery($this->query,array(),"cread");
 				if($result){
 					return $result;
 					}    
