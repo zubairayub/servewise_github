@@ -375,9 +375,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-1">
             <div class="slider-content">
                 <div class="content">
-                    <div class="icon"></div>
-                    <div class="heading">100% Healthy & Affordable</div>
-                    <div class="heading">Organic Vegetables</div>
+                    <div class="icon">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/slider-icon_100X.png?v=1581426760" alt="Icons">
+                    </div>
+                    <div class="heading-1">100% Healthy & Affordable</div>
+                    <div class="heading-2">Organic Vegetables</div>
                     <div class="btn"> 
                         <a href="#">Buy Now</a>
                     </div>
@@ -387,8 +389,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-2">
             <div class="slider-content">
                 <div class="content">
-                    <div class="heading">Vegetables 100% Organic</div>
-                    <div class="heading">Natural Health Care Ingredients</div>
+                    <div class="heading-1">Vegetables 100% Organic</div>
+                    <div class="heading-2">Natural Health Care Ingredients</div>
                     <div class="btn">
                         <a href="#">Buy Now</a>
                     </div>
@@ -398,8 +400,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-3">
             <div class="slider-content">
                 <div class="content">
-                    <div class="heading">Natural Health Care Ingredients</div>
-                    <div class="heading">Grocery Shopping</div>
+                    <div class="heading-1">Natural Health Care Ingredients</div>
+                    <div class="heading-2">Grocery Shopping</div>
                     <div class="btn">
                         <a href="#">Buy Now</a>
                     </div>
@@ -634,7 +636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="add-2-content">
                 <div class="left-content">
                     <div class="heading">
-                        Special Discount for all Grocery products
+                        Special Discount <br> for all Grocery products
                     </div>
                     <div class="dis">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nesciunt fuga ipsa excepturi vero dignissimos quis sed maiores sint officiis!
@@ -801,9 +803,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="head">
                         Subscribe to our Newsletter
                     </div>
-                    <div class="input-box">
-
-                    </div>
+                    <form class="input-box">
+                        <input type="text" placeholder="Your email address">
+                        <input type="button" value="SEND">
+                    </form>
                 </div>
             </div>
         </div>
@@ -851,14 +854,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="content">
                 <div class="details-content">
-                    <div class="icons"></div>
+                    <div class="icons">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
                     <div class="dis">
                         <div class="head">Free Shipping</div>
                     </div>
                 </div>
                 
                 <div class="details-content">
-                    <div class="icons"></div>
+                    <div class="icons">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
                     <div class="dis">
                         <div class="head">Helpline</div>
                         <div class="main">+(000)123-4567</div>
@@ -866,7 +873,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 
                 <div class="details-content">
-                    <div class="icons"></div>
+                    <div class="icons">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
                     <div class="dis">
                         <div class="head">24x7</div>
                         <div class="main">Customer Support</div>
