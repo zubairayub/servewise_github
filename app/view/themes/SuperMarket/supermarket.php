@@ -102,7 +102,7 @@ include 'include/header.php';
 {
   position: absolute;
   width: 351px;
-  margin: 39px 0 0 -260px;
+  margin: -1px 0 0 -260px;
   padding: 10px;
   padding-top: 10px;
   
@@ -152,7 +152,7 @@ include 'include/header.php';
 .dashboard-lang{
     width: 125px;
     height: 30px;
-    top: 0%;
+    top: 2%;
     position: absolute;
     user-select: none;
     z-index: 9999;
@@ -272,6 +272,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 </head>
+<div class="upper-head">
+    <div class="container">
+        <div class="upper-head-content">
+            <div class="left-content">
+                <div class="phone-content">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="number">+(0000)123-456</div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="social-content">
+                    <div class="icons-content">
+                    <div class="icons"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <header>
         <!-- lang selector -->
         <div class="select_wrap dashboard-lang">
@@ -349,71 +371,138 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section> -->
     </header>
     <!-- slider -->
-    <section class="slider">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="overlay" style="background: rgb(255,235,195);background: linear-gradient(74deg, rgba(255,235,195,1) 0%, rgba(230,230,255,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                            <img src="asset/1.jpg" alt="">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            <div class="carousel-item">
-                <div class="overlay" style="background: rgb(255,195,195);background: linear-gradient(74deg, rgba(255,195,195,1) 0%, rgba(230,253,255,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                        <img src="asset/2.jpg" alt="2">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
+    <div class="your-class">
+        <div class="slider-1">
+            <div class="slider-content">
+                <div class="content">
+                    <div class="icon"></div>
+                    <div class="heading">100% Healthy & Affordable</div>
+                    <div class="heading">Organic Vegetables</div>
+                    <div class="btn"> 
+                        <a href="#">Buy Now</a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="overlay" style="background: rgb(199,255,195);background: linear-gradient(74deg, rgba(199,255,195,1) 0%, rgba(255,230,250,1) 100%);">
-                    <div class="carousel-content">
-                        <div class="carosel-section">
-                        <img src="asset/3.jpg" alt="2">
-                        </div>
-                        <div class="carosel-section" style="color:white;">
-                            <h1>Best Product</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
-                            <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
+        </div>
+        <div class="slider-2">
+            <div class="slider-content">
+                <div class="content">
+                    <div class="heading">Vegetables 100% Organic</div>
+                    <div class="heading">Natural Health Care Ingredients</div>
+                    <div class="btn">
+                        <a href="#">Buy Now</a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="slider-3">
+            <div class="slider-content">
+                <div class="content">
+                    <div class="heading">Natural Health Care Ingredients</div>
+                    <div class="heading">Grocery Shopping</div>
+                    <div class="btn">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
-    </section>
-
+        </div>
+    </div>
 
     <!-- slider End-->
+
+
+    <!-- Add Section -->
+    <section class="add">
+        <div class="container">
+            <div class="add-content">
+                <div class="left-content">
+                    <div class="content-left"></div>
+                    <div class="content-right">
+                        <div class="head">Veggies</div>
+                        <div class="head">
+                            <p><b>100%</b> Organic <br> Products</p>
+                        </div>
+                        <div class="btn">
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="content-left"></div>
+                    <div class="content-right">
+                        <div class="head">Fruits</div>
+                        <div class="head">
+                            <p><b>100%</b> Organic <br> Products</p>
+                        </div>
+                        <div class="btn">
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add Section End -->
+
+    <!-- Our Product -->
+    <section class="our-product">
+        <div class="container">
+            <div class="heading">
+                <div class="head">
+                    Our Product
+                </div>
+                <div class="dis">
+                    the best product you can find
+                </div>
+            </div>
+            <div class="content">
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-6_medium.png?v=1580284143" alt="Milk">
+                        <div class="name">Milk</div>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-5_medium.png?v=1580284176" alt="fruit">
+                        <div class="name">Fruits</div>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-4_medium.png?v=1580284192" alt="Flow">
+                        <div class="name">
+                            Flour
+                        </div>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-3_medium.png?v=1580284218" alt="Meat">
+                        <div class="name">
+                            Fresh Meat
+                        </div>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-2_medium.png?v=1580284239" alt="Vegis">
+                        <div class="name">
+                            Fresh Vegies
+                        </div>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="icons">
+                        <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-1_medium.png?v=1580284251" alt="Eggs">
+                        <div class="name">
+                            Eggs
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- product-cat -->
@@ -536,6 +625,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                
                
             
+        </div>
+    </section>
+
+
+    <section class="add-2">
+        <div class="container">
+            <div class="add-2-content">
+                <div class="left-content">
+                    <div class="heading">
+                        Special Discount for all Grocery products
+                    </div>
+                    <div class="dis">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nesciunt fuga ipsa excepturi vero dignissimos quis sed maiores sint officiis!
+                    </div>
+                    <div class="btn">
+                        <a href="#">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="right-content"></div>
+            </div>
         </div>
     </section>
 
@@ -683,6 +794,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <section class="sub">
+        <div class="container">
+            <div class="content">
+                <div class="heading">
+                    <div class="head">
+                        Subscribe to our Newsletter
+                    </div>
+                    <div class="input-box">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Ads -->
 
     <!-- <section class="ads">
@@ -717,6 +843,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="underline-div"></div>
                 </div>
                 <div class="about-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nobis dolores qui debitis, nam odit repellendus obcaecati, modi adipisci beatae, esse autem hic ullam laboriosam magni! Voluptas suscipit qui tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti eos numquam hic consectetur in illo vitae, quo harum veniam magnam non, provident ex quasi! Aliquam eaque commodi autem voluptatum alias.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="container">
+            <div class="content">
+                <div class="details-content">
+                    <div class="icons"></div>
+                    <div class="dis">
+                        <div class="head">Free Shipping</div>
+                    </div>
+                </div>
+                
+                <div class="details-content">
+                    <div class="icons"></div>
+                    <div class="dis">
+                        <div class="head">Helpline</div>
+                        <div class="main">+(000)123-4567</div>
+                    </div>
+                </div>
+                
+                <div class="details-content">
+                    <div class="icons"></div>
+                    <div class="dis">
+                        <div class="head">24x7</div>
+                        <div class="main">Customer Support</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

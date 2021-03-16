@@ -545,6 +545,10 @@ include 'include/header.php';
 
 
     <section class="section-product-slider" data-aos="fade-up">
+        <div class="feature-heading-mobile">
+            <div class="f-head">Feature Product</div>
+            <div class="f-line"></div>
+        </div>
             <?php 
             foreach ($result as $key => $value) {
                 if($value['is_featured'] == '1'){

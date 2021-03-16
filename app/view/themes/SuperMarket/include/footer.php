@@ -25,16 +25,19 @@
             </div>
         </div>
     </section> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script src="js/slick.min.js"></script>
+<script src="js/supermarket.js"></script>
+
 	
-  </script>
        <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
         	
+    
+   
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
         
@@ -87,6 +90,7 @@ $('.sc-add-to-cart').on('click', function () {
     });    
         });
         
+        
 
 
 //window.onscroll = function() {myFunction()};
@@ -114,7 +118,8 @@ function scrollFunction() {
   } else {
     document.getElementById("myNav").style.background = "transparent";
   }
-}
+};
+
 
     </script>
     
