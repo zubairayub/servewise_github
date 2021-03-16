@@ -30,6 +30,45 @@ echo getlang('','Uplaod Images',getlangcookie());
                     ?>
                 <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
                 </div>
+
+                <div class="add-image-box">
+                    <?php 
+                        if(!empty($product_img)){
+                            $img1 = $product_img;
+                        }else{
+
+                            $img1 = '../app/view/img/add-product.png';
+                        }
+                    ?>
+                <img id="blah" src="<?= $img1 ?>" alt="your image" style="width:130px;height:130px;" />
+                </div>
+
+                <div class="add-image-box">
+                    <?php 
+                        if(!empty($product_img)){
+                            $img = $product_img;
+                        }else{
+
+                            $img = '../app/view/img/add-product.png';
+                        }
+                    ?>
+                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
+                </div>
+
+
+                <div class="add-image-box">
+                    <?php 
+                        if(!empty($product_img)){
+                            $img = $product_img;
+                        }else{
+
+                            $img = '../app/view/img/add-product.png';
+                        }
+                    ?>
+                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
+                </div>
+
+
                 
                    
             </td>
@@ -42,7 +81,7 @@ echo getlang('','Uplaod Images',getlangcookie());
 echo getlang('','Category',getlangcookie()); 
 ?>:</label><br /> <select name="category"
                 id="country-list" 
-                onChange="getsecondlevel(this.value);" required>
+                onChange="getsecondlevel(this.value);" >
                 <option value disabled selected><?php 
 echo getlang('','Select Category',getlangcookie()); 
 ?></option>
@@ -183,6 +222,7 @@ echo getlang('','Incorrect input field',getlangcookie());
       alert('Product is added');
     }else{
       alert('Product is not added');
+      //alert("all the prodct are not available");
     }
     });
 }
