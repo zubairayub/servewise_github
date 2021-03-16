@@ -93,7 +93,7 @@
                      <td><?= $is_featured ?></td>
                       <td><?= $publish ?></td>
                     <td class="option">
-                        <a href="?page=addnewproduct_dashboard&product_name=<?= $value['name']; ?>&product_id=<?= $value['product_id']; ?>&product_desc=<?= $value['description']; ?>&product_qty=<?= $value['quantity']; ?>&product_sell=<?= $value['price']?>&product_purchase=<?= $value ['purchase_price']?>&product_weight=<?= $value['weight']?>&product_feature=<?= $value['is_featured']?>&product_publish=<?= $value['publish']?>&product_cat=<?= $category[0]['name'] ?>&product_cat_sub=<?= $subcategory?>&product_cat_ssub=<?= $subsubcategory?>&product_img= <?= $product_directory.$product_image[0]['image_path']?>">
+                        <a href="?page=addnewproduct_dashboard&product_name=<?= $value['name']; ?>&product_id=<?= $value['product_id']; ?>&product_desc=<?= $value['description']; ?>&product_qty=<?= $value['quantity']; ?>&product_sell=<?= $value['price']?>&product_purchase=<?= $value ['purchase_price']?>&product_weight=<?= $value['weight']?>&product_feature=<?= $value['is_featured']?>&product_publish=<?= $value['publish']?>&product_cat=<?= $category[0]['name'] ?>&product_cat_sub=<?= $subcategory?>&product_cat_ssub=<?= $subsubcategory?>&product_img= <?= $product_directory.$product_image[0]['image_path']?>&product_min_quantity=<?= $value['min_quantity_alert']?>&tax_percantage=<?= $value['tax_percantage']?>">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                         </a>
                     </td>

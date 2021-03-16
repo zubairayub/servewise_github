@@ -40,6 +40,9 @@ $randomstring = generateRandomString();
         $featured = $_POST["featured"];
         $publish = $_POST["publish"];
         $action = $_POST['action'];
+        $min_quantity = $_POST['min_quantity'];
+        $tax_percantage = $_POST['tax_percantage'];
+        
 
 
 IF($publish != 1){
@@ -81,10 +84,10 @@ $featured = 0;
           
           
 
-$addedproduct = $product->updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id);
+$addedproduct = $product->updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id,$min_quantity,$tax_percantage);
     }else{
        
-       $addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price);
+       $addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price,$min_quantity,$tax_percantage);
     }
 		
 		if (!empty($addedproduct)){

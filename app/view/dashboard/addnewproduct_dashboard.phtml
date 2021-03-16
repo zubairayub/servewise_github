@@ -167,6 +167,18 @@ echo getlang('','Sell Price',getlangcookie());
 ?>:</label>
                                     <input class="count" name="price" type="number" value="<?= $product_sell?>"  data-aos="fade-right" required /><br>
                             </div>
+                             <div class="add-d-coulum">
+                                    <label data-aos="fade-right"><?php 
+echo getlang('','min_quantity',getlangcookie()); 
+?>:</label>
+                                    <input class="count" name="min_quantity" type="number" value="<?= $product_min_quantity?>"  data-aos="fade-right" required /><br>
+                            </div>
+                             <div class="add-d-coulum">
+                                    <label data-aos="fade-right"><?php 
+echo getlang('','tax_percantage',getlangcookie()); 
+?>:</label>
+                                    <input class="count" name="tax_percantage" type="number" value="<?= $tax_percantage?>"  data-aos="fade-right" required /><br>
+                            </div>
                         </div>
                         <div class="add-product-main-content">
                             <div class="add-d-coulum">
