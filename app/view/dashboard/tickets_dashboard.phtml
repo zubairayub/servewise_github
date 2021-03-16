@@ -16,12 +16,47 @@ echo getlang('','View Table',getlangcookie());
                 <label><?php 
 echo getlang('','Send Ticket to',getlangcookie()); 
 ?>  </label>
-                <select required>
-                    <option value="1">Jhon</option>
-                    <option value="2">Mike</option>
-                    <option value="3">Jack</option>
+<label><?php 
+echo getlang('','Brand',getlangcookie()); 
+?>  </label><input type="checkbox" name="vendor"/>
+<label><?php 
+echo getlang('','Vendor',getlangcookie()); 
+?>  </label><input type="checkbox" name="Branch"/>
+                <select name="emailbrand" required>
+                    <option value="1">Select Brand</option>
+                    
+<?php
+foreach ($vendors as $key => $value) {
+    $email = getuserinfo($value['user_id'],'');
+  
+    ?>
+
+     <option value="<?= $email[0]['email_id']?>"><?= $value['name'];?></option>
+              
+
+
+    <?php
+}
+
+
+?>
                 </select>
-            </div>
+
+    <select name="emailvendor" required>
+        <option value="1">Select Vendor</option>
+
+<?php
+foreach ($branch as $key => $value) {
+    $email = getuserinfo($value['user_id'],'');
+    ?>
+     <option value="<?= $email[0]['email_id'];?>"><?= $value['name'];?></option>
+
+
+    <?php
+}
+
+?>
+                </select>            </div>
         </div>
         <div class="ticket-content">
             <div class="tk-conetnt">
@@ -29,21 +64,21 @@ echo getlang('','Send Ticket to',getlangcookie());
                     <label><?php 
 echo getlang('','Ticket Title',getlangcookie()); 
 ?>  </label>
-                    <input type="text" required>
+                    <input type="text" name="Title" required>
                 </div>
                 <div class="ticket-div">
                     <label><?php 
 echo getlang('','Ticket Discribtion',getlangcookie()); 
 ?>  </label>
-                    <input type="text" required>
+                    <input type="text" name="description" required>
                 </div>
             </div>
         </div>
         <div class="ticket-content">
             <div class="tk-btn">
-                <input type="Button" value="<?php 
+                <input type="button" value="<?php 
 echo getlang('','Send',getlangcookie()); 
-?>  ">
+?>"  onClick="submitticketForm()">
             </div>
         </div>
     </form>
@@ -57,7 +92,7 @@ echo getlang('','Send',getlangcookie());
     
     url = $('#ticketForm').attr("action");
     formData = $('#ticketForm').serializeArray();
-
+  
     $.post(url, formData).done(function (data) {
     if(data == 1){
         alert('success');
