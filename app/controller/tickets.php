@@ -25,6 +25,13 @@ $description    = $_POST['description']    = isset($_POST['description'])    ? $
 $ticket_id    = $_POST['ticket_id']    = isset($_POST['ticket_id'])    ? $_POST['ticket_id'] : '';
 
 
+$priority    = $_POST['priority']    = isset($_POST['priority'])    ? $_POST['priority'] : '';
+
+
+
+
+
+
 
 $tovendor    = $_POST['Branch']    = isset($_POST['Branch'])    ? $_POST['Branch'] : '';
 
@@ -45,7 +52,7 @@ $reciever_data  = getuserinfobyemail($tomeail,$DB_CLASS);
 
 $vendor_data = getvendors('',$reciever_data[0]['user_id'],'TRUE');
 $vendor_id = $vendor_data[0]['vendor_id'];
-$branch_id = null;
+$branch_id = $_SESSION['branch_id'];
 }
 
 
@@ -66,7 +73,7 @@ $ticket_id = null;
 
 
 
-sendtickets($DB_CLASS,$sender_id,$reciever_id,$branch_id,$vendor_id,$message,$title,$ticket_id,$sender_email,$tomeail);
+sendtickets($DB_CLASS,$sender_id,$reciever_id,$branch_id,$vendor_id,$message,$title,$ticket_id,$sender_email,$tomeail,$priority);
 
 
 

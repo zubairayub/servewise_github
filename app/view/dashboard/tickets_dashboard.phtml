@@ -22,6 +22,13 @@ echo getlang('','Brand',getlangcookie());
 <label><?php 
 echo getlang('','Vendor',getlangcookie()); 
 ?>  </label><input type="checkbox" name="Branch"/>
+<select name="priority" required>
+    
+<option value="1">Low</option>
+<option value="2">Medium</option>
+<option value="3">High</option>
+
+</select>
                 <select name="emailbrand" required>
                     <option value="1">Select Brand</option>
                     
@@ -92,7 +99,7 @@ echo getlang('','Send',getlangcookie());
     
     url = $('#ticketForm').attr("action");
     formData = $('#ticketForm').serializeArray();
-  
+
     $.post(url, formData).done(function (data) {
     if(data == 1){
         alert('success');
