@@ -20,9 +20,35 @@ $owner_id = $_SESSION['owner_id'];
 $result = getproducts($vb_id,$DB_CLASS);
 
 $branch_data = getbranchbybranchid($DB_CLASS,$vb_id);
-$branch_name = $branch_data[0]['name'];
+$branch_name =  $_SESSION['branch_name'] = $branch_data[0]['name'];
 
-$logo = getlogo_dashboard($owner_id,$DB_CLASS,$logo_directory);
+$logo = $_SESSION['logo'] =  getlogo_dashboard($owner_id,$DB_CLASS,$logo_directory);
+
+
+
+
+
+    $payment_method =   getpaymentmethods($DB_CLASS,$vb_id,'');
+    foreach ($payment_method as $key => $value) {
+    	if($value['status'] == 1){
+
+$html = ' <option value="' .$value['method'] . '">' . $value['method'] .'</option>';
+
+    	}
+    }
+      $pay_method = $_SESSION['pay_method'] = '<div class="viewcart-payment-detail">
+        <label>Payment Method</label>
+        <select name="payment-method">
+        '. $html .'
+         </select> 
+          <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="Submit">
+      </div>';
+
+
+
+
+
+
 
 }else{
 

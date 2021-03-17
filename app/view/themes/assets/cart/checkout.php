@@ -1,4 +1,5 @@
 <?php
+session_start();
 $summary = $_POST; //var_dump($summary);
 ?>
 <?php //foreach($summary as $results):  var_dump($results);
@@ -32,7 +33,7 @@ $count = count($array['data']['product_name']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><?= $branch_name ;?> Checkout Page</title>
+  <title><?= $_SESSION['branch_name'] ;?> Checkout Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

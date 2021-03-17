@@ -1,4 +1,5 @@
 <?php
+session_start();
 REQUIRE '../../include/config.php';
 
 if(!empty($_POST)){

@@ -244,6 +244,69 @@ return $result;
 
 }
 
+function getpaymentmethods($dbclass=null,$branch_id,$type=null){
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+if(empty($type)){
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $branch_id   ";	
+
+}else{
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $branch_id AND method = '$type'   ";	
+
+}
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+
+return $result;
+
+
+
+}
+
+function insertpaymentmethod($dbcalss,$user_id,$key,$secret,$title,$status){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $user_id AND method = '$title'  ";	
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+if(empty($result)){
+$varr->query="INSERT INTO `vendor_payment_method`(`branch_id`, `pay_key`, `secret`, `method`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($user_id,$key,$secret,$title),"create");
+
+}else{
+ if($status == 1){
+ 	$updatestatus = 0;
+$varr->query="UPDATE  `vendor_payment_method` SET  status = ? where  branch_id = $user_id ";
+	$result=$varr->executeQuery($varr->query,array($updatestatus),"update");
+ }
+	$varr->query="UPDATE  `vendor_payment_method` SET pay_key=? , secret = ? , status = ? where method = '$title' AND branch_id = $user_id ";
+	$result=$varr->executeQuery($varr->query,array($key,$secret,$status),"update");
+
+}
+
+
+
+return $result;
+}
+
+
+
+
+
 
 
 

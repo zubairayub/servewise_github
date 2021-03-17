@@ -1,5 +1,8 @@
+<?php 
+session_start();
+?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= $branch_name ;?></title>
+<title><?= $_SESSION['branch_name'] ;?></title>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-189150205-1"></script>
 <script>
@@ -776,16 +779,7 @@ window.dataLayer.push({
         </div>
     
       </div>
-      <div class="viewcart-payment-detail">
-        <label>Payment Method</label>
-        <select name="payment-method">
-          <option value="pespal">PESAPAL</option>
-          <option value="mpesa">mpesa</option>
-          <option value="paystack">PayStack</option>
-          <option value="flutter">flutter</option>
-        </select> 
-          <input type="submit" name="submit" id="submit" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0" value="Submit">
-      </div>
+     <?= $_SESSION['pay_method'] ?>
     </form>
   </div>
 </div>

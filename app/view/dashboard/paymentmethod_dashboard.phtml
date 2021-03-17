@@ -7,31 +7,33 @@
     <div class="pay-me-dashboard">
         <!-- Paypal Form start -->
         <form action="<?= $controller; ?>" id="paypalForm">
-            <input type="hidden" name="paypalForm" value="Paypal Form">
+            <input type="hidden" name="paypalForm" value="Flutterwave">
             <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
                 <div class="pay-me-box-head">Flutter Wave Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Flutter Wave Public key</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="paypal_id" require>
+                            <input type="text" name="paypal_id" value="<?= $flutterwavekey ?>" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Flutter Wave Client Secret</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="paypal_secret" require>
+                            <input type="text" name="paypal_secret" value="<?= $flutterwavesecret ?>" require>
                         </div>
                     </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Flutter Wave Sandbox Mode</div>
+
+                     <div class="pay-me-dis-1">
+                        <div class="pay-me-dis-head">Active?</div>
                         <div class="pay-me-dis-input">
-                            <label class="switch">
-                                <input type="checkbox" name="paypal_mode">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
+                       
+                 <input type="checkbox" name="checkbox" class="checkbox" onchange="submitFormPaypal()"  <?= $flutterwavestatus ;?>>
+
+                       </div>
                     </div>
+
+                    
                 </div>
                 <div class="pay-me-box-btn">
                     <input type="button" value="SAVE" onclick="submitFormPaypal()">
@@ -42,31 +44,36 @@
 
         <!-- sslcommerz Form Start -->
         <form action="<?= $controller; ?>" id="sslczForm">
-            <input type="hidden" name="sslczForm" value="Sslcommerz Form">
+            <input type="hidden" name="sslczForm" value="Pesapal">
             <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
                 <div class="pay-me-box-head">Pesapal Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Pesapal Store Id</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="sslcz_store_id" require>
+                            <input type="text" name="sslcz_store_id" value="<?= $pesapalkey ?>" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Pesapal store password</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="sslcz_store_pass" require>
+                            <input type="text" name="sslcz_store_pass" value="<?= $pesapalsecret ?>" require>
                         </div>
                     </div>
-                    <div class="pay-me-dis-1">
-                        <div class="pay-me-dis-head">Pesapal Sandbox Mode</div>
+                   
+
+
+
+                     <div class="pay-me-dis-1">
+                        <div class="pay-me-dis-head">Active?</div>
                         <div class="pay-me-dis-input">
-                            <label class="switch">
-                                <input type="checkbox" name="sslcz_mode">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
+                       
+                 <input type="checkbox" name="checkbox" class="checkbox" onchange="submitFormSslcz()" <?= $pesapalstatus ;?>/>
+
+                       </div>
                     </div>
+
+
                 </div>
                 <div class="pay-me-box-btn" >
                     <input type="button" value="SAVE" onclick="submitFormSslcz()">
@@ -77,21 +84,32 @@
 
         <!-- Stripe Form Start -->
         <form action="<?= $controller; ?>" id="stripeForm">
-            <input type="hidden" name="stripeForm" value="Stripe Form">
+            <input type="hidden" name="stripeForm" value="paystack">
             <div class="pay-me-box" data-aos="fade-right"data-aos-duration="900">
                 <div class="pay-me-box-head">Paystack Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Paystack Key</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="st_key" require>
+                            <input type="text" name="st_key" value="<?= $paystackkey ?>" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">Paystack Secret</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="st_secret" require>
+                            <input type="text" name="st_secret" value="<?= $paystacksecret ?>" require>
                         </div>
+                    </div>
+
+
+
+                     <div class="pay-me-dis-1">
+                        <div class="pay-me-dis-head">Active?</div>
+                        <div class="pay-me-dis-input">
+                       
+                 <input type="checkbox" name="checkbox" class="checkbox" onchange="submitFormStripe()" <?= $paystackstatus ;?>/>
+
+                       </div>
                     </div>
                 </div>
                 <div class="pay-me-box-btn">
@@ -103,21 +121,31 @@
 
         <!-- RazorPay Form Start -->
         <form action="<?= $controller; ?>" id="razForm">
-            <input type="hidden" name="razForm" value="RazorPay Form">
+            <input type="hidden" name="razForm" value="mpesa">
             <div class="pay-me-box" data-aos="fade-left"data-aos-duration="900">
                 <div class="pay-me-box-head">mpesa Credential</div>
                 <div class="pay-me-box-dis">
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">mpesa KEY</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="raz_key" require>
+                            <input type="text" name="raz_key" value="<?= $mpesakey ?>" require>
                         </div>
                     </div>
                     <div class="pay-me-dis-1">
                         <div class="pay-me-dis-head">mpesa SECRET</div>
                         <div class="pay-me-dis-input">
-                            <input type="text" name="raz_secret" require>
+                            <input type="text" name="raz_secret" value="<?= $mpesasecret ?>" require>
                         </div>
+                    </div>
+
+
+                     <div class="pay-me-dis-1">
+                        <div class="pay-me-dis-head">Active?</div>
+                        <div class="pay-me-dis-input">
+                       
+                 <input type="checkbox" name="checkbox" class="checkbox" onchange="submitFormRaz()" <?= $mpesastatus ;?>/>
+
+                       </div>
                     </div>
                 </div>
                 <div class="pay-me-box-btn">
@@ -133,6 +161,11 @@
 </div>
 
 <script>
+
+
+ 
+
+
 
   function submitFormPaypal(form){
     
