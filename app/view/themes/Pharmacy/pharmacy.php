@@ -134,7 +134,7 @@ include 'include/header.php';
 .nav{
     position:fixed;
     position: fixed;
-    top: 0px;
+    top: 35px;
     z-index: 9;
     left: 0px;
     width: 100%;
@@ -495,6 +495,68 @@ include 'include/header.php';
 </style>
 <body  data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     
+    
+    <section class="head-upper">
+        <div class="container">
+            <div class="content">
+                <div class="left-content">
+                   <p>Free Shipping for all Order of <b>$99</b></p>  
+                </div>
+                <div class="mid-content">
+                    <div class="social-icons">
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                <!-- lang selector -->
+                    <div class="select_wrap dashboard-lang">
+                        <ul class="default_option">
+                            <li>
+                                <div class="option en">
+                                <div class="icon"></div>
+                                    <p>EN</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="select_ul">
+                            <li>
+                                <div class="option en">
+                                    <div class="icon"></div>
+                                    <p>EN</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="option pt">
+                                    <div class="icon"></div>
+                                    <p>PT</p>
+                                </div>  
+                            </li>
+                        </ul>
+                    </div>
+                <!-- lang selector End --> 
+                </div>
+            </div>
+        </div>
+    </section>
     <header>
         <!-- lang selector -->
         <div class="select_wrap dashboard-lang">
@@ -639,9 +701,39 @@ include 'include/header.php';
 
     </section>
 
-
-
-    
+    <section class="our-products">
+        <div class="container">
+            <div class="our-product-content">
+                <div class="heading">Our Products</div>
+                <div class="content">
+                        <div class="product-card">
+                            <img src="include/categorios-1.jpg" alt="product">
+                            <p>Fitness</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="include/categorios-2.jpg" alt="product">
+                            <p>Daily Products</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="include/categorios-3.jpg" alt="product">
+                            <p>Devices</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="include/categorios-4.jpg" alt="product">
+                            <p>Covid Essentials</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="include/categorios-6.jpg" alt="product">
+                            <p>Skin Care</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="include/categorios-7.jpg" alt="product">
+                            <p>Hair Care</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
    <section class="product" data-aos="fade-up"
    data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
@@ -911,6 +1003,48 @@ include 'include/header.php';
             </div>
         </div>
     </section>
+    <section class="sub">
+        <div class="container">
+            <div class="sub-content">
+                <div class="heading">Sign Up For Newsletter</div>
+                <div class="dis">Join 60,000+ Subscribers and get a new discount <br> coupon on every Saturday.</div>
+                <form class="input">
+                    <input type="text" placeholder="Your email address">
+                    <button><span>SUBCRIBE</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail">
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-card">
+                    <div class="content-left"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    <div class="content-right">
+                        <h2>Address</h2>
+                        <p>123 House, ABC Street , XYZ State</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="content-left"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></div>
+                    <div class="content-right">
+                        <h2>WHATSAPP US</h2>
+                        <p class="p1">(000) 123 456</p>
+                        <p class="p2">Contact@Example.com</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="content-left">Our Payment Method</div>
+                    <div class="content-right">
+                        <img src="include/payment.png" alt="payment">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="about">
         <div class="container">
             <div class="about-content" data-aos="zoom-in"   data-aos-duration="1000">

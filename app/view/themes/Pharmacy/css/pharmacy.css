@@ -61,6 +61,114 @@ a{
     color: #2b7a8c;
 }
 
+/* header-upper */
+
+.head-upper{
+    padding: 5px 0px;
+}
+
+.head-upper .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.head-upper .content .left-content{
+    flex-basis: 50%;
+}
+
+.head-upper .content .left-content p{
+    margin: 0px;
+}
+
+.head-upper .content .mid-content{
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.head-upper .content .mid-content .social-icons{
+    display: flex;
+}
+
+.head-upper .content .mid-content .social-icons .icon{
+    margin-right: 15px;
+}
+
+.head-upper .content .mid-content .social-icons .icon a{
+    color: black;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.head-upper .content .mid-content .social-icons .icon a:hover{
+    color: blue;
+}
+
+.head-upper .content .right-content{
+    flex-basis: 10%;
+}
+
+
+/* header-upper End */
+
+
+/* our product  */
+
+.our-products{
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.our-products .our-product-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.our-products .our-product-content .product-card{
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.our-products .our-product-content .product-card:hover{
+    transform: translateY(-5px);
+}
+
+.our-products .our-product-content .heading{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.our-products .our-product-content .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.our-products .our-product-content .content .product-card img{
+    width: 150px;
+    height: 160px;
+}
+
+.our-products .our-product-content .content .product-card p{
+    text-align:center ;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+/* our product End */
+
+
 /* header */
 
 header{
@@ -684,6 +792,161 @@ header .hero-main .hero-right .hero-btn a:hover span{
   }
   /* ad end */
 
+  /* Sub Section  */
+
+  .sub{
+      width: 100%;
+      background-color: #f2f3f5;
+  }
+  .sub .sub-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .sub .sub-content .heading{
+      font-size: 28px;
+      color: #1D2A38;
+      font-weight: 700;
+      margin-bottom: 20px;
+  }
+
+  .sub .sub-content .dis{
+    font-size: 14px;
+    text-align: center;
+    color: #7D879C;
+    padding-bottom: 40px;
+  } 
+
+  .sub .sub-content .input{
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+  }
+
+  .sub .sub-content .input input{
+      padding: 10.24px 16px;
+      border: none;
+  }
+
+  .sub .sub-content .input button{
+      font-size: 13px;
+      padding: 8.512px 25.6px;
+      background-color: #24AEB1;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      transition: .3s ease;
+  }
+
+  .sub .sub-content .input button:hover{
+    background-color: #128a8c;
+  }
+
+
+
+  /* Sub Section End */
+
+  /* details  */
+
+  .detail{
+      width: 100%;
+      padding: 40px 0px;
+  }
+
+  .detail .detail-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1){
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail .detail-content .detail-card:nth-child(1) .content-left i{
+    font-size: 55px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    border-radius: 50%;
+    padding: 10px 14px;
+    margin-right: 20px;
+    color: #24AEB1;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1) .content-right h2{
+      font-size: 16px;
+      color: #1D2A38;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1) .content-right p{
+      font-size: 14px;
+      color: #7D879C;
+      margin: 0px;
+  }
+
+
+  .detail .detail-content .detail-card:nth-child(2){
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-left i{
+    font-size: 55px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    border-radius: 50%;
+    padding: 10px 14px;
+    margin-right: 20px;
+    color: #24AEB1;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-right h2{
+      font-size: 16px;
+      color: #1D2A38;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-right .p1{
+      font-size: 26px;
+      color: #24AEB1;
+      font-weight: 700;
+  }
+  .detail .detail-content .detail-card:nth-child(2) .content-right .p2{
+      font-size: 16px;
+      color: #7D879C;
+  }
+
+
+  .detail .detail-content .detail-card:nth-child(3){
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .detail .detail-content .detail-card:nth-child(3) .content-left{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+
+  /* details End */
+
+
+
 /* homo */
 
 .homopatic{
@@ -707,15 +970,17 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homo-content .homo-product-card{
     width: 220px;
-    margin: 10px 20px;
+    margin: 10px 20px 50px;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
     transition: .5s ease all;
 }
 
 .homo-content .homo-product-card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(105, 105, 255);
+    transform: translateY(-5px);
 }
 
 .homopatic .homo-card-content{
@@ -724,6 +989,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homopatic .homo-card-content b{
     font-size: 20px;
+    text-align: center;
 }
 
 .homopatic .homo-card-content span{
@@ -772,16 +1038,16 @@ header .hero-main .hero-right .hero-btn a:hover span{
     width: 100%;
     padding: 2px 3px;
     font-size: 12px;
+    text-align: center;
     
 } 
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group2{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     font-size: 14px;
     padding: 4px 0px;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group2 input{
@@ -809,7 +1075,6 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .about{
     width: 100%;
-    margin-top: 50px;
     background: #f9f9f9;
 
 }

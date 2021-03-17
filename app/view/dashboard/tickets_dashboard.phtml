@@ -16,17 +16,33 @@ echo getlang('','View Table',getlangcookie());
                 <label><?php 
 echo getlang('','Send Ticket to',getlangcookie()); 
 ?>  </label>
-<label><?php 
-echo getlang('','Brand',getlangcookie()); 
-?>  </label><input type="checkbox" name="vendor"/>
-<label><?php 
-echo getlang('','Vendor',getlangcookie()); 
-?>  </label><input type="checkbox" name="Branch"/>
-<select name="priority" required>
+<div class="select-branch-vendor">
+    <div class="select-vendor">
+        <label>
+            <?php 
+            echo getlang('','Brand',getlangcookie()); 
+            ?> <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" name="vendor"/>
+    </div>
+    <div class="seprator">
+        
+    </div>
+    <div class="select-branch">
+        <label>
+            <?php 
+            echo getlang('','Vendor',getlangcookie()); 
+            ?> <i class="fa fa-connectdevelop" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" name="Branch"/>
+    </div>
+</div>
+<div class="select-options">
+<select class="priority"  name="priority" required>
     
-<option value="1">Low</option>
-<option value="2">Medium</option>
-<option value="3">High</option>
+<option value="Low" class="low">Low <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+<option value="Medium" class="medium">Medium <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+<option value="High" class="high">High <i class="fa fa-info-circle" aria-hidden="true"></i></option>
 
 </select>
                 <select name="emailbrand" required>
@@ -63,7 +79,9 @@ foreach ($branch as $key => $value) {
 }
 
 ?>
-                </select>            </div>
+                </select>
+</div>
+            </div>
         </div>
         <div class="ticket-content">
             <div class="tk-conetnt">
