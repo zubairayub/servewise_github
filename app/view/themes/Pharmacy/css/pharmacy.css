@@ -1218,7 +1218,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -20px 0 0 -265px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 400px;}
@@ -1241,6 +1241,43 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    .homo-content .homo-product-card {flex-basis: 20%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 17px;right: 85px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 10%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input input {text-align: center;border-radius: 15px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 30%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 30%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 320px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 50%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
+
 }
 
 @media (max-width:900px){
@@ -1301,6 +1338,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:775px){
@@ -1361,6 +1434,44 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:750px){
@@ -1451,6 +1562,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:675px){
@@ -1573,6 +1720,39 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 35%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 225px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
 }
 
 @media (max-width:575px){
@@ -1635,6 +1815,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
 }
 
 @media (max-width:525px){
@@ -1666,6 +1847,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 60%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
+
+
+
 }
 
 @media (max-width:500px){
@@ -1697,6 +1914,39 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 60%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
 }
 
 @media (max-width:475px){
@@ -1721,13 +1971,47 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homo-content .homo-product-card .homo-card-upper {height: 120px;overflow: hidden;}
     .homo-content .homo-product-card .homo-card-upper img {height: 120px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 65%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 320px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 
@@ -1760,6 +2044,40 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 65%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
 }
 
 @media (max-width:425px){
@@ -1791,6 +2109,40 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 75%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
 }
 
 @media (max-width:400px){
@@ -1822,6 +2174,39 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
     .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 75%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 @media (max-width:375px){
@@ -1852,6 +2237,41 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: space-around;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+    
 }
 
 @media (max-width:350px){
@@ -1882,6 +2302,39 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: space-around;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 @media (max-width:320px){
@@ -1891,18 +2344,18 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .carousel-item .overlay .carousel-content .carosel-section:nth-child(2){flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
     .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) p {width: 100%;text-align: center;}
 
-    .carousel-item img {width: 100px;height: 100px;}
+    
     .dashboard-lang {left: 60%!important;}
     .chatbox__support {width: 200px!important;}
     #usermsg {flex-basis: 50%!important;width: 100px!important;}
     header .nav .nav-logo {width: 100px;overflow: hidden;flex-basis: 30%;}
-    header .nav {align-items: flex-end;}
-    .navigation #menuToggle {top: 30px;right: 165px;}
+   
+    
     .navigation #menuToggle #menu {width: 316px;margin: 20px 0 0 -120px;}
     .carousel-item img {z-index: 1;}
     .list-group-item {border: none;}
 
-    header .nav {width: 100%;}
+ 
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     
 
@@ -1932,5 +2385,36 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 100px;height: 100px;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: flex-start;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+
+
+
+
 }
 
