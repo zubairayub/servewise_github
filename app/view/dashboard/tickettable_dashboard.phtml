@@ -8,6 +8,7 @@
                 <tr>
                     <th>Ticket Title <i class="fa fa-i-cursor" aria-hidden="true"></i></th>
                     <th>Ticket Form <i class="fa fa-reply-all" aria-hidden="true"></i></th>
+                    <th>Ticket Priority <i class="fa fa-level-up" aria-hidden="true"></i></th>
                     <th>Options <i class="fa fa-cogs" aria-hidden="true"></i></th>
                 </tr>
 
@@ -21,6 +22,7 @@
                 <tr>
                     <td><?= $value['title'] ; ?></td>
                     <td><?=  $toemail ; ?></td>
+                    <td><?= $value['priority'] ; ?></td>
                     <td><a href="?page=ticketchat_dashboard&t_id=<?= $value['id']?>&to_email=<?= $toemail ?>">View <i class="fa fa-eye" aria-hidden="true"></i></a></td>
                 </tr>
 

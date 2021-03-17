@@ -375,12 +375,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-1">
             <div class="slider-content">
                 <div class="content">
-                    <div class="icon">
+                    <div class="icon" data-aos="zoom-in">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/slider-icon_100X.png?v=1581426760" alt="Icons">
                     </div>
-                    <div class="heading-1">100% Healthy & Affordable</div>
-                    <div class="heading-2">Organic Vegetables</div>
-                    <div class="btn"> 
+                    <div class="heading-1" data-aos="fade-left">100% Healthy & Affordable</div>
+                    <div class="heading-2" data-aos="fade-up-left">Organic Vegetables</div>
+                    <div class="btn" data-aos="flip-right"> 
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -389,9 +389,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-2">
             <div class="slider-content">
                 <div class="content">
-                    <div class="heading-1">Vegetables 100% Organic</div>
-                    <div class="heading-2">Natural Health Care Ingredients</div>
-                    <div class="btn">
+                    <div class="heading-1" data-aos="fade-left">Vegetables 100% Organic</div>
+                    <div class="heading-2" data-aos="fade-right">Natural Health Care Ingredients</div>
+                    <div class="btn"  data-aos="flip-right">
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -400,9 +400,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="slider-3">
             <div class="slider-content">
                 <div class="content">
-                    <div class="heading-1">Natural Health Care Ingredients</div>
-                    <div class="heading-2">Grocery Shopping</div>
-                    <div class="btn">
+                    <div class="heading-1" data-aos="fade-left">Natural Health Care Ingredients</div>
+                    <div class="heading-2" data-aos="fade-right">Grocery Shopping</div>
+                    <div class="btn" data-aos="flip-right">
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -417,7 +417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="add">
         <div class="container">
             <div class="add-content">
-                <div class="left-content">
+                <div class="left-content" data-aos="fade-up">
                     <div class="content-left"></div>
                     <div class="content-right">
                         <div class="head">Veggies</div>
@@ -429,7 +429,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                <div class="right-content">
+                <div class="right-content" data-aos="fade-up">
                     <div class="content-left"></div>
                     <div class="content-right">
                         <div class="head">Fruits</div>
@@ -458,19 +458,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div class="content">
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-up">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-6_medium.png?v=1580284143" alt="Milk">
                         <div class="name">Milk</div>
                     </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-down">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-5_medium.png?v=1580284176" alt="fruit">
                         <div class="name">Fruits</div>
                     </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-left">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-4_medium.png?v=1580284192" alt="Flow">
                         <div class="name">
@@ -478,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-right">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-3_medium.png?v=1580284218" alt="Meat">
                         <div class="name">
@@ -486,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-up">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-2_medium.png?v=1580284239" alt="Vegis">
                         <div class="name">
@@ -494,7 +494,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container" data-aos="flip-down">
                     <div class="icons">
                         <img src="//cdn.shopify.com/s/files/1/0108/7370/0415/files/icon-1_medium.png?v=1580284251" alt="Eggs">
                         <div class="name">

@@ -26,8 +26,8 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 30px;
-        right: 8px;
+        top: 70px;
+        right: 85px;
         z-index: 99;
         display: none;
         -webkit-user-select: none;
@@ -130,6 +130,8 @@ include 'include/header.php';
 /*  */
 
 #chatbox {height: 215px!important;}
+
+
 .cart-button.clicked span.added{width:100%;}
 .chatbox__support {height:350px!important;}
 #name {margin-top: 0px!important;}
@@ -148,7 +150,7 @@ include 'include/header.php';
 .cart-button {
     position: relative;
     outline: 0;
-    background: #ff4c4c;
+    background: #222;
     color: #fff;
     border: none;
     height: 40px;
@@ -291,11 +293,11 @@ include 'include/header.php';
 .dashboard-lang{
     width: 125px;
     height: 30px;
-    top: 0%;
+    top: 1%;
     position: absolute;
     user-select: none;
     z-index: 999;
-    left: 90%;
+    left: 85%;
 }
     
 .select_wrap .default_option{
@@ -399,47 +401,113 @@ include 'include/header.php';
 </style>
 <body>
 
+<div class="upper-head">
+    <div class="container">
+        <div class="upper-head-content">
+            <div class="content-left">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">Call : +0213 456 789</div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="content">
+                    <div class="social-content">
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lang-content">
+                        <div class="select_wrap dashboard-lang">
+                            <ul class="default_option">
+                                <li>
+                                    <div class="option en">
+                                    <div class="icon"></div>
+                                        <p>EN</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="select_ul">
+                                <li>
+                                    <div class="option en">
+                                        <div class="icon"></div>
+                                        <p>EN</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="option pt">
+                                        <div class="icon"></div>
+                                        <p>PT</p>
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <section class="store-nav">
         <!-- lang selector -->
-        <div class="select_wrap dashboard-lang">
-            <ul class="default_option">
-                <li>
-                    <div class="option en">
-                    <div class="icon"></div>
-                        <p>EN</p>
-                    </div>
-                </li>
-            </ul>
-            <ul class="select_ul">
-                <li>
-                    <div class="option en">
-                        <div class="icon"></div>
-                        <p>EN</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="option pt">
-                        <div class="icon"></div>
-                        <p>PT</p>
-                    </div>  
-                </li>
-            </ul>
-        </div>
+        
         <!-- lang selector End -->
         <nav>
             <div class="nav">
                 <div class="container">
-                    <div class="logo">
-                        <a herf="#" class="header-logo-section">
-                        <img src="<?=  $logo?>" alt="">
-                        </a>
+                    <div class="mid-header">
+                        <div class="search-section">
+                            <form>
+                                <input type="text" placeholder="Search product ...">
+                                <button>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="logo">
+                            <a herf="#" class="header-logo-section">
+                            <img src="<?=  $logo?>" alt="">
+                            </a>
+                        </div>
+                        <div class="dumi-section">
+
+                        </div>
                     </div>
                 </div>
                 <div class="navigation">
                     <div class="container">
                         <div class="navigation-content">
-                            <a href="../assets/themePages/productpage.php">Product</a>
-                            <a href="#">About</a>
+                            <div class="header-nav">
+                                <a href="../assets/themePages/productpage.php">Product</a>
+                                <a href="#">About</a>
+                            </div>
+                            <div class="side-nav">
+                                <div class="icon">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                </div>
+                                <p>Clearance Up to 30% Off</p>
+                            </div>
                             <div id="menuToggle">
                             <input type="checkbox" class="checkbox" />
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -639,6 +707,75 @@ include 'include/header.php';
         
         <div class="heading">Feature Products</div>
     </section>
+
+    <section class="add-section">
+        <div class="container">
+            <div class="add-content">
+                <h3>LIMITED QUANTITIES</h3>
+                <h2>BEST DEAL OF THE MONTH</h2>
+
+                <div class="add-content-cards">
+                    <div class="add-card">
+                        <img src="include/product-1.jpg" alt="img">
+                        <p>T-Shirt</p>
+                        <p>24 <span>$</span></p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                    <div class="add-card">
+                        <img src="include/product-2.jpg" alt="img">
+                        <p>Shirt</p>
+                        <p>24 <span>$</span></p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Payment & Delivery</p>
+                        <p class="dis-content-2">Free shipping for orders over $50</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-repeat" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Return & Refund</p>
+                        <p class="dis-content-2">Free 100% money back guarantee</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Secure Payment</p>
+                        <p class="dis-content-2">100% secure payment</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Quality Support</p>
+                        <p class="dis-content-2">Alway online feedback 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="features-product">
         <div class="heading">
             <h1 class="feature-heading">What's New</h1>
@@ -774,6 +911,7 @@ include 'include/header.php';
             </div>
         </div> -->
     </section>
+
     <!-- <section class="ad-product">
         <div class="container">
             <div class="ad-content">
@@ -827,6 +965,32 @@ include 'include/header.php';
             </div>
         </div>
     </section> -->
+    <section class="sub">
+        <div class="container">
+            <div class="content">
+                <div class="content-left">
+                    <img src="include/banner-3.jpg" alt="banner">
+                </div>
+                <div class="content-right">
+                    <div class="right-content">
+                        <div class="heading">SUBSCRIBE TO OUR NEWLETTER</div>
+                        <div class="dis">
+                            <p>Sign up now for <span>10% discount</span> on first order. <br>
+                        Customise my news.</p>
+                        </div>
+                        <input type="text" placeholder="Enter your Email Address">
+                        <div class="btn">
+                            <a href="#">
+                                SUBSCRIBE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="about">
         <div class="container">
             <div class="about-content">

@@ -133,7 +133,7 @@ function updateSliderArrowsStatus(
   
   function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+      document.getElementById("myNav").style.cssText = "background: rgba(0,0,0,0.2); top:0px;"  ;
     } else {
       document.getElementById("myNav").style.background = "transparent";
     }
