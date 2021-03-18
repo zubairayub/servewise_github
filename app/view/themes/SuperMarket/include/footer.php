@@ -25,14 +25,15 @@
             </div>
         </div>
     </section> -->
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 <script src="js/slick.min.js"></script>
 <script src="js/supermarket.js"></script>
 
 	
-       <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
         	
@@ -70,7 +71,7 @@ $('.sc-add-to-cart').on('click', function () {
                     'left': cart.offset().left + 10,
                     'width': 75,
                     'height': 75
-            }, 1500, 'easeInOutExpo');
+            }, 1500);
             
             setTimeout(function () {
                 cart.effect("shake", {
@@ -87,7 +88,7 @@ $('.sc-add-to-cart').on('click', function () {
          
            
         }
-    });    
+    })    
         });
         
         

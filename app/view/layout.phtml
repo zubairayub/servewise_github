@@ -63,6 +63,25 @@ if($dashboard == NULL){
     var y =( t.contentWindow || t.contentDocument);
         alert(y.document.body.innerHTML)
   });
+  $(function () {
+        $("#vendorCheck").click(function () {
+            if ($(this).is(":checked")) {
+                $("#vendorDiv").show();
+            } else {
+                $("#vendorDiv").hide();
+            }
+        });
+    });
+    
+$(function () {
+        $("#branchCheck").click(function () {
+            if ($(this).is(":checked")) {
+                $("#branchDiv").show();
+            } else {
+                $("#branchDiv").hide();
+            }
+        });
+    });
 </script>
 	 <script>
         $(document).ready(function() {

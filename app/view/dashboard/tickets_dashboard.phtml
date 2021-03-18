@@ -17,69 +17,79 @@ echo getlang('','View Table',getlangcookie());
 echo getlang('','Send Ticket to',getlangcookie()); 
 ?>  </label>
 <div class="select-branch-vendor">
+    <div class="select-heading">
+        <label>Select Class</label>
+    </div>
     <div class="select-vendor">
         <label>
             <?php 
             echo getlang('','Brand',getlangcookie()); 
             ?> <i class="fa fa-user-circle-o" aria-hidden="true"></i>
         </label>
-        <input type="checkbox" name="vendor"/>
+        <input type="checkbox" id="vendorCheck" name="vendor"/>
     </div>
-    <div class="seprator">
-        
-    </div>
-    <div class="select-branch">
+    <div class="select-branch" >
         <label>
             <?php 
             echo getlang('','Vendor',getlangcookie()); 
             ?> <i class="fa fa-connectdevelop" aria-hidden="true"></i>
         </label>
-        <input type="checkbox" name="Branch"/>
+        <input type="checkbox" id="branchCheck" name="Branch"/>
     </div>
 </div>
 <div class="select-options">
-<select class="priority"  name="priority" required>
-    
-<option value="1" class="low">Low <i class="fa fa-info-circle" aria-hidden="true"></i></option>
-<option value="2" class="medium">Medium <i class="fa fa-info-circle" aria-hidden="true"></i></option>
-<option value="3" class="high">High <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+<div class="priority-section">
+    <div class="select-priority-heading">
+        <label>
+            Select Priority
+        </label>
+    </div>
 
+    <select class="priority"  name="priority" required>    
+    <option value="1" class="low">Low <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+    <option value="2" class="medium">Medium <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+    <option value="3" class="high">High <i class="fa fa-info-circle" aria-hidden="true"></i></option>
 </select>
-                <select name="emailbrand" required>
-                    <option value="1">Select Brand</option>
-                    
-<?php
-foreach ($vendors as $key => $value) {
-    $email = getuserinfo($value['user_id'],'');
-  
-    ?>
 
-     <option value="<?= $email[0]['email_id']?>"><?= $value['name'];?></option>
-              
+</div>
+<div class="brand-section"  id="vendorDiv" style="display:none;">
+    <div class="brand-heading">
+        <label>
+            Select Brand
+        </label>
+    </div>
+    <select name="emailbrand" required>
+        <option value="1">Select Brand</option>                    
+        <?php
+        foreach ($vendors as $key => $value) {
+            $email = getuserinfo($value['user_id'],'');
+            ?>
+            <option value="<?= $email[0]['email_id']?>"><?= $value['name'];?></option>
+            <?php
+        }
 
 
-    <?php
-}
-
-
-?>
-                </select>
-
+        ?>
+                        </select>
+</div>
+<div class="vendor-section" id="branchDiv" style="display:none;">
+    <div class="vendor-heading">
+        <label>
+            Select Vendor
+        </label> 
+    </div>
     <select name="emailvendor" required>
         <option value="1">Select Vendor</option>
-
-<?php
-foreach ($branch as $key => $value) {
-    $email = getuserinfo($value['user_id'],'');
-    ?>
-     <option value="<?= $email[0]['email_id'];?>"><?= $value['name'];?></option>
-
-
-    <?php
-}
-
-?>
-                </select>
+        <?php
+        foreach ($branch as $key => $value) {
+            $email = getuserinfo($value['user_id'],'');
+            ?>
+            <option value="<?= $email[0]['email_id'];?>"><?= $value['name'];?></option>
+        <?php
+        }
+        ?>
+    </select>
+</div>
 </div>
             </div>
         </div>
@@ -125,6 +135,9 @@ echo getlang('','Send',getlangcookie());
         alert('error');
     }
 });
-}
+};
+
+
 
 </script>
+

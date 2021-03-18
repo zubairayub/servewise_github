@@ -690,22 +690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input name="product_purchase_price" value="<?= '50'?>"type="hidden" />
                         <input id="product_price" name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input id="product_id" name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name'];?>" onclick="dataLayer.push({
-                        event: 'eec.impressionClick',
-                        ecommerce: {
-                            click: {
-                            actionField: {
-                                list: 'Latest products'
-                            },
-                            products: [{
-                                'name': <?= $value['name']; ?>,       // Name or ID is required.
-                                'id': <?= $value['product_id']; ?>,
-                                'category': 'Devesa/SuperMarket',
-                                'position': <?= count($value['name']); ?>
-                            }]
-                            }
-                        }
-                        });">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a href="#" class="sc-add-to-cart add-to-cart" id="<?= $value['name'];?>">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <script>
                         window.dataLayer = window.dataLayer || [];
                         window.dataLayer.push({
