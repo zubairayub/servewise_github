@@ -1,4 +1,13 @@
-<?php 
+<?php
+
+    if($_SESSION['type']  == 1){
+    $config_system = get_config_system('0'); 
+
+    }else{
+    $config_system = get_config_system($logInId); 
+    
+    }
+    
     $footer_about_disc = search_array('footer about dis',$config_system);
     $foote_ad = search_array('address',$config_system);
     $footer_contact = search_array('contact',$config_system);
@@ -8,6 +17,10 @@
     $footer_tw_link = search_array('twitter',$config_system);
     $footer_inst_link = search_array('instagram',$config_system);
     $footer_in_link = search_array('Linkin',$config_system);
+
+
+
+
 ?>
 
 

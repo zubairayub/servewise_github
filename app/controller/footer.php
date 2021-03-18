@@ -28,23 +28,69 @@ $varr = new databaseManager();
  $instagram      = $_POST['instagram']      = isset($_POST['instagram']) ? $_POST['instagram'] : '';
  $linkedin       = $_POST['linkedin']       = isset($_POST['linkedin']) ? $_POST['linkedin'] : '';
 
+$user_id = $_SESSION['logInId'];
 
+
+ if($_SESSION['type']  == 1){
+                
+
+$user_id = 0;
+
+                }
                 
 if(!empty($contact_add)){
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'contact' ";
+    $varr->query="SELECT * FROM `config`  where userid = $user_id and name = 'contact' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+   $varr->query="UPDATE  `config` SET value=? where name = 'contact' ";
     $result=$varr->executeQuery($varr->query,array($contact_ph),"update");
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('contact',$contact_ph,$user_id),"create");
+
+    }
+
     if(!empty($contact_email)){
-        $varr->query="UPDATE  `config` SET value=? where name = 'email' ";
+        
+
+
+
+         $varr->query="SELECT * FROM `config`  where userid = $user_id  and name = 'email' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+  $varr->query="UPDATE  `config` SET value=? where name = 'email' ";
         $result=$varr->executeQuery($varr->query,array($contact_email),"update");
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('email',$contact_email,$user_id),"create");
+
+    }
        
 
     }
 
     if(!empty($contact_add)){
 
-        $varr->query="UPDATE  `config` SET value=? where name = 'address' ";
+       
+         $varr->query="SELECT * FROM `config`  where userid = $user_id and  name = 'address' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+  $varr->query="UPDATE  `config` SET value=? where name = 'address' ";
         $result=$varr->executeQuery($varr->query,array($contact_add),"update");
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('address',$contact_add,$user_id),"create");
+
+    }
+       
      
     }
 
@@ -59,8 +105,23 @@ if(!empty($contact_add)){
     if(!empty($about_desc)){
 
 
-        $varr->query="UPDATE  `config` SET value=? where name = 'footer about dis' ";
+      
+
+
+           $varr->query="SELECT * FROM `config`  where userid = $user_id and   name = 'footer about dis' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+   $varr->query="UPDATE  `config` SET value=? where name = 'footer about dis' ";
         $result=$varr->executeQuery($varr->query,array($about_desc),"update");
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('footer about dis',$about_desc,$user_id),"create");
+
+    }
     
     }
     $response = 1;
@@ -68,28 +129,113 @@ if(!empty($contact_add)){
 
 }elseif(!empty($cpy_text)){
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'Copyrighttext' ";
+   
+
+   $varr->query="SELECT * FROM `config`  where userid = $user_id and  name = 'Copyrighttext' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+   $varr->query="UPDATE  `config` SET value=? where name = 'Copyrighttext' ";
     $result=$varr->executeQuery($varr->query,array($cpy_text),"update");
+
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('Copyrighttext',$cpy_text,$user_id),"create");
+
+    }
+
+
+
     
 if(!empty($facebook)){
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'facebook' ";
+   
+
+
+ $varr->query="SELECT * FROM `config`  where userid = $user_id and  name = 'facebook' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+   $varr->query="UPDATE  `config` SET value=? where name = 'facebook' ";
     $result=$varr->executeQuery($varr->query,array($facebook),"update");
+
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('facebook',$facebook,$user_id),"create");
+
+    }
+
 }
 if(!empty($twitter)){
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'twitter' ";
+   
+$varr->query="SELECT * FROM `config`  where userid = $user_id and  name = 'twitter' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+   $varr->query="UPDATE  `config` SET value=? where name = 'twitter' ";
     $result=$varr->executeQuery($varr->query,array($twitter),"update");
+
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('twitter',$twitter,$user_id),"create");
+
+    }
+
+
 }
 if(!empty($instagram)){
 
-    $varr->query="UPDATE  `config` SET value=? where name = 'instagram' ";
+   
+
+$varr->query="SELECT * FROM `config`  where userid = $user_id and  name = 'instagram' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
+  $varr->query="UPDATE  `config` SET value=? where name = 'instagram' ";
     $result=$varr->executeQuery($varr->query,array($instagram),"update");
+
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('instagram',$instagram,$user_id),"create");
+
+    }
+
+
 }
 if(!empty($linkedin)){
 
+  
+
+
+    $varr->query="SELECT * FROM `config`  where userid = $user_id and   name = 'Linkin' ";
+    $result=$varr->executeQuery($varr->query,array(),"sread");
+
+    if($result){
     $varr->query="UPDATE  `config` SET value=? where name = 'Linkin' ";
     $result=$varr->executeQuery($varr->query,array($linkedin),"update");
+
+
+
+
+ 
+    }else{
+$varr->query="INSERT INTO `config`(`name`, `value`, `userid`) VALUES (?,?,?)";
+$result=$varr->executeQuery($varr->query,array('Linkin',$linkedin,$user_id),"create");
+
+    }
 }
 $response = 1;
 }

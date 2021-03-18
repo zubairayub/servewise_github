@@ -278,16 +278,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="left-content">
                 <div class="phone-content">
                     <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                    <div class="number">+(0000)123-456</div>
+                    <div class="number"><?= $footer_contact ;?></div>
                 </div>
             </div>
             <div class="right-content">
                 <div class="social-content">
                     <div class="icons-content">
-                    <div class="icons"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-                    <div class="icons"><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></div>
-                    <div class="icons"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></div>
-                    <div class="icons"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="<?= $footer_tw_link ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="<?= $footer_fb_link ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="<?= $footer_inst_link ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                    <div class="icons"><a href="<?= $footer_in_link ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
                     </div>
                 </div>
             </div>
@@ -830,7 +830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="about-heading">About Us</div>
                     <div class="underline-div"></div>
                 </div>
-                <div class="about-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nobis dolores qui debitis, nam odit repellendus obcaecati, modi adipisci beatae, esse autem hic ullam laboriosam magni! Voluptas suscipit qui tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti eos numquam hic consectetur in illo vitae, quo harum veniam magnam non, provident ex quasi! Aliquam eaque commodi autem voluptatum alias.</div>
+                <div class="about-dis"><?= $footer_about_disc ?></div>
             </div>
         </div>
     </section>
@@ -853,7 +853,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <div class="dis">
                         <div class="head">Helpline</div>
-                        <div class="main">+(000)123-4567</div>
+                        <div class="main"><?= $footer_contact ?></div>
                     </div>
                 </div>
                 
