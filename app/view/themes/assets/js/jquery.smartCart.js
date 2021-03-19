@@ -338,8 +338,11 @@
 
                 elmMain.append(this._formatTemplate(this.options.cartItemTemplate, p));
 
-                var itemSummary = '<div class="section4"><div class="sc-cart-item-summary"><span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>';
-                itemSummary += ' × <input type="number" min="1" max="1000" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
+                // this is remove form cart for a purpose
+                // <span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>
+
+                var itemSummary = '<div class="section4"><div class="sc-cart-item-summary">';
+                itemSummary += ' <input type="number" min="1" max="1000" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
                 itemSummary += ' <span class="sc-cart-item-amount">' + this._getMoneyFormatted(productAmount) + '</span></div></div>';
 
                 elmMain.append(itemSummary);

@@ -1923,7 +1923,7 @@ nav{
     .features-product .des .des-heading {display: none;}    
     .nav .navigation a {padding: 0px 14px;font-size: 15px;}
     .nav .navigation {flex-basis: 60%;}
-    .navigation #menuToggle #menu {position: absolute;width: 316px;margin: -100px 0 0 -145px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);border-radius: 4px;}
+    .nav  .navigation #menuToggle #menu {position: absolute;width: 370px;margin: -120px 0 0 -325px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);border-radius: 4px;}
     .nav .logo {flex-basis: 40%;}
     .navigation #menuToggle {top: 6px;right: 158px;}
     .carousel.pointer-event {height: 400px;overflow: hidden;}

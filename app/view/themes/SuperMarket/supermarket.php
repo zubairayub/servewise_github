@@ -2,22 +2,22 @@
 include 'include/header.php'; 
 ?>
 <style>
-    .img-responsive{width: 80px;height:80px; flex-basis:20%}
+    .img-responsive{width: 50px;height:50px;}
     .sc-theme-default{width:100%;}
     .panel-heading{width: 100%;margin: 5px 0px;font-size: 14px;font-weight: 600;}
     .sc-cart-item-list{font-size:14px;}
-    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 3px 0px; margin-bottom:3px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
-    .sc-cart-remove{flex-basis: 7%;height: 20px;width:20px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 50%;font-size: 16px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
-    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
+    .list-group-item{padding: 10px 0px; margin-bottom:3px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;border:none;border-top:1px solid rgba(0,0,0,0.2); }
+    .sc-cart-remove{height: 50px;width:15px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 16px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item-heading{padding:10px 0px;flex-basis: 20%;font-size: 12px; margin:0px;display: flex;justify-content: center;align-items: center;}
     .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
-    .sc-cart-item-summary .sc-cart-item-qty{border-radius: 4px;border: 1px dashed rgba(0,0,0,0.4);padding: 5px 9px;width: 60px;}
-    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .section1{flex-basis:10%;}
-    .section2{flex-basis:40%;}
+    .sc-cart-item-summary .sc-cart-item-qty{border-radius: 4px;border: 1px dashed rgba(0,0,0,0.4);padding: 0px 3px;width: 45px;}
+    .sc-cart-checkout{font-size: 14px;background: #17a2b8;border: 1px solid #17a2b8;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;background: #dc3545;border: 1px solid #dc3545;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .section1{flex-basis:5%;margin-right:1%;}
+    .section2{flex-basis:19%;}
     .section3{flex-basis:40%;}
-    .section4{flex-basis:100%;}
-    .section4 .sc-cart-item-summary{display: flex;justify-content: space-between;align-items: center;}
+    .section4{flex-basis:30%;overflow:hidden;}
+    .section4 .sc-cart-item-summary{display: flex;justify-content: space-around;align-items: center;}
     .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
     
     
@@ -101,9 +101,9 @@ include 'include/header.php';
 #menu
 {
   position: absolute;
-  width: 351px;
-  margin: -1px 0 0 -260px;
-  padding: 10px;
+  width: 380px;
+  margin: -1px 0 0 -360px;
+  padding: 5px;
   padding-top: 10px;
   
   background: white;
@@ -255,6 +255,14 @@ include 'include/header.php';
 
 /* selector end */
 
+#loginform form #name{
+    margin-top: 0px;
+}
+
+.list-group-item {
+
+}
+
 
 
 
@@ -331,6 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a href="../assets/themePages/productpage.php">Product</a>
                         <a href="#about">About</a>
                         <div id="menuToggle">
+                            <!-- <span class="count">2</span>    -->
                         <input type="checkbox" class="checkbox" />
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <ul id="menu">

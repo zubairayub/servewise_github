@@ -292,7 +292,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 9;
+    z-index: 2;
     width: 400px;
     height: 400px;
 }
@@ -2051,7 +2051,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .head-upper .content {height: 50px;}
     .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
     .navigation #menuToggle {top: 20px;right: 175px;}
-    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;z-index: 1!important;;}
     .our-products .our-product-content .heading {font-size: 20px;}
     .our-products .our-product-content .content {flex-wrap: wrap;}
     .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
