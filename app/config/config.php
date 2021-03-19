@@ -17,6 +17,7 @@ $config = [
 'EDITOR_PATH' => '../app/view/js/tinymce.min.js',
 'EDITOR_SUB_PATH' => '../app/view/js/init-tinymce.js',
 'JS_PATH_DASHBOARD' => '../app/view/dashboard/js/core.js',
+'JS_TITLE_DASHBOARD' => '../app/view/dashboard/js/title.min.js',
 'AJAX_HANDLER_DASHBOARD' => '../app/view/dashboard/js/ajax-handler.js',
 'OWL_MAILER_JS' => APPLICATION_PATH . DS .'view/js/owlmailer.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',

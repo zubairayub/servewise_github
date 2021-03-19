@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text" name="staff_name" value="<?= $name ?>" <?= $update ?>>
+                       <input type="text" name="staff_name" value="<?= $name ?>" <?= $update ?> required>
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                         E-mail
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="E-mail" name="staff_email" value="<?= $email ?>" <?= $update ?>>
+                        <input type="E-mail" name="staff_email" value="<?= $email ?>" <?= $update ?> required>
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -30,7 +30,7 @@
                         Phone
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="number" name="staff_phone" value="<?= $phone ?>" <?= $update ?>>
+                        <input type="number" name="staff_phone" value="<?= $phone ?>" <?= $update ?> required>
                     </div>
                 </div>
                   <div class="add-new-cat-content1">
@@ -66,10 +66,12 @@
 </div>
 <script>
   function submitForm(form){
-    
+    var  validInput = $('input').val();
     var url = $('#newStaff').attr("action");
-    
     var formData = $('#newStaff').serializeArray();
+    if(validInput == ""){
+			alert('Please Fill the required field');
+		}else{
     $.post(url, formData).done(function (data) {
         if(data == 0){
       alert('New Staff is added');
@@ -77,5 +79,6 @@
       alert('New Staff is not added');
     }
     });
+        }
 }
 </script> 

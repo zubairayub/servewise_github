@@ -22,7 +22,7 @@
       country: country,
       payment_options: "card, mobilemoneyghana, ussd",
       redirect_url: // specified redirect URL
-        "http://localhost/servewise/thankyou.php/",
+        "../cart/checkout.php",
       meta: {
         consumer_id: 23,
         consumer_mac: "92a3-912ba-1192a",

@@ -3,53 +3,36 @@
         <div class="order-dashboard-main">
         <h1 data-aos="fade-right"data-aos-duration="1500">Add New Deal</h1>
     </div>
-    <div class="add-new-category" data-aos="zoom-in-up" data-aos-duration="600">
+    <div class="add-new-deal" data-aos="zoom-in-up" data-aos-duration="600">
         <form action="<?= $controller; ?>" method="post" enctype="multipart/form-data" id="form"> 
-            <div class="add-new-cat-head">
-                Flash Deal Information
-            </div>
-            <div class="add-new-cat-content">
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        Title
+            <div class="add-new-deal-content">
+                <div class="add-new-deal-content1">
+                    <div class="new-content">
+                        <div class="add-new-deal-content-head">
+                            Title
+                        </div>
+                        <div class="add-new-deal-content-input">
+                            <input type="text" name="title">
+                        </div>
                     </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="text" name="title">
-                    </div>
-                </div>
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        Banner(1920x500)
-                    </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="file" name="banner">
-                    </div>
-                </div>
-                 <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        Start Date
-                    </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="date" name="strt_date">
+                    <div class="new-content">
+                        <div class="add-new-deal-content-head">
+                            Product Image(400x400) .PNG Only
+                        </div>
+                        <div class="add-new-deal-content-input">
+                            <input type="file" name="banner">
+                        </div>
                     </div>
                 </div>
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        End Date
+                <div class="add-new-deal-content1">
+                    <div class="add-new-deal-content-head">
+                        Short Discribtion
                     </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="date" name="end_date">
-                    </div>
-                </div>
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        Page link
-                    </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="text" name="page_link">
+                    <div class="add-new-deal-content-input">
+                        <textarea name="discribtion" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
-                <div class="add-new-cat-content-btn">
+                <div class="add-new-deal-content-btn">
                     <input type="button" value="Save" onclick="submitForm()">
                 </div>
             </div>

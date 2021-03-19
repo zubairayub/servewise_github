@@ -6,6 +6,32 @@ include 'include/header.php';
 
     <div class="body">
         <div class="main-wrapper">
+            <!-- lang selector -->
+        <div class="select_wrap dashboard-lang">
+            <ul class="default_option">
+                <li>
+                    <div class="option en">
+                    <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="select_ul">
+                <li>
+                    <div class="option en">
+                        <div class="icon"></div>
+                        <p>EN</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option pt">
+                        <div class="icon"></div>
+                        <p>PT</p>
+                    </div>  
+                </li>
+            </ul>
+        </div>
+        <!-- lang selector End -->
             <nav class="navbar navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -16,7 +42,7 @@ include 'include/header.php';
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="./index.html">
-                            <img src="img/img/quote.png" alt="LOGO" width="50px">
+                            <img src="<?= $logo ;?>" alt="LOGO" width="50px">
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
@@ -31,12 +57,17 @@ include 'include/header.php';
                             </li>
                             <li><a href="./contact.html">Contact</a></li>
                             <li>
-                            <a>Cart</a>
+                            <div id="menuToggle">
+                        <input type="checkbox" class="checkbox" />
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <ul id="menu">
                             <!-- Cart submit form -->
                             <form action="../assets/cart/viewcart.php" method="POST"> 
                             <!-- SmartCart element -->
                                 <div id="smartcart"></div>
-                            </form>
+                            </form>  
+                        </ul>
+                            
                             </li>
                         </ul>
                     </div>
@@ -114,7 +145,9 @@ include 'include/header.php';
                                     <?php 
                                         foreach ($result as $key => $value) {
                                                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                                $image_path =   $image[0]['image_path'];
+                                                if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                                     ?>
 
                                     <li>
@@ -253,7 +286,9 @@ include 'include/header.php';
                                 foreach ($result as $key => $value) {
                                     if($value['is_featured'] == '1'){
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                        $image_path =   $image[0]['image_path'];
+                                       if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                             ?>
                             <div class="features-tile sc-product-item">
                                 <div class="features-img">
@@ -347,7 +382,9 @@ include 'include/header.php';
                             <?php 
                                 foreach ($result as $key => $value) {
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                        $image_path =   $image[0]['image_path'];
+                                       if(!empty($image)){
+   $image_path =   $image[0]['image_path'];
+                        }
                             ?>
                             <div class="menu-item col-sm-6 col-xs-12 starter dinner desserts">
                                 <div class="clearfix menu-wrapper">
@@ -442,14 +479,14 @@ include 'include/header.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-header wow fadeInDown">
-                                <h1>About Us<small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iure tenetur. Aut, consequuntur sunt temporibus quaerat repudiandae delectus aliquam nostrum ab laudantium. Doloribus commodi asperiores fugiat reprehenderit magnam veritatis consequatur.</small></h1>
+                                <h1>About Us<small><?=$footer_about_disc?></small></h1>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Quotes section-->
-                <div class="trusted-quote">
+                <!-- <div class="trusted-quote">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-offset-1 col-md-10">
@@ -476,7 +513,7 @@ include 'include/header.php';
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="instagram">
                 <div class="container">

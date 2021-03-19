@@ -2,20 +2,23 @@
 include 'include/header.php'; 
 ?>
 <style>
-    .img-responsive{width: 140px; flex-basis:20%}
-    .panel-heading{width: 100%;margin: 20px 0px;font-size: 14px;font-weight: 600;}
+    .img-responsive{width: 80px;height:80px;}
+    .panel-heading{width: 100%;margin: 10px 0px;font-size: 14px;font-weight: 600;}
     .sc-cart-item-list{font-size:14px;}
-    .list-group-item{border-top: 1px solid rgba(0,0,0,0.2);padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
-    .sc-cart-remove{flex-basis: 7%;height: 40px;margin-right: 10px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 30px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
-    .list-group-item-heading{padding:20px 0px;flex-basis: 20%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
+    .list-group{overflow-y: auto;height:320px;}
+    .list-group-item{border:none;padding: 20px 0px; margin-bottom:10px; display: flex;justify-content: center;flex-wrap:wrap;align-items: center;}
+    .sc-cart-remove{height: 40px;margin-right: 0px;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;font-size: 20px;background: white;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);background: #ffafaf;color: white;}
+    .list-group-item-heading{padding:20px 0px;flex-basis: 100%;font-size: 20px;display: flex;justify-content: center;align-items: center;}
     .sc-cart-summary-subtotal{font-size:14px;display: flex;justify-content: flex-end;align-items: center;border-top: 1px solid rgba(0,0,0,0.2);}
-    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
-    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-checkout{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);color:black;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .sc-cart-clear{font-size: 14px;background: white;border: 1px solid rgba(0,0,0,0.2);color:black;border-radius: 4px;padding: 5px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+    .section4 .sc-cart-item-summary{margin-top: 10px;display: flex;justify-content: space-around;}
     .section1{flex-basis:10%;}
-    .section2{flex-basis:80%;}
-    .section3{flex-basis:100%;}
+    .section2{flex-basis:35%;}
+    .section3{flex-basis:55%;display: flex;justify-content: center;align-items: center;}
     .section4{flex-basis:100%;}
     .cart-item-qty{border: 1px dashed black;border-radius: 4px;width: 60px;padding: 3px 6px;font-size: 19px;}
+    #smartcart{width:100%;}
     
     
     #menuToggle
@@ -23,9 +26,9 @@ include 'include/header.php';
         font-size: 25px;
         display: block!important;
         position: absolute;
-        top: 6px;
-        right: 8px;
-        z-index: 1;
+        top: 70px;
+        right: 85px;
+        z-index: 99;
         display: none;
         -webkit-user-select: none;
         user-select: none;
@@ -98,10 +101,11 @@ include 'include/header.php';
 {
   position: absolute;
   width: 351px;
-  margin: -100px 0 0 -310px;
-  padding: 50px;
+  margin: -100px 0 0 -315px;
+  padding: 30px 20px;
   padding-top: 125px;
-  
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
   background: white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -123,45 +127,405 @@ include 'include/header.php';
   transform: none;
 }
 
+/*  */
+
+#chatbox {height: 215px!important;}
 
 
+.cart-button.clicked span.added{width:100%;}
+.chatbox__support {height:350px!important;}
+#name {margin-top: 0px!important;}
 
 
+/* add to cart */
+
+.buttons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.cart-button {
+    position: relative;
+    outline: 0;
+    background: #222;
+    color: #fff;
+    border: none;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px;
+    line-height: 0px;
+    overflow: hidden;
+}
+
+.cart-button:focus {
+    outline: none !important
+}
+
+.cart-button .fa-cart-arrow-down {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -20%;
+    font-size: 1.8em;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button .fa-gift {
+    position: absolute;
+    z-index: 1;
+    top: -20%;
+    left: 53%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%)
+}
+
+.cart-button span.added {
+    opacity: 0
+}
+
+.cart-button.clicked .fa-cart-arrow-down {
+    animation: cart 2s ease-in forwards
+}
+
+.cart-button.clicked .fa-gift {
+    animation: box 2s ease-in forwards
+}
+
+.cart-button.clicked span.add-to-cart {
+    animation: addcart 2s ease-in forwards
+}
+
+.cart-button.clicked span.added {
+    animation: added 2s ease-in forwards
+}
+
+@keyframes cart {
+    0% {
+        left: -10%
+    }
+
+    40%,
+    60% {
+        left: 50%
+    }
+
+    100% {
+        left: 110%
+    }
+}
+
+@keyframes box {
+
+    0%,
+    40% {
+        top: -20%
+    }
+
+    60% {
+        top: 36%;
+        left: 53%
+    }
+
+    100% {
+        top: 40%;
+        left: 112%
+    }
+}
+
+@keyframes addcart {
+
+    0%,
+    30% {
+        opacity: 1
+    }
+
+    30%,
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes added {
+
+    0%,
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* selector */
+
+            
+              
+.wrapper .title{
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+}
+              
+.select_wrap{
+    width: 125px;
+    height: 30px;
+    top: 0px;
+    position: absolute;
+    user-select: none;
+    z-index: 9;
+    left: 0px;
+}
+    
+.dashboard-lang{
+    width: 125px;
+    height: 30px;
+    top: 1%;
+    position: absolute;
+    user-select: none;
+    z-index: 999;
+    left: 85%;
+}
+    
+.select_wrap .default_option{
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    list-style:none;
+}
+    
+    .select_wrap .default_option li{
+    padding: 3px 10px;
+}
+    
+.select_wrap .default_option:before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid;
+    border-color: transparent transparent #555555 #555555;
+    transform: rotate(-45deg);
+}
+    
+.select_wrap .select_ul{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    display: none;
+}   
+.select_wrap .select_ul li{
+    padding: 3px 20px;
+    cursor: pointer;
+}
+.select_wrap .select_ul li:first-child:hover{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+    
+.select_wrap .select_ul li:last-child:hover{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+    
+.select_wrap .select_ul li:hover{
+    background: #fff4dd;
+}
+    
+.select_wrap .en{
+    display: flex;
+    align-items: center;
+}
+
+.select_wrap .pt{
+    display: flex;
+    align-items: center;
+}
+    
+.select_wrap .en .icon{
+    background: url(asset/us-flag.png) no-repeat 0 0;
+    width: 30px;
+    height: 11px;
+    background-size: contain;
+    background-position: center;
+}
+.select_wrap .en p{
+    margin:0px;
+    font-size:12px;
+}
+.select_wrap .pt .icon{
+    background: url(asset/pt-flag.png) no-repeat 0 0;
+    width: 30px;
+    height: 11px;
+    background-size: contain;
+    background-position: center;
+}    
+.select_wrap .pt p{
+    margin:0px;
+    font-size:12px;
+}
+
+
+.select_wrap.active .select_ul{
+    display: block;
+    list-style:none;
+}             
+.select_wrap.active .default_option:before{
+    top: 12px;
+    transform: rotate(-225deg);
+}
+
+            /* selector end */
 
 
 
 </style>
 <body>
 
-    <header></header>
-    <section class="store-nav">
-        <nav>
-            <div class="container">
-                <div class="nav">
-                    <div class="logo">
-                    <a herf="#" class="header-logo-section">
-                    <img src="https://picsum.photos/200/300?random=1" alt="">
-                </a>
+<div class="upper-head">
+    <div class="container">
+        <div class="upper-head-content">
+            <div class="content-left">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
                     </div>
-                    <div class="navigation">
-                        <a href="../assets/themePages/productpage.php">Product</a>
-                        <a href="#">About</a>
-                        <div id="menuToggle">
-                        <input type="checkbox" class="checkbox" />
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <ul id="menu">
-                            <!-- Cart submit form -->
-                            <form action="../assets/cart/viewcart.php" method="POST"> 
-                            <!-- SmartCart element -->
-                                <div id="smartcart"></div>
-                            </form>  
-                        </ul>
+                    <div class="dis">Call : <?= $footer_contact ;?></div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="content">
+                    <div class="social-content">
+                        <div class="icons">
+                            <a href="<?= $footer_fb_link ?>">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="<?= $footer_tw_link ?>">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="<?= $footer_in_link ?>">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons">
+                            <a href="<?= $footer_inst_link ?>">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lang-content">
+                        <div class="select_wrap dashboard-lang">
+                            <ul class="default_option">
+                                <li>
+                                    <div class="option en">
+                                    <div class="icon"></div>
+                                        <p>EN</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="select_ul">
+                                <li>
+                                    <div class="option en">
+                                        <div class="icon"></div>
+                                        <p>EN</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="option pt">
+                                        <div class="icon"></div>
+                                        <p>PT</p>
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <section class="store-nav">
+        <!-- lang selector -->
+        
+        <!-- lang selector End -->
+        <nav>
+            <div class="nav">
+                <div class="container">
+                    <div class="mid-header">
+                        <div class="search-section">
+                            <form>
+                                <input type="text" placeholder="Search product ...">
+                                <button>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="logo">
+                            <a herf="#" class="header-logo-section">
+                            <img src="<?=  $logo?>" alt="">
+                            </a>
+                        </div>
+                        <div class="dumi-section">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="container">
+                        <div class="navigation-content">
+                            <div class="header-nav">
+                                <a href="../assets/themePages/productpage.php">Product</a>
+                                <a href="#">About</a>
+                            </div>
+                            <div class="side-nav">
+                                <div class="icon">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                </div>
+                                <p>Clearance Up to 30% Off</p>
+                            </div>
+                            <div id="menuToggle">
+                            <input type="checkbox" class="checkbox" />
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <ul id="menu">
+                                <!-- Cart submit form -->
+                                <form action="../assets/cart/viewcart.php" method="POST"> 
+                                <!-- SmartCart element -->
+                                    <div id="smartcart"></div>
+                                </form>  
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </section>
     <section class="slider">
+        
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -169,23 +533,48 @@ include 'include/header.php';
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="overlay">
-                    <img src="asset/1.jpg" class="d-block w-100" alt="1">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item p1 active">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/1.jpg" alt="">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="asset/2.jpg" class="d-block w-100" alt="2">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item p1">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/2.jpg" alt="2">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="asset/3.jpg" class="d-block w-100" alt="3">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item p1">
+                    <div class="overlay" >
+                        <div class="carousel-content">
+                            <div class="carosel-section">
+                                <img src="asset/3.jpg" alt="2">
+                            </div>
+                            <div class="carosel-section" style="color:white;">
+                                <h1>Best Product</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum illum corporis molestias! Rem, quos nobis sequi magni esse autem.</p>
+                                <a href="#">Add to cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -198,12 +587,43 @@ include 'include/header.php';
           </div>
 
     </section>
+    <section class="add">
+        <div class="container">
+            <div class="add-content">
+                <div class="content-left">
+                    <div class="box">
+                        <div class="sub-heading">Best Deal</div>
+                        <div class="heading">25% OFF</div>
+                        <div class="dis">Best Women's Fashion</div>
+                        <div class="btn"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i> Show Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="box">
+                        <div class="sub-heading">Best Deal</div>
+                        <div class="heading">25% OFF</div>
+                        <div class="dis">Best Men's Fashion</div>
+                        <div class="btn"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i> Show Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section class="section-product-slider" data-aos="fade-up">
+        <div class="feature-heading-mobile">
+            <div class="f-head">Feature Product</div>
+            <div class="f-line"></div>
+        </div>
             <?php 
             foreach ($result as $key => $value) {
                 if($value['is_featured'] == '1'){
                     $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                    if(!empty($image)){
+                   $image_path =   $image[0]['image_path'];
+               }
               ?>
 
         <div class="card sc-product-item">
@@ -218,7 +638,14 @@ include 'include/header.php';
                 <div class="product-card-button product-buy">
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <div class="buttons"> 
+                        <button class="cart-button sc-add-to-cart product-btn"> 
+                            <span class="add-to-cart ">Add to cart</span> 
+                            <span class="added">Item added</span> 
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                        </button> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -280,12 +707,81 @@ include 'include/header.php';
         
         <div class="heading">Feature Products</div>
     </section>
+
+    <section class="add-section">
+        <div class="container">
+            <div class="add-content">
+                <h3>LIMITED QUANTITIES</h3>
+                <h2>BEST DEAL OF THE MONTH</h2>
+
+                <div class="add-content-cards">
+                    <div class="add-card">
+                        <img src="include/product-1.jpg" alt="img">
+                        <p>T-Shirt</p>
+                        <p>24 <span>$</span></p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                    <div class="add-card">
+                        <img src="include/product-2.jpg" alt="img">
+                        <p>Shirt</p>
+                        <p>24 <span>$</span></p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Payment & Delivery</p>
+                        <p class="dis-content-2">Free shipping for orders over $50</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-repeat" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Return & Refund</p>
+                        <p class="dis-content-2">Free 100% money back guarantee</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Secure Payment</p>
+                        <p class="dis-content-2">100% secure payment</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="dis">
+                        <p class="dis-content-1">Quality Support</p>
+                        <p class="dis-content-2">Alway online feedback 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="features-product">
         <div class="heading">
-            <h1 class="feature-heading">HEADING</h1>
+            <h1 class="feature-heading">What's New</h1>
         </div>
         <div class="des">
-            <h3 class="des-heading">Your Description</h3>
+            <h3 class="des-heading">Fresh & New Style Option</h3>
         </div>
         <div class="product-slider"></div>
     </section>
@@ -304,7 +800,14 @@ include 'include/header.php';
                     <div class="product-card-button right-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                        <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <div class="buttons"> 
+                            <button class="cart-button sc-add-to-cart product-btn"> 
+                                <span class="add-to-cart ">Add to cart</span> 
+                                <span class="added">Item added</span> 
+                                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                <i class="fa fa-gift" aria-hidden="true"></i>
+                            </button> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -314,7 +817,7 @@ include 'include/header.php';
     </div>
     <section class="features-product">
         <div class="heading">
-            <h1 class="feature-heading">BEST PRODUCT</h1>
+            <h1 class="feature-heading">LATEST PRODUCT</h1>
         </div>
         <div class="product-slider"></div>
     </section>
@@ -323,12 +826,14 @@ include 'include/header.php';
         <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                $image_path =   $image[0]['image_path'];
+                if(!empty($image)){
+ $image_path =   $image[0]['image_path'];
+                }
+               
         ?>
         <div class="card sc-product-item">
             <div class="product-img">
                 <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
-                <div class="sub-heading">Brand LOGO</div>
             </div>
             <div class="product-content">
                 <h1><?= $value['name'];?></h1>
@@ -337,7 +842,14 @@ include 'include/header.php';
                 <div class="product-buy">
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
-                    <a href="#" class="sc-add-to-cart">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <div class="buttons"> 
+                        <button class="cart-button sc-add-to-cart product-btn"> 
+                            <span class="add-to-cart ">Add to cart</span> 
+                            <span class="added">Item added</span> 
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                        </button> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -399,7 +911,8 @@ include 'include/header.php';
             </div>
         </div> -->
     </section>
-    <section class="ad-product">
+
+    <!-- <section class="ad-product">
         <div class="container">
             <div class="ad-content">
                 <div class="left-side-content" data-aos="fade-right">
@@ -427,8 +940,8 @@ include 'include/header.php';
                 </div>
             </div>
         </div>
-    </section>
-    <section class="brand-logo">
+    </section> -->
+    <!-- <section class="brand-logo">
         <div class="container">
             <div class="brand-content">
                 <a href="#"  data-aos="flip-left">
@@ -451,7 +964,33 @@ include 'include/header.php';
                 </a>
             </div>
         </div>
+    </section> -->
+    <section class="sub">
+        <div class="container">
+            <div class="content">
+                <div class="content-left">
+                    <img src="include/banner-3.jpg" alt="banner">
+                </div>
+                <div class="content-right">
+                    <div class="right-content">
+                        <div class="heading">SUBSCRIBE TO OUR NEWLETTER</div>
+                        <div class="dis">
+                            <p>Sign up now for <span>10% discount</span> on first order. <br>
+                        Customise my news.</p>
+                        </div>
+                        <input type="text" placeholder="Enter your Email Address">
+                        <div class="btn">
+                            <a href="#">
+                                SUBSCRIBE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+
     <section class="about">
         <div class="container">
             <div class="about-content">
@@ -461,8 +1000,7 @@ include 'include/header.php';
                 <div class="para-about" data-aos="fade-left">
                 <div class="about-content1">
                     <h2>About</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?
+                    <p><?= $footer_about_disc ?>
                     </p>
                 </div>
             </div>
@@ -476,6 +1014,10 @@ include 'include/header.php';
             </div>
         </div>
     </section>
+    <?php
+include '../../../../chat/index.php'; 
+
+?>
     
 
     </section>

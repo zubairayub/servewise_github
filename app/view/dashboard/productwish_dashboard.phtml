@@ -1,19 +1,27 @@
 <div class="wrapper">
     <div class="row">
         <div class="pickup-dashboard-main">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Product Wishlist</h1>
-            <form data-aos="fade-left"data-aos-duration="1500">
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Product Wishlist',getlangcookie()); 
+?>  </h1>
+            <!-- <form data-aos="fade-left"data-aos-duration="1500">
                 <input type="text">
                 <input class="s-btn" type="button" value="Search">
-            </form>
+            </form> -->
         </div>
         <div class="pickup-table-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="">
                 <table>
                     <tr>
-                        <th>Serial.No</th>
-                        <th>Product Name</th>
-                        <th>No. Of Wish</th>
+                        <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Product Name',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','No. Of Wish',getlangcookie()); 
+?>  </th>
                     </tr>
                     <tr>
                         <td>1</td>

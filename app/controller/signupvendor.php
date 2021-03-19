@@ -48,7 +48,7 @@ $DB_CLASS = $config_service['DB_CLASS'];
 		if (!empty($becomevendor)){
 		
 			$from_email = 'vendor@servewise.shop';
-			$message_body = 'Welcome to ServeWise! Your Request for become vendor has been sent. you will get status of your Shop ' .$name. ' with in 24 hours. Thanks for becoming a part of ServeWise';
+			$message_body = '<h2>Welcome to ServeWise!</h2> <br><br>Your Request for become vendor has been sent. you will get status of your Shop <h4>' .$name. '</h4> with in 24 hours. Thanks for becoming a part of ServeWise';
 			 sendEmail($emailid,'ServeWise',$from_email,$message_body,'Become A Vendor');
 			
 			 insert_notifications($DB_CLASS,$userid,'6','vendor_singup','https://servewise.shop');

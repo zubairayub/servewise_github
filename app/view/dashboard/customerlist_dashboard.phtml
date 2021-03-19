@@ -8,7 +8,9 @@
 <div class="wrapper">
 		<div class="row">
 			<div class="customer-list-dashboard-main">
-            <h1 data-aos="fade-right" data-aos-duration="1500">Customers List</h1>
+            <h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+echo getlang('','Customers List',getlangcookie()); 
+?></h1>
                     </div>
             <div class="customer-list-dashboard" data-aos="fade-up" data-aos-duration="900">
             
@@ -16,42 +18,93 @@
 					  <table class="table table-bordered" id="clientstable">
 					
 						<thead class="bg-info">
-							<th>First Name</th>
-							<th>Last Name</th>
-                            <th>Purchased Item</th>
-							<th></th>
-							<th></th>
+							<th><?php 
+echo getlang('','Serial No',getlangcookie()); 
+?>.</th>
+							<th><?php 
+echo getlang('','Name',getlangcookie()); 
+?> <i class="fa fa-user" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Email',getlangcookie()); 
+?> <i class="fa fa-envelope" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Phone',getlangcookie()); 
+?> <i class="fa fa-mobile" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Brand',getlangcookie()); 
+?> <i class="fa fa-product-hunt" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','vendor',getlangcookie()); 
+?> <i class="fa fa-building-o" aria-hidden="true"></i></th>
+							<th><?php 
+echo getlang('','Option',getlangcookie()); 
+?> <i class="fa fa-cogs" aria-hidden="true"></i></th>
+                           
                         </thead> 
                    
 					   <tbody>
-					   <?php  
-                        if (!empty($data)){
-                            $count = 1;
-                    foreach ($data as $key => $value) {
-						$customer = getcustomerinfo($value['vendor_id']);
-						
-					//	var_dump($customer[0]['first_name']);
-                        //        
-                        // var_dump($user_name);
-						// var_dump($value);
-						$count++;
-					}
-				}
-                            
-                        ?>
-						 	<tr>
-								<td></td>
-								<td></td>
-								<td></td>								
-                               
-						    </tr>
+					   <?php
+
+					   if(!empty($data)){
+
+					   	$count = 1;
+
+					   foreach ($data as $key => $value) {
+					   	$user_data = getuserinfo($value['user_id'],'');
+					    $branch_data = getbranchbybranchid('',$value['branch_id']);
+					   	$vendor_data = getvendors('',$value['Vendor_id'],'FALSE');
+					   
+					   	if(empty($user_data[0]['first_name'])){
+
+					   		$username = 'Guest';
+
+					   	}else{
+					   			$username = $user_data[0]['first_name'];
+					   	}
+
+					   	if(empty($user_data[0]['contact_no'])){
+
+					   		$contact_no = '00-00-0000';
+
+					   	}else{
+					   			$contact_no = $user_data[0]['contact_no'];
+					   	}
+
+
+					   	
+					   	
+					  ?>
+
+<tr>
+
+	<td><?= $count ?></td>
+	<td><?= $username ?></td>
+	<td><?= $user_data[0]['email_id'] ?></td>
+	<td><?= $contact_no;?></td>
+	<!-- <td>Nike</td> -->
+	<td><?= $vendor_data[0]['name'] ?></td>
+	<td><?= $branch_data[0]['name'] ?></td>
+	<td>
+		<a href="?page=viewcustomer_dashboard&name=<?= $username?>&email=<?= $user_data[0]['email_id']?>&phone=<?= $contact_no?>&country=<?= $user_data[0]['country']?>&dob=<?= $user_data[0]['dob']?>&address=<?= $user_data[0]['address'].$user_data[0]['address_2']?>">view</a>
+		<!-- <a href="?page=viewcustomer_dashboard">Edit</a> -->
+	</td>
+	
+
+</tr>
+					  <?php
+					  $count ++;
+					   }
+}
+					   ?> 	
 						
 					   </tbody>	
 							
 					</table>
 				</fieldset>
             </div>
-            
+	<div class="customer-list-btn-section">
+		<a href="#">Export List</a>
+	</div>
 </div>
 </div>
 <!-- Datatables enable script / Server side datatable-->

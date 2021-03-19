@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+
+
+  const cartButtons = document.querySelectorAll('.cart-button');
+  
+  cartButtons.forEach(button => {
+  
+  button.addEventListener('click',cartClick);
+  
+  });
+  
+  function cartClick(){
+  let button =this;
+  button.classList.toggle('clicked');
+  }
+  
+  
+  
+  });
+
 function updateSliderArrowsStatus(
     cardsContainer,
     containerWidth,
@@ -6,7 +26,7 @@ function updateSliderArrowsStatus(
   ) {
     if (
       $(cardsContainer).scrollLeft() + containerWidth <
-      cardCount * cardWidth + 15
+      cardCount * cardWidth + 20
     ) {
       $("#slide-right-container").addClass("active");
     } else {
@@ -17,7 +37,7 @@ function updateSliderArrowsStatus(
     } else {
       $("#slide-left-container").removeClass("active");
     }
-  }
+  };
   $(function() {
     // Scroll products' slider left/right
     let div = $("#cards-container");
@@ -25,8 +45,8 @@ function updateSliderArrowsStatus(
       .find(".cards")
       .children(".card").length;
     let speed = 1000;
-    let containerWidth = $(".container").width();
-    let cardWidth = 250;
+    let containerWidth = $(".right-content").width();
+    let cardWidth = 300;
   
     updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
   
@@ -93,6 +113,34 @@ function updateSliderArrowsStatus(
       }
     });
   });
+
+ 
+    $(".default_option").click(function(){
+      $(this).parent().toggleClass("active");
+    })
+
+    $(".select_ul li").click(function(){
+      var currentele = $(this).html();
+      $(".default_option li").html(currentele);
+      $(this).parents(".select_wrap").removeClass("active");
+    });
+  
+  
+
+  
+  
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("myNav").style.cssText = "background: rgba(0,0,0,0.2); top:0px;"  ;
+    } else {=
+      document.getElementById("myNav").style.background = "transparent";
+    }
+  };
+  
   
 
   AOS.init();
+
+  

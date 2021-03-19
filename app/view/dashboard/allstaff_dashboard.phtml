@@ -1,10 +1,14 @@
 <div class="wrapper">
     <div class="row">
         <div class="allstaff-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">All Staff </h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','All Staff',getlangcookie()); 
+?>   </h1>
         <form action="" data-aos="fade-left" data-aos-duration="1500">
             <a href="?page=addnewstaff_dashboard">
-               <input type="button" value="Add New Staff">
+               <input type="button" value="<?php 
+echo getlang('','Add New Staff',getlangcookie()); 
+?>  ">
             </a> 
         </form>
     </div>
@@ -12,12 +16,22 @@
         <form action="">
             <table>
                 <tr>
-                    <th>Serial No.</th>
+                    <th><?php 
+echo getlang('','Serial No.',getlangcookie()); 
+?>  </th>
                   
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Role</th>
-                    <th>Options</th>
+                    <th><?php 
+echo getlang('','Email',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Phone',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Role',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Options',getlangcookie()); 
+?>  </th>
                 </tr>
 
                 <?php 
@@ -37,7 +51,7 @@
                         <a href="?page=addnewstaff_dashboard&name=<?= $user_data[0]['first_name'] ?>&email=<?= $user_data[0]['email_id'] ?>&phone=<?= $user_data[0]['contact_no'] ?>&type=<?= $user_type[0]['title'] ?>">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                         </a>
-                        <a href="#">
+                        <a href="../app/xhr/delete.php?action=allstaff&allstaff_id=<?= $value['user'] ?>">
                             <i class="fa fa-trash" aria-hidden="true"></i> Remove
                         </a>
                     </td>

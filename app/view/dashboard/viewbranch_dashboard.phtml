@@ -7,20 +7,39 @@
                   <table>
             	      <tr>
                              
-                              <th>Branch Name</th>
-                              <th>Branch Url</th>
-                              <th>Contact No</th>
-                              <th>Email</th>
-                              <th>Address</th>
-                              <th>Status</th>
-                              <th>Action </th>
+                              <th><?php 
+echo getlang('','Branch Name',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Branch Url',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Contact No',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Email',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Address',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Status',getlangcookie()); 
+?>    </th>
+                              <th><?php 
+echo getlang('','Action',getlangcookie()); 
+?>     </th>
                   	</tr>
                         <?php
                         $admin = NULL;
                         foreach ($branch as $key => $value) {
 
                               $url = getthemeurl($value['branch_id']);
-                              $url = '?domain=' . $url[0]['domain_url'];
+                              if(empty($url[0]['domain_url'])){
+                                    $newurl = null;
+                              }else{
+                                     $newurl = $url[0]['domain_url'];
+                              }
+                              $url = '?domain=' . $newurl;
                               $status = $value['status'];
                               if($status == 0){
                                     $approval = 'NOT APPROVED';
@@ -33,7 +52,7 @@
                                     }
                                     $approval = 'APPROVED';
                               }
-                              echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$url.'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$approval .'</td>'.'<td> <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>'. $action . ' </td></tr>';
+                              echo '<tr>'.'<td>'.$value['name'].'</td>'.'<td>'.$url.'</td>'.'<td>'.$value['contact_no'].'</td>'.'<td>'.$value['email_id'].'</td>'.'<td>'.$value['address'].$value['address_2'].'</td>'.'<td>'.$approval .'</td>'.'<td> <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a><a href="../app/xhr/delete.php?action=vendor&vendor_id='.$value['vendor_id'].'"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>'. $action . ' </td></tr>';
                         }
                         ?>
                   </table>

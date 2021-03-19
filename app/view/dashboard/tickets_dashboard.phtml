@@ -1,38 +1,143 @@
 <div class="wrapper">
     <div class="row">
         <div class="ticket-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">Ticket (Support Desk)</h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Ticket (Support Desk)',getlangcookie()); 
+?>  </h1>
+        <div class="ticket-view-table">
+            <a href="?page=tickettable_dashboard"><?php 
+echo getlang('','View Table',getlangcookie()); 
+?>   <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
     </div>
-    <div class="ticket-main" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
-            <table>
-                <tr>
-                    <th>Ticket ID</th>
-                    <th>Sending Code</th>
-                    <th>Subject</th>
-                    <th>User</th>
-                    <th>Status</th>
-                    <th>Last Reply</th>
-                    <th>Options</th>
-                </tr>
-                <tr>
-                    <td>1234</td>
-                    <td>01/01/2021</td>
-                    <td>Delivery</td>
-                    <td>Muzzamil</td>
-                    <td>Pending</td>
-                    <td>hi....</td>
-                    <td class="option">
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </form>
+    <form class="ticket-content" action='<?= $controller; ?>' id="ticketForm">
+        <div class="ticket-content">
+            <div class="tk-content">
+                <label><?php 
+echo getlang('','Send Ticket to',getlangcookie()); 
+?>  </label>
+<div class="select-branch-vendor">
+    <div class="select-heading">
+        <label>Select Class</label>
+    </div>
+    <div class="select-vendor">
+        <label>
+            <?php 
+            echo getlang('','Brand',getlangcookie()); 
+            ?> <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" id="vendorCheck" name="vendor"/>
+    </div>
+    <div class="select-branch" >
+        <label>
+            <?php 
+            echo getlang('','Vendor',getlangcookie()); 
+            ?> <i class="fa fa-connectdevelop" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" id="branchCheck" name="Branch"/>
     </div>
 </div>
+<div class="select-options">
+<div class="priority-section">
+    <div class="select-priority-heading">
+        <label>
+            Select Priority
+        </label>
+    </div>
+
+    <select class="priority"  name="priority" required>    
+    <option value="1" class="low">Low <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+    <option value="2" class="medium">Medium <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+    <option value="3" class="high">High <i class="fa fa-info-circle" aria-hidden="true"></i></option>
+</select>
+
 </div>
+<div class="brand-section"  id="vendorDiv" style="display:none;">
+    <div class="brand-heading">
+        <label>
+            Select Brand
+        </label>
+    </div>
+    <select name="emailbrand" required>
+        <option value="1">Select Brand</option>                    
+        <?php
+        foreach ($vendors as $key => $value) {
+            $email = getuserinfo($value['user_id'],'');
+            ?>
+            <option value="<?= $email[0]['email_id']?>"><?= $value['name'];?></option>
+            <?php
+        }
+
+
+        ?>
+                        </select>
+</div>
+<div class="vendor-section" id="branchDiv" style="display:none;">
+    <div class="vendor-heading">
+        <label>
+            Select Vendor
+        </label> 
+    </div>
+    <select name="emailvendor" required>
+        <option value="1">Select Vendor</option>
+        <?php
+        foreach ($branch as $key => $value) {
+            $email = getuserinfo($value['user_id'],'');
+            ?>
+            <option value="<?= $email[0]['email_id'];?>"><?= $value['name'];?></option>
+        <?php
+        }
+        ?>
+    </select>
+</div>
+</div>
+            </div>
+        </div>
+        <div class="ticket-content">
+            <div class="tk-conetnt">
+                <div class="ticket-div">
+                    <label><?php 
+echo getlang('','Ticket Title',getlangcookie()); 
+?>  </label>
+                    <input type="text" name="Title" required>
+                </div>
+                <div class="ticket-div">
+                    <label><?php 
+echo getlang('','Ticket Discribtion',getlangcookie()); 
+?>  </label>
+                    <input type="text" name="description" required>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-content">
+            <div class="tk-btn">
+                <input type="button" value="<?php 
+echo getlang('','Send',getlangcookie()); 
+?>"  onClick="submitticketForm()">
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</div>
+
+<script>
+    function submitticketForm(form){
+    
+    url = $('#ticketForm').attr("action");
+    formData = $('#ticketForm').serializeArray();
+
+    $.post(url, formData).done(function (data) {
+    if(data == 1){
+        alert('success');
+    }else{
+        alert('error');
+    }
+});
+};
+
+
+
+</script>
+

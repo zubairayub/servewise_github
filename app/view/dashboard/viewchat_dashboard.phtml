@@ -1,33 +1,76 @@
 <div class="wrapper">
     <div class="row">
         <div class="chat-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">Conversation Between (Admin & User)</h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500">Conversation</h1>
     </div>
     <div class="chat-dashboard-main" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
-            <div class="conver-upper-main">
-                <div class="conver-upper-main-right">
-                    <img src="" alt="no-img">
-                </div>
-                <div class="conver-upper-main-left">
-                    <div class="conver-upper-main-name">
-                        Admin
-                    </div>
-                    <div class="conver-upper-main-date">
-                        01/01/2020 03:00 PM
-                    </div>
-                    <div class="conver-upper-main-name">
-                        URL: www.demo.com
-                    </div>
-                </div>
+    <div id="wrapper">
+
+          
+
+            <div class="chat-content">
+            <div id="menuChat">
+                <p class="welcome">Welcome <br></p>
+
+               
             </div>
-            <div class="conver-content-main">
-                <textarea class="tinymce"></textarea>
+ 
+            <div id="chatbox">
+            Coversations
             </div>
-            <div class="conver-content-btn">
-                <input type="button" value="Send">
             </div>
-        </form>
+            <form class="chat-inner-btn" name="message" action="">
+                <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+                <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
     </div>
 </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {
+                $("#submitmsg").click(function () {
+                    var clientmsg = $("#usermsg").val();
+                    $.post("../app/lib/chat.php", { text: clientmsg , user_id: <?php echo $_GET['user_id'] ?> });
+                    $("#usermsg").val("");
+                    return false;
+                });
+ 
+                function loadLog() {
+                    var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
+                    var postForm = { //Fetch form data
+                       
+            'user_id'     :  '<?php echo $_GET['user_id'] ;?>',
+            'branch_id'     :  '<?php echo $_SESSION['branch_id']  ?>' //Store name fields value
+        };
+                    
+                    $.ajax({
+                        type : 'POST',
+                        url: "../app/lib/getchat.php",
+                        data : postForm,
+                        cache: false,
+                        success: function (html) {
+                           
+                            $("#chatbox").html(html); //Insert chat log into the #chatbox div
+ 
+                            //Auto-scroll           
+                            var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height after the request
+                            if(newscrollHeight > oldscrollHeight){
+                                $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                            }   
+                        }
+                    });
+                }
+ 
+                setInterval (loadLog, 1500);
+ 
+                $("#exit").click(function () {
+                    var exit = confirm("Are you sure you want to end the session?");
+                    if (exit == true) {
+                    window.location = "index.php?logout=true";
+                    }
+                });
+            });
+        </script>

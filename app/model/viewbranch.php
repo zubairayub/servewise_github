@@ -23,10 +23,12 @@ if($owner_type == NULL){
 
 	if($owner_type == NULL){
 	$vendor_id	 = getvendors('',$logInId,'');
+	$u_id = $logInId;
 	}else{
 	$vendor_id	 = getvendors('',$owner_id,'');
+	$u_id = $owner_id;
 	}
-	$branch = getbranches($vendor_id[0]['vendor_id']);
+	$branch = getbranches($u_id,'FALSE');
 
 	$owner = TRUE;
 	

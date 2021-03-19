@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="ticket-dashboard-main">
+            <h1 data-aos="fade-right"data-aos-duration="1500">Ticket Table</h1>
+        </div>
+        <div class="ticket-table">
+            <table style="width:100%">
+                <tr>
+                    <th>Ticket Title <i class="fa fa-i-cursor" aria-hidden="true"></i></th>
+                    <th>Ticket Form <i class="fa fa-reply-all" aria-hidden="true"></i></th>
+                    <th>Ticket Priority <i class="fa fa-level-up" aria-hidden="true"></i></th>
+                    <th>Options <i class="fa fa-cogs" aria-hidden="true"></i></th>
+                </tr>
+
+                <?php
+                foreach ($data_tickets as $key => $value) {
+
+                    $from_user_data =  getuserinfo($value['from_user'],'') ; 
+                    $toemail = $from_user_data[0]['email_id'];
+                    if($value['priority'] == 1){
+                        $priority = 'Low';
+                    }elseif ($value['priority'] == 2) {
+                        $priority = 'Medium';
+                    }else{
+                        $value['priority'] == 'High';
+                    }
+                  ?>
+
+                <tr>
+                    <td><?= $value['title'] ; ?></td>
+                    <td><?=  $toemail ; ?></td>
+                    <td><?= $priority ; ?></td>
+                    <td><a href="?page=ticketchat_dashboard&t_id=<?= $value['id']?>&to_email=<?= $toemail ?>">View <i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                </tr>
+
+
+                  <?php
+                }
+
+                ?>
+            </table>
+        </div>
+
+
+    </div>
+</div>

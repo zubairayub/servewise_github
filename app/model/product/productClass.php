@@ -10,10 +10,26 @@
 				$this->db=new databaseManager();
 			}
 			
-			function addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid)
+			function addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price,$min_quantity_alert,$tax_percantage)
 {
-					$this->query="insert into product(name,description,quantity,price,code,category_id,sc_id,ssc_id,vb_id) values(?,?,?,?,?,?,?,?,?)";
-				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid),"create");
+					$this->query="insert into product(name,description,quantity,price,code,category_id,sc_id,ssc_id,vb_id,weight,is_featured,publish,purchase_price,quantity_purchase,min_quantity_alert,tax_percantage) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price,$quantity,$min_quantity_alert,$tax_percantage),"create");
+					if($result){
+						return $result;
+						}    
+				    else{
+						return false;
+						}
+				}
+
+
+
+
+							function updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id,$min_quantity_alert,$tax_percantage)
+{
+	
+					$this->query="UPDATE  `product` SET name=?,description=?,quantity=?,price=?,category_id=?,sc_id=?,ssc_id=?,weight=?,is_featured=?,publish=?,purchase_price=?,purchase_price=?,quantity_purchase=?,min_quantity_alert = ? , tax_percantage = ? where product_id = $product_id ";
+				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id,$quantity,$min_quantity_alert,$tax_percantage),"update");
 					if($result){
 						return $result;
 						}    
@@ -45,9 +61,9 @@
 			}
 		//getting categories
         
-        function getallcategories($vbid){
-				$this->query="select * from category where vb_id = ? ";
-				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
+        function getallcategories(){
+				$this->query="select * from category  ";
+				$result=$this->db->executeQuery($this->query,array(),"cread");
 				if($result){
 					return $result;
 					}    

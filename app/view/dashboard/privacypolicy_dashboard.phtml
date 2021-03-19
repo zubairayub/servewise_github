@@ -6,17 +6,23 @@
 <div class="wrapper">
     <div class="row">
         <div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Privacy Policy</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Privacy Policy',getlangcookie()); 
+?></h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form"> 
                 
                 <div class="bluk-sms-form3">
-                    <label>Write Your Privacy Policy</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="prvpy"><?php echo $privacy_policy['value'];?></textarea>
+                    <label><?php 
+echo getlang('','Write Your Privacy Policy',getlangcookie()); 
+?></label>
+                    <textarea class="tinymce" id="myTextAreaSec" name="prvpy" required><?php echo $privacy_policy['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="Update" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>" onclick="submitForm()">
                 </div>
             </form>
         </div>

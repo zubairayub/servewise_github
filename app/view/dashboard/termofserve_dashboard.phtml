@@ -5,17 +5,24 @@
 <div class="wrapper">
     <div class="row">
         <div class="bluk-sms-dashboard">
-            <h1 data-aos="fade-right"data-aos-duration="1500">Terms Of Service</h1>
+            <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Terms Of Service',getlangcookie()); 
+?>
+     </h1>
         </div>
         <div class="bluk-sms-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="<?= $controller; ?>" id="form"> 
                 
                 <div class="bluk-sms-form3">
-                    <label>Write Your Terms of Service</label>
-                    <textarea class="tinymce" id="myTextAreaSec" name="tos"><?php echo $terms_of_serv['value'];?></textarea>
+                    <label><?php 
+echo getlang('','Write Your Terms of Service',getlangcookie()); 
+?></label>
+                    <textarea class="tinymce" id="myTextAreaSec" name="tos" required><?php echo $terms_of_serv['value'];?></textarea>
                 </div>
                 <div class="bluk-sms-btn">
-                    <input type="button" value="Update" onclick="submitForm()">
+                    <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>" onclick="submitForm()">
                 </div>
             </form>
         </div>

@@ -12,8 +12,11 @@ $result = getnotifications($dbcalss,$user_id,'');
 
 ?>
 <body class="overlay-scrollbar light dashboard-body">
-
-<div class="navbar">
+<?php
+if(!empty($type)){
+$type =  $type;
+?>
+<div class="navbar" id="myNav">
 		<!-- nav left -->
 		<ul class="navbar-nav">
 			<li class="nav-item">
@@ -21,23 +24,58 @@ $result = getnotifications($dbcalss,$user_id,'');
 					<i class="fa fa-angle-double-left" id="angle" aria-hidden="true" ></i>
 				</a>
 			</li>
-			<li class="nav-item">
-			<a href="?page=home">	<img src="<?php echo $logo;?>" alt="Admin logo" class="logo logo-light"></a>
-			<a href="?page=home">   <i class="fa fa-globe" aria-hidden="true"></i> </a>
-			</li>
+		
+
+<?php
+if($type == 'Branch'){
+	$urll = getthemeurl($branch_id);
+	
+?>
+
+	<li class="nav-item">
+		<a href="?domain=<?= $urll[0]['domain_url'] ?> ">   <i class="fa fa-globe" aria-hidden="true"></i> View Your Site</a>
+		</li>
+<?php
+}
+
+?>
+			
 		</ul>
 		<!-- end nav left -->
 		<!-- form -->
 		<div class="navbar-search">
-		<h4>  <?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $userstatus; }?></h4>
+
 		</div>
 		<!-- end form -->
 		<!-- nav right -->
 		<ul class="navbar-nav nav-right">
 			
+			<div class="select_wrap dashboard-lang">
+				<?= getdefaultlanguage();?>
+				<ul class="select_ul">
+					<a href="../app/xhr/language_cookie.php?lng=eng"><li>
+						<div class="option eng">
+							<div class="icon"></div>
+							<p>EN</p>
+						</div>
+					</li></a>
+				<a href="../app/xhr/language_cookie.php?lng=pt">	<li>
+						<div class="option pt">
+							<div class="icon"></div>
+							<p>PT</p>
+						</div>  
+					</li></a>
+				</ul>
+			</div>
+			
 			<li class="nav-item dropdown">
-				<a class="not-link">
-          <i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
+				<!-- <a class="not-link" onclick="playAudio();"> -->
+					
+					<a class="not-link" >
+					
+
+					<audio src="../app/view/img/slow-spring-board-longer-tail-571.mp3" id="audio" controls style="display:none"></audio>
+          			<i class="fa fa-bell dropdown-toggle" aria-hidden="true" data-toggle="notification-menu"></i>
 					<span class="navbar-badge"><div id="result"></div> </span>
 				</a>
 				<ul id="notification-menu" class="dropdown-menu notification-menu">
@@ -51,21 +89,222 @@ $result = getnotifications($dbcalss,$user_id,'');
 
 						if(!empty($result)){
 							foreach ($result as $key => $value) {
+
+								$type =  $value['type'] ;
+								$to_user_data =  getuserinfo($value['to_user_id']);
+								$from_user_data = getuserinfo($value['from_user_id']);
+
+								if(!empty($to_user_data)){
+
+									$to_username = $to_user_data[0]['first_name'];
+								}
+
+								if(!empty($from_user_data)){
+									$from_username = $from_user_data[0]['first_name'];
+									$from_email = $from_user_data[0]['email_id'];
+									$from_id = $from_user_data[0]['user_id'];
+								}
+
+								if($type == 'Puchased'){
+
+						$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+								</div>
+								<span>
+									New Order from <b>' .$from_username. '</b> Just Arrived 
+									
+								</span>
+							</a>';
+
+
+					
+
+
+								}elseif($type == 'User_register'){
+
+
+									$type = '<a href="?page=customerlist_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-registered" aria-hidden="true"></i>
+								</div>
+								<span>
+									New user <b> ('.$from_email.') </b> register
+									
+								</span>
+							</a>';
+									
+
+								}elseif($type == 'vendor_singup'){
+
+$vendor_data = getvendors('',$value['from_user_id'],'TRUE');
+if(!empty($vendor_data)){
+
+	$vendor_name = $vendor_data[0]['name'];
+
+}else{
+	$vendor_name = null;
+}
+
+	$type = '<a href="?page=viewvendor_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-sign-in" aria-hidden="true"></i>
+								</div>
+								<span>
+								New vendor <b>' .$vendor_name . '</b> signup now
+									
+								</span>
+							</a>';
+
+								
+
+								}elseif($type == 'Shop Approved'){
+
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+	$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-home" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! <b>'. $branch_data[0]['name'].'</b> has been approved
+									
+								</span>
+							</a>';
+								
+
+								}
+								elseif($type == 'Shop_Approved'){
+
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+	$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-home" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! <b>'. $branch_data[0]['name'].'</b> has been approved
+									
+								</span>
+							</a>';
+								
+
+								}
+								elseif($type == 'Shop Delisted'){
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+
+										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-retweet" aria-hidden="true"></i>
+								</div>
+								<span>
+								oooops! <b>'. $branch_data[0]['name'].'</b> has been Delisted
+									
+								</span>
+							</a>';
+
+
+
+								}
+								elseif($type == 'branch_singup'){
+
+
+
+									$branch_data =  getbranches($value['from_user_id'],'TRUE');
+
+									if(!empty($branch_data)){
+
+	$branch_name = $branch_data[0]['name'];
+
+}else{
+	$branch_name = null;
+}
+										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-briefcase" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! Your got new branch <b>'. $branch_name.'</b>
+									
+								</span>
+							</a>';
+
+
+
+								}
+								elseif($type == 'product_added'){
+
+										$type = '<a href="?page=viewproduct_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-cart-plus" aria-hidden="true"></i>
+								</div>
+								<span>
+								New product added by <b>' . $from_username . '</b>
+									
+								</span>
+							</a>';
+
+								}
+								elseif($type == 'new_order'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+								</div>
+								<span>
+									Congratulations! there is new order from '. $from_username. '
+									
+								</span>
+							</a>';
+
+								}
+								elseif($type == 'Order_initiate'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-exchange" aria-hidden="true"></i>
+								</div>
+								<span>
+								Order Status change by '. $from_username .'
+									
+								</span>
+							</a>';
+								}
+									elseif($type == 'product_purchase'){
+
+										$type = '<a href="?page=order_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</div>
+								<span>
+								New order just Arrived from ' . $from_username . '
+									
+								</span>
+							</a>';
+								}
+								elseif($type == 'message_recieved'){
+										$link = $value['link'];
+										$type = '<a href="?page=' .$link .' " class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</div>
+								<span>
+								New Message Recieved ' . $from_username . '
+									
+								</span>
+							</a>';
+								}
+
+
+
+								
+
+
 								?>
 
 				<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fa fa-gift" aria-hidden="true"></i>
-								</div>
-								<span>
-									<?php echo $value['type'] ; ?>
-									<br>
-									<!-- <span>
-										23/10/2020
-									</span> -->
-								</span>
-							</a>
+						<?= $type;?>	
 						</li>
 								<?php
 							}
@@ -95,7 +334,7 @@ $result = getnotifications($dbcalss,$user_id,'');
 					</div>
 					<div class="dropdown-menu-footer">
 						<span>
-							View all notifications
+						<a href="?page=allnoti_dashboard">View all notifications</a>
 						</span>
 					</div>
 				</ul>
@@ -104,11 +343,11 @@ $result = getnotifications($dbcalss,$user_id,'');
 				<div class="avt dropdown">
 
 					<img src="<?php echo $image;?>dashboard1.png" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
-					<ul id="user-menu" class="dropdown-menu">
+					<ul id="user-menu" class="dropdown-menu drop-down-menu">
 						<li  class="dropdown-menu-item">
 							<a href="?page=userprofile_dashboard" class="dropdown-menu-link">
 								<div>
-									<i class="fas fa-user-tie"></i>
+									<i class="fa fa-user-circle" aria-hidden="true"></i>
 								</div>
 								<span>Profile</span>
 							</a>
@@ -116,7 +355,7 @@ $result = getnotifications($dbcalss,$user_id,'');
 						<li  class="dropdown-menu-item">
 							<a href="?page=logout" class="dropdown-menu-link">
 								<div>
-									<i class="fas fa-sign-out-alt"></i>
+									<i class="fa fa-sign-out" aria-hidden="true"></i>
 								</div>
 								<span>Logout</span>
 							</a>
@@ -127,5 +366,25 @@ $result = getnotifications($dbcalss,$user_id,'');
 		</ul>
 		<!-- end nav right -->
   </div>
+  <?php
+}
+?>
   <div id="result"></div>  
+  <script>
+
+
+
+
+
+
+	window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("myNav").style.background = "rgba(0,0,0,0.4)";
+  } else {
+    document.getElementById("myNav").style.background = "transparent";
+  }
+}  
+  </script>
   </body>

@@ -8,7 +8,25 @@ if($_SESSION['status'] == 'block'){
 
 header('Location: ?page=verification_dashboard');
 
+
 }else{
+$logo_directory =  '../app/upload/logos/';
+if($userstatus == 'Branch'){
+                                $ustatus = 'Vendor';
+                            }elseif ($userstatus == 'Vendor') {
+                                $ustatus = 'Brand';
+                            }else{
+                                $ustatus = $userstatus;
+                                $vendor_id = null;
+                            }
+
+
+$vendor_data  = getvendors('',$vendor_id,'FALSE');
+if(!empty($vendor_data)){
+$vendor_id = $vendor_data[0]['user_id']; 
+}
+$logo_dashboard = getlogo('',$logo_directory,$vendor_id);
+
 
 
 ?>
@@ -16,7 +34,18 @@ header('Location: ?page=verification_dashboard');
 	<!-- sidebar -->
 	<div class="sidebar">
 		
-		<ul class="sidebar-nav">
+		<ul class="sidebar-nav" id="accordion">
+			<div class="sidebar-head-content">
+				<div class="sidebar-head-content-main-upper">
+					<a class="content-main-upper-2" href="?page=home"><img src="<?php echo $logo_dashboard;?>" alt="Admin logo" class="logo logo-light"></a>
+				</div>
+				<div class="sidebar-head-content-main-lower">
+					<div class="content-main-lower">
+						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $ustatus; }?></h4>
+					</div>
+				</div>
+			</div>
+			
 			<?php 
 			foreach ($menu as $key => $value) {
 

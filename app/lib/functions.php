@@ -8,6 +8,176 @@ function get($name, $def= '')
 	 return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $def;
 }
 
+
+
+
+
+
+
+
+function deleteorder($dbclass= null,$order_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE FROM `order_details` WHERE id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE FROM `orders` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+$varr->query="DELETE FROM `invoice` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE FROM `order_status` WHERE order_id = $order_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+return $result;
+
+
+
+}
+
+
+
+
+function deletevendor($dbclass= null,$vendor_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE FROM `vendor` WHERE vendor_id = $vendor_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE  FROM `branch` WHERE vendor_id = $vendor_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+
+
+return $result;
+
+
+
+}
+
+
+
+
+function deleteallstaff($dbclass= null,$allstaff_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+	  $varr = new databaseManager();
+
+$varr->query="DELETE  FROM `user` WHERE user_id = $allstaff_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+$varr->query="DELETE  FROM `staff` WHERE user = $allstaff_id";
+$result=$varr->executeQuery($varr->query,array(),"delete");
+
+
+
+
+return $result;
+
+
+
+}
+
+
+
+
+
+
+
+// function setlangcookie($lang){
+
+	
+//     unset($_COOKIE['lang']); 
+//     setcookie('lang', null, -1, '/'); 
+//   //  return true;
+
+// 	$cookie_name = "lang";
+// $cookie_value = $lang;
+// setcookie($cookie_name, $cookie_value,0,'/'); 
+// }
+
+
+function getlangcookie() {
+ if (isset($_COOKIE["lang"])){
+   return $_COOKIE["lang"];
+}
+};
+
+
+
+
+function getdefaultlanguage(){
+
+	 if (isset($_COOKIE["lang"])){
+ 
+ $df =  $_COOKIE["lang"];
+}else{
+	cookies();
+}
+
+$varr = "<ul class='default_option'>
+					<li>
+						<div class='option  $df '>
+						<div class='icon'></div>
+							<p> ". strtoupper($df) ." </p>
+						</div>
+					</li>
+				</ul>"  ;
+
+
+return $varr;
+
+}
+
+
+function cookies() {
+ if (!isset($_COOKIE["lang"]) && empty($_COOKIE["lang"])){
+ setcookie('lang','eng', time()+(60*60*24*31), '/'); 
+  
+}};
+
+
+function getlang($dbclass= '',$word= '', $lang= '')
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+$varr->query="SELECT * FROM `languages`  where value = '$word'";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result[0][$lang];
+
+
+
+}
+
 function getthemebybranchid($id)
 {
 	if(!empty($dbclass)){
@@ -43,6 +213,278 @@ return $result;
 
 }
 
+function sendchat($dbcalss,$user_id,$branch_id,$text_message,$status = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($type)){
+$varr->query="INSERT INTO `users_chat`(`user_id`, `branch_id`, `text`,`status`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($user_id,$branch_id,$text_message,$status),"create");
+
+if(($status == 0) || empty($status)){
+
+	$branch_owner_data =	getbranchbybranchid($dbcalss,$branch_id);
+$owner_id = $branch_owner_data[0]['user_id'];
+$link = 'viewchat_dashboard&user_id=' . $user_id ;
+insert_notifications($dbcalss,$user_id,$owner_id,'message_recieved',$link);	
+}
+
+
+return $result;
+}
+
+
+
+}
+
+function getpaymentmethods($dbclass=null,$branch_id,$type=null){
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+if(empty($type)){
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $branch_id   ";	
+
+}else{
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $branch_id AND method = '$type'   ";	
+
+}
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+
+return $result;
+
+
+
+}
+
+function insertpaymentmethod($dbcalss,$user_id,$key,$secret,$title,$status){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+$varr->query="SELECT * FROM `vendor_payment_method` WHERE branch_id = $user_id AND method = '$title'  ";	
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+if(empty($result)){
+$varr->query="INSERT INTO `vendor_payment_method`(`branch_id`, `pay_key`, `secret`, `method`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($user_id,$key,$secret,$title),"create");
+
+}else{
+ if($status == 1){
+ 	$updatestatus = 0;
+$varr->query="UPDATE  `vendor_payment_method` SET  status = ? where  branch_id = $user_id ";
+	$result=$varr->executeQuery($varr->query,array($updatestatus),"update");
+ }
+	$varr->query="UPDATE  `vendor_payment_method` SET pay_key=? , secret = ? , status = ? where method = '$title' AND branch_id = $user_id ";
+	$result=$varr->executeQuery($varr->query,array($key,$secret,$status),"update");
+
+}
+
+
+
+return $result;
+}
+
+
+
+
+
+
+
+
+
+function sendtickets($dbcalss=null,$sender_id,$reciever_id,$branch_id=null,$vendor_id=null,$message,$title=null,$ticket_id = null,$sender_email= null  ,$reciever_email = null,$priority = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($ticket_id)){
+$varr->query="INSERT INTO `tickets`(`from_user`, `to_user`, `vendor_id`, `branch_id`,`title`,`priority`) VALUES (?,?,?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($sender_id,$reciever_id,$vendor_id,$branch_id,$title,$priority),"create");
+
+if(!empty($result)){
+
+$ticket_id = $result[0]['id'];
+$title_ticket = 'Ticket Generated ' . $title ;
+$message_body = 'You recieved new ticket';
+ sendEmail($reciever_email,$title_ticket,$sender_email,$message_body,$title_ticket);
+
+
+}
+
+}
+
+
+if(!empty($message)){
+
+$varr->query="INSERT INTO `tickets_conversation`(`ticket_id`, `reciever_id`, `sender_id`, `message`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($ticket_id,$reciever_id,$sender_id,$message),"create");
+
+
+}
+
+
+
+
+return $result;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function getchat($dbcalss,$user_id = NULL , $branch_id = NULL){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+	 if(empty($branch_id)){
+$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' ";
+
+}elseif(empty($user_id)){
+$varr->query="SELECT * FROM `users_chat`   where  branch_id = '$branch_id' ";	
+}else{
+	$varr->query="SELECT * FROM `users_chat`   where `user_id` = '$user_id' and branch_id = '$branch_id' ";	
+}
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
+
+
+
+
+
+function getticketsconversation($db_class = null,$t_id){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+
+
+$varr->query="SELECT * FROM `tickets_conversation`  where ticket_id = $t_id ";
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+
+}
+
+
+
+
+
+
+
+function gettickets($dbcalss=null,$branch_id = NULL , $vendor_id = NULL,$user_id= null,$status = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+if($status == 'Admin'){
+
+$varr->query="SELECT * FROM `tickets` ";
+
+}elseif($status == 'Vendor'){
+
+$varr->query="SELECT * FROM `tickets` where branch_id = $branch_id ";
+
+}
+elseif($status == 'Brand'){
+
+$varr->query="SELECT * FROM `tickets` where vendor_id = $vendor_id  ";
+
+
+}
+elseif($status == 'user'){
+$varr->query="SELECT * FROM `tickets` where from_user = $user_id  OR to_user = $user_id ";
+}
+
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
+
+
+
+
+
+function getuseridbychat($dbcalss,$branch_id = NULL){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+
+$varr->query="SELECT DISTINCT `user_id`  FROM `users_chat`   where  branch_id = '$branch_id'  ";	
+
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+return $result;
+
+}
 
 function getnotifications($dbclass,$userid,$type = NULL){
 
@@ -176,6 +618,8 @@ endforeach;
 
 $branch_data  = getbranchbybranchid($dbclass,$branch_id);
 
+echo $order_details_id;
+
 $vendor_data = getvendors($dbclass,$branch_data[0]['vendor_id'],'FALSE');
 if(!empty($vendor_data) && !empty($branch_data)){
 
@@ -191,13 +635,13 @@ $from_email_vendor = $vendor_data[0]['email_id'];
 $from_email_branch = $branch_data[0]['email_id'];
 $from_email_admin  = 'order@servewise.shop';
 $purchaser_email   =  $customer_email;
-$message_body_vendor = 'Hello! ' . $vendor_data[0]['name'] . 'Congratulations - Your Branch'. $branch_data[0]['name'] . 'Got New Order';
-$message_body_admin = 'Hello!  Admin Congratulations - Your Vendor'. $vendor_data[0]['name'] . 'Got New Order from his branch' . $branch_data[0]['name'] ;
-$message_body_branch = 'Hello! ' . $branch_data[0]['name'] . 'Congratulations - Got New Order from  '. $customer_name ;
-$message_body_user = 'Hello! ' . $customer_name. 'Thanks - For Your Order';
-$subject_admin = $vendor_data[0]['name'].' Got New Order!';
-$subject_vendor = $branch_data[0]['name'].' Got New Order!';
-$subject_branch = $customer_name.' Order From Your Store';
+$message_body_vendor = '<b>Hello! ' . $vendor_data[0]['name'] .'</b> <br>'. '<b> Congratulations - Your Branch'. $branch_data[0]['name'] . 'Got New Order </b>';
+$message_body_admin = '<b>Hello!  Admin </b><br> <b> Congratulations - Your Vendor'. $vendor_data[0]['name'] . 'Got New Order from his branch' . $branch_data[0]['name'] .'</b>' ;
+$message_body_branch = '<b> Hello! ' . $branch_data[0]['name'] .'</b> <br>'. '<b> Congratulations - Got New Order from  '. $customer_name .'</b>';
+$message_body_user = '<b>Hello! ' . $customer_name. '</b><br> <b> Thank you for your purchase. We have received your online store order </b>';
+$subject_admin = '<b>'.$vendor_data[0]['name'].' Got New Order! </b>';
+$subject_vendor = '<b>'.$branch_data[0]['name'].' Got New Order! </b>';
+$subject_branch = '<b>'. $customer_name.' Order From Your Store </b>';
 $subject_user = 'Order Initiated';
 
 			 sendEmail('admin@servewise.shop','ServeWise',$from_email_admin,$message_body_admin,$subject_admin);
@@ -225,7 +669,7 @@ $subject_user = 'Order Initiated';
 // 	$varr->query="INSERT INTO `order_details`(`id`, `user_id`, `branch_id`, `branch_owner_id`, `shipping_type`, `payment_method`) VALUES (?,?,?,?,?,?)";
 // 	$result=$varr->executeQuery($varr->query,array(NULL,$userid,$to_user_id,$type,$url,'0'),"create");
 
-// return $result;
+ 
 
 
 
@@ -561,6 +1005,28 @@ if(empty($result)){
 
 }
 
+function updatetheme($branch_id,$theme_id){
+
+
+		$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+
+
+
+
+				$varr->query="UPDATE  `vb_themesetting` SET theme_id=? where vb_id = $branch_id ";
+					$result=$varr->executeQuery($varr->query,array($theme_id),"update");
+
+
+
+
+
+
+}
 
 
 function gettheme($url){
@@ -682,7 +1148,7 @@ if(!empty($dbclass)){
 	if(empty($userid)){
 		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 16 ";
 	}else{
-		$varr->query = "SELECT * FROM `config` where name='logo' AND userid = '28' ";
+		$varr->query = "SELECT * FROM `config` where name='logo' AND userid = $userid ";
 	}
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 	
@@ -704,7 +1170,7 @@ if(!empty($dbclass)){
 
 
 
-function getlogo($dbclass = null,$directory = null){
+function getlogo($dbclass = null,$directory = null,$vendor_id = null){
 
 if(!empty($dbclass)){
 		
@@ -715,8 +1181,11 @@ if(!empty($dbclass)){
 	$db;
 	$varr = new databaseManager();
 
-	
+	if(empty($vendor_id)){
 		$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= 6 ";
+	}else{
+$varr->query = "SELECT * FROM `config` where name='logo'  AND userid= $vendor_id ";
+	}
 	
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 
@@ -823,6 +1292,43 @@ function getsubsubcategorybyid($ssc_id = NULL){
 	$result = $varr->executeQuery($varr->query,array(),"sread");
 	return $result;
 }
+
+
+function getcustomerlist($vb_id =  NULL, $type = null){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if($type == 'Branch'){
+						$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` where branch_id = '$vb_id' ";
+   
+				   }elseif($type == 'Vendor'){
+						$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` where vendor_id = '$vb_id' ";
+					
+						
+				   }elseif($type == 'Admin'){
+
+					$varr->query="SELECT DISTINCT user_id,branch_id,Vendor_id FROM `order_details` ";
+
+				   }else{
+
+				   	return 0;
+				   }	
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+					
+				return  $result;
+	
+	}
+
+
 function getcustomerinfo($user_id =  NULL){
 
 	if(!empty($dbclass)){
@@ -879,6 +1385,36 @@ function getuserinfo($user_id =  NULL,$dbclass = NULL){
 				return  $result;
 	
 	}
+
+function getuserinfobyemail($user_id =  NULL,$dbclass = NULL){
+
+	if(!empty($dbclass)){
+	
+			include_once($dbclass);
+	
+	}
+					 $query;
+					 $db;	
+			
+			
+					$varr = new databaseManager();
+	
+					if(empty($user_id)){
+						 $varr->query="SELECT * FROM `user` ";
+	
+					}else{
+						$varr->query="SELECT * FROM `user`  where email_id = '$user_id' ";
+	
+					}
+						
+				
+			
+			
+				$result=$varr->executeQuery($varr->query,array(),"sread");
+				return  $result;
+	
+	}
+
 	function getproductinfo($pid =  NULL){
 
 		if(!empty($dbclass)){
@@ -987,6 +1523,48 @@ if(!empty($dbclass)){
 
 
 }
+
+
+function getorderamount($dbclass = null, $user_id = null , $type){
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+
+ 				$query;
+		 		$db;	
+				
+		
+				$varr = new databaseManager();
+
+				if($type == 'Admin'){
+  						$varr->query="SELECT sum(amount) as totalamount FROM `invoice`     ";	
+
+
+
+
+				}elseif($type == 'Vendor'){
+					   $varr->query="SELECT sum(invoice.amount) as totalamount FROM `invoice` INNER JOIN order_details where  order_details.Vendor_id = '$user_id'  AND  order_details.id = invoice.order_id";	
+
+				}elseif($type == 'Branch'){
+					  	
+
+					  	 $varr->query="SELECT sum(invoice.amount) as totalamount FROM `invoice` INNER JOIN order_details where  order_details.branch_owner_id = '$user_id'  AND  order_details.id = invoice.order_id";	
+
+				}
+	          
+			    $result=$varr->executeQuery($varr->query,array(),"sread");
+			    return  $result;
+
+
+
+
+}
+
+
+
+
 function getorderamountbyorderid($dbclass = null, $order_id){
 if(!empty($dbclass)){
 
@@ -1046,6 +1624,116 @@ if(!empty($dbclass)){
 
 
 
+function progress_dashboard_weekly($dbcalss = null,$user_id =  NULL,$type =  NULL){
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		$y_orders = 100;
+
+		
+				$varr = new databaseManager();
+
+				if(empty($user_id)){
+	                
+	                 $weekly_order = $varr->query="SELECT *FROM order_details WHERE YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+				
+				}else{
+
+					
+
+					if($type == 'Branch'){
+							
+
+							 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.branch_owner_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.branch_owner_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+
+
+
+
+
+
+
+
+					}
+					elseif($type == 'Vendor'){
+
+							
+
+
+
+								 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.Vendor_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.Vendor_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+
+
+
+
+					}elseif($type == 'User'){
+							
+
+
+								 $weekly_order = $varr->query="SELECT * FROM order_details WHERE order_details.user_id=$user_id AND YEARWEEK(datetime) = YEARWEEK(NOW())";
+
+	                 $weekly_deliverd_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '4' ";
+
+	                  $weekly_route_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '3' ";
+	                  $weekly_returned_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '5' ";
+	                   $weekly_store_pickup_order = $varr->query="SELECT * FROM `order_details` INNER JOIN order_status where order_details.user_id=$user_id AND YEARWEEK(order_details.datetime) = YEARWEEK(NOW()) and order_details.id = order_status.order_id  and status = '6' ";
+
+					}
+				
+
+				}
+					
+				
+		
+		
+				$weekly_deliverd_order =$varr->executeQuery($weekly_deliverd_order,array(),"sread");
+				$weekly_order =$varr->executeQuery($weekly_order,array(),"sread");
+
+				$weekly_route_order =$varr->executeQuery($weekly_route_order,array(),"sread");
+				$weekly_returned_order =$varr->executeQuery($weekly_returned_order,array(),"sread");
+				$weekly_store_pickup_order =$varr->executeQuery($weekly_store_pickup_order,array(),"sread");
+
+				
+				$result['weekly_deliverd_order'] = count($weekly_deliverd_order);
+				$result['weekly_order'] = count($weekly_order);
+				$result['weekly_route_order'] = count($weekly_route_order);
+				$result['weekly_returned_order'] = count($weekly_returned_order);
+				$result['weekly_store_pickup_order'] = count($weekly_store_pickup_order);
+
+
+
+
+				
+
+
+			return  $result;
+
+}
+
+
 
 
 function getorders($user_id =  NULL,$type =  NULL){
@@ -1062,22 +1750,22 @@ if(!empty($dbclass)){
 				$varr = new databaseManager();
 
 				if(empty($user_id)){
-	                 $varr->query="SELECT * FROM `order_details` ";
+	                 $varr->query="SELECT * FROM `order_details` ORDER BY id DESC ";
 
 				}else{
 
 					
 
 					if($type == 'Branch'){
-							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ";
+							$varr->query="SELECT * FROM `order_details`  where branch_owner_id=$user_id ORDER BY id DESC ";
 
 					}
 					elseif($type == 'Vendor'){
 
-							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ";
+							$varr->query="SELECT * FROM `order_details`  where Vendor_id = '$user_id' ORDER BY id DESC ";
 
 					}elseif($type == 'User'){
-							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id ";
+							$varr->query="SELECT * FROM `order_details`  where user_id=$user_id  ORDER BY id DESC";
 
 					}
 				
@@ -1172,9 +1860,7 @@ if(!empty($dbclass)){
 
 }
 
-
-
-function getproducts($vbid,$dbclass =  NULL){
+function getstock($vbid,$dbclass =  NULL,$type = null){
 
 
 
@@ -1189,8 +1875,132 @@ if(!empty($dbclass)){
 		
 				$varr = new databaseManager();
 
-				
+				if($type == 'Branch'){
 						$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+				}elseif($type == 'Vendor'){
+						$varr->query="SELECT *
+FROM branch
+INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";
+				}elseif($type == 'Admin'){
+					    $varr->query="SELECT * FROM `product` " ;
+				}
+				
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+function getoutofstockproducts($vbid,$dbclass =  NULL,$type = null){
+
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(!empty($vbid)){
+					if($type == 'Branch'){
+		$varr->query="SELECT * FROM `product` where vb_id=$vbid AND quantity < 5";
+					}else{
+		$varr->query="SELECT *
+FROM branch
+INNER JOIN product ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";
+					}
+		
+
+				}else{
+					$varr->query="SELECT * FROM `product` where quantity < 5 ";
+				}
+						
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+
+
+function getproductsamount($vbid,$dbclass =  NULL,$type = null){
+
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(!empty($vbid)){
+					if($type == 'Branch'){
+$varr->query="SELECT sum(price) as productamount FROM `product` where vb_id=$vbid ";
+ 					}else{
+
+$varr->query="SELECT sum(price) as productamount
+FROM product
+INNER JOIN branch ON branch.vendor_id= '$vbid' AND branch.branch_id = product.vb_id ";	
+
+	  
+					}
+				
+
+				}else{
+					$varr->query="SELECT sum(price) as productamount FROM `product` ";
+				}
+						
+
+				
+		
+		
+			$result=$varr->executeQuery($varr->query,array(),"sread");
+			return  $result;
+
+}
+
+function getproducts($vbid,$dbclass =  NULL,$type = null){
+
+
+
+if(!empty($dbclass)){
+
+		include_once($dbclass);
+
+}
+ 				$query;
+		 		$db;	
+		
+		
+				$varr = new databaseManager();
+
+				if(!empty($vbid)){
+					if($type == 'Vendor'){
+$varr->query="SELECT * FROM `product` INNER JOIN branch where branch.vendor_id='$vbid' AND product.vb_id = branch.branch_id  ";
+					}else{
+				$varr->query="SELECT * FROM `product` where vb_id=$vbid ";
+}
+				}else{
+					$varr->query="SELECT * FROM `product` ";
+				}
+						
 
 				
 		
@@ -1374,7 +2184,7 @@ function getbranches($user_id =  NULL, $owner = NULL)
 $varr->query="SELECT * FROM `branch` where user_id=$user_id ";
 
 			}else{
-$varr->query="SELECT * FROM `branch` where user_id=$user_id OR vendor_id=$user_id";
+$varr->query="SELECT * FROM `branch` INNER JOIN vendor  where vendor.user_id='$user_id' AND  vendor.vendor_id=branch.vendor_id";
 
 			}
 		}else{

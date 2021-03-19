@@ -26,7 +26,7 @@ $class_theme = '';
                 <div class="theme-dis"><?= $value['description'] ?></div>
                 <div class="theme-type">Website Type:<span><?= $value['type'] ?></span></div>
                 <div class="theme-btn">
-                    <input type="button" class="<?= $class_theme ?> " value="<?= $text?>">    
+                    <a href="?page=appearance_dashboard&theme_id=<?= $value['id']?>"><input type="button" class="<?= $class_theme ?> " value="<?= $text?>">  </a>  
                 </div>
             </div>
 

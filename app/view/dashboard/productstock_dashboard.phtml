@@ -2,59 +2,79 @@
     <div class="row">
         <div class="pickup-dashboard-main">
             <h1 data-aos="fade-right"data-aos-duration="1500">Product Stock</h1>
-            <form data-aos="fade-left"data-aos-duration="1500">
+            <!-- <form data-aos="fade-left"data-aos-duration="1500">
                 <input type="text">
                 <input class="s-btn" type="button" value="Search">
-            </form>
+            </form> -->
         </div>
         <div class="pickup-table-main" data-aos="zoom-in-up" data-aos-duration="600">
             <form action="">
                 <table>
                     <tr>
-                        <th>Serial.No</th>
-                        <th>Product Name</th>
-                        <th>Purchase Form</th>
-                        <th>Purchase Price</th>
-                        <th>Selling Price</th>
-                        <th>Quanitity Purchased </th>
-                        <th>Stock left</th>
+                        <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                        <th>v<?php 
+echo getlang('','Product Name',getlangcookie()); 
+?> </th>
+                   
+                        <th><?php 
+echo getlang('','Delivery Status',getlangcookie()); 
+?>  Purchase Price</th>
+                        <th><?php 
+echo getlang('','Purchased from',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Selling Price',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Quantity purchased',getlangcookie()); 
+?>  ></th>
+                        <th><?php 
+echo getlang('','Stock left',getlangcookie()); 
+?>  </th> 
+                        <th><?php 
+echo getlang('','Branch',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Vendor',getlangcookie()); 
+?>  </th>
+
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Alpha Shoes Blue</td>
-                        <td>Muzzamil</td>
-                        <td>20 $</td>
-                        <td>25 $</td>
-                        <td>80</td>
-                        <td>52</td>
+                    <?php
+                    $count = 1;
+                    foreach ($data as $key => $value) {
+                  $branch_data =      getbranchbybranchid('',$value['vb_id']) ;
+                  if(!empty($branch_data))
+                  {
+                    $branchname = $branch_data[0]['name'];
+                    $vendor_data = getvendors('',$branch_data[0]['vendor_id'],'FALSE');
+                    $vendor_name = $vendor_data[0]['name'];
+                  }else{
+                    $branchname = NULL;
+                    $vendor_name = null;
+                  }
+                        ?>
+                  
+                  
+ <tr>
+                        <td><?= $count ?></td>
+                        <td><?= $value['name'] ?></td>
+                        <td><?= $value['purchase_price'] ?></td>
+                        <td><?=  $vendor_name ?></td>
+                        <td><?= $value['price'] ?></td>
+                        <td><?= $value['quantity_purchase'] ?></td>
+                         <td><?= $value['quantity'] ?></td>
+                       <td> <?= $branchname; ?></td>
+                        <td><?=  $vendor_name;?></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Alpha long Shoes</td>
-                        <td>Muzzamil</td>
-                        <td>35 $</td>
-                        <td>40 $</td>
-                        <td>55</td>
-                        <td>35</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>HANZ Shoes</td>
-                        <td>Mike</td>
-                        <td>20 $</td>
-                        <td>30 $</td>
-                        <td>20</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>HANZ Leather Jacket</td>
-                        <td>Mike</td>
-                        <td>80 $</td>
-                        <td>100 $</td>
-                        <td>35</td>
-                        <td>20</td>
-                    </tr>
+
+                        <?php
+                      $count ++;
+                    }
+                    ?>
+                   
+                    
                 </table>
             </form>
         </div>

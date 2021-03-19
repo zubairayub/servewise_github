@@ -1,21 +1,3 @@
-function openCloseDropdown(event) {
-	if (!event.target.matches('.dropdown-toggle')) {
-		// 
-		// Close dropdown when click out of dropdown menu
-		// 
-		closeAllDropdown()
-	} else {
-		var toggle = event.target.dataset.toggle
-		var content = document.getElementById(toggle)
-		if (content.classList.contains('dropdown-expand')) {
-			closeAllDropdown()
-		} else {
-			closeAllDropdown()
-			content.classList.add('dropdown-expand')
-		}
-	}
-}
-
 
 
 const primaryColor = '#4834d4'
@@ -151,4 +133,22 @@ $(".sub-menu a").click(function () {
 	$(this).parent(".sub-menu").children("ul").slideToggle("100");
 	$(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
 });
+
+
+function animateValue(obj, start, end, duration) {
+	let startTimestamp = null;
+	const step = (timestamp) => {
+	  if (!startTimestamp) startTimestamp = timestamp;
+	  const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+	  obj.innerHTML = Math.floor(progress * (end - start) + start);
+	  if (progress < 1) {
+		window.requestAnimationFrame(step);
+	  }
+	};
+	window.requestAnimationFrame(step);
+  }
+  
+  const obj = document.getElementById("value");
+  animateValue(obj, 100, 2, 5000);
+
 

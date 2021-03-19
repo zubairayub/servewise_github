@@ -5,7 +5,8 @@ $admin = TRUE;
 $vendors = getvendors();	
 }else{
 $admin = FALSE;
-$vendors = getvendors($logInId);
+
+$vendors = getvendors('',$vendor_id,'FALSE');
 
 }
 

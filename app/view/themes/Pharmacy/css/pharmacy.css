@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300;400;500;600;700&display=swap');
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 4px;
+  }
+
+
+
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+  }
+
+
 
 *{
     margin: 0;
@@ -7,7 +33,7 @@
 }
 
 body{
-    font-family: 'Antic Slab', serif;
+    font-family: 'Hind Guntur', sans-serif;
 }
 a{
     text-decoration: none;
@@ -21,50 +47,181 @@ a{
     overflow: hidden;
 }
 
+.container-alpha{
+    max-width: 1280px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.container-alpha .aplha-head{
+    text-align: start;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    font-size: 20px;
+    padding: 3px 10px;
+    color: #2b7a8c;
+}
+
+/* header-upper */
+
+.head-upper{
+    padding: 5px 0px;
+}
+
+.head-upper .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.head-upper .content .left-content{
+    flex-basis: 50%;
+}
+
+.head-upper .content .left-content p{
+    margin: 0px;
+}
+
+.head-upper .content .mid-content{
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.head-upper .content .mid-content .social-icons{
+    display: flex;
+}
+
+.head-upper .content .mid-content .social-icons .icon{
+    margin-right: 15px;
+}
+
+.head-upper .content .mid-content .social-icons .icon a{
+    color: black;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.head-upper .content .mid-content .social-icons .icon a:hover{
+    color: blue;
+}
+
+.head-upper .content .right-content{
+    flex-basis: 10%;
+}
+
+
+/* header-upper End */
+
+
+/* our product  */
+
+.our-products{
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.our-products .our-product-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.our-products .our-product-content .product-card{
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.our-products .our-product-content .product-card:hover{
+    transform: translateY(-5px);
+}
+
+.our-products .our-product-content .heading{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.our-products .our-product-content .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.our-products .our-product-content .content .product-card img{
+    width: 150px;
+    height: 160px;
+}
+
+.our-products .our-product-content .content .product-card p{
+    text-align:center ;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+/* our product End */
+
+
 /* header */
+
 header{
     width: 100%;
     background: rgb(226,236,255);
-background: radial-gradient(circle, rgba(226,236,255,1) 0%, rgba(255,255,255,1) 100%);  
-height: 100vh;
+    background: radial-gradient(circle, rgba(226,236,255,1) 0%, rgba(255,255,255,1) 100%);  
 }
 
 header .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
+    padding: 0px 30px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: .3s ease;
 }
 
 header .nav .nav-logo{
     width: 100px;
     overflow: hidden;
+    flex-basis:60%;
 }
 
 header .nav .nav-logo img{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 60px;
 }
 
 header .nav .navigation{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-basis: 40%;
+    color: white;
 }
 
 header .nav .navigation a{
-    padding: 0px 40px;
-    font-size: 24px;
+    padding: 0px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    text-shadow: 0px 1px 6px black;
     transition: .5s ease all;
 }
 
 header .nav .navigation a:hover{
-    background-color: black;
-    color: white;
-    letter-spacing: 5px;
+    transform: translateY(-3px);
+    border-bottom: 1px solid white;
 }
 
 header .hero-main {
+    margin-top:80px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -84,29 +241,30 @@ header .hero-main .hero-right{
 }
 
 header .hero-main .hero-right .hero-heading{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 header .hero-main .hero-right .hero-dis{
     width: 500px;
     font-size: 20px;
     padding-bottom: 30px;
+    text-align: justify;
 }
 
 header .hero-main .hero-right .hero-btn a{
-    font-size: 24px;
-    border: 1px solid blue;
-    border-radius: 15px;
-    padding: 10px 25px;
-    color: blue;
+    font-size: 18px;
+    border: 1px solid #3636f7;
+    border-radius: 4px;
+    padding: 10px 10px;
+    color: #3636f7;
     transition: .5s ease all;
 }
 
 header .hero-main .hero-right .hero-btn a:hover{
-    background-color: blue;
+    background-color: #3636f7;
     color: white;
 }
 
@@ -119,16 +277,316 @@ header .hero-main .hero-right .hero-btn a:hover span{
     color: white;
 }
 
+/* Slider */
+
+/* slider */
+
+.carousel-item{
+    background-color: #777;
+    color: white;
+    position: relative;
+    height: 630px;
+}
+
+.carousel-item img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 9;
+    width: 400px;
+    height: 400px;
+}
+
+.carousel-item .overlay{
+    background-color: #0000;
+}
+
+/* add-section */
+
+.add{
+    background-image: url(../assets/background-add.png);
+    background-position: center;
+    background-size: cover;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    box-shadow: 0px 0px 18px rgb(0 0 0 / 20%);
+}
+
+.add .add-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add .add-content .left-add{
+    flex-basis: 50%;
+}
+
+.add .add-content .left-add .add-heading{
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0 0 25px;
+    color: rgb(85, 85, 255);
+}
+
+.add .add-content .left-add .add-short-dis{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 15px;
+}
+
+.add .add-content .left-add .add-price{
+
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.add .add-content .left-add .add-price span{
+    color: rgb(0, 191, 0);
+}
+
+.add .add-content .left-add .add-btn{
+    margin-top: 20px;
+}
+
+
+.add .add-content .left-add .add-btn a{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    font-size: 21px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+.add .add-content .left-add .add-btn a:hover{
+    color: rgb(85, 85, 255);
+}
+
+
+.add .add-content .left-add .add-btn a .fa-arrow-right{
+    margin-left: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    padding: 10px 13px;
+    transition: .3s ease;
+}
+
+
+.add .add-content .left-add .add-btn a:hover .fa-arrow-right{
+    transform: rotate(180deg);
+    color: rgb(85, 85, 255);
+}
+
+.add .add-content .right-add{
+    flex-basis: 50%;
+}
+
+.add .add-content .right-add .img img{
+    width: 300px;
+}
+
+/* add-section End*/
+
+
+/* productcart slider */
+
+
+
+.section-product-slider{
+    width: 90%;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.section-product-slider .heading{
+    text-orientation: inherit;
+    writing-mode: tb;
+    font-size: 23px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.section-product-slider .card{
+    flex-basis: 13%;
+    margin: 15px 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.section-product-slider .card:hover{
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 40%);
+    transform: translateY(-6px);
+}
+
+.section-product-slider .card .product-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.section-product-slider .card .product-img{
+    width: 100%;
+    height: 155px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 20px;
+    align-items: center;
+    transition: 0.5s ease all;
+
+}
+
+
+.section-product-slider .card .product-img img{
+    width: 100%;
+    height: 155px;
+}
+
+    .section-product-slider .card .product-content h1{
+    text-align: start;
+    flex-basis: 100%;
+    border-top: 1px solid #a0a0a0;
+    font-size: 16px;
+    padding: 5px 5px;
+    margin-bottom: 1px;
+    font-weight: 700;
+}
+
+.section-product-slider .card .product-content h3{
+    font-size: 14px;
+    flex-basis: 100%;
+    padding: 0px 5px;
+}
+
+.section-product-slider .card .product-content p{
+    font-size: 20px;
+    text-align: start;
+    flex-basis: 100%;
+    padding: 0px 5px;
+    margin-bottom: 5px;
+}
+
+.section-product-slider .card .product-content p .dollor{
+    color: green;
+    font-size: 16px;
+}
+
+.section-product-slider .card .product-content .product-buy{
+    flex-basis: 100%;
+    align-items: center ;
+}
+
+.section-product-slider .card .product-content a{
+    color: #a0a0a0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease all;
+}
+
+.section-product-slider .card .product-content a:hover{
+    color: black;
+    letter-spacing: 2px;
+}
+
+/* carousel-content  */
+
+.carousel-item .overlay .carousel-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(1){
+    flex-basis: 55%;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2){
+    flex-basis: 45%;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1{
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) p{
+    width: 400px;
+    white-space: pre-wrap;
+    color: rgb(27, 27, 27);
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: .3s ease;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover{
+    letter-spacing: 3px;
+    background-color: white;
+    color: #13a3ac;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a i{
+    transition: .3s ease;
+}
+
+.carousel-item .overlay .carousel-content .carosel-section:nth-child(2) a:hover i{
+    transform: rotate(-45deg);
+}
+
+/* carousel-content End */
+
+/* Productcart slider end */
+
+
+
+/* Slider End */
+
+
 /*  product1 */
 
 .product{
     width: 100%;
     padding-top: 50px;
+    background-image: url(../assets/h8-bg-3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .product .product-heading{
-    text-align: center;
+    text-align: end;
     font-size: 40px;
     text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 30px;
 }
 
 .homopatic{
@@ -139,6 +597,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -147,6 +606,26 @@ header .hero-main .hero-right .hero-btn a:hover span{
     justify-content: space-between;
     padding: 4px 16px;
   }
+
+  .container1 .left-content{
+      flex-basis: 30%;
+  }
+
+  .container1 .right-content{
+    flex-basis: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container1 .right-content .slide-click{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
   
   #cards-container {
     overflow: hidden;
@@ -160,6 +639,9 @@ header .hero-main .hero-right .hero-btn a:hover span{
     width: 99999px;
   }
   
+
+
+
   .card {
     /* Add shadows to create the "card" effect */
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -177,15 +659,16 @@ header .hero-main .hero-right .hero-btn a:hover span{
     cursor: pointer;
   }
 
+   .card  img{
+       height: 200px;
+   }
+
   .container .product-btn{
-    font-size: 20px;
-    color: blue;
+    font-size: 14px;
+    color: white;
     transition: .5s ease all;
   }
 
-  .container .product-btn:hover{
-      letter-spacing: 2px;
-  }
   
   .card .img {
     max-width: 220px;
@@ -203,6 +686,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
   #slide-right-container.active {
     display: block;
     cursor: pointer;
+    margin-right: 15px;
   }
   
   .slide-left,
@@ -308,6 +792,161 @@ header .hero-main .hero-right .hero-btn a:hover span{
   }
   /* ad end */
 
+  /* Sub Section  */
+
+  .sub{
+      width: 100%;
+      background-color: #f2f3f5;
+  }
+  .sub .sub-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .sub .sub-content .heading{
+      font-size: 28px;
+      color: #1D2A38;
+      font-weight: 700;
+      margin-bottom: 20px;
+  }
+
+  .sub .sub-content .dis{
+    font-size: 14px;
+    text-align: center;
+    color: #7D879C;
+    padding-bottom: 40px;
+  } 
+
+  .sub .sub-content .input{
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+  }
+
+  .sub .sub-content .input input{
+      padding: 10.24px 16px;
+      border: none;
+  }
+
+  .sub .sub-content .input button{
+      font-size: 13px;
+      padding: 8.512px 25.6px;
+      background-color: #24AEB1;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      transition: .3s ease;
+  }
+
+  .sub .sub-content .input button:hover{
+    background-color: #128a8c;
+  }
+
+
+
+  /* Sub Section End */
+
+  /* details  */
+
+  .detail{
+      width: 100%;
+      padding: 40px 0px;
+  }
+
+  .detail .detail-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1){
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail .detail-content .detail-card:nth-child(1) .content-left i{
+    font-size: 55px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    border-radius: 50%;
+    padding: 10px 14px;
+    margin-right: 20px;
+    color: #24AEB1;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1) .content-right h2{
+      font-size: 16px;
+      color: #1D2A38;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+  .detail .detail-content .detail-card:nth-child(1) .content-right p{
+      font-size: 14px;
+      color: #7D879C;
+      margin: 0px;
+  }
+
+
+  .detail .detail-content .detail-card:nth-child(2){
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-left i{
+    font-size: 55px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+    border-radius: 50%;
+    padding: 10px 14px;
+    margin-right: 20px;
+    color: #24AEB1;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-right h2{
+      font-size: 16px;
+      color: #1D2A38;
+  }
+
+  .detail .detail-content .detail-card:nth-child(2) .content-right .p1{
+      font-size: 26px;
+      color: #24AEB1;
+      font-weight: 700;
+  }
+  .detail .detail-content .detail-card:nth-child(2) .content-right .p2{
+      font-size: 16px;
+      color: #7D879C;
+  }
+
+
+  .detail .detail-content .detail-card:nth-child(3){
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .detail .detail-content .detail-card:nth-child(3) .content-left{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+
+  /* details End */
+
+
+
 /* homo */
 
 .homopatic{
@@ -323,7 +962,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
 }
 .homopatic .homo-content{
     width: 100%;
-
+    flex-wrap: wrap;
     padding-top: 40px;
     display: flex;
     justify-content: center;
@@ -331,24 +970,26 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homo-content .homo-product-card{
     width: 220px;
-    margin: 0px 20px;
-    border-radius: 15px;
+    margin: 10px 20px 50px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
     transition: .5s ease all;
 }
 
 .homo-content .homo-product-card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    transform:scale(1.1) ;
+    border: 1px solid rgb(105, 105, 255);
+    transform: translateY(-5px);
 }
 
 .homopatic .homo-card-content{
-    padding: 10px;
+    padding: 4px;
 }
 
 .homopatic .homo-card-content b{
     font-size: 20px;
+    text-align: center;
 }
 
 .homopatic .homo-card-content span{
@@ -357,9 +998,6 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homopatic .homo-content .homo-product-card .homo-card-btn{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
 }
 
 .homopatic .homo-content .homo-product-card .homo-btn{
@@ -384,7 +1022,6 @@ header .hero-main .hero-right .hero-btn a:hover span{
 }
 
 .homo-content .homo-product-card .homo-card-content{
-    height: 150px;
     width: 100%;
 }
 
@@ -399,10 +1036,9 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .product-dis-homo{
     width: 100%;
-    padding: 10px 0px;
+    padding: 2px 3px;
     font-size: 12px;
-    border-top: 1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
     
 } 
 
@@ -411,8 +1047,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    padding: 10px 0px;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 4px 0px;
 }
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group2 input{
@@ -424,8 +1059,11 @@ header .hero-main .hero-right .hero-btn a:hover span{
 }
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3{
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-top: 5px;
 }
 
 .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span{
@@ -437,7 +1075,8 @@ header .hero-main .hero-right .hero-btn a:hover span{
 
 .about{
     width: 100%;
-    margin-top: 100px;
+    background: #f9f9f9;
+
 }
 
 .about .about-content{
@@ -454,6 +1093,9 @@ header .hero-main .hero-right .hero-btn a:hover span{
     font-size: 20px;
     color: rgb(92, 92, 92);
     padding-bottom: 40px;
+    width: 70%;
+    margin: auto;
+    text-align: justify;
 }
 
 /* about us end */
@@ -521,6 +1163,54 @@ header .hero-main .hero-right .hero-btn a:hover span{
     letter-spacing: 4px;
 }
 
+.container-alpha .disc-feature-product-phy{    
+    padding: 4px 10px;
+}
+
+.container-alpha .form-group2{
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    justify-content: space-around;
+}
+
+.container-alpha .form-group2 p{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.container-alpha .form-group2 .sc-cart-item-qty{
+    border: 1px dashed rgba(0,0,0,0.5);
+    border-radius: 4px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 14px;
+    width: 50px;
+    color: darkorange;
+}
+
+.container-alpha .feature-product-phy-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+}
+.container-alpha .feature-product-phy-price p{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.container-alpha .feature-product-phy-price .f-p-p-value{
+    font-size: 24px;
+}
+
+.container-alpha .feature-product-phy-price .f-p-p-value span{
+    color: green;
+    font-size: 18px;
+}
+
 /* media res */
 
 @media (max-width:1000px){
@@ -528,7 +1218,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -20px 0 0 -265px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 400px;}
@@ -551,6 +1241,43 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    .homo-content .homo-product-card {flex-basis: 20%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 17px;right: 85px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 10%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input input {text-align: center;border-radius: 15px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 30%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 30%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 320px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 50%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
+
 }
 
 @media (max-width:900px){
@@ -558,7 +1285,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 400px;}
@@ -611,6 +1338,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:775px){
@@ -647,14 +1410,14 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .container {padding: 0px 5px;}
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
-    .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle {top: 15px;right: 230px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 300px;}
     header .hero-main .hero-right {flex-basis: 100%;display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
     header .hero-main .hero-right .hero-heading {font-size: 24px;padding-bottom: 10px;}
-    header .hero-main .hero-right .hero-dis {width: 100%;text-align: center;font-size: 16px;padding-bottom: 10px;}
+    header .hero-main .hero-right .hero-dis {width: 100%;text-align: justify;font-size: 16px;padding: 10px 30px;}
     header .hero-main .hero-right .hero-btn a {font-size: 15px;}
     .product .product-heading {font-size: 20px;}
     .brand .brand-content .brand-heading {text-align: center;font-size: 24px;}
@@ -662,15 +1425,53 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .brand .brand-content-logo .brand-logo {width: calc(100%/2);display: flex;justify-content: center;}
     .ad .ad-content {display: none;}
     .homopatic .homo-heading {font-size: 24px;}
-    .homo-content .homo-product-card .homo-card-upper {height: 140px;overflow: hidden;}
-    .homo-content .homo-product-card .homo-card-upper img {height: 140px;}
+    .homo-content .homo-product-card .homo-card-upper {height: 160px;overflow: hidden;}
+    .homo-content .homo-product-card .homo-card-upper img {height: 160px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 10px;}
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:10px 0px;}
+    .head-upper .content {}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 55%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:750px){
@@ -761,6 +1562,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    .homo-content .homo-product-card {flex-basis: 30%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 245px;}
+    .carousel-item .carousel-content .carosel-section img {width: 250px!important;height: 250px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 50%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
+
 }
 
 @media (max-width:675px){
@@ -851,6 +1688,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:600px){
@@ -881,6 +1719,40 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 35%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 225px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 30%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 50%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 50%;justify-content:center;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
 }
 
 @media (max-width:575px){
@@ -888,7 +1760,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 20px;}
     .navigation #menuToggle {top: 58px;right: 170px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 300px;}
@@ -911,6 +1783,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 24px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
 }
 
 @media (max-width:550px){
@@ -941,6 +1814,8 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
 }
 
 @media (max-width:525px){
@@ -948,7 +1823,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -971,6 +1846,43 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 60%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
+
+
+
 }
 
 @media (max-width:500px){
@@ -978,7 +1890,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1001,6 +1913,40 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 60%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 400px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}    
 }
 
 @media (max-width:475px){
@@ -1008,7 +1954,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1025,12 +1971,47 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homo-content .homo-product-card .homo-card-upper {height: 120px;overflow: hidden;}
     .homo-content .homo-product-card .homo-card-upper img {height: 120px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    .homo-content .homo-product-card {flex-basis: 45%;margin: 0px 8px;}
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 65%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 320px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 
@@ -1038,14 +2019,14 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .container {padding: 0px 5px;}
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
-    .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle {top: 15px;right: 168px;}
+    .navigation #menuToggle #menu {width: 365px;margin: 30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
     header .hero-main .hero-right {flex-basis: 100%;display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
     header .hero-main .hero-right .hero-heading {font-size: 20px;padding-bottom: 10px;}
-    header .hero-main .hero-right .hero-dis {width: 100%;text-align: center;font-size: 16px;padding-bottom: 10px;}
+    header .hero-main .hero-right .hero-dis {width: 100%;text-align: justify;font-size: 14px;padding-bottom: 10px;}
     header .hero-main .hero-right .hero-btn a {font-size: 15px;}
     .product .product-heading {font-size: 20px;}
     .brand .brand-content .brand-heading {text-align: center;font-size: 20px;}
@@ -1053,15 +2034,50 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .brand .brand-content-logo .brand-logo {width: calc(100%/2);display: flex;justify-content: center;}
     .ad .ad-content {display: none;}
     .homopatic .homo-heading {font-size: 20px;}
-    .homo-content .homo-product-card .homo-card-upper {height: 120px;overflow: hidden;}
-    .homo-content .homo-product-card .homo-card-upper img {height: 120px;}
+    .homo-content .homo-product-card .homo-card-upper {height: 150px;overflow: hidden;}
+    .homo-content .homo-product-card .homo-card-upper img {height: 150px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 65%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
 }
 
 @media (max-width:425px){
@@ -1069,7 +2085,7 @@ header .hero-main .hero-right .hero-btn a:hover span{
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
     .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -30px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
@@ -1092,20 +2108,55 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 75%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+
 }
 
 @media (max-width:400px){
     .container {padding: 0px 5px;}
     header .nav {width: 100%;}
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
-    .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 365px;margin: -100px 0 0 -215px;}
+    .navigation #menuToggle {top: 15px;right: 170px;}
+    .navigation #menuToggle #menu {width: 365px;margin: -40px 0 0 -205px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
     header .hero-main .hero-right {flex-basis: 100%;display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
     header .hero-main .hero-right .hero-heading {font-size: 20px;padding-bottom: 10px;}
-    header .hero-main .hero-right .hero-dis {width: 100%;text-align: center;font-size: 16px;padding-bottom: 10px;}
+    header .hero-main .hero-right .hero-dis {width: 100%;text-align: justify;font-size: 16px;padding: 10px 10px;}
     header .hero-main .hero-right .hero-btn a {font-size: 15px;}
     .product .product-heading {font-size: 20px;}
     .brand .brand-content .brand-heading {text-align: center;font-size: 20px;}
@@ -1113,15 +2164,49 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .brand .brand-content-logo .brand-logo {width: calc(100%/2);display: flex;justify-content: center;}
     .ad .ad-content {display: none;}
     .homopatic .homo-heading {font-size: 20px;}
-    .homo-content .homo-product-card .homo-card-upper {height: 100px;overflow: hidden;}
-    .homo-content .homo-product-card .homo-card-upper img {height: 100px;}
+    .homo-content .homo-product-card .homo-card-upper {height: 150px;overflow: hidden;}
+    .homo-content .homo-product-card .homo-card-upper img {height: 150px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+    .homopatic .homo-content{flex-wrap: wrap;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;padding: 0px 15px; text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 75%;justify-content: space-between;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 @media (max-width:375px){
@@ -1152,6 +2237,41 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: space-around;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
+    
 }
 
 @media (max-width:350px){
@@ -1182,20 +2302,73 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 150px!important;height: 150px!important;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: space-around;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+    .dashboard-lang {left: 60%!important;}
+    header .nav .nav-logo {flex-basis: 40%;}
+    .carousel-item .overlay .carousel-content .carosel-section {flex-basis: 100%!important;height: 200px!important;    display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 34px;text-align: center;}
+    .card {width: 230px;margin: 15px 27.5px;}
+    .homo-content .homo-product-card {width: 220px;margin: 10px 8px;}
+
 }
 
 @media (max-width:320px){
-    .container {padding: 0px 5px;}
-    header .nav {width: 100%;}
+    .container {padding: 0px 20px;overflow: hidden;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(1){flex-basis: 100%;height: 20%;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) h1 {font-size: 20px;text-align: center;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2){flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .carousel-item .overlay .carousel-content .carosel-section:nth-child(2) p {width: 100%;text-align: center;}
+
+    
+    .dashboard-lang {left: 60%!important;}
+    .chatbox__support {width: 200px!important;}
+    #usermsg {flex-basis: 50%!important;width: 100px!important;}
+    header .nav .nav-logo {width: 100px;overflow: hidden;flex-basis: 30%;}
+   
+    
+    .navigation #menuToggle #menu {width: 316px;margin: 20px 0 0 -120px;}
+    .carousel-item img {z-index: 1;}
+    .list-group-item {border: none;}
+
+ 
     header .nav .navigation a {padding: 0px 10px;font-size: 15px;}
-    .navigation #menuToggle {top: 58px;right: 138px;}
-    .navigation #menuToggle #menu {width: 316px;margin: -100px 0 0 -147px;}
+    
+
+    .container-alpha .aplha-head {font-size: 16px;}
+    .container-alpha .feature-product-phy-price {padding: 0px 0px;}
+    .card {width: 170px;margin: 15px 45.5px;}
+    .card img {height: 150px;}
     header .hero-main {flex-wrap: wrap;}
     header .hero-main .hero-left {flex-basis: 100%;display: flex;justify-content: center;align-items: center;}
     header .hero-main .hero-left img {width: 250px;}
     header .hero-main .hero-right {flex-basis: 100%;display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
-    header .hero-main .hero-right .hero-heading {font-size: 20px;padding-bottom: 10px;}
-    header .hero-main .hero-right .hero-dis {width: 100%;text-align: center;font-size: 16px;padding-bottom: 10px;}
+    header .hero-main .hero-right .hero-heading {font-size: 20px;padding-bottom: 0px;}
+    header .hero-main .hero-right .hero-dis {width: 100%;text-align: justify;font-size: 12px;padding-bottom: 10px;}
     header .hero-main .hero-right .hero-btn a {font-size: 15px;}
     .product .product-heading {font-size: 20px;}
     .brand .brand-content .brand-heading {text-align: center;font-size: 20px;}
@@ -1206,11 +2379,42 @@ header .hero-main .hero-right .hero-btn a:hover span{
     .homo-content .homo-product-card .homo-card-upper {height: 100px;overflow: hidden;}
     .homo-content .homo-product-card .homo-card-upper img {height: 100px;}
     .homopatic .homo-card-content b {font-size: 16px;}
-    .homo-content .homo-product-card {width: 220px;margin: 0px 8px;}
+    .homo-content .homo-product-card {width: 170px;margin: 10px 8px;}
     .homo-content1 .form-group3{font-size: 18px;}
     .homo-content .homo-product-card .homo-card-content .homo-content1 .form-group3 span {font-size: 16px;}
     .homopatic .homo-content .homo-product-card .homo-btn {font-size: 16px;}
     .about .about-content .about-heading {font-size: 20px;margin-bottom: 15px;}
     .about .about-content .about-dis {font-size: 14px;}
+
+
+    header .nav .nav-logo img{width: 50px;height: 50px;}
+    header .nav {width: 100%;height: 50px; top: 60px; align-items: flex-end;}
+    .head-upper {padding:0px;height: 60px;}
+    .head-upper .content {height: 50px;}
+    .head-upper .content .mid-content {align-items: flex-end;height: 100%;}
+    .navigation #menuToggle {top: 20px;right: 175px;}
+    .carousel-item .carousel-content .carosel-section img {width: 100px;height: 100px;}
+    .our-products .our-product-content .heading {font-size: 20px;}
+    .our-products .our-product-content .content {flex-wrap: wrap;}
+    .our-products .our-product-content .product-card{flex-basis: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .product .product-heading {margin-right: 0px;text-align: center;}
+    .container1 .left-content {display: none;}
+    .container1 .right-content {flex-basis: 100%;}
+    .add .add-content .left-add {flex-basis: 100%;}
+    .add .add-content .left-add .add-heading {margin: 0 0 5px; font-size: 24px;text-align: center;}
+    .add .add-content .left-add .add-short-dis {font-size: 22px;text-align: center;}
+    .add .add-content .left-add .add-price {text-align: center;}
+    .add .add-content .left-add .add-btn {margin-top: 20px;display: flex;justify-content: center;align-items: center;}
+    .add .add-content .right-add .img img {width: 150px;}
+    .sub .sub-content .heading {margin-bottom: 10px;font-size: 24px;text-align: center;}
+    .sub .sub-content .input {background: transparent;border-radius: 0px;}
+    .sub .sub-content .input input {border: 1px solid rgba(0,0,0,0.2);width: 100%;text-align: center;border-radius: 15px;margin-bottom: 10px;}
+    .detail .detail-content .detail-card:nth-child(1) {flex-basis: 100%;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(2) {flex-basis: 100%;justify-content: flex-start;margin-bottom: 20px;}
+    .detail .detail-content .detail-card:nth-child(3) .content-right img{width: 280px;}
+
+
+
+
 }
 

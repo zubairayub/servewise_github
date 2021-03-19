@@ -4,130 +4,196 @@
 
 	<!-- main content -->
 	<div class="wrapper">
-		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fa fa-spinner" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>132</h3>
-					<p>Order Placed</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fa fa-check" aria-hidden="true" style="color:white; font-size:20px;"></i>
-					</p>
-					<h3>156</h3>
-					<p>Number of Visitors</p>
-				</div>
-			</div>
-		</div>
+        <div class="dashboard-detail-main">
+                <div class="mobile-heading-dashboard">
+                    <div class="dashboard-detail-content-upper">
+                        <h4><?PHP IF(!empty($userstatus)){ 
+                            if($userstatus == 'Branch'){
+                                $ustatus = 'Vendor';
+                            }elseif ($userstatus == 'Vendor') {
+                                $ustatus = 'Brand';
+                            }else{
+                                $ustatus = $userstatus;
+                            }
+
+
+                            ECHO '<span> Welcome,</span> <br>'. $ustatus; 
+
+
+                        }?></h4>
+                    </div>
+                </div>
+            <div class="dashboard-detail-content-1">
+                <?= $first_row ?>
+                <?= $second_row ?>
+            </div>
+            <div class="dashboard-detail-content-2">
+                <div class="dashboard-detail-content-upper">
+                    <h4><?PHP IF(!empty($userstatus)){ ECHO '<span> Welcome,</span> <br>'. $ustatus; }?></h4>
+                </div>
+                <div class="dashboard-detail-content-lower">
+                    <div class="dashboard-detail-content-lower-content">
+                        <div class="dashboard-detail-heading"><?php 
+echo getlang('','Quick Navigation Tab',getlangcookie()); 
+?></div>
+                        <div class="dashboard-detail-heading-main-row">
+                            <a href="?page=viewvendor_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                <div class="label"><?php 
+echo getlang('','Go to Vendor',getlangcookie()); 
+?></div>
+                            </a >
+                            <a href="?page=viewbranch_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                                <div class="label"><?php 
+echo getlang('','Go to Branch',getlangcookie()); 
+?></div>
+                            </a >
+                        </div>
+                        <div class="dashboard-detail-heading-main-row" >
+                            <a href="?page=staffpermission_dashboard" class="dashboard-detail-cards"data-tilt>
+                                <div class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+                                <div class="label"><?php 
+echo getlang('','Staff Role',getlangcookie()); 
+?></div>
+                            </a >
+                            <a href="?page=generalsetting_dashboard" class="dashboard-detail-cards" data-tilt>
+                                <div class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                <div class="label"><?php 
+echo getlang('','General Setting',getlangcookie()); 
+?></div>
+                            </a >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-shap-animation1"></div>
+        <div class="div-shap-animation2"></div>
+        <div class="div-shap-animation3"></div>
+		
 		<div class="row">
 			<div class="col-8 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Placed Order:
+							<?php 
+echo getlang('','Recent Orders',getlangcookie()); 
+?>
 						</h3>
-						<i class="fa fa-ellipsis-h"></i>
 					</div>
 					<div class="card-content">
-						<table>
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Product Name</th>
-									<th>Product Description</th>
-									<th>Price</th>
-									<th>Quantity Ordered</th>
-									<th>Quantity In Stock</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>t-shirt</td>
-									<td>Red color</td>
-									<td>
-                                        $20
-									</td>
-									<td>2</td>
-									<td>20</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>jeans</td>
-									<td>Gray shadded</td>
-									<td>
-                                        $35
-									</td>
-									<td>11</td>
-									<td>50</td>
-								</tr>
-							</tbody>
-						</table>
+						 <table class="dashboard_table_main">
+                <tr class="dashboard_product_table">
+                    <th class="dashboard_product_1"><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_2"><?php 
+echo getlang('','Order Code',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_3"><?php 
+echo getlang('','Customer',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_4"><?php 
+echo getlang('','Amount',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_5"><?php 
+echo getlang('','Delivery Status',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_6"><?php 
+echo getlang('','Payment Status',getlangcookie()); 
+?></th>
+                    <th class="dashboard_product_7"><?php 
+echo getlang('','Option',getlangcookie()); 
+?></th>
+                </tr>
+                
+                    <?php  
+
+                        if (!empty($recent_orders)){
+                            $count = 1;
+                            
+                    foreach ($recent_orders as $key => $value) { 
+                    	if($count < 5){
+                           $orderdata =  getordersdetailsbyid('',$value['id'],$value['branch_id']);
+                           if(!empty($orderdata)){
+                           $product_data = getproductnamebyid($orderdata[0]['product_id']);
+                           $customer_data = getuserinfo($value['user_id'],'');
+                           $invoice_datails = getorderamountbyorderid('',$value['id']);
+                          $status_datails =  getorderstatusbyorderid('',$value['id']);
+                           if($invoice_datails[0]['status'] == 0){
+                            $status_payment = 'Unpaid';
+
+                           }else{
+
+                           $status_payment = 'Paid';
+
+                           }
+
+
+                           if($customer_data[0]['first_name'] == ''){
+$customer_name =   'Guest User' ;
+
+                           }else{
+
+                          $customer_name =   $customer_data[0]['first_name'] .' '. $customer_data[0]['last_name'] ;
+                           }
+                          ?> 
+                    <tr class="dashboard_table_data">   
+                        <td class="dashboard_table_row_1"><?php echo $count;?></td>
+                        <td class="dashboard_table_row_2"><?php echo $value['id'];?></td>
+                        <td class="dashboard_table_row_3"><?php echo  $customer_name ;?></td>
+                        <td class="dashboard_table_row_4"><?php echo $invoice_datails[0]['amount'];?></td>
+                        <td class="dashboard_table_row_5"><?php echo $status_datails[0]['title'];?></td>
+                        <td class="dashboard_table_row_6"><?php echo $status_payment; ?></td>
+                        <td class="option dashboard_table_row_7">
+                            <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
+                            <i class="fa fa-eye" aria-hidden="true"></i> <?php 
+echo getlang('','view',getlangcookie()); 
+?>
+                            </a>
+                            <a href="../app/xhr/delete.php?action=order&order_id=<?= $value['id']?>">
+                                <i class="fa fa-trash" aria-hidden="true"></i> <?php 
+echo getlang('','Remove',getlangcookie()); 
+?>
+                            </a>
+                        </td>
+                </tr>
+                       
+                    <?php  
+                    $count ++;
+                } }else{
+                	   break;
+                } } } ?>
+                    
+               
+            </table>
 					</div>
 				</div>
 			</div>
 			<div class="col-4 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h3>
-							Progress bar
+						<h3><?php 
+echo getlang('','Progress bar',getlangcookie()); 
+?>
 						</h3>
-						<i class="fa fa-ellipsis-h"></i>
 					</div>
-					<div class="card-content">
-						<div class="progress-wrapper">
-							<p>
-								Weekly Sales 
-								<span class="float-right">321 $</span>
-							</p>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Delivered
-								<span class="float-right"> 70%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:70%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								On the way to Client
-								<span class="float-right"> 80%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:80%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Returned
-								<span class="float-right"> 10%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:10%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								Pickup in Store
-								<span class="float-right"> ( 20 / 18)</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:70%"></div>
-							</div>
-						</div>
-						</div>
-					</div>
+					<?= $weekly_sales ;?>
 				</div>
-			</div>
-		</div>
-		
+            </div>
+            <!-- <div class="card">
+                <div class="card-header">
+                    <h3>
+                        Chartjs
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div> -->
+        </div>
 	</div>
 
-	</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>

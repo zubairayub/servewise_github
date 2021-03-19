@@ -1,10 +1,17 @@
 <div class="wrapper">
 	<div class="row">
-		<div class="sub-cat-three-dashboard-main">
-			<h1 data-aos="fade-right" data-aos-duration="1500">3rd level Category</h1>
+		<div class="sub-cat-two-dashboard-main">
+			<h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+				echo getlang('','3rd Level Category',getlangcookie()); 
+				?></h1>
+			<a href="?page=category_dashboard" data-aos="fade-left" data-aos-duration="1500" class="sub-cat-two-back"><?php 
+echo getlang('','Go Back to Main Categories',getlangcookie()); 
+?></a>
 		</div>
 		<div class="sub-cat-three-dashboard" data-aos="zoom-in-right" data-aos-duration="1000">
-			<label>Category name :</label>
+			<label><?php 
+echo getlang('','Category name',getlangcookie()); 
+?>:</label>
 			<form action="<?php echo $controller ?>" method="post" id="form">
 				<?php 
 					if(isset($_GET["id"])){
@@ -12,16 +19,22 @@
 					}
 				?>
 				<input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden >
-				<input class="sub-cat-three-input" name="category" value="" type="text">
-				<input class="sub-cat-three-btn" type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
+				<input class="sub-cat-three-input" name="category" value="" type="text" required>
+				<input class="sub-cat-three-btn" type="button" name="addbtn" value="<?php 
+echo getlang('','Add Category',getlangcookie()); 
+?>" onclick="submitForm()" >
         	</form>
 		</div>
 		<div class="sub-cat-three-table" data-aos="zoom-out-up" data-aos-duration="1000">    
 			<fieldset>
 				<table class="table table-bordered" id="clientstable">		
 					<thead class="bg-info">
-						<th>Category ID</th>
-						<th>Category</th>
+						<th><?php 
+				echo getlang('','Category ID',getlangcookie()); 
+				?></th>
+						<th><?php 
+				echo getlang('','Category',getlangcookie()); 
+				?></th>
 						<th></th>
 						<th></th>
 					</thead>
@@ -32,8 +45,12 @@
 						<tr>			
 							<td><?php echo $categorylist["ssc_id"]; ?></td>
 							<td><?php echo $categorylist["ss_category"]; ?></td>								
-							<td><a href="?page=editcategorythree_dashboard&cat_id=<?php echo $id ?>&id=<?php echo $categorylist["ssc_id"]; ?>&name=<?php echo $categorylist["ss_category"]?>">Edit</a></td>
-							<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["ssc_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+							<td><a href="?page=editcategorythree_dashboard&cat_id=<?php echo $id ?>&id=<?php echo $categorylist["ssc_id"]; ?>&name=<?php echo $categorylist["ss_category"]?>"><?php 
+				echo getlang('','Edit',getlangcookie()); 
+				?></a></td>
+							<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["ssc_id"]; ?>" onclick="return confirm('Are you sure?')"><?php 
+				echo getlang('','Delete',getlangcookie()); 
+				?></a></td>
 						</tr>
 						<?php } ?>
 					</tbody>					
@@ -46,10 +63,12 @@
 
 <script>
 	function submitForm(form){
-		
+	var  validInput = $('input[name=category]').val();
     var url = $('#form').attr("action");
-		
     var formData = $('#form').serializeArray();
+	if(validInput == ""){
+			alert('this field is required');
+		}else{
     $.post(url, formData).done(function (data) {
        if(data == 1){
 			        alert('sub category added');
@@ -58,5 +77,6 @@
 			alert('sub category not added');
 		}
     });
+}
 }
 </script>

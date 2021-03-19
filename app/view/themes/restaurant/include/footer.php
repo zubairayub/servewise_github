@@ -4,7 +4,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <h1>About us</h1>
-                            <p>Duis leo justo, condimentum at purus eu,Aenean sed dolor sem. Etiam massa libero, auctor vitae egestas et, accumsan quis nunc.Duis leo justo, condimentum at purus eu, posuere pretium tellus.</p>
+                            <p><?= $footer_about_disc ?></p>
                         </div>
                         <div class="col-md-4  col-sm-6">
                         </div>
@@ -12,32 +12,20 @@
                         <div class="col-md-4  col-sm-6">
                             <h1>Reach us</h1>
                             <div class="footer-social-icons">
-                                <a href="http://www.facebook.com">
+                                <a href="<?= $footer_fb_link ?>">
                                     <i class="fa fa-facebook-square"></i>
                                 </a>
-                                <a href="http://www.twitter.com">
+                                <a href="<?= $footer_tw_link ?>">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                                <a href="http://plus.google.com">
-                                    <i class="fa fa-google"></i>
-                                </a>
-                                <a href="http://www.youtube.com">
-                                    <i class="fa fa-youtube-play"></i>
-                                </a>
-                                <a href="http://www.vimeo.com">
-                                    <i class="fa fa-vimeo"></i>
-                                </a>
-                                <a href="http://www.pinterest.com">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </a>
-                                <a href="http://www.linkedin.com">
+                                <a href="<?= $footer_in_link ?>">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
                             </div>
                             <div class="footer-address">
-                                <p><i class="fa fa-map-marker"></i>ABC Street, ABC City, 10014</p>
-                                <p><i class="fa fa-phone"></i>Phone: (111) 111-1111</p>
-                                <p><i class="fa fa-envelope-o"></i>support@restaurant.com</p>
+                                <p><i class="fa fa-map-marker"></i><?= $foote_ad ?></p>
+                                <p><i class="fa fa-phone"></i>Phone: <?= $footer_contact ?></p>
+                                <p><i class="fa fa-envelope-o"></i><?= $footer_email ?></p>
                             </div>
                         </div>
                     </div>
@@ -75,6 +63,18 @@
                 // Initialize Smart Cart        
                 $('#smartcart').smartCart();
             });
+
+            $(document).ready(function(){
+    $(".default_option").click(function(){
+      $(this).parent().toggleClass("active");
+    })
+
+    $(".select_ul li").click(function(){
+      var currentele = $(this).html();
+      $(".default_option li").html(currentele);
+      $(this).parents(".select_wrap").removeClass("active");
+    })
+});
         </script>
 </body>
 

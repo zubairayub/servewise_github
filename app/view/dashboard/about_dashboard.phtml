@@ -8,33 +8,43 @@
 <div class="wrapper">
     <div class="row">
         <div class="dashboard-footer">
-            <h1 data-aos="fade-right" data-aos-duration="2000" >About Us Edit</h1>
+            <h1 data-aos="fade-right" data-aos-duration="2000" ><?php 
+echo getlang('','About Us Edit',getlangcookie()); 
+?>  </h1>
         </div>
         <div class="dashboard-footer-about" data-aos="zoom-out-right" data-aos-duration="1000">
             <form action="<?= $controller; ?>" class="d-footer-logo-about" id="formDesc">
                 <input type="hidden" name="formDesc">
                 <div class="dashboard-footer-about">
                     <div class="footer-about-upload-label">
-                        <label for="">About Discribtion :</label>
+                        <label for=""><?php 
+echo getlang('','About Discribtion :',getlangcookie()); 
+?>  </label>
                     </div>
                     <div class="footer-about-upload-content">
-                        <textarea name="about_desc" id="myTextArea" class="tinymce"><?php echo $about_desc['value'];?></textarea>
+                        <textarea name="about_desc" id="myTextArea" class="tinymce" required><?php echo $about_desc['value'];?></textarea>
                     </div>
                 </div>
                 <div class="dashboard-footer-about-btn">
-                    <input type="button" value="Upadate" onclick="submitFormDesc()">
+                    <input type="button" value="<?php 
+echo getlang('','Upadate',getlangcookie()); 
+?>  " onclick="submitFormDesc()">
                 </div>
             </form>
         </div>
         <div class="about-us-dashboard-main2">
-        <div class="dashboard-footer-section-2">
+        <!-- <div class="dashboard-footer-section-2">
             <div class="dashboard-footer-contact" data-aos="fade-up-right" data-aos-duration="1000">
-                <h1>Our Team info</h1>
+                <h1><?php 
+echo getlang('','Our Team info',getlangcookie()); 
+?>  </h1>
                 <form action="<?= $controller; ?>" class="d-footer-logo-contact" id="cntForm">
                     <input type='hidden' name="cntForm">
                     <div class="dashboard-footer-contact-add">
                         <div class="footer-contact-add-head">
-                            <label for="">Name </label>
+                            <label for=""><?php 
+echo getlang('','Name',getlangcookie()); 
+?>   </label>
                         </div>
                         <div class="footer-contact-add-input">
                             <input type='text' name="team_name" value="<?php echo $about_team_name['value'];?>" />
@@ -42,7 +52,9 @@
                     </div>
                     <div class="dashboard-footer-contact-phone">
                         <div class="footer-contact-phone-head">
-                            <label for="">Position</label>
+                            <label for=""><?php 
+echo getlang('','Position',getlangcookie()); 
+?>  </label>
                         </div>
                         <div class="footer-contact-phone-input">
                             <input type='text' name="team_position" value="<?php echo $about_team_position['value'];?>" />
@@ -50,7 +62,9 @@
                     </div>
                     <div class="dashboard-footer-contact-phone">
                         <div class="footer-contact-phone-head">
-                            <label for="">Image</label>
+                            <label for=""><?php 
+echo getlang('','Image',getlangcookie()); 
+?>  </label>
                         </div>
                         <div class="footer-contact-phone-input">
                             <input type='file' name="team_img" />
@@ -58,49 +72,69 @@
                     </div>
                     <div class="dashboard-footer-contact-email">
                         <div class="footer-contact-email-head">
-                            <label for="">Company Name</label>
+                            <label for=""><?php 
+echo getlang('','Company Name',getlangcookie()); 
+?>  </label>
                         </div>
                         <div class="footer-contact-email-input">
                             <input type='text' name="team_comp"  value="<?php echo $about_team_company['value'];?>"/>
                         </div>
                     </div>
                     <div class="dashboard-footer-contact-btn">
-                        <input type="button" value="Upadate" onclick="submitFormCnt()">
+                        <input type="button" value="<?php 
+echo getlang('','Upadate',getlangcookie()); 
+?>  " onclick="submitFormCnt()">
                     </div>
                 </form>
             </div>
-        </div>
+        </div> -->
         <div class="dashboard-footer-bottom" data-aos="fade-left" data-aos-duration="1000" >
             <form action="<?= $controller; ?>" class="dashboard-footer-bottom-content" id="visionForm">
                 <input type="hidden" name="visionForm">
                 <div class="d-footer-copyright">
                     <div class="d-footer-copyright-head">
-                        <label>Our Vision</label>
+                        <label><?php 
+echo getlang('','Our Vision',getlangcookie()); 
+?>  </label>
                     </div>
                     <div class="d-footer-copyright-input">
-                        <textarea class="tinymce" id="myTextAreaSec" name="vision"><?php echo $about_vission['value']; ?></textarea>
+                        <textarea class="tinymce" id="myTextAreaSec" name="vision" required><?php echo $about_vission['value']; ?></textarea>
                     </div>
                 </div>
                 <div class="d-footer-social-media">
                     <div class="d-footer-social-links">
                         <div class="footer-social-link-icon">
-                            <input type="button" value="Update" onclick="submitFormVision()">
+                            <input type="button" value="<?php 
+echo getlang('','Update',getlangcookie()); 
+?>  " onclick="submitFormVision()">
                         </div>
                     </div>
                 </div>
             </form>
         </div>
         </div>
-        <div class="about-us-dashboard-main">
+        <!-- <div class="about-us-dashboard-main">
             <form>
                 <table>
                     <tr>
-                        <th>Serial No.</th>
-                        <th>Name</th>
-                        <th>Position</th>                
-                        <th>img</th>                
-                        <th>Company Name</th>                
-                        <th>Option</th>                
+                        <th><?php 
+echo getlang('','Serial No.',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Name',getlangcookie()); 
+?>  </th>
+                        <th><?php 
+echo getlang('','Position',getlangcookie()); 
+?>  </th>                
+                        <th><?php 
+echo getlang('','img',getlangcookie()); 
+?>  </th>                
+                        <th><?php 
+echo getlang('','Company Name',getlangcookie()); 
+?>  </th>                
+                        <th><?php 
+echo getlang('','Option',getlangcookie()); 
+?>  </th>                
                     </tr>
                     <tr>
                         <td>1</td>
@@ -119,7 +153,7 @@
                     </tr>                
                 </table>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>

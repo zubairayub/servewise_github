@@ -1,24 +1,42 @@
 <div class="wrapper">
     <div class="row">
         <div class="order-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">All Order</h1>
-        <form data-aos="fade-left"data-aos-duration="1500">
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','All Order',getlangcookie()); 
+?></h1>
+        <!-- <form data-aos="fade-left"data-aos-duration="1500">
             <input type="text">
-            <input class="s-btn" type="button" value="Search">
-        </form>
+            <a class="s-btn" href="#">
+                <i class="fa fa-search" aria-hidden="true">Search</i>
+            </a>
+        </form> -->
     </div>
     <div class="order-table-main" data-aos="zoom-in-up" data-aos-duration="600">
         <form action="">
             <table>
                 <tr>
-                    <th>Serial.No</th>
-                    <th>Order Code</th>
+                    <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?></th>
+                    <th><?php 
+echo getlang('','Order Code',getlangcookie()); 
+?></th>
                  
-                    <th>Customer</th>
-                    <th>Amount</th>
-                    <th>Delivery Status</th>
-                    <th>Payment Status</th>
-                    <th>Option</th>
+                    <th><?php 
+echo getlang('','Customer',getlangcookie()); 
+?></th>
+                    <th><?php 
+echo getlang('','Amount',getlangcookie()); 
+?></th>
+                    <th><?php 
+echo getlang('','Delivery Status',getlangcookie()); 
+?></th>
+                    <th><?php 
+echo getlang('','Payment Status',getlangcookie()); 
+?></th>
+                    <th><?php 
+echo getlang('','Option',getlangcookie()); 
+?></th>
                 </tr>
                 
                     <?php  
@@ -63,12 +81,13 @@ $customer_name =   'Guest User' ;
                         <a href="?page=orderview_dashboard&order_id=<?= $value['id'] ?>&user_id=<?= $value['user_id'] ?>&date=<?= $value['datetime']?>">
                         <i class="fa fa-eye" aria-hidden="true"></i> view
                         </a>
-                        <a href="#">
+                        <a href="../app/xhr/delete.php?action=order&order_id=<?= $value['id'] ?>">
                             <i class="fa fa-trash" aria-hidden="true"></i> Remove
                         </a>
                     </td>
                 </tr>
-                       
+                     
+
                     <?php  
                     $count ++;
                 } } } ?>

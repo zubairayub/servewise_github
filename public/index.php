@@ -6,6 +6,11 @@ $dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
 
+
+
+
+
+
 //index.php?page=
 if(isset($_REQUEST['page'])){
  $page = get ('page','home');
@@ -100,9 +105,10 @@ if(isset($_SESSION['logIn']) && !empty($_SESSION['logIn'])){
 			  }elseif($userstatus == 'Branch'){
 
 			  $getbranches = 	getbranches($logInId,'TRUE');
-
+			  if(!empty($getbranches)){
 			  $vendor_id = $_SESSION['vendor_id'] = $getbranches[0]['vendor_id'];
 			  $branch_id = $_SESSION['branch_id'] = $getbranches[0]['branch_id'];
+			}
 			  }else{
 
 if($userstatus != 'Admin' && $userstatus != 'User' ){
@@ -213,6 +219,7 @@ $owlmailerjs = $config['OWL_MAILER_JS'];
 $editorjs = $config['EDITOR_PATH'];
 $editorsubjs = $config ['EDITOR_SUB_PATH'];
 $jscript_dashboard = $config['JS_PATH_DASHBOARD'];
+$jscript_tile_dashboard = $config['JS_TITLE_DASHBOARD'];
 $ajax_handler = $config['AJAX_HANDLER_DASHBOARD'];
 $dashboardcss = $config['DASHBOARD_PATH'];
 $jqurey = $config['JQUREY_PATH'];

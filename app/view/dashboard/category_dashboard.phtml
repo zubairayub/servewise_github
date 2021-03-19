@@ -1,12 +1,16 @@
 <div class="wrapper">
 		<div class="row">
-			<h1 data-aos="fade-right" data-aos-duration="1500">Category</h1>
+			<h1 data-aos="fade-right" data-aos-duration="1500"><?php 
+echo getlang('','Category',getlangcookie()); 
+?>	</h1>
 			<div class="category-dashboard-main" data-aos="fade-left" data-aos-duration="900" >
 				<form action="<?php echo $controller ?>" method="post" id="form">
 				<div class="cat-dashboard-1">
 						<div class="cat-dashboard-name">
-							<label>Category name :</label>
-							<input name="category" value="" type="text">
+							<label><?php 
+echo getlang('','Category name',getlangcookie()); 
+?>	 :</label>
+							<input name="category" value="" type="text" required />
 						</div>
 					<!-- 	<div class="cat-dashboard-id">
 							<label>Category ID :</label>
@@ -18,7 +22,9 @@
 						</div> -->
 					</div>
 					<div class="cat-dashboard-btn">
-						<input type="button" name="addbtn" value="Add Category" onclick="submitForm()" >
+						<input type="button" name="addbtn" value="<?php 
+echo getlang('','Add Category',getlangcookie()); 
+?>	" onclick="submitForm()" />
 					</div>
 				</form>
 			</div>
@@ -26,9 +32,15 @@
 					  <fieldset>
 					  <table class="table table-bordered" id="clientstable">
 						<thead class="bg-info">
-							<th>Category ID</th>
-							<th>Category</th>
-                            <th>2nd Level Category</th>
+							<th><?php 
+echo getlang('','Category ID',getlangcookie()); 
+?>	</th>
+							<th><?php 
+echo getlang('','Category',getlangcookie()); 
+?>	</th>
+                            <th><?php 
+echo getlang('','2nd Level Category',getlangcookie()); 
+?>	</th>
 							<th></th>
 							<th></th>
                         </thead>
@@ -42,9 +54,15 @@
 								<tr>
 								<td><?php echo $categorylist["category_id"]; ?></td>
 								<td><?php echo $categorylist["name"]; ?></td>
-								<td><a href="?page=subcategorytwo_dashboard&id=<?php echo $categorylist["category_id"]; ?>" >Add</a></td>								
-                                <td><a href="?page=editcategory_dashboard&id=<?php echo $categorylist["category_id"]; ?>&name=<?php echo $categorylist["name"]?>">Edit</a></td>
-								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+								<td><a href="?page=subcategorytwo_dashboard&id=<?php echo $categorylist["category_id"]; ?>" ><?php 
+				echo getlang('','Add',getlangcookie()); 
+				?></a></td>								
+                                <td><a href="?page=editcategory_dashboard&id=<?php echo $categorylist["category_id"]; ?>&name=<?php echo $categorylist["name"]?>"><?php 
+				echo getlang('','Edit',getlangcookie()); 
+				?></a></td>
+								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')"><?php 
+				echo getlang('','Delete',getlangcookie()); 
+				?></a></td>
 								
 							   </tr>
 								<?php }
@@ -65,17 +83,20 @@
 
 <script>
 	function submitForm(form){
-		
-    var url = $('#form').attr("action");
-		
-    var formData = $('#form').serializeArray();
-    $.post(url, formData).done(function (data) {
-        if(data == 1){
-			        alert('category added');
-			        location.reload(); 
+		var  validInput = $('input[name=category]').val();
+		var url = $('#form').attr("action");
+		var formData = $('#form').serializeArray();
+		if(validInput == ""){
+			alert('this field is required');
 		}else{
-			alert('category not added');
+			$.post(url, formData).done(function (data) {
+				if(data == 1){
+							alert('category added');
+							location.reload(); 
+				}else{
+					alert('category not added');
+				}
+			});
 		}
-    });
 }
 </script>

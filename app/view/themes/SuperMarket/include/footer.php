@@ -25,18 +25,24 @@
             </div>
         </div>
     </section> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
+<script src="js/slick.min.js"></script>
+<script src="js/supermarket.js"></script>
+
 	
-  </script>
-       <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.smartCart.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
         	
+    
+   
             // Initialize Smart Cart        
             $('#smartcart').smartCart();
         
+          
 
             
 $('.sc-add-to-cart').on('click', function () {
@@ -65,7 +71,7 @@ $('.sc-add-to-cart').on('click', function () {
                     'left': cart.offset().left + 10,
                     'width': 75,
                     'height': 75
-            }, 1500, 'easeInOutExpo');
+            }, 1500);
             
             setTimeout(function () {
                 cart.effect("shake", {
@@ -82,11 +88,13 @@ $('.sc-add-to-cart').on('click', function () {
          
            
         }
-    });    
+    })    
         });
+        
+        
 
 
-//         window.onscroll = function() {myFunction()};
+//window.onscroll = function() {myFunction()};
 
 // // Get the header
 // var header = document.getElementById("myNav");
@@ -107,10 +115,12 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("myNav").style.background = "rgba(0,0,0,0.2)";
+    document.getElementById("myNav").style.cssText="background:rgba(0,0,0,0.2); top:0px;";
   } else {
-    document.getElementById("myNav").style.background = "transparent";
+    document.getElementById("myNav").style.cssText =  "background:transparent; top:45px;";
   }
-}
+};
+
 
     </script>
+    

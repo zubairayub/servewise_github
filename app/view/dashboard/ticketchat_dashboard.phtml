@@ -1,0 +1,86 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="ticket-dashboard-main">
+            <h1 data-aos="fade-right"data-aos-duration="1500">Ticket Chat</h1>
+        </div>
+        <div class="chat-dashboard-main" data-aos="zoom-in-up" data-aos-duration="600">
+        <div id="wrapper">
+
+          
+
+            <div class="chat-content">
+            <div id="menuChat">
+                <p class="welcome">Welcome <br></p>
+
+               
+            </div>
+ 
+            <div id="chatbox">
+            <?php
+echo $messages;
+
+            ?>
+            </div>
+            </div>
+            <form class="chat-inner-btn" name="message" action="">
+                <input class="chat-text-box" name="usermsg" type="text" id="usermsg" />
+                <input class="chat-text-box" type="hidden" name="useremail" type="text" id="useremail" value="<?= $toemail?>" />
+                <input class="chat-text-button" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {
+                $("#submitmsg").click(function () {
+ var clientmsg = $("#usermsg").val(); 
+ var clientemail = $("#useremail").val(); 
+ $.post("../app/controller/tickets.php", { description: clientmsg , emailbrand: clientemail , ticket_id: <?php echo $_GET['t_id']; ?>   });
+                    $("#usermsg").val("");  
+                    return false;
+                });
+ 
+                function loadLog() {
+                    var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
+                    var postForm = { //Fetch form data
+                       
+            't_id'     :  '<?php echo $_GET['t_id'] ;?>',
+            
+        };
+                    
+                    $.ajax({
+                        type : 'GET',
+                        url: "../app/lib/getticket.php",
+                        data : postForm,
+                        cache: false,
+                        success: function (html) {
+                           
+                            $("#chatbox").html(html); //Insert chat log into the #chatbox div
+ 
+                            //Auto-scroll           
+                            var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height after the request
+                            if(newscrollHeight > oldscrollHeight){
+                                $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                            }   
+                        }
+                    });
+                }
+ 
+                setInterval (loadLog, 1500);
+ 
+                $("#exit").click(function () {
+                    var exit = confirm("Are you sure you want to end the session?");
+                    if (exit == true) {
+                    window.location = "index.php?logout=true";
+                    }
+                });
+            });
+        </script>

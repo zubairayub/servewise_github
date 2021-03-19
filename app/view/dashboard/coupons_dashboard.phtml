@@ -1,10 +1,14 @@
 <div class="wrapper">
     <div class="row">
         <div class="coupons-dashboard-main">
-        <h1 data-aos="fade-right"data-aos-duration="1500">Coupons</h1>
+        <h1 data-aos="fade-right"data-aos-duration="1500"><?php 
+echo getlang('','Coupons',getlangcookie()); 
+?>  </h1>
         <form action=""data-aos="fade-left"data-aos-duration="1500">
            <a href="?page=addnewcoupon_dashboard">
-               <input type="button" value="Add New Coupon">
+               <input type="button" value="<?php 
+echo getlang('','Add New Coupon',getlangcookie()); 
+?> ">
             </a>
         </form>
     </div>
@@ -12,12 +16,24 @@
         <form action="">
             <table>
                 <tr>
-                    <th>Serial.No</th>
-                    <th>Code</th>
-                    <th>Type</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Options</th>
+                    <th><?php 
+echo getlang('','Serial.No',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Code',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Type',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Start Date',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','End Date',getlangcookie()); 
+?>  </th>
+                    <th><?php 
+echo getlang('','Options',getlangcookie()); 
+?>  </th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -27,10 +43,14 @@
                     <td>03/01/2021</td>
                     <td class="option">
                         <a href="?page=addnewcoupon_dashboard">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i><?php 
+echo getlang('','Edit',getlangcookie()); 
+?> 
                         </a>
                         <a href="#">
-                            <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                            <i class="fa fa-trash" aria-hidden="true"></i><?php 
+echo getlang('','Remove',getlangcookie()); 
+?> 
                         </a>
                     </td>
                 </tr>

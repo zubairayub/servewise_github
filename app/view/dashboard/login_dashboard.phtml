@@ -5,33 +5,63 @@
 <section class="login-main">
     <div class="logincontent">
         <div class="login-section-right">
-            <div class="login-heading">Welcome to ServeWise</div>
+
+            <div class="login-heading"><?php 
+echo getlang('','welcome',getlangcookie()); ?> 
+<?php 
+echo getlang('','to',getlangcookie()); 
+?> ServeWise <?php 
+echo getlang('','login',getlangcookie()); ?></div>
             
             <a herf="#" class="login-btn-google g-signin2" data-onsuccess="onSignIn"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
             <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
             
-            <div class="login-slipt"><div class="span-1"></div>OR LOGIN WITH EMAIL<div class="span-2"></div></div>
+            <div class="login-slipt"><div class="span-1"></div><?php 
+echo getlang('','or',getlangcookie()).' '; 
+echo getlang('','with',getlangcookie()).' '; 
+echo getlang('','email',getlangcookie()); 
+?> <div class="span-2"></div></div>
             <form action="<?php echo $controller ;?>" method="post" id="form" class="login-form">
                 <input class="login-email" name="email" type="text" required>
                 <input class="login-password" name="password" type="password" required>
                 <div class="form-lower-content">
                     <div class="radio">
                         <input type="checkbox">
-                        <label>Keep me logged in</label>
+                        <label><?php 
+echo getlang('','keep',getlangcookie()); 
+?> <?php 
+echo getlang('','me',getlangcookie()); 
+?> <?php 
+echo getlang('','logged',getlangcookie()); 
+?> <?php 
+echo getlang('','in',getlangcookie()); 
+?></label>
                     </div>
-                    <a href="?page=forgot_dashboard">Forget Password</a>
+                    <a href="?page=forgot_dashboard"><?php 
+echo getlang('','Forget Password',getlangcookie()); 
+?></a>
                 </div>
                 <label class='bg-danger'><?php 
-				if(isset($_GET["message"])){
-				echo $_GET['message'];
+				if(isset($_GET["message"]) && !empty($_GET["message"]) && $_GET["message"] != 0){
+				//echo $_GET['message'];
 				}
 				?></label>
                 <div class="login-btn-login">
-                    <input class="login-btn" type="button" name="loginbtn" value="Log In" onclick="submitForm()">
+                    <input class="login-btn" type="button" name="loginbtn" value="<?php 
+echo getlang('','Log In',getlangcookie()); 
+?>  " onclick="submitForm()">
                 </div>
             </form>
             <div class="login-nav-signup">
-                <p>Don't have an account yet? <a href="?page=signup_dashboard">Sign up</a></p>
+                <p><?php 
+echo getlang('','Do not',getlangcookie()); 
+?> <?php 
+echo getlang('','have an',getlangcookie()); 
+?> <?php 
+echo getlang('','account yet?',getlangcookie()); 
+?> <a href="?page=signup_dashboard"><?php 
+echo getlang('','Sign up',getlangcookie()); 
+?> </a></p>
             </div>
         </div>
         <div class="login-section-left">
