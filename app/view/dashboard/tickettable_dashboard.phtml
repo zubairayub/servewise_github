@@ -17,12 +17,19 @@
 
                     $from_user_data =  getuserinfo($value['from_user'],'') ; 
                     $toemail = $from_user_data[0]['email_id'];
+                    if($value['priority'] == 1){
+                        $priority = 'Low';
+                    }elseif ($value['priority'] == 2) {
+                        $priority = 'Medium';
+                    }else{
+                        $value['priority'] == 'High';
+                    }
                   ?>
 
                 <tr>
                     <td><?= $value['title'] ; ?></td>
                     <td><?=  $toemail ; ?></td>
-                    <td><?= $value['priority'] ; ?></td>
+                    <td><?= $priority ; ?></td>
                     <td><a href="?page=ticketchat_dashboard&t_id=<?= $value['id']?>&to_email=<?= $toemail ?>">View <i class="fa fa-eye" aria-hidden="true"></i></a></td>
                 </tr>
 
