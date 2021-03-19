@@ -400,16 +400,21 @@ function loginForm(){
   bottom: 20px;
   right: 20px;
   z-index:9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .chatbox .chatbox__button{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    height: 350px;
 }
 
 .chatbox .chatbox__button button{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     padding: 5px;
     background: transparent;
@@ -420,7 +425,7 @@ function loginForm(){
 }
 
 .chatbox__button button .CloseAplha{
-  padding:15px;
+  padding:5px;
   border-radius: 50%;
   transition:.3s ease;
 }
@@ -435,6 +440,7 @@ function loginForm(){
 .chatbox__button button .Close{
   font-size:20px;
   padding: 4px;
+  margin:0px;
   transition:.3s ease;
 }
 
