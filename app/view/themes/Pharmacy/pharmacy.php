@@ -505,23 +505,23 @@ include 'include/header.php';
                 <div class="mid-content">
                     <div class="social-icons">
                         <div class="icon">
-                            <a href="#">
+                            <a href="<?= $footer_fb_link ?>">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icon">
-                            <a href="#">
+                            <a href="<?= $footer_tw_link ?>">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icon">
-                            <a href="#">
+                            <a href="<?= $footer_inst_link ?>">
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icon">
-                            <a href="#">
-                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            <a href="<?= $footer_in_link ?>">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -1023,15 +1023,15 @@ include 'include/header.php';
                     <div class="content-left"><i class="fa fa-globe" aria-hidden="true"></i></div>
                     <div class="content-right">
                         <h2>Address</h2>
-                        <p>123 House, ABC Street , XYZ State</p>
+                        <p><?= $foote_ad ?></p>
                     </div>
                 </div>
                 <div class="detail-card">
                     <div class="content-left"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></div>
                     <div class="content-right">
                         <h2>WHATSAPP US</h2>
-                        <p class="p1">(000) 123 456</p>
-                        <p class="p2">Contact@Example.com</p>
+                        <p class="p1"><?= $footer_contact ;?></p>
+                        <p class="p2"><?= $footer_email ;?></p>
                     </div>
                 </div>
                 <div class="detail-card">
@@ -1049,7 +1049,7 @@ include 'include/header.php';
         <div class="container">
             <div class="about-content" data-aos="zoom-in"   data-aos-duration="1000">
                 <div class="about-heading">About Us</div>
-                <div class="about-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nobis dolores qui debitis, nam odit repellendus obcaecati, modi adipisci beatae, esse autem hic ullam laboriosam magni! Voluptas suscipit qui tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti eos numquam hic consectetur in illo vitae, quo harum veniam magnam non, provident ex quasi! Aliquam eaque commodi autem voluptatum alias.</div>
+                <div class="about-dis"><?= $footer_about_disc ?></div>
             </div>
         </div>
     </section>

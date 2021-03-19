@@ -479,7 +479,7 @@ include 'include/header.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-header wow fadeInDown">
-                                <h1>About Us<small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iure tenetur. Aut, consequuntur sunt temporibus quaerat repudiandae delectus aliquam nostrum ab laudantium. Doloribus commodi asperiores fugiat reprehenderit magnam veritatis consequatur.</small></h1>
+                                <h1>About Us<small><?=$footer_about_disc?></small></h1>
                             </div>
                         </div>
                     </div>
