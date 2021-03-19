@@ -761,13 +761,35 @@ include 'include/header.php';
                 foreach ($result as $key => $value) {
                     if($value['is_featured'] == '1'){
                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                        if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+                       if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
                      
               ?>
             <div class="card sc-product-item items">
-                <img data-name="product_cart_img" src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="Animals" style="width:100%">
+                <img data-name="product_cart_img" src='<?php echo $image_path ; ?>' alt="<?= $found?>" style="width:100%">
                 <div class="container-alpha">
                     
                         <h4 class="aplha-head" data-name="product_name"><?php echo $value['name'] ; ?></h4>
@@ -842,12 +864,34 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+               if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
               ?>
                 <div class="homo-product-card sc-product-item items">
-                    <div class="homo-card-upper"><img data-name="product_cart_img" src='<?= $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
+                    <div class="homo-card-upper"><img data-name="product_cart_img" src='<?= $image_path ; ?>' alt="<?= $found?>"></div>
                         <div class="homo-card-content">
                             <div class="homo-content1">
                                 <b data-name="product_name"><?php echo $value['name'] ; ?></b>
@@ -920,12 +964,34 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+               if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
               ?>
                 <div class="homo-product-card sc-product-item">
-                    <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
+                    <div class="homo-card-upper"><img src='<?php echo $image_path ; ?>' alt="<?= $found?>"></div>
                     <div class="homo-card-content">
                         <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>
@@ -971,12 +1037,34 @@ include 'include/header.php';
             <?php 
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-               if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+              if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_medical . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
               ?>
                 <div class="homo-product-card sc-product-item">
-                    <div class="homo-card-upper"><img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt=""></div>
+                    <div class="homo-card-upper"><img src='<?php echo $image_path ; ?>' alt="<?= $found?>"></div>
                     <div class="homo-card-content">
                         <div class="homo-content1">
                             <b data-name="product_name"><?php echo $value['name'] ; ?></b>

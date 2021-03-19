@@ -145,14 +145,36 @@ include 'include/header.php';
                                     <?php 
                                         foreach ($result as $key => $value) {
                                                 $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                                if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+                         if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
                                     ?>
 
                                     <li>
                                         <div class="slider-img">
-                                            <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="" />
+                                            <img src='<?php echo $image_path ; ?>' alt="<?= $image_path?>" />
                                         </div>
                                         <div class="slider-content">
                                             <div class="page-header">
@@ -286,13 +308,35 @@ include 'include/header.php';
                                 foreach ($result as $key => $value) {
                                     if($value['is_featured'] == '1'){
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
-                                       if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+                                        if(!empty($image)){
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
                             ?>
                             <div class="features-tile sc-product-item">
                                 <div class="features-img">
-                                    <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="" />
+                                    <img src='<?php echo $image_path ; ?>' alt="<?= $found?>" />
                                 </div>
                                 <div class="features-content">
                                     <div class="page-header">
@@ -383,7 +427,29 @@ include 'include/header.php';
                                 foreach ($result as $key => $value) {
                                         $image = getproductsimages($value['product_id'],$DB_CLASS);
                                        if(!empty($image)){
-   $image_path =   $image[0]['image_path'];
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_restaurent . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
                         }
                             ?>
                             <div class="menu-item col-sm-6 col-xs-12 starter dinner desserts">

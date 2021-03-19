@@ -622,13 +622,35 @@ include 'include/header.php';
                 if($value['is_featured'] == '1'){
                     $image = getproductsimages($value['product_id'],$DB_CLASS);
                     if(!empty($image)){
-                   $image_path =   $image[0]['image_path'];
-               }
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_fashion . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_fashion . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
+                        }
               ?>
 
         <div class="card sc-product-item">
             <div class="product-img">
-                <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
+                <img src='<?php echo $image_path ; ?>' alt="<?= $found?>">
             </div>
             <div class="product-content">
                 <h1 data-name="product_name"><?= $value['name']; ?></h1>
@@ -827,13 +849,35 @@ include 'include/header.php';
             foreach ($result as $key => $value) {
                 $image = getproductsimages($value['product_id'],$DB_CLASS);
                 if(!empty($image)){
- $image_path =   $image[0]['image_path'];
-                }
+   $image_path =   $PRODUCT_DIRECTORY. $image[0]['image_path'];
+   $found = $value['name'];
+if (!file_exists($image_path)) {
+ 
+$images = glob($default_image_fashion . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+
+
+    $found = $value['name'];
+
+ }
+
+
+                        }else{
+                           $images = glob($default_image_fashion . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$randomImage = $images[array_rand($images)]; // See comments
+
+ $image_path = $randomImage;
+                               $found = $value['name'];
+                        }
                
         ?>
         <div class="card sc-product-item">
             <div class="product-img">
-                <img src='<?php echo $PRODUCT_DIRECTORY.$image_path ; ?>' alt="product">
+                <img src='<?php echo $image_path ; ?>' alt="<?= $found?>">
             </div>
             <div class="product-content">
                 <h1><?= $value['name'];?></h1>

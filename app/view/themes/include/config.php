@@ -6,6 +6,10 @@ require  APPLICATION_PATH . DS . 'lib'. DS .'functions.php';
 $DB_CLASS =     APPLICATION_PATH . DS . 'model' . DS. 'classDatabaseManager.php';
 $PRODUCT_DIRECTORY = '../../../upload/products/';
 $logo_directory =  '../../../upload/logos/';
+$default_image_store = '../../../view/img/web_images/supermarket/';
+$default_image_fashion = '../../../view/img/web_images/fashion/';
+$default_image_medical = '../../../view/img/web_images/pharmacy/';
+$default_image_restaurent = '../../../view/img/web_images/res/';
 
 if(!empty($_SESSION['vb_id'])){
 
