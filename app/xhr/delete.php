@@ -85,7 +85,10 @@ else{
 
 if(!empty($result)){
 $returnpage = $_SERVER['HTTP_REFERER'] . '&success=done';
-    header("Location:$returnpage");
+   // header("Location:$returnpage");
+?>
+<script type="text/javascript">window.location.replace("<?= $returnpage ;?>");</script>
+<?php
 
 }
 
