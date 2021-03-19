@@ -409,29 +409,29 @@ include 'include/header.php';
                     <div class="icon">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </div>
-                    <div class="dis">Call : +0213 456 789</div>
+                    <div class="dis">Call : <?= $footer_contact ;?></div>
                 </div>
             </div>
             <div class="content-right">
                 <div class="content">
                     <div class="social-content">
                         <div class="icons">
-                            <a href="#">
+                            <a href="<?= $footer_fb_link ?>">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icons">
-                            <a href="#">
+                            <a href="<?= $footer_tw_link ?>">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icons">
-                            <a href="#">
-                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            <a href="<?= $footer_in_link ?>">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="icons">
-                            <a href="#">
+                            <a href="<?= $footer_inst_link ?>">
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -1000,8 +1000,7 @@ include 'include/header.php';
                 <div class="para-about" data-aos="fade-left">
                 <div class="about-content1">
                     <h2>About</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolor aperiam sequi minima quia vero adipisci est, magnam recusandae aliquid odio possimus. Iure nisi temporibus quae iste id quisquam exercitationem?
+                    <p><?= $footer_about_disc ?>
                     </p>
                 </div>
             </div>
