@@ -1,3 +1,10 @@
+<div class="wrapper">
+    <div class="row">
+    <div class="order-dashboard-main">
+        <h1 data-aos="fade-right"data-aos-duration="1500">All Reports</h1>
+    </div>
+
+
 <?php 
 if(isset($_POST['branchname']) && !empty($_POST['branchname'])){
 $branch_parameter = $_POST['branchname'];
@@ -9,8 +16,7 @@ $branch_parameter = $_POST['branchname'];
 
 
  ?>
-   <div class="wrapper">
-    <div class="row">
+   
         <div class="allstaff-dashboard-main">
 
 
@@ -30,7 +36,7 @@ $branch_parameter = $_POST['branchname'];
     <input type="submit" name="submit" value="Submit">
 </form>
 
-</div></div></div>
+</div>
 
 
 
@@ -38,7 +44,7 @@ $branch_parameter = $_POST['branchname'];
 if(!empty($branch_parameter)){
 ?>
     <iframe width="100%" height="1250" src="https://datastudio.google.com/embed/reporting/b36e1333-7b24-4881-9499-6b4773a10410/page/C9P3B?params=%7B%22df67%22:%22include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580<?php echo $branch_parameter; ?>%22%7D" frameborder="0" style="border:0" allowfullscreen></iframe> 
-
+    <iframe width="100%" height="1250" src="https://datastudio.google.com/embed/reporting/47c92df9-cffe-453f-ae03-742ec6abe8fd/page/nfP3B?params=%7B%22df51%22:%22include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580<?php echo $branch_parameter; ?>%22%7D" frameborder="0" style="border:0" allowfullscreen></iframe>
     
 
 <?php
@@ -46,6 +52,7 @@ if(!empty($branch_parameter)){
 
 ?>
  
+ </div></div>
 
 
 
