@@ -75,6 +75,16 @@
       $(this).parents(".select_wrap").removeClass("active");
     })
 });
+
+window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("navTop").style.cssText = "background: green; top:30px;"  ;
+    } else {
+      document.getElementById("navTop").style.background = "transparent";
+    }
+  };
         </script>
 </body>
 

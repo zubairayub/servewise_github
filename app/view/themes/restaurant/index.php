@@ -32,7 +32,40 @@ include 'include/header.php';
             </ul>
         </div>
         <!-- lang selector End -->
-            <nav class="navbar navbar-fixed-top">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="topbar-content">
+                        <div class="left-side">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i><p><?= $foote_ad ?>.</p> <i class="fa fa-phone" aria-hidden="true"></i> <p><?= $footer_contact ;?></p>
+                        </div>
+                        <div class="right-side">
+                            <div class="social-icons">
+                                <div class="icon">
+                                    <a href="<?= $footer_fb_link ?>">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="<?= $footer_tw_link ?>">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="<?= $footer_inst_link ?>">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="<?= $footer_in_link ?>">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar" id="navTop">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -50,12 +83,12 @@ include 'include/header.php';
                             <li class="dropdown">
                             </li>
                             <li class="dropdown">
-                                <a href="./menu.html">Menu</a>
+                                <a id="menuNav" href="./menu.html">Menu</a>
                             </li>
                             <li class="dropdown">
-                                <a href="./reservation.html" >Reservation</a>
+                                <a id="menuNa" href="./reservation.html" >Reservation</a>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a id="menuN" href="./contact.html">Contact</a></li>
                             <li>
                             <div id="menuToggle">
                         <input type="checkbox" class="checkbox" />
@@ -96,7 +129,7 @@ include 'include/header.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-header wow fadeInDown">
-                                <h1>the restaurant<small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eveniet,</small></h1>
+                                <h1>OUR STORY<small></small></h1>
                             </div>
                         </div>
                     </div>
@@ -134,7 +167,7 @@ include 'include/header.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-header wow fadeInDown">
-                                <h1 class="white">today's Menu<small>A little about us and a breif history of how we started.</small></h1>
+                                <h1 class="black">today's Menu<small>A little about us and a breif history of how we started.</small></h1>
                             </div>
                         </div>
                     </div>
@@ -296,14 +329,14 @@ $randomImage = $images[array_rand($images)]; // See comments
             <section class="features">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="page-header wow fadeInDown">
+                        <div class="heading">
+                            <div class="fadeInDown">
                                 <h1 class="white">Our features<small>Dishes</small></h1>
                             </div>
                         </div>
                     </div>
-                    <div class="row wow fadeInUp">
-                        <div class="col-md-4 col-sm-6">
+                    <div class="fadeInUp">
+                        <div class="card-menu">
                             <?php 
                                 foreach ($result as $key => $value) {
                                     if($value['is_featured'] == '1'){
@@ -334,12 +367,12 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
                             ?>
-                            <div class="features-tile sc-product-item">
+                            <div class="product-card">
                                 <div class="features-img">
                                     <img src='<?php echo $image_path ; ?>' alt="<?= $found?>" />
                                 </div>
                                 <div class="features-content">
-                                    <div class="page-header">
+                                    <div class="product-heading">
                                         <h1 data-name="product_name"><?= $value['name'] ?></h1>
                                     </div>
                                     <p><?= $value['description']; ?></p>
