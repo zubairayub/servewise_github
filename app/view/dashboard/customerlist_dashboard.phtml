@@ -113,11 +113,11 @@ echo getlang('','Option',getlangcookie());
 
 <?php
               
-if(isset($_POST['export']))
-{
-	$data='wellcome to here';
+if(isset($_POST['export'])){
+	
+	$data='Serial Number |  Name  | Email   |  Phone  | Brand | Vender | option ';
 // $data=$_POST['textdata'];
-$export = fopen('customerlist.txt', 'a');
+$export = fopen('customer.xls', 'a+');
 fwrite($export,$data);
 fclose($export);
 }
