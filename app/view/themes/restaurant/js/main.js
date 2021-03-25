@@ -612,14 +612,20 @@ $(function() {
        Fixed Navbar
        ================================================ */
 
-    $(window).scroll(function() {
-        var value = $(this).scrollTop();
-        if (value > 350)
-            $(".navbar-fixed-top").css("background", "rgba(0, 0, 0, 0.9)");
-
-        else
-            $(".navbar-fixed-top").css("background", "rgba(0, 0, 0, 0.3)");
-
-    });
+       window.onscroll = function() {scrollFunction()};
+  
+       function scrollFunction() {
+         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+           document.getElementById("navTop").style.cssText = "background: rgba(0,0,0,0.5); top:0px;"  ;
+           document.getElementById("menuNav").style.cssText = "color:white;";
+           document.getElementById("menuNa").style.cssText = "color:white;";
+           document.getElementById("menuN").style.cssText = "color:white;"; 
+        } else {
+           document.getElementById("navTop").style.cssText = "background: white; top:10vh; color:black;";
+           document.getElementById("menuNav").style.cssText = "color:black;";
+           document.getElementById("menuNa").style.cssText = "color:black;";
+           document.getElementById("menuN").style.cssText = "color:black;";
+         }
+       };
 
 }); /* End Strict Function */
