@@ -101,10 +101,30 @@ echo getlang('','Option',getlangcookie());
 							
 					</table>
 				</fieldset>
-            </div>
+      <!--       </div>
 	<div class="customer-list-btn-section">
-		<a href="#">Export List</a>
+		<a href="../app/controller/exportlist.php">Export List</a>
+	</div> -->
+	<form method="POST" style="margin-left: 900px">
+	<div class="customer-list-btn-section">
+		<input type="submit" name="export" value="Export List">
 	</div>
+	</form>
+
+<?php
+              
+if(isset($_POST['export']))
+{
+	$data='wellcome to here';
+// $data=$_POST['textdata'];
+$export = fopen('customerlist.txt', 'a');
+fwrite($export,$data);
+fclose($export);
+}
+
+ ?>
+
+
 </div>
 </div>
 <!-- Datatables enable script / Server side datatable-->

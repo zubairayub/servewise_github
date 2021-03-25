@@ -6,7 +6,7 @@ echo getlang('','All Subscribers',getlangcookie());
 ?>  </h1>
     </div>
     <div class="subs-main" data-aos="zoom-in-up" data-aos-duration="600">
-        <form action="">
+        <form action="" method="POST">
             <table>
                 <tr>
                     <th><?php 
@@ -20,7 +20,7 @@ echo getlang('','Date',getlangcookie());
 ?>  </th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td name='id'>1</td>
                     <td>Muzzamilqureshi007@gmail.com</td>
                     <td>01/01/2021</td>
                 </tr>
@@ -28,5 +28,23 @@ echo getlang('','Date',getlangcookie());
         </form>
     </div>        
 </div>
+
+    <div class="customer-list-btn-section">
+        
+    <a href="#">Export Data</a>
+    </div>
+    </form>
 </div>
+<?php
+
+// if (isset($POST['submit'])) {
+//     $data=$POST['id'];
+//     $path=fopen('exportdata.txt', 'a');
+//     fwrite($data, $path);
+//     fclose($path);
+// }
+
+  ?>
+
+
 
