@@ -12,7 +12,7 @@ echo getlang('','All Subscribers',getlangcookie());
                     <th><?php 
 echo getlang('','Serial.No',getlangcookie()); 
 ?>  </th>
-                    <th><?php 
+                    <th><?php   
 echo getlang('','E-mail',getlangcookie()); 
 ?>  </th>
                     <th><?php 
@@ -20,29 +20,37 @@ echo getlang('','Date',getlangcookie());
 ?>  </th>
                 </tr>
                 <tr>
-                    <td name='id'>1</td>
+                    <td>1</td>
                     <td>Muzzamilqureshi007@gmail.com</td>
                     <td>01/01/2021</td>
                 </tr>
+                <!-- <input type="submit" name="submit" value="Submit"> -->
             </table>
         </form>
     </div>        
 </div>
 
     <div class="customer-list-btn-section">
+<form method="POST">
         
-    <a href="#">Export Data</a>
+<button name="submit">Export Data
+</button>
     </div>
     </form>
 </div>
 <?php
+if (isset($_POST['submit'])) {
+    
+    $myfile = fopen("subsriber.xls", "w") or die("Unable to open file!"); 
+    $txt = "ID  | Customer Email |   Date | \n";
+    fwrite($myfile, $txt);
+    $txt = '1   Muzzamilqureshi007@gmail.com  01/01/2021';
+    fwrite($myfile, $txt);
+    fclose($myfile);
 
-// if (isset($POST['submit'])) {
-//     $data=$POST['id'];
-//     $path=fopen('exportdata.txt', 'a');
-//     fwrite($data, $path);
-//     fclose($path);
-// }
+}
+
+
 
   ?>
 

@@ -15,13 +15,7 @@ $query;
 $db;	
 $varr = new databaseManager();
 
-$email      = $_POST['email'] = isset($_POST['email']) ? $_POST['email'] : '';
 
-
-if(isset($email) && !empty($email)){
-
-     sendEmail($email);
-echo 1;
 
   
 }
