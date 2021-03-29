@@ -115,14 +115,19 @@ echo getlang('','Option',getlangcookie());
               
 if(isset($_POST['export'])){
 	
-	$data='Serial Number |  Name  | Email   |  Phone  | Brand | Vender | option ';
+	
 
-   $export = fopen('customer.xls', 'a+') or die("Unable to open file!");;
+   $export = fopen('customerdetail.xls', 'a+') or die("Unable to open file!");
+   $data="Serial Number |  Name  | Email   |  Phone  | Brand | Vender | option |\n";
   fwrite($export,$data);
-   $data='12    Irfan    irfan@gmail.com   09876543   ok    12    done ';
-   $setail=fopen($cusdetail,$data);
-   fwrite($data, $export);
+   $data1='12    Irfan    irfan@gmail.com   09876543   ok    12    done ';
+  // $data='12 '.$username.' '.$user_data.' '.$contact_no.' '.$vendor_data. ' '.$branch_data;
+   // $setail=fopen($data);
+   fwrite( $export,$data1);
    fclose($export);
+
+
+
 }
 
  ?>
