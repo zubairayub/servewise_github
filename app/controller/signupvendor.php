@@ -42,6 +42,8 @@ $DB_CLASS = $config_service['DB_CLASS'];
 		 $country = 'Default';
          $state = 'Default';
          $city = 'Default';
+
+      if(checkvendornameandemail($DB_CLASS,$_POST['name'],$_POST['email'])){
 	
 	
 		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid);
@@ -59,7 +61,9 @@ $DB_CLASS = $config_service['DB_CLASS'];
 		} else {
 			echo "0";
 		}
-	
+	}else{
+		echo "2";
+	}
 	}
         $userid = $_SESSION["logInId"];
         $getvendorid = $vendor->getvendordetailsbyuserid($userid);

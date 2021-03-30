@@ -11,6 +11,56 @@ function get($name, $def= '')
 
 
 
+function checkvendornameandemail($dbclass= null,$name, $email)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+ $varr = new databaseManager();
+$varr->query="SELECT * FROM `vendor`  where name = '$name' AND email_id = '$email' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+if(count($result) > 0){
+return false;
+
+}else{
+	return true;
+
+}
+
+}
+
+
+
+
+function checkbranchnameandemail($dbclass= null,$name, $email)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+ $varr = new databaseManager();
+$varr->query="SELECT * FROM `branch`  where name = '$name' AND email_id = '$email' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+if(count($result) > 0){
+return false;
+
+}else{
+	return true;
+
+}
+
+}
+
+
+
+
 
 
 
