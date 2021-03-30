@@ -68,7 +68,7 @@ include 'include/header.php';
             <nav class="navbar" id="navTop">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <button type="button" id="navbarBurger" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -331,7 +331,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                     <div class="row">
                         <div class="heading">
                             <div class="fadeInDown">
-                                <h1 class="white">Our features<small>Dishes</small></h1>
+                                <h1 class="black">Our features<small>Dishes</small></h1>
                             </div>
                         </div>
                     </div>

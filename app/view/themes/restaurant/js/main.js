@@ -625,6 +625,8 @@ $(function() {
            document.getElementById("menuNav").style.cssText = "color:black;";
            document.getElementById("menuNa").style.cssText = "color:black;";
            document.getElementById("menuN").style.cssText = "color:black;";
+           document.getElementsByClassName(".icon-bar").style.cssText = "color:black;";
+           
          }
        };
 

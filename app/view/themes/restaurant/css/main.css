@@ -47,7 +47,7 @@ small {
 
 .features .card-menu{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
@@ -1484,7 +1484,7 @@ fieldset[disabled] .btn-default.active {
    -------- */
 
 .features {
-    background: url(../img/img/hero-img.jpg) no-repeat center center;
+    background: url(../img/img/background-product.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
