@@ -137,7 +137,7 @@ if($type == 'Branch'){
 
 								}elseif($type == 'vendor_singup'){
 
-$vendor_data = getvendors('',$value['from_user_id'],'TRUE');
+$vendor_data = getvendors('',$value['to_user_id'],'TRUE');
 if(!empty($vendor_data)){
 
 	$vendor_name = $vendor_data[0]['name'];
@@ -304,7 +304,8 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 								?>
 
 				<li class="dropdown-menu-item">
-						<?= $type;?>	
+						<?= $type;
+						?>	
 						</li>
 								<?php
 							}
