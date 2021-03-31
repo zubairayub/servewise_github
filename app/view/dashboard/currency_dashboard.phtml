@@ -13,46 +13,21 @@
                             <div class="sys-dis-sub-head">System Default Currency</div>
                             <div class="sys-dis-sub-input">
                                 <select name="def_currency" id="">
-                                    <option value="1">Pakistani</option>
-                                    <option value="2">Pakistani</option>
-                                    <option value="3">Pakistani</option>
+                                    <?php
+foreach ($data as $key => $value) {
+    ?>
+
+<option value='<?= $value['id']?>' ><?= $value['name']; ?></option>
+    <?php
+}
+                                    ?>
                                 </select>
                                 <input type="button" value="SAVE" onclick="submitDefaultForm()">
                             </div>
                         </div>
                     </div>
                 </form>
-                <div class="sys-box" data-aos="fade-left"data-aos-duration="900">
-                    <form action="<?= $controller; ?>" id="symbolForm">
-                        <input type="hidden" name="currencySymbol">
-                        <div class="sys-box-head">Set Currency Formats</div>
-                        <div class="sys-box-dis">
-                            <div class="sys-section1">
-                                <div class="sys-dis-sub-head">Symbol Format</div>
-                                <div class="sys-dis-sub-input">
-                                    <select name="symbol_format" id="">
-                                        <option value="1">[Symbol] [Amount]</option>
-                                        <option value="2">[Amount] [Symbol]</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="sys-section1">
-                                <div class="sys-dis-sub-head">No of decimals</div>
-                                <div class="sys-dis-sub-input">
-                                    <select name="decimals" id="">
-                                        <option value="1">1234</option>
-                                        <option value="2">123.4</option>
-                                        <option value="3">12.34</option>
-                                        <option value="4">1.234</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="sys-dis-sub-btn">
-                                <input type="button" value="SAVE" onclick="submitSymbolForm()">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+               
             </div>
             <div class="sys-dashboard-btn" data-aos="fade-left"data-aos-duration="700">
                 <a href="?page=addnewcurrency_dashboard">
@@ -71,23 +46,24 @@
                             <th>Currency Symbol</th>
                             <th>Currency Code</th>
                             <th>Exchange Rate (1 USD=?)</th>
-                            <th>Status</th>
+                       
                             <th>Option</th>
                         </tr>
+                        <?php 
+                        $count = 0;
+foreach ($data as $key => $value) {
+    $count ++;
+    ?>
+
                         <tr>
-                            <td>1</td>
-                            <td>Pakistani Rupees</td>
-                            <td>RS</td>
-                            <td>PKR</td>
-                            <td>157.00</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" name="switch_stat">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
+                            <td><?= $count ; ?></td>
+                            <td><?= $value['name'] ; ?></td>
+                            <td><?= $value['symbol'] ; ?></td>
+                            <td><?= $value['code'] ; ?></td>
+                            <td><?= $value['rate'] ; ?></td>
+                          
                             <td class="option">
-                                <a href="?page=addnewcurrency_dashboard">
+                                <a href="?page=addnewcurrency_dashboard&id= <?= $value['id'] ; ?>">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </a>
                                 <a href="#">
@@ -95,6 +71,10 @@
                                 </a>
                             </td>
                         </tr>
+
+    <?php
+}
+                        ?>
                     </table>
                 </form>
             </div>

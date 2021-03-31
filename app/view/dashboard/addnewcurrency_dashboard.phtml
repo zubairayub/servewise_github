@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text" name="currency_name">
+                       <input type="text" name="currency_name" value="<?= $name ?>">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -22,7 +22,7 @@
                        Symbol
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="currency_symbol">
+                        <input type="text" name="currency_symbol" value="<?= $symbol ?>" >
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -30,7 +30,7 @@
                        Code
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="currency_code">
+                        <input type="text" name="currency_code" value="<?= $code ?>">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -38,7 +38,9 @@
                        Exchange Rate
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="currency_rate">
+                        <input type="text" name="currency_rate" value="<?= $rate ?>">
+                          <input type="hidden" name="action" value="<?= $update ?>">
+                          <input type="hidden" name="id" value="<?= $id ?>">
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">

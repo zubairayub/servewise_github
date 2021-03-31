@@ -15,6 +15,18 @@ $db;
 $varr = new databaseManager();
 
 $currency_name       = $_POST['currency_name']        = isset($_POST['currency_name']) ? $_POST['currency_name'] : '';
-$currency_symbol      = $_FILES['currency_symbol']      = isset($_FILES['currency_symbol']) ? $_FILES['currency_symbol'] : '';
+$currency_symbol      = $_POST['currency_symbol']      = isset($_POST['currency_symbol']) ? $_POST['currency_symbol'] : '';
 $currency_code   = $_POST['currency_code']    = isset($_POST['currency_code']) ? $_POST['currency_code'] : '';
-$currency_rate    = $_POST['currency_rate']     = isset($_POST['end_date']) ? $_POST['end_date'] : '';
+$currency_rate    = $_POST['currency_rate']     = isset($_POST['currency_rate']) ? $_POST['currency_rate'] : '';
+
+$action = $_POST['action'] ;
+
+
+
+if($action == 'true'){
+	$id = $_POST['id'] ;
+$add = addcurrecny($DB_CLASS,$currency_name,$currency_symbol,$currency_code,$currency_rate,'update',$id);
+}else{
+$add = addcurrecny($DB_CLASS,$currency_name,$currency_symbol,$currency_code,$currency_rate)	;
+}
+

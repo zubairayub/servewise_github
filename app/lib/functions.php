@@ -294,6 +294,92 @@ return $result;
 
 }
 
+
+function addcurrecny($dbcalss,$name,$symbol,$code,$rate,$action = null,$id= null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+//$symbol = mysqli_real_escape_string($varr,$symbol);
+
+	 if($action == 'update'){
+$varr->query="UPDATE  `currency` SET  name = ?,symbol = ?,code = ?,rate = ? where  id = $id ";
+	$result=$varr->executeQuery($varr->query,array($name,$symbol,$code,$rate),"update");
+	 }else{
+$varr->query="INSERT INTO `currency`(`name`, `symbol`, `code`,`rate`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($name,$symbol,$code,$rate),"create");	 	
+	 }
+
+
+
+
+return $result;
+
+
+
+
+}
+
+
+
+function setcurrecny($dbcalss,$id){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+	$varr->query="UPDATE  `config` SET  value = ? where  name = 'def_currency' ";
+	$result=$varr->executeQuery($varr->query,array($id),"update");
+
+
+
+
+return $result;
+
+
+
+
+}
+
+
+
+function getcurrecny($id=null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+//$symbol = mysqli_real_escape_string($varr,$symbol);
+
+	 
+
+
+if(empty($id)){
+$varr->query="SELECT * FROM `currency`    ";	
+}else{
+	$varr->query="SELECT * FROM `currency`   where id = $id ";	
+}
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+return $result;
+
+
+
+
+}
+
+
 function getpaymentmethods($dbclass=null,$branch_id,$type=null){
 if(!empty($dbclass)){
 	
