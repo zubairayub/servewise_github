@@ -38,9 +38,6 @@ $product_img = $_GET['product_img'];
 $product_min_quantity = $_GET['product_min_quantity'];
 $tax_percantage = $_GET['tax_percantage'];
 
-
-
-
 }
 else{
 
@@ -60,15 +57,7 @@ $product_cat_ssub = NULL;
 $product_image = NULL;
 $product_min_quantity = null;
 $tax_percantage = null;
-
-
-
-
 }
-
-
-
-
 
 if($product_feature == 1){
 $product_feature = 'CHECKED';
@@ -81,12 +70,7 @@ $product_publish = 'CHECKED';
 }else{
 $product_publish = null;    
 }
-
-
-
-
-	
-	//print_r($olddetails);
+		//print_r($olddetails);
 	//$vbid = "1";
 	
 

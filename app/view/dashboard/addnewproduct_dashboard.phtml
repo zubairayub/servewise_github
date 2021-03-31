@@ -8,68 +8,63 @@ echo getlang('','Add New Product',getlangcookie());
 ?> <a href="?page=viewproduct_dashboard"><?php 
 echo getlang('','View Product',getlangcookie()); 
 ?></a></h1>
-                <form class="addproduct-form" action="<?php echo $controller; ?>" method="post" enctype="multipart/form-data" >
+            <form class="addproduct-form" action="<?php echo $controller; ?>" method="post" enctype="multipart/form-data" >
     <table class="product-table" width="100%" data-aos="fade-up-right">
         <tr class="product-table-row">
             <td class="product-table-data">
                 <div class="add-image">
-                    <input type="file" name="files[]" onchange="readURL(this);" required  multiple/>
+                    <input type="file" name="files" onchange="readURL(this);" required  multiple/>
                     <span class="img-text-1">+</span>
-                    <span class="img-text-2"><?php 
+                    <span class="img-text-2">
+                       <?php 
+
 echo getlang('','Uplaod Images',getlangcookie()); 
 ?></span>
                 </div>
-                <div class="add-image-box">
-                    <?php 
-                        if(!empty($product_img)){
-                            $img = $product_img;
-                        }else{
-
-                            $img = '../app/view/img/add-product.png';
-                        }
-                    ?>
-                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
-                </div>
-
-                <div class="add-image-box">
-                    <?php 
-                        if(!empty($product_img)){
-                            $img1 = $product_img;
-                        }else{
-
-                            $img1 = '../app/view/img/add-product.png';
-                        }
-                    ?>
-                <img id="blah" src="<?= $img1 ?>" alt="your image" style="width:130px;height:130px;" />
-                </div>
-
-                <div class="add-image-box">
-                    <?php 
-                        if(!empty($product_img)){
-                            $img = $product_img;
-                        }else{
-
-                            $img = '../app/view/img/add-product.png';
-                        }
-                    ?>
-                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
-                </div>
-
-
-                <div class="add-image-box">
-                    <?php 
-                        if(!empty($product_img)){
-                            $img = $product_img;
-                        }else{
-
-                            $img = '../app/view/img/add-product.png';
-                        }
-                    ?>
-                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
-                </div>
-
-
                 
+                 <div class="add-image-box">
+                    <?php
+
+                        if(!empty($product_img)){
+                            
+                            $img = $product_img;
+                        }else{
+
+                            $img = '../app/view/img/add-product.png';
+                        }
+                    ?>
+                
+                <img id="blah" src="<?= $img ?>" alt="your image" style="width:130px;height:130px;" />
+                
+
+                </div>
+                
+
+                <div class="add-image-box">
+                    <?php 
+if (!empty($product_img)) {
+    $img1 = $product_img;
+}else{
+    $img1='../app/view/img/add-product.png';
+}
+                     ?>
+<img id="klah" src="<?=$img1 ?>" alt ="your image" style="width: 130px; height: 130px;" />
+
+                </div>
+
+
+
+                 <div class="add-image-box">
+                    <?php 
+if (!empty($product_img)) {
+    $img = $product_img;
+}else{
+    $img='../app/view/img/add-product.png';
+}
+?>
+<img id="plah" src="<?=$img ?>" alt ="your image" style="width: 130px; height: 130px;" />
+
+                </div>
                    
             </td>
         </tr>
