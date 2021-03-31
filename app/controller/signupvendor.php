@@ -42,14 +42,16 @@ $DB_CLASS = $config_service['DB_CLASS'];
 		 $country = 'Default';
          $state = 'Default';
          $city = 'Default';
+
+      if(checkvendornameandemail($DB_CLASS,$_POST['name'],$_POST['email'])){
 	
 	
 		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid);
 		if (!empty($becomevendor)){
 		
 			$from_email = 'vendor@servewise.shop';
-			$message_body = '<h2>Welcome to ServeWise!</h2> <br><br>Your Request for become vendor has been sent. you will get status of your Shop <h4>' .$name. '</h4> with in 24 hours. Thanks for becoming a part of ServeWise';
-			 sendEmail($emailid,'ServeWise',$from_email,$message_body,'Become A Vendor');
+			$message_body = '<h2>Welcome to ServeWise!</h2> <br><br>Your Request for become Brand has been sent. you will get status of your Shop <h4>' .$name. '</h4> with in 24 hours. Thanks for becoming a part of ServeWise';
+			 sendEmail($emailid,'ServeWise',$from_email,$message_body,'Become A Brand');
 			
 			 insert_notifications($DB_CLASS,$userid,'6','vendor_singup','https://servewise.shop');
 			
@@ -59,7 +61,9 @@ $DB_CLASS = $config_service['DB_CLASS'];
 		} else {
 			echo "0";
 		}
-	
+	}else{
+		echo "2";
+	}
 	}
         $userid = $_SESSION["logInId"];
         $getvendorid = $vendor->getvendordetailsbyuserid($userid);

@@ -106,9 +106,11 @@ echo getlang('','Request',getlangcookie());
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-      alert('added');
+      alert('Brand Created Successfully');
+    }else if(data == 2){
+      alert('Username or Email already Registered');
     }else{
-      alert('error');
+        alert('Something Went Wrong');
     }
     });
 }
