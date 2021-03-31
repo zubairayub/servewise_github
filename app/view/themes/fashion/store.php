@@ -818,7 +818,11 @@ $randomImage = $images[array_rand($images)]; // See comments
                     <div class="right-heading"><?= $value['name']; ?>
                         <span class="hot-span">Hot Product</span></div>
                     <div class="right-des"><?= $value['description']; ?></div>
-                    <div class="right-price"><?= $value['price']; ?></div>
+                    <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
+                    <div class="right-price"><?= $data['symbol']  . $data['amount']  ?></div>
                     <div class="product-card-button right-btn">
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
@@ -875,6 +879,11 @@ $randomImage = $images[array_rand($images)]; // See comments
                         }
                
         ?>
+
+        <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
         <div class="card sc-product-item">
             <div class="product-img">
                 <img src='<?php echo $image_path ; ?>' alt="<?= $found?>">
@@ -882,7 +891,7 @@ $randomImage = $images[array_rand($images)]; // See comments
             <div class="product-content">
                 <h1><?= $value['name'];?></h1>
                 <h3><?= $value['description']; ?></h3>
-                <p><span class="dollor">$</span> <?= $value['price']; ?></p>
+                <p><span class="dollor"><?= $data['symbol']; ?></span> <?= $data['amount']; ?></p>
                 <div class="product-buy">
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />

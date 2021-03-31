@@ -557,7 +557,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
             ?>
-         
+         <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                 <div class="sc-product-item product-card items">
                     <div class="product-card-upper img1">
                         <img data-name="product_cart_img" class="product_cart_img" src='<?php echo $image_path ; ?>' alt="<?=    $found ?>" style="width:100%;height:100%;">
@@ -568,7 +571,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                         <div class="form-group2">
                             <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                         </div>
-                       <div class="product-content-price"><span>$</span><?php echo $value['price'] ; ?></div>
+                       <div class="product-content-price"><span><?= $data['symbol']?></span><?php echo $data['amount'] ; ?></div>
 
                        
                     </div>
@@ -725,6 +728,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                 
                 
               ?>
+              <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                 <div class="sc-product-item product-card items">
                     <div class="product-card-upper">
                         <img data-name="product_cart_img" class="product_cart_img" src='<?php echo $image_path ; ?>' alt="<?= $found?>" style="width:100%;height:100%;">
@@ -735,7 +742,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                         <div class="form-group2">
                             <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                         </div>
-                       <div class="product-content-price"><span>$</span><?php echo $value['price'] ; ?></div>
+                       <div class="product-content-price"><span><?= $data['symbol']?></span><?php echo $data['amount'] ; ?></div>
                        
                     </div>
 

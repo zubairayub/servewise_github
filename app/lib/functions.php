@@ -326,6 +326,42 @@ return $result;
 
 
 
+
+function priceconverter($dbcalss,$amount){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+
+$varr->query="SELECT * FROM `config`   where name  = 'def_currency' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+$id = $result[0]['value'];
+
+$varr->query="SELECT * FROM `currency`    where id  = $id ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+if($result[0]['id'] != 7 ){
+$final_amount = $amount * $result[0]['rate'];
+
+	$symbol = $result[0]['symbol'] ;
+}
+else{
+	$final_amount = $amount;
+	$symbol = '$' ;
+}
+
+ $data = array('amount' => $final_amount,'symbol' => $symbol );
+return $data;
+
+
+}
+
 function setcurrecny($dbcalss,$id){
 
 if(!empty($dbclass)){

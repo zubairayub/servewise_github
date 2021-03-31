@@ -204,6 +204,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
                                     ?>
+                                    <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
 
                                     <li>
                                         <div class="slider-img">
@@ -367,6 +371,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
                             ?>
+                            <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                             <div class="product-card">
                                 <div class="features-img">
                                     <img src='<?php echo $image_path ; ?>' alt="<?= $found?>" />
@@ -376,7 +384,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                                         <h1 data-name="product_name"><?= $value['name'] ?></h1>
                                     </div>
                                     <p><?= $value['description']; ?></p>
-                                    <p>$<?= $value['price']; ?></p>
+                                    <p><?= $data['symbol'] .' '. $data['amount']; ?></p>
                                     <div class="product-card-button">
                                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
@@ -485,10 +493,14 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
                             ?>
+                            <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                             <div class="menu-item col-sm-6 col-xs-12 starter dinner desserts">
                                 <div class="clearfix menu-wrapper">
                                     <h4><?= $value['name']; ?></h4>
-                                    <span class="price"><?= $value['price']; ?></span>
+                                    <span class="price"><?= $data['amount']; ?></span>
                                     <div class="dotted-bg"></div>
                                 </div>
                                 <p>dish discribtion</p>

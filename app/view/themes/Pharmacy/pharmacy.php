@@ -788,6 +788,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                         }
                      
               ?>
+              <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
             <div class="card sc-product-item items">
                 <img data-name="product_cart_img" src='<?php echo $image_path ; ?>' alt="<?= $found?>" style="width:100%">
                 <div class="container-alpha">
@@ -802,7 +806,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                         <div class="feature-product-phy-price">
                             <p>Price</p>    
                             <div class="f-p-p-value">
-                                <span>$</span><?php echo $value['price'] ; ?>
+                                <span><?= $data['symbol'] ?></span><?php echo $data['amount'] ; ?>
                             </div>
                         </div>
                     <div class="product-card-button item">
@@ -889,7 +893,12 @@ $randomImage = $images[array_rand($images)]; // See comments
  $image_path = $randomImage;
                                $found = $value['name'];
                         }
+
               ?>
+              <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                 <div class="homo-product-card sc-product-item items">
                     <div class="homo-card-upper"><img data-name="product_cart_img" src='<?= $image_path ; ?>' alt="<?= $found?>"></div>
                         <div class="homo-card-content">
@@ -900,7 +909,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                                 <div class="form-group2">
                                     Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                                 </div>
-                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+                            <div class="form-group3"><span><?= $data['symbol']?></span><?php echo $data['amount'] ; ?></div>
                         </div>        
                     </div>
                     <div class="homo-card-btn item">
@@ -990,6 +999,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
               ?>
+              <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $image_path ; ?>' alt="<?= $found?>"></div>
                     <div class="homo-card-content">
@@ -1001,7 +1014,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                             <div class="form-group2">
                                 Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                             </div>
-                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+                            <div class="form-group3"><span><?= $data['symbol']?></span><?php echo $data['amount'] ; ?></div>
             </div>        
                     </div>
                     <div class="homo-card-btn">
@@ -1063,6 +1076,10 @@ $randomImage = $images[array_rand($images)]; // See comments
                                $found = $value['name'];
                         }
               ?>
+              <?php
+                    $data =     priceconverter($DB_CLASS,$value['price']);
+
+                    ?>
                 <div class="homo-product-card sc-product-item">
                     <div class="homo-card-upper"><img src='<?php echo $image_path ; ?>' alt="<?= $found?>"></div>
                     <div class="homo-card-content">
@@ -1074,7 +1091,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                             <div class="form-group2">
                                 Quantity<input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                             </div>
-                            <div class="form-group3"><span>$</span><?php echo $value['price'] ; ?></div>
+                            <div class="form-group3"><span><?= $data['symbol']?></span><?php echo $data['amount'] ; ?></div>
             </div>        
                     </div>
                     <div class="homo-card-btn">
