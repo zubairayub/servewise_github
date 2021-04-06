@@ -655,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 		<?php $values =  $value['products_quantity'][$i]; ?> 
-		<input type="hidden" name="payment_method" value="<?= $payment_method ?>">
+	<input type="hidden" name="payment_method" value="<?= $payment_method ?>">
 	<input type="hidden" name="totals[]" class="cart-total" value="<?= $value['totals'][$i]; ?>">
 	<input type="hidden" name="prod-name[]" value="<?= $value['product_name'][$i]; ?>">
     <input type="hidden" name="products_quantity[]" value="<?= $values; ?>" min="1">
@@ -803,7 +803,7 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 	</div>
 	<div class="form-group row checkout-btn">
 		<div class="col-sm-12 pay-now-btn">
-		  <button <?php if($payment_method == 'flutter') { echo 'type="button"';} elseif($payment_method == 'paystack'){ echo 'type="submit"';} ?> name="pay_now" id="pay-now" <?php if($payment_method == 'flutter'){echo 'onClick="makePayment()"'; }?> title="Pay now"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Pay now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+		  <button <?php if($payment_method == 'Flutterwave') { echo 'type="button"';} elseif($payment_method == 'paystack'){ echo 'type="submit"';} ?> name="pay_now" id="pay-now" <?php if($payment_method == 'Flutterwave'){echo 'onClick="makePayment()"'; }?> title="Pay now"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Pay now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
 		</div>
 	</div>
 </form><?php endforeach; ?>
@@ -811,7 +811,7 @@ foreach($array as $key => $value): for($i=0; $i < $count; $i++) :?>
 </div>
 <?php  include '../themePages/theme_footer.phtml'; ?>
 <?php
-	if($payment_method == 'flutter'){?>
+	if($payment_method == 'Flutterwave'){?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" ></script>
 	<script>
 	

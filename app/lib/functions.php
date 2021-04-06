@@ -222,9 +222,18 @@ function getlang($dbclass= '',$word= '', $lang= '')
 $varr->query="SELECT * FROM `languages`  where value = '$word'";
 $result=$varr->executeQuery($varr->query,array(),"sread");
 
-return $result[0][$lang];
+if(count($result) > 0){
+$lang_trans = $result[0][$lang];
+
+}else
+{
+	$lang_trans = $word;
+
+}
 
 
+
+return $lang_trans;
 
 }
 
@@ -289,6 +298,62 @@ insert_notifications($dbcalss,$user_id,$owner_id,'message_recieved',$link);
 
 return $result;
 }
+
+
+
+}
+
+function getcouponse($dbcalss,$branch_id,$code,$id=null){
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+if(!empty($code)){
+$varr->query="SELECT * FROM `coupon`  where branch_id  = $branch_id and code = $code ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+}elseif(!empty($code)){
+	$varr->query="SELECT * FROM `coupon`  where branch_id  = $branch_id and id= $id";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+}else{
+	$varr->query="SELECT * FROM `coupon`  where branch_id  = $branch_id ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
+}
+
+return $result;
+
+}
+
+
+
+function addcoupon($dbcalss,$user_id,$branch_id,$coupon_name,$coupon_code,$min_shipping,$discount,$from_date,$to_date,$type,$action = null,$coupon_id = null){
+
+if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+$now = strtotime($from_date); // or your date as well
+$your_date = strtotime($to_date);
+$datediff =  $your_date - $now;
+
+$days =  round($datediff / (60 * 60 * 24));
+
+if($action == 'update'){
+$varr->query="UPDATE  `coupon` SET  name = ?,code = ?,min_shipping = ?,amount = ?,days = ?,start_date = ?,end_date = ?,type = ? where  id = $coupon_id and branch_id = $branch_id ";
+	$result=$varr->executeQuery($varr->query,array($coupon_name,$coupon_code,$min_shipping,$discount,$days,$from_date,$to_date,$type),"update");
+}
+else{
+$varr->query="INSERT INTO `coupon`(`name`, `code`, `min_shipping`, `amount`, `days`, `start_date`, `end_date`, `type`, `user_id`, `branch_id`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($coupon_name,$coupon_code,$min_shipping,$discount,$days,$from_date,$to_date,$type,$user_id,$branch_id),"create");
+
+}	 
+
 
 
 

@@ -9,10 +9,10 @@ $branch = getbranches();
 
         $owner = FALSE;
 if($owner_type == NULL){
-	$branch = getbranches($logInId);
+	$branch = getbranches($logInId,'TRUE');
 	
 	}else{
- $branch = getbranches($owner_id);
+ $branch = getbranches($owner_id,'TRUE');
 	}
 
 

@@ -11,7 +11,7 @@ session_start();
   gtag('js', new Date());
   gtag('config', 'UA-189150205-1');
   // Maps 'metric5' to 'avg_page_load_time'.
-gtag('config', 'UA-189150205-1, {
+gtag('config', 'UA-189150205-1', {
   'custom_map': {'metric2': 'Total quantity added to cart'}
 });
 
@@ -64,11 +64,11 @@ function trackTrans() {
 
 var pageTracker = new trackGTMEcommerce();
 </script>
-<script>
+<!-- <script>
 
-var product_id = $('#product_id').val();
-var Product_name = $('#product_price').val();
-var product_price = $('#product_price').val();
+// var product_id = $('#product_id').val();
+// var Product_name = $('#product_price').val();
+// var product_price = $('#product_price').val();
 // Measures product impressions and also tracks a standard
 // pageview for the tag configuration.
 // Product impressions are sent by pushing an impressions object
@@ -86,7 +86,7 @@ dataLayer.push({
      }]
   }
 });
-</script>
+</script> -->
 <?php
 // Get the results as JSON string
 $product_list = filter_input(INPUT_POST, 'cart_list');
@@ -95,6 +95,7 @@ $product_list_array = json_decode($product_list);
 //var_dump(count($product_list_array)); var_dump($product_list_array);
 $proct_final_price = NULL;
 $total_product = NULL;
+
  ?>
  <?php  include '../themePages/theme_header.phtml'; ?>
 <body>

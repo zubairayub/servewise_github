@@ -19,6 +19,11 @@ echo getlang('','Add New Coupon',getlangcookie());
                     <th><?php 
 echo getlang('','Serial.No',getlangcookie()); 
 ?>  </th>
+
+           <th><?php 
+echo getlang('','Name',getlangcookie()); 
+?>  </th>
+
                     <th><?php 
 echo getlang('','Code',getlangcookie()); 
 ?>  </th>
@@ -35,25 +40,44 @@ echo getlang('','End Date',getlangcookie());
 echo getlang('','Options',getlangcookie()); 
 ?>  </th>
                 </tr>
+                <?php
+                $count = 0;
+foreach ($data as $key => $value) {
+ $count ++;
+ if($value['type'] == 1){
+$type_coupon = 'Amount';
+ }else{
+$type_coupon = 'Percantage';
+ }
+    ?>
+
                 <tr>
-                    <td>1</td>
-                    <td>0001</td>
-                    <td>Cart Base</td>
-                    <td>03/01/2021</td>
-                    <td>03/01/2021</td>
+                    <td><?= $count ; ?></td>
+                    <td><?= $value['name']?></td>
+                    <td><?= $value['code']?></td>
+                    <td><?= $type_coupon ?></td>
+                    <td><?= $value['start_date'] ?></td>
+                    <td><?= $value['end_date'] ?></td>
                     <td class="option">
-                        <a href="?page=addnewcoupon_dashboard">
+                        <a href="?page=addnewcoupon_dashboard&id=<?= $value['id'] ?>">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i><?php 
 echo getlang('','Edit',getlangcookie()); 
 ?> 
                         </a>
-                        <a href="#">
+                        <a href="?page=addnewcoupon_dashboard&id=<?= $value['id'] ?>&action=remove">
                             <i class="fa fa-trash" aria-hidden="true"></i><?php 
 echo getlang('','Remove',getlangcookie()); 
 ?> 
                         </a>
                     </td>
                 </tr>
+
+
+
+    <?php
+}
+
+                ?>
             </table>
         </form>
     </div>

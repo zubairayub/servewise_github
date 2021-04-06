@@ -658,6 +658,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                 <p><span class="dollor">$</span> <?= $value['price']; ?></p>
 
                 <div class="product-card-button product-buy">
+                     <input name="product_name" value="<?= $value['name']?>" type="hidden" />
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                     <div class="buttons"> 
@@ -824,6 +825,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                     ?>
                     <div class="right-price"><?= $data['symbol']  . $data['amount']  ?></div>
                     <div class="product-card-button right-btn">
+                        <input name="product_name" value="<?= $value['name']?>" type="hidden" />
                         <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                         <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                         <div class="buttons"> 
@@ -893,6 +895,7 @@ $randomImage = $images[array_rand($images)]; // See comments
                 <h3><?= $value['description']; ?></h3>
                 <p><span class="dollor"><?= $data['symbol']; ?></span> <?= $data['amount']; ?></p>
                 <div class="product-buy">
+                    <input name="product_name" value="<?= $value['name']?>" type="hidden" />
                     <input name="product_price" value="<?= $value['price']?>" type="hidden" />
                     <input name="product_id" value="<?= $value['product_id'] ?>" type="hidden" />
                     <div class="buttons"> 

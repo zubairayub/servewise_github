@@ -16,14 +16,11 @@ echo getlang('','Coupon Information Adding',getlangcookie());
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
                         <?php 
-echo getlang('','Coupon Type',getlangcookie()); 
+echo getlang('','Coupon Name',getlangcookie()); 
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="coupon_type" id="">
-                            <option value="1">for Product</option>
-                            <option value="2">for Total Order</option>
-                        </select>
+                        <input type="text" name="coupon_name" value="<?= $coupon_name ?>" required>
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -33,7 +30,7 @@ echo getlang('','Coupon code',getlangcookie());
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="coupon_code" required>
+                        <input type="text" name="coupon_code" value="<?= $coupon_code ?>" required>
                     </div>
                 </div>
                  <div class="add-new-cat-content1">
@@ -43,7 +40,7 @@ echo getlang('','Minimum Shopping',getlangcookie());
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="min_shop" required>
+                        <input type="text" name="min_shop" value="<?= $coupon_min ?>" required>
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -53,44 +50,34 @@ echo getlang('','Discount',getlangcookie());
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="discount">
+                        <input type="text" name="discount" value="<?= $coupon_dis ?>">
                         <select name="discount_select" id="" required>
                             <option value="1">Amount</option>
                             <option value="2">Percent</option>
                         </select>
                     </div>
                 </div>
+              
+               
                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
                         <?php 
-echo getlang('','Products',getlangcookie()); 
+echo getlang('','From Date',getlangcookie()); 
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <select name="products" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
+                        <input type="date" name="coupon_date_start" value="<?= $coupon_from ?>" required>
                     </div>
                 </div>
-                <div class="add-new-cat-content1">
+                 <div class="add-new-cat-content1">
                     <div class="add-new-cat-content-head">
                         <?php 
-echo getlang('','Maximum Discount Amount',getlangcookie()); 
+echo getlang('','To Date',getlangcookie()); 
 ?>
                     </div>
                     <div class="add-new-cat-content-input">
-                        <input type="text" name="max_discount" required>
-                    </div>
-                </div>
-                <div class="add-new-cat-content1">
-                    <div class="add-new-cat-content-head">
-                        <?php 
-echo getlang('','Date',getlangcookie()); 
-?>
-                    </div>
-                    <div class="add-new-cat-content-input">
-                        <input type="date" name="coupon_date" required>
+                        <input type="date" name="coupon_date_end" value="<?= $coupon_to ?>" required>
+                         <input type="hidden" name="coupon_id" value="<?= $coupon_id ?>">
                     </div>
                 </div>
                 <div class="add-new-cat-content-btn">
