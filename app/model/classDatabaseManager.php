@@ -13,7 +13,7 @@
 				 return false;
 			}
 		}
-		
+		 
 		
 		function executeQuery($query, $values, $type){					
 			try {  
