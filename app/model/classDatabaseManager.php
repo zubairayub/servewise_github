@@ -6,13 +6,14 @@
 	
 		function __construct(){
 			try {   
-				$this->db_conn = new PDO($this->dns, $this->username , $this->password );
+				$this->db_conn = new PDO($this->dns, $this->username , $this->password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 			} catch (PDOException $e) {			
 				 /* echo "Could not connect to database";  
 				 exit;  */
 				 return false;
 			}
 		}
+		
 		
 		function executeQuery($query, $values, $type){					
 			try {  
