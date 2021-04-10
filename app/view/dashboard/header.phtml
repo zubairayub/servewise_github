@@ -207,6 +207,23 @@ $branch_data =  getbranches($value['to_user_id'],'TRUE');
 
 
 								}
+									elseif($type == 'SHOP DELISTED'){
+
+$branch_data =  getbranches($value['to_user_id'],'TRUE');
+
+										$type = '<a href="?page=viewbranch_dashboard" class="dropdown-menu-link">
+								<div>
+									<i class="fa fa-retweet" aria-hidden="true"></i>
+								</div>
+								<span>
+								oooops! <b>'. $branch_data[0]['name'].'</b> has been Delisted
+									
+								</span>
+							</a>';
+
+
+
+								}
 								elseif($type == 'branch_singup'){
 
 

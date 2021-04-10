@@ -2795,7 +2795,7 @@ $status = 0;
 
 						}else{
 
-					$varr->query="UPDATE  `vendor` SET type=? where user_id = $userid ";
+					$varr->query="UPDATE  `user` SET type=? where user_id = $userid ";
 					$result=$varr->executeQuery($varr->query,array(2),"update");
 
 						}
@@ -2806,7 +2806,7 @@ $status = 0;
 
 					}
 
-
+					
 }
 
 ?>
