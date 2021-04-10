@@ -48,7 +48,7 @@ $result = approve_branch($user_id,$vendor_id,$branch_id,$action,$DB_CLASS);
 
 if($action == 'approve'){
 
-			$message_body = '<h2>Congratulations!</h2> <br><br> Your Request for Branch has been approved.<br><br> Thanks for becoming a part of ServeWise';
+			$message_body = '<h2>Congratulations!</h2> <br><br> Your Request for Vendor has been approved.<br><br> Thanks for becoming a part of ServeWise';
 			$subject = 'SHOP APPROVE';
 
 
