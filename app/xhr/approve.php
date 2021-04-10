@@ -35,6 +35,9 @@ if($action == 'approve'){
 
 }
 
+?>
+<script>window.location.replace("https://servewise.shop/public/?page=viewvendor_dashboard");</script>
+<?php
 }else{
 
 
@@ -67,11 +70,14 @@ $from_email = 'vendor@servewise.shop';
 			
 			
 			 insert_notifications($DB_CLASS,'6',$user_id,$subject,'https://servewise.shop');
+?>
+<script>window.location.replace("https://servewise.shop/public/?page=viewbranch_dashboard");</script>
 
+<?php
 
 // header('Location: https://servewise.shop/public/?page=viewvendor_dashboard');
 
 //exit();
 ?>
 
-<script>window.location.replace("https://servewise.shop/public/?page=viewvendor_dashboard");</script>
+
