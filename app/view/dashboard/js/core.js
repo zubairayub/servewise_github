@@ -129,10 +129,30 @@ inputs.forEach((input) => {
 
 
 $('#password, #confirmPassword').on('keyup', function () {
-	if ($('#password').val() == $('#confirmPassword').val()) {
+
+// //strong password
+ var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+ var inputtxt = $('#password').val() ;
+ if(inputtxt.match(passw)) 
+ { 
+ //alert('Correct, try another...');
+//return true;
+ if ($('#password').val() == $('#confirmPassword').val()) {
 	  $('#message').html('Matching').css('color', 'green');
 	} else 
 	  $('#message').html('Not Matching').css('color', 'red');
+
+ }
+ else
+ { 
+//alert('Wrong...!');
+// //return false;
+   $('#message').html('Weak Password').css('color', 'red');
+
+}
+
+
+	
   });
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
