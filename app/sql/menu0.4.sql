@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 02:57 PM
+-- Generation Time: Jan 09, 2021 at 09:50 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -42,18 +42,17 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`menu_id`, `title`, `url`, `icon`, `status`) VALUES
 (1, 'Dashboard', 'dashboard', 'tachometer', 1),
 (3, 'Sales', '#', 'usd', 1),
-(4, 'Catalogue', '#', 'eye', 1),
-(6, 'Vendor', '#', 'connectdevelop', 1),
+(4, 'Catalog', '#', 'eye', 1),
+(6, 'Branches', '#', 'connectdevelop', 1),
 (7, 'Reports', '#', 'list-alt', 1),
 (8, 'Marketing', '#', 'bullhorn', 1),
 (9, 'Support', '#', 'question-circle', 1),
 (10, 'Staff', '#', 'users', 1),
 (11, 'Website Setup', '#', 'desktop', 1),
 (12, 'Setting', '#', 'cogs', 1),
-(13, 'Brand', '#', 'fa fa-user-circle-o', 1),
+(13, 'Vendor', '#', 'fa fa-user-circle-o', 1),
 (14, 'Pages', '#', 'fa fa-columns', 1),
-(15, 'Theme Page', '#', 'fa fa-paperclip', 1),
-(16, 'Activity', '#', 'tachometer', 1);
+(15, 'Theme Page', '#', 'fa fa-paperclip', 1);
 
 --
 -- Indexes for dumped tables
@@ -73,7 +72,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menu_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `menu_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
