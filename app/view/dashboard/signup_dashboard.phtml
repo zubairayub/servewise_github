@@ -17,7 +17,7 @@
                 <i class="fa fa-user"></i>
               </div>
               <div class="div">
-                <h5>E-mail</h5>
+                <h5>Email</h5>
                 <input type="text" name="email" class="input" required />
               </div>
             </div>
@@ -44,12 +44,12 @@
             <span id="message"></span>
             <div class="form-lower-content">
                     <div class="radio">
-                        <input type="checkbox">
-                        <label><p>I agreed to the </p> <a href="#">Terms of Services</a> <p>&</p>  <a href="#">Privacy Policy .</a> </label>
+                        <input type="checkbox" name="checkbox-policy" required>
+                        <label><p>I agreed to the Terms of Services & Privacy Policy . </label>
                     </div>
                 </div>
             <div class="sign-btn-login">
-              <input type="button" class="login-btn" value="Sign Up" name="signupbtn" onclick="submitForm()" />
+              <input type="submit" class="login-btn" value="Sign Up" name="signupbtn" onclick="submitForm()" />
             </div>
           </form>
           
@@ -65,7 +65,26 @@
     
     var url = $('#form').attr("action");
     
-    var formData = $('#form').serializeArray();
+    var errors = 0;
+    $("#form :input").map(function(){
+         if( !$(this).val() ) {
+       //     alert("All fields are required");
+              errors++;
+        } else if ($(this).val()) {
+          //   alert("All fields are required");
+        } 
+if(($("input[name*='checkbox-policy']:checked").length)<=0 ) {
+       //     alert("All fields are required");
+              errors++;
+        }
+
+    });
+    if(errors > 0){
+      alert("All fields are required");
+    }else{
+
+
+      var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
        window.location.replace("?page=verification_dashboard");
@@ -75,6 +94,14 @@
         alert("email already registered");
     }
     });
+    }
+
+
+
+
+    
+
+
 }
 </script>
 

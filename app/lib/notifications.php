@@ -20,13 +20,15 @@ if(!empty($result)){
 
 	$data = $result;
 	 $count = count($result);
+	 
 	 echo $count;
+
 
 
 }else{
 
 
-	echo 0;
+	//echo 0;
 }
 
 

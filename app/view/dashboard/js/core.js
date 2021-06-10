@@ -128,7 +128,7 @@ inputs.forEach((input) => {
 
 
 
-$('#password, #confirmPassword').on('keyup', function () {
+$('#confirmPassword').on('keyup', function () {
 
 // //strong password
  var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
