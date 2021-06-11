@@ -69,7 +69,23 @@ $vbid =  0;
 			
 		echo "0";
         } else {
-			echo "1";		
+			echo "1";
+			  $user_id = $_SESSION['logInId'];  
+			  
+
+			  $brand_id = isset($_SESSION['vendor_id']);  
+			  $vendor_id = isset($_SESSION['branch_id']); 
+
+			  if(empty($brand_id)){
+$brand_id = 0;
+			  }
+			  if(empty($vendor_id)){
+$vendor_id = 0;
+			  }
+
+
+			  $activity_log = 'Category Added '. $categoryname;
+			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
         }
 	
 	}

@@ -10,6 +10,31 @@ function get($name, $def= '')
 
 
 
+function addacivitylog($dbclass= null,$action, $user_id , $brand_id , $vendor_id)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+ $varr = new databaseManager();
+$varr->query="INSERT INTO `activity_log`( `user_id`, `activity`, `brand_id`, `vendor_id`) VALUES (?,?,?,?)";
+$result=$varr->executeQuery($varr->query,array($user_id,$action,$brand_id,$vendor_id),"create");
+
+if(!$result){
+return false;
+
+}else{
+	return true;
+
+}
+
+}
+
+
+
+
 
 function checkvendornameandemail($dbclass= null,$name, $email)
 {
