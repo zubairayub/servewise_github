@@ -6,7 +6,7 @@
             <div class="dashboard-footer user-profile-header">
                 <h1 data-aos="fade-right" data-aos-duration="2000" >User Profile</h1> 
                 <div class="user-profile-upper">
-                    <input type="button" class="editbtn1" name="updatebtn" value="update" onclick="submitForm()"  />
+                    <input type="button" class="editbtn1" name="updatebtn" value="Update" onclick="submitForm()"  />
                     <a class="editbtn2" href="?page=userprofile_dashboard">Cancel</a>
                 </div>
             </div>
@@ -22,41 +22,41 @@
                                
                                 <div class="user-detail1 user-edit-upper-section">
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-id-card-o" aria-hidden="true"></i> First Name.</label>
+                                        <label><i class="fa fa-id-card-o" aria-hidden="true"></i> First Name</label>
                                         <input type="text" name="fname" value="<?php if(isset($olddetails)){echo $olddetails[0]['first_name']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-id-card" aria-hidden="true"></i> last Name.</label>
+                                        <label><i class="fa fa-id-card" aria-hidden="true"></i> last Name</label>
                                         <input type="text" name="lname" value="<?php if(isset($olddetails)){echo $olddetails[0]['last_name']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-mobile" aria-hidden="true"></i> contact No.</label>
+                                        <label><i class="fa fa-mobile" aria-hidden="true"></i> contact No</label>
                                         <input type="text" name="contactno" value="<?php if(isset($olddetails)){echo $olddetails[0]['contact_no']; } ?>">
                                     </div>
                                 </div>
                                 <div class="edit-detail">
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-map" aria-hidden="true"></i> Address.</label>
+                                        <label><i class="fa fa-map" aria-hidden="true"></i> Address</label>
                                         <input type="text" name="address" value="<?php if(isset($olddetails)){echo $olddetails[0]['address']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-map-o" aria-hidden="true"></i> Address2.</label>
+                                        <label><i class="fa fa-map-o" aria-hidden="true"></i> Address2</label>
                                         <input type="text" name="address2" value="<?php if(isset($olddetails)){echo $olddetails[0]['address_2']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-map-pin" aria-hidden="true"></i> City.</label>
+                                        <label><i class="fa fa-map-pin" aria-hidden="true"></i> City</label>
                                         <input type="text" name="city" value="<?php if(isset($olddetails)){echo $olddetails[0]['city']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-map-marker" aria-hidden="true"></i> State.</label>
+                                        <label><i class="fa fa-map-marker" aria-hidden="true"></i> State</label>
                                         <input type="text" name="state" value="<?php if(isset($olddetails)){echo $olddetails[0]['state']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-street-view" aria-hidden="true"></i> Zip Code.</label>
+                                        <label><i class="fa fa-street-view" aria-hidden="true"></i> Zip Code</label>
                                         <input type="text" name="zip" value="<?php if(isset($olddetails)){echo $olddetails[0]['zip']; } ?>">
                                     </div>
                                     <div class="user-edit-content">
-                                        <label><i class="fa fa-globe" aria-hidden="true"></i> Country.</label>
+                                        <label><i class="fa fa-globe" aria-hidden="true"></i> Country</label>
                                         <input type="text" name="country" value="<?php if(isset($olddetails)){echo $olddetails[0]['country']; } ?>">
                                     </div>
                                 </div>

@@ -1,0 +1,22 @@
+errors removed:
+
+1)signup_dashboard ---- Email instead of E-mail ----problem solved
+
+2)signup_dashboard ---- privacy policy alignment error----problem solved
+
+3)login_dashboard-------placeholder not shown error ------problem solved
+
+4)signupvendor_dashboard-----input text field instead of number field ------ problem solved
+
+5)useredit_dashboard--------capitilization of U in update btn------problem solved
+
+6)requestbranch_dashboard----capitilization of V in vendor-----problem solved
+
+7)requestbranch_dashboard----starting word capital-----problem solved
+
+8) requestbranch_dashboard------dots removed ------problem solved
+
+9)addnewcurrency_dashboard----Replace word ----problem solved
+
+10) addnewcurrency_dashboard----remove extra space----problem solved
+

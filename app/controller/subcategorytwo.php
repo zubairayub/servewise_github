@@ -24,6 +24,25 @@ $DB_CLASS = $config_service['DB_CLASS'];
 
 	$deleted = $category->deletecategorytwo($categoryid);
 if (!empty($deleted)){
+	  			  $user_id = $_SESSION['logInId'];  
+			  
+
+			  $brand_id = isset($_SESSION['vendor_id']);  
+			  $vendor_id = isset($_SESSION['branch_id']); 
+
+			  if(empty($brand_id)){
+				$brand_id = 0;
+			  
+			  }
+			  
+			  if(empty($vendor_id)){
+				$vendor_id = 0;
+			  
+			  }
+
+
+			  $activity_log = 'Sub Category Deleted ';
+			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
 	
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 } else {
@@ -61,6 +80,26 @@ $vbid =  0;
 	
 		$addedcategory = $category->addnewsubcategory($categoryid,$categoryname,$vbid);
 		if (!empty($addedcategory)){
+
+			  			  $user_id = $_SESSION['logInId'];  
+			  
+
+			  $brand_id = isset($_SESSION['vendor_id']);  
+			  $vendor_id = isset($_SESSION['branch_id']); 
+
+			  if(empty($brand_id)){
+				$brand_id = 0;
+			  
+			  }
+			  
+			  if(empty($vendor_id)){
+				$vendor_id = 0;
+			  
+			  }
+
+
+			  $activity_log = 'Sub Category Added '. $categoryname;
+			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
 			//$message[0] = true;
 			//$message[1] = "Updated Successfully";	
 			//echo "Successfully Updated";

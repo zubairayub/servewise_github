@@ -85,9 +85,53 @@ $featured = 0;
           
 
 $addedproduct = $product->updateproduct($name,$description,$quantity,$price,$category,$secondlevel,$thirdlevel,$weight,$featured,$publish,$purchase_price,$product_id,$min_quantity,$tax_percantage);
+
+                          $user_id = $_SESSION['logInId'];  
+              
+
+              $brand_id = isset($_SESSION['vendor_id']);  
+              $vendor_id = isset($_SESSION['branch_id']); 
+
+              if(empty($brand_id)){
+                $brand_id = 0;
+              
+              }
+              
+              if(empty($vendor_id)){
+                $vendor_id = 0;
+              
+              }
+
+
+              $activity_log = 'Update Product '. $name;
+              addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
+
+
     }else{
        
        $addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid,$weight,$featured,$publish,$purchase_price,$min_quantity,$tax_percantage);
+
+                          $user_id = $_SESSION['logInId'];  
+              
+
+              $brand_id = isset($_SESSION['vendor_id']);  
+              $vendor_id = isset($_SESSION['branch_id']); 
+
+              if(empty($brand_id)){
+                $brand_id = 0;
+              
+              }
+              
+              if(empty($vendor_id)){
+                $vendor_id = 0;
+              
+              }
+
+
+              $activity_log = 'Product Added '. $name;
+              addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
+
+
     }
 		
 		if (!empty($addedproduct)){

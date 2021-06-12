@@ -2581,10 +2581,10 @@ border-bottom: 1px solid rgba(0,0,0,0.2); padding: 20px 0px; }
 /* Category-add-new-dashboard */
 
 .add-new-category{width: 100%;}
-.add-new-category form{width: 60%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px; margin: auto;}
+.add-new-category form{width: 55%;background: white;border-radius: 4px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);padding: 10px; margin: auto;}
 .add-new-category form .add-new-cat-head{font-size: 20px;font-weight: 600;margin-bottom: 20px;}
 .add-new-cat-content .add-new-cat-content1{display: flex;margin: 20px 0px;}
-.add-new-cat-content .add-new-cat-content1 .add-new-cat-content-head{flex-basis: 50%;font-size: 18px;}
+.add-new-cat-content .add-new-cat-content1 .add-new-cat-content-head{flex-basis: 22%;font-size: 18px;}
 .add-new-cat-content .add-new-cat-content1 .add-new-cat-content-input{flex-basis: 50%;}
 .add-new-cat-content .add-new-cat-content1 .add-new-cat-content-input input{width: 100%;font-size: 18px;border: 1px solid black;border-radius: 4px;padding: 2px;}
 .add-new-cat-content .add-new-cat-content1 .add-new-cat-content-input select{width: 100%;font-size: 18px;padding: 2px;border-radius: 4px;border: 1px dashed black;}

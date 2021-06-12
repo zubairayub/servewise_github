@@ -275,7 +275,9 @@ html{
 .login-main .logincontent .login-section-right .login-slipt .span-1{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
 .login-main .logincontent .login-section-right .login-slipt .span-2{width: 30%;background: #e2e2e2;height: 1px;border-radius: 4px;}
 .login-main .logincontent .login-section-right .login-form .login-email{width: 100%;margin-bottom:10px; font-size: 16px;padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.login-main .logincontent .login-section-right .login-form .login-email::placeholder{color: grey;}
 .login-main .logincontent .login-section-right .login-form .login-password{width: 100%;margin-bottom:10px; font-size: 16px; padding: 7px;border-radius: 4px;border: 1px solid rgba(0,0,0,0.1);}
+.login-main .logincontent .login-section-right .login-form .login-password::placeholder{color: grey;}
 .login-main .logincontent .login-section-right .login-form .form-lower-content{display: flex;justify-content: space-between;align-items: center;}
 .login-main .logincontent .login-section-right .login-form .form-lower-content .radio{font-size:14px;}
 .login-main .logincontent .login-section-right .login-form .form-lower-content a{font-size:14px;}
@@ -317,7 +319,9 @@ html{
 .signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio{margin: 20px 0px; display: flex;justify-content: center;align-items: center;font-size: 14px;}
 .signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio input{margin-right: 10px;}
 .signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label{display: flex;justify-content: center;align-items: center;}
+.signup-main .signupcontent .signup-section-left .login-content .form-lower-content .radio label p{font-size: 13px }
 .signup-main .signupcontent .signup-section-left .login-logo{width: 100px;height: 100px;}
+
 .signup-main .signupcontent .signup-section-left .login-heading{font-size: 34px;font-weight: 600;color: #6b6b6b;margin-bottom: 30px;}
 .signup-main .signupcontent .signup-section-left .login-btn-google{cursor: pointer; font-size: 14px; width: 50%;display: flex;justify-content: center;align-items: center;border: 1px solid rgba(0,0,0,0.2);border-radius: 4px;margin-bottom:10px;transition: .3s ease!important;}
 .signup-main .signupcontent .signup-section-left .login-btn-google:hover{width:30%;box-shadow:0px 3px 6px rgba(0,0,0,0.2);background-color:red;color:white;}

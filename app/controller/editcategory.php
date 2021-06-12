@@ -8,6 +8,7 @@ $PATH =  constant("APPLICATION_INNERPATH");
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
 require_once $config_service['DB_CLASS'];
 require $config_service['CATEGORY_CLASS'];
+require $config_service['FUNCTIONS'];
 	
     $category=new Category();
 	$message=null;
@@ -18,7 +19,31 @@ require $config_service['CATEGORY_CLASS'];
 			
 			
 						    $uploadInfo=$category->updatecategorybyid($categoryname,$categoryid);	
+
 							if($uploadInfo){
+
+								  			  $user_id = $_SESSION['logInId'];  
+			  
+
+			  $brand_id = isset($_SESSION['vendor_id']);  
+			  $vendor_id = isset($_SESSION['branch_id']); 
+
+			  if(empty($brand_id)){
+				$brand_id = 0;
+			  
+			  }
+			  
+			  if(empty($vendor_id)){
+				$vendor_id = 0;
+			  
+			  }
+
+
+			  $activity_log = 'Category Edit '. $categoryname;
+			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
+
+
+
 								header('Location: ../../public/?page=category_dashboard');
 								//editcategorytwo_dashboard
 							}
