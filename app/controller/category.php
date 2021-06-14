@@ -44,7 +44,10 @@ if (!empty($deleted)){
 
 			  $activity_log = 'Category Deleted ';
 			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
-	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	//header('Location: ' . $_SERVER['HTTP_REFERER']);
+?>
+			  <script>window.location.replace("https://servewise.shop/public?page=category_dashboard");</script>
+			  <?php
 } else {
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
@@ -83,7 +86,10 @@ $vbid =  0;
 
 	//$vbid = $_SESSION['vendorid'];
 	
-		$addedcategory = $category->addnewcategory($categoryname,$createdby,$vbid);
+	$bool = checkcategoryexits('',$categoryname);
+
+if($bool){
+$addedcategory = $category->addnewcategory($categoryname,$createdby,$vbid);
 		if (empty($addedcategory)){
 			
 		echo "0";
@@ -106,6 +112,12 @@ $vendor_id = 0;
 			  $activity_log = 'Category Added '. $categoryname;
 			  addacivitylog('',$activity_log,$user_id,$brand_id,$vendor_id);
         }
+}else{
+
+	echo "2";
+}
+	
+
 	
 	}
 

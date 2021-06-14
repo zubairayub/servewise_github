@@ -61,8 +61,12 @@
     $.post(url, formData).done(function (data) {
         if(data == 0){
       alert('New Category is added');
-    }else{
+    }else if(data == 1){
       alert('New Category is not added');
+      alert(data);
+    }
+    else if(data == 2){
+      alert('Category already exits');
     }
     });
 }

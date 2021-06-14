@@ -33,7 +33,27 @@ return false;
 }
 
 
+function checkcategoryexits($dbclass= null,$name)
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	  $db;
+ $varr = new databaseManager();
+$varr->query="SELECT * FROM `category`  where name = '$name' ";
+$result=$varr->executeQuery($varr->query,array(),"sread");
 
+if(count($result) > 0){
+return false;
+
+}else{
+	return true;
+
+}
+
+}
 
 
 function checkvendornameandemail($dbclass= null,$name, $email)

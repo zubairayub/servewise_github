@@ -41,7 +41,14 @@ $logo_dashboard = getlogo('',$logo_directory,$vendor_id);
 				</div>
 				<div class="sidebar-head-content-main-lower">
 					<div class="content-main-lower">
-						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $ustatus; }?></h4>
+<?php
+if(empty($first_name)){
+$first_name = $userstatus;
+}
+
+?>
+
+						<h4><?PHP IF(!empty($userstatus)){ ECHO 'Welcome '. $first_name; }?></h4>
 					</div>
 				</div>
 			</div>

@@ -93,8 +93,10 @@ echo getlang('','2nd Level Category',getlangcookie());
 				if(data == 1){
 							alert('category added');
 							location.reload(); 
-				}else{
+				}else if (data == 0){
 					alert('category not added');
+				}else if(data == 2){
+alert('category already exists');
 				}
 			});
 		}
