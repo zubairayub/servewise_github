@@ -11,57 +11,64 @@
                         <th>Activity Type</th>
                         <th>Brand ID</th>
                         <th>Vendor ID</th>
-                        <th>Time</th>
-                        <th>Date</th>
+                        <th>Date/Time</th>
+                        
                     </tr>
-                    <tr>
-                        <td>Muzzamil Qureshi</td>
-                        <td>Create Add Product</td>
-                        <td>pakistan Branch</td>
-                        <td>Coca Cola</td>
-                        <td>5:46 PM</td>
-                        <td>5/12/2021</td>
+                    <?php
+                        if(empty($data)){
+                            echo 'No Data';
+                        }else{
+                            foreach ($data as $key => $value) {
+
+
+                                $user_data = getuserinfo($value['user_id']);
+                                if(empty($user_data[0]['first_name'])){
+                                  $username = 'user';
+                                }else{
+                                  $username =  $user_data[0]['first_name'];
+                                }
+
+
+                            
+                                if($value['vendor_id'] == 0){
+                                    $vendor_name = 'No Vendor';
+                                }else{
+                                 $vendor_data =    getbranchbybranchid('',$value['vendor_id']);
+                                    $vendor_name =  $vendor_data[0]['name'];
+                                }
+
+
+                            if($value['brand_id'] == 0){
+                                    $brand_name = 'No Vendor';
+                                }else{
+                                 $brand_data =    getvendors('',$value['brand_id'],'FALSE');
+                                    $brand_name =  $brand_data[0]['name'];
+                                }
+
+
+
+                                
+                            
+?>
+
+ <tr>
+                        <td><?=  $username  ?></td>
+                        <td><?= $value['activity']?></td>
+                        <td><?= $brand_name ;?></td>
+                        <td><?=  $vendor_name ;?></td>
+                        <td><?= $value['datetime'] ;?></td>
+                        
                     </tr> 
-                    <tr>
-                        <td>Jimmy</td>
-                        <td>Update the Setting</td>
-                        <td>pak_hp</td>
-                        <td>Dell</td>
-                        <td>2:17 PM</td>
-                        <td>5/18/2021</td>
-                    </tr> 
-                    <tr>
-                        <td>andy</td>
-                        <td>Change the password</td>
-                        <td>KFC-Norway</td>
-                        <td>KFC</td>
-                        <td>7:42 PM</td>
-                        <td>5/20/2021</td>
-                    </tr> 
-                    <tr>
-                        <td>Carlos</td>
-                        <td>Change Store</td>
-                        <td>Supera Krachi</td>
-                        <td>Supera inc</td>
-                        <td>3:13 PM</td>
-                        <td>5/25/2021</td>
-                    </tr> 
-                    <tr>
-                        <td>ali</td>
-                        <td>Change logo</td>
-                        <td>Devesa</td>
-                        <td>Apple</td>
-                        <td>8:08 PM</td>
-                        <td>5/26/2021</td>
-                    </tr>
-                    <tr>
-                        <td>Zubair Ayub</td>
-                        <td>Edit Footer</td>
-                        <td>Karachi_Branch</td>
-                        <td>Levis</td>
-                        <td>4:11 PM</td>
-                        <td>5/29/2021</td>
-                    </tr> 
+
+
+<?php
+                            }
+
+                    ?>
+                  
+                    <?php 
+                }
+                ?>
                 </table>
             </form>
         </div>

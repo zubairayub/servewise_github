@@ -254,6 +254,48 @@ function cookies() {
 }};
 
 
+
+
+
+
+function getactivities($dbclass= '',$user_id= '', $brand_id= '',$vendor_id= '',$type = '')
+{
+	 if(!empty($dbclass)){
+	
+		include_once($dbclass);
+	 }
+	  $query;
+	 $db;
+	 $varr = new databaseManager();
+
+if($type == 'Admin'){
+$varr->query="SELECT * FROM `activity_log`";
+}elseif($type == 'Brand'){
+$varr->query="SELECT * FROM `activity_log` where brand_id = '$brand_id' ";
+}
+elseif($type == 'Vendor'){
+$varr->query="SELECT * FROM `activity_log` where vendor_id = '$vendor_id' ";
+}
+elseif($type == 'user'){
+$varr->query="SELECT * FROM `activity_log` where user_id = '$user_id' ";
+}
+
+
+
+$result=$varr->executeQuery($varr->query,array(),"sread");
+
+
+
+
+return $result;
+
+}
+
+
+
+
+
+
 function getlang($dbclass= '',$word= '', $lang= '')
 {
 	 if(!empty($dbclass)){
