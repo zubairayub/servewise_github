@@ -14,7 +14,7 @@
                         Name
                     </div>
                     <div class="add-new-cat-content-input">
-                       <input type="text" name="lang_name">
+                       <input type="text" name="lang_name" required="yes">
                     </div>
                 </div>
                 <div class="add-new-cat-content1">
@@ -42,7 +42,22 @@
   function submitForm(form){
     
     var url = $('#newLang').attr("action");
-    
+
+     var errors = 0;
+    $("#newLang :input").map(function(){
+         if( !$(this).val() ) {
+       //     alert("All fields are required");
+              errors++;
+        } else if ($(this).val()) {
+          //   alert("All fields are required");
+        } 
+
+
+    });
+    if(errors > 0){
+      alert("All fields are required");
+    }
+    else{
     var formData = $('#newLang').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 0){
@@ -51,5 +66,6 @@
       alert('New Language is not added');
     }
     });
+}
 }
 </script> 
