@@ -20,8 +20,10 @@ if(!empty($result)){
 
 	$data = $result;
 	 $count = count($result);
+	 if($count > 0){
+	 	echo $count;
+	 }
 	 
-	 echo $count;
 
 
 

@@ -96,6 +96,9 @@ $(function () {
                 // $('nav').hide();
                 // $('main').hide();
                 
+                if(data == 0){
+                    data = '';
+                }
                 oldnotival = document.getElementById("result").innerHTML = data;
                 old = oldnotival.replace(/[^0-9\.]/g, '');
                 //alert(old);
